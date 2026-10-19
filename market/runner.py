@@ -271,11 +271,13 @@ def load_locks() -> list:
         return list(csv.DictReader(f))
 
 
-def fetch_contract_bars(contract: str, d: date):
-    """5-minute bars for one option contract on trade date d, index in HST. None on failure."""
+def fetch_contract_bars(contract: str, start: date, end: Optional[date] = None):
+    """5-minute bars for one option contract from `start` through `end` (inclusive), index in
+    HST. None on failure."""
+    end = end or start
     try:
-        df = E._yf().Ticker(contract).history(start=d.isoformat(),
-                                              end=(d + timedelta(days=1)).isoformat(),
+        df = E._yf().Ticker(contract).history(start=start.isoformat(),
+                                              end=(end + timedelta(days=1)).isoformat(),
                                               interval="5m", auto_adjust=False)
         if df is None or df.empty:
             return None
@@ -306,23 +308,37 @@ def grade_from_bars(bars, entry: float, target: float, stop: float,
 
 
 def grade_due(now: datetime, fetch=None) -> list:
+    """
+    Holding window = lock time -> close of the contract's expiry day. Mon–Thu cards can span
+    several days (never past the last trading day before a weekend/holiday); Friday cards are
+    0DTE and finish the same day.
+    After each close: if the target or stop has already been hit, the card is graded right
+    away. Otherwise it stays OPEN until its expiry day's close, then exits at the last price.
+    """
     fetch = fetch or fetch_contract_bars
     graded, done, rows = [], load_grades(), []
     for c in load_locks():
         if c["mode"] not in GRADED_MODES or c["status"] != "GO" or c["id"] in done:
             continue
         d = date.fromisoformat(c["trade_date"])
-        s = E.session_for(d)
-        if s is None or now < s.close_hst + timedelta(minutes=GRADE_AFTER_CLOSE_MIN):
-            continue
+        exp = date.fromisoformat(c["expiry"])
+        s_open, s_exp = E.session_for(d), E.session_for(exp) or E.session_for(d)
+        if s_open is None or now < s_open.close_hst + timedelta(minutes=GRADE_AFTER_CLOSE_MIN):
+            continue                        # not even the first day is over
+        finished = now >= s_exp.close_hst + timedelta(minutes=GRADE_AFTER_CLOSE_MIN)
         entry = float(c["premium"])
         g = None
-        bars = fetch(c["contract"], d) if c.get("contract") else None
+        bars = fetch(c["contract"], d, min(exp, now.date())) if c.get("contract") else None
         if bars is not None:
             g = grade_from_bars(bars, entry, float(c["target"]), float(c["stop"]),
-                                datetime.fromisoformat(c["locked_at"]), s.close_hst)
+                                datetime.fromisoformat(c["locked_at"]),
+                                s_exp.close_hst if finished else now)
+            if g and not finished and g[2].startswith("TIME"):
+                continue                    # still open: no target/stop yet, wait for expiry
+            if g and finished and g[2].startswith("TIME"):
+                g = (g[0], g[1], f"TIME ({exp.strftime('%a')} close)")
         if g is None:
-            if (now.date() - d).days >= GRADE_GIVE_UP_DAYS:
+            if finished and (now.date() - exp).days >= GRADE_GIVE_UP_DAYS:
                 g = ("UNGRADABLE", None, "no contract price data")
             else:
                 continue   # try again next run

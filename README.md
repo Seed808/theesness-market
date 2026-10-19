@@ -16,6 +16,11 @@ Site: https://seed808.github.io/theesness-market/
 | every ~10 min until 9:00am | **Re-scans.** Posts and locks only NEW setups (a ticker + direction already posted today is skipped). Graded like confirmation cards. |
 | after the close | **Grading** of every GO card (WIN / LOSS / FLAT from the contract's 5-minute prices), **saves the day's 1-minute bars**, and **re-runs the bias backtest**. |
 
+**Expiry / holding rule.** Mon–Thu: no 0DTE — contracts expire between tomorrow and the last
+trading day before the market next closes (normally Friday), so they can be held overnight but
+never over a weekend or holiday. Friday and pre-holiday days: 0DTE only. Cards are graded at
+their target or stop as soon as either is hit, otherwise at the expiry day's close.
+
 Every card shows the stock price it was made from and that price's time, so you can check it
 against your own screen. Data is ~15 minutes delayed.
 

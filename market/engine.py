@@ -139,6 +139,7 @@ RVOL_CONFIRM = 1.5         # last 5-min volume vs prior 20-bar avg
 HIGH_IVP = 60              # earnings 0DTE: IV percentile >= this = stand down (PLACEHOLDER)
 A_PLUS_MIN_CONFIDENCE = 8
 MAX_CARDS = 3
+EXPIRY_PICK = "latest"     # Mon–Thu: "latest" = this week's Friday expiry; "nearest" = soonest after today
 RAW_CHAIN_ROWS = 16        # option rows nearest the money saved per ticker per run
 
 # --- Core list (always on). Futures proxies via yfinance. ---------------------------------
@@ -724,18 +725,33 @@ def day_rules(d: date) -> dict:
     }
 
 
+def hold_limit_day(d: date) -> date:
+    """Last trading day before the market next closes (weekend OR holiday). Normally Friday;
+    Thursday if Friday is a holiday; the day before a mid-week holiday."""
+    last = d
+    while is_trading_day(last + timedelta(days=1)):
+        last += timedelta(days=1)
+    return last
+
+
 def pick_expiry(expiries: list, today: date, rules: dict) -> tuple:
-    """Returns (expiry, flag) or (None, reason). Friday/pre-holiday: today's expiry only."""
+    """
+    Your holding rule:
+      Friday / pre-holiday  -> 0DTE only (bought and closed the same day).
+      Mon–Thu               -> NO 0DTE. Expiry between tomorrow and the last trading day
+                               before the market next closes (weekend or holiday), so a
+                               position can be held overnight but never over a weekend/holiday. EXPIRY_PICK chooses which one (default: the latest,
+                               i.e. Friday — the most time for the move).
+    Returns (expiry, flag) or (None, reason).
+    """
     valid = [e for e in expiries if e >= today]
     if rules["zero_dte_only"]:
         return (today, "") if today in valid else (None, "no 0DTE expiry (Friday/pre-holiday rule)")
-    pref = [e for e in valid if (e - today).days <= PREFERRED_MAX_DTE]
-    if pref:
-        return pref[0], ""
-    wide = [e for e in valid if (e - today).days <= HARD_MAX_DTE]
-    if wide:
-        return wide[0], f"WIDE-DTE {(wide[0] - today).days}d"
-    return None, f"no expiry within {HARD_MAX_DTE} DTE"
+    last = hold_limit_day(today)
+    week = [e for e in valid if today < e <= last]
+    if not week:
+        return None, f"no expiry between tomorrow and {last.strftime('%a %-m/%-d')}"
+    return (max(week) if EXPIRY_PICK == "latest" else min(week)), ""
 
 
 def pick_strike(chain: list, expiry: date, right: str, spot: float) -> Optional[OptionQuote]:
@@ -911,6 +927,8 @@ def evaluate(sym: str, right: str, bias: Bias, tech: Technicals, opt: Optional[O
         flags.append(f"FOMC: no entry before {clr.strftime('%I:%M %p HST')}")
     if rules["no_overnight"]:
         flags.append("0DTE only / no overnight")
+    elif opt is not None and opt.expiry > session.trade_date:
+        flags.append(f"hold OK until {opt.expiry.strftime('%a %-m/%-d')} close · close before the weekend")
     if now < session.at(AMATEUR_HOUR_MIN):
         flags.append(f"amateur hour until {session.at(AMATEUR_HOUR_MIN).strftime('%I:%M %p')}")
 
@@ -1014,7 +1032,7 @@ def _short_t(dt: datetime) -> str:
 
 def tg_card(i: "Idea") -> str:
     """One trade card as a short block. Same fields as the pipe format, one idea per line."""
-    exp = datetime.strptime(i.expiry, "%Y-%m-%d").strftime("%-m/%-d")
+    exp = datetime.strptime(i.expiry, "%Y-%m-%d").strftime("%a %-m/%-d")
     head = f"<b>{_h(i.ticker)} {_h(i.type)} {i.strike:g}</b> · exp {exp} · <b>{i.confidence}/10</b>"
     if i.a_plus:
         head += " · <b>A+</b>"
@@ -1298,13 +1316,23 @@ def selftest() -> int:
 
     # Expiry
     mon = date(2026, 10, 19)
-    exps = [mon, date(2026, 10, 21), date(2026, 10, 23)]
-    check("Mon picks 0DTE", pick_expiry(exps, mon, day_rules(mon))[0] == mon)
     fri = date(2026, 10, 23)
+    exps = [mon, date(2026, 10, 21), fri, date(2026, 10, 26), date(2026, 10, 30)]
+    check("Mon: no 0DTE, picks this Friday", pick_expiry(exps, mon, day_rules(mon))[0] == fri)
+    thu = date(2026, 10, 22)
+    check("Thu: picks Friday (1 DTE)", pick_expiry(exps, thu, day_rules(thu))[0] == fri)
+    check("Fri: 0DTE", pick_expiry(exps, fri, day_rules(fri))[0] == fri)
     check("Fri without 0DTE -> none",
           pick_expiry([date(2026, 10, 26)], fri, day_rules(fri))[0] is None)
-    e, f = pick_expiry([date(2026, 10, 30)], mon, day_rules(mon))
-    check("11 DTE -> WIDE flag", e == date(2026, 10, 30) and f.startswith("WIDE-DTE"))
+    check("Mon: next-week-only expiries -> none (no weekend hold)",
+          pick_expiry([mon, date(2026, 10, 26)], mon, day_rules(mon))[0] is None)
+    check("Good Friday week: hold limit Thu 4/2", hold_limit_day(date(2026, 3, 30)) == date(2026, 4, 2))
+    check("Thanksgiving week Tue: hold limit Wed 11/25 (no holiday hold)",
+          hold_limit_day(date(2026, 11, 24)) == date(2026, 11, 25))
+    check("Normal Mon: hold limit Fri", hold_limit_day(mon) == fri)
+    check("Wed before Thanksgiving: Friday rules (0DTE)",
+          pick_expiry([date(2026, 11, 25), date(2026, 11, 27)], date(2026, 11, 25),
+                      day_rules(date(2026, 11, 25)))[0] == date(2026, 11, 25))
 
     # Liquidity
     good = OptionQuote(mon, "P", 670, 1.10, 1.14, 12000)

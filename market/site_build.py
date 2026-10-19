@@ -147,7 +147,8 @@ def card_html(c: dict, g: dict | None) -> str:
         res = (f'<dt>Result</dt><dd><span class="res-{e(g["result"])}">{e(g["result"])}</span>'
                f'{pnl} <span class="eyebrow">{e(g["method"])}</span></dd>')
     elif c["mode"] in ("confirm", "rescan") and c["status"] == "GO":
-        res = '<dt>Result</dt><dd class="eyebrow">graded after the close</dd>'
+        exp_day = date.fromisoformat(c["expiry"]).strftime("%a %-m/%-d")
+        res = (f'<dt>Result</dt><dd class="eyebrow">open · graded at target/stop or {exp_day} close</dd>')
     aplus = c["a_plus"] in (True, "True")
     badge = '<span class="badge gap2">A+</span>' if aplus else ""
     flags = f'<dt>Flags</dt><dd>{e(c["flags"])}</dd>' if c.get("flags") else ""
@@ -161,7 +162,7 @@ def card_html(c: dict, g: dict | None) -> str:
             + f'<div class="status">{e(c["status"])} · locked {_t(c["locked_at"])}</div>'
             f'<dl class="lines">'
             f'<dt>Bias</dt><dd>{e(c["bias"])}</dd>'
-            f'<dt>Expiry</dt><dd>{e(c["expiry"])}</dd>'
+            f'<dt>Expiry</dt><dd>{e(date.fromisoformat(c["expiry"]).strftime("%a %b %-d"))}</dd>'
             f'<dt>Strike</dt><dd>{float(c["strike"]):g}</dd>'
             f'<dt>Entry range</dt><dd>{_money(c["entry_floor"])}–{_money(c["entry_ceiling"])}</dd>'
             f'<dt>Premium</dt><dd>{_money(c["premium"])}</dd>'
@@ -262,8 +263,9 @@ def build(out: Path, now: datetime) -> None:
         else '<div class="empty">No graded cards yet.</div>'
     rec_body = (f'<h1>Locked record</h1>{tiles(st)}<p class="lede">Only GO cards from the confirmation '
                 'read and the morning re-scans are graded. Entry is the locked signal premium. Exit is the first of target or '
-                'stop on 5-minute bars (both in one bar counts as a stop), otherwise the day\'s last '
-                'price. Pre-market cards are conditional and never graded.</p>' + table)
+                'stop on 5-minute bars (both in one bar counts as a stop), otherwise the last price at '
+                'the close of the expiry day. Mon–Thu cards may be held overnight up to the last '
+                'trading day before a weekend or holiday; Friday cards are 0DTE. Pre-market cards are conditional and never graded.</p>' + table)
     (out / "record.html").write_text(page("Record — TheEsness Market", rec_body, 0, "record"))
 
     links = "".join(f'<a href="day/{d}.html">{e(d)}</a>' for d in days)
