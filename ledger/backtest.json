@@ -1,0 +1,1689 @@
+{
+ "built_for": "2026-10-19",
+ "built_at": "2026-10-19T10:57:15.429100-10:00",
+ "range": [
+  "2026-07-27",
+  "2026-10-19"
+ ],
+ "params": {
+  "move_pct": 0.3,
+  "start_min": 30,
+  "end_min": 150,
+  "flat_band_pct": 0.1,
+  "vix_confirm_pct": 2.0
+ },
+ "unscored_days": 20,
+ "vix_premarket_bar_days": 59,
+ "summary": [
+  {
+   "regime": "BEAR",
+   "clean": true,
+   "SPY": {
+    "days": 12,
+    "win": 3,
+    "loss": 3,
+    "none": 6,
+    "win_pct": 50.0
+   },
+   "QQQ": {
+    "days": 12,
+    "win": 3,
+    "loss": 7,
+    "none": 2,
+    "win_pct": 30.0
+   }
+  },
+  {
+   "regime": "BEAR",
+   "clean": false,
+   "SPY": {
+    "days": 3,
+    "win": 2,
+    "loss": 0,
+    "none": 1,
+    "win_pct": 100.0
+   },
+   "QQQ": {
+    "days": 3,
+    "win": 2,
+    "loss": 1,
+    "none": 0,
+    "win_pct": 66.7
+   }
+  },
+  {
+   "regime": "ROTATION",
+   "clean": true,
+   "SPY": {
+    "days": 2,
+    "win": 0,
+    "loss": 1,
+    "none": 1,
+    "win_pct": 0.0
+   },
+   "QQQ": {
+    "days": 2,
+    "win": 0,
+    "loss": 2,
+    "none": 0,
+    "win_pct": 0.0
+   }
+  },
+  {
+   "regime": "ROTATION",
+   "clean": false,
+   "SPY": {
+    "days": 5,
+    "win": 1,
+    "loss": 2,
+    "none": 2,
+    "win_pct": 33.3
+   },
+   "QQQ": {
+    "days": 5,
+    "win": 2,
+    "loss": 2,
+    "none": 1,
+    "win_pct": 50.0
+   }
+  },
+  {
+   "regime": "BULL",
+   "clean": true,
+   "SPY": {
+    "days": 7,
+    "win": 2,
+    "loss": 3,
+    "none": 2,
+    "win_pct": 40.0
+   },
+   "QQQ": {
+    "days": 7,
+    "win": 2,
+    "loss": 3,
+    "none": 2,
+    "win_pct": 40.0
+   }
+  },
+  {
+   "regime": "BULL",
+   "clean": false,
+   "SPY": {
+    "days": 11,
+    "win": 2,
+    "loss": 3,
+    "none": 6,
+    "win_pct": 40.0
+   },
+   "QQQ": {
+    "days": 11,
+    "win": 1,
+    "loss": 4,
+    "none": 6,
+    "win_pct": 20.0
+   }
+  }
+ ],
+ "days": [
+  {
+   "date": "2026-10-19",
+   "regime": "MIXED",
+   "favored": null,
+   "clean": false,
+   "vix_confirms": false,
+   "index_confirms": false,
+   "chg": {
+    "ES": 0.43,
+    "NQ": 1.21,
+    "YM": -0.26,
+    "VIX": -7.25,
+    "SPY": 0.47,
+    "QQQ": 1.28
+   },
+   "premarket_bar": {
+    "ES": true,
+    "NQ": true,
+    "YM": true,
+    "VIX": true,
+    "SPY": true,
+    "QQQ": true
+   },
+   "SPY": "\u2014",
+   "QQQ": "\u2014"
+  },
+  {
+   "date": "2026-10-16",
+   "regime": "ROTATION",
+   "favored": "P",
+   "clean": false,
+   "vix_confirms": false,
+   "index_confirms": false,
+   "chg": {
+    "ES": 0.15,
+    "NQ": -0.26,
+    "YM": 0.11,
+    "VIX": -3.16,
+    "SPY": 0.19,
+    "QQQ": -0.21
+   },
+   "premarket_bar": {
+    "ES": true,
+    "NQ": true,
+    "YM": true,
+    "VIX": true,
+    "SPY": true,
+    "QQQ": true
+   },
+   "SPY": "WIN",
+   "QQQ": "LOSS"
+  },
+  {
+   "date": "2026-10-15",
+   "regime": "ROTATION",
+   "favored": "P",
+   "clean": true,
+   "vix_confirms": true,
+   "index_confirms": true,
+   "chg": {
+    "ES": -0.32,
+    "NQ": -1.3,
+    "YM": 0.47,
+    "VIX": 3.5,
+    "SPY": -0.29,
+    "QQQ": -1.28
+   },
+   "premarket_bar": {
+    "ES": true,
+    "NQ": true,
+    "YM": true,
+    "VIX": true,
+    "SPY": true,
+    "QQQ": true
+   },
+   "SPY": "LOSS",
+   "QQQ": "LOSS"
+  },
+  {
+   "date": "2026-10-14",
+   "regime": "BEAR",
+   "favored": "P",
+   "clean": true,
+   "vix_confirms": true,
+   "index_confirms": true,
+   "chg": {
+    "ES": -0.4,
+    "NQ": -0.76,
+    "YM": -0.34,
+    "VIX": 3.67,
+    "SPY": -0.38,
+    "QQQ": -0.73
+   },
+   "premarket_bar": {
+    "ES": true,
+    "NQ": true,
+    "YM": true,
+    "VIX": true,
+    "SPY": true,
+    "QQQ": true
+   },
+   "SPY": "WIN",
+   "QQQ": "WIN"
+  },
+  {
+   "date": "2026-10-13",
+   "regime": "ROTATION",
+   "favored": "P",
+   "clean": false,
+   "vix_confirms": false,
+   "index_confirms": false,
+   "chg": {
+    "ES": -0.09,
+    "NQ": -0.78,
+    "YM": 0.82,
+    "VIX": 0.59,
+    "SPY": -0.07,
+    "QQQ": -0.76
+   },
+   "premarket_bar": {
+    "ES": true,
+    "NQ": true,
+    "YM": true,
+    "VIX": true,
+    "SPY": true,
+    "QQQ": true
+   },
+   "SPY": "NONE",
+   "QQQ": "WIN"
+  },
+  {
+   "date": "2026-10-12",
+   "regime": "MIXED",
+   "favored": null,
+   "clean": false,
+   "vix_confirms": false,
+   "index_confirms": false,
+   "chg": {
+    "ES": 0.06,
+    "NQ": -0.13,
+    "YM": 0.03,
+    "VIX": 4.38,
+    "SPY": 0.03,
+    "QQQ": -0.14
+   },
+   "premarket_bar": {
+    "ES": true,
+    "NQ": true,
+    "YM": true,
+    "VIX": true,
+    "SPY": true,
+    "QQQ": true
+   },
+   "SPY": "\u2014",
+   "QQQ": "\u2014"
+  },
+  {
+   "date": "2026-10-09",
+   "regime": "MIXED",
+   "favored": null,
+   "clean": false,
+   "vix_confirms": false,
+   "index_confirms": false,
+   "chg": {
+    "ES": 0.32,
+    "NQ": 0.71,
+    "YM": 0.09,
+    "VIX": -1.56,
+    "SPY": 0.34,
+    "QQQ": 0.75
+   },
+   "premarket_bar": {
+    "ES": true,
+    "NQ": true,
+    "YM": true,
+    "VIX": true,
+    "SPY": true,
+    "QQQ": true
+   },
+   "SPY": "\u2014",
+   "QQQ": "\u2014"
+  },
+  {
+   "date": "2026-10-08",
+   "regime": "BEAR",
+   "favored": "P",
+   "clean": true,
+   "vix_confirms": true,
+   "index_confirms": true,
+   "chg": {
+    "ES": -0.4,
+    "NQ": -0.64,
+    "YM": -0.62,
+    "VIX": 3.85,
+    "SPY": -0.38,
+    "QQQ": -0.62
+   },
+   "premarket_bar": {
+    "ES": true,
+    "NQ": true,
+    "YM": true,
+    "VIX": true,
+    "SPY": true,
+    "QQQ": true
+   },
+   "SPY": "NONE",
+   "QQQ": "LOSS"
+  },
+  {
+   "date": "2026-10-07",
+   "regime": "BEAR",
+   "favored": "P",
+   "clean": true,
+   "vix_confirms": true,
+   "index_confirms": true,
+   "chg": {
+    "ES": -0.41,
+    "NQ": -0.71,
+    "YM": -0.78,
+    "VIX": 5.0,
+    "SPY": -0.37,
+    "QQQ": -0.71
+   },
+   "premarket_bar": {
+    "ES": true,
+    "NQ": true,
+    "YM": true,
+    "VIX": true,
+    "SPY": true,
+    "QQQ": true
+   },
+   "SPY": "NONE",
+   "QQQ": "LOSS"
+  },
+  {
+   "date": "2026-10-06",
+   "regime": "BULL",
+   "favored": "C",
+   "clean": false,
+   "vix_confirms": false,
+   "index_confirms": true,
+   "chg": {
+    "ES": 0.42,
+    "NQ": 0.55,
+    "YM": 0.52,
+    "VIX": -1.42,
+    "SPY": 0.39,
+    "QQQ": 0.5
+   },
+   "premarket_bar": {
+    "ES": true,
+    "NQ": true,
+    "YM": true,
+    "VIX": true,
+    "SPY": true,
+    "QQQ": true
+   },
+   "SPY": "NONE",
+   "QQQ": "NONE"
+  },
+  {
+   "date": "2026-10-05",
+   "regime": "BEAR",
+   "favored": "P",
+   "clean": true,
+   "vix_confirms": true,
+   "index_confirms": true,
+   "chg": {
+    "ES": -0.12,
+    "NQ": -0.21,
+    "YM": -0.17,
+    "VIX": 5.75,
+    "SPY": -0.12,
+    "QQQ": -0.22
+   },
+   "premarket_bar": {
+    "ES": true,
+    "NQ": true,
+    "YM": true,
+    "VIX": true,
+    "SPY": true,
+    "QQQ": true
+   },
+   "SPY": "LOSS",
+   "QQQ": "LOSS"
+  },
+  {
+   "date": "2026-10-02",
+   "regime": "BULL",
+   "favored": "C",
+   "clean": true,
+   "vix_confirms": true,
+   "index_confirms": true,
+   "chg": {
+    "ES": 0.95,
+    "NQ": 1.33,
+    "YM": 1.03,
+    "VIX": -5.25,
+    "SPY": 0.96,
+    "QQQ": 1.32
+   },
+   "premarket_bar": {
+    "ES": true,
+    "NQ": true,
+    "YM": true,
+    "VIX": true,
+    "SPY": true,
+    "QQQ": true
+   },
+   "SPY": "LOSS",
+   "QQQ": "WIN"
+  },
+  {
+   "date": "2026-10-01",
+   "regime": "BULL",
+   "favored": "C",
+   "clean": false,
+   "vix_confirms": false,
+   "index_confirms": true,
+   "chg": {
+    "ES": 0.23,
+    "NQ": 0.38,
+    "YM": 0.2,
+    "VIX": 0.61,
+    "SPY": 0.26,
+    "QQQ": 0.44
+   },
+   "premarket_bar": {
+    "ES": true,
+    "NQ": true,
+    "YM": true,
+    "VIX": true,
+    "SPY": true,
+    "QQQ": true
+   },
+   "SPY": "LOSS",
+   "QQQ": "LOSS"
+  },
+  {
+   "date": "2026-09-30",
+   "regime": "BULL",
+   "favored": "C",
+   "clean": false,
+   "vix_confirms": false,
+   "index_confirms": true,
+   "chg": {
+    "ES": 0.29,
+    "NQ": 0.33,
+    "YM": 0.26,
+    "VIX": -1.12,
+    "SPY": 0.33,
+    "QQQ": 0.35
+   },
+   "premarket_bar": {
+    "ES": true,
+    "NQ": true,
+    "YM": true,
+    "VIX": true,
+    "SPY": true,
+    "QQQ": true
+   },
+   "SPY": "NONE",
+   "QQQ": "NONE"
+  },
+  {
+   "date": "2026-09-29",
+   "regime": "MIXED",
+   "favored": null,
+   "clean": false,
+   "vix_confirms": false,
+   "index_confirms": false,
+   "chg": {
+    "ES": 0.07,
+    "NQ": 0.21,
+    "YM": 0.05,
+    "VIX": -1.18,
+    "SPY": 0.1,
+    "QQQ": 0.24
+   },
+   "premarket_bar": {
+    "ES": true,
+    "NQ": true,
+    "YM": true,
+    "VIX": true,
+    "SPY": true,
+    "QQQ": true
+   },
+   "SPY": "\u2014",
+   "QQQ": "\u2014"
+  },
+  {
+   "date": "2026-09-28",
+   "regime": "BEAR",
+   "favored": "P",
+   "clean": true,
+   "vix_confirms": true,
+   "index_confirms": true,
+   "chg": {
+    "ES": -0.29,
+    "NQ": -0.48,
+    "YM": -0.46,
+    "VIX": 7.53,
+    "SPY": -0.28,
+    "QQQ": -0.48
+   },
+   "premarket_bar": {
+    "ES": true,
+    "NQ": true,
+    "YM": true,
+    "VIX": true,
+    "SPY": true,
+    "QQQ": true
+   },
+   "SPY": "WIN",
+   "QQQ": "WIN"
+  },
+  {
+   "date": "2026-09-25",
+   "regime": "BULL",
+   "favored": "C",
+   "clean": true,
+   "vix_confirms": true,
+   "index_confirms": true,
+   "chg": {
+    "ES": 0.23,
+    "NQ": 0.36,
+    "YM": 0.26,
+    "VIX": -2.94,
+    "SPY": 0.29,
+    "QQQ": 0.42
+   },
+   "premarket_bar": {
+    "ES": true,
+    "NQ": true,
+    "YM": true,
+    "VIX": true,
+    "SPY": true,
+    "QQQ": true
+   },
+   "SPY": "LOSS",
+   "QQQ": "LOSS"
+  },
+  {
+   "date": "2026-09-24",
+   "regime": "BEAR",
+   "favored": "P",
+   "clean": true,
+   "vix_confirms": true,
+   "index_confirms": true,
+   "chg": {
+    "ES": -0.48,
+    "NQ": -0.91,
+    "YM": -0.26,
+    "VIX": 5.2,
+    "SPY": -0.48,
+    "QQQ": -0.91
+   },
+   "premarket_bar": {
+    "ES": true,
+    "NQ": true,
+    "YM": true,
+    "VIX": true,
+    "SPY": true,
+    "QQQ": true
+   },
+   "SPY": "NONE",
+   "QQQ": "NONE"
+  },
+  {
+   "date": "2026-09-23",
+   "regime": "BEAR",
+   "favored": "P",
+   "clean": false,
+   "vix_confirms": false,
+   "index_confirms": false,
+   "chg": {
+    "ES": -0.11,
+    "NQ": -0.19,
+    "YM": -0.31,
+    "VIX": 0.56,
+    "SPY": -0.08,
+    "QQQ": -0.19
+   },
+   "premarket_bar": {
+    "ES": true,
+    "NQ": true,
+    "YM": true,
+    "VIX": true,
+    "SPY": true,
+    "QQQ": true
+   },
+   "SPY": "WIN",
+   "QQQ": "WIN"
+  },
+  {
+   "date": "2026-09-22",
+   "regime": "ROTATION",
+   "favored": "P",
+   "clean": false,
+   "vix_confirms": false,
+   "index_confirms": false,
+   "chg": {
+    "ES": 0.04,
+    "NQ": -0.1,
+    "YM": 0.4,
+    "VIX": -1.48,
+    "SPY": 0.06,
+    "QQQ": -0.11
+   },
+   "premarket_bar": {
+    "ES": true,
+    "NQ": true,
+    "YM": true,
+    "VIX": true,
+    "SPY": true,
+    "QQQ": true
+   },
+   "SPY": "NONE",
+   "QQQ": "NONE"
+  },
+  {
+   "date": "2026-09-21",
+   "regime": "BULL",
+   "favored": "C",
+   "clean": false,
+   "vix_confirms": false,
+   "index_confirms": true,
+   "chg": {
+    "ES": 1.36,
+    "NQ": 2.06,
+    "YM": 1.4,
+    "VIX": 0.47,
+    "SPY": 0.62,
+    "QQQ": 0.91
+   },
+   "premarket_bar": {
+    "ES": true,
+    "NQ": true,
+    "YM": true,
+    "VIX": true,
+    "SPY": true,
+    "QQQ": true
+   },
+   "SPY": "WIN",
+   "QQQ": "WIN"
+  },
+  {
+   "date": "2026-09-18",
+   "regime": "BULL",
+   "favored": "C",
+   "clean": false,
+   "vix_confirms": false,
+   "index_confirms": false,
+   "chg": {
+    "ES": 0.8,
+    "NQ": 1.12,
+    "YM": 0.52,
+    "VIX": 0.58,
+    "SPY": -0.29,
+    "QQQ": 0.13
+   },
+   "premarket_bar": {
+    "ES": true,
+    "NQ": true,
+    "YM": true,
+    "VIX": true,
+    "SPY": true,
+    "QQQ": true
+   },
+   "SPY": "NONE",
+   "QQQ": "NONE"
+  },
+  {
+   "date": "2026-09-17",
+   "regime": "BULL",
+   "favored": "C",
+   "clean": true,
+   "vix_confirms": true,
+   "index_confirms": true,
+   "chg": {
+    "ES": 2.13,
+    "NQ": 2.63,
+    "YM": 2.02,
+    "VIX": -12.76,
+    "SPY": 1.27,
+    "QQQ": 1.62
+   },
+   "premarket_bar": {
+    "ES": true,
+    "NQ": true,
+    "YM": true,
+    "VIX": true,
+    "SPY": true,
+    "QQQ": true
+   },
+   "SPY": "NONE",
+   "QQQ": "NONE"
+  },
+  {
+   "date": "2026-09-16",
+   "regime": "BULL",
+   "favored": "C",
+   "clean": true,
+   "vix_confirms": true,
+   "index_confirms": true,
+   "chg": {
+    "ES": 1.19,
+    "NQ": 1.55,
+    "YM": 1.03,
+    "VIX": -2.67,
+    "SPY": 0.33,
+    "QQQ": 0.54
+   },
+   "premarket_bar": {
+    "ES": true,
+    "NQ": true,
+    "YM": true,
+    "VIX": true,
+    "SPY": true,
+    "QQQ": true
+   },
+   "SPY": "NONE",
+   "QQQ": "NONE"
+  },
+  {
+   "date": "2026-09-15",
+   "regime": "BULL",
+   "favored": "C",
+   "clean": false,
+   "vix_confirms": false,
+   "index_confirms": false,
+   "chg": {
+    "ES": 0.84,
+    "NQ": 0.97,
+    "YM": 0.65,
+    "VIX": -1.23,
+    "SPY": -0.05,
+    "QQQ": -0.01
+   },
+   "premarket_bar": {
+    "ES": true,
+    "NQ": true,
+    "YM": true,
+    "VIX": true,
+    "SPY": true,
+    "QQQ": true
+   },
+   "SPY": "LOSS",
+   "QQQ": "LOSS"
+  },
+  {
+   "date": "2026-09-14",
+   "regime": "ROTATION",
+   "favored": "P",
+   "clean": true,
+   "vix_confirms": true,
+   "index_confirms": true,
+   "chg": {
+    "ES": -0.69,
+    "NQ": -1.72,
+    "YM": 0.44,
+    "VIX": 11.87,
+    "SPY": -0.69,
+    "QQQ": -1.7
+   },
+   "premarket_bar": {
+    "ES": true,
+    "NQ": true,
+    "YM": true,
+    "VIX": true,
+    "SPY": true,
+    "QQQ": true
+   },
+   "SPY": "NONE",
+   "QQQ": "LOSS"
+  },
+  {
+   "date": "2026-09-11",
+   "regime": "BULL",
+   "favored": "C",
+   "clean": true,
+   "vix_confirms": true,
+   "index_confirms": true,
+   "chg": {
+    "ES": 1.02,
+    "NQ": 1.14,
+    "YM": 1.04,
+    "VIX": -10.59,
+    "SPY": 1.05,
+    "QQQ": 1.16
+   },
+   "premarket_bar": {
+    "ES": true,
+    "NQ": true,
+    "YM": true,
+    "VIX": true,
+    "SPY": true,
+    "QQQ": true
+   },
+   "SPY": "LOSS",
+   "QQQ": "LOSS"
+  },
+  {
+   "date": "2026-09-10",
+   "regime": "BEAR",
+   "favored": "P",
+   "clean": true,
+   "vix_confirms": true,
+   "index_confirms": true,
+   "chg": {
+    "ES": -0.55,
+    "NQ": -1.33,
+    "YM": -0.24,
+    "VIX": 7.9,
+    "SPY": -0.55,
+    "QQQ": -1.33
+   },
+   "premarket_bar": {
+    "ES": true,
+    "NQ": true,
+    "YM": true,
+    "VIX": true,
+    "SPY": true,
+    "QQQ": true
+   },
+   "SPY": "LOSS",
+   "QQQ": "LOSS"
+  },
+  {
+   "date": "2026-09-09",
+   "regime": "BEAR",
+   "favored": "P",
+   "clean": true,
+   "vix_confirms": true,
+   "index_confirms": true,
+   "chg": {
+    "ES": -0.33,
+    "NQ": -0.5,
+    "YM": -0.52,
+    "VIX": 3.31,
+    "SPY": -0.31,
+    "QQQ": -0.48
+   },
+   "premarket_bar": {
+    "ES": true,
+    "NQ": true,
+    "YM": true,
+    "VIX": true,
+    "SPY": true,
+    "QQQ": true
+   },
+   "SPY": "WIN",
+   "QQQ": "WIN"
+  },
+  {
+   "date": "2026-09-08",
+   "regime": "BEAR",
+   "favored": "P",
+   "clean": false,
+   "vix_confirms": false,
+   "index_confirms": false,
+   "chg": {
+    "ES": -0.1,
+    "NQ": 0.3,
+    "YM": -0.62,
+    "VIX": 0.78,
+    "SPY": -0.12,
+    "QQQ": 0.29
+   },
+   "premarket_bar": {
+    "ES": true,
+    "NQ": true,
+    "YM": true,
+    "VIX": true,
+    "SPY": true,
+    "QQQ": true
+   },
+   "SPY": "NONE",
+   "QQQ": "LOSS"
+  },
+  {
+   "date": "2026-09-04",
+   "regime": "BEAR",
+   "favored": "P",
+   "clean": false,
+   "vix_confirms": false,
+   "index_confirms": false,
+   "chg": {
+    "ES": -0.21,
+    "NQ": 0.07,
+    "YM": -0.29,
+    "VIX": -1.12,
+    "SPY": -0.2,
+    "QQQ": 0.09
+   },
+   "premarket_bar": {
+    "ES": true,
+    "NQ": true,
+    "YM": true,
+    "VIX": true,
+    "SPY": true,
+    "QQQ": true
+   },
+   "SPY": "WIN",
+   "QQQ": "WIN"
+  },
+  {
+   "date": "2026-09-03",
+   "regime": "BULL",
+   "favored": "C",
+   "clean": false,
+   "vix_confirms": false,
+   "index_confirms": true,
+   "chg": {
+    "ES": 0.32,
+    "NQ": 0.2,
+    "YM": 0.62,
+    "VIX": -1.12,
+    "SPY": 0.31,
+    "QQQ": 0.21
+   },
+   "premarket_bar": {
+    "ES": true,
+    "NQ": true,
+    "YM": true,
+    "VIX": true,
+    "SPY": true,
+    "QQQ": true
+   },
+   "SPY": "WIN",
+   "QQQ": "LOSS"
+  },
+  {
+   "date": "2026-09-02",
+   "regime": "ROTATION",
+   "favored": "P",
+   "clean": false,
+   "vix_confirms": false,
+   "index_confirms": false,
+   "chg": {
+    "ES": -0.03,
+    "NQ": -0.29,
+    "YM": 0.16,
+    "VIX": -0.12,
+    "SPY": -0.05,
+    "QQQ": -0.28
+   },
+   "premarket_bar": {
+    "ES": true,
+    "NQ": true,
+    "YM": true,
+    "VIX": true,
+    "SPY": true,
+    "QQQ": true
+   },
+   "SPY": "LOSS",
+   "QQQ": "LOSS"
+  },
+  {
+   "date": "2026-09-01",
+   "regime": "BEAR",
+   "favored": "P",
+   "clean": true,
+   "vix_confirms": true,
+   "index_confirms": true,
+   "chg": {
+    "ES": -0.67,
+    "NQ": -1.31,
+    "YM": -0.6,
+    "VIX": 6.43,
+    "SPY": -0.65,
+    "QQQ": -1.26
+   },
+   "premarket_bar": {
+    "ES": true,
+    "NQ": true,
+    "YM": true,
+    "VIX": true,
+    "SPY": true,
+    "QQQ": true
+   },
+   "SPY": "LOSS",
+   "QQQ": "LOSS"
+  },
+  {
+   "date": "2026-08-31",
+   "regime": "BEAR",
+   "favored": "P",
+   "clean": true,
+   "vix_confirms": true,
+   "index_confirms": true,
+   "chg": {
+    "ES": -0.37,
+    "NQ": -0.35,
+    "YM": -0.36,
+    "VIX": 6.58,
+    "SPY": -0.37,
+    "QQQ": -0.34
+   },
+   "premarket_bar": {
+    "ES": true,
+    "NQ": true,
+    "YM": true,
+    "VIX": true,
+    "SPY": true,
+    "QQQ": true
+   },
+   "SPY": "NONE",
+   "QQQ": "NONE"
+  },
+  {
+   "date": "2026-08-28",
+   "regime": "ROTATION",
+   "favored": "P",
+   "clean": false,
+   "vix_confirms": false,
+   "index_confirms": false,
+   "chg": {
+    "ES": 0.09,
+    "NQ": -0.12,
+    "YM": 0.17,
+    "VIX": -0.41,
+    "SPY": 0.12,
+    "QQQ": -0.09
+   },
+   "premarket_bar": {
+    "ES": true,
+    "NQ": true,
+    "YM": true,
+    "VIX": true,
+    "SPY": true,
+    "QQQ": true
+   },
+   "SPY": "LOSS",
+   "QQQ": "WIN"
+  },
+  {
+   "date": "2026-08-27",
+   "regime": "MIXED",
+   "favored": null,
+   "clean": false,
+   "vix_confirms": false,
+   "index_confirms": false,
+   "chg": {
+    "ES": 0.28,
+    "NQ": 0.79,
+    "YM": -0.24,
+    "VIX": -0.85,
+    "SPY": 0.25,
+    "QQQ": 0.78
+   },
+   "premarket_bar": {
+    "ES": true,
+    "NQ": true,
+    "YM": true,
+    "VIX": true,
+    "SPY": true,
+    "QQQ": true
+   },
+   "SPY": "\u2014",
+   "QQQ": "\u2014"
+  },
+  {
+   "date": "2026-08-26",
+   "regime": "MIXED",
+   "favored": null,
+   "clean": false,
+   "vix_confirms": false,
+   "index_confirms": false,
+   "chg": {
+    "ES": -0.17,
+    "NQ": -0.43,
+    "YM": -0.03,
+    "VIX": 1.75,
+    "SPY": -0.15,
+    "QQQ": -0.41
+   },
+   "premarket_bar": {
+    "ES": true,
+    "NQ": true,
+    "YM": true,
+    "VIX": true,
+    "SPY": true,
+    "QQQ": true
+   },
+   "SPY": "\u2014",
+   "QQQ": "\u2014"
+  },
+  {
+   "date": "2026-08-25",
+   "regime": "BULL",
+   "favored": "C",
+   "clean": false,
+   "vix_confirms": false,
+   "index_confirms": true,
+   "chg": {
+    "ES": 0.37,
+    "NQ": 0.78,
+    "YM": 0.43,
+    "VIX": -0.13,
+    "SPY": 0.39,
+    "QQQ": 0.81
+   },
+   "premarket_bar": {
+    "ES": true,
+    "NQ": true,
+    "YM": true,
+    "VIX": true,
+    "SPY": true,
+    "QQQ": true
+   },
+   "SPY": "LOSS",
+   "QQQ": "LOSS"
+  },
+  {
+   "date": "2026-08-24",
+   "regime": "BEAR",
+   "favored": "P",
+   "clean": true,
+   "vix_confirms": true,
+   "index_confirms": true,
+   "chg": {
+    "ES": -0.18,
+    "NQ": -0.62,
+    "YM": -0.11,
+    "VIX": 5.02,
+    "SPY": -0.17,
+    "QQQ": -0.64
+   },
+   "premarket_bar": {
+    "ES": true,
+    "NQ": true,
+    "YM": true,
+    "VIX": true,
+    "SPY": true,
+    "QQQ": true
+   },
+   "SPY": "NONE",
+   "QQQ": "LOSS"
+  },
+  {
+   "date": "2026-08-21",
+   "regime": "BULL",
+   "favored": "C",
+   "clean": true,
+   "vix_confirms": true,
+   "index_confirms": true,
+   "chg": {
+    "ES": 0.5,
+    "NQ": 0.72,
+    "YM": 0.64,
+    "VIX": -3.69,
+    "SPY": 0.51,
+    "QQQ": 0.74
+   },
+   "premarket_bar": {
+    "ES": true,
+    "NQ": true,
+    "YM": true,
+    "VIX": true,
+    "SPY": true,
+    "QQQ": true
+   },
+   "SPY": "WIN",
+   "QQQ": "WIN"
+  },
+  {
+   "date": "2026-08-20",
+   "regime": "BEAR",
+   "favored": "P",
+   "clean": true,
+   "vix_confirms": true,
+   "index_confirms": true,
+   "chg": {
+    "ES": -0.42,
+    "NQ": -0.57,
+    "YM": -0.79,
+    "VIX": 6.31,
+    "SPY": -0.43,
+    "QQQ": -0.58
+   },
+   "premarket_bar": {
+    "ES": true,
+    "NQ": true,
+    "YM": true,
+    "VIX": true,
+    "SPY": true,
+    "QQQ": true
+   },
+   "SPY": "NONE",
+   "QQQ": "LOSS"
+  },
+  {
+   "date": "2026-08-19",
+   "regime": "BULL",
+   "favored": "C",
+   "clean": true,
+   "vix_confirms": true,
+   "index_confirms": true,
+   "chg": {
+    "ES": 0.44,
+    "NQ": 0.53,
+    "YM": 0.52,
+    "VIX": -2.34,
+    "SPY": 0.44,
+    "QQQ": 0.56
+   },
+   "premarket_bar": {
+    "ES": true,
+    "NQ": true,
+    "YM": true,
+    "VIX": true,
+    "SPY": true,
+    "QQQ": true
+   },
+   "SPY": "WIN",
+   "QQQ": "LOSS"
+  },
+  {
+   "date": "2026-08-18",
+   "regime": "MIXED",
+   "favored": null,
+   "clean": false,
+   "vix_confirms": false,
+   "index_confirms": false,
+   "chg": {
+    "ES": -0.42,
+    "NQ": -1.27,
+    "YM": -0.07,
+    "VIX": 3.69,
+    "SPY": -0.4,
+    "QQQ": -1.25
+   },
+   "premarket_bar": {
+    "ES": true,
+    "NQ": true,
+    "YM": true,
+    "VIX": true,
+    "SPY": true,
+    "QQQ": true
+   },
+   "SPY": "\u2014",
+   "QQQ": "\u2014"
+  },
+  {
+   "date": "2026-08-17",
+   "regime": "MIXED",
+   "favored": null,
+   "clean": false,
+   "vix_confirms": false,
+   "index_confirms": false,
+   "chg": {
+    "ES": -0.02,
+    "NQ": 0.2,
+    "YM": -0.34,
+    "VIX": 5.82,
+    "SPY": -0.02,
+    "QQQ": 0.2
+   },
+   "premarket_bar": {
+    "ES": true,
+    "NQ": true,
+    "YM": true,
+    "VIX": true,
+    "SPY": true,
+    "QQQ": true
+   },
+   "SPY": "\u2014",
+   "QQQ": "\u2014"
+  },
+  {
+   "date": "2026-08-14",
+   "regime": "MIXED",
+   "favored": null,
+   "clean": false,
+   "vix_confirms": false,
+   "index_confirms": false,
+   "chg": {
+    "ES": 0.1,
+    "NQ": 0.26,
+    "YM": -0.13,
+    "VIX": -0.75,
+    "SPY": 0.12,
+    "QQQ": 0.27
+   },
+   "premarket_bar": {
+    "ES": true,
+    "NQ": true,
+    "YM": true,
+    "VIX": true,
+    "SPY": true,
+    "QQQ": true
+   },
+   "SPY": "\u2014",
+   "QQQ": "\u2014"
+  },
+  {
+   "date": "2026-08-13",
+   "regime": "BULL",
+   "favored": "C",
+   "clean": false,
+   "vix_confirms": false,
+   "index_confirms": false,
+   "chg": {
+    "ES": 0.23,
+    "NQ": 0.09,
+    "YM": 0.34,
+    "VIX": -0.69,
+    "SPY": 0.24,
+    "QQQ": 0.1
+   },
+   "premarket_bar": {
+    "ES": true,
+    "NQ": true,
+    "YM": true,
+    "VIX": true,
+    "SPY": true,
+    "QQQ": true
+   },
+   "SPY": "NONE",
+   "QQQ": "NONE"
+  },
+  {
+   "date": "2026-08-12",
+   "regime": "BULL",
+   "favored": "C",
+   "clean": false,
+   "vix_confirms": false,
+   "index_confirms": true,
+   "chg": {
+    "ES": 0.48,
+    "NQ": 0.99,
+    "YM": 0.3,
+    "VIX": -1.64,
+    "SPY": 0.45,
+    "QQQ": 0.95
+   },
+   "premarket_bar": {
+    "ES": true,
+    "NQ": true,
+    "YM": true,
+    "VIX": true,
+    "SPY": true,
+    "QQQ": true
+   },
+   "SPY": "NONE",
+   "QQQ": "NONE"
+  },
+  {
+   "date": "2026-08-11",
+   "regime": "BULL",
+   "favored": "C",
+   "clean": false,
+   "vix_confirms": false,
+   "index_confirms": true,
+   "chg": {
+    "ES": 0.14,
+    "NQ": 0.32,
+    "YM": 0.11,
+    "VIX": 0.52,
+    "SPY": 0.14,
+    "QQQ": 0.31
+   },
+   "premarket_bar": {
+    "ES": true,
+    "NQ": true,
+    "YM": true,
+    "VIX": true,
+    "SPY": true,
+    "QQQ": true
+   },
+   "SPY": "NONE",
+   "QQQ": "NONE"
+  },
+  {
+   "date": "2026-08-10",
+   "regime": "MIXED",
+   "favored": null,
+   "clean": false,
+   "vix_confirms": false,
+   "index_confirms": false,
+   "chg": {
+    "ES": -0.08,
+    "NQ": -0.19,
+    "YM": -0.16,
+    "VIX": 3.56,
+    "SPY": -0.08,
+    "QQQ": -0.17
+   },
+   "premarket_bar": {
+    "ES": true,
+    "NQ": true,
+    "YM": true,
+    "VIX": true,
+    "SPY": true,
+    "QQQ": true
+   },
+   "SPY": "\u2014",
+   "QQQ": "\u2014"
+  },
+  {
+   "date": "2026-08-07",
+   "regime": "UNKNOWN",
+   "favored": null,
+   "clean": false,
+   "vix_confirms": false,
+   "index_confirms": false,
+   "chg": {
+    "ES": null,
+    "NQ": null,
+    "YM": null,
+    "VIX": 1.25,
+    "SPY": 0.54,
+    "QQQ": 1.21
+   },
+   "premarket_bar": {
+    "ES": false,
+    "NQ": false,
+    "YM": false,
+    "VIX": true,
+    "SPY": true,
+    "QQQ": true
+   },
+   "SPY": "\u2014",
+   "QQQ": "\u2014"
+  },
+  {
+   "date": "2026-08-06",
+   "regime": "UNKNOWN",
+   "favored": null,
+   "clean": false,
+   "vix_confirms": false,
+   "index_confirms": false,
+   "chg": {
+    "ES": null,
+    "NQ": null,
+    "YM": null,
+    "VIX": 1.01,
+    "SPY": 0.09,
+    "QQQ": -0.69
+   },
+   "premarket_bar": {
+    "ES": false,
+    "NQ": false,
+    "YM": false,
+    "VIX": true,
+    "SPY": true,
+    "QQQ": true
+   },
+   "SPY": "\u2014",
+   "QQQ": "\u2014"
+  },
+  {
+   "date": "2026-08-05",
+   "regime": "UNKNOWN",
+   "favored": null,
+   "clean": false,
+   "vix_confirms": false,
+   "index_confirms": false,
+   "chg": {
+    "ES": null,
+    "NQ": null,
+    "YM": null,
+    "VIX": 2.18,
+    "SPY": 0.46,
+    "QQQ": 0.13
+   },
+   "premarket_bar": {
+    "ES": false,
+    "NQ": false,
+    "YM": false,
+    "VIX": true,
+    "SPY": true,
+    "QQQ": true
+   },
+   "SPY": "\u2014",
+   "QQQ": "\u2014"
+  },
+  {
+   "date": "2026-08-04",
+   "regime": "UNKNOWN",
+   "favored": null,
+   "clean": false,
+   "vix_confirms": false,
+   "index_confirms": false,
+   "chg": {
+    "ES": null,
+    "NQ": null,
+    "YM": null,
+    "VIX": -1.7,
+    "SPY": 0.32,
+    "QQQ": 1.06
+   },
+   "premarket_bar": {
+    "ES": false,
+    "NQ": false,
+    "YM": false,
+    "VIX": true,
+    "SPY": true,
+    "QQQ": true
+   },
+   "SPY": "\u2014",
+   "QQQ": "\u2014"
+  },
+  {
+   "date": "2026-08-03",
+   "regime": "UNKNOWN",
+   "favored": null,
+   "clean": false,
+   "vix_confirms": false,
+   "index_confirms": false,
+   "chg": {
+    "ES": null,
+    "NQ": null,
+    "YM": null,
+    "VIX": -0.13,
+    "SPY": 0.55,
+    "QQQ": 0.2
+   },
+   "premarket_bar": {
+    "ES": false,
+    "NQ": false,
+    "YM": false,
+    "VIX": true,
+    "SPY": true,
+    "QQQ": true
+   },
+   "SPY": "\u2014",
+   "QQQ": "\u2014"
+  },
+  {
+   "date": "2026-07-31",
+   "regime": "UNKNOWN",
+   "favored": null,
+   "clean": false,
+   "vix_confirms": false,
+   "index_confirms": false,
+   "chg": {
+    "ES": null,
+    "NQ": null,
+    "YM": null,
+    "VIX": 1.05,
+    "SPY": 0.19,
+    "QQQ": 0.87
+   },
+   "premarket_bar": {
+    "ES": false,
+    "NQ": false,
+    "YM": false,
+    "VIX": true,
+    "SPY": true,
+    "QQQ": true
+   },
+   "SPY": "\u2014",
+   "QQQ": "\u2014"
+  },
+  {
+   "date": "2026-07-30",
+   "regime": "UNKNOWN",
+   "favored": null,
+   "clean": false,
+   "vix_confirms": false,
+   "index_confirms": false,
+   "chg": {
+    "ES": null,
+    "NQ": null,
+    "YM": null,
+    "VIX": -7.99,
+    "SPY": 0.68,
+    "QQQ": 1.72
+   },
+   "premarket_bar": {
+    "ES": false,
+    "NQ": false,
+    "YM": false,
+    "VIX": true,
+    "SPY": true,
+    "QQQ": true
+   },
+   "SPY": "\u2014",
+   "QQQ": "\u2014"
+  },
+  {
+   "date": "2026-07-29",
+   "regime": "UNKNOWN",
+   "favored": null,
+   "clean": false,
+   "vix_confirms": false,
+   "index_confirms": false,
+   "chg": {
+    "ES": null,
+    "NQ": null,
+    "YM": null,
+    "VIX": 2.8,
+    "SPY": -0.03,
+    "QQQ": -0.02
+   },
+   "premarket_bar": {
+    "ES": false,
+    "NQ": false,
+    "YM": false,
+    "VIX": true,
+    "SPY": true,
+    "QQQ": true
+   },
+   "SPY": "\u2014",
+   "QQQ": "\u2014"
+  },
+  {
+   "date": "2026-07-28",
+   "regime": "UNKNOWN",
+   "favored": null,
+   "clean": false,
+   "vix_confirms": false,
+   "index_confirms": false,
+   "chg": {
+    "ES": null,
+    "NQ": null,
+    "YM": null,
+    "VIX": -0.16,
+    "SPY": 0.11,
+    "QQQ": -0.69
+   },
+   "premarket_bar": {
+    "ES": false,
+    "NQ": false,
+    "YM": false,
+    "VIX": true,
+    "SPY": true,
+    "QQQ": true
+   },
+   "SPY": "\u2014",
+   "QQQ": "\u2014"
+  },
+  {
+   "date": "2026-07-27",
+   "regime": "UNKNOWN",
+   "favored": null,
+   "clean": false,
+   "vix_confirms": false,
+   "index_confirms": false,
+   "chg": {
+    "ES": null,
+    "NQ": null,
+    "YM": null,
+    "VIX": null,
+    "SPY": 0.89,
+    "QQQ": 1.44
+   },
+   "premarket_bar": {
+    "ES": false,
+    "NQ": false,
+    "YM": false,
+    "VIX": false,
+    "SPY": true,
+    "QQQ": true
+   },
+   "SPY": "\u2014",
+   "QQQ": "\u2014"
+  }
+ ]
+}
