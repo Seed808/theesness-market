@@ -1,0 +1,36 @@
+# One ticker per line. '#' starts a comment. SPY, QQQ, IWM, DIA are always added.
+# VIX is indicator-only (never gets option cards). RR is shares-only (skipped by the options scan).
+SPY
+QQQ
+IWM
+DIA
+SPX
+VIX
+AMD
+AMZN
+ARM
+ASTS
+AVGO
+BABA
+COIN
+CRWV
+GOOGL
+HOOD
+INTC
+KVUE
+META
+MSFT
+MU
+NFLX
+NVDA
+OKLO
+ORCL
+PLTR
+RKLB
+RR
+SHOP
+SMCI
+TSLA
+UPST
+JEF
+APO

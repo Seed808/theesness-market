@@ -1,0 +1,4 @@
+# Key headlines for the report. Used ONLY if the first non-comment line is today's date (HST).
+# Remove the "# " from the date line, set today's date, add one headline per line.
+#
+# date=2026-10-19

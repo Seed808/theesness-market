@@ -1,0 +1,11 @@
+# ThinkorSwim override. Used ONLY if the first non-comment line is today's date (HST),
+# so old numbers can never leak into a later run. Edit on github.com: open this file → pencil
+# icon → change the date and values → "Commit changes". Do it before the run you want to affect.
+# Remove the leading "# " from lines to activate them.
+#
+# date=2026-10-19
+# ES last=6712.25 prev=6740.00
+# VIX last=18.40 prev=17.10
+# NVDA ivp=72                 IV percentile — required for any earnings-day 0DTE
+# NVDA earnings=2026-11-19
+# SPY 2026-10-19 P 670 bid=1.10 ask=1.14 oi=12000

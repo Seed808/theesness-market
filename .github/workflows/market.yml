@@ -1,0 +1,67 @@
+name: market
+# Wakes every 10 minutes around the US open and every 30 minutes after the close (weekdays).
+# GitHub's timer can run late or skip, so runner.py decides what is actually due each time.
+# All cron times are UTC. Hawaii = UTC-10 year-round.
+#   12:04–16:54 UTC = 2:04–6:54am HST  (covers pre-market + confirm, summer and winter opens)
+#   20:24–23:54 UTC = 10:24am–1:54pm HST (grading after the close)
+on:
+  schedule:
+    - cron: "4,14,24,34,44,54 12-16 * * 1-5"
+    - cron: "24,54 20-23 * * 1-5"
+  workflow_dispatch:
+    inputs:
+      test:
+        description: "Test scan right now (ignores the clock, never graded)"
+        type: choice
+        options: [none, premarket, confirm]
+        default: none
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+concurrency:
+  group: market
+  cancel-in-progress: false
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install -r requirements.txt
+      - name: rule self-test
+        run: python market/engine.py --selftest
+      - name: run
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          ACCOUNT_SIZE: ${{ secrets.ACCOUNT_SIZE }}
+          RISK_PCT: ${{ secrets.RISK_PCT }}
+          RISK_FIXED_DOLLARS: ${{ secrets.RISK_FIXED_DOLLARS }}
+        run: |
+          git pull --rebase --autostash -q || true
+          T="${{ github.event.inputs.test }}"
+          if [ -n "$T" ] && [ "$T" != "none" ]; then
+            python market/runner.py --test "$T" 2>&1 | tee run_log.txt
+          else
+            python market/runner.py 2>&1 | tee run_log.txt
+          fi
+      - name: commit ledger
+        if: always()
+        run: |
+          git config user.name "market-bot"
+          git config user.email "market-bot@users.noreply.github.com"
+          git add -A ledger
+          git diff --cached --quiet || git commit -m "ledger: $(date -u +%Y-%m-%dT%H:%MZ)"
+          for i in 1 2 3 4 5; do git pull --rebase --autostash && git push && break; git rebase --abort 2>/dev/null; sleep $((i*7)); done
+      - uses: actions/upload-pages-artifact@v3
+        with: { path: _site }
+  deploy:
+    needs: run
+    runs-on: ubuntu-latest
+    environment: { name: github-pages, url: "${{ steps.d.outputs.page_url }}" }
+    steps:
+      - id: d
+        uses: actions/deploy-pages@v4
