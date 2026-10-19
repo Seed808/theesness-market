@@ -651,10 +651,10 @@ def _sign(chg: Optional[float]) -> str:
 def compute_bias(es: Quote, nq: Quote, ym: Quote, vix: Quote, spy: Quote, qqq: Quote) -> Bias:
     """
     Your ES/YM rules, in order:
-      1. ES red  AND YM red                  -> BEAR, puts favored
-      2. YM green AND (NQ red OR ES red)     -> ROTATION, puts allowed, may fade midday
-      3. ES green AND YM green               -> BULL, NO put setups (hard block)
-      else                                   -> MIXED / UNKNOWN, no favored side (no A+)
+      1. ES red  AND YM red                  → BEAR, puts favored
+      2. YM green AND (NQ red OR ES red)     → ROTATION, puts allowed, may fade midday
+      3. ES green AND YM green               → BULL, NO put setups (hard block)
+      else                                   → MIXED / UNKNOWN, no favored side (no A+)
     Confirmations (needed for a "clean" match / A+):
       VIX: BEAR/ROTATION need VIX up >= VIX_CONFIRM_PCT; BULL needs VIX down >= VIX_CONFIRM_PCT.
       SPY & QQQ overnight: both must be the same color as the favored direction.
@@ -665,32 +665,32 @@ def compute_bias(es: Quote, nq: Quote, ym: Quote, vix: Quote, spy: Quote, qqq: Q
              f"YM {s_ym} ({_pct(ym.chg_pct)})"]
     if s_es == "red" and s_ym == "red":
         regime, fav, block = "BEAR", "P", False
-        notes.append("ES+YM red -> broad bear, puts favored")
+        notes.append("ES+YM red → broad bear, puts favored")
     elif s_ym == "green" and (s_nq == "red" or s_es == "red"):
         regime, fav, block = "ROTATION", "P", False
-        notes.append("YM green + NQ/ES red -> rotation; puts may fade midday")
+        notes.append("YM green + NQ/ES red → rotation; puts may fade midday")
     elif s_es == "green" and s_ym == "green":
         regime, fav, block = "BULL", "C", True
-        notes.append("ES+YM green -> NO put setups")
+        notes.append("ES+YM green → NO put setups")
     elif "unknown" in (s_es, s_ym):
         regime, fav, block = "UNKNOWN", None, False
-        notes.append("Futures data missing -> no bias, no A+")
+        notes.append("Futures data missing → no bias, no A+")
     else:
         regime, fav, block = "MIXED", None, False
-        notes.append("No ES/YM rule matched -> no favored side, no A+")
+        notes.append("No ES/YM rule matched → no favored side, no A+")
 
     vix_ok = False
     if s_vix is not None and fav == "P":
         vix_ok = s_vix >= VIX_CONFIRM_PCT
     elif s_vix is not None and fav == "C":
         vix_ok = s_vix <= -VIX_CONFIRM_PCT
-    notes.append(f"VIX {vix.last if vix.last is not None else 'n/a'} ({_pct(s_vix)}) "
-                 f"-> {'confirms' if vix_ok else 'does not confirm'}")
+    notes.append(f"VIX {'n/a' if vix.last is None else f'{vix.last:.2f}'} ({_pct(s_vix)}) "
+                 f"→ {'confirms' if vix_ok else 'does not confirm'}")
 
     want = {"P": "red", "C": "green"}.get(fav or "", None)
     idx_ok = want is not None and s_spy == want and s_qqq == want
     notes.append(f"SPY {s_spy} ({_pct(spy.chg_pct)}), QQQ {s_qqq} ({_pct(qqq.chg_pct)}) "
-                 f"-> {'confirms' if idx_ok else 'does not confirm'}")
+                 f"→ {'confirms' if idx_ok else 'does not confirm'}")
     return Bias(regime, fav, block, vix_ok, idx_ok, notes)
 
 
@@ -933,28 +933,49 @@ def evaluate(sym: str, right: str, bias: Bias, tech: Technicals, opt: Optional[O
 # TELEGRAM
 # =============================================================================================
 
-def send_telegram(text: str, dry_run: bool = False) -> bool:
+def _chunks(text: str, limit: int = 3900) -> list:
+    """Split on blank lines so a card (and its HTML tags) is never cut in half."""
+    out, cur = [], ""
+    for block in text.split("\n\n"):
+        add = block if not cur else cur + "\n\n" + block
+        if len(add) <= limit:
+            cur = add
+        else:
+            if cur:
+                out.append(cur)
+            cur = block[:limit]
+    return out + ([cur] if cur else [])
+
+
+def send_telegram(text: str, dry_run: bool = False, html: bool = False) -> bool:
+    """html=True uses Telegram's HTML formatting (<b>, <i>, <code>). If Telegram rejects the
+    formatting, the same message is re-sent as plain text so nothing is lost."""
     if dry_run or not (TELEGRAM_BOT_TOKEN and TELEGRAM_CHAT_ID):
         if not dry_run:
             print("[warn] TELEGRAM_BOT_TOKEN / TELEGRAM_CHAT_ID not set — printing instead",
                   file=sys.stderr)
-        print("\n" + text + "\n")
+        print("\n" + (re.sub(r"</?[bic](?:ode)?>", "", text) if html else text) + "\n")
         return dry_run
+    import html as _html
     import requests
     url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
-    chunks = [text[i:i + 4000] for i in range(0, len(text), 4000)] or [""]
     ok_all = True
-    for chunk in chunks:
+    for chunk in _chunks(text):
+        data = {"chat_id": TELEGRAM_CHAT_ID, "text": chunk, "disable_web_page_preview": "true"}
+        if html:
+            data["parse_mode"] = "HTML"
         for attempt in range(5):
             try:
-                r = requests.post(url, data={"chat_id": TELEGRAM_CHAT_ID, "text": chunk,
-                                             "disable_web_page_preview": "true"},
-                                  timeout=HTTP_TIMEOUT)
+                r = requests.post(url, data=data, timeout=HTTP_TIMEOUT)
                 if r.status_code == 200:
                     break
                 if r.status_code == 429:
                     wait = (r.json().get("parameters") or {}).get("retry_after", 5)
                     _time.sleep(int(wait) + 1)
+                    continue
+                if r.status_code == 400 and data.get("parse_mode"):
+                    data.pop("parse_mode")
+                    data["text"] = _html.unescape(re.sub(r"</?[bic](?:ode)?>", "", chunk))
                     continue
                 print(f"[warn] telegram {r.status_code}: {r.text[:200]}", file=sys.stderr)
             except Exception as e:  # noqa: BLE001
@@ -964,6 +985,80 @@ def send_telegram(text: str, dry_run: bool = False) -> bool:
             ok_all = False
         _time.sleep(1.1)   # stay under per-chat rate limits
     return ok_all
+
+
+# --- Telegram layout -------------------------------------------------------------------------
+
+def _h(x) -> str:
+    import html as _html
+    return _html.escape(str(x), quote=False)
+
+
+def _short_t(dt: datetime) -> str:
+    return dt.astimezone(HST).strftime("%I:%M %p").lstrip("0")
+
+
+def tg_card(i: "Idea") -> str:
+    """One trade card as a short block. Same fields as the pipe format, one idea per line."""
+    exp = datetime.strptime(i.expiry, "%Y-%m-%d").strftime("%-m/%-d")
+    head = f"<b>{_h(i.ticker)} {_h(i.type)} {i.strike:g}</b> · exp {exp} · <b>{i.confidence}/10</b>"
+    if i.a_plus:
+        head += " · <b>A+</b>"
+    reasons = ", ".join(x for x in i.reasoning.split(", ") if x != i.bias)
+    lines = [
+        head,
+        (f"Stock ${i.underlying:,.2f} ({_h(i.underlying_asof)})" if i.underlying is not None
+         else "Stock price n/a"),
+        f"Entry ${i.entry_floor:.2f}–${i.entry_ceiling:.2f} · Premium ${i.premium:.2f}",
+        f"Target ${i.target:.2f} · Stop ${i.stop:.2f} · Max {_h(i.max_contracts)}",
+        f"Bias {_h(i.bias)} · {_h(reasons)}",
+        f"<i>{_h(i.status)}</i>",
+    ]
+    if i.flags:
+        lines.append(f"<i>{_h(i.flags)}</i>")
+    return "\n".join(lines)
+
+
+def tg_bias(r: "ScanResult") -> str:
+    b, q = r.bias, r.quotes
+    fav = {"P": "puts favored", "C": "calls favored"}.get(b.favored, "no favored side")
+
+    def c(k):
+        x = q.get(k)
+        if x is None or x.chg_pct is None:
+            return "n/a"
+        return f"{x.chg_pct:+.2f}%" + (" flat" if k in ("ES", "NQ", "YM") and _sign(x.chg_pct) == "flat" else "")
+    vix = q.get("VIX")
+    vix_px = "n/a" if vix is None or vix.last is None else f"{vix.last:.2f}"
+    rule = b.notes[1] if len(b.notes) > 1 else ""
+    return (f"<b>BIAS: {_h(b.regime)}</b> · {fav} · {'clean' if b.clean else 'not clean'}\n"
+            f"ES {c('ES')} · NQ {c('NQ')} · YM {c('YM')}\n"
+            f"VIX {vix_px} ({c('VIX')}) · SPY {c('SPY')} · QQQ {c('QQQ')}\n"
+            f"{_h(rule)}\n"
+            f"VIX {'confirms' if b.vix_confirms else 'does not confirm'} · "
+            f"SPY/QQQ {'confirm' if b.index_confirms else 'do not confirm'}")
+
+
+def tg_report(r: "ScanResult", cards: Optional[list] = None, prefix: str = "") -> str:
+    s = r.session
+    cards = r.top if cards is None else cards
+    title = {"premarket": "PRE-MARKET", "confirm": "CONFIRMATION", "rescan": "RE-SCAN"}.get(r.mode, r.mode.upper())
+    parts = [(f"<b>{_h(prefix)}</b>\n" if prefix else "")
+             + f"<b>{title}</b> · {r.ran_at.strftime('%a %-m/%-d')} {_short_t(r.ran_at)} HST\n"
+             f"Open {_short_t(s.open_hst)} · Close {_short_t(s.close_hst)} HST"
+             + (" (early close)" if s.early_close else ""),
+             tg_bias(r)]
+    flags = [f for f in r.flags if not f.startswith(("Amateur hour", "No damaged"))]
+    if flags:
+        parts.append("<b>FLAGS</b>\n" + "\n".join(f"• {_h(f)}" for f in flags))
+    if r.headlines:
+        parts.append("<b>HEADLINES</b>\n" + "\n".join(f"• {_h(h)}" for h in r.headlines))
+    parts += [tg_card(i) for i in cards] if cards else ["<b>No quality setups.</b>"]
+    foot = f"{len(r.ideas)} passed · {len(r.skipped)} rejected · data ~15 min delayed"
+    if "UNSET" in {i.max_contracts for i in cards}:
+        foot += "\nMax contracts UNSET — add ACCOUNT_SIZE + RISK_PCT secrets"
+    parts.append(f"<i>{foot}</i>")
+    return "\n\n".join(parts)
 
 
 # =============================================================================================

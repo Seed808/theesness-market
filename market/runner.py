@@ -344,10 +344,12 @@ def grade_due(now: datetime, fetch=None) -> list:
 def after_close(now: datetime) -> None:
     graded = grade_due(now)
     if graded:
-        lines = [f"GRADED — {E.fmt_hst(now)}"]
-        lines += [f"{g['ticker']} {g['type']} {g['strike']} {g['expiry']}: {g['result']} "
-                  f"({g['pnl_pct']}%, {g['method']})" for g in graded]
-        E.send_telegram("\n".join(lines))
+        lines = [f"<b>GRADED</b> · {now.strftime('%a %-m/%-d')} {E._short_t(now)} HST"]
+        lines += [f"<b>{E._h(g['ticker'])} {E._h(g['type'])} {float(g['strike']):g}</b> → "
+                  f"<b>{E._h(g['result'])}</b>"
+                  + (f" ({float(g['pnl_pct']):+.1f}%)" if g['pnl_pct'] not in ('', None) else "")
+                  + f" · {E._h(g['method'])}" for g in graded]
+        E.send_telegram("\n".join(lines), html=True)
     s = E.session_for(now.date())
     if s and now >= s.close_hst + timedelta(minutes=GRADE_AFTER_CLOSE_MIN):
         save_day_bars(now.date())
@@ -366,13 +368,13 @@ def announce(snap: dict, r: E.ScanResult, now: datetime) -> None:
     ideas = snap["_ideas"]
     if r.mode == "rescan":
         if ideas:
-            E.send_telegram(f"NEW SETUP(S) — {E.fmt_hst(now)} · bias {r.bias.regime}\n"
-                            + "\n".join(i.card() for i in ideas))
+            E.send_telegram(f"<b>NEW SETUP</b> · {E._short_t(now)} HST · bias {E._h(r.bias.regime)}"
+                            + "\n\n" + "\n\n".join(E.tg_card(i) for i in ideas), html=True)
     else:
-        E.send_telegram(E.format_report(r))
+        E.send_telegram(E.tg_report(r, ideas), html=True)
     for i in ideas:
         if i.a_plus:
-            E.send_telegram(f"A+ ALERT — {E.fmt_hst(now)}\n{i.card()}")
+            E.send_telegram(f"<b>A+ ALERT</b> · {E._short_t(now)} HST\n\n{E.tg_card(i)}", html=True)
 
 
 def main() -> int:
@@ -394,7 +396,7 @@ def main() -> int:
         r = E.scan(a.test, s, overrides_for(today), now)
         save_test(r)
         print(E.format_report(r))
-        E.send_telegram("[TEST RUN — not a live signal]\n" + E.format_report(r))
+        E.send_telegram(E.tg_report(r, prefix="TEST RUN — not a live signal"), html=True)
     elif session is not None:
         for mode in due_modes(session, now):
             print(f"{mode} is due")
