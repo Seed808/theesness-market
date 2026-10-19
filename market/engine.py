@@ -125,6 +125,7 @@ RVOL_CONFIRM = 1.5         # last 5-min volume vs prior 20-bar avg
 HIGH_IVP = 60              # earnings 0DTE: IV percentile >= this = stand down (PLACEHOLDER)
 A_PLUS_MIN_CONFIDENCE = 8
 MAX_CARDS = 3
+RAW_CHAIN_ROWS = 16        # option rows nearest the money saved per ticker per run
 
 # --- Core list (always on). Futures proxies via yfinance. ---------------------------------
 CORE_INDEX = ["SPY", "QQQ", "IWM", "DIA"]
@@ -300,6 +301,7 @@ class Technicals:
     pm_high: Optional[float] = None
     pm_low: Optional[float] = None
     last: Optional[float] = None
+    last_time: Optional[datetime] = None     # timestamp of the bar that gave `last`
     avg_volume: Optional[float] = None
     trend: dict = field(default_factory=dict)        # {"1m": "up"/"down"/"flat", ...}
     vwap: Optional[float] = None
@@ -351,9 +353,16 @@ class Idea:
     flags: str = ""
     data_source: str = ""
     contract: str = ""
+    underlying: Optional[float] = None    # stock price when the card was made
+    underlying_asof: str = ""             # time of that price (HST) or "ToS"
+
+    def price_tag(self) -> str:
+        if self.underlying is None:
+            return ""
+        return f" @ ${self.underlying:,.2f} ({self.underlying_asof})"
 
     def card(self) -> str:
-        return (f"{self.ticker} | {self.type} | {self.bias} | {self.expiry} | {self.strike:g} | "
+        return (f"{self.ticker}{self.price_tag()} | {self.type} | {self.bias} | {self.expiry} | {self.strike:g} | "
                 f"${self.entry_floor:.2f}–${self.entry_ceiling:.2f} | ${self.premium:.2f} | "
                 f"{self.max_contracts} | ${self.target:.2f} | ${self.stop:.2f} | "
                 f"{self.reasoning} | {self.confidence}/10"
@@ -496,6 +505,7 @@ def fetch_technicals(symbol: str, session: Session, mode: str) -> Technicals:
             return tech
         m1 = m1.tz_convert(ET)
         tech.last = float(m1["Close"].iloc[-1])
+        tech.last_time = m1.index[-1].to_pydatetime().astimezone(HST)
         open_et = session.open_hst.astimezone(ET)
         today = m1[m1.index.date == session.trade_date]
         pm = today[today.index < open_et]
@@ -914,7 +924,8 @@ def evaluate(sym: str, right: str, bias: Bias, tech: Technicals, opt: Optional[O
     idea = Idea(sym, "PUT" if right == "P" else "CALL", bias.regime, opt.expiry.isoformat(),
                 opt.strike, premium, ceiling, premium, max_contracts(ceiling, stop), target, stop,
                 ", ".join(reasons), score, a_plus, status, "; ".join(flags), opt.source,
-                opt.contract or occ_symbol(sym, opt))
+                opt.contract or occ_symbol(sym, opt), round(tech.last, 2),
+                tech.last_time.strftime("%I:%M %p HST").lstrip("0") if tech.last_time else "ToS")
     return idea, []
 
 
@@ -1004,6 +1015,7 @@ class ScanResult:
     flags: list
     quotes: dict         # name -> Quote, for the report
     headlines: list
+    raw: dict = field(default_factory=dict)   # per-ticker inputs, saved for backtesting
 
     @property
     def top(self) -> list:
@@ -1040,13 +1052,13 @@ def scan(mode: str, session: Session, ov: Overrides, now: Optional[datetime] = N
     bias = compute_bias(q["ES"], q["NQ"], q["YM"], q["VIX"], q["SPY"], q["QQQ"])
 
     # --- Scan ---
-    ideas, skipped = [], []
+    ideas, skipped, raw = [], [], {}
     for sym in load_watchlist():
         if sym in INDICATOR_ONLY or sym in SHARES_ONLY:
             continue
         tech = fetch_technicals(sym, session, mode)
         if sym in ov.quotes and ov.quotes[sym].get("last") is not None:
-            tech.last = ov.quotes[sym]["last"]
+            tech.last, tech.last_time = ov.quotes[sym]["last"], None   # shown as "ToS"
         if tech.last is None:
             skipped.append(f"{sym}: no data"); continue
 
@@ -1064,6 +1076,13 @@ def scan(mode: str, session: Session, ov: Overrides, now: Optional[datetime] = N
                                         else fetch_earnings_date(sym))
         earn_res = ("", "") if sym in CORE_INDEX or sym == "SPX" else \
             earnings_check(sym, earn, expiry, session.trade_date, ov.ivp.get(sym))
+        near = sorted((o for o in chain if o.expiry == expiry),
+                      key=lambda o: abs(o.strike - tech.last))[:RAW_CHAIN_ROWS]
+        raw[sym] = {"tech": {k: (v.isoformat() if isinstance(v, datetime) else v)
+                             for k, v in asdict(tech).items()},
+                    "expiry": expiry.isoformat(), "earnings": str(earn) if earn else None,
+                    "chain": [[o.right, o.strike, o.bid, o.ask, o.oi, o.iv, o.source]
+                              for o in near]}
         for right in sides:
             opt = pick_strike(chain, expiry, right, tech.last)
             idea, why = evaluate(sym, right, bias, tech, opt, eflag, earn_res, rules, mode,
@@ -1076,7 +1095,7 @@ def scan(mode: str, session: Session, ov: Overrides, now: Optional[datetime] = N
 
     ideas.sort(key=lambda i: (-i.confidence, i.ticker))
     return ScanResult(mode, now, session, rules, bias, ideas, skipped,
-                      day_flags(session, rules), q, load_headlines())
+                      day_flags(session, rules), q, load_headlines(), raw)
 
 
 def format_report(r: ScanResult) -> str:
@@ -1214,6 +1233,8 @@ def selftest() -> int:
     idea, why = evaluate("SPY", "P", bias, tech, good, "", ("", ""), day_rules(mon), "confirm",
                          now, s_summer)
     check("A+ idea produced", idea is not None and idea.a_plus and idea.confidence >= 8)
+    check("card carries stock price", idea and idea.underlying == 670.4
+          and "@ $670.40" in idea.card())
     check("entry ceiling = +20%", idea and abs(idea.entry_ceiling - round(idea.premium * 1.2, 2)) < 1e-9)
     idea2, _ = evaluate("SPY", "P", bias, tech, good, "", ("", ""), day_rules(mon), "premarket",
                         s_summer.at(-20), s_summer)

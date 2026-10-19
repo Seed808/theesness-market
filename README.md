@@ -11,15 +11,26 @@ Site: https://seed808.github.io/theesness-market/
 
 | When | What |
 |---|---|
-| ~open − 75 min to the open | **Pre-market read.** ES/NQ/YM + VIX + SPY/QQQ bias, watchlist scan, up to 3 *conditional* cards. Not graded. |
-| open + 30 to open + 120 min | **Confirmation read.** Re-checks with 1m/5m/15m trend, first 5-minute candle, VWAP, relative volume. Up to 3 cards, locked. A+ cards trigger a Telegram alert. |
-| after the close | **Grading.** Each GO card from the confirmation read is marked WIN / LOSS / FLAT from the contract's 5-minute prices. |
+| last 30 min before the open | **Pre-market read.** ES/NQ/YM + VIX + SPY/QQQ bias, watchlist scan, up to 3 *conditional* cards. Not graded. |
+| open + 30 min (first run after) | **Confirmation read.** Re-checks with 1m/5m/15m trend, first 5-minute candle, VWAP, relative volume. Up to 3 locked cards. A+ cards trigger a Telegram alert. |
+| every ~10 min until 9:00am | **Re-scans.** Posts and locks only NEW setups (a ticker + direction already posted today is skipped). Graded like confirmation cards. |
+| after the close | **Grading** of every GO card (WIN / LOSS / FLAT from the contract's 5-minute prices), **saves the day's 1-minute bars**, and **re-runs the bias backtest**. |
+
+Every card shows the stock price it was made from and that price's time, so you can check it
+against your own screen. Data is ~15 minutes delayed.
 
 The open is 3:30am HST while the US is on daylight time and 4:30am HST otherwise; the code
 works this out each day from New York time.
 
 GitHub's timer is best-effort (runs can be late or skipped), so the workflow wakes every
 10 minutes and the runner only does what is still due.
+
+## Backtest
+
+`backtest.html` replays the bias rules on every past day Yahoo still has 5-minute bars for and
+checks whether SPY / QQQ moved the favored way first after amateur hour. It tests the bias
+rules on the stock only — free data has no past option prices. The option rows saved in
+`data/raw/` each run are what will make card-level backtests possible later.
 
 ## Files
 
@@ -28,9 +39,12 @@ GitHub's timer is best-effort (runs can be late or skipped), so the workflow wak
 | `market/engine.py` | The rules (bias, filters, A+ criteria, entry range, sizing). `python market/engine.py --selftest` checks them. |
 | `market/runner.py` | Decides what's due, locks cards, grades them. |
 | `market/site_build.py` | Writes the pages from the ledger. |
+| `market/backtest.py` | Bias backtest. |
 | `ledger/runs/` | One locked file per day per read. Never rewritten. |
 | `ledger/locks.csv`, `ledger/grades.csv` | Flat record of every card and every grade. |
 | `ledger/tests/` | Hand-started test runs (never graded). |
+| `ledger/backtest.json` | Latest bias backtest (rebuilt once a day after the close). |
+| `data/raw/`, `data/bars/` | Saved market data for backtesting. |
 | `watchlist.txt` | Tickers to scan. Edit on GitHub to add/remove. |
 | `inputs/tos_override.txt` | Optional ThinkorSwim numbers — only used when dated today. |
 | `inputs/headlines.txt` | Optional headlines — only used when dated today. |

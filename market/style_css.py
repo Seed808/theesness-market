@@ -95,5 +95,6 @@ footer{margin-top:44px;padding-top:14px;border-top:1px solid var(--rule);font-si
 .bias{background:var(--panel);border:1px solid var(--rule);padding:12px 14px}
 .bias .reg{font-family:var(--display);font-weight:700;font-size:30px;letter-spacing:.03em}
 .bias ul{margin:6px 0 0;padding-left:18px;font-size:13px} .bias li{margin:2px 0}
+.px{font-family:var(--mono);font-size:13px;font-variant-numeric:tabular-nums}
 .empty{background:var(--panel);border:1px dashed var(--rule);padding:16px;color:var(--muted)}
 """

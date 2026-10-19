@@ -28,7 +28,8 @@ FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com">'
 def page(title: str, body: str, depth: int, active: str) -> str:
     up = "../" * depth
     links = [("board", "index.html", "Board"), ("record", "record.html", "Record"),
-             ("days", "days.html", "Days"), ("test", "test.html", "Test runs")]
+             ("backtest", "backtest.html", "Backtest"), ("days", "days.html", "Days"),
+             ("test", "test.html", "Test runs")]
     nav = "".join(f'<a href="{up}{h}" class="{"on" if k == active else ""}">{lab}</a>'
                   for k, h, lab in links)
     return ('<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" '
@@ -57,12 +58,22 @@ def _money(x) -> str:
 # --------------------------------------------------------------------------------------------
 
 def load_runs() -> dict:
-    """{date: {"premarket": snap, "confirm": snap}}"""
+    """{date: {"premarket": snap, "confirm": snap, "rescans": [snap, ...] oldest first}}"""
     out = {}
     for p in sorted((LEDGER / "runs").glob("*.json")):
         s = json.loads(p.read_text())
-        out.setdefault(s["trade_date"], {})[s["mode"]] = s
+        day = out.setdefault(s["trade_date"], {"rescans": []})
+        if s["mode"] == "rescan":
+            day["rescans"].append(s)
+        else:
+            day[s["mode"]] = s
+    for day in out.values():
+        day["rescans"].sort(key=lambda x: x["ran_at"])
     return out
+
+
+def graded_snaps(modes: dict) -> list:
+    return ([modes["confirm"]] if modes.get("confirm") else []) + modes.get("rescans", [])
 
 
 def load_grades() -> dict:
@@ -76,9 +87,10 @@ def load_grades() -> dict:
 def record_rows(runs: dict, grades: dict) -> list:
     rows = []
     for d, modes in runs.items():
-        for c in (modes.get("confirm") or {}).get("cards", []):
-            if c["status"] == "GO" and c["id"] in grades:
-                rows.append({**c, **grades[c["id"]]})
+        for snap in graded_snaps(modes):
+            for c in snap["cards"]:
+                if c["status"] == "GO" and c["id"] in grades:
+                    rows.append({**c, **grades[c["id"]]})
     return sorted(rows, key=lambda r: r["locked_at"], reverse=True)
 
 
@@ -134,7 +146,7 @@ def card_html(c: dict, g: dict | None) -> str:
         pnl = f' ({float(g["pnl_pct"]):+.1f}%)' if g.get("pnl_pct") not in ("", None) else ""
         res = (f'<dt>Result</dt><dd><span class="res-{e(g["result"])}">{e(g["result"])}</span>'
                f'{pnl} <span class="eyebrow">{e(g["method"])}</span></dd>')
-    elif c["mode"] == "confirm" and c["status"] == "GO":
+    elif c["mode"] in ("confirm", "rescan") and c["status"] == "GO":
         res = '<dt>Result</dt><dd class="eyebrow">graded after the close</dd>'
     aplus = c["a_plus"] in (True, "True")
     badge = '<span class="badge gap2">A+</span>' if aplus else ""
@@ -143,7 +155,10 @@ def card_html(c: dict, g: dict | None) -> str:
             f'<div class="head"><span><span class="tk">{e(c["ticker"])}</span> '
             f'<span class="ty {e(c["type"])}">{e(c["type"])}</span> {badge}</span>'
             f'<span class="conf">{e(str(c["confidence"]))}/10</span></div>'
-            f'<div class="status">{e(c["status"])} · locked {_t(c["locked_at"])}</div>'
+            + (f'<div class="px">Stock {_money(c["underlying"])} '
+               f'<span class="eyebrow">as of {e(str(c.get("underlying_asof") or ""))}</span></div>'
+               if c.get("underlying") not in (None, "") else "")
+            + f'<div class="status">{e(c["status"])} · locked {_t(c["locked_at"])}</div>'
             f'<dl class="lines">'
             f'<dt>Bias</dt><dd>{e(c["bias"])}</dd>'
             f'<dt>Expiry</dt><dd>{e(c["expiry"])}</dd>'
@@ -170,15 +185,28 @@ def run_section(title: str, s: dict | None, grades: dict, empty: str) -> str:
                if s["rejections"] else ""))
 
 
+def rescan_section(rescans: list, grades: dict) -> str:
+    if not rescans:
+        return ""
+    cards = [c for snap in reversed(rescans) for c in snap["cards"]]
+    body = ('<div class="board">' + "".join(card_html(c, grades.get(c["id"])) for c in cards)
+            + '</div>') if cards else '<div class="empty">No new setups since the confirmation read.</div>'
+    return (f'<h2>New during the morning — newest first</h2>{body}<p class="note">{len(rescans)} '
+            f're-scan(s), last at {_t(rescans[-1]["ran_at"])}. A ticker and direction already posted '
+            'today is not posted again.</p>')
+
+
 def day_body(d: str, modes: dict, grades: dict) -> str:
     sess = E.session_for(date.fromisoformat(d))
     when = (f'Open {sess.open_hst.strftime("%I:%M %p").lstrip("0")} · close '
             f'{sess.close_hst.strftime("%I:%M %p").lstrip("0")} HST'
             + (" · early close" if sess.early_close else "")) if sess else ""
-    lead = modes.get("confirm") or modes.get("premarket")
+    rescans = modes.get("rescans", [])
+    lead = (rescans[-1] if rescans else None) or modes.get("confirm") or modes.get("premarket")
     return (f'<h1>{e(date.fromisoformat(d).strftime("%a %b %-d, %Y"))}</h1>'
             f'<p class="lede">{e(when)}</p>'
             + (bias_panel(lead) if lead else "")
+            + rescan_section(rescans, grades)
             + run_section("Confirmed — after the first 5-minute candle", modes.get("confirm"), grades,
                           "Confirmation read hasn't run yet (due 30 minutes after the open).")
             + run_section("Pre-market watch — conditional, not graded", modes.get("premarket"),
@@ -190,7 +218,7 @@ def next_run_note(now: datetime) -> str:
     s = E.session_for(d)
     if s is None or now >= s.open_hst:
         s = E.session_for(E.next_trading_day(d))
-    return (f'Next pre-market read: {s.at(-75).strftime("%a %I:%M %p")}–'
+    return (f'Next pre-market read: {s.at(-30).strftime("%a %I:%M %p")}–'
             f'{s.open_hst.strftime("%I:%M %p")} HST (open {s.open_hst.strftime("%I:%M %p")}).')
 
 
@@ -233,7 +261,7 @@ def build(out: Path, now: datetime) -> None:
              f'<th>Result</th><th>How</th></tr></thead><tbody>{trs}</tbody></table></div>') if rows \
         else '<div class="empty">No graded cards yet.</div>'
     rec_body = (f'<h1>Locked record</h1>{tiles(st)}<p class="lede">Only GO cards from the confirmation '
-                'read are graded. Entry is the locked signal premium. Exit is the first of target or '
+                'read and the morning re-scans are graded. Entry is the locked signal premium. Exit is the first of target or '
                 'stop on 5-minute bars (both in one bar counts as a stop), otherwise the day\'s last '
                 'price. Pre-market cards are conditional and never graded.</p>' + table)
     (out / "record.html").write_text(page("Record — TheEsness Market", rec_body, 0, "record"))
@@ -253,3 +281,51 @@ def build(out: Path, now: datetime) -> None:
                  'Run workflow). These ignore the clock, are never graded, and never count toward '
                  'the record.</p>' + (tb or '<div class="empty">No test runs yet.</div>'))
     (out / "test.html").write_text(page("Test runs — TheEsness Market", test_body, 0, "test"))
+    (out / "backtest.html").write_text(page("Backtest — TheEsness Market", backtest_body(), 0, "backtest"))
+
+
+def backtest_body() -> str:
+    p = LEDGER / "backtest.json"
+    intro = ('<h1>Bias backtest</h1><p class="lede">Replays the ES/YM + VIX + SPY/QQQ bias rules '
+             'on every past day Yahoo still has 5-minute bars for, reading the market 30 minutes before '
+             'the open exactly like the live pre-market read. Outcome: from the end of amateur hour '
+             '(open+30) to open+150 min, did SPY / QQQ move the favored way by the threshold before '
+             'moving the other way? This tests the bias rules on the stock, not the option cards — '
+             'free data has no past option prices. Card-level backtests become possible as option '
+             'data saved by each run accumulates.</p>')
+    if not p.exists():
+        return intro + '<div class="empty">First backtest runs after today\'s close.</div>'
+    bt = json.loads(p.read_text())
+    if bt.get("error"):
+        return intro + f'<div class="empty">Last attempt failed: {e(bt["error"])}</div>'
+    pr = bt["params"]
+    meta = (f'<p class="note">Range {e(bt["range"][0])} to {e(bt["range"][1])} · {len(bt["days"])} days · '
+            f'threshold {pr["move_pct"]}% · window open+{pr["start_min"]} to open+{pr["end_min"]} min · '
+            f'flat band ±{pr["flat_band_pct"]}% · VIX confirm {pr["vix_confirm_pct"]}% · '
+            f'{bt["unscored_days"]} day(s) had no favored side and are not scored · VIX had a pre-market '
+            f'price on {bt["vix_premarket_bar_days"]} of {len(bt["days"])} days · built '
+            f'{e(E.fmt_hst(datetime.fromisoformat(bt["built_at"])))}.</p>') if bt.get("range") else ""
+
+    def cell(t):
+        pct = "—" if t["win_pct"] is None else f'{t["win_pct"]:.1f}%'
+        return f'<td>{t["win"]}-{t["loss"]} <span class="eyebrow">({t["none"]} none)</span></td><td>{pct}</td>'
+    srows = "".join(f'<tr><td>{e(x["regime"])}</td><td>{"clean" if x["clean"] else "not clean"}</td>'
+                    f'<td>{x["SPY"]["days"]}</td>{cell(x["SPY"])}{cell(x["QQQ"])}</tr>' for x in bt["summary"])
+    summary = ('<h2>By regime</h2><div class="tbl"><table><thead><tr><th>Regime</th><th>Match</th>'
+               '<th>Days</th><th>SPY W-L</th><th>SPY win%</th><th>QQQ W-L</th><th>QQQ win%</th></tr>'
+               f'</thead><tbody>{srows}</tbody></table></div>') if srows else \
+        '<div class="empty">No scored days yet.</div>'
+
+    def ch(x, k):
+        v = x["chg"].get(k)
+        return "—" if v is None else f"{v:+.2f}%"
+    drows = "".join(
+        f'<tr><td class="mono">{e(x["date"])}</td><td>{e(x["regime"])}</td>'
+        f'<td>{ {"P": "puts", "C": "calls"}.get(x["favored"], "—")}</td><td>{"yes" if x["clean"] else ""}</td>'
+        + "".join(f'<td>{ch(x, k)}</td>' for k in ("ES", "NQ", "YM", "VIX"))
+        + f'<td><span class="res-{e(x["SPY"])}">{e(x["SPY"])}</span></td>'
+        f'<td><span class="res-{e(x["QQQ"])}">{e(x["QQQ"])}</span></td></tr>' for x in bt["days"])
+    days = ('<h2>Every day</h2><div class="tbl"><table><thead><tr><th>Date</th><th>Regime</th><th>Favored</th>'
+            '<th>Clean</th><th>ES</th><th>NQ</th><th>YM</th><th>VIX</th><th>SPY</th><th>QQQ</th></tr></thead>'
+            f'<tbody>{drows}</tbody></table></div>')
+    return intro + meta + summary + days
