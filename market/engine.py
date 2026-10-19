@@ -59,16 +59,30 @@ TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID", "")
 
 # --- Account & risk -------------------------------------------------------------------------
 # Kept OUT of the public repo: set these as GitHub repository secrets (or env vars locally).
-ACCOUNT_SIZE = float(os.environ.get("ACCOUNT_SIZE") or 0)   # USD, settled cash only
+def _num_env(name: str, pct: bool = False) -> Optional[float]:
+    """Reads a number from a secret, tolerating "$10,000", "10%", spaces. Bad value -> None."""
+    raw = (os.environ.get(name) or "").strip().replace("$", "").replace(",", "")
+    if not raw:
+        return None
+    try:
+        v = float(raw.rstrip("%"))
+    except ValueError:
+        print(f"[warn] secret {name} is not a number — ignored", file=sys.stderr)
+        return None
+    if pct and (raw.endswith("%") or v >= 1):   # "10" or "10%" both mean 10%
+        v /= 100
+    return v
+
+
+ACCOUNT_SIZE = _num_env("ACCOUNT_SIZE") or 0.0     # USD, settled cash only
 
 # Risk method used for Max Contracts.  RISK IS NOT YET DETERMINED — set one of these.
 #   "percent"      -> risk RISK_PCT of ACCOUNT_SIZE per trade (e.g. 0.10 = 10%)
 #   "fixed_dollar" -> risk RISK_FIXED_DOLLARS per trade
 # While RISK_PCT / RISK_FIXED_DOLLARS is None, cards show "UNSET" for Max Contracts.
-RISK_METHOD = "percent"
-RISK_PCT: Optional[float] = float(os.environ["RISK_PCT"]) if os.environ.get("RISK_PCT") else None
-RISK_FIXED_DOLLARS: Optional[float] = (float(os.environ["RISK_FIXED_DOLLARS"])
-                                       if os.environ.get("RISK_FIXED_DOLLARS") else None)
+RISK_METHOD = "fixed_dollar" if (os.environ.get("RISK_FIXED_DOLLARS") and not os.environ.get("RISK_PCT")) else "percent"
+RISK_PCT: Optional[float] = _num_env("RISK_PCT", pct=True)
+RISK_FIXED_DOLLARS: Optional[float] = _num_env("RISK_FIXED_DOLLARS")
 # Risk per contract = (entry ceiling - stop premium) * 100.  Also capped by settled cash:
 # contracts * ceiling * 100 <= ACCOUNT_SIZE.
 
