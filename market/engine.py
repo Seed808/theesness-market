@@ -139,6 +139,7 @@ RVOL_CONFIRM = 1.5         # last 5-min volume vs prior 20-bar avg
 HIGH_IVP = 60              # earnings 0DTE: IV percentile >= this = stand down (PLACEHOLDER)
 A_PLUS_MIN_CONFIDENCE = 8
 MAX_CARDS = 5
+STRIKE_SEARCH_PCT = 2.0    # how far OTM to look for a liquid strike (% of stock price)
 EXPIRY_PICK = "latest"     # Mon–Thu: "latest" = this week's Friday expiry; "nearest" = soonest after today
 RAW_CHAIN_ROWS = 16        # option rows nearest the money saved per ticker per run
 
@@ -758,13 +759,26 @@ def pick_expiry(expiries: list, today: date, rules: dict) -> tuple:
 
 
 def pick_strike(chain: list, expiry: date, right: str, spot: float) -> Optional[OptionQuote]:
-    """First out-of-the-money strike (nearest to spot on the OTM side)."""
+    """
+    Nearest out-of-the-money strike that passes the liquidity rules (OI, bid, spread), looking
+    out to STRIKE_SEARCH_PCT from the stock price. Many stocks list strikes every $1–$2.50 but
+    trade mostly at round strikes, so the very nearest strike is often thin while the next one
+    is busy. If none within range is liquid, returns the nearest one (it then gets rejected with
+    its own reason, so the rejection list still says why).
+    """
     side = [o for o in chain if o.expiry == expiry and o.right == right]
     if right == "C":
         otm = sorted([o for o in side if o.strike >= spot], key=lambda o: o.strike)
     else:
         otm = sorted([o for o in side if o.strike <= spot], key=lambda o: -o.strike)
-    return otm[0] if otm else None
+    if not otm:
+        return None
+    for o in otm:
+        if abs(o.strike - spot) / spot * 100 > STRIKE_SEARCH_PCT:
+            break
+        if liquidity_check(o)[0]:
+            return o
+    return otm[0]
 
 
 def liquidity_check(opt: OptionQuote) -> tuple:
@@ -1378,6 +1392,11 @@ def selftest() -> int:
     # Strike
     chain = [OptionQuote(mon, "P", k, 1, 1.05, 1000) for k in (668, 669, 670, 671)]
     check("put strike = first OTM below spot", pick_strike(chain, mon, "P", 670.4).strike == 670)
+    meta = [OptionQuote(mon, "C", 692.5, 25.0, 25.6, 31), OptionQuote(mon, "C", 695, 23.8, 24.15, 430),
+            OptionQuote(mon, "C", 700, 21.0, 21.5, 1866), OptionQuote(mon, "C", 720, 9.0, 9.2, 9000)]
+    check("thin nearest strike skipped -> next liquid (META 700C)", pick_strike(meta, mon, "C", 691.5).strike == 700)
+    check("no liquid strike within 2% -> nearest (gets rejected)",
+          pick_strike(meta[:2], mon, "C", 691.5).strike == 692.5)
 
     # Earnings
     check("earnings mid-hold rejected",
