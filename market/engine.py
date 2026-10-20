@@ -149,6 +149,9 @@ VIX_SYMBOL = "^VIX"
 # Symbols never given option cards
 INDICATOR_ONLY = {"VIX", "^VIX"}
 SHARES_ONLY = {"RR"}                      # share scalps only — no options
+# Funds and indexes have no earnings reports, so the earnings rules don't apply to them.
+NO_EARNINGS = {"SPY", "QQQ", "IWM", "DIA", "SPX", "TQQQ", "SMH", "SOXL", "XLF", "XLE", "XLK",
+               "GLD", "SLV", "TLT", "IBIT", "TNA", "UVXY"}
 YF_SYMBOL_MAP = {"SPX": "^SPX", "VIX": "^VIX"}
 CBOE_SYMBOL_MAP = {"SPX": "_SPX"}
 
@@ -1230,9 +1233,9 @@ def scan(mode: str, session: Session, ov: Overrides, now: Optional[datetime] = N
             chain = fetch_cboe_chain(sym) or []
             if not any(o.expiry == expiry for o in chain):
                 chain = fetch_yf_chain(sym, expiry)
-        earn = ov.earnings.get(sym) or (None if sym in CORE_INDEX or sym == "SPX"
+        earn = ov.earnings.get(sym) or (None if sym in NO_EARNINGS
                                         else fetch_earnings_date(sym))
-        earn_res = ("", "") if sym in CORE_INDEX or sym == "SPX" else \
+        earn_res = ("", "") if sym in NO_EARNINGS else \
             earnings_check(sym, earn, expiry, session.trade_date, ov.ivp.get(sym))
         near = sorted((o for o in chain if o.expiry == expiry),
                       key=lambda o: abs(o.strike - tech.last))[:RAW_CHAIN_ROWS]
