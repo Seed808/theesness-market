@@ -1,0 +1,173 @@
+{
+ "trade_date": "2026-10-20",
+ "mode": "confirm",
+ "ran_at": "2026-10-20T04:19:55.693350-10:00",
+ "test": false,
+ "open_hst": "2026-10-20T03:30:00-10:00",
+ "close_hst": "2026-10-20T10:00:00-10:00",
+ "early_close": false,
+ "bias": {
+  "regime": "BULL",
+  "favored": "C",
+  "clean": false,
+  "notes": [
+   "ES green (+0.27%), NQ flat (-0.03%), YM green (+0.76%)",
+   "ES+YM green \u2192 NO put setups",
+   "VIX 18.11 (-1.79%) \u2192 does not confirm",
+   "SPY green (+0.43%), QQQ green (+0.17%) \u2192 confirms"
+  ]
+ },
+ "quotes": {
+  "ES": {
+   "last": 7755.25,
+   "prev_close": 7734.5,
+   "chg_pct": 0.2682784924688086,
+   "source": "delayed"
+  },
+  "NQ": {
+   "last": 29714.75,
+   "prev_close": 29722.5,
+   "chg_pct": -0.026074522668012447,
+   "source": "delayed"
+  },
+  "YM": {
+   "last": 52576.0,
+   "prev_close": 52182.0,
+   "chg_pct": 0.7550496339734007,
+   "source": "delayed"
+  },
+  "VIX": {
+   "last": 18.110000610351562,
+   "prev_close": 18.440000534057617,
+   "chg_pct": -1.7895873869231396,
+   "source": "delayed"
+  },
+  "SPY": {
+   "last": 769.8104858398438,
+   "prev_close": 766.47998046875,
+   "chg_pct": 0.43451955118996577,
+   "source": "delayed"
+  },
+  "QQQ": {
+   "last": 719.5499877929688,
+   "prev_close": 718.3599853515625,
+   "chg_pct": 0.16565544652711517,
+   "source": "delayed"
+  }
+ },
+ "flags": [
+  "Amateur hour until 04:00 AM; institutional 04:00\u201304:30 AM HST",
+  "No damaged contracts overnight. No earnings holds overnight."
+ ],
+ "headlines": [],
+ "cards": [
+  {
+   "id": "2026-10-20_confirm_BABA_CALL_2026-10-23_109",
+   "trade_date": "2026-10-20",
+   "mode": "confirm",
+   "locked_at": "2026-10-20T04:19:55.693350-10:00",
+   "ticker": "BABA",
+   "type": "CALL",
+   "bias": "BULL",
+   "expiry": "2026-10-23",
+   "strike": 109.0,
+   "entry_floor": 1.54,
+   "entry_ceiling": 1.85,
+   "premium": 1.54,
+   "target": 2.31,
+   "stop": 1.0,
+   "reasoning": "BULL, trend aligned, at PDL, institutional window",
+   "confidence": 8,
+   "a_plus": false,
+   "status": "GO",
+   "flags": "hold OK until Fri 10/23 close \u00b7 close before the weekend",
+   "data_source": "cboe",
+   "contract": "BABA261023C00109000",
+   "underlying": 108.54,
+   "underlying_asof": "4:20 AM HST"
+  },
+  {
+   "id": "2026-10-20_confirm_AMD_CALL_2026-10-23_542.5",
+   "trade_date": "2026-10-20",
+   "mode": "confirm",
+   "locked_at": "2026-10-20T04:19:55.693350-10:00",
+   "ticker": "AMD",
+   "type": "CALL",
+   "bias": "BULL",
+   "expiry": "2026-10-23",
+   "strike": 542.5,
+   "entry_floor": 9.27,
+   "entry_ceiling": 11.12,
+   "premium": 9.27,
+   "target": 13.9,
+   "stop": 6.03,
+   "reasoning": "BULL, trend aligned, institutional window",
+   "confidence": 7,
+   "a_plus": false,
+   "status": "GO",
+   "flags": "hold OK until Fri 10/23 close \u00b7 close before the weekend",
+   "data_source": "cboe",
+   "contract": "AMD261023C00542500",
+   "underlying": 541.74,
+   "underlying_asof": "4:20 AM HST"
+  },
+  {
+   "id": "2026-10-20_confirm_MU_CALL_2026-10-23_910",
+   "trade_date": "2026-10-20",
+   "mode": "confirm",
+   "locked_at": "2026-10-20T04:19:55.693350-10:00",
+   "ticker": "MU",
+   "type": "CALL",
+   "bias": "BULL",
+   "expiry": "2026-10-23",
+   "strike": 910.0,
+   "entry_floor": 16.27,
+   "entry_ceiling": 19.52,
+   "premium": 16.27,
+   "target": 24.41,
+   "stop": 10.58,
+   "reasoning": "BULL, trend aligned, institutional window",
+   "confidence": 7,
+   "a_plus": false,
+   "status": "GO",
+   "flags": "hold OK until Fri 10/23 close \u00b7 close before the weekend",
+   "data_source": "cboe",
+   "contract": "MU261023C00910000",
+   "underlying": 908.9,
+   "underlying_asof": "4:20 AM HST"
+  }
+ ],
+ "passing": 3,
+ "rejected": 29,
+ "rejections": [
+  "SPY C: first 5-min candle does not confirm",
+  "QQQ C: first 5-min candle does not confirm",
+  "IWM C: gap chase",
+  "DIA C: OI 310 < 500",
+  "SPX C: OI 496 < 500",
+  "AMZN C: first 5-min candle does not confirm",
+  "ARM C: OI 18 < 500, first 5-min candle does not confirm",
+  "ASTS C: first 5-min candle does not confirm",
+  "AVGO C: gap chase, first 5-min candle does not confirm",
+  "COIN C: gap chase, mid-range, spread 11.4% > 10.0%",
+  "CRWV C: first 5-min candle does not confirm",
+  "GOOGL C: first 5-min candle does not confirm",
+  "HOOD C: gap chase, mid-range",
+  "INTC C: first 5-min candle does not confirm",
+  "KVUE C: OI 175 < 500",
+  "META C: earnings before expiry (no overnight earnings hold), OI 31 < 500, first 5-min candle does not confirm",
+  "MSFT C: first 5-min candle does not confirm",
+  "NFLX C: earnings today, expiry later (no overnight earnings hold), first 5-min candle does not confirm",
+  "NVDA C: first 5-min candle does not confirm",
+  "OKLO C: gap chase, spread 23.7% > 10.0%",
+  "ORCL C: gap chase, first 5-min candle does not confirm",
+  "PLTR C: first 5-min candle does not confirm",
+  "RKLB C: first 5-min candle does not confirm",
+  "SHOP C: gap chase, spread 17.1% > 10.0%",
+  "SMCI C: first 5-min candle does not confirm",
+  "TSLA C: gap chase, earnings before expiry (no overnight earnings hold), first 5-min candle does not confirm",
+  "UPST C: gap chase, spread 21.4% > 10.0%, first 5-min candle does not confirm",
+  "JEF: no expiry between tomorrow and Fri 10/23",
+  "APO C: OI 40 < 500"
+ ]
+}
