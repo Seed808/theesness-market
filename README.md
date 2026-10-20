@@ -11,8 +11,8 @@ Site: https://seed808.github.io/theesness-market/
 
 | When | What |
 |---|---|
-| last 30 min before the open | **Pre-market read.** ES/NQ/YM + VIX + SPY/QQQ bias, watchlist scan, up to 3 *conditional* cards. Not graded. |
-| open + 30 min (first run after) | **Confirmation read.** Re-checks with 1m/5m/15m trend, first 5-minute candle, VWAP, relative volume. Up to 3 locked cards. A+ cards trigger a Telegram alert. |
+| last 30 min before the open | **Pre-market read.** ES/NQ/YM + VIX + SPY/QQQ bias, watchlist scan, up to 5 *conditional* cards. Not graded. |
+| open + 30 min (first run after) | **Confirmation read.** Re-checks with 1m/5m/15m trend, first 5-minute candle, VWAP, relative volume. Up to 5 locked cards. A+ cards trigger a Telegram alert. |
 | every ~10 min until 9:00am | **Re-scans.** Posts and locks only NEW setups (a ticker + direction already posted today is skipped). Graded like confirmation cards. |
 | after the close | **Grading** of every GO card (WIN / LOSS / FLAT from the contract's 5-minute prices), **saves the day's 1-minute bars**, and **re-runs the bias backtest**. |
 

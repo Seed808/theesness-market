@@ -138,7 +138,7 @@ NEAR_LEVEL_PCT = 0.30      # within 0.30% of a key level counts as "at the level
 RVOL_CONFIRM = 1.5         # last 5-min volume vs prior 20-bar avg
 HIGH_IVP = 60              # earnings 0DTE: IV percentile >= this = stand down (PLACEHOLDER)
 A_PLUS_MIN_CONFIDENCE = 8
-MAX_CARDS = 3
+MAX_CARDS = 5
 EXPIRY_PICK = "latest"     # Mon–Thu: "latest" = this week's Friday expiry; "nearest" = soonest after today
 RAW_CHAIN_ROWS = 16        # option rows nearest the money saved per ticker per run
 
