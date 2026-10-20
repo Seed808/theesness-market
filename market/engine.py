@@ -798,6 +798,29 @@ def near_level(tech: Technicals) -> Optional[str]:
     return None
 
 
+def level_read(tech: Technicals, right: str) -> tuple:
+    """
+    Direction-aware levels within NEAR_LEVEL_PCT of price. Returns (good, bad):
+      good = a level that backs the trade: for a CALL, a level just BELOW price (support:
+             reclaimed VWAP, PDL/PML held, or PDH/PMH already broken); for a PUT, a level just
+             ABOVE price (resistance).
+      bad  = a level the trade runs straight into: a CALL just below a level overhead
+             (resistance), a PUT just above a level underneath (support).
+    """
+    good = bad = None
+    if tech.last is None:
+        return None, None
+    for name, lvl in key_levels(tech).items():
+        if abs(tech.last - lvl) / lvl * 100 > NEAR_LEVEL_PCT:
+            continue
+        below = lvl <= tech.last
+        if (right == "C") == below:
+            good = good or name
+        else:
+            bad = bad or name
+    return good, bad
+
+
 def mid_range(tech: Technicals) -> bool:
     """Inside the middle band of the prior-day range AND not at any key level."""
     if None in (tech.last, tech.prev_high, tech.prev_low) or tech.prev_high <= tech.prev_low:
@@ -888,11 +911,19 @@ def evaluate(sym: str, right: str, bias: Bias, tech: Technicals, opt: Optional[O
     f5 = first5_confirms(tech, right) if mode == "confirm" else None
     if mode == "confirm" and f5 is False:
         rejects.append("first 5-min candle does not confirm")
+    # After the open, every GO needs 1m/5m/15m all pointing the trade's way (A+ trend rule
+    # applied to every card, so a card can't score its way in without the trend).
+    if mode == "confirm" and tech.trend and not trend_aligned(tech, right, mode):
+        tf = "/".join(f"{k} {tech.trend.get(k, '?')}" for k in ("1m", "5m", "15m"))
+        rejects.append(f"trend not aligned ({tf})")
+    good_lvl, bad_lvl = level_read(tech, right)
+    if bad_lvl:
+        rejects.append(f"{'call into resistance' if right == 'C' else 'put into support'} ({bad_lvl})")
     if rejects:
         return None, rejects
 
     # --- Scoring (deterministic) ---
-    lvl = near_level(tech)
+    lvl = good_lvl
     aligned = trend_aligned(tech, right, mode)
     favored_side = bias.favored == right
     clean = bias.clean and favored_side
@@ -908,7 +939,7 @@ def evaluate(sym: str, right: str, bias: Bias, tech: Technicals, opt: Optional[O
     if aligned:
         score += 1; reasons.append("trend aligned")
     if lvl:
-        score += 1; reasons.append(f"at {lvl}")
+        score += 1; reasons.append(f"{lvl} {'support' if right == 'C' else 'resistance'}")
     if vol_ok:
         score += 1; reasons.append(f"RVOL {tech.rvol:.1f}")
     if inst and mode == "confirm":
@@ -1380,6 +1411,17 @@ def selftest() -> int:
     tech_bad = Technicals(**{**asdict(tech), "first5_close": 672.0})
     _, why = evaluate("SPY", "P", bias, tech_bad, good, "", ("", ""), day_rules(mon), "confirm",
                       now, s_summer)
+    tech_flat = Technicals(**{**asdict(tech), "trend": {"1m": "flat", "5m": "down", "15m": "down"}})
+    _, why = evaluate("SPY", "P", bias, tech_flat, good, "", ("", ""), day_rules(mon), "confirm",
+                      now, s_summer)
+    check("confirm: 1m flat -> trend not aligned", any(w.startswith("trend not aligned") for w in why))
+    up = {"1m": "up", "5m": "up", "15m": "up"}
+    t_res = Technicals(prev_high=7740.0, prev_low=7680, prev_close=7700, last=7735.0, avg_volume=6e7,
+                       trend=up, vwap=7700.0, first5_open=7700, first5_close=7710, rvol=2.0)
+    check("call just under PDH -> into resistance", level_read(t_res, "C") == (None, "PDH"))
+    t_sup = Technicals(**{**asdict(t_res), "prev_high": 7733.0})
+    check("call just above broken PDH -> support", level_read(t_sup, "C") == ("PDH", None))
+    check("put just above PDH-as-support -> into support", level_read(t_sup, "P") == (None, "PDH"))
     check("green first candle blocks put", "first 5-min candle does not confirm" in why)
     bull = compute_bias(Q(+0.4), Q(+0.5), Q(+0.3), Q(-4), Q(+0.3), Q(+0.4))
     _, why = evaluate("SPY", "P", bull, tech, good, "", ("", ""), day_rules(mon), "confirm",
