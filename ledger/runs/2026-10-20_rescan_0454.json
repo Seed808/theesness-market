@@ -1,0 +1,93 @@
+{
+ "trade_date": "2026-10-20",
+ "mode": "rescan",
+ "ran_at": "2026-10-20T04:54:31.322214-10:00",
+ "test": false,
+ "open_hst": "2026-10-20T03:30:00-10:00",
+ "close_hst": "2026-10-20T10:00:00-10:00",
+ "early_close": false,
+ "bias": {
+  "regime": "BULL",
+  "favored": "C",
+  "clean": true,
+  "notes": [
+   "ES green (+0.63%), NQ green (+0.44%), YM green (+1.27%)",
+   "ES+YM green \u2192 NO put setups",
+   "VIX 17.67 (-4.18%) \u2192 confirms",
+   "SPY green (+0.68%), QQQ green (+0.45%) \u2192 confirms"
+  ]
+ },
+ "quotes": {
+  "ES": {
+   "last": 7783.5,
+   "prev_close": 7734.5,
+   "chg_pct": 0.6335251147456202,
+   "source": "delayed"
+  },
+  "NQ": {
+   "last": 29853.75,
+   "prev_close": 29722.5,
+   "chg_pct": 0.4415846580873076,
+   "source": "delayed"
+  },
+  "YM": {
+   "last": 52847.0,
+   "prev_close": 52182.0,
+   "chg_pct": 1.2743858035337856,
+   "source": "delayed"
+  },
+  "VIX": {
+   "last": 17.670000076293945,
+   "prev_close": 18.440000534057617,
+   "chg_pct": -4.175707350666967,
+   "source": "delayed"
+  },
+  "SPY": {
+   "last": 771.6900024414062,
+   "prev_close": 766.47998046875,
+   "chg_pct": 0.6797336010615695,
+   "source": "delayed"
+  },
+  "QQQ": {
+   "last": 721.614990234375,
+   "prev_close": 718.3599853515625,
+   "chg_pct": 0.4531161185459841,
+   "source": "delayed"
+  }
+ },
+ "flags": [
+  "Amateur hour until 04:00 AM; institutional 04:00\u201304:30 AM HST",
+  "No damaged contracts overnight. No earnings holds overnight."
+ ],
+ "headlines": [],
+ "cards": [
+  {
+   "id": "2026-10-20_rescan_SPX_CALL_2026-10-23_7740",
+   "trade_date": "2026-10-20",
+   "mode": "rescan",
+   "locked_at": "2026-10-20T04:54:31.322214-10:00",
+   "ticker": "SPX",
+   "type": "CALL",
+   "bias": "BULL",
+   "expiry": "2026-10-23",
+   "strike": 7740.0,
+   "entry_floor": 40.1,
+   "entry_ceiling": 48.12,
+   "premium": 40.1,
+   "target": 60.15,
+   "stop": 26.07,
+   "reasoning": "BULL, bias clean, at PDH",
+   "confidence": 7,
+   "a_plus": false,
+   "status": "GO",
+   "flags": "hold OK until Fri 10/23 close \u00b7 close before the weekend",
+   "data_source": "cboe",
+   "contract": "SPXW261023C07740000",
+   "underlying": 7735.78,
+   "underlying_asof": "4:39 AM HST"
+  }
+ ],
+ "passing": 2,
+ "rejected": 30,
+ "rejections": []
+}
