@@ -1411,6 +1411,12 @@ def selftest() -> int:
     tech_bad = Technicals(**{**asdict(tech), "first5_close": 672.0})
     _, why = evaluate("SPY", "P", bias, tech_bad, good, "", ("", ""), day_rules(mon), "confirm",
                       now, s_summer)
+    check("green first candle blocks put", "first 5-min candle does not confirm" in why)
+    bull = compute_bias(Q(+0.4), Q(+0.5), Q(+0.3), Q(-4), Q(+0.3), Q(+0.4))
+    _, why = evaluate("SPY", "P", bull, tech, good, "", ("", ""), day_rules(mon), "confirm",
+                      now, s_summer)
+    check("BULL blocks puts", "ES+YM green: no put setups" in why)
+    fomc = date(2026, 10, 28)
     tech_flat = Technicals(**{**asdict(tech), "trend": {"1m": "flat", "5m": "down", "15m": "down"}})
     _, why = evaluate("SPY", "P", bias, tech_flat, good, "", ("", ""), day_rules(mon), "confirm",
                       now, s_summer)
@@ -1422,12 +1428,6 @@ def selftest() -> int:
     t_sup = Technicals(**{**asdict(t_res), "prev_high": 7733.0})
     check("call just above broken PDH -> support", level_read(t_sup, "C") == ("PDH", None))
     check("put just above PDH-as-support -> into support", level_read(t_sup, "P") == (None, "PDH"))
-    check("green first candle blocks put", "first 5-min candle does not confirm" in why)
-    bull = compute_bias(Q(+0.4), Q(+0.5), Q(+0.3), Q(-4), Q(+0.3), Q(+0.4))
-    _, why = evaluate("SPY", "P", bull, tech, good, "", ("", ""), day_rules(mon), "confirm",
-                      now, s_summer)
-    check("BULL blocks puts", "ES+YM green: no put setups" in why)
-    fomc = date(2026, 10, 28)
     sf = session_for(fomc)
     idea3, _ = evaluate("SPY", "P", bias, tech, OptionQuote(fomc, "P", 670, 1.10, 1.14, 12000),
                         "", ("", ""), day_rules(fomc), "confirm", sf.at(35), sf)
