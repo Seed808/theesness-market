@@ -1,1 +1,54 @@
-{}
+{
+ "2026-10-21_rescan_INTC_PUT_2026-10-23_91": {
+  "last": 1.5,
+  "last_time": "2026-10-21T04:47:08-10:00",
+  "high": null,
+  "low": null,
+  "source": "chain quote",
+  "pnl_pct": -3.8,
+  "as_of": "2026-10-21T05:02:00.296702-10:00"
+ },
+ "2026-10-21_rescan_QQQ_CALL_2026-10-23_724": {
+  "last": 4.74,
+  "last_time": "2026-10-21T04:45:31-10:00",
+  "high": null,
+  "low": null,
+  "source": "chain quote",
+  "pnl_pct": 0.4,
+  "as_of": "2026-10-21T05:02:00.296702-10:00"
+ },
+ "2026-10-21_rescan_NFLX_CALL_2026-10-23_66": {
+  "last": 0.58,
+  "last_time": "2026-10-21T04:47:53-10:00",
+  "high": null,
+  "low": null,
+  "source": "chain quote",
+  "pnl_pct": -1.7,
+  "as_of": "2026-10-21T05:02:00.296702-10:00"
+ },
+ "2026-10-21_rescan_SLV_PUT_2026-10-23_51.5": {
+  "last": 0.34,
+  "last_time": "2026-10-21T04:45:04-10:00",
+  "high": null,
+  "low": null,
+  "source": "chain quote",
+  "pnl_pct": 0.0,
+  "as_of": "2026-10-21T05:02:00.296702-10:00"
+ },
+ "2026-10-21_rescan_UBER_PUT_2026-10-23_68": {
+  "last": 0.57,
+  "last_time": "2026-10-21T04:44:46-10:00",
+  "high": null,
+  "low": null,
+  "source": "chain quote",
+  "pnl_pct": 5.6,
+  "as_of": "2026-10-21T05:02:00.296702-10:00"
+ },
+ "_errors": {
+  "2026-10-21_rescan_INTC_PUT_2026-10-23_91": "bars returned but none after lock (16 rows)",
+  "2026-10-21_rescan_QQQ_CALL_2026-10-23_724": "bars returned but none after lock (16 rows)",
+  "2026-10-21_rescan_NFLX_CALL_2026-10-23_66": "bars returned but none after lock (16 rows)",
+  "2026-10-21_rescan_SLV_PUT_2026-10-23_51.5": "bars returned but none after lock (14 rows)",
+  "2026-10-21_rescan_UBER_PUT_2026-10-23_68": "bars returned but none after lock (15 rows)"
+ }
+}
