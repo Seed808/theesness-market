@@ -1,0 +1,67 @@
+{
+ "trade_date": "2026-10-21",
+ "mode": "rescan",
+ "ran_at": "2026-10-21T06:38:12.767432-10:00",
+ "test": false,
+ "open_hst": "2026-10-21T03:30:00-10:00",
+ "close_hst": "2026-10-21T10:00:00-10:00",
+ "early_close": false,
+ "bias": {
+  "regime": "BULL",
+  "favored": "C",
+  "clean": true,
+  "notes": [
+   "ES green (+0.44%), NQ green (+1.07%), YM green (+0.25%)",
+   "ES+YM green \u2192 NO put setups",
+   "VIX 16.61 (-4.04%) \u2192 confirms",
+   "SPY green (+0.43%), QQQ green (+1.11%) \u2192 confirms"
+  ]
+ },
+ "quotes": {
+  "ES": {
+   "last": 7789.0,
+   "prev_close": 7755.25,
+   "chg_pct": 0.4351890654717772,
+   "source": "delayed"
+  },
+  "NQ": {
+   "last": 29994.25,
+   "prev_close": 29675.25,
+   "chg_pct": 1.0749698823093317,
+   "source": "delayed"
+  },
+  "YM": {
+   "last": 52849.0,
+   "prev_close": 52719.0,
+   "chg_pct": 0.24659041332346973,
+   "source": "delayed"
+  },
+  "VIX": {
+   "last": 16.610000610351562,
+   "prev_close": 17.309999465942383,
+   "chg_pct": -4.043898770580992,
+   "source": "delayed"
+  },
+  "SPY": {
+   "last": 772.3900146484375,
+   "prev_close": 769.0499877929688,
+   "chg_pct": 0.4343055599095723,
+   "source": "delayed"
+  },
+  "QQQ": {
+   "last": 725.5599975585938,
+   "prev_close": 717.6300048828125,
+   "chg_pct": 1.1050252388870225,
+   "source": "delayed"
+  }
+ },
+ "flags": [
+  "Amateur hour until 04:00 AM; institutional 04:00\u201304:30 AM HST",
+  "No damaged contracts overnight. No earnings holds overnight."
+ ],
+ "headlines": [],
+ "cards": [],
+ "passing": 0,
+ "rejected": 73,
+ "rejections": []
+}
