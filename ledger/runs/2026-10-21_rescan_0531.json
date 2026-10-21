@@ -1,0 +1,118 @@
+{
+ "trade_date": "2026-10-21",
+ "mode": "rescan",
+ "ran_at": "2026-10-21T05:31:42.600763-10:00",
+ "test": false,
+ "open_hst": "2026-10-21T03:30:00-10:00",
+ "close_hst": "2026-10-21T10:00:00-10:00",
+ "early_close": false,
+ "bias": {
+  "regime": "BULL",
+  "favored": "C",
+  "clean": true,
+  "notes": [
+   "ES green (+0.32%), NQ green (+0.90%), YM green (+0.11%)",
+   "ES+YM green \u2192 NO put setups",
+   "VIX 16.60 (-4.10%) \u2192 confirms",
+   "SPY green (+0.38%), QQQ green (+1.02%) \u2192 confirms"
+  ]
+ },
+ "quotes": {
+  "ES": {
+   "last": 7780.25,
+   "prev_close": 7755.25,
+   "chg_pct": 0.322362270719835,
+   "source": "delayed"
+  },
+  "NQ": {
+   "last": 29942.0,
+   "prev_close": 29675.25,
+   "chg_pct": 0.8988972291724585,
+   "source": "delayed"
+  },
+  "YM": {
+   "last": 52778.0,
+   "prev_close": 52719.0,
+   "chg_pct": 0.11191411066219012,
+   "source": "delayed"
+  },
+  "VIX": {
+   "last": 16.600000381469727,
+   "prev_close": 17.309999465942383,
+   "chg_pct": -4.101670169716569,
+   "source": "delayed"
+  },
+  "SPY": {
+   "last": 772.0050048828125,
+   "prev_close": 769.0499877929688,
+   "chg_pct": 0.3842425247706073,
+   "source": "delayed"
+  },
+  "QQQ": {
+   "last": 724.9199829101562,
+   "prev_close": 717.6300048828125,
+   "chg_pct": 1.0158407504901066,
+   "source": "delayed"
+  }
+ },
+ "flags": [
+  "Amateur hour until 04:00 AM; institutional 04:00\u201304:30 AM HST",
+  "No damaged contracts overnight. No earnings holds overnight."
+ ],
+ "headlines": [],
+ "cards": [
+  {
+   "id": "2026-10-21_rescan_DKNG_CALL_2026-10-23_21",
+   "trade_date": "2026-10-21",
+   "mode": "rescan",
+   "locked_at": "2026-10-21T05:31:42.600763-10:00",
+   "ticker": "DKNG",
+   "type": "CALL",
+   "bias": "BULL",
+   "expiry": "2026-10-23",
+   "strike": 21.0,
+   "entry_floor": 0.21,
+   "entry_ceiling": 0.25,
+   "premium": 0.21,
+   "target": 0.32,
+   "stop": 0.14,
+   "reasoning": "BULL, bias clean, trend aligned, PDH support, strong liquidity",
+   "confidence": 9,
+   "a_plus": false,
+   "status": "GO",
+   "flags": "hold OK until Fri 10/23 close \u00b7 close before the weekend",
+   "data_source": "cboe",
+   "contract": "DKNG261023C00021000",
+   "underlying": 20.57,
+   "underlying_asof": "5:32 AM HST"
+  },
+  {
+   "id": "2026-10-21_rescan_WMT_CALL_2026-10-23_119",
+   "trade_date": "2026-10-21",
+   "mode": "rescan",
+   "locked_at": "2026-10-21T05:31:42.600763-10:00",
+   "ticker": "WMT",
+   "type": "CALL",
+   "bias": "BULL",
+   "expiry": "2026-10-23",
+   "strike": 119.0,
+   "entry_floor": 0.5,
+   "entry_ceiling": 0.6,
+   "premium": 0.5,
+   "target": 0.75,
+   "stop": 0.33,
+   "reasoning": "BULL, bias clean, trend aligned, strong liquidity",
+   "confidence": 8,
+   "a_plus": false,
+   "status": "GO",
+   "flags": "hold OK until Fri 10/23 close \u00b7 close before the weekend",
+   "data_source": "cboe",
+   "contract": "WMT261023C00119000",
+   "underlying": 118.07,
+   "underlying_asof": "5:33 AM HST"
+  }
+ ],
+ "passing": 2,
+ "rejected": 71,
+ "rejections": []
+}
