@@ -1119,7 +1119,8 @@ def tg_bias(r: "ScanResult") -> str:
             f"SPY/QQQ {'confirm' if b.index_confirms else 'do not confirm'}")
 
 
-def tg_report(r: "ScanResult", cards: Optional[list] = None, prefix: str = "") -> str:
+def tg_report(r: "ScanResult", cards: Optional[list] = None, prefix: str = "",
+              extra: Optional[list] = None) -> str:
     s = r.session
     cards = r.top if cards is None else cards
     title = {"premarket": "PRE-MARKET", "confirm": "CONFIRMATION", "rescan": "RE-SCAN"}.get(r.mode, r.mode.upper())
@@ -1133,6 +1134,9 @@ def tg_report(r: "ScanResult", cards: Optional[list] = None, prefix: str = "") -
         parts.append("<b>FLAGS</b>\n" + "\n".join(f"• {_h(f)}" for f in flags))
     if r.headlines:
         parts.append("<b>HEADLINES</b>\n" + "\n".join(f"• {_h(h)}" for h in r.headlines))
+    parts += extra or []
+    if extra and cards:
+        parts.append("<b>NEW CARDS</b>")
     parts += [tg_card(i) for i in cards] if cards else ["<b>No quality setups.</b>"]
     foot = f"{len(r.ideas)} passed · {len(r.skipped)} rejected · data ~15 min delayed"
     if "UNSET" in {i.max_contracts for i in cards}:

@@ -354,6 +354,61 @@ def grade_due(now: datetime, fetch=None) -> list:
 
 
 # --------------------------------------------------------------------------------------------
+# open cards ("in play") — latest contract price for every GO card not yet graded
+# --------------------------------------------------------------------------------------------
+# ledger/marks.json is rewritten each run. It is a live view, not part of the locked record.
+
+MARKS = LEDGER / "marks.json"
+
+
+def open_cards(now: datetime) -> list:
+    done = load_grades()
+    out = []
+    for c in load_locks():
+        if c["mode"] in GRADED_MODES and c["status"] == "GO" and c["id"] not in done \
+                and datetime.fromisoformat(c["locked_at"]) <= now:
+            out.append(c)
+    return out
+
+
+def update_marks(now: datetime, fetch=None) -> dict:
+    fetch = fetch or fetch_contract_bars
+    marks = {}
+    for c in open_cards(now):
+        d, exp = date.fromisoformat(c["trade_date"]), date.fromisoformat(c["expiry"])
+        bars = fetch(c["contract"], d, min(exp, now.date())) if c.get("contract") else None
+        if bars is None:
+            continue
+        w = bars[bars.index >= datetime.fromisoformat(c["locked_at"])]
+        if w.empty:
+            continue
+        entry, last = float(c["premium"]), float(w["Close"].iloc[-1])
+        marks[c["id"]] = {
+            "last": round(last, 2), "last_time": w.index[-1].isoformat(),
+            "high": round(float(w["High"].max()), 2), "low": round(float(w["Low"].min()), 2),
+            "pnl_pct": round((last - entry) / entry * 100, 1), "as_of": now.isoformat()}
+    MARKS.write_text(json.dumps(marks, indent=1))
+    return marks
+
+
+def open_block(now: datetime) -> str:
+    """Telegram block listing every card still in play, with its latest price."""
+    cards = open_cards(now)
+    if not cards:
+        return ""
+    marks = json.loads(MARKS.read_text()) if MARKS.exists() else {}
+    lines = [f"<b>IN PLAY ({len(cards)})</b>"]
+    for c in cards:
+        exp = date.fromisoformat(c["expiry"]).strftime("%a %-m/%-d")
+        m = marks.get(c["id"])
+        px = (f"last ${m['last']:.2f} ({m['pnl_pct']:+.1f}%)" if m else "price n/a")
+        lines.append(f"<b>{E._h(c['ticker'])} {E._h(c['type'])} {float(c['strike']):g}</b> exp {exp} · "
+                     f"entry ${float(c['premium']):.2f} · {px} · T ${float(c['target']):.2f} / "
+                     f"S ${float(c['stop']):.2f}")
+    return "\n".join(lines)
+
+
+# --------------------------------------------------------------------------------------------
 # after-close jobs
 # --------------------------------------------------------------------------------------------
 
@@ -365,7 +420,9 @@ def after_close(now: datetime) -> None:
                   f"<b>{E._h(g['result'])}</b>"
                   + (f" ({float(g['pnl_pct']):+.1f}%)" if g['pnl_pct'] not in ('', None) else "")
                   + f" · {E._h(g['method'])}" for g in graded]
-        E.send_telegram("\n".join(lines), html=True)
+        update_marks(now)
+        ob = open_block(now)
+        E.send_telegram("\n".join(lines) + (f"\n\n{ob}" if ob else ""), html=True)
     s = E.session_for(now.date())
     if s and now >= s.close_hst + timedelta(minutes=GRADE_AFTER_CLOSE_MIN):
         save_day_bars(now.date())
@@ -387,7 +444,12 @@ def announce(snap: dict, r: E.ScanResult, now: datetime) -> None:
             E.send_telegram(f"<b>NEW SETUP</b> · {E._short_t(now)} HST · bias {E._h(r.bias.regime)}"
                             + "\n\n" + "\n\n".join(E.tg_card(i) for i in ideas), html=True)
     else:
-        E.send_telegram(E.tg_report(r, ideas), html=True)
+        try:
+            update_marks(now)
+        except Exception as e:  # noqa: BLE001
+            print(f"[warn] marks: {type(e).__name__}: {e}", file=sys.stderr)
+        ob = open_block(now)
+        E.send_telegram(E.tg_report(r, ideas, extra=[ob] if ob else None), html=True)
     for i in ideas:
         if i.a_plus:
             E.send_telegram(f"<b>A+ ALERT</b> · {E._short_t(now)} HST\n\n{E.tg_card(i)}", html=True)
@@ -425,6 +487,10 @@ def main() -> int:
         print("Market closed today.")
 
     after_close(now)
+    try:
+        update_marks(now)
+    except Exception as e:  # noqa: BLE001  (a live-price view must never break a run)
+        print(f"[warn] marks: {type(e).__name__}: {e}", file=sys.stderr)
 
     import site_build
     site_build.build(Path(a.site), now)

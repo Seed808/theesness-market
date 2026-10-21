@@ -76,6 +76,17 @@ def graded_snaps(modes: dict) -> list:
     return ([modes["confirm"]] if modes.get("confirm") else []) + modes.get("rescans", [])
 
 
+def load_marks() -> dict:
+    p = LEDGER / "marks.json"
+    try:
+        return json.loads(p.read_text()) if p.exists() else {}
+    except ValueError:
+        return {}
+
+
+MARKS: dict = {}
+
+
 def load_grades() -> dict:
     p = LEDGER / "grades.csv"
     if not p.exists():
@@ -148,7 +159,14 @@ def card_html(c: dict, g: dict | None) -> str:
                f'{pnl} <span class="eyebrow">{e(g["method"])}</span></dd>')
     elif c["mode"] in ("confirm", "rescan") and c["status"] == "GO":
         exp_day = date.fromisoformat(c["expiry"]).strftime("%a %-m/%-d")
-        res = (f'<dt>Result</dt><dd class="eyebrow">open · graded at target/stop or {exp_day} close</dd>')
+        m = MARKS.get(c["id"])
+        px = ""
+        if m:
+            px = (f' last {_money(m["last"])} ({m["pnl_pct"]:+.1f}%) '
+                  f'<span class="eyebrow">as of {_t(m["last_time"])} · range since entry '
+                  f'{_money(m["low"])}–{_money(m["high"])}</span>')
+        res = (f'<dt>Status</dt><dd><span class="res-INPLAY">IN PLAY</span>{px}</dd>'
+               f'<dt>Ends</dt><dd class="eyebrow">at target, stop, or {exp_day} close</dd>')
     aplus = c["a_plus"] in (True, "True")
     badge = '<span class="badge gap2">A+</span>' if aplus else ""
     flags = f'<dt>Flags</dt><dd>{e(c["flags"])}</dd>' if c.get("flags") else ""
@@ -197,6 +215,18 @@ def rescan_section(rescans: list, grades: dict) -> str:
             'today is not posted again.</p>')
 
 
+def in_play_section(runs: dict, grades: dict) -> str:
+    cards = [c for modes in runs.values() for snap in graded_snaps(modes) for c in snap["cards"]
+             if c["status"] == "GO" and c["id"] not in grades]
+    if not cards:
+        return ""
+    cards.sort(key=lambda c: c["locked_at"])
+    return ('<h2>In play — open cards</h2><p class="note">Locked GO cards that have not hit their target '
+            'or stop and have not reached their expiry-day close. Prices are ~15 min delayed and '
+            'refresh every run.</p><div class="board">'
+            + "".join(card_html(c, None) for c in cards) + '</div>')
+
+
 def day_body(d: str, modes: dict, grades: dict) -> str:
     sess = E.session_for(date.fromisoformat(d))
     when = (f'Open {sess.open_hst.strftime("%I:%M %p").lstrip("0")} · close '
@@ -233,6 +263,8 @@ def build(out: Path, now: datetime) -> None:
     (out / "day").mkdir(parents=True)
     (out / ".nojekyll").touch()
     runs, grades = load_runs(), load_grades()
+    global MARKS
+    MARKS = load_marks()
     rows = record_rows(runs, grades)
     st = stats(rows)
     days = sorted(runs, reverse=True)
@@ -242,7 +274,7 @@ def build(out: Path, now: datetime) -> None:
 
     if days:
         latest = days[0]
-        body = (tiles(st) + day_body(latest, runs[latest], grades)
+        body = (tiles(st) + in_play_section(runs, grades) + day_body(latest, runs[latest], grades)
                 + f'<p class="note">{e(next_run_note(now))} Page built {e(E.fmt_hst(now))}.</p>')
     else:
         body = (tiles(st) + '<h1>No runs yet</h1><div class="empty">'
