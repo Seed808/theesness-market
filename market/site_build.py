@@ -162,9 +162,11 @@ def card_html(c: dict, g: dict | None) -> str:
         m = MARKS.get(c["id"])
         px = ""
         if m:
+            rng = (f' · range since entry {_money(m["low"])}–{_money(m["high"])}'
+                   if m.get("high") is not None else "")
+            when = f'as of {_t(m["last_time"])}' if m.get("last_time") else "latest quote"
             px = (f' last {_money(m["last"])} ({m["pnl_pct"]:+.1f}%) '
-                  f'<span class="eyebrow">as of {_t(m["last_time"])} · range since entry '
-                  f'{_money(m["low"])}–{_money(m["high"])}</span>')
+                  f'<span class="eyebrow">{when}{rng}</span>')
         res = (f'<dt>Status</dt><dd><span class="res-INPLAY">IN PLAY</span>{px}</dd>'
                f'<dt>Ends</dt><dd class="eyebrow">at target, stop, or {exp_day} close</dd>')
     aplus = c["a_plus"] in (True, "True")

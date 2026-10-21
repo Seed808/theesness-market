@@ -371,23 +371,65 @@ def open_cards(now: datetime) -> list:
     return out
 
 
+def chain_quote(c: dict) -> Optional[dict]:
+    """Fallback mark from the option chain (last trade, bid/ask) when no intraday bars exist."""
+    try:
+        sym = E.YF_SYMBOL_MAP.get(c["ticker"], c["ticker"])
+        ch = E._yf().Ticker(sym).option_chain(c["expiry"])
+        df = ch.calls if c["type"] == "CALL" else ch.puts
+        row = df[df["contractSymbol"] == c["contract"]]
+        if row.empty:
+            row = df[(df["strike"] - float(c["strike"])).abs() < 1e-6]
+        if row.empty:
+            return None
+        r = row.iloc[0]
+        bid, ask, lastp = float(r.get("bid") or 0), float(r.get("ask") or 0), float(r.get("lastPrice") or 0)
+        px = (bid + ask) / 2 if bid > 0 and ask > 0 else lastp
+        if px <= 0:
+            return None
+        lt = r.get("lastTradeDate")
+        return {"last": px, "last_time": (lt.to_pydatetime().astimezone(E.HST).isoformat()
+                                          if hasattr(lt, "to_pydatetime") else None)}
+    except Exception as e:  # noqa: BLE001
+        return {"error": f"{type(e).__name__}: {e}"[:200]}
+
+
 def update_marks(now: datetime, fetch=None) -> dict:
     fetch = fetch or fetch_contract_bars
-    marks = {}
+    marks, errors = {}, {}
     for c in open_cards(now):
         d, exp = date.fromisoformat(c["trade_date"]), date.fromisoformat(c["expiry"])
-        bars = fetch(c["contract"], d, min(exp, now.date())) if c.get("contract") else None
-        if bars is None:
-            continue
-        w = bars[bars.index >= datetime.fromisoformat(c["locked_at"])]
-        if w.empty:
-            continue
-        entry, last = float(c["premium"]), float(w["Close"].iloc[-1])
-        marks[c["id"]] = {
-            "last": round(last, 2), "last_time": w.index[-1].isoformat(),
-            "high": round(float(w["High"].max()), 2), "low": round(float(w["Low"].min()), 2),
-            "pnl_pct": round((last - entry) / entry * 100, 1), "as_of": now.isoformat()}
-    MARKS.write_text(json.dumps(marks, indent=1))
+        entry = float(c["premium"])
+        m = None
+        try:
+            bars = fetch(c["contract"], d, min(exp, now.date())) if c.get("contract") else None
+        except Exception as e:  # noqa: BLE001
+            bars, errors[c["id"]] = None, f"bars: {type(e).__name__}: {e}"[:200]
+        if bars is not None:
+            w = bars[bars.index >= datetime.fromisoformat(c["locked_at"])]
+            if not w.empty:
+                m = {"last": float(w["Close"].iloc[-1]), "last_time": w.index[-1].isoformat(),
+                     "high": round(float(w["High"].max()), 2), "low": round(float(w["Low"].min()), 2),
+                     "source": "5m bars"}
+            else:
+                errors[c["id"]] = f"bars returned but none after lock ({len(bars)} rows)"
+        else:
+            errors.setdefault(c["id"], "no 5m bars")
+        if m is None:
+            q = chain_quote(c)
+            if q and "error" not in q:
+                m = {**q, "high": None, "low": None, "source": "chain quote"}
+            elif q:
+                errors[c["id"]] += f"; chain: {q['error']}"
+        if m:
+            m["last"] = round(m["last"], 2)
+            m["pnl_pct"] = round((m["last"] - entry) / entry * 100, 1)
+            m["as_of"] = now.isoformat()
+            marks[c["id"]] = m
+    out = dict(marks)
+    if errors:
+        out["_errors"] = errors
+    MARKS.write_text(json.dumps(out, indent=1))
     return marks
 
 
@@ -397,6 +439,7 @@ def open_block(now: datetime) -> str:
     if not cards:
         return ""
     marks = json.loads(MARKS.read_text()) if MARKS.exists() else {}
+    marks.pop("_errors", None)
     lines = [f"<b>IN PLAY ({len(cards)})</b>"]
     for c in cards:
         exp = date.fromisoformat(c["expiry"]).strftime("%a %-m/%-d")
