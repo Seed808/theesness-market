@@ -1,0 +1,68 @@
+{
+ "trade_date": "2026-10-22",
+ "mode": "rescan",
+ "ran_at": "2026-10-22T08:40:50.658436-10:00",
+ "test": false,
+ "open_hst": "2026-10-22T03:30:00-10:00",
+ "close_hst": "2026-10-22T10:00:00-10:00",
+ "early_close": false,
+ "bias": {
+  "regime": "BEAR",
+  "favored": "P",
+  "clean": true,
+  "notes": [
+   "ES red (-1.48%), NQ red (-3.01%), YM red (-0.21%)",
+   "ES+YM red \u2192 broad bear, puts favored",
+   "VIX 19.25 (+15.41%) \u2192 confirms",
+   "SPY red (-1.46%), QQQ red (-3.00%) \u2192 confirms"
+  ]
+ },
+ "quotes": {
+  "ES": {
+   "last": 7684.5,
+   "prev_close": 7800.25,
+   "chg_pct": -1.4839267972180379,
+   "source": "delayed"
+  },
+  "NQ": {
+   "last": 29102.75,
+   "prev_close": 30007.0,
+   "chg_pct": -3.0134635251774586,
+   "source": "delayed"
+  },
+  "YM": {
+   "last": 52945.0,
+   "prev_close": 53059.0,
+   "chg_pct": -0.21485516123560564,
+   "source": "delayed"
+  },
+  "VIX": {
+   "last": 19.25,
+   "prev_close": 16.68000030517578,
+   "chg_pct": 15.407671749422876,
+   "source": "delayed"
+  },
+  "SPY": {
+   "last": 761.8300170898438,
+   "prev_close": 773.0900268554688,
+   "chg_pct": -1.4564939883424584,
+   "source": "delayed"
+  },
+  "QQQ": {
+   "last": 703.4500122070312,
+   "prev_close": 725.2000122070312,
+   "chg_pct": -2.9991725915457894,
+   "source": "delayed"
+  }
+ },
+ "flags": [
+  "THURSDAY: reassess all open contracts by 11:00 AM HST",
+  "Amateur hour until 04:00 AM; institutional 04:00\u201304:30 AM HST",
+  "No damaged contracts overnight. No earnings holds overnight."
+ ],
+ "headlines": [],
+ "cards": [],
+ "passing": 0,
+ "rejected": 73,
+ "rejections": []
+}
