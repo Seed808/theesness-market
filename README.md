@@ -21,6 +21,11 @@ trading day before the market next closes (normally Friday), so they can be held
 never over a weekend or holiday. Friday and pre-holiday days: 0DTE only. Cards are graded at
 their target or stop as soon as either is hit, otherwise at the expiry day's close.
 
+**Target / stop.** Target = signal premium +50%. Stop = signal premium −20% (it was −35% for
+cards locked before 2026-10-22; locked cards keep the stop they were posted with).
+Run `study` from Actions → market → Run workflow to regrade every card at 15/20/25/30/35% stops
+(writes `ledger/stop_study.json`).
+
 Every card shows the stock price it was made from and that price's time, so you can check it
 against your own screen. Data is ~15 minutes delayed.
 

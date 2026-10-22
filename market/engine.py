@@ -88,7 +88,7 @@ RISK_FIXED_DOLLARS: Optional[float] = _num_env("RISK_FIXED_DOLLARS")
 
 # --- Target / stop (PLACEHOLDERS — not user rules yet) ---------------------------------------
 TARGET_PCT = 0.50                 # target premium = signal premium * (1 + TARGET_PCT)
-STOP_PCT = 0.35                   # stop premium   = signal premium * (1 - STOP_PCT)
+STOP_PCT = 0.20                   # stop premium   = signal premium * (1 - STOP_PCT)  (was 0.35 until 2026-10-21)
 
 # --- Entry range rule: floor = signal premium, ceiling = +15–20% ---------------------------
 ENTRY_CEILING_PCT = 0.20          # must be between 0.15 and 0.20 per your rule
