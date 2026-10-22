@@ -1,12 +1,12 @@
 {
  "2026-10-21_rescan_INTC_PUT_2026-10-23_91": {
-  "last": 2.74,
+  "last": 3.31,
   "last_time": "2026-10-21T09:59:58-10:00",
   "high": null,
   "low": null,
   "source": "chain quote",
-  "pnl_pct": 75.6,
-  "as_of": "2026-10-22T02:29:30.765371-10:00"
+  "pnl_pct": 112.2,
+  "as_of": "2026-10-22T03:17:09.562671-10:00"
  },
  "_errors": {
   "2026-10-21_rescan_INTC_PUT_2026-10-23_91": "no 5m bars"
