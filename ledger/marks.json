@@ -1,1 +1,24 @@
-{}
+{
+ "2026-10-22_rescan_IWM_CALL_2026-10-23_277": {
+  "last": 1.14,
+  "last_time": "2026-10-22T05:57:30-10:00",
+  "high": null,
+  "low": null,
+  "source": "chain quote",
+  "pnl_pct": 7.5,
+  "as_of": "2026-10-22T06:11:10.463128-10:00"
+ },
+ "2026-10-22_rescan_DIA_CALL_2026-10-23_529": {
+  "last": 1.46,
+  "last_time": "2026-10-22T05:56:21-10:00",
+  "high": null,
+  "low": null,
+  "source": "chain quote",
+  "pnl_pct": 18.7,
+  "as_of": "2026-10-22T06:11:10.463128-10:00"
+ },
+ "_errors": {
+  "2026-10-22_rescan_IWM_CALL_2026-10-23_277": "bars returned but none after lock (30 rows)",
+  "2026-10-22_rescan_DIA_CALL_2026-10-23_529": "bars returned but none after lock (26 rows)"
+ }
+}

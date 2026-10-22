@@ -1,0 +1,119 @@
+{
+ "trade_date": "2026-10-22",
+ "mode": "rescan",
+ "ran_at": "2026-10-22T06:11:10.463128-10:00",
+ "test": false,
+ "open_hst": "2026-10-22T03:30:00-10:00",
+ "close_hst": "2026-10-22T10:00:00-10:00",
+ "early_close": false,
+ "bias": {
+  "regime": "MIXED",
+  "favored": null,
+  "clean": false,
+  "notes": [
+   "ES red (-1.08%), NQ red (-2.17%), YM flat (-0.02%)",
+   "No ES/YM rule matched \u2192 no favored side, no A+",
+   "VIX 18.43 (+10.49%) \u2192 does not confirm",
+   "SPY red (-1.02%), QQQ red (-2.13%) \u2192 does not confirm"
+  ]
+ },
+ "quotes": {
+  "ES": {
+   "last": 7715.75,
+   "prev_close": 7800.25,
+   "chg_pct": -1.0832986122239672,
+   "source": "delayed"
+  },
+  "NQ": {
+   "last": 29357.0,
+   "prev_close": 30007.0,
+   "chg_pct": -2.1661612290465557,
+   "source": "delayed"
+  },
+  "YM": {
+   "last": 53046.0,
+   "prev_close": 53059.0,
+   "chg_pct": -0.024501027158446258,
+   "source": "delayed"
+  },
+  "VIX": {
+   "last": 18.43000030517578,
+   "prev_close": 16.68000030517578,
+   "chg_pct": 10.491606522674807,
+   "source": "delayed"
+  },
+  "SPY": {
+   "last": 765.2150268554688,
+   "prev_close": 773.0900268554688,
+   "chg_pct": -1.018639450314918,
+   "source": "delayed"
+  },
+  "QQQ": {
+   "last": 709.780029296875,
+   "prev_close": 725.2000122070312,
+   "chg_pct": -2.126307591091729,
+   "source": "delayed"
+  }
+ },
+ "flags": [
+  "THURSDAY: reassess all open contracts by 11:00 AM HST",
+  "Amateur hour until 04:00 AM; institutional 04:00\u201304:30 AM HST",
+  "No damaged contracts overnight. No earnings holds overnight."
+ ],
+ "headlines": [],
+ "cards": [
+  {
+   "id": "2026-10-22_rescan_IWM_CALL_2026-10-23_277",
+   "trade_date": "2026-10-22",
+   "mode": "rescan",
+   "locked_at": "2026-10-22T06:11:10.463128-10:00",
+   "ticker": "IWM",
+   "type": "CALL",
+   "bias": "MIXED",
+   "expiry": "2026-10-23",
+   "strike": 277.0,
+   "entry_floor": 1.06,
+   "entry_ceiling": 1.27,
+   "premium": 1.06,
+   "target": 1.59,
+   "stop": 0.85,
+   "reasoning": "MIXED, against/no favored side, trend aligned, VWAP support, strong liquidity",
+   "confidence": 7,
+   "a_plus": false,
+   "status": "GO",
+   "flags": "hold OK until Fri 10/23 close \u00b7 close before the weekend",
+   "data_source": "cboe",
+   "contract": "IWM261023C00277000",
+   "underlying": 276.42,
+   "underlying_asof": "6:11 AM HST"
+  },
+  {
+   "id": "2026-10-22_rescan_DIA_CALL_2026-10-23_529",
+   "trade_date": "2026-10-22",
+   "mode": "rescan",
+   "locked_at": "2026-10-22T06:11:10.463128-10:00",
+   "ticker": "DIA",
+   "type": "CALL",
+   "bias": "MIXED",
+   "expiry": "2026-10-23",
+   "strike": 529.0,
+   "entry_floor": 1.23,
+   "entry_ceiling": 1.48,
+   "premium": 1.23,
+   "target": 1.84,
+   "stop": 0.98,
+   "reasoning": "MIXED, against/no favored side, trend aligned, PDH support",
+   "confidence": 6,
+   "a_plus": false,
+   "status": "GO",
+   "flags": "hold OK until Fri 10/23 close \u00b7 close before the weekend",
+   "data_source": "cboe",
+   "contract": "DIA261023C00529000",
+   "underlying": 527.83,
+   "underlying_asof": "6:11 AM HST"
+  }
+ ],
+ "passing": 2,
+ "rejected": 143,
+ "rejections": []
+}
