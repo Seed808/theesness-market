@@ -55,7 +55,32 @@ APP_SECRET = os.environ.get("SCHWAB_APP_SECRET", "").strip()
 
 # Schwab symbol for our names. Futures/index formats are not confirmed; if Schwab rejects them
 # the engine uses Yahoo for those.
-SYMBOL_MAP = {"ES": "/ES", "NQ": "/NQ", "YM": "/YM", "VIX": "$VIX", "SPX": "$SPX"}
+SYMBOL_MAP = {"VIX": "$VIX", "SPX": "$SPX"}
+FUTURES_ROOTS = {"ES": "ES", "NQ": "NQ", "YM": "YM"}
+MONTH_CODES = {3: "H", 6: "M", 9: "U", 12: "Z"}      # quarterly equity-index futures
+
+
+def _third_friday(y: int, m: int) -> date:
+    d = date(y, m, 15)
+    return d + timedelta(days=(4 - d.weekday()) % 7)
+
+
+def front_month(today: date) -> tuple:
+    """(month_code, year) of the front quarterly contract (H/M/U/Z = Mar/Jun/Sep/Dec).
+    Rolls to the next contract 8 days before the 3rd-Friday expiration (the usual roll date)."""
+    y = today.year
+    for qm in [3, 6, 9, 12, 15, 18]:
+        yy, mm = (y, qm) if qm <= 12 else (y + 1, qm - 12)
+        if today < _third_friday(yy, mm) - timedelta(days=8):
+            return MONTH_CODES[mm], yy
+    raise RuntimeError("front month not found")
+
+
+def futures_candidates(name: str, today: date) -> list:
+    """Schwab symbol formats to try for a futures name, best guess first."""
+    root = FUTURES_ROOTS[name]
+    code, y = front_month(today)
+    return [f"/{root}{code}{y % 100:02d}", f"/{root}", f"/{root}{code}{y}"]
 
 
 def configured() -> bool:
@@ -243,10 +268,20 @@ def _num(d: dict, *keys):
 # ------------------------------------------------------------------ data functions
 
 def quotes(names: list) -> dict:
-    """{our_name: (last, prev_close)} for every name Schwab answers. Batched."""
-    out = {}
-    syms = {SYMBOL_MAP.get(n, n): n for n in names}
-    keys = list(syms)
+    """{our_name: (last, prev_close)} for every name Schwab answers. Batched.
+    Futures are asked under several symbol formats; the first that answers with both prices is
+    used. What Schwab returned for each format is saved to auth/schwab_status.json (no secrets)."""
+    asked = {}                                  # schwab symbol -> our name
+    fut = {}                                    # our futures name -> candidate symbols in order
+    for n in names:
+        if n in FUTURES_ROOTS:
+            fut[n] = futures_candidates(n, date.today())
+            for c in fut[n]:
+                asked[c] = n
+        else:
+            asked[SYMBOL_MAP.get(n, n)] = n
+    got = {}                                    # schwab symbol -> (last, prev, field names)
+    keys = list(asked)
     for i in range(0, len(keys), 40):
         j = get("/marketdata/v1/quotes", {"symbols": ",".join(keys[i:i + 40])})
         if not isinstance(j, dict):
@@ -255,10 +290,24 @@ def quotes(names: list) -> dict:
             if not isinstance(body, dict):
                 continue
             q = body.get("quote", body)
-            last = _num(q, "lastPrice", "mark", "closePrice")
-            prev = _num(q, "closePrice", "previousClose")
-            if sym in syms and last and prev:
-                out[syms[sym]] = (last, prev)
+            got[sym] = (_num(q, "lastPrice", "mark", "closePrice"),
+                        _num(q, "closePrice", "previousClose", "previousClosePrice"),
+                        sorted(q.keys())[:40] if isinstance(q, dict) else [])
+    out = {}
+    for sym, n in asked.items():
+        if n not in fut and sym in got and got[sym][0] and got[sym][1]:
+            out[n] = got[sym][:2]
+    probe = {}
+    for n, cands in fut.items():
+        for c in cands:
+            g = got.get(c)
+            probe[c] = ({"answered": True, "last": g[0] is not None, "prev": g[1] is not None,
+                         "fields": g[2]} if g else {"answered": False})
+            if n not in out and g and g[0] and g[1]:
+                out[n] = g[:2]
+                probe[c]["used"] = True
+    if fut:
+        _status_write(futures_probe=probe)
     return out
 
 
