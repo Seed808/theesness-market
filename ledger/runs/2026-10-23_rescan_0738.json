@@ -1,0 +1,94 @@
+{
+ "trade_date": "2026-10-23",
+ "mode": "rescan",
+ "ran_at": "2026-10-23T07:38:55.679280-10:00",
+ "test": false,
+ "open_hst": "2026-10-23T03:30:00-10:00",
+ "close_hst": "2026-10-23T10:00:00-10:00",
+ "early_close": false,
+ "bias": {
+  "regime": "BEAR",
+  "favored": "P",
+  "clean": false,
+  "notes": [
+   "ES red (-0.51%), NQ flat (+0.06%), YM red (-1.24%)",
+   "ES+YM red \u2192 broad bear, puts favored",
+   "VIX 20.20 (+6.15%) \u2192 confirms",
+   "SPY red (-0.48%), QQQ green (+0.13%) \u2192 does not confirm"
+  ]
+ },
+ "quotes": {
+  "ES": {
+   "last": 7665.0,
+   "prev_close": 7704.5,
+   "chg_pct": -0.5126873904860796,
+   "source": "delayed"
+  },
+  "NQ": {
+   "last": 29158.5,
+   "prev_close": 29142.0,
+   "chg_pct": 0.056619312332715666,
+   "source": "delayed"
+  },
+  "YM": {
+   "last": 52412.0,
+   "prev_close": 53068.0,
+   "chg_pct": -1.2361498454812694,
+   "source": "delayed"
+  },
+  "VIX": {
+   "last": 20.200000762939453,
+   "prev_close": 19.030000686645508,
+   "chg_pct": 6.1481872521161,
+   "source": "delayed"
+  },
+  "SPY": {
+   "last": 760.2899780273438,
+   "prev_close": 763.9600219726562,
+   "chg_pct": -0.4803973820300061,
+   "source": "delayed"
+  },
+  "QQQ": {
+   "last": 705.3900146484375,
+   "prev_close": 704.469970703125,
+   "chg_pct": 0.13060087492362701,
+   "source": "delayed"
+  }
+ },
+ "flags": [
+  "Friday/pre-holiday rules: 0DTE only, no overnight",
+  "Amateur hour until 04:00 AM; institutional 04:00\u201304:30 AM HST",
+  "No damaged contracts overnight. No earnings holds overnight."
+ ],
+ "headlines": [],
+ "cards": [
+  {
+   "id": "2026-10-23_rescan_SPX_PUT_2026-10-23_7625",
+   "trade_date": "2026-10-23",
+   "mode": "rescan",
+   "locked_at": "2026-10-23T07:38:55.679280-10:00",
+   "ticker": "SPX",
+   "type": "PUT",
+   "bias": "BEAR",
+   "expiry": "2026-10-23",
+   "strike": 7625.0,
+   "entry_floor": 8.45,
+   "entry_ceiling": 10.14,
+   "premium": 8.45,
+   "target": 12.67,
+   "stop": 6.76,
+   "reasoning": "BEAR, trend aligned, PDL resistance, strong liquidity",
+   "confidence": 8,
+   "a_plus": false,
+   "status": "GO",
+   "flags": "0DTE only / no overnight",
+   "data_source": "cboe",
+   "contract": "SPXW261023P07625000",
+   "underlying": 7628.52,
+   "underlying_asof": "7:24 AM HST"
+  }
+ ],
+ "passing": 2,
+ "rejected": 71,
+ "rejections": []
+}
