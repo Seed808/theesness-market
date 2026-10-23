@@ -1,9 +1,9 @@
 {
- "built_for": "2026-10-22",
- "built_at": "2026-10-22T10:57:54.204579-10:00",
+ "built_for": "2026-10-23",
+ "built_at": "2026-10-23T10:28:12.261538-10:00",
  "range": [
-  "2026-07-30",
-  "2026-10-22"
+  "2026-07-31",
+  "2026-10-23"
  ],
  "params": {
   "move_pct": 0.3,
@@ -19,18 +19,18 @@
    "regime": "BEAR",
    "clean": true,
    "SPY": {
-    "days": 13,
+    "days": 14,
     "win": 4,
-    "loss": 3,
+    "loss": 4,
     "none": 6,
-    "win_pct": 57.1
+    "win_pct": 50.0
    },
    "QQQ": {
-    "days": 13,
-    "win": 4,
+    "days": 14,
+    "win": 5,
     "loss": 7,
     "none": 2,
-    "win_pct": 36.4
+    "win_pct": 41.7
    }
   },
   {
@@ -109,22 +109,48 @@
    "regime": "BULL",
    "clean": false,
    "SPY": {
-    "days": 10,
+    "days": 9,
     "win": 2,
     "loss": 3,
-    "none": 5,
+    "none": 4,
     "win_pct": 40.0
    },
    "QQQ": {
-    "days": 10,
+    "days": 9,
     "win": 1,
     "loss": 5,
-    "none": 4,
+    "none": 3,
     "win_pct": 16.7
    }
   }
  ],
  "days": [
+  {
+   "date": "2026-10-23",
+   "regime": "BEAR",
+   "favored": "P",
+   "clean": true,
+   "vix_confirms": true,
+   "index_confirms": true,
+   "chg": {
+    "ES": -0.49,
+    "NQ": -0.31,
+    "YM": -0.89,
+    "VIX": 6.31,
+    "SPY": -0.45,
+    "QQQ": -0.25
+   },
+   "premarket_bar": {
+    "ES": true,
+    "NQ": true,
+    "YM": true,
+    "VIX": true,
+    "SPY": true,
+    "QQQ": true
+   },
+   "SPY": "LOSS",
+   "QQQ": "WIN"
+  },
   {
    "date": "2026-10-22",
    "regime": "BEAR",
@@ -1401,29 +1427,29 @@
   },
   {
    "date": "2026-08-13",
-   "regime": "BULL",
-   "favored": "C",
+   "regime": "UNKNOWN",
+   "favored": null,
    "clean": false,
    "vix_confirms": false,
    "index_confirms": false,
    "chg": {
-    "ES": 0.23,
-    "NQ": 0.09,
-    "YM": 0.34,
+    "ES": null,
+    "NQ": null,
+    "YM": null,
     "VIX": -0.69,
     "SPY": 0.24,
     "QQQ": 0.1
    },
    "premarket_bar": {
-    "ES": true,
-    "NQ": true,
-    "YM": true,
+    "ES": false,
+    "NQ": false,
+    "YM": false,
     "VIX": true,
     "SPY": true,
     "QQQ": true
    },
-   "SPY": "NONE",
-   "QQQ": "NONE"
+   "SPY": "\u2014",
+   "QQQ": "\u2014"
   },
   {
    "date": "2026-08-12",
@@ -1644,35 +1670,9 @@
     "ES": null,
     "NQ": null,
     "YM": null,
-    "VIX": 1.05,
+    "VIX": null,
     "SPY": 0.19,
     "QQQ": 0.87
-   },
-   "premarket_bar": {
-    "ES": false,
-    "NQ": false,
-    "YM": false,
-    "VIX": true,
-    "SPY": true,
-    "QQQ": true
-   },
-   "SPY": "\u2014",
-   "QQQ": "\u2014"
-  },
-  {
-   "date": "2026-07-30",
-   "regime": "UNKNOWN",
-   "favored": null,
-   "clean": false,
-   "vix_confirms": false,
-   "index_confirms": false,
-   "chg": {
-    "ES": null,
-    "NQ": null,
-    "YM": null,
-    "VIX": null,
-    "SPY": 0.68,
-    "QQQ": 1.72
    },
    "premarket_bar": {
     "ES": false,
