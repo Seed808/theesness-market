@@ -1,11 +1,23 @@
 {
  "2026-10-23_confirm_GLD_PUT_2026-10-23_366": {
-  "last": 0.34,
-  "last_time": "2026-10-23T06:20:00-10:00",
+  "last": 0.35,
+  "last_time": "2026-10-23T06:55:00-10:00",
   "high": 2.1,
-  "low": 0.29,
+  "low": 0.23,
   "source": "5m bars",
-  "pnl_pct": 13.3,
-  "as_of": "2026-10-23T06:40:37.388959-10:00"
+  "pnl_pct": 16.7,
+  "as_of": "2026-10-23T07:12:51.533478-10:00"
+ },
+ "2026-10-23_rescan_TSLA_PUT_2026-10-23_370": {
+  "last": 0.54,
+  "last_time": "2026-10-23T06:59:07-10:00",
+  "high": null,
+  "low": null,
+  "source": "chain quote",
+  "pnl_pct": 10.2,
+  "as_of": "2026-10-23T07:12:51.533478-10:00"
+ },
+ "_errors": {
+  "2026-10-23_rescan_TSLA_PUT_2026-10-23_370": "bars returned but none after lock (42 rows)"
  }
 }

@@ -1,0 +1,94 @@
+{
+ "trade_date": "2026-10-23",
+ "mode": "rescan",
+ "ran_at": "2026-10-23T07:12:51.533478-10:00",
+ "test": false,
+ "open_hst": "2026-10-23T03:30:00-10:00",
+ "close_hst": "2026-10-23T10:00:00-10:00",
+ "early_close": false,
+ "bias": {
+  "regime": "BEAR",
+  "favored": "P",
+  "clean": false,
+  "notes": [
+   "ES red (-0.39%), NQ green (+0.20%), YM red (-1.11%)",
+   "ES+YM red \u2192 broad bear, puts favored",
+   "VIX 19.91 (+4.62%) \u2192 confirms",
+   "SPY red (-0.45%), QQQ green (+0.16%) \u2192 does not confirm"
+  ]
+ },
+ "quotes": {
+  "ES": {
+   "last": 7674.25,
+   "prev_close": 7704.5,
+   "chg_pct": -0.3926276851190863,
+   "source": "delayed"
+  },
+  "NQ": {
+   "last": 29200.0,
+   "prev_close": 29142.0,
+   "chg_pct": 0.19902546153318235,
+   "source": "delayed"
+  },
+  "YM": {
+   "last": 52477.0,
+   "prev_close": 53068.0,
+   "chg_pct": -1.1136654857918142,
+   "source": "delayed"
+  },
+  "VIX": {
+   "last": 19.90999984741211,
+   "prev_close": 19.030000686645508,
+   "chg_pct": 4.624272879738516,
+   "source": "delayed"
+  },
+  "SPY": {
+   "last": 760.5250244140625,
+   "prev_close": 763.9600219726562,
+   "chg_pct": -0.4496305382216317,
+   "source": "delayed"
+  },
+  "QQQ": {
+   "last": 705.5800170898438,
+   "prev_close": 704.469970703125,
+   "chg_pct": 0.15757185300756296,
+   "source": "delayed"
+  }
+ },
+ "flags": [
+  "Friday/pre-holiday rules: 0DTE only, no overnight",
+  "Amateur hour until 04:00 AM; institutional 04:00\u201304:30 AM HST",
+  "No damaged contracts overnight. No earnings holds overnight."
+ ],
+ "headlines": [],
+ "cards": [
+  {
+   "id": "2026-10-23_rescan_TSLA_PUT_2026-10-23_370",
+   "trade_date": "2026-10-23",
+   "mode": "rescan",
+   "locked_at": "2026-10-23T07:12:51.533478-10:00",
+   "ticker": "TSLA",
+   "type": "PUT",
+   "bias": "BEAR",
+   "expiry": "2026-10-23",
+   "strike": 370.0,
+   "entry_floor": 0.49,
+   "entry_ceiling": 0.59,
+   "premium": 0.49,
+   "target": 0.73,
+   "stop": 0.39,
+   "reasoning": "BEAR, trend aligned, PML resistance, strong liquidity",
+   "confidence": 8,
+   "a_plus": false,
+   "status": "GO",
+   "flags": "0DTE only / no overnight",
+   "data_source": "cboe",
+   "contract": "TSLA261023P00370000",
+   "underlying": 371.02,
+   "underlying_asof": "7:14 AM HST"
+  }
+ ],
+ "passing": 1,
+ "rejected": 72,
+ "rejections": []
+}
