@@ -5,5 +5,122 @@
  "login_at": "2026-10-23T19:39:04.074660+00:00",
  "expires_at": "2026-10-30T19:39:04.074660+00:00",
  "last_ok": "2026-10-23T19:39:04.074660+00:00",
- "last_error": null
+ "last_error": null,
+ "hours_left": 167.7,
+ "futures_probe": {
+  "/ESZ26": {
+   "answered": true,
+   "last": true,
+   "prev": true,
+   "fields": [
+    "askPrice",
+    "askSize",
+    "askTime",
+    "bidPrice",
+    "bidSize",
+    "bidTime",
+    "closePrice",
+    "futurePercentChange",
+    "highPrice",
+    "lastPrice",
+    "lastSize",
+    "lowPrice",
+    "mark",
+    "netChange",
+    "openInterest",
+    "openPrice",
+    "quoteTime",
+    "quotedInSession",
+    "securityStatus",
+    "settleTime",
+    "tick",
+    "tickAmount",
+    "totalVolume",
+    "tradeTime"
+   ],
+   "used": true
+  },
+  "/ES": {
+   "answered": false
+  },
+  "/ESZ2026": {
+   "answered": false
+  },
+  "/NQZ26": {
+   "answered": true,
+   "last": true,
+   "prev": true,
+   "fields": [
+    "askPrice",
+    "askSize",
+    "askTime",
+    "bidPrice",
+    "bidSize",
+    "bidTime",
+    "closePrice",
+    "futurePercentChange",
+    "highPrice",
+    "lastPrice",
+    "lastSize",
+    "lowPrice",
+    "mark",
+    "netChange",
+    "openInterest",
+    "openPrice",
+    "quoteTime",
+    "quotedInSession",
+    "securityStatus",
+    "settleTime",
+    "tick",
+    "tickAmount",
+    "totalVolume",
+    "tradeTime"
+   ],
+   "used": true
+  },
+  "/NQ": {
+   "answered": false
+  },
+  "/NQZ2026": {
+   "answered": false
+  },
+  "/YMZ26": {
+   "answered": true,
+   "last": true,
+   "prev": true,
+   "fields": [
+    "askPrice",
+    "askSize",
+    "askTime",
+    "bidPrice",
+    "bidSize",
+    "bidTime",
+    "closePrice",
+    "futurePercentChange",
+    "highPrice",
+    "lastPrice",
+    "lastSize",
+    "lowPrice",
+    "mark",
+    "netChange",
+    "openInterest",
+    "openPrice",
+    "quoteTime",
+    "quotedInSession",
+    "securityStatus",
+    "settleTime",
+    "tick",
+    "tickAmount",
+    "totalVolume",
+    "tradeTime"
+   ],
+   "used": true
+  },
+  "/YM": {
+   "answered": false
+  },
+  "/YMZ2026": {
+   "answered": false
+  }
+ }
 }
