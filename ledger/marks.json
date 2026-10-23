@@ -1,11 +1,14 @@
 {
  "2026-10-22_rescan_DIA_CALL_2026-10-23_529": {
   "last": 1.27,
-  "last_time": "2026-10-22T10:10:00-10:00",
-  "high": 1.8,
-  "low": 0.99,
-  "source": "5m bars",
+  "last_time": "2026-10-22T10:12:42-10:00",
+  "high": null,
+  "low": null,
+  "source": "chain quote",
   "pnl_pct": 3.3,
-  "as_of": "2026-10-22T14:21:25.679077-10:00"
+  "as_of": "2026-10-23T02:22:56.455277-10:00"
+ },
+ "_errors": {
+  "2026-10-22_rescan_DIA_CALL_2026-10-23_529": "no 5m bars"
  }
 }
