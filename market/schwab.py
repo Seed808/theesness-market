@@ -292,22 +292,47 @@ def quotes(names: list) -> dict:
             q = body.get("quote", body)
             got[sym] = (_num(q, "lastPrice", "mark", "closePrice"),
                         _num(q, "closePrice", "previousClose", "previousClosePrice"),
-                        sorted(q.keys())[:40] if isinstance(q, dict) else [])
+                        sorted(q.keys())[:40] if isinstance(q, dict) else [],
+                        {k: q.get(k) for k in ("closePrice", "lastPrice", "netChange", "futurePercentChange",
+                                               "futureSettlementPrice", "settleTime", "tradeTime")
+                         if k in q})
     out = {}
     for sym, n in asked.items():
         if n not in fut and sym in got and got[sym][0] and got[sym][1]:
-            out[n] = got[sym][:2]
+            out[n] = (got[sym][0], got[sym][1])
     probe = {}
     for n, cands in fut.items():
         for c in cands:
             g = got.get(c)
             probe[c] = ({"answered": True, "last": g[0] is not None, "prev": g[1] is not None,
-                         "fields": g[2]} if g else {"answered": False})
+                         "fields": g[2], "values": g[3], "check": _close_check(g[3])}
+                        if g else {"answered": False})
             if n not in out and g and g[0] and g[1]:
-                out[n] = g[:2]
+                out[n] = (g[0], g[1])
                 probe[c]["used"] = True
     if fut:
         _status_write(futures_probe=probe)
+    return out
+
+
+def _close_check(v: dict) -> dict:
+    """Does closePrice agree with Schwab's own netChange and futurePercentChange?"""
+    out = {}
+    try:
+        last, close = float(v["lastPrice"]), float(v["closePrice"])
+        if v.get("netChange") is not None:
+            out["netChange_diff"] = round((last - close) - float(v["netChange"]), 4)
+        if v.get("futurePercentChange") is not None and close:
+            mine = (last - close) / close * 100
+            fp = float(v["futurePercentChange"])
+            # Schwab may report percent as 1.23 or as 0.0123 — record both readings
+            out["my_pct"] = round(mine, 4)
+            out["schwab_pct"] = fp
+            out["pct_diff"] = round(min(abs(mine - fp), abs(mine - fp * 100)), 4)
+        if v.get("futureSettlementPrice") is not None:
+            out["settlement_vs_close"] = round(float(v["futureSettlementPrice"]) - close, 4)
+    except (KeyError, TypeError, ValueError):
+        pass
     return out
 
 
