@@ -1,5 +1,9 @@
 {
  "configured": true,
- "connected": false,
- "expired_notice_at": "2026-10-23T08:58:20.702561-10:00"
+ "connected": true,
+ "expired_notice_at": "2026-10-23T08:58:20.702561-10:00",
+ "login_at": "2026-10-23T19:39:04.074660+00:00",
+ "expires_at": "2026-10-30T19:39:04.074660+00:00",
+ "last_ok": "2026-10-23T19:39:04.074660+00:00",
+ "last_error": null
 }
