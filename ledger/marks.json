@@ -1,14 +1,14 @@
 {
- "2026-10-22_rescan_DIA_CALL_2026-10-23_529": {
-  "last": 1.27,
-  "last_time": "2026-10-22T10:12:42-10:00",
+ "2026-10-23_confirm_GLD_PUT_2026-10-23_366": {
+  "last": 0.27,
+  "last_time": "2026-10-23T04:08:37-10:00",
   "high": null,
   "low": null,
   "source": "chain quote",
-  "pnl_pct": 3.3,
-  "as_of": "2026-10-23T03:44:54.582407-10:00"
+  "pnl_pct": -10.0,
+  "as_of": "2026-10-23T04:23:08.128597-10:00"
  },
  "_errors": {
-  "2026-10-22_rescan_DIA_CALL_2026-10-23_529": "no 5m bars"
+  "2026-10-23_confirm_GLD_PUT_2026-10-23_366": "bars returned but none after lock (8 rows)"
  }
 }
