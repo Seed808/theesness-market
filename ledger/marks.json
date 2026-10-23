@@ -6,7 +6,7 @@
   "low": null,
   "source": "chain quote",
   "pnl_pct": 3.3,
-  "as_of": "2026-10-23T03:05:55.778456-10:00"
+  "as_of": "2026-10-23T03:44:54.582407-10:00"
  },
  "_errors": {
   "2026-10-22_rescan_DIA_CALL_2026-10-23_529": "no 5m bars"
