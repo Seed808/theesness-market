@@ -1,14 +1,11 @@
 {
  "2026-10-23_confirm_GLD_PUT_2026-10-23_366": {
-  "last": 0.27,
-  "last_time": "2026-10-23T04:08:37-10:00",
-  "high": null,
-  "low": null,
-  "source": "chain quote",
-  "pnl_pct": -10.0,
-  "as_of": "2026-10-23T04:23:08.128597-10:00"
- },
- "_errors": {
-  "2026-10-23_confirm_GLD_PUT_2026-10-23_366": "bars returned but none after lock (8 rows)"
+  "last": 0.7,
+  "last_time": "2026-10-23T04:45:00-10:00",
+  "high": 2.1,
+  "low": 0.68,
+  "source": "5m bars",
+  "pnl_pct": 133.3,
+  "as_of": "2026-10-23T04:59:09.332426-10:00"
  }
 }
