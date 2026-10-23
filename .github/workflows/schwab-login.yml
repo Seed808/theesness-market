@@ -24,7 +24,8 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      # First step on purpose: swap the short-lived code for tokens before anything else runs.
+      - uses: actions/checkout@v4
+      # Right after checkout on purpose: swap the short-lived code for tokens before anything else runs.
       - name: exchange code for tokens
         env:
           URL: ${{ inputs.redirect_url }}
@@ -58,7 +59,6 @@ jobs:
               json.dump(tok, f)
           print("Code exchanged OK.")
           PY
-      - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: { python-version: "3.12" }
       - run: pip install -q requests==2.32.3 cryptography
@@ -92,7 +92,8 @@ jobs:
           SCHWAB_APP_SECRET: ${{ secrets.SCHWAB_APP_SECRET }}
           JOB_STATUS: ${{ job.status }}
         run: |
-          python - <<'PY'
+          python3 -m pip install -q requests 2>/dev/null || true
+          python3 - <<'PY'
           import os, sys
           from datetime import datetime
           sys.path.insert(0, "market")
