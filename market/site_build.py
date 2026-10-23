@@ -200,7 +200,7 @@ def run_section(title: str, s: dict | None, grades: dict, empty: str) -> str:
     body = f'<div class="board">{cards}</div>' if cards else \
         '<div class="empty">No quality setups. Every name was rejected by a rule.</div>'
     return (f'<h2>{e(title)}</h2>{body}<p class="note">{s["passing"]} passed the filters, '
-            f'{s["rejected"]} rejected. Data is ~15 min delayed unless marked ToS.</p>'
+            f'{s["rejected"]} rejected. Data: {e(s.get("data_note") or "~15 min delayed (Yahoo)")}.</p>'
             + (f'<details><summary class="eyebrow">Rejections</summary><ul class="note">'
                + "".join(f"<li>{e(x)}</li>" for x in s["rejections"]) + '</ul></details>'
                if s["rejections"] else ""))
@@ -224,7 +224,7 @@ def in_play_section(runs: dict, grades: dict) -> str:
         return ""
     cards.sort(key=lambda c: c["locked_at"])
     return ('<h2>In play — open cards</h2><p class="note">Locked GO cards that have not hit their target '
-            'or stop and have not reached their expiry-day close. Prices are ~15 min delayed and '
+            'or stop and have not reached their expiry-day close. Prices are the latest available and '
             'refresh every run.</p><div class="board">'
             + "".join(card_html(c, None) for c in cards) + '</div>')
 
@@ -244,6 +244,18 @@ def day_body(d: str, modes: dict, grades: dict) -> str:
                           "Confirmation read hasn't run yet (due 30 minutes after the open).")
             + run_section("Pre-market watch — conditional, not graded", modes.get("premarket"),
                           grades, "Pre-market read didn't run this day."))
+
+
+def source_note() -> str:
+    p = REPO / "auth" / "schwab_status.json"
+    try:
+        st = json.loads(p.read_text()) if p.exists() else {}
+    except ValueError:
+        st = {}
+    if st.get("connected") and st.get("expires_at"):
+        exp = datetime.fromisoformat(st["expires_at"]).astimezone(E.HST)
+        return f"Data: Schwab live (login good until {exp.strftime('%a %-m/%-d %I:%M %p')} HST)."
+    return "Data: Yahoo, ~15 min delayed."
 
 
 def next_run_note(now: datetime) -> str:
@@ -277,7 +289,7 @@ def build(out: Path, now: datetime) -> None:
     if days:
         latest = days[0]
         body = (tiles(st) + in_play_section(runs, grades) + day_body(latest, runs[latest], grades)
-                + f'<p class="note">{e(next_run_note(now))} Page built {e(E.fmt_hst(now))}.</p>')
+                + f'<p class="note">{e(next_run_note(now))} {e(source_note())} Page built {e(E.fmt_hst(now))}.</p>')
     else:
         body = (tiles(st) + '<h1>No runs yet</h1><div class="empty">'
                 f'{e(next_run_note(now))}</div><p class="note">Page built {e(E.fmt_hst(now))}.</p>')

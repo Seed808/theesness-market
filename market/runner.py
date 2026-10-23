@@ -144,7 +144,7 @@ def snapshot(r: E.ScanResult, cards: list, test: bool = False) -> dict:
                  "notes": r.bias.notes},
         "quotes": {k: {"last": q.last, "prev_close": q.prev_close, "chg_pct": q.chg_pct,
                        "source": q.source} for k, q in r.quotes.items()},
-        "flags": r.flags, "headlines": r.headlines,
+        "flags": r.flags, "headlines": r.headlines, "data_note": E.data_note(),
         "cards": [public_card(i, d, r.mode, locked_at) for i in cards],
         "passing": len(r.ideas), "rejected": len(r.skipped),
         "rejections": [] if r.mode == "rescan" else r.skipped[:80],
@@ -477,6 +477,46 @@ def after_close(now: datetime) -> None:
 
 
 # --------------------------------------------------------------------------------------------
+# Schwab connection + weekly login reminder
+# --------------------------------------------------------------------------------------------
+
+REMIND_HOURS = 30          # warn when the 7-day Schwab login has less than this left
+
+
+def connect_schwab(now: datetime) -> None:
+    """Plug Schwab in as the live-data provider if its secrets and a valid login exist."""
+    try:
+        import schwab as S
+    except Exception as e:  # noqa: BLE001
+        print(f"[warn] schwab module: {type(e).__name__}: {e}", file=sys.stderr)
+        return
+    if not S.configured():
+        return
+    was = S.status().get("connected")
+    E.PROVIDER = S.provider_if_connected()
+    st = S.status()
+    print(f"Schwab: {'connected' if E.PROVIDER else 'NOT connected'}"
+          + (f", {st.get('hours_left')}h left on login" if st.get("hours_left") is not None else ""))
+    step = (f"1) Open: {S.login_link()}\n2) Log in. The page then fails to load — that's expected. "
+            "Copy the whole address (starts with https://127.0.0.1/?code=).\n3) GitHub → Actions → "
+            "schwab-login → Run workflow → paste it → Run. Do it within a few seconds of copying.")
+    if E.PROVIDER is None:
+        if was or not st.get("expired_notice_at"):
+            S._status_write(connected=False, expired_notice_at=now.isoformat())
+            E.send_telegram("<b>SCHWAB NOT CONNECTED</b> — using Yahoo delayed data until you log in.\n\n"
+                            + E._h(step), html=True)
+        return
+    left = st.get("hours_left")
+    last = st.get("reminded_at")
+    if left is not None and left < REMIND_HOURS and \
+            (not last or now - datetime.fromisoformat(last) > timedelta(hours=20)):
+        exp = datetime.fromisoformat(st["expires_at"]).astimezone(E.HST)
+        S._status_write(reminded_at=now.isoformat())
+        E.send_telegram(f"<b>SCHWAB LOGIN EXPIRES</b> {exp.strftime('%a %-m/%-d %I:%M %p')} HST "
+                        f"(~{left:.0f}h). Re-login to keep live data:\n\n" + E._h(step), html=True)
+
+
+# --------------------------------------------------------------------------------------------
 # main
 # --------------------------------------------------------------------------------------------
 
@@ -507,6 +547,7 @@ def main() -> int:
 
     now = E.now_hst()
     print(f"Run at {E.fmt_hst(now)}")
+    connect_schwab(now)
     today = now.date()
     session = E.session_for(today)
     hl = dated_input(INPUTS / "headlines.txt", today)

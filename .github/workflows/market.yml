@@ -40,6 +40,8 @@ jobs:
           ACCOUNT_SIZE: ${{ secrets.ACCOUNT_SIZE }}
           RISK_PCT: ${{ secrets.RISK_PCT }}
           RISK_FIXED_DOLLARS: ${{ secrets.RISK_FIXED_DOLLARS }}
+          SCHWAB_APP_KEY: ${{ secrets.SCHWAB_APP_KEY }}
+          SCHWAB_APP_SECRET: ${{ secrets.SCHWAB_APP_SECRET }}
         run: |
           git pull --rebase --autostash -q || true
           T="${{ github.event.inputs.test }}"
@@ -56,7 +58,7 @@ jobs:
         run: |
           git config user.name "market-bot"
           git config user.email "market-bot@users.noreply.github.com"
-          git add -A ledger data
+          git add -A ledger data auth
           git diff --cached --quiet || git commit -m "ledger: $(date -u +%Y-%m-%dT%H:%MZ)"
           for i in 1 2 3 4 5; do git pull --rebase --autostash && git push && break; git rebase --abort 2>/dev/null; sleep $((i*7)); done
       - uses: actions/upload-pages-artifact@v3

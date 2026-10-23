@@ -177,6 +177,15 @@ FOMC_DECISION_DAYS = {
 }
 
 HTTP_TIMEOUT = 15
+
+# Live-data provider (Schwab). Set by runner.py when connected; None = Yahoo/Cboe only.
+# Every provider call may return None, and the Yahoo path is then used for that item.
+PROVIDER = None
+
+
+def data_note() -> str:
+    return ("live data: Schwab (Yahoo fallback)" if PROVIDER is not None
+            else "data ~15 min delayed (Yahoo)")
 YF_PAUSE_SEC = 0.4         # gentle pacing between tickers
 
 
@@ -327,6 +336,7 @@ class Technicals:
     first5_open: Optional[float] = None
     first5_close: Optional[float] = None
     rvol: Optional[float] = None
+    source: str = "yahoo"
 
 
 @dataclass
@@ -462,6 +472,13 @@ def _yf():
 def fetch_quote(symbol: str, yf_symbol: Optional[str] = None) -> Quote:
     """Last price (incl. pre-market / overnight futures) vs prior regular-session close."""
     q = Quote(symbol)
+    if PROVIDER is not None:
+        try:
+            r = PROVIDER.quote(symbol)
+            if r:
+                return Quote(symbol, r[0], r[1], "schwab")
+        except Exception as e:  # noqa: BLE001
+            print(f"[warn] schwab quote {symbol}: {type(e).__name__}", file=sys.stderr)
     try:
         t = _yf().Ticker(yf_symbol or symbol)
         daily = t.history(period="7d", interval="1d", auto_adjust=False)
@@ -505,8 +522,19 @@ def fetch_technicals(symbol: str, session: Session, mode: str) -> Technicals:
     tech = Technicals()
     try:
         import pandas as pd
-        t = _yf().Ticker(YF_SYMBOL_MAP.get(symbol, symbol))
-        daily = t.history(period="3mo", interval="1d", auto_adjust=False)
+        frames = None
+        if PROVIDER is not None:
+            try:
+                frames = PROVIDER.frames(symbol, now_hst())
+            except Exception as e:  # noqa: BLE001
+                print(f"[warn] schwab history {symbol}: {type(e).__name__}", file=sys.stderr)
+        if frames:
+            daily, m1_pre = frames
+            tech.source = "schwab"
+        else:
+            t = _yf().Ticker(YF_SYMBOL_MAP.get(symbol, symbol))
+            daily = t.history(period="3mo", interval="1d", auto_adjust=False)
+            m1_pre = None
         if daily is None or daily.empty:
             return tech
         daily.index = daily.index.tz_convert(ET) if daily.index.tz is not None else daily.index
@@ -519,7 +547,8 @@ def fetch_technicals(symbol: str, session: Session, mode: str) -> Technicals:
         tech.prev_close = float(prior["Close"].iloc[-1])
         tech.avg_volume = float(prior["Volume"].tail(50).mean())
 
-        m1 = t.history(period="5d", interval="1m", prepost=True, auto_adjust=False)
+        m1 = m1_pre if m1_pre is not None else \
+            t.history(period="5d", interval="1m", prepost=True, auto_adjust=False)
         if m1 is None or m1.empty:
             return tech
         m1 = m1.tz_convert(ET)
@@ -1005,7 +1034,8 @@ def evaluate(sym: str, right: str, bias: Bias, tech: Technicals, opt: Optional[O
                 opt.strike, premium, ceiling, premium, max_contracts(ceiling, stop), target, stop,
                 ", ".join(reasons), score, a_plus, status, "; ".join(flags), opt.source,
                 opt.contract or occ_symbol(sym, opt), round(tech.last, 2),
-                tech.last_time.strftime("%I:%M %p HST").lstrip("0") if tech.last_time else "ToS")
+                (tech.last_time.strftime("%I:%M %p HST").lstrip("0")
+                 + (" live" if tech.source == "schwab" else "")) if tech.last_time else "ToS")
     return idea, []
 
 
@@ -1138,7 +1168,7 @@ def tg_report(r: "ScanResult", cards: Optional[list] = None, prefix: str = "",
     if extra and cards:
         parts.append("<b>NEW CARDS</b>")
     parts += [tg_card(i) for i in cards] if cards else ["<b>No quality setups.</b>"]
-    foot = f"{len(r.ideas)} passed · {len(r.skipped)} rejected · data ~15 min delayed"
+    foot = f"{len(r.ideas)} passed · {len(r.skipped)} rejected · {data_note()}"
     if "UNSET" in {i.max_contracts for i in cards}:
         foot += "\nMax contracts UNSET — add ACCOUNT_SIZE + RISK_PCT secrets"
     parts.append(f"<i>{foot}</i>")
@@ -1224,6 +1254,11 @@ def scan(mode: str, session: Session, ov: Overrides, now: Optional[datetime] = N
     rules = day_rules(session.trade_date)
 
     # --- Bias inputs ---
+    if PROVIDER is not None:
+        try:
+            PROVIDER.prefetch_quotes(list(FUTURES) + ["VIX", "SPY", "QQQ"])
+        except Exception as e:  # noqa: BLE001
+            print(f"[warn] schwab quotes: {type(e).__name__}", file=sys.stderr)
     q = {k: apply_quote_override(fetch_quote(k, v), ov, k) for k, v in FUTURES.items()}
     q["VIX"] = apply_quote_override(fetch_quote("VIX", VIX_SYMBOL), ov, "VIX")
     q["SPY"] = apply_quote_override(fetch_quote("SPY"), ov, "SPY")
@@ -1242,11 +1277,20 @@ def scan(mode: str, session: Session, ov: Overrides, now: Optional[datetime] = N
             skipped.append(f"{sym}: no data"); continue
 
         sides = [bias.favored] if bias.favored else ["C", "P"]
-        expiries = fetch_expiries(sym)
+        pchain = None
+        if PROVIDER is not None:
+            try:
+                pchain = PROVIDER.chain(sym, session.trade_date,
+                                        session.trade_date + timedelta(days=HARD_MAX_DTE))
+            except Exception as e:  # noqa: BLE001
+                print(f"[warn] schwab chain {sym}: {type(e).__name__}", file=sys.stderr)
+        expiries = sorted({o.expiry for o in pchain}) if pchain else fetch_expiries(sym)
         expiry, eflag = pick_expiry(expiries, session.trade_date, rules)
         if expiry is None:
             skipped.append(f"{sym}: {eflag}"); continue
         chain = [o for s, o in ov.options if s == sym]
+        if not any(o.expiry == expiry for o in chain) and pchain:
+            chain = pchain
         if not any(o.expiry == expiry for o in chain):
             chain = fetch_cboe_chain(sym) or []
             if not any(o.expiry == expiry for o in chain):
@@ -1293,7 +1337,7 @@ def format_report(r: ScanResult) -> str:
     lines += [i.card() for i in r.top] if r.top else ["No quality setups."]
     if "UNSET" in {i.max_contracts for i in r.top}:
         lines.append("\n(Max Contracts UNSET — set ACCOUNT_SIZE and RISK_PCT or RISK_FIXED_DOLLARS.)")
-    lines.append(f"\nData: delayed ~15 min unless marked ToS. {len(r.ideas)} passing, "
+    lines.append(f"\nData: {data_note()}. {len(r.ideas)} passing, "
                  f"{len(r.skipped)} rejected.")
     return "\n".join(lines)
 

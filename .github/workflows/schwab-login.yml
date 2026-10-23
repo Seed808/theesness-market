@@ -1,0 +1,109 @@
+name: schwab-login
+# Weekly Schwab login (the refresh token lasts ~7 days).
+#  1. Open the login link (Telegram sends it with the reminder), log in to Schwab.
+#  2. The browser lands on https://127.0.0.1/?code=... and shows an error page — that's expected.
+#     Copy the whole address.
+#  3. Actions → schwab-login → Run workflow → paste it → Run.  Do it right away: the code is
+#     short-lived (exact lifetime not documented).
+# The pasted code is single-use and useless without SCHWAB_APP_SECRET. Tokens are stored
+# encrypted in auth/schwab_token.enc; nothing secret is printed.
+on:
+  workflow_dispatch:
+    inputs:
+      redirect_url:
+        description: "Paste the full https://127.0.0.1/?code=... address"
+        required: true
+        type: string
+permissions:
+  contents: write
+concurrency:
+  group: schwab-login
+  cancel-in-progress: false
+jobs:
+  login:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      # First step on purpose: swap the short-lived code for tokens before anything else runs.
+      - name: exchange code for tokens
+        env:
+          URL: ${{ inputs.redirect_url }}
+          SCHWAB_APP_KEY: ${{ secrets.SCHWAB_APP_KEY }}
+          SCHWAB_APP_SECRET: ${{ secrets.SCHWAB_APP_SECRET }}
+        run: |
+          echo "::add-mask::$URL"
+          python3 - <<'PY'
+          import base64, json, os, sys, urllib.parse, urllib.request
+          url = os.environ["URL"].strip()
+          code = (urllib.parse.parse_qs(urllib.parse.urlparse(url).query).get("code") or [""])[0]
+          code = code.replace("%40", "@")
+          if not code:
+              print("No ?code= found in the pasted address."); sys.exit(1)
+          key, sec = os.environ["SCHWAB_APP_KEY"].strip(), os.environ["SCHWAB_APP_SECRET"].strip()
+          if not key or not sec:
+              print("SCHWAB_APP_KEY / SCHWAB_APP_SECRET secrets are missing."); sys.exit(1)
+          body = urllib.parse.urlencode({"grant_type": "authorization_code", "code": code,
+                                         "redirect_uri": "https://127.0.0.1"}).encode()
+          req = urllib.request.Request("https://api.schwabapi.com/v1/oauth/token", data=body, headers={
+              "Authorization": "Basic " + base64.b64encode(f"{key}:{sec}".encode()).decode(),
+              "Content-Type": "application/x-www-form-urlencoded"})
+          try:
+              with urllib.request.urlopen(req, timeout=15) as r:
+                  tok = json.load(r)
+          except urllib.error.HTTPError as e:
+              print(f"Schwab refused the code: HTTP {e.code} {e.read()[:150]!r}"); sys.exit(1)
+          if not tok.get("access_token"):
+              print("No access token in Schwab's reply."); sys.exit(1)
+          with open(os.path.join(os.environ["RUNNER_TEMP"], "tok.json"), "w") as f:
+              json.dump(tok, f)
+          print("Code exchanged OK.")
+          PY
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install -q requests==2.32.3 cryptography
+      - name: store tokens (encrypted)
+        env:
+          SCHWAB_APP_KEY: ${{ secrets.SCHWAB_APP_KEY }}
+          SCHWAB_APP_SECRET: ${{ secrets.SCHWAB_APP_SECRET }}
+        run: |
+          python - <<'PY'
+          import json, os, sys
+          sys.path.insert(0, "market")
+          import schwab as S
+          p = os.path.join(os.environ["RUNNER_TEMP"], "tok.json")
+          ok = S._store_new(json.load(open(p)), fresh_login=True)
+          os.remove(p)
+          print("Stored." if ok else "Store failed."); sys.exit(0 if ok else 1)
+          PY
+      - name: commit
+        run: |
+          git config user.name "market-bot"
+          git config user.email "market-bot@users.noreply.github.com"
+          git add auth
+          git diff --cached --quiet || git commit -m "schwab login: $(date -u +%Y-%m-%dT%H:%MZ)"
+          for i in 1 2 3 4 5; do git pull --rebase --autostash && git push && break; git rebase --abort 2>/dev/null; sleep $((i*5)); done
+      - name: confirm in Telegram
+        if: always()
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          SCHWAB_APP_KEY: ${{ secrets.SCHWAB_APP_KEY }}
+          SCHWAB_APP_SECRET: ${{ secrets.SCHWAB_APP_SECRET }}
+          JOB_STATUS: ${{ job.status }}
+        run: |
+          python - <<'PY'
+          import os, sys
+          from datetime import datetime
+          sys.path.insert(0, "market")
+          import engine as E, schwab as S
+          st = S.status()
+          if os.environ["JOB_STATUS"] == "success" and st.get("connected"):
+              exp = datetime.fromisoformat(st["expires_at"]).astimezone(E.HST)
+              E.send_telegram(f"<b>SCHWAB CONNECTED</b> — live data from the next run.\nLogin good until "
+                              f"{exp.strftime('%a %-m/%-d %I:%M %p')} HST. You'll get a reminder before then.",
+                              html=True)
+          else:
+              E.send_telegram("<b>SCHWAB LOGIN FAILED</b> — the code was rejected or expired. Get a fresh "
+                              "one (log in again) and run schwab-login right after copying it.", html=True)
+          PY

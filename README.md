@@ -42,6 +42,20 @@ checks whether SPY / QQQ moved the favored way first after amateur hour. It test
 rules on the stock only — free data has no past option prices. The option rows saved in
 `data/raw/` each run are what will make card-level backtests possible later.
 
+## Schwab live data (market data only)
+
+When `SCHWAB_APP_KEY` and `SCHWAB_APP_SECRET` are set and a login is stored, each run uses
+Schwab for stock/ETF quotes, 1-minute and daily bars, and option chains. Futures, VIX and SPX are
+tried on Schwab first. Yahoo stays the fallback for anything Schwab doesn't answer, and for
+option prices used in grading, earnings dates and the backtest. Read-only: nothing can see the
+account or place orders.
+
+**Weekly login (~7 days):** Telegram sends a reminder with the login link about a day before
+expiry. Log in → the browser lands on `https://127.0.0.1/?code=...` (error page is expected) →
+copy the whole address → **Actions → schwab-login → Run workflow** → paste → Run, right away.
+Telegram confirms. Tokens are stored encrypted in `auth/schwab_token.enc` (key derived from
+`SCHWAB_APP_SECRET`); `auth/schwab_status.json` holds non-secret status only.
+
 ## Files
 
 | Path | What it is |
@@ -68,6 +82,7 @@ All optional. They stay private even though the repo is public.
 | `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID` | Reports + A+ alerts to your phone |
 | `ACCOUNT_SIZE` | Settled cash, e.g. `10000` |
 | `RISK_PCT` *or* `RISK_FIXED_DOLLARS` | Risk per trade, e.g. `0.10` or `500` |
+| `SCHWAB_APP_KEY`, `SCHWAB_APP_SECRET` | Schwab live data (developer portal → your app) |
 
 Max Contracts is only ever sent to Telegram; it never appears on the public site.
 
