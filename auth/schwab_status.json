@@ -4,9 +4,9 @@
  "expired_notice_at": "2026-10-23T08:58:20.702561-10:00",
  "login_at": "2026-10-23T19:39:04.074660+00:00",
  "expires_at": "2026-10-30T19:39:04.074660+00:00",
- "last_ok": "2026-10-26T18:31:54.156053+00:00",
+ "last_ok": "2026-10-26T19:12:14.068167+00:00",
  "last_error": null,
- "hours_left": 97.1,
+ "hours_left": 96.4,
  "futures_probe": {
   "/ESZ26": {
    "answered": true,
@@ -163,6 +163,108 @@
   },
   "/YMZ2026": {
    "answered": false
+  }
+ },
+ "option_probe": {
+  "at": "2026-10-26T19:12:14.069595+00:00",
+  "results": {
+   "OCC padded (6-char root)": {
+    "symbol": "CRM   261030C00250000",
+    "pricehistory_5min": {
+     "http": 200,
+     "candles": 53,
+     "empty": false,
+     "note": null
+    },
+    "pricehistory_daily": {
+     "http": 200,
+     "candles": 21,
+     "empty": false,
+     "note": null
+    },
+    "quote": {
+     "http": 200,
+     "answered": true,
+     "fields": [
+      "52WeekHigh",
+      "52WeekLow",
+      "askPrice",
+      "askSize",
+      "bidPrice",
+      "bidSize",
+      "closePrice",
+      "delta",
+      "gamma",
+      "highPrice",
+      "impliedYield",
+      "indAskPrice",
+      "indBidPrice",
+      "indQuoteTime",
+      "lastPrice",
+      "lastSize",
+      "lowPrice",
+      "mark",
+      "markChange",
+      "markPercentChange",
+      "moneyIntrinsicValue",
+      "netChange",
+      "netPercentChange",
+      "openInterest",
+      "openPrice",
+      "postMarketChange",
+      "postMarketPercentChange",
+      "quoteTime",
+      "rho",
+      "securityStatus"
+     ],
+     "mark": 3.775,
+     "last": 3.8
+    }
+   },
+   "OCC no spaces": {
+    "symbol": "CRM261030C00250000",
+    "pricehistory_5min": {
+     "http": 200,
+     "candles": 0,
+     "empty": true,
+     "note": null
+    },
+    "pricehistory_daily": {
+     "http": 200,
+     "candles": 0,
+     "empty": true,
+     "note": null
+    },
+    "quote": {
+     "http": 200,
+     "answered": false,
+     "fields": [],
+     "mark": null,
+     "last": null
+    }
+   },
+   "dot style": {
+    "symbol": ".CRM261030C250",
+    "pricehistory_5min": {
+     "http": 200,
+     "candles": 0,
+     "empty": true,
+     "note": null
+    },
+    "pricehistory_daily": {
+     "http": 200,
+     "candles": 0,
+     "empty": true,
+     "note": null
+    },
+    "quote": {
+     "http": 200,
+     "answered": false,
+     "fields": [],
+     "mark": null,
+     "last": null
+    }
+   }
   }
  }
 }
