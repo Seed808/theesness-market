@@ -534,6 +534,41 @@ def main() -> int:
         _status_write(option_probe={"at": now.isoformat(), "results": res})
         print(json.dumps(res, indent=1))
         return 0
+    if cmd == "diag":
+        # Open cards: raw Schwab option bars + quote, to check grading. Writes ledger/tests/diag.json.
+        sys.path.insert(0, str(Path(__file__).resolve().parent))
+        import engine as E
+        import runner as R
+        now = E.now_hst()
+        out = {"at": now.isoformat(), "cards": {}}
+        for c in R.open_cards(now):
+            d = date.fromisoformat(c["trade_date"])
+            s0 = E.session_for(d)
+            row = {"entry": c["premium"], "stop": c["stop"], "target": c["target"], "locked_at": c["locked_at"]}
+            df = option_history(c["contract"], s0.open_hst - timedelta(hours=6), now)
+            if df is not None and not df.empty:
+                df.index = df.index.tz_convert(E.HST)
+                w = df[df.index >= datetime.fromisoformat(c["locked_at"])]
+                row["bars"] = {"source": df.attrs.get("source"), "rows": len(df), "rows_after_lock": len(w),
+                               "first": str(df.index[0]), "last": str(df.index[-1]),
+                               "min_low": float(w["Low"].min()) if len(w) else None,
+                               "min_low_at": str(w["Low"].idxmin()) if len(w) else None,
+                               "tail": [[str(i), *[float(x) for x in r[["Open", "High", "Low", "Close"]]],
+                                         float(r.get("Volume", 0) or 0)] for i, r in w.tail(15).iterrows()]}
+            else:
+                row["bars"] = None
+            j = get("/marketdata/v1/quotes", {"symbols": occ_padded(c["contract"])})
+            body = next(iter(j.values()), {}) if isinstance(j, dict) and j else {}
+            q = body.get("quote", {}) if isinstance(body, dict) else {}
+            row["quote"] = {k: q.get(k) for k in ("bidPrice", "askPrice", "lastPrice", "mark", "closePrice",
+                                                   "highPrice", "lowPrice", "openPrice", "totalVolume",
+                                                   "quoteTime", "tradeTime", "underlyingPrice")}
+            out["cards"][c["id"]] = row
+        p = Path(__file__).resolve().parent.parent / "ledger" / "tests" / "diag.json"
+        p.parent.mkdir(parents=True, exist_ok=True)
+        p.write_text(json.dumps(out, indent=1, default=str))
+        print(json.dumps(out, indent=1, default=str)[:4000])
+        return 0
     if cmd == "test":
         ok = bool(access_token())
         print("token:", "ok" if ok else "none")
