@@ -438,6 +438,51 @@ def main() -> int:
         st = status()
         print("LOGIN OK" if ok else f"LOGIN FAILED: {st.get('last_error')}")
         return 0 if ok else 1
+    if cmd == "probe":
+        # Does Schwab serve option price history / option quotes? Tries several symbol formats.
+        # Writes results (HTTP status, row counts, field names — no secrets) to auth/schwab_status.json.
+        if not access_token():
+            print("no token"); return 1
+        import requests
+        root, ymd, pc, k = (sys.argv[2:6] + ["CRM", "261030", "C", "250"])[:4] if len(sys.argv) > 5 \
+            else ("CRM", "261030", "C", "250")
+        strike = f"{int(round(float(k) * 1000)):08d}"
+        fmts = {"OCC padded (6-char root)": f"{root:<6}{ymd}{pc}{strike}",
+                "OCC no spaces": f"{root}{ymd}{pc}{strike}",
+                "dot style": f".{root}{ymd}{pc}{k}"}
+        now = datetime.now(timezone.utc)
+        res = {}
+        for name, sym in fmts.items():
+            out = {"symbol": sym}
+            for label, params in (
+                    ("pricehistory_5min", {"symbol": sym, "frequencyType": "minute", "frequency": 5,
+                                           "startDate": int((now - timedelta(days=2)).timestamp() * 1000),
+                                           "endDate": int(now.timestamp() * 1000)}),
+                    ("pricehistory_daily", {"symbol": sym, "periodType": "month", "period": 1,
+                                            "frequencyType": "daily", "frequency": 1})):
+                try:
+                    r = requests.get(API + "/marketdata/v1/pricehistory", params=params, timeout=TIMEOUT,
+                                     headers={"Authorization": f"Bearer {access_token()}"})
+                    j = r.json() if r.headers.get("content-type", "").startswith("application/json") else {}
+                    out[label] = {"http": r.status_code, "candles": len(j.get("candles") or []),
+                                  "empty": j.get("empty"), "note": (r.text[:120] if r.status_code != 200 else None)}
+                except Exception as e:  # noqa: BLE001
+                    out[label] = {"error": type(e).__name__}
+                time.sleep(MIN_INTERVAL)
+            try:
+                r = requests.get(API + "/marketdata/v1/quotes", params={"symbols": sym}, timeout=TIMEOUT,
+                                 headers={"Authorization": f"Bearer {access_token()}"})
+                j = r.json() if r.status_code == 200 else {}
+                body = next(iter(j.values()), {}) if isinstance(j, dict) and j else {}
+                q = body.get("quote", {}) if isinstance(body, dict) else {}
+                out["quote"] = {"http": r.status_code, "answered": bool(q),
+                                "fields": sorted(q.keys())[:30], "mark": q.get("mark"), "last": q.get("lastPrice")}
+            except Exception as e:  # noqa: BLE001
+                out["quote"] = {"error": type(e).__name__}
+            res[name] = out
+        _status_write(option_probe={"at": now.isoformat(), "results": res})
+        print(json.dumps(res, indent=1))
+        return 0
     if cmd == "test":
         ok = bool(access_token())
         print("token:", "ok" if ok else "none")
