@@ -440,12 +440,19 @@ def option_quote(contract: str) -> Optional[dict]:
     body = next(iter(j.values()))
     q = body.get("quote", {}) if isinstance(body, dict) else {}
     mark, last = _num(q, "mark"), _num(q, "lastPrice")
-    px = mark or last
-    if not px:
+    bid, ask = _num(q, "bidPrice"), _num(q, "askPrice")
+    # The mark (bid/ask midpoint) is only a fair price when the market is tight. After the close
+    # market makers widen out (e.g. XLE 70C 10/26: bid 0.25 / ask 0.90 -> mark 0.575 while the last
+    # trade was 0.81), so a wide market falls back to the last trade.
+    tight = bool(bid and ask and mark and ask >= bid and (ask - bid) <= max(0.05, 0.15 * mark))
+    if tight:
+        px, src, qt = mark, "schwab quote (mark)", q.get("quoteTime")
+    elif last:
+        px, src, qt = last, "schwab last trade", q.get("tradeTime")
+    else:
         return None
-    qt = q.get("quoteTime") or q.get("tradeTime")
     t = datetime.fromtimestamp(int(qt) / 1000, timezone.utc).isoformat() if qt else None
-    return {"last": px, "last_time": t, "source": "schwab quote (mark)" if mark else "schwab quote (last)"}
+    return {"last": px, "last_time": t, "source": src}
 
 
 # ------------------------------------------------------------------ provider for the engine
