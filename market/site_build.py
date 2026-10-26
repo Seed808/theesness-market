@@ -151,6 +151,22 @@ def bias_panel(s: dict) -> str:
             + '</div>')
 
 
+def price_lines(c: dict) -> str:
+    return (f'<dt>Entry range</dt><dd>{_money(c["entry_floor"])}–{_money(c["entry_ceiling"])}</dd>'
+            f'<dt>Premium</dt><dd>{_money(c["premium"])}</dd>'
+            f'<dt>Max contracts</dt><dd class="eyebrow">Telegram only</dd>'
+            f'<dt>Target</dt><dd>{_money(c["target"])}</dd>'
+            f'<dt>Stop</dt><dd>{_money(c["stop"])}</dd>')
+
+
+def price_lines_premarket(c: dict) -> str:
+    """Pre-market: stock options aren't trading yet, so the premium is the prior close's bid/ask
+    mid. Entry, target and stop come from the live price once the confirmation read runs."""
+    return (f'<dt>Premium</dt><dd>{_money(c["premium"])} '
+            f'<span class="eyebrow">last close · options not trading yet</span></dd>'
+            f'<dt>Entry · target · stop</dt><dd class="eyebrow">set at the open</dd>')
+
+
 def card_html(c: dict, g: dict | None) -> str:
     res = ""
     if g:
@@ -184,11 +200,7 @@ def card_html(c: dict, g: dict | None) -> str:
             f'<dt>Bias</dt><dd>{e(c["bias"])}</dd>'
             f'<dt>Expiry</dt><dd>{e(date.fromisoformat(c["expiry"]).strftime("%a %b %-d"))}</dd>'
             f'<dt>Strike</dt><dd>{float(c["strike"]):g}</dd>'
-            f'<dt>Entry range</dt><dd>{_money(c["entry_floor"])}–{_money(c["entry_ceiling"])}</dd>'
-            f'<dt>Premium</dt><dd>{_money(c["premium"])}</dd>'
-            f'<dt>Max contracts</dt><dd class="eyebrow">Telegram only</dd>'
-            f'<dt>Target</dt><dd>{_money(c["target"])}</dd>'
-            f'<dt>Stop</dt><dd>{_money(c["stop"])}</dd>'
+            + (price_lines_premarket(c) if c["mode"] == "premarket" else price_lines(c)) +
             f'{flags}{res}</dl>'
             f'<div class="why">{e(c["reasoning"])}</div></div>')
 

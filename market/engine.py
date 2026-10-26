@@ -1119,8 +1119,18 @@ def tg_card(i: "Idea") -> str:
         head,
         (f"Stock ${i.underlying:,.2f} ({_h(i.underlying_asof)})" if i.underlying is not None
          else "Stock price n/a"),
+    ]
+    if i.status.startswith("CONDITIONAL"):
+        # Pre-market: stock options aren't trading yet, so the premium is the prior close's
+        # bid/ask mid. Entry, target, stop and size are set from the live price at the open.
+        lines += [f"Premium ${i.premium:.2f} = last close (options not trading yet)",
+                  "Entry / target / stop / max: set at the open"]
+    else:
+        lines += [
         f"Entry ${i.entry_floor:.2f}–${i.entry_ceiling:.2f} · Premium ${i.premium:.2f}",
         f"Target ${i.target:.2f} · Stop ${i.stop:.2f} · Max {_h(i.max_contracts)}",
+        ]
+    lines += [
         f"Bias {_h(i.bias)} · {_h(reasons)}",
         f"<i>{_h(i.status)}</i>",
     ]
