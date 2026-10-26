@@ -48,7 +48,8 @@ GRADES = LEDGER / "grades.csv"
 INPUTS = REPO / "inputs"
 DATA = REPO / "data"
 
-PREMARKET_DUE = (-30, 0)      # minutes relative to the open (3:00–3:30am HST in summer)
+PREMARKET_DUE = (-75, 0)      # minutes relative to the open (2:15–3:30am HST in summer, 3:15–4:30 winter).
+                              # Was (-30, 0) until 2026-10-26; widened because GitHub's timer skipped the 30-min window.
 CONFIRM_DUE = (30, 120)
 RESCAN_EVERY_MIN = 10
 GRADE_AFTER_CLOSE_MIN = 20

@@ -263,7 +263,7 @@ def next_run_note(now: datetime) -> str:
     s = E.session_for(d)
     if s is None or now >= s.open_hst:
         s = E.session_for(E.next_trading_day(d))
-    return (f'Next pre-market read: {s.at(-30).strftime("%a %I:%M %p")}–'
+    return (f'Next pre-market read: {s.at(-75).strftime("%a %I:%M %p")}–'
             f'{s.open_hst.strftime("%I:%M %p")} HST (open {s.open_hst.strftime("%I:%M %p")}).')
 
 

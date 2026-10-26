@@ -11,7 +11,7 @@ Site: https://seed808.github.io/theesness-market/
 
 | When | What |
 |---|---|
-| last 30 min before the open | **Pre-market read.** ES/NQ/YM + VIX + SPY/QQQ bias, watchlist scan, up to 5 *conditional* cards. Not graded. |
+| first run in the 75 min before the open | **Pre-market read.** ES/NQ/YM + VIX + SPY/QQQ bias, watchlist scan, up to 5 *conditional* cards. Not graded. |
 | open + 30 min (first run after) | **Confirmation read.** Re-checks with 1m/5m/15m trend, first 5-minute candle, VWAP, relative volume. Up to 5 locked cards. A+ cards trigger a Telegram alert. |
 | every ~10 min until 9:00am | **Re-scans.** Posts and locks only NEW setups (a ticker + direction already posted today is skipped). Graded like confirmation cards. |
 | every run | **Target/stop check** on every open card (Schwab 1-minute contract prices); a hit closes the card right away and Telegram says CLOSED. |
@@ -33,8 +33,10 @@ came from Schwab), so you can check it against your own screen.
 The open is 3:30am HST while the US is on daylight time and 4:30am HST otherwise; the code
 works this out each day from New York time.
 
-GitHub's timer is best-effort (runs can be late or skipped), so the workflow wakes every
-10 minutes and the runner only does what is still due.
+GitHub's own timer is best-effort (on 2026-10-26 it fired 6 times all morning, the first at 4:33am),
+so an outside clock (cron-job.org) also starts the workflow every 10 minutes through GitHub's
+"Run workflow" API, using a fine-grained token limited to this repo with Actions: read & write.
+Extra starts are harmless: the runner only does what is still due.
 
 ## Backtest
 
