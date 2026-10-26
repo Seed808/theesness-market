@@ -1,14 +1,11 @@
 {
  "2026-10-26_confirm_CRM_CALL_2026-10-30_250": {
-  "last": 5.07,
-  "last_time": "2026-10-26T04:19:26-10:00",
-  "high": null,
-  "low": null,
-  "source": "chain quote",
-  "pnl_pct": -0.6,
-  "as_of": "2026-10-26T04:33:46.866198-10:00"
- },
- "_errors": {
-  "2026-10-26_confirm_CRM_CALL_2026-10-30_250": "bars returned but none after lock (9 rows)"
+  "last": 3.8,
+  "last_time": "2026-10-26T05:35:00-10:00",
+  "high": 5.25,
+  "low": 3.8,
+  "source": "5m bars",
+  "pnl_pct": -25.5,
+  "as_of": "2026-10-26T05:50:22.641497-10:00"
  }
 }
