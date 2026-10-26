@@ -23,6 +23,11 @@ STOPS = [0.15, 0.20, 0.25, 0.30, 0.35]
 
 def walk(w, entry, target, stop):
     for t, b in w.iterrows():
+        o = float(b["Open"])
+        if o <= stop:
+            return "LOSS", o, t          # gapped through the stop: exit at the open
+        if o >= target:
+            return "WIN", o, t
         hit_t, hit_s = b["High"] >= target, b["Low"] <= stop
         if hit_s:
             return "LOSS", stop, t

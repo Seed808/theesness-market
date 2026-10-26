@@ -295,6 +295,12 @@ def grade_from_bars(bars, entry: float, target: float, stop: float,
     if w.empty:
         return None
     for _, b in w.iterrows():
+        o = float(b["Open"])
+        # Gap through a level: the bar OPENED past it, so the realistic exit is the open price.
+        if o <= stop:
+            return "LOSS", o, "STOP (gapped through)"
+        if o >= target:
+            return "WIN", o, "TARGET (gapped through)"
         hit_t, hit_s = b["High"] >= target, b["Low"] <= stop
         if hit_t and hit_s:
             return "LOSS", stop, "STOP (target+stop same bar)"
@@ -312,8 +318,10 @@ def grade_due(now: datetime, fetch=None) -> list:
     Holding window = lock time -> close of the contract's expiry day. Mon–Thu cards can span
     several days (never past the last trading day before a weekend/holiday); Friday cards are
     0DTE and finish the same day.
-    After each close: if the target or stop has already been hit, the card is graded right
-    away. Otherwise it stays OPEN until its expiry day's close, then exits at the last price.
+    Every run (intraday too): if the target or stop has been hit, the card is closed right away
+    (Telegram "CLOSED"). If a bar opened already past the level (a gap), the exit is that open
+    price, not the level. Otherwise it stays OPEN until its expiry day's close, then exits at the
+    last price.
     """
     fetch = fetch or fetch_contract_bars
     graded, done, rows = [], load_grades(), []
@@ -323,8 +331,10 @@ def grade_due(now: datetime, fetch=None) -> list:
         d = date.fromisoformat(c["trade_date"])
         exp = date.fromisoformat(c["expiry"])
         s_open, s_exp = E.session_for(d), E.session_for(exp) or E.session_for(d)
-        if s_open is None or now < s_open.close_hst + timedelta(minutes=GRADE_AFTER_CLOSE_MIN):
-            continue                        # not even the first day is over
+        if s_open is None or now < datetime.fromisoformat(c["locked_at"]):
+            continue
+        # Target/stop are checked on every run, during the day too; a card with neither hit
+        # stays open until its expiry-day close (handled below).
         finished = now >= s_exp.close_hst + timedelta(minutes=GRADE_AFTER_CLOSE_MIN)
         entry = float(c["premium"])
         g = None
@@ -458,7 +468,7 @@ def open_block(now: datetime) -> str:
 def after_close(now: datetime) -> None:
     graded = grade_due(now)
     if graded:
-        lines = [f"<b>GRADED</b> · {now.strftime('%a %-m/%-d')} {E._short_t(now)} HST"]
+        lines = [f"<b>CLOSED</b> · {now.strftime('%a %-m/%-d')} {E._short_t(now)} HST"]
         lines += [f"<b>{E._h(g['ticker'])} {E._h(g['type'])} {float(g['strike']):g}</b> → "
                   f"<b>{E._h(g['result'])}</b>"
                   + (f" ({float(g['pnl_pct']):+.1f}%)" if g['pnl_pct'] not in ('', None) else "")
