@@ -275,6 +275,20 @@ def fetch_contract_bars(contract: str, start: date, end: Optional[date] = None):
     """5-minute bars for one option contract from `start` through `end` (inclusive), index in
     HST. None on failure."""
     end = end or start
+    if E.PROVIDER is not None:          # Schwab first: real-time, 1-minute
+        try:
+            import schwab as S
+            s0 = E.session_for(start) or E.session_for(E.next_trading_day(start))
+            t0 = s0.open_hst - timedelta(hours=6)
+            t1 = min(datetime.combine(end, datetime.max.time(), tzinfo=E.HST), E.now_hst())
+            df = S.option_history(contract, t0, t1)
+            if df is not None and not df.empty:
+                src = df.attrs.get("source", "schwab")
+                df.index = df.index.tz_convert(E.HST)
+                df.attrs["source"] = src
+                return df
+        except Exception as e:  # noqa: BLE001
+            print(f"[warn] schwab bars {contract}: {type(e).__name__}: {e}", file=sys.stderr)
     try:
         df = E._yf().Ticker(contract).history(start=start.isoformat(),
                                               end=(end + timedelta(days=1)).isoformat(),
@@ -282,6 +296,7 @@ def fetch_contract_bars(contract: str, start: date, end: Optional[date] = None):
         if df is None or df.empty:
             return None
         df.index = df.index.tz_convert(E.HST)
+        df.attrs["source"] = "yahoo 5m"
         return df
     except Exception as e:  # noqa: BLE001
         print(f"[warn] bars {contract}: {type(e).__name__}: {e}", file=sys.stderr)
@@ -353,6 +368,8 @@ def grade_due(now: datetime, fetch=None) -> list:
             else:
                 continue   # try again next run
         res, exit_p, method = g
+        if bars is not None and bars.attrs.get("source"):
+            method = f"{method} · {bars.attrs['source']}"
         row = {"id": c["id"], "graded_at": now.isoformat(), "result": res,
                "exit_premium": "" if exit_p is None else round(exit_p, 2),
                "pnl_pct": "" if exit_p is None else round((exit_p - entry) / entry * 100, 1),
@@ -420,11 +437,21 @@ def update_marks(now: datetime, fetch=None) -> dict:
             if not w.empty:
                 m = {"last": float(w["Close"].iloc[-1]), "last_time": w.index[-1].isoformat(),
                      "high": round(float(w["High"].max()), 2), "low": round(float(w["Low"].min()), 2),
-                     "source": "5m bars"}
+                     "source": bars.attrs.get("source", "bars")}
             else:
                 errors[c["id"]] = f"bars returned but none after lock ({len(bars)} rows)"
         else:
             errors.setdefault(c["id"], "no 5m bars")
+        if E.PROVIDER is not None:      # live mark from Schwab beats the last bar close
+            try:
+                import schwab as S
+                lq = S.option_quote(c["contract"])
+                if lq:
+                    if m is None:
+                        m = {"high": None, "low": None}
+                    m.update(lq)
+            except Exception as e:  # noqa: BLE001
+                print(f"[warn] schwab quote {c['contract']}: {type(e).__name__}", file=sys.stderr)
         if m is None:
             q = chain_quote(c)
             if q and "error" not in q:

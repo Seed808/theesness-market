@@ -4,9 +4,10 @@ Schwab Trader API — MARKET DATA ONLY. Read-only. Nothing here can see accounts
 Sources for the endpoints and login flow (Schwab's own docs are behind the developer login):
   * schwab-py (github.com/alexgolec/schwab-py): authorize URL
     https://api.schwabapi.com/v1/oauth/authorize, token URL https://api.schwabapi.com/v1/oauth/token,
-    market data under /marketdata/v1 (quotes, chains, pricehistory). Its docs: "Schwab provides
-    price history for equities and ETFs. It does not provide price history for options, futures,
-    or any other instruments." and "Tokens are only good for seven days."
+    market data under /marketdata/v1 (quotes, chains, pricehistory), and "Tokens are only good
+    for seven days." Its docs also say Schwab has no option/futures price history — verified
+    WRONG for options on 2026-10-26 (works with the padded OCC symbol); futures quotes work with
+    front-month symbols (/ESZ26).
   * schwabpy (github.com/jaycollett/schwabpy): token requests use HTTP Basic (app key:secret),
     form fields grant_type=authorization_code|refresh_token; the code may contain %40 (= "@").
 
@@ -395,6 +396,56 @@ def chain(name: str, start: date, end: date, strike_count: int = 40) -> Optional
                         iv / 100 if iv and iv > 3 else iv, _num(c, "delta"), "schwab",
                         str(c.get("symbol", "")).replace(" ", "")))
     return out or None
+
+
+# ------------------------------------------------------------------ option contracts
+# Verified live 2026-10-26 (probe): Schwab answers option price history and quotes only with the
+# OCC symbol padded to 6 root characters, e.g. "CRM   261030C00250000". The unpadded form returns
+# empty. (schwab-py's docs say Schwab has no option price history; that is out of date.)
+
+import re as _re
+_OCC = _re.compile(r"^([A-Z.]{1,6})(\d{6})([CP])(\d{8})$")
+
+
+def occ_padded(contract: str) -> Optional[str]:
+    m = _OCC.match(contract.replace(" ", ""))
+    if not m:
+        return None
+    root, ymd, pc, k = m.groups()
+    return f"{root:<6}{ymd}{pc}{k}"
+
+
+def option_history(contract: str, start: datetime, end: datetime):
+    """1-minute bars for one option contract (falls back to 5-minute), index in New York time."""
+    sym = occ_padded(contract)
+    if not sym:
+        return None
+    for freq in (1, 5):
+        df = _candles(get("/marketdata/v1/pricehistory", {
+            "symbol": sym, "frequencyType": "minute", "frequency": freq,
+            "startDate": int(start.timestamp() * 1000), "endDate": int(end.timestamp() * 1000)}))
+        if df is not None and not df.empty:
+            df.attrs["source"] = f"schwab {freq}m"
+            return df
+    return None
+
+
+def option_quote(contract: str) -> Optional[dict]:
+    sym = occ_padded(contract)
+    if not sym:
+        return None
+    j = get("/marketdata/v1/quotes", {"symbols": sym})
+    if not isinstance(j, dict) or not j:
+        return None
+    body = next(iter(j.values()))
+    q = body.get("quote", {}) if isinstance(body, dict) else {}
+    mark, last = _num(q, "mark"), _num(q, "lastPrice")
+    px = mark or last
+    if not px:
+        return None
+    qt = q.get("quoteTime") or q.get("tradeTime")
+    t = datetime.fromtimestamp(int(qt) / 1000, timezone.utc).isoformat() if qt else None
+    return {"last": px, "last_time": t, "source": "schwab quote (mark)" if mark else "schwab quote (last)"}
 
 
 # ------------------------------------------------------------------ provider for the engine

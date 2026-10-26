@@ -38,6 +38,11 @@ def walk(w, entry, target, stop):
 
 def main() -> int:
     now = E.now_hst()
+    try:
+        import schwab as S
+        E.PROVIDER = S.provider_if_connected()
+    except Exception:  # noqa: BLE001
+        E.PROVIDER = None
     cards, out = [], []
     for c in R.load_locks():
         if c["mode"] in R.GRADED_MODES and c["status"] == "GO":
