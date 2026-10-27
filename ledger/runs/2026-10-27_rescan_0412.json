@@ -1,0 +1,169 @@
+{
+ "trade_date": "2026-10-27",
+ "mode": "rescan",
+ "ran_at": "2026-10-27T04:12:32.961246-10:00",
+ "test": false,
+ "open_hst": "2026-10-27T03:30:00-10:00",
+ "close_hst": "2026-10-27T10:00:00-10:00",
+ "early_close": false,
+ "bias": {
+  "regime": "MIXED",
+  "favored": null,
+  "clean": false,
+  "notes": [
+   "ES flat (+0.08%), NQ green (+0.32%), YM flat (-0.04%)",
+   "No ES/YM rule matched \u2192 no favored side, no A+",
+   "VIX 18.01 (-2.07%) \u2192 does not confirm",
+   "SPY flat (+0.08%), QQQ green (+0.32%) \u2192 does not confirm"
+  ]
+ },
+ "quotes": {
+  "ES": {
+   "last": 7721.0,
+   "prev_close": 7714.5,
+   "chg_pct": 0.0842569187892929,
+   "source": "schwab"
+  },
+  "NQ": {
+   "last": 29532.0,
+   "prev_close": 29437.25,
+   "chg_pct": 0.3218710986929825,
+   "source": "schwab"
+  },
+  "YM": {
+   "last": 52529.0,
+   "prev_close": 52550.0,
+   "chg_pct": -0.039961941008563276,
+   "source": "schwab"
+  },
+  "VIX": {
+   "last": 18.01,
+   "prev_close": 18.39,
+   "chg_pct": -2.066340402392599,
+   "source": "schwab"
+  },
+  "SPY": {
+   "last": 766.0,
+   "prev_close": 765.37,
+   "chg_pct": 0.082313129597449,
+   "source": "schwab"
+  },
+  "QQQ": {
+   "last": 714.47,
+   "prev_close": 712.2,
+   "chg_pct": 0.3187306936253836,
+   "source": "schwab"
+  }
+ },
+ "flags": [
+  "Amateur hour until 04:00 AM; institutional 04:00\u201304:30 AM HST",
+  "No damaged contracts overnight. No earnings holds overnight."
+ ],
+ "headlines": [],
+ "data_note": "live data: Schwab (Yahoo fallback)",
+ "cards": [
+  {
+   "id": "2026-10-27_rescan_AAPL_CALL_2026-10-30_345",
+   "trade_date": "2026-10-27",
+   "mode": "rescan",
+   "locked_at": "2026-10-27T04:12:32.961246-10:00",
+   "ticker": "AAPL",
+   "type": "CALL",
+   "bias": "MIXED",
+   "expiry": "2026-10-30",
+   "strike": 345.0,
+   "entry_floor": 3.17,
+   "entry_ceiling": 3.8,
+   "premium": 3.17,
+   "target": 4.75,
+   "stop": 2.54,
+   "reasoning": "MIXED, against/no favored side, trend aligned, PMH support, institutional window, strong liquidity",
+   "confidence": 8,
+   "a_plus": false,
+   "status": "GO",
+   "flags": "hold OK until Fri 10/30 close \u00b7 close before the weekend",
+   "data_source": "schwab",
+   "contract": "AAPL261030C00345000",
+   "underlying": 344.35,
+   "underlying_asof": "4:13 AM HST live"
+  },
+  {
+   "id": "2026-10-27_rescan_GLD_CALL_2026-10-30_372",
+   "trade_date": "2026-10-27",
+   "mode": "rescan",
+   "locked_at": "2026-10-27T04:12:32.961246-10:00",
+   "ticker": "GLD",
+   "type": "CALL",
+   "bias": "MIXED",
+   "expiry": "2026-10-30",
+   "strike": 372.0,
+   "entry_floor": 2.57,
+   "entry_ceiling": 3.08,
+   "premium": 2.57,
+   "target": 3.85,
+   "stop": 2.06,
+   "reasoning": "MIXED, against/no favored side, trend aligned, PDH support, institutional window",
+   "confidence": 7,
+   "a_plus": false,
+   "status": "GO",
+   "flags": "hold OK until Fri 10/30 close \u00b7 close before the weekend",
+   "data_source": "schwab",
+   "contract": "GLD261030C00372000",
+   "underlying": 370.17,
+   "underlying_asof": "4:12 AM HST live"
+  },
+  {
+   "id": "2026-10-27_rescan_SLV_CALL_2026-10-30_49",
+   "trade_date": "2026-10-27",
+   "mode": "rescan",
+   "locked_at": "2026-10-27T04:12:32.961246-10:00",
+   "ticker": "SLV",
+   "type": "CALL",
+   "bias": "MIXED",
+   "expiry": "2026-10-30",
+   "strike": 49.0,
+   "entry_floor": 0.76,
+   "entry_ceiling": 0.91,
+   "premium": 0.76,
+   "target": 1.14,
+   "stop": 0.61,
+   "reasoning": "MIXED, against/no favored side, trend aligned, PMH support, institutional window",
+   "confidence": 7,
+   "a_plus": false,
+   "status": "GO",
+   "flags": "hold OK until Fri 10/30 close \u00b7 close before the weekend",
+   "data_source": "schwab",
+   "contract": "SLV261030C00049000",
+   "underlying": 48.84,
+   "underlying_asof": "4:12 AM HST live"
+  },
+  {
+   "id": "2026-10-27_rescan_WMT_PUT_2026-10-30_119",
+   "trade_date": "2026-10-27",
+   "mode": "rescan",
+   "locked_at": "2026-10-27T04:12:32.961246-10:00",
+   "ticker": "WMT",
+   "type": "PUT",
+   "bias": "MIXED",
+   "expiry": "2026-10-30",
+   "strike": 119.0,
+   "entry_floor": 0.95,
+   "entry_ceiling": 1.14,
+   "premium": 0.95,
+   "target": 1.42,
+   "stop": 0.76,
+   "reasoning": "MIXED, against/no favored side, trend aligned, PDL resistance, institutional window",
+   "confidence": 7,
+   "a_plus": false,
+   "status": "GO",
+   "flags": "hold OK until Fri 10/30 close \u00b7 close before the weekend",
+   "data_source": "schwab",
+   "contract": "WMT261030P00119000",
+   "underlying": 119.52,
+   "underlying_asof": "4:14 AM HST live"
+  }
+ ],
+ "passing": 4,
+ "rejected": 141,
+ "rejections": []
+}
