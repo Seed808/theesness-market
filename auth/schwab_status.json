@@ -4,9 +4,9 @@
  "expired_notice_at": "2026-10-23T08:58:20.702561-10:00",
  "login_at": "2026-10-23T19:39:04.074660+00:00",
  "expires_at": "2026-10-30T19:39:04.074660+00:00",
- "last_ok": "2026-10-27T14:52:33.387601+00:00",
+ "last_ok": "2026-10-27T15:22:32.801864+00:00",
  "last_error": null,
- "hours_left": 76.4,
+ "hours_left": 76.3,
  "futures_probe": {
   "/ESZ26": {
    "answered": true,
@@ -40,16 +40,16 @@
    ],
    "values": {
     "closePrice": 7714.5,
-    "lastPrice": 7750.0,
-    "netChange": 35.5,
-    "futurePercentChange": 0.4601724,
+    "lastPrice": 7757.0,
+    "netChange": 42.5,
+    "futurePercentChange": 0.55091062,
     "settleTime": 1793056045559,
-    "tradeTime": 1793113953165
+    "tradeTime": 1793114552850
    },
    "check": {
     "netChange_diff": 0.0,
-    "my_pct": 0.4602,
-    "schwab_pct": 0.4601724,
+    "my_pct": 0.5509,
+    "schwab_pct": 0.55091062,
     "pct_diff": 0.0
    },
    "used": true
@@ -92,16 +92,16 @@
    ],
    "values": {
     "closePrice": 29437.25,
-    "lastPrice": 29722.5,
-    "netChange": 285.25,
-    "futurePercentChange": 0.96901035,
+    "lastPrice": 29758.25,
+    "netChange": 321.0,
+    "futurePercentChange": 1.09045512,
     "settleTime": 1793056001291,
-    "tradeTime": 1793113953507
+    "tradeTime": 1793114552927
    },
    "check": {
     "netChange_diff": 0.0,
-    "my_pct": 0.969,
-    "schwab_pct": 0.96901035,
+    "my_pct": 1.0905,
+    "schwab_pct": 1.09045512,
     "pct_diff": 0.0
    },
    "used": true
@@ -144,16 +144,16 @@
    ],
    "values": {
     "closePrice": 52550.0,
-    "lastPrice": 52554.0,
-    "netChange": 4.0,
-    "futurePercentChange": 0.0076118,
+    "lastPrice": 52604.0,
+    "netChange": 54.0,
+    "futurePercentChange": 0.10275928,
     "settleTime": 1793056166500,
-    "tradeTime": 1793113951453
+    "tradeTime": 1793114549064
    },
    "check": {
     "netChange_diff": 0.0,
-    "my_pct": 0.0076,
-    "schwab_pct": 0.0076118,
+    "my_pct": 0.1028,
+    "schwab_pct": 0.10275928,
     "pct_diff": 0.0
    },
    "used": true
