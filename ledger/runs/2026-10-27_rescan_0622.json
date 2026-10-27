@@ -1,0 +1,94 @@
+{
+ "trade_date": "2026-10-27",
+ "mode": "rescan",
+ "ran_at": "2026-10-27T06:22:29.244272-10:00",
+ "test": false,
+ "open_hst": "2026-10-27T03:30:00-10:00",
+ "close_hst": "2026-10-27T10:00:00-10:00",
+ "early_close": false,
+ "bias": {
+  "regime": "MIXED",
+  "favored": null,
+  "clean": false,
+  "notes": [
+   "ES green (+0.64%), NQ green (+1.37%), YM flat (+0.07%)",
+   "No ES/YM rule matched \u2192 no favored side, no A+",
+   "VIX 17.56 (-4.51%) \u2192 does not confirm",
+   "SPY green (+0.64%), QQQ green (+1.36%) \u2192 does not confirm"
+  ]
+ },
+ "quotes": {
+  "ES": {
+   "last": 7763.75,
+   "prev_close": 7714.5,
+   "chg_pct": 0.6384081923650269,
+   "source": "schwab"
+  },
+  "NQ": {
+   "last": 29840.25,
+   "prev_close": 29437.25,
+   "chg_pct": 1.3690137495859838,
+   "source": "schwab"
+  },
+  "YM": {
+   "last": 52586.0,
+   "prev_close": 52550.0,
+   "chg_pct": 0.06850618458610847,
+   "source": "schwab"
+  },
+  "VIX": {
+   "last": 17.56,
+   "prev_close": 18.39,
+   "chg_pct": -4.513322457857541,
+   "source": "schwab"
+  },
+  "SPY": {
+   "last": 770.235,
+   "prev_close": 765.37,
+   "chg_pct": 0.6356402785580842,
+   "source": "schwab"
+  },
+  "QQQ": {
+   "last": 721.9,
+   "prev_close": 712.2,
+   "chg_pct": 1.3619769727604507,
+   "source": "schwab"
+  }
+ },
+ "flags": [
+  "Amateur hour until 04:00 AM; institutional 04:00\u201304:30 AM HST",
+  "No damaged contracts overnight. No earnings holds overnight."
+ ],
+ "headlines": [],
+ "data_note": "live data: Schwab (Yahoo fallback)",
+ "cards": [
+  {
+   "id": "2026-10-27_rescan_BAC_PUT_2026-10-30_50",
+   "trade_date": "2026-10-27",
+   "mode": "rescan",
+   "locked_at": "2026-10-27T06:22:29.244272-10:00",
+   "ticker": "BAC",
+   "type": "PUT",
+   "bias": "MIXED",
+   "expiry": "2026-10-30",
+   "strike": 50.0,
+   "entry_floor": 0.26,
+   "entry_ceiling": 0.31,
+   "premium": 0.26,
+   "target": 0.39,
+   "stop": 0.21,
+   "reasoning": "MIXED, against/no favored side, trend aligned, PML resistance, strong liquidity",
+   "confidence": 7,
+   "a_plus": false,
+   "status": "GO",
+   "flags": "hold OK until Fri 10/30 close \u00b7 close before the weekend",
+   "data_source": "schwab",
+   "contract": "BAC261030P00050000",
+   "underlying": 50.63,
+   "underlying_asof": "6:23 AM HST live"
+  }
+ ],
+ "passing": 2,
+ "rejected": 143,
+ "rejections": []
+}
