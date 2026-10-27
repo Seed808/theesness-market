@@ -1,0 +1,119 @@
+{
+ "trade_date": "2026-10-27",
+ "mode": "rescan",
+ "ran_at": "2026-10-27T05:12:33.147348-10:00",
+ "test": false,
+ "open_hst": "2026-10-27T03:30:00-10:00",
+ "close_hst": "2026-10-27T10:00:00-10:00",
+ "early_close": false,
+ "bias": {
+  "regime": "MIXED",
+  "favored": null,
+  "clean": false,
+  "notes": [
+   "ES green (+0.46%), NQ green (+0.97%), YM flat (+0.01%)",
+   "No ES/YM rule matched \u2192 no favored side, no A+",
+   "VIX 17.63 (-4.13%) \u2192 does not confirm",
+   "SPY green (+0.46%), QQQ green (+0.96%) \u2192 does not confirm"
+  ]
+ },
+ "quotes": {
+  "ES": {
+   "last": 7750.0,
+   "prev_close": 7714.5,
+   "chg_pct": 0.4601724026184458,
+   "source": "schwab"
+  },
+  "NQ": {
+   "last": 29722.5,
+   "prev_close": 29437.25,
+   "chg_pct": 0.9690103525295332,
+   "source": "schwab"
+  },
+  "YM": {
+   "last": 52554.0,
+   "prev_close": 52550.0,
+   "chg_pct": 0.007611798287345385,
+   "source": "schwab"
+  },
+  "VIX": {
+   "last": 17.63,
+   "prev_close": 18.39,
+   "chg_pct": -4.132680804785218,
+   "source": "schwab"
+  },
+  "SPY": {
+   "last": 768.855,
+   "prev_close": 765.37,
+   "chg_pct": 0.45533532801129045,
+   "source": "schwab"
+  },
+  "QQQ": {
+   "last": 719.02,
+   "prev_close": 712.2,
+   "chg_pct": 0.9575961808480674,
+   "source": "schwab"
+  }
+ },
+ "flags": [
+  "Amateur hour until 04:00 AM; institutional 04:00\u201304:30 AM HST",
+  "No damaged contracts overnight. No earnings holds overnight."
+ ],
+ "headlines": [],
+ "data_note": "live data: Schwab (Yahoo fallback)",
+ "cards": [
+  {
+   "id": "2026-10-27_rescan_QCOM_CALL_2026-10-30_182.5",
+   "trade_date": "2026-10-27",
+   "mode": "rescan",
+   "locked_at": "2026-10-27T05:12:33.147348-10:00",
+   "ticker": "QCOM",
+   "type": "CALL",
+   "bias": "MIXED",
+   "expiry": "2026-10-30",
+   "strike": 182.5,
+   "entry_floor": 3.02,
+   "entry_ceiling": 3.62,
+   "premium": 3.02,
+   "target": 4.53,
+   "stop": 2.42,
+   "reasoning": "MIXED, against/no favored side, trend aligned, PDH support",
+   "confidence": 6,
+   "a_plus": false,
+   "status": "GO",
+   "flags": "hold OK until Fri 10/30 close \u00b7 close before the weekend",
+   "data_source": "schwab",
+   "contract": "QCOM261030C00182500",
+   "underlying": 181.16,
+   "underlying_asof": "5:14 AM HST live"
+  },
+  {
+   "id": "2026-10-27_rescan_XLF_PUT_2026-10-30_55",
+   "trade_date": "2026-10-27",
+   "mode": "rescan",
+   "locked_at": "2026-10-27T05:12:33.147348-10:00",
+   "ticker": "XLF",
+   "type": "PUT",
+   "bias": "MIXED",
+   "expiry": "2026-10-30",
+   "strike": 55.0,
+   "entry_floor": 0.12,
+   "entry_ceiling": 0.14,
+   "premium": 0.12,
+   "target": 0.18,
+   "stop": 0.1,
+   "reasoning": "MIXED, against/no favored side, trend aligned, PDL resistance",
+   "confidence": 6,
+   "a_plus": false,
+   "status": "GO",
+   "flags": "hold OK until Fri 10/30 close \u00b7 close before the weekend",
+   "data_source": "schwab",
+   "contract": "XLF261030P00055000",
+   "underlying": 55.85,
+   "underlying_asof": "5:12 AM HST live"
+  }
+ ],
+ "passing": 6,
+ "rejected": 139,
+ "rejections": []
+}
