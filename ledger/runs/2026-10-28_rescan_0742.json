@@ -1,0 +1,96 @@
+{
+ "trade_date": "2026-10-28",
+ "mode": "rescan",
+ "ran_at": "2026-10-28T07:42:31.352275-10:00",
+ "test": false,
+ "open_hst": "2026-10-28T03:30:00-10:00",
+ "close_hst": "2026-10-28T10:00:00-10:00",
+ "early_close": false,
+ "bias": {
+  "regime": "BULL",
+  "favored": "C",
+  "clean": false,
+  "notes": [
+   "ES green (+0.16%), NQ green (+0.11%), YM green (+0.18%)",
+   "ES+YM green \u2192 NO put setups",
+   "VIX 17.34 (-1.03%) \u2192 does not confirm",
+   "SPY green (+0.18%), QQQ green (+0.13%) \u2192 confirms"
+  ]
+ },
+ "quotes": {
+  "ES": {
+   "last": 7770.5,
+   "prev_close": 7758.25,
+   "chg_pct": 0.15789643282956853,
+   "source": "schwab"
+  },
+  "NQ": {
+   "last": 29845.75,
+   "prev_close": 29812.0,
+   "chg_pct": 0.11320944586072723,
+   "source": "schwab"
+  },
+  "YM": {
+   "last": 52675.0,
+   "prev_close": 52579.0,
+   "chg_pct": 0.18258239981741758,
+   "source": "schwab"
+  },
+  "VIX": {
+   "last": 17.34,
+   "prev_close": 17.52,
+   "chg_pct": -1.027397260273971,
+   "source": "schwab"
+  },
+  "SPY": {
+   "last": 771.04,
+   "prev_close": 769.66,
+   "chg_pct": 0.17929995062754925,
+   "source": "schwab"
+  },
+  "QQQ": {
+   "last": 722.17,
+   "prev_close": 721.25,
+   "chg_pct": 0.12755632582321788,
+   "source": "schwab"
+  }
+ },
+ "flags": [
+  "FOMC DAY \u2014 no entry before 08:15 AM HST",
+  "Amateur hour until 04:00 AM; institutional 04:00\u201304:30 AM HST",
+  "No damaged contracts overnight. No earnings holds overnight."
+ ],
+ "headlines": [],
+ "data_note": "live data: Schwab (Yahoo fallback)",
+ "cards": [
+  {
+   "id": "2026-10-28_rescan_CRM_CALL_2026-10-30_245",
+   "trade_date": "2026-10-28",
+   "mode": "rescan",
+   "locked_at": "2026-10-28T07:42:31.352275-10:00",
+   "ticker": "CRM",
+   "type": "CALL",
+   "bias": "BULL",
+   "expiry": "2026-10-30",
+   "strike": 245.0,
+   "entry_floor": 3.38,
+   "entry_ceiling": 4.06,
+   "premium": 3.38,
+   "target": 5.07,
+   "stop": 2.7,
+   "reasoning": "BULL, trend aligned, PDL support",
+   "confidence": 7,
+   "a_plus": false,
+   "status": "WAIT \u2014 FOMC",
+   "flags": "FOMC: no entry before 08:15 AM HST; hold OK until Fri 10/30 close \u00b7 close before the weekend",
+   "data_source": "schwab",
+   "contract": "CRM261030C00245000",
+   "underlying": 241.27,
+   "underlying_asof": "7:43 AM HST live",
+   "target1": 4.06
+  }
+ ],
+ "passing": 1,
+ "rejected": 72,
+ "rejections": []
+}
