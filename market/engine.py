@@ -87,8 +87,12 @@ RISK_FIXED_DOLLARS: Optional[float] = _num_env("RISK_FIXED_DOLLARS")
 # contracts * ceiling * 100 <= ACCOUNT_SIZE.
 
 # --- Target / stop (PLACEHOLDERS — not user rules yet) ---------------------------------------
-TARGET_PCT = 0.50                 # target premium = signal premium * (1 + TARGET_PCT)
+TARGET_PCT = 0.50                 # Target 2 premium = signal premium * (1 + TARGET_PCT)
+TARGET1_PCT = 0.20                # Target 1 premium = signal premium * (1 + TARGET1_PCT)  (added 2026-10-27).
+                                  # T1 is tracked and scored on its own; the card keeps running to T2.
 STOP_PCT = 0.20                   # stop premium   = signal premium * (1 - STOP_PCT)  (was 0.35 until 2026-10-21)
+                                  # The stop stays here after T1 (break-even stop after T1 is only tracked
+                                  # as a side number for now — Kalani may switch to it later).
 
 # --- Entry range rule: floor = signal premium, ceiling = +15–20% ---------------------------
 ENTRY_CEILING_PCT = 0.20          # must be between 0.15 and 0.20 per your rule
@@ -362,6 +366,87 @@ class Bias:
         return self.favored is not None and self.vix_confirms and self.index_confirms
 
 
+def stop_price(premium: float) -> float:
+    """Stop rounded DOWN to the cent so it is never tighter than STOP_PCT (from 2026-10-27;
+    before that it rounded to the nearest cent, e.g. $0.12 entry -> $0.10 = -16.7%)."""
+    return math.floor(round(premium * (1 - STOP_PCT) * 100, 6)) / 100
+
+
+def target1_price(premium: float) -> float:
+    return round(premium * (1 + TARGET1_PCT), 2)
+
+
+# ---- stock price at a premium level (estimate) ------------------------------------------------
+# Black-Scholes, no dividends, r = RATE. The volatility is the one implied by the card's own entry
+# premium at lock, so the model reproduces the entry exactly; then we solve for the stock price
+# that puts the option at the level. Assumes the level is reached right after lock ("if reached
+# today"): later in a multi-day hold, time decay means the stock has to move further.
+
+RATE = 0.04
+
+
+def _ncdf(x: float) -> float:
+    return 0.5 * (1 + math.erf(x / math.sqrt(2)))
+
+
+def bs_price(right: str, s: float, k: float, t: float, vol: float, r: float = RATE) -> float:
+    if t <= 0 or vol <= 0:
+        return max(0.0, s - k) if right == "C" else max(0.0, k - s)
+    d1 = (math.log(s / k) + (r + vol * vol / 2) * t) / (vol * math.sqrt(t))
+    d2 = d1 - vol * math.sqrt(t)
+    if right == "C":
+        return s * _ncdf(d1) - k * math.exp(-r * t) * _ncdf(d2)
+    return k * math.exp(-r * t) * _ncdf(-d2) - s * _ncdf(-d1)
+
+
+def _bisect(f, lo: float, hi: float, n: int = 100) -> Optional[float]:
+    flo, fhi = f(lo), f(hi)
+    if flo * fhi > 0:
+        return None
+    for _ in range(n):
+        mid = (lo + hi) / 2
+        fm = f(mid)
+        if flo * fm <= 0:
+            hi = mid
+        else:
+            lo, flo = mid, fm
+    return (lo + hi) / 2
+
+
+def stock_at_premium(right: str, s0: float, k: float, t: float, entry: float, level: float) -> Optional[float]:
+    """Estimated stock price at which the option is worth `level`. None if it can't be solved."""
+    try:
+        if not (s0 > 0 and k > 0 and t > 0 and entry > 0 and level > 0):
+            return None
+        vol = _bisect(lambda v: bs_price(right, s0, k, t, v) - entry, 0.01, 5.0)
+        if vol is None:
+            return None
+        return _bisect(lambda s: bs_price(right, s, k, t, vol) - level, s0 * 0.5, s0 * 1.5)
+    except (ValueError, OverflowError, ZeroDivisionError):
+        return None
+
+
+def card_level_stocks(c: dict) -> dict:
+    """{"t1": price, "t2": price, "stop": price} estimates for a locked card (dict from the ledger)."""
+    try:
+        s0, k, entry = float(c["underlying"]), float(c["strike"]), float(c["premium"])
+        right = "C" if c["type"] == "CALL" else "P"
+        locked = datetime.fromisoformat(c["locked_at"])
+        exp = date.fromisoformat(c["expiry"])
+        s_exp = session_for(exp)
+        close = s_exp.close_hst if s_exp else datetime.combine(exp, time(10, 0), tzinfo=HST)
+        t = (close - locked).total_seconds() / (365 * 86400)
+    except (KeyError, TypeError, ValueError):
+        return {}
+    t1 = float(c.get("target1") or 0) or target1_price(entry)
+    out = {}
+    for key, lvl in (("t1", t1), ("t2", float(c["target"])), ("stop", float(c["stop"]))):
+        v = stock_at_premium(right, s0, k, t, entry, lvl)
+        if v is not None:
+            out[key] = round(v, 2)
+    return out
+
+
 @dataclass
 class Idea:
     ticker: str
@@ -384,6 +469,7 @@ class Idea:
     contract: str = ""
     underlying: Optional[float] = None    # stock price when the card was made
     underlying_asof: str = ""             # time of that price (HST) or "ToS"
+    target1: float = 0.0                  # Target 1 (+20%); Target 2 is `target`
 
     def price_tag(self) -> str:
         if self.underlying is None:
@@ -1012,7 +1098,8 @@ def evaluate(sym: str, right: str, bias: Bias, tech: Technicals, opt: Optional[O
     premium = round(opt.mid, 2)
     ceiling = round(premium * (1 + ENTRY_CEILING_PCT), 2)
     target = round(premium * (1 + TARGET_PCT), 2)
-    stop = round(premium * (1 - STOP_PCT), 2)
+    target1 = target1_price(premium)
+    stop = stop_price(premium)
     realistic = opt.ask is not None and opt.ask <= ceiling
 
     fomc_blocking = rules["fomc_day"] and now < fomc_clear_time_hst(session.trade_date)
@@ -1035,7 +1122,8 @@ def evaluate(sym: str, right: str, bias: Bias, tech: Technicals, opt: Optional[O
                 ", ".join(reasons), score, a_plus, status, "; ".join(flags), opt.source,
                 opt.contract or occ_symbol(sym, opt), round(tech.last, 2),
                 (tech.last_time.strftime("%I:%M %p HST").lstrip("0")
-                 + (" live" if tech.source == "schwab" else "")) if tech.last_time else "ToS")
+                 + (" live" if tech.source == "schwab" else "")) if tech.last_time else "ToS",
+                target1)
     return idea, []
 
 
@@ -1126,9 +1214,17 @@ def tg_card(i: "Idea") -> str:
         lines += [f"Premium ${i.premium:.2f} = last close (options not trading yet)",
                   "Entry / target / stop / max: set at the open"]
     else:
+        st = card_level_stocks({"underlying": i.underlying, "strike": i.strike, "premium": i.premium,
+                                "type": i.type, "locked_at": now_hst().isoformat(), "expiry": i.expiry,
+                                "target1": i.target1, "target": i.target, "stop": i.stop})
+
+        def lv(name, px, key):
+            return f"{name} ${px:.2f}" + (f" (stock ≈ ${st[key]:,.2f})" if key in st else "")
+        t1 = i.target1 or target1_price(i.premium)
         lines += [
-        f"Entry ${i.entry_floor:.2f}–${i.entry_ceiling:.2f} · Premium ${i.premium:.2f}",
-        f"Target ${i.target:.2f} · Stop ${i.stop:.2f} · Max {_h(i.max_contracts)}",
+        f"Entry ${i.entry_floor:.2f}–${i.entry_ceiling:.2f} · Premium ${i.premium:.2f} · Max {_h(i.max_contracts)}",
+        lv("T1", t1, "t1") + " · " + lv("T2", i.target, "t2"),
+        lv("Stop", i.stop, "stop"),
         ]
     lines += [
         f"Bias {_h(i.bias)} · {_h(reasons)}",
@@ -1531,6 +1627,22 @@ def selftest() -> int:
     ACCOUNT_SIZE, RISK_PCT = 10_000.0, 0.10
     check("sizing 10% of 10k, (1.32-0.72)*100 risk -> 16", max_contracts(1.32, 0.72) == "16")
     RISK_PCT, ACCOUNT_SIZE = saved
+
+    # two targets + stop rounding (2026-10-27)
+    check("T1 = +20%: 0.78 -> 0.94", target1_price(0.78) == 0.94)
+    check("stop rounds down: 0.12 -> 0.09 (never tighter than -20%)", stop_price(0.12) == 0.09)
+    check("stop exact when it divides: 5.10 -> 4.08", stop_price(5.10) == 4.08)
+    check("stop 1.00 -> 0.80 (no float slip)", stop_price(1.00) == 0.80)
+    lv = card_level_stocks({"underlying": 248.56, "strike": 250, "premium": 5.10, "type": "CALL",
+                            "locked_at": "2026-10-26T04:33:00-10:00", "expiry": "2026-10-30",
+                            "target": 7.65, "stop": 4.08})
+    check("call: stop stock < now < T1 stock < T2 stock",
+          lv and lv["stop"] < 248.56 < lv["t1"] < lv["t2"])
+    lv = card_level_stocks({"underlying": 520.5, "strike": 520, "premium": 2.0, "type": "PUT",
+                            "locked_at": "2026-10-27T04:03:00-10:00", "expiry": "2026-10-30",
+                            "target": 3.0, "stop": 1.6})
+    check("put: T2 stock < T1 stock < now < stop stock",
+          lv and lv["t2"] < lv["t1"] < 520.5 < lv["stop"])
 
     print(f"\n{fails} failure(s)")
     return 1 if fails else 0

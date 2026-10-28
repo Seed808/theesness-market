@@ -484,8 +484,8 @@ def open_block(now: datetime) -> str:
         m = marks.get(c["id"])
         px = (f"last ${m['last']:.2f} ({m['pnl_pct']:+.1f}%)" if m else "price n/a")
         lines.append(f"<b>{E._h(c['ticker'])} {E._h(c['type'])} {float(c['strike']):g}</b> exp {exp} · "
-                     f"entry ${float(c['premium']):.2f} · {px} · T ${float(c['target']):.2f} / "
-                     f"S ${float(c['stop']):.2f}")
+                     f"entry ${float(c['premium']):.2f} · {px} · T1 ${float(c.get('target1') or 0) or E.target1_price(float(c['premium'])):.2f}"
+                     f" · T2 ${float(c['target']):.2f} / S ${float(c['stop']):.2f}")
     return "\n".join(lines)
 
 
@@ -609,6 +609,13 @@ def main() -> int:
         print("Market closed today.")
 
     after_close(now)
+    try:
+        import tracking
+        hits = tracking.track(now)
+        if hits:
+            E.send_telegram(tracking.t1_hit_message(hits, now), html=True)
+    except Exception as e:  # noqa: BLE001  (tracking must never break a run)
+        print(f"[warn] tracking: {type(e).__name__}: {e}", file=sys.stderr)
     try:
         update_marks(now)
     except Exception as e:  # noqa: BLE001  (a live-price view must never break a run)

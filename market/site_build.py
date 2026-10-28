@@ -85,6 +85,28 @@ def load_marks() -> dict:
 
 
 MARKS: dict = {}
+T1: dict = {}          # ledger/grades_t1.csv by card id
+PEAKS: dict = {}       # ledger/peaks.json by card id
+
+
+def load_t1() -> dict:
+    p = LEDGER / "grades_t1.csv"
+    if not p.exists():
+        return {}
+    with p.open() as f:
+        return {r["id"]: r for r in csv.DictReader(f)}
+
+
+def load_peaks() -> dict:
+    p = LEDGER / "peaks.json"
+    try:
+        return json.loads(p.read_text()) if p.exists() else {}
+    except ValueError:
+        return {}
+
+
+def t1_of(c: dict) -> float:
+    return float(c.get("target1") or 0) or E.target1_price(float(c["premium"]))
 
 
 def load_grades() -> dict:
@@ -113,7 +135,11 @@ def stats(rows: list) -> dict:
         pn = [float(r["pnl_pct"]) for r in rs if r.get("pnl_pct") not in ("", None)]
         return {"w": w, "l": l, "f": f, "pct": (w / (w + l) * 100) if w + l else None,
                 "avg": (sum(pn) / len(pn)) if pn else None}
-    return {"all": tally(rows), "aplus": tally([r for r in rows if r["a_plus"] in (True, "True")])}
+    t1 = [T1[r["id"]] for r in rows if r["id"] in T1]
+    t1_tally = tally(t1)
+    t1_tally["unknown"] = sum(x["result"] == "UNKNOWN" for x in t1)
+    return {"all": tally(rows), "aplus": tally([r for r in rows if r["a_plus"] in (True, "True")]),
+            "t1": t1_tally}
 
 
 # --------------------------------------------------------------------------------------------
@@ -127,14 +153,17 @@ def tiles(st: dict) -> str:
         return "—" if t["pct"] is None else f'{t["pct"]:.1f}%'
     def avg(t):
         return "—" if t["avg"] is None else f'{t["avg"]:+.1f}%'
-    a, p = st["all"], st["aplus"]
+    a, p, t1 = st["all"], st["aplus"], st["t1"]
+    unk = f' · {t1["unknown"]} unknown' if t1.get("unknown") else ""
     return ('<div class="tiles">'
-            f'<a class="tile" href="record.html"><span class="k">Record (GO cards)</span>'
+            f'<a class="tile" href="record.html"><span class="k">Target 1 record (+{int(E.TARGET1_PCT * 100)}%)</span>'
+            f'<span class="v">{rec(t1)}</span><span class="s">win rate {pct(t1)}{unk}</span></a>'
+            f'<a class="tile" href="record.html"><span class="k">Target 2 record (+{int(E.TARGET_PCT * 100)}%)</span>'
             f'<span class="v">{rec(a)}</span><span class="s">win rate {pct(a)}</span></a>'
             f'<a class="tile" href="record.html"><span class="k">A+ record</span>'
             f'<span class="v">{rec(p)}</span><span class="s">win rate {pct(p)}</span></a>'
             f'<div class="tile"><span class="k">Avg premium P&amp;L</span>'
-            f'<span class="v">{avg(a)}</span><span class="s">per graded card</span></div></div>')
+            f'<span class="v">{avg(a)}</span><span class="s">per graded card (T2 trade)</span></div></div>')
 
 
 def bias_panel(s: dict) -> str:
@@ -152,11 +181,46 @@ def bias_panel(s: dict) -> str:
 
 
 def price_lines(c: dict) -> str:
+    st = E.card_level_stocks(c)
+    pk = PEAKS.get(c["id"], {})
+
+    def stock(key):
+        return (f' <span class="eyebrow">(stock ≈ {_money(st[key])})</span>' if key in st else "")
+
+    def hit(at_key):
+        return (f' <span class="res-WIN">✓ {_t(pk[at_key])}</span>' if pk.get(at_key) else "")
     return (f'<dt>Entry range</dt><dd>{_money(c["entry_floor"])}–{_money(c["entry_ceiling"])}</dd>'
             f'<dt>Premium</dt><dd>{_money(c["premium"])}</dd>'
             f'<dt>Max contracts</dt><dd class="eyebrow">Telegram only</dd>'
-            f'<dt>Target</dt><dd>{_money(c["target"])}</dd>'
-            f'<dt>Stop</dt><dd>{_money(c["stop"])}</dd>')
+            f'<dt>Target 1</dt><dd>{_money(t1_of(c))}{stock("t1")}{hit("t1_at")}</dd>'
+            f'<dt>Target 2</dt><dd>{_money(c["target"])}{stock("t2")}{hit("t2_at")}</dd>'
+            f'<dt>Stop</dt><dd>{_money(c["stop"])}{stock("stop")}</dd>'
+            + ('<dd class="eyebrow" style="grid-column:1/-1">stock ≈ = estimate if reached the day the '
+               'card was locked; later in the week the stock has to move further</dd>' if st else ""))
+
+
+def tracking_lines(c: dict) -> str:
+    """T1 result, how high the contract went, and the break-even side number."""
+    pk, g1 = PEAKS.get(c["id"], {}), T1.get(c["id"])
+    out = ""
+    if g1:
+        r = g1["result"]
+        lab = {"WIN": f"✓ hit +{int(E.TARGET1_PCT * 100)}%", "LOSS": "✗ stopped before T1",
+               "UNKNOWN": "unknown", "UNGRADABLE": "no price data"}.get(r, r)
+        when = f' {_t(g1["hit_at"])}' if g1.get("hit_at") and r == "WIN" else ""
+        out += (f'<dt>Target 1</dt><dd><span class="res-{e(r)}">{e(lab)}</span>{e(when)} '
+                f'<span class="eyebrow">{e(g1["method"])}</span></dd>')
+    if pk.get("peak_pct") is not None:
+        end = "frozen at expiry close" if pk.get("final") else "updates until expiry close"
+        if pk.get("stop_at"):
+            end = "before the stop"
+        out += (f'<dt>Went on to</dt><dd>{pk["peak_pct"]:+.1f}% <span class="eyebrow">highest '
+                f'contract price {_t(pk["peak_at"])} · {e(end)} · best possible exit, not a fill</span></dd>')
+    if pk.get("be"):
+        b = pk["be"]
+        out += (f'<dt>BE stop</dt><dd class="eyebrow">if the stop had moved to entry after T1: '
+                f'{e(b["result"])} ({b["pnl_pct"]:+.1f}%) · {e(b["how"])} — tracking only</dd>')
+    return out
 
 
 def price_lines_premarket(c: dict) -> str:
@@ -171,7 +235,7 @@ def card_html(c: dict, g: dict | None) -> str:
     res = ""
     if g:
         pnl = f' ({float(g["pnl_pct"]):+.1f}%)' if g.get("pnl_pct") not in ("", None) else ""
-        res = (f'<dt>Result</dt><dd><span class="res-{e(g["result"])}">{e(g["result"])}</span>'
+        res = (f'<dt>Result (T2)</dt><dd><span class="res-{e(g["result"])}">{e(g["result"])}</span>'
                f'{pnl} <span class="eyebrow">{e(g["method"])}</span></dd>')
     elif c["mode"] in ("confirm", "rescan") and c["status"] == "GO":
         exp_day = date.fromisoformat(c["expiry"]).strftime("%a %-m/%-d")
@@ -184,7 +248,7 @@ def card_html(c: dict, g: dict | None) -> str:
             px = (f' last {_money(m["last"])} ({m["pnl_pct"]:+.1f}%) '
                   f'<span class="eyebrow">{when}{rng}</span>')
         res = (f'<dt>Status</dt><dd><span class="res-INPLAY">IN PLAY</span>{px}</dd>'
-               f'<dt>Ends</dt><dd class="eyebrow">at target, stop, or {exp_day} close</dd>')
+               f'<dt>Ends</dt><dd class="eyebrow">at Target 2, stop, or {exp_day} close</dd>')
     aplus = c["a_plus"] in (True, "True")
     badge = '<span class="badge gap2">A+</span>' if aplus else ""
     flags = f'<dt>Flags</dt><dd>{e(c["flags"])}</dd>' if c.get("flags") else ""
@@ -201,7 +265,8 @@ def card_html(c: dict, g: dict | None) -> str:
             f'<dt>Expiry</dt><dd>{e(date.fromisoformat(c["expiry"]).strftime("%a %b %-d"))}</dd>'
             f'<dt>Strike</dt><dd>{float(c["strike"]):g}</dd>'
             + (price_lines_premarket(c) if c["mode"] == "premarket" else price_lines(c)) +
-            f'{flags}{res}</dl>'
+            f'{flags}{res}'
+            + (tracking_lines(c) if c["mode"] in ("confirm", "rescan") else "") + '</dl>'
             f'<div class="why">{e(c["reasoning"])}</div></div>')
 
 
@@ -279,6 +344,19 @@ def next_run_note(now: datetime) -> str:
             f'{s.open_hst.strftime("%I:%M %p")} HST (open {s.open_hst.strftime("%I:%M %p")}).')
 
 
+def t1_cell(cid: str) -> str:
+    g = T1.get(cid)
+    if not g:
+        return '<span class="eyebrow">open</span>'
+    r = g["result"]
+    return f'<span class="res-{e(r)}">{e(r)}</span>'
+
+
+def peak_cell(cid: str) -> str:
+    pk = PEAKS.get(cid, {})
+    return "" if pk.get("peak_pct") is None else f'{pk["peak_pct"]:+.1f}%'
+
+
 # --------------------------------------------------------------------------------------------
 # build
 # --------------------------------------------------------------------------------------------
@@ -289,8 +367,8 @@ def build(out: Path, now: datetime) -> None:
     (out / "day").mkdir(parents=True)
     (out / ".nojekyll").touch()
     runs, grades = load_runs(), load_grades()
-    global MARKS
-    MARKS = load_marks()
+    global MARKS, T1, PEAKS
+    MARKS, T1, PEAKS = load_marks(), load_t1(), load_peaks()
     rows = record_rows(runs, grades)
     st = stats(rows)
     days = sorted(runs, reverse=True)
@@ -313,16 +391,23 @@ def build(out: Path, now: datetime) -> None:
         f'<td>{_money(r["premium"])}</td><td>{_money(r["exit_premium"])}</td>'
         f'<td>{"" if r["pnl_pct"] in ("", None) else f"{float(r["pnl_pct"]):+.1f}%"}</td>'
         f'<td>{e(str(r["confidence"]))}</td><td>{"A+" if r["a_plus"] in (True, "True") else ""}</td>'
+        f'<td>{t1_cell(r["id"])}</td>'
         f'<td><span class="res-{e(r["result"])}">{e(r["result"])}</span></td>'
+        f'<td>{peak_cell(r["id"])}</td>'
         f'<td class="mono">{e(r["method"])}</td></tr>' for r in rows)
     table = ('<div class="tbl"><table><thead><tr><th>Date</th><th>Ticker</th><th>Type</th><th>Expiry'
              '</th><th>Strike</th><th>Entry</th><th>Exit</th><th>P&amp;L</th><th>Conf</th><th>A+</th>'
-             f'<th>Result</th><th>How</th></tr></thead><tbody>{trs}</tbody></table></div>') if rows \
+             f'<th>T1</th><th>T2 result</th><th>Went on to</th><th>How (T2)</th></tr></thead><tbody>{trs}</tbody></table></div>') if rows \
         else '<div class="empty">No graded cards yet.</div>'
     rec_body = (f'<h1>Locked record</h1>{tiles(st)}<p class="lede">Only GO cards from the confirmation '
-                'read and the morning re-scans are graded. Entry is the locked signal premium. Exit is the first of target or '
-                'stop on 5-minute bars (both in one bar counts as a stop), otherwise the last price at '
-                'the close of the expiry day. Mon–Thu cards may be held overnight up to the last '
+                'read and the morning re-scans are graded. Entry is the locked signal premium. Each card is '
+                f'scored twice with the same −{int(E.STOP_PCT * 100)}% stop: Target 1 (+{int(E.TARGET1_PCT * 100)}%) '
+                f'and Target 2 (+{int(E.TARGET_PCT * 100)}%). Exit is the first of target or stop on the contract\'s '
+                'minute prices (both in one bar counts as a stop; a bar that opens past a level exits at that '
+                'open), otherwise the last price at the close of the expiry day. "Went on to" is the highest '
+                'contract price while the trade was alive — the best possible exit, not a fill. Cards from '
+                '10/20–10/23 have no minute prices left: T1 counts as hit when T2 was hit, or when a saved run '
+                'quote showed it; otherwise it is "unknown" and not counted as a loss. Mon–Thu cards may be held overnight up to the last '
                 'trading day before a weekend or holiday; Friday cards are 0DTE. Pre-market cards are conditional and never graded.</p>' + table)
     (out / "record.html").write_text(page("Record — TheEsness Market", rec_body, 0, "record"))
 
@@ -331,10 +416,16 @@ def build(out: Path, now: datetime) -> None:
                                     else '<div class="empty">No runs yet.</div>'))
     (out / "days.html").write_text(page("Days — TheEsness Market", days_body, 0, "days"))
 
-    tests = sorted((LEDGER / "tests").glob("*.json"), reverse=True)[:10]
-    tb = ""
+    tests = sorted((LEDGER / "tests").glob("*.json"), reverse=True)
+    tb, shown = "", 0
     for p in tests:
-        s = json.loads(p.read_text())
+        try:
+            s = json.loads(p.read_text())
+        except ValueError:
+            continue
+        if "mode" not in s or "bias" not in s or shown >= 10:    # skip study/diag files
+            continue
+        shown += 1
         tb += (f'<h2>Test {e(s["mode"])} — {e(E.fmt_hst(datetime.fromisoformat(s["ran_at"])))}</h2>'
                + bias_panel(s) + run_section("Cards", s, {}, ""))
     test_body = ('<h1>Test runs</h1><p class="lede">Started by hand from GitHub (Actions → market → '

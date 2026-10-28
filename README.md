@@ -22,8 +22,16 @@ trading day before the market next closes (normally Friday), so they can be held
 never over a weekend or holiday. Friday and pre-holiday days: 0DTE only. Cards are graded at
 their target or stop as soon as either is hit, otherwise at the expiry day's close.
 
-**Target / stop.** Target = signal premium +50%. Stop = signal premium −20% (it was −35% for
-cards locked before 2026-10-22; locked cards keep the stop they were posted with).
+**Targets / stop.** Target 1 = signal premium +20%, Target 2 = +50%. Stop = −20%, rounded down to
+the cent so it's never tighter than −20% (from 2026-10-27; it was −35% for cards locked before
+2026-10-22; locked cards keep the stop they were posted with). The stop stays at −20% after T1.
+Each card is scored twice — T1 record (`ledger/grades_t1.csv`) and T2 record (`ledger/grades.csv`,
+the card's official result). A card stays in play until T2, the stop or its expiry-day close;
+Telegram sends "T1 HIT" when +20% is reached. `ledger/peaks.json` keeps how high the contract went
+while the trade was alive ("went on to", best possible exit, not a fill) and a tracking-only
+number: what T2 would have done if the stop had moved to break-even after T1.
+Cards show the estimated stock price at T1, T2 and the stop (Black-Scholes, using the volatility
+implied by the entry premium; "if reached the day the card was locked").
 Run `study` from Actions → market → Run workflow to regrade every card at 15/20/25/30/35% stops
 (writes `ledger/stop_study.json`).
 
@@ -69,7 +77,9 @@ Telegram confirms. Tokens are stored encrypted in `auth/schwab_token.enc` (key d
 | `market/site_build.py` | Writes the pages from the ledger. |
 | `market/backtest.py` | Bias backtest. |
 | `ledger/runs/` | One locked file per day per read. Never rewritten. |
-| `ledger/locks.csv`, `ledger/grades.csv` | Flat record of every card and every grade. |
+| `ledger/locks.csv`, `ledger/grades.csv` | Flat record of every card and every T2 grade. |
+| `ledger/grades_t1.csv`, `ledger/peaks.json` | T1 grades (write-once); peaks + break-even side numbers (live, frozen after expiry). |
+| `market/tracking.py` | T1 scoring, peaks, break-even side number. |
 | `ledger/tests/` | Hand-started test runs (never graded). |
 | `ledger/backtest.json` | Latest bias backtest (rebuilt once a day after the close). |
 | `data/raw/`, `data/bars/` | Saved market data for backtesting. |
