@@ -4,9 +4,9 @@
  "expired_notice_at": "2026-10-23T08:58:20.702561-10:00",
  "login_at": "2026-10-23T19:39:04.074660+00:00",
  "expires_at": "2026-10-30T19:39:04.074660+00:00",
- "last_ok": "2026-10-28T14:22:45.988196+00:00",
+ "last_ok": "2026-10-28T14:52:34.960026+00:00",
  "last_error": null,
- "hours_left": 52.9,
+ "hours_left": 52.8,
  "futures_probe": {
   "/ESZ26": {
    "answered": true,
@@ -40,16 +40,16 @@
    ],
    "values": {
     "closePrice": 7758.25,
-    "lastPrice": 7764.75,
-    "netChange": 6.5,
-    "futurePercentChange": 0.08378178,
+    "lastPrice": 7765.0,
+    "netChange": 6.75,
+    "futurePercentChange": 0.08700416,
     "settleTime": 1793143850323,
-    "tradeTime": 1793198554132
+    "tradeTime": 1793199155017
    },
    "check": {
     "netChange_diff": 0.0,
-    "my_pct": 0.0838,
-    "schwab_pct": 0.08378178,
+    "my_pct": 0.087,
+    "schwab_pct": 0.08700416,
     "pct_diff": 0.0
    },
    "used": true
@@ -92,16 +92,16 @@
    ],
    "values": {
     "closePrice": 29812.0,
-    "lastPrice": 29821.25,
-    "netChange": 9.25,
-    "futurePercentChange": 0.03102777,
+    "lastPrice": 29819.5,
+    "netChange": 7.5,
+    "futurePercentChange": 0.02515765,
     "settleTime": 1793143805405,
-    "tradeTime": 1793198553990
+    "tradeTime": 1793199155086
    },
    "check": {
     "netChange_diff": 0.0,
-    "my_pct": 0.031,
-    "schwab_pct": 0.03102777,
+    "my_pct": 0.0252,
+    "schwab_pct": 0.02515765,
     "pct_diff": 0.0
    },
    "used": true
@@ -144,16 +144,16 @@
    ],
    "values": {
     "closePrice": 52579.0,
-    "lastPrice": 52635.0,
-    "netChange": 56.0,
-    "futurePercentChange": 0.1065064,
+    "lastPrice": 52634.0,
+    "netChange": 55.0,
+    "futurePercentChange": 0.1046045,
     "settleTime": 1793143973270,
-    "tradeTime": 1793198551477
+    "tradeTime": 1793199154907
    },
    "check": {
     "netChange_diff": 0.0,
-    "my_pct": 0.1065,
-    "schwab_pct": 0.1065064,
+    "my_pct": 0.1046,
+    "schwab_pct": 0.1046045,
     "pct_diff": 0.0
    },
    "used": true
