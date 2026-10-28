@@ -1,9 +1,9 @@
 {
- "built_for": "2026-10-27",
- "built_at": "2026-10-27T10:22:36.107609-10:00",
+ "built_for": "2026-10-28",
+ "built_at": "2026-10-28T10:22:33.820992-10:00",
  "range": [
-  "2026-08-04",
-  "2026-10-27"
+  "2026-08-05",
+  "2026-10-28"
  ],
  "params": {
   "move_pct": 0.3,
@@ -125,6 +125,32 @@
   }
  ],
  "days": [
+  {
+   "date": "2026-10-28",
+   "regime": "MIXED",
+   "favored": null,
+   "clean": false,
+   "vix_confirms": false,
+   "index_confirms": false,
+   "chg": {
+    "ES": 0.19,
+    "NQ": 0.3,
+    "YM": 0.03,
+    "VIX": -0.8,
+    "SPY": 0.21,
+    "QQQ": 0.31
+   },
+   "premarket_bar": {
+    "ES": true,
+    "NQ": true,
+    "YM": true,
+    "VIX": true,
+    "SPY": true,
+    "QQQ": true
+   },
+   "SPY": "\u2014",
+   "QQQ": "\u2014"
+  },
   {
    "date": "2026-10-27",
    "regime": "BULL",
@@ -1401,23 +1427,23 @@
   },
   {
    "date": "2026-08-18",
-   "regime": "MIXED",
+   "regime": "UNKNOWN",
    "favored": null,
    "clean": false,
    "vix_confirms": false,
    "index_confirms": false,
    "chg": {
-    "ES": -0.42,
-    "NQ": -1.27,
-    "YM": -0.07,
+    "ES": null,
+    "NQ": null,
+    "YM": null,
     "VIX": 3.69,
     "SPY": -0.4,
     "QQQ": -1.25
    },
    "premarket_bar": {
-    "ES": true,
-    "NQ": true,
-    "YM": true,
+    "ES": false,
+    "NQ": false,
+    "YM": false,
     "VIX": true,
     "SPY": true,
     "QQQ": true
@@ -1644,35 +1670,9 @@
     "ES": null,
     "NQ": null,
     "YM": null,
-    "VIX": 2.18,
+    "VIX": null,
     "SPY": 0.46,
     "QQQ": 0.13
-   },
-   "premarket_bar": {
-    "ES": false,
-    "NQ": false,
-    "YM": false,
-    "VIX": true,
-    "SPY": true,
-    "QQQ": true
-   },
-   "SPY": "\u2014",
-   "QQQ": "\u2014"
-  },
-  {
-   "date": "2026-08-04",
-   "regime": "UNKNOWN",
-   "favored": null,
-   "clean": false,
-   "vix_confirms": false,
-   "index_confirms": false,
-   "chg": {
-    "ES": null,
-    "NQ": null,
-    "YM": null,
-    "VIX": null,
-    "SPY": 0.32,
-    "QQQ": 1.06
    },
    "premarket_bar": {
     "ES": false,
