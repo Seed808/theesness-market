@@ -1,0 +1,580 @@
+{
+ "built_at": "2026-10-27T16:59:44.402984-10:00",
+ "cards": [
+  {
+   "card": "2026-10-20 confirm BABA CALL 109",
+   "entry": 1.54,
+   "stop_pct": -35.1,
+   "result": "LOSS",
+   "pnl_pct": "-35.1",
+   "method": "STOP",
+   "error": "no bars"
+  },
+  {
+   "card": "2026-10-20 confirm AMD CALL 542.5",
+   "entry": 9.27,
+   "stop_pct": -35.0,
+   "result": "WIN",
+   "pnl_pct": "49.9",
+   "method": "TARGET",
+   "error": "no bars"
+  },
+  {
+   "card": "2026-10-20 confirm MU CALL 910",
+   "entry": 16.27,
+   "stop_pct": -35.0,
+   "result": "WIN",
+   "pnl_pct": "50.0",
+   "method": "TARGET",
+   "error": "no bars"
+  },
+  {
+   "card": "2026-10-20 rescan SPX CALL 7740",
+   "entry": 40.1,
+   "stop_pct": -35.0,
+   "result": "LOSS",
+   "pnl_pct": "-35.0",
+   "method": "STOP",
+   "error": "no bars"
+  },
+  {
+   "card": "2026-10-21 rescan INTC PUT 91",
+   "entry": 1.56,
+   "stop_pct": -35.3,
+   "result": "WIN",
+   "pnl_pct": "50.0",
+   "method": "TARGET",
+   "error": "no bars"
+  },
+  {
+   "card": "2026-10-21 rescan QQQ CALL 724",
+   "entry": 4.72,
+   "stop_pct": -35.0,
+   "result": "WIN",
+   "pnl_pct": "50.0",
+   "method": "TARGET",
+   "error": "no bars"
+  },
+  {
+   "card": "2026-10-21 rescan NFLX CALL 66",
+   "entry": 0.59,
+   "stop_pct": -35.6,
+   "result": "LOSS",
+   "pnl_pct": "-35.6",
+   "method": "STOP",
+   "error": "no bars"
+  },
+  {
+   "card": "2026-10-21 rescan SLV PUT 51.5",
+   "entry": 0.34,
+   "stop_pct": -35.3,
+   "result": "WIN",
+   "pnl_pct": "50.0",
+   "method": "TARGET",
+   "error": "no bars"
+  },
+  {
+   "card": "2026-10-21 rescan UBER PUT 68",
+   "entry": 0.54,
+   "stop_pct": -35.2,
+   "result": "WIN",
+   "pnl_pct": "50.0",
+   "method": "TARGET",
+   "error": "no bars"
+  },
+  {
+   "card": "2026-10-21 rescan DKNG CALL 21",
+   "entry": 0.21,
+   "stop_pct": -33.3,
+   "result": "WIN",
+   "pnl_pct": "52.4",
+   "method": "TARGET",
+   "error": "no bars"
+  },
+  {
+   "card": "2026-10-21 rescan WMT CALL 119",
+   "entry": 0.5,
+   "stop_pct": -34.0,
+   "result": "LOSS",
+   "pnl_pct": "-34.0",
+   "method": "STOP",
+   "error": "no bars"
+  },
+  {
+   "card": "2026-10-22 rescan IWM CALL 277",
+   "entry": 1.06,
+   "stop_pct": -19.8,
+   "result": "LOSS",
+   "pnl_pct": "-19.8",
+   "method": "STOP",
+   "error": "no bars"
+  },
+  {
+   "card": "2026-10-22 rescan DIA CALL 529",
+   "entry": 1.23,
+   "stop_pct": -20.3,
+   "result": "LOSS",
+   "pnl_pct": "-20.3",
+   "method": "STOP",
+   "error": "no bars"
+  },
+  {
+   "card": "2026-10-23 confirm GLD PUT 366",
+   "entry": 0.3,
+   "stop_pct": -20.0,
+   "result": "WIN",
+   "pnl_pct": "50.0",
+   "method": "TARGET",
+   "error": "no bars"
+  },
+  {
+   "card": "2026-10-23 rescan TSLA PUT 370",
+   "entry": 0.49,
+   "stop_pct": -20.4,
+   "result": "WIN",
+   "pnl_pct": "49.0",
+   "method": "TARGET",
+   "error": "no bars"
+  },
+  {
+   "card": "2026-10-23 rescan SPX PUT 7625",
+   "entry": 8.45,
+   "stop_pct": -20.0,
+   "result": "LOSS",
+   "pnl_pct": "-20.0",
+   "method": "STOP",
+   "error": "no bars"
+  },
+  {
+   "card": "2026-10-26 confirm CRM CALL 250",
+   "entry": 5.1,
+   "stop_pct": -20.0,
+   "result": "LOSS",
+   "pnl_pct": "-20.0",
+   "method": "STOP",
+   "source": "schwab 1m",
+   "peak_before_exit_pct": 2.9,
+   "peak_at": "2026-10-26 04:35:00-10:00",
+   "exit_at": "2026-10-26 05:13:00-10:00",
+   "peak_to_expiry_pct": 2.9,
+   "t15": {
+    "result": "LOSS",
+    "pnl_pct": -20.0,
+    "at": "2026-10-26 05:13:00-10:00"
+   },
+   "t20": {
+    "result": "LOSS",
+    "pnl_pct": -20.0,
+    "at": "2026-10-26 05:13:00-10:00"
+   },
+   "t25": {
+    "result": "LOSS",
+    "pnl_pct": -20.0,
+    "at": "2026-10-26 05:13:00-10:00"
+   },
+   "t30": {
+    "result": "LOSS",
+    "pnl_pct": -20.0,
+    "at": "2026-10-26 05:13:00-10:00"
+   },
+   "t40": {
+    "result": "LOSS",
+    "pnl_pct": -20.0,
+    "at": "2026-10-26 05:13:00-10:00"
+   },
+   "t50": {
+    "result": "LOSS",
+    "pnl_pct": -20.0,
+    "at": "2026-10-26 05:13:00-10:00"
+   }
+  },
+  {
+   "card": "2026-10-26 rescan XLE CALL 70",
+   "entry": 0.78,
+   "stop_pct": -20.5,
+   "result": "LOSS",
+   "pnl_pct": "-21.8",
+   "method": "STOP (gapped through) \u00b7 schwab 1m",
+   "source": "schwab 1m",
+   "peak_before_exit_pct": 15.4,
+   "peak_at": "2026-10-26 08:05:00-10:00",
+   "exit_at": "2026-10-27 03:30:00-10:00",
+   "peak_to_expiry_pct": 15.4,
+   "t15": {
+    "result": "WIN",
+    "pnl_pct": 15.4,
+    "at": "2026-10-26 08:05:00-10:00"
+   },
+   "t20": {
+    "result": "LOSS",
+    "pnl_pct": -21.8,
+    "at": "2026-10-27 03:30:00-10:00"
+   },
+   "t25": {
+    "result": "LOSS",
+    "pnl_pct": -21.8,
+    "at": "2026-10-27 03:30:00-10:00"
+   },
+   "t30": {
+    "result": "LOSS",
+    "pnl_pct": -21.8,
+    "at": "2026-10-27 03:30:00-10:00"
+   },
+   "t40": {
+    "result": "LOSS",
+    "pnl_pct": -21.8,
+    "at": "2026-10-27 03:30:00-10:00"
+   },
+   "t50": {
+    "result": "LOSS",
+    "pnl_pct": -21.8,
+    "at": "2026-10-27 03:30:00-10:00"
+   }
+  },
+  {
+   "card": "2026-10-27 confirm DIA PUT 520",
+   "entry": 2.57,
+   "stop_pct": -19.8,
+   "result": "LOSS",
+   "pnl_pct": "-24.9",
+   "method": "STOP (gapped through) \u00b7 schwab 1m",
+   "source": "schwab 1m",
+   "peak_before_exit_pct": -1.2,
+   "peak_at": "2026-10-27 04:03:00-10:00",
+   "exit_at": "2026-10-27 04:59:00-10:00",
+   "peak_to_expiry_pct": -1.2,
+   "t15": {
+    "result": "LOSS",
+    "pnl_pct": -24.9,
+    "at": "2026-10-27 04:59:00-10:00"
+   },
+   "t20": {
+    "result": "LOSS",
+    "pnl_pct": -24.9,
+    "at": "2026-10-27 04:59:00-10:00"
+   },
+   "t25": {
+    "result": "LOSS",
+    "pnl_pct": -24.9,
+    "at": "2026-10-27 04:59:00-10:00"
+   },
+   "t30": {
+    "result": "LOSS",
+    "pnl_pct": -24.9,
+    "at": "2026-10-27 04:59:00-10:00"
+   },
+   "t40": {
+    "result": "LOSS",
+    "pnl_pct": -24.9,
+    "at": "2026-10-27 04:59:00-10:00"
+   },
+   "t50": {
+    "result": "LOSS",
+    "pnl_pct": -24.9,
+    "at": "2026-10-27 04:59:00-10:00"
+   }
+  },
+  {
+   "card": "2026-10-27 rescan AAPL CALL 345",
+   "entry": 3.17,
+   "stop_pct": -19.9,
+   "result": "WIN",
+   "pnl_pct": "49.8",
+   "method": "TARGET (gapped through) \u00b7 schwab 1m",
+   "source": "schwab 1m",
+   "peak_before_exit_pct": 54.6,
+   "peak_at": "2026-10-27 05:05:00-10:00",
+   "exit_at": "2026-10-27 05:05:00-10:00",
+   "peak_to_expiry_pct": 64.0,
+   "t15": {
+    "result": "WIN",
+    "pnl_pct": 15.1,
+    "at": "2026-10-27 04:31:00-10:00"
+   },
+   "t20": {
+    "result": "WIN",
+    "pnl_pct": 19.9,
+    "at": "2026-10-27 04:33:00-10:00"
+   },
+   "t25": {
+    "result": "WIN",
+    "pnl_pct": 24.9,
+    "at": "2026-10-27 04:36:00-10:00"
+   },
+   "t30": {
+    "result": "WIN",
+    "pnl_pct": 30.0,
+    "at": "2026-10-27 04:41:00-10:00"
+   },
+   "t40": {
+    "result": "WIN",
+    "pnl_pct": 40.1,
+    "at": "2026-10-27 05:00:00-10:00"
+   },
+   "t50": {
+    "result": "WIN",
+    "pnl_pct": 49.8,
+    "at": "2026-10-27 05:05:00-10:00"
+   }
+  },
+  {
+   "card": "2026-10-27 rescan BABA CALL 100",
+   "entry": 1.63,
+   "stop_pct": -20.2,
+   "result": "LOSS",
+   "pnl_pct": "-20.2",
+   "method": "STOP \u00b7 schwab 1m",
+   "source": "schwab 1m",
+   "peak_before_exit_pct": -0.6,
+   "peak_at": "2026-10-27 05:03:00-10:00",
+   "exit_at": "2026-10-27 06:45:00-10:00",
+   "peak_to_expiry_pct": 8.0,
+   "t15": {
+    "result": "LOSS",
+    "pnl_pct": -20.2,
+    "at": "2026-10-27 06:45:00-10:00"
+   },
+   "t20": {
+    "result": "LOSS",
+    "pnl_pct": -20.2,
+    "at": "2026-10-27 06:45:00-10:00"
+   },
+   "t25": {
+    "result": "LOSS",
+    "pnl_pct": -20.2,
+    "at": "2026-10-27 06:45:00-10:00"
+   },
+   "t30": {
+    "result": "LOSS",
+    "pnl_pct": -20.2,
+    "at": "2026-10-27 06:45:00-10:00"
+   },
+   "t40": {
+    "result": "LOSS",
+    "pnl_pct": -20.2,
+    "at": "2026-10-27 06:45:00-10:00"
+   },
+   "t50": {
+    "result": "LOSS",
+    "pnl_pct": -20.2,
+    "at": "2026-10-27 06:45:00-10:00"
+   }
+  },
+  {
+   "card": "2026-10-27 rescan QCOM CALL 182.5",
+   "entry": 3.02,
+   "stop_pct": -19.9,
+   "result": "WIN",
+   "pnl_pct": "50.0",
+   "method": "TARGET \u00b7 schwab 1m",
+   "source": "schwab 1m",
+   "peak_before_exit_pct": 50.0,
+   "peak_at": "2026-10-27 09:56:00-10:00",
+   "exit_at": "2026-10-27 09:56:00-10:00",
+   "peak_to_expiry_pct": 54.0,
+   "t15": {
+    "result": "WIN",
+    "pnl_pct": 14.9,
+    "at": "2026-10-27 06:00:00-10:00"
+   },
+   "t20": {
+    "result": "WIN",
+    "pnl_pct": 20.9,
+    "at": "2026-10-27 09:07:00-10:00"
+   },
+   "t25": {
+    "result": "WIN",
+    "pnl_pct": 24.8,
+    "at": "2026-10-27 09:09:00-10:00"
+   },
+   "t30": {
+    "result": "WIN",
+    "pnl_pct": 32.5,
+    "at": "2026-10-27 09:35:00-10:00"
+   },
+   "t40": {
+    "result": "WIN",
+    "pnl_pct": 40.1,
+    "at": "2026-10-27 09:55:00-10:00"
+   },
+   "t50": {
+    "result": "WIN",
+    "pnl_pct": 50.0,
+    "at": "2026-10-27 09:56:00-10:00"
+   }
+  },
+  {
+   "card": "2026-10-27 rescan XLF PUT 55",
+   "entry": 0.12,
+   "stop_pct": -16.7,
+   "result": "LOSS",
+   "pnl_pct": "-16.7",
+   "method": "STOP (gapped through) \u00b7 schwab 1m",
+   "source": "schwab 1m",
+   "peak_before_exit_pct": 8.3,
+   "peak_at": "2026-10-27 05:15:00-10:00",
+   "exit_at": "2026-10-27 06:00:00-10:00",
+   "peak_to_expiry_pct": 8.3,
+   "t15": {
+    "result": "LOSS",
+    "pnl_pct": -16.7,
+    "at": "2026-10-27 06:00:00-10:00"
+   },
+   "t20": {
+    "result": "LOSS",
+    "pnl_pct": -16.7,
+    "at": "2026-10-27 06:00:00-10:00"
+   },
+   "t25": {
+    "result": "LOSS",
+    "pnl_pct": -16.7,
+    "at": "2026-10-27 06:00:00-10:00"
+   },
+   "t30": {
+    "result": "LOSS",
+    "pnl_pct": -16.7,
+    "at": "2026-10-27 06:00:00-10:00"
+   },
+   "t40": {
+    "result": "LOSS",
+    "pnl_pct": -16.7,
+    "at": "2026-10-27 06:00:00-10:00"
+   },
+   "t50": {
+    "result": "LOSS",
+    "pnl_pct": -16.7,
+    "at": "2026-10-27 06:00:00-10:00"
+   }
+  },
+  {
+   "card": "2026-10-27 rescan BAC PUT 50",
+   "entry": 0.26,
+   "stop_pct": -19.2,
+   "result": "LOSS",
+   "pnl_pct": "-19.2",
+   "method": "STOP (gapped through) \u00b7 schwab 1m",
+   "source": "schwab 1m",
+   "peak_before_exit_pct": 0.0,
+   "peak_at": "2026-10-27 06:49:00-10:00",
+   "exit_at": "2026-10-27 07:16:00-10:00",
+   "peak_to_expiry_pct": 0.0,
+   "t15": {
+    "result": "LOSS",
+    "pnl_pct": -19.2,
+    "at": "2026-10-27 07:16:00-10:00"
+   },
+   "t20": {
+    "result": "LOSS",
+    "pnl_pct": -19.2,
+    "at": "2026-10-27 07:16:00-10:00"
+   },
+   "t25": {
+    "result": "LOSS",
+    "pnl_pct": -19.2,
+    "at": "2026-10-27 07:16:00-10:00"
+   },
+   "t30": {
+    "result": "LOSS",
+    "pnl_pct": -19.2,
+    "at": "2026-10-27 07:16:00-10:00"
+   },
+   "t40": {
+    "result": "LOSS",
+    "pnl_pct": -19.2,
+    "at": "2026-10-27 07:16:00-10:00"
+   },
+   "t50": {
+    "result": "LOSS",
+    "pnl_pct": -19.2,
+    "at": "2026-10-27 07:16:00-10:00"
+   }
+  },
+  {
+   "card": "2026-10-27 rescan APP PUT 260",
+   "entry": 5.25,
+   "stop_pct": -20.0,
+   "result": "LOSS",
+   "pnl_pct": "-21.9",
+   "method": "STOP (gapped through) \u00b7 schwab 1m",
+   "source": "schwab 1m",
+   "peak_before_exit_pct": 2.9,
+   "peak_at": "2026-10-27 08:08:00-10:00",
+   "exit_at": "2026-10-27 09:20:00-10:00",
+   "peak_to_expiry_pct": 2.9,
+   "t15": {
+    "result": "LOSS",
+    "pnl_pct": -21.9,
+    "at": "2026-10-27 09:20:00-10:00"
+   },
+   "t20": {
+    "result": "LOSS",
+    "pnl_pct": -21.9,
+    "at": "2026-10-27 09:20:00-10:00"
+   },
+   "t25": {
+    "result": "LOSS",
+    "pnl_pct": -21.9,
+    "at": "2026-10-27 09:20:00-10:00"
+   },
+   "t30": {
+    "result": "LOSS",
+    "pnl_pct": -21.9,
+    "at": "2026-10-27 09:20:00-10:00"
+   },
+   "t40": {
+    "result": "LOSS",
+    "pnl_pct": -21.9,
+    "at": "2026-10-27 09:20:00-10:00"
+   },
+   "t50": {
+    "result": "LOSS",
+    "pnl_pct": -21.9,
+    "at": "2026-10-27 09:20:00-10:00"
+   }
+  }
+ ],
+ "summary": {
+  "t15": {
+   "win": 3,
+   "loss": 6,
+   "flat": 0,
+   "total_pnl_pct": -77.5,
+   "avg_pnl_pct": -8.6
+  },
+  "t20": {
+   "win": 2,
+   "loss": 7,
+   "flat": 0,
+   "total_pnl_pct": -103.9,
+   "avg_pnl_pct": -11.5
+  },
+  "t25": {
+   "win": 2,
+   "loss": 7,
+   "flat": 0,
+   "total_pnl_pct": -95.0,
+   "avg_pnl_pct": -10.6
+  },
+  "t30": {
+   "win": 2,
+   "loss": 7,
+   "flat": 0,
+   "total_pnl_pct": -82.2,
+   "avg_pnl_pct": -9.1
+  },
+  "t40": {
+   "win": 2,
+   "loss": 7,
+   "flat": 0,
+   "total_pnl_pct": -64.5,
+   "avg_pnl_pct": -7.2
+  },
+  "t50": {
+   "win": 2,
+   "loss": 7,
+   "flat": 0,
+   "total_pnl_pct": -44.9,
+   "avg_pnl_pct": -5.0
+  }
+ }
+}
