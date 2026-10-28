@@ -1,0 +1,297 @@
+{
+ "2026-10-20_confirm_BABA_CALL_2026-10-23_109": {
+  "final": true,
+  "no_prices": true,
+  "as_of": "2026-10-27T17:45:24.187957-10:00"
+ },
+ "2026-10-20_confirm_AMD_CALL_2026-10-23_542.5": {
+  "final": true,
+  "no_prices": true,
+  "as_of": "2026-10-27T17:45:24.187957-10:00"
+ },
+ "2026-10-20_confirm_MU_CALL_2026-10-23_910": {
+  "final": true,
+  "no_prices": true,
+  "as_of": "2026-10-27T17:45:24.187957-10:00"
+ },
+ "2026-10-20_rescan_SPX_CALL_2026-10-23_7740": {
+  "final": true,
+  "no_prices": true,
+  "as_of": "2026-10-27T17:45:24.187957-10:00"
+ },
+ "2026-10-21_rescan_INTC_PUT_2026-10-23_91": {
+  "final": true,
+  "no_prices": true,
+  "as_of": "2026-10-27T17:45:24.187957-10:00"
+ },
+ "2026-10-21_rescan_QQQ_CALL_2026-10-23_724": {
+  "final": true,
+  "no_prices": true,
+  "as_of": "2026-10-27T17:45:24.187957-10:00"
+ },
+ "2026-10-21_rescan_NFLX_CALL_2026-10-23_66": {
+  "final": true,
+  "no_prices": true,
+  "as_of": "2026-10-27T17:45:24.187957-10:00"
+ },
+ "2026-10-21_rescan_SLV_PUT_2026-10-23_51.5": {
+  "final": true,
+  "no_prices": true,
+  "as_of": "2026-10-27T17:45:24.187957-10:00"
+ },
+ "2026-10-21_rescan_UBER_PUT_2026-10-23_68": {
+  "final": true,
+  "no_prices": true,
+  "as_of": "2026-10-27T17:45:24.187957-10:00"
+ },
+ "2026-10-21_rescan_DKNG_CALL_2026-10-23_21": {
+  "final": true,
+  "no_prices": true,
+  "as_of": "2026-10-27T17:45:24.187957-10:00"
+ },
+ "2026-10-21_rescan_WMT_CALL_2026-10-23_119": {
+  "final": true,
+  "no_prices": true,
+  "as_of": "2026-10-27T17:45:24.187957-10:00"
+ },
+ "2026-10-22_rescan_IWM_CALL_2026-10-23_277": {
+  "final": true,
+  "no_prices": true,
+  "as_of": "2026-10-27T17:45:24.187957-10:00"
+ },
+ "2026-10-22_rescan_DIA_CALL_2026-10-23_529": {
+  "final": true,
+  "no_prices": true,
+  "as_of": "2026-10-27T17:45:24.187957-10:00"
+ },
+ "2026-10-23_confirm_GLD_PUT_2026-10-23_366": {
+  "final": true,
+  "no_prices": true,
+  "as_of": "2026-10-27T17:45:24.187957-10:00"
+ },
+ "2026-10-23_rescan_TSLA_PUT_2026-10-23_370": {
+  "final": true,
+  "no_prices": true,
+  "as_of": "2026-10-27T17:45:24.187957-10:00"
+ },
+ "2026-10-23_rescan_SPX_PUT_2026-10-23_7625": {
+  "final": true,
+  "no_prices": true,
+  "as_of": "2026-10-27T17:45:24.187957-10:00"
+ },
+ "2026-10-26_confirm_CRM_CALL_2026-10-30_250": {
+  "source": "schwab 1m",
+  "as_of": "2026-10-27T17:45:24.187957-10:00",
+  "stop_at": "2026-10-26T05:13:00-10:00",
+  "peak_pct": 2.9,
+  "peak_at": "2026-10-26T04:35:00-10:00",
+  "final": false
+ },
+ "2026-10-26_rescan_XLE_CALL_2026-10-30_70": {
+  "source": "schwab 1m",
+  "as_of": "2026-10-27T17:45:24.187957-10:00",
+  "stop_at": "2026-10-27T03:30:00-10:00",
+  "peak_pct": 15.4,
+  "peak_at": "2026-10-26T08:05:00-10:00",
+  "final": false
+ },
+ "2026-10-27_confirm_DIA_PUT_2026-10-30_520": {
+  "source": "schwab 1m",
+  "as_of": "2026-10-27T17:45:24.187957-10:00",
+  "stop_at": "2026-10-27T04:59:00-10:00",
+  "peak_pct": -1.2,
+  "peak_at": "2026-10-27T04:03:00-10:00",
+  "final": false
+ },
+ "2026-10-27_rescan_AAPL_CALL_2026-10-30_345": {
+  "source": "schwab 1m",
+  "as_of": "2026-10-27T17:45:24.187957-10:00",
+  "t1_at": "2026-10-27T04:33:00-10:00",
+  "t2_at": "2026-10-27T05:05:00-10:00",
+  "peak_pct": 64.0,
+  "peak_at": "2026-10-27T05:22:00-10:00",
+  "be": {
+   "result": "WIN",
+   "pnl_pct": 49.8,
+   "how": "TARGET (gapped through)"
+  },
+  "final": false
+ },
+ "2026-10-27_rescan_GLD_CALL_2026-10-30_372": {
+  "source": "schwab 1m",
+  "as_of": "2026-10-27T17:45:24.187957-10:00",
+  "t1_at": "2026-10-27T04:40:00-10:00",
+  "peak_pct": 41.2,
+  "peak_at": "2026-10-27T06:00:00-10:00",
+  "be": {
+   "result": "OPEN",
+   "pnl_pct": 26.5,
+   "how": "still open"
+  },
+  "final": false
+ },
+ "2026-10-27_rescan_SLV_CALL_2026-10-30_49": {
+  "source": "schwab 1m",
+  "as_of": "2026-10-27T17:45:24.187957-10:00",
+  "t1_at": "2026-10-27T05:00:00-10:00",
+  "peak_pct": 27.6,
+  "peak_at": "2026-10-27T05:20:00-10:00",
+  "be": {
+   "result": "FLAT",
+   "pnl_pct": 0.0,
+   "how": "BREAK-EVEN STOP"
+  },
+  "final": false
+ },
+ "2026-10-27_rescan_WMT_PUT_2026-10-30_119": {
+  "source": "schwab 1m",
+  "as_of": "2026-10-27T17:45:24.187957-10:00",
+  "t1_at": "2026-10-27T06:18:00-10:00",
+  "peak_pct": 28.4,
+  "peak_at": "2026-10-27T07:22:00-10:00",
+  "be": {
+   "result": "LOSS",
+   "pnl_pct": -2.1,
+   "how": "BREAK-EVEN STOP (gapped through)"
+  },
+  "final": false
+ },
+ "2026-10-27_rescan_QQQ_CALL_2026-10-30_718": {
+  "source": "schwab 1m",
+  "as_of": "2026-10-27T17:45:24.187957-10:00",
+  "t1_at": "2026-10-27T05:15:00-10:00",
+  "peak_pct": 45.5,
+  "peak_at": "2026-10-27T09:46:00-10:00",
+  "be": {
+   "result": "OPEN",
+   "pnl_pct": 27.7,
+   "how": "still open"
+  },
+  "final": false
+ },
+ "2026-10-27_rescan_SPX_CALL_2026-10-30_7705": {
+  "source": "schwab 1m",
+  "as_of": "2026-10-27T17:45:24.187957-10:00",
+  "t1_at": "2026-10-27T05:42:00-10:00",
+  "peak_pct": 34.9,
+  "peak_at": "2026-10-27T06:01:00-10:00",
+  "be": {
+   "result": "OPEN",
+   "pnl_pct": 19.0,
+   "how": "still open"
+  },
+  "final": false
+ },
+ "2026-10-27_rescan_PLTR_CALL_2026-10-30_200": {
+  "source": "schwab 1m",
+  "as_of": "2026-10-27T17:45:24.187957-10:00",
+  "t1_at": "2026-10-27T05:46:00-10:00",
+  "peak_pct": 32.7,
+  "peak_at": "2026-10-27T06:10:00-10:00",
+  "be": {
+   "result": "FLAT",
+   "pnl_pct": 0.0,
+   "how": "BREAK-EVEN STOP"
+  },
+  "final": false
+ },
+ "2026-10-27_rescan_SPY_CALL_2026-10-30_770": {
+  "source": "schwab 1m",
+  "as_of": "2026-10-27T17:45:24.187957-10:00",
+  "t1_at": "2026-10-27T06:00:00-10:00",
+  "peak_pct": 22.7,
+  "peak_at": "2026-10-27T06:00:00-10:00",
+  "be": {
+   "result": "LOSS",
+   "pnl_pct": -0.9,
+   "how": "BREAK-EVEN STOP (gapped through)"
+  },
+  "final": false
+ },
+ "2026-10-27_rescan_BABA_CALL_2026-10-30_100": {
+  "source": "schwab 1m",
+  "as_of": "2026-10-27T17:45:24.187957-10:00",
+  "stop_at": "2026-10-27T06:45:00-10:00",
+  "peak_pct": -0.6,
+  "peak_at": "2026-10-27T05:03:00-10:00",
+  "final": false
+ },
+ "2026-10-27_rescan_QCOM_CALL_2026-10-30_182.5": {
+  "source": "schwab 1m",
+  "as_of": "2026-10-27T17:45:24.187957-10:00",
+  "t1_at": "2026-10-27T09:07:00-10:00",
+  "t2_at": "2026-10-27T09:56:00-10:00",
+  "peak_pct": 54.0,
+  "peak_at": "2026-10-27T09:58:00-10:00",
+  "be": {
+   "result": "WIN",
+   "pnl_pct": 50.0,
+   "how": "TARGET"
+  },
+  "final": false
+ },
+ "2026-10-27_rescan_XLF_PUT_2026-10-30_55": {
+  "source": "schwab 1m",
+  "as_of": "2026-10-27T17:45:24.187957-10:00",
+  "stop_at": "2026-10-27T06:00:00-10:00",
+  "peak_pct": 8.3,
+  "peak_at": "2026-10-27T05:15:00-10:00",
+  "final": false
+ },
+ "2026-10-27_rescan_NVDA_CALL_2026-10-30_220": {
+  "source": "schwab 1m",
+  "as_of": "2026-10-27T17:45:24.187957-10:00",
+  "t1_at": "2026-10-27T05:51:00-10:00",
+  "peak_pct": 28.2,
+  "peak_at": "2026-10-27T05:54:00-10:00",
+  "be": {
+   "result": "FLAT",
+   "pnl_pct": 0.0,
+   "how": "BREAK-EVEN STOP"
+  },
+  "final": false
+ },
+ "2026-10-27_rescan_BAC_PUT_2026-10-30_50": {
+  "source": "schwab 1m",
+  "as_of": "2026-10-27T17:45:24.187957-10:00",
+  "stop_at": "2026-10-27T07:16:00-10:00",
+  "peak_pct": 0.0,
+  "peak_at": "2026-10-27T06:49:00-10:00",
+  "final": false
+ },
+ "2026-10-27_rescan_META_PUT_2026-10-30_620": {
+  "source": "schwab 1m",
+  "as_of": "2026-10-27T17:45:24.187957-10:00",
+  "t1_at": "2026-10-27T09:50:00-10:00",
+  "peak_pct": 26.7,
+  "peak_at": "2026-10-27T09:51:00-10:00",
+  "be": {
+   "result": "OPEN",
+   "pnl_pct": 25.2,
+   "how": "still open"
+  },
+  "final": false
+ },
+ "2026-10-27_rescan_UBER_PUT_2026-10-30_65": {
+  "source": "schwab 1m",
+  "as_of": "2026-10-27T17:45:24.187957-10:00",
+  "peak_pct": 14.3,
+  "peak_at": "2026-10-27T08:57:00-10:00",
+  "final": false
+ },
+ "2026-10-27_rescan_APP_PUT_2026-10-30_260": {
+  "source": "schwab 1m",
+  "as_of": "2026-10-27T17:45:24.187957-10:00",
+  "stop_at": "2026-10-27T09:20:00-10:00",
+  "peak_pct": 2.9,
+  "peak_at": "2026-10-27T08:08:00-10:00",
+  "final": false
+ },
+ "2026-10-27_rescan_UVXY_CALL_2026-10-30_18": {
+  "source": "schwab 1m",
+  "as_of": "2026-10-27T17:45:24.187957-10:00",
+  "peak_pct": -3.1,
+  "peak_at": "2026-10-27T08:43:00-10:00",
+  "final": false
+ }
+}
