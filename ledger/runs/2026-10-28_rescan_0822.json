@@ -1,0 +1,69 @@
+{
+ "trade_date": "2026-10-28",
+ "mode": "rescan",
+ "ran_at": "2026-10-28T08:22:38.074870-10:00",
+ "test": false,
+ "open_hst": "2026-10-28T03:30:00-10:00",
+ "close_hst": "2026-10-28T10:00:00-10:00",
+ "early_close": false,
+ "bias": {
+  "regime": "MIXED",
+  "favored": null,
+  "clean": false,
+  "notes": [
+   "ES flat (+0.05%), NQ flat (+0.02%), YM flat (+0.09%)",
+   "No ES/YM rule matched \u2192 no favored side, no A+",
+   "VIX 17.43 (-0.51%) \u2192 does not confirm",
+   "SPY flat (+0.08%), QQQ flat (+0.03%) \u2192 does not confirm"
+  ]
+ },
+ "quotes": {
+  "ES": {
+   "last": 7762.25,
+   "prev_close": 7758.25,
+   "chg_pct": 0.05155801888312441,
+   "source": "schwab"
+  },
+  "NQ": {
+   "last": 29818.75,
+   "prev_close": 29812.0,
+   "chg_pct": 0.022641889172145446,
+   "source": "schwab"
+  },
+  "YM": {
+   "last": 52624.0,
+   "prev_close": 52579.0,
+   "chg_pct": 0.0855854999144145,
+   "source": "schwab"
+  },
+  "VIX": {
+   "last": 17.43,
+   "prev_close": 17.52,
+   "chg_pct": -0.5136986301369855,
+   "source": "schwab"
+  },
+  "SPY": {
+   "last": 770.24,
+   "prev_close": 769.66,
+   "chg_pct": 0.07535795026375815,
+   "source": "schwab"
+  },
+  "QQQ": {
+   "last": 721.5,
+   "prev_close": 721.25,
+   "chg_pct": 0.03466204506065858,
+   "source": "schwab"
+  }
+ },
+ "flags": [
+  "FOMC DAY \u2014 no entry before 08:15 AM HST",
+  "Amateur hour until 04:00 AM; institutional 04:00\u201304:30 AM HST",
+  "No damaged contracts overnight. No earnings holds overnight."
+ ],
+ "headlines": [],
+ "data_note": "live data: Schwab (Yahoo fallback)",
+ "cards": [],
+ "passing": 2,
+ "rejected": 143,
+ "rejections": []
+}
