@@ -1,0 +1,96 @@
+{
+ "trade_date": "2026-10-28",
+ "mode": "rescan",
+ "ran_at": "2026-10-28T04:42:34.074223-10:00",
+ "test": false,
+ "open_hst": "2026-10-28T03:30:00-10:00",
+ "close_hst": "2026-10-28T10:00:00-10:00",
+ "early_close": false,
+ "bias": {
+  "regime": "MIXED",
+  "favored": null,
+  "clean": false,
+  "notes": [
+   "ES flat (+0.08%), NQ flat (+0.03%), YM green (+0.11%)",
+   "No ES/YM rule matched \u2192 no favored side, no A+",
+   "VIX 17.38 (-0.80%) \u2192 does not confirm",
+   "SPY green (+0.11%), QQQ flat (+0.04%) \u2192 does not confirm"
+  ]
+ },
+ "quotes": {
+  "ES": {
+   "last": 7764.75,
+   "prev_close": 7758.25,
+   "chg_pct": 0.08378178068507718,
+   "source": "schwab"
+  },
+  "NQ": {
+   "last": 29821.25,
+   "prev_close": 29812.0,
+   "chg_pct": 0.031027774050717834,
+   "source": "schwab"
+  },
+  "YM": {
+   "last": 52635.0,
+   "prev_close": 52579.0,
+   "chg_pct": 0.1065063998934936,
+   "source": "schwab"
+  },
+  "VIX": {
+   "last": 17.38,
+   "prev_close": 17.52,
+   "chg_pct": -0.7990867579908708,
+   "source": "schwab"
+  },
+  "SPY": {
+   "last": 770.48,
+   "prev_close": 769.66,
+   "chg_pct": 0.10654055037289843,
+   "source": "schwab"
+  },
+  "QQQ": {
+   "last": 721.57,
+   "prev_close": 721.25,
+   "chg_pct": 0.044367417677649915,
+   "source": "schwab"
+  }
+ },
+ "flags": [
+  "FOMC DAY \u2014 no entry before 08:15 AM HST",
+  "Amateur hour until 04:00 AM; institutional 04:00\u201304:30 AM HST",
+  "No damaged contracts overnight. No earnings holds overnight."
+ ],
+ "headlines": [],
+ "data_note": "live data: Schwab (Yahoo fallback)",
+ "cards": [
+  {
+   "id": "2026-10-28_rescan_AAPL_PUT_2026-10-30_342.5",
+   "trade_date": "2026-10-28",
+   "mode": "rescan",
+   "locked_at": "2026-10-28T04:42:34.074223-10:00",
+   "ticker": "AAPL",
+   "type": "PUT",
+   "bias": "MIXED",
+   "expiry": "2026-10-30",
+   "strike": 342.5,
+   "entry_floor": 1.94,
+   "entry_ceiling": 2.33,
+   "premium": 1.94,
+   "target": 2.91,
+   "stop": 1.55,
+   "reasoning": "MIXED, against/no favored side, trend aligned, PML resistance, strong liquidity",
+   "confidence": 7,
+   "a_plus": false,
+   "status": "WAIT \u2014 FOMC",
+   "flags": "FOMC: no entry before 08:15 AM HST; hold OK until Fri 10/30 close \u00b7 close before the weekend",
+   "data_source": "schwab",
+   "contract": "AAPL261030P00342500",
+   "underlying": 344.6,
+   "underlying_asof": "4:43 AM HST live",
+   "target1": 2.33
+  }
+ ],
+ "passing": 2,
+ "rejected": 143,
+ "rejections": []
+}
