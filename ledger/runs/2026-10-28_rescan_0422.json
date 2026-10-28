@@ -1,0 +1,96 @@
+{
+ "trade_date": "2026-10-28",
+ "mode": "rescan",
+ "ran_at": "2026-10-28T04:22:45.132779-10:00",
+ "test": false,
+ "open_hst": "2026-10-28T03:30:00-10:00",
+ "close_hst": "2026-10-28T10:00:00-10:00",
+ "early_close": false,
+ "bias": {
+  "regime": "BULL",
+  "favored": "C",
+  "clean": false,
+  "notes": [
+   "ES green (+0.12%), NQ flat (-0.02%), YM green (+0.23%)",
+   "ES+YM green \u2192 NO put setups",
+   "VIX 17.25 (-1.54%) \u2192 does not confirm",
+   "SPY green (+0.14%), QQQ flat (-0.00%) \u2192 does not confirm"
+  ]
+ },
+ "quotes": {
+  "ES": {
+   "last": 7767.25,
+   "prev_close": 7758.25,
+   "chg_pct": 0.11600554248702995,
+   "source": "schwab"
+  },
+  "NQ": {
+   "last": 29806.0,
+   "prev_close": 29812.0,
+   "chg_pct": -0.02012612370857373,
+   "source": "schwab"
+  },
+  "YM": {
+   "last": 52702.0,
+   "prev_close": 52579.0,
+   "chg_pct": 0.2339336997660663,
+   "source": "schwab"
+  },
+  "VIX": {
+   "last": 17.25,
+   "prev_close": 17.52,
+   "chg_pct": -1.5410958904109566,
+   "source": "schwab"
+  },
+  "SPY": {
+   "last": 770.76,
+   "prev_close": 769.66,
+   "chg_pct": 0.14292025050022383,
+   "source": "schwab"
+  },
+  "QQQ": {
+   "last": 721.22,
+   "prev_close": 721.25,
+   "chg_pct": -0.004159445407275246,
+   "source": "schwab"
+  }
+ },
+ "flags": [
+  "FOMC DAY \u2014 no entry before 08:15 AM HST",
+  "Amateur hour until 04:00 AM; institutional 04:00\u201304:30 AM HST",
+  "No damaged contracts overnight. No earnings holds overnight."
+ ],
+ "headlines": [],
+ "data_note": "live data: Schwab (Yahoo fallback)",
+ "cards": [
+  {
+   "id": "2026-10-28_rescan_DIA_CALL_2026-10-30_525",
+   "trade_date": "2026-10-28",
+   "mode": "rescan",
+   "locked_at": "2026-10-28T04:22:45.132779-10:00",
+   "ticker": "DIA",
+   "type": "CALL",
+   "bias": "BULL",
+   "expiry": "2026-10-30",
+   "strike": 525.0,
+   "entry_floor": 2.74,
+   "entry_ceiling": 3.29,
+   "premium": 2.74,
+   "target": 4.11,
+   "stop": 2.19,
+   "reasoning": "BULL, trend aligned, PDH support, institutional window",
+   "confidence": 8,
+   "a_plus": false,
+   "status": "WAIT \u2014 FOMC",
+   "flags": "FOMC: no entry before 08:15 AM HST; hold OK until Fri 10/30 close \u00b7 close before the weekend",
+   "data_source": "schwab",
+   "contract": "DIA261030C00525000",
+   "underlying": 524.51,
+   "underlying_asof": "4:22 AM HST live",
+   "target1": 3.29
+  }
+ ],
+ "passing": 2,
+ "rejected": 71,
+ "rejections": []
+}
