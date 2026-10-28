@@ -1,0 +1,122 @@
+{
+ "trade_date": "2026-10-28",
+ "mode": "rescan",
+ "ran_at": "2026-10-28T08:42:35.867917-10:00",
+ "test": false,
+ "open_hst": "2026-10-28T03:30:00-10:00",
+ "close_hst": "2026-10-28T10:00:00-10:00",
+ "early_close": false,
+ "bias": {
+  "regime": "BULL",
+  "favored": "C",
+  "clean": true,
+  "notes": [
+   "ES green (+0.44%), NQ green (+0.61%), YM green (+0.37%)",
+   "ES+YM green \u2192 NO put setups",
+   "VIX 17.02 (-2.85%) \u2192 confirms",
+   "SPY green (+0.45%), QQQ green (+0.62%) \u2192 confirms"
+  ]
+ },
+ "quotes": {
+  "ES": {
+   "last": 7792.0,
+   "prev_close": 7758.25,
+   "chg_pct": 0.4350207843263623,
+   "source": "schwab"
+  },
+  "NQ": {
+   "last": 29993.0,
+   "prev_close": 29812.0,
+   "chg_pct": 0.6071380652086408,
+   "source": "schwab"
+  },
+  "YM": {
+   "last": 52775.0,
+   "prev_close": 52579.0,
+   "chg_pct": 0.37277239962722764,
+   "source": "schwab"
+  },
+  "VIX": {
+   "last": 17.02,
+   "prev_close": 17.52,
+   "chg_pct": -2.853881278538813,
+   "source": "schwab"
+  },
+  "SPY": {
+   "last": 773.13,
+   "prev_close": 769.66,
+   "chg_pct": 0.4508484265779731,
+   "source": "schwab"
+  },
+  "QQQ": {
+   "last": 725.72,
+   "prev_close": 721.25,
+   "chg_pct": 0.6197573656845792,
+   "source": "schwab"
+  }
+ },
+ "flags": [
+  "FOMC DAY \u2014 no entry before 08:15 AM HST",
+  "Amateur hour until 04:00 AM; institutional 04:00\u201304:30 AM HST",
+  "No damaged contracts overnight. No earnings holds overnight."
+ ],
+ "headlines": [],
+ "data_note": "live data: Schwab (Yahoo fallback)",
+ "cards": [
+  {
+   "id": "2026-10-28_rescan_IWM_CALL_2026-10-30_282",
+   "trade_date": "2026-10-28",
+   "mode": "rescan",
+   "locked_at": "2026-10-28T08:42:35.867917-10:00",
+   "ticker": "IWM",
+   "type": "CALL",
+   "bias": "BULL",
+   "expiry": "2026-10-30",
+   "strike": 282.0,
+   "entry_floor": 1.57,
+   "entry_ceiling": 1.88,
+   "premium": 1.57,
+   "target": 2.35,
+   "stop": 1.25,
+   "reasoning": "BULL, bias clean, trend aligned, PMH support, RVOL 2.5, strong liquidity",
+   "confidence": 10,
+   "a_plus": true,
+   "status": "GO",
+   "flags": "FOMC: no entry before 08:15 AM HST; hold OK until Fri 10/30 close \u00b7 close before the weekend",
+   "data_source": "schwab",
+   "contract": "IWM261030C00282000",
+   "underlying": 281.28,
+   "underlying_asof": "8:42 AM HST live",
+   "target1": 1.88
+  },
+  {
+   "id": "2026-10-28_rescan_QQQ_CALL_2026-10-30_726",
+   "trade_date": "2026-10-28",
+   "mode": "rescan",
+   "locked_at": "2026-10-28T08:42:35.867917-10:00",
+   "ticker": "QQQ",
+   "type": "CALL",
+   "bias": "BULL",
+   "expiry": "2026-10-30",
+   "strike": 726.0,
+   "entry_floor": 5.93,
+   "entry_ceiling": 7.12,
+   "premium": 5.93,
+   "target": 8.89,
+   "stop": 4.74,
+   "reasoning": "BULL, bias clean, trend aligned, PMH support",
+   "confidence": 8,
+   "a_plus": false,
+   "status": "GO",
+   "flags": "FOMC: no entry before 08:15 AM HST; hold OK until Fri 10/30 close \u00b7 close before the weekend",
+   "data_source": "schwab",
+   "contract": "QQQ261030C00726000",
+   "underlying": 725.65,
+   "underlying_asof": "8:42 AM HST live",
+   "target1": 7.12
+  }
+ ],
+ "passing": 6,
+ "rejected": 67,
+ "rejections": []
+}
