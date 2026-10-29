@@ -1,0 +1,96 @@
+{
+ "trade_date": "2026-10-29",
+ "mode": "rescan",
+ "ran_at": "2026-10-29T06:02:28.908040-10:00",
+ "test": false,
+ "open_hst": "2026-10-29T03:30:00-10:00",
+ "close_hst": "2026-10-29T10:00:00-10:00",
+ "early_close": false,
+ "bias": {
+  "regime": "BEAR",
+  "favored": "P",
+  "clean": false,
+  "notes": [
+   "ES red (-0.32%), NQ red (-1.17%), YM red (-0.38%)",
+   "ES+YM red \u2192 broad bear, puts favored",
+   "VIX 16.35 (-3.31%) \u2192 does not confirm",
+   "SPY red (-0.32%), QQQ red (-1.20%) \u2192 confirms"
+  ]
+ },
+ "quotes": {
+  "ES": {
+   "last": 7758.0,
+   "prev_close": 7783.25,
+   "chg_pct": -0.3244146082934507,
+   "source": "schwab"
+  },
+  "NQ": {
+   "last": 29629.5,
+   "prev_close": 29979.5,
+   "chg_pct": -1.1674644340299205,
+   "source": "schwab"
+  },
+  "YM": {
+   "last": 52496.0,
+   "prev_close": 52696.0,
+   "chg_pct": -0.3795354486109003,
+   "source": "schwab"
+  },
+  "VIX": {
+   "last": 16.35,
+   "prev_close": 16.91,
+   "chg_pct": -3.3116499112950843,
+   "source": "schwab"
+  },
+  "SPY": {
+   "last": 769.85,
+   "prev_close": 772.31,
+   "chg_pct": -0.3185249446465698,
+   "source": "schwab"
+  },
+  "QQQ": {
+   "last": 716.9,
+   "prev_close": 725.61,
+   "chg_pct": -1.2003693444136707,
+   "source": "schwab"
+  }
+ },
+ "flags": [
+  "THURSDAY: reassess all open contracts by 11:00 AM HST",
+  "Amateur hour until 04:00 AM; institutional 04:00\u201304:30 AM HST",
+  "No damaged contracts overnight. No earnings holds overnight."
+ ],
+ "headlines": [],
+ "data_note": "live data: Schwab (Yahoo fallback)",
+ "cards": [
+  {
+   "id": "2026-10-29_rescan_PLTR_PUT_2026-10-30_192.5",
+   "trade_date": "2026-10-29",
+   "mode": "rescan",
+   "locked_at": "2026-10-29T06:02:28.908040-10:00",
+   "ticker": "PLTR",
+   "type": "PUT",
+   "bias": "BEAR",
+   "expiry": "2026-10-30",
+   "strike": 192.5,
+   "entry_floor": 1.5,
+   "entry_ceiling": 1.8,
+   "premium": 1.5,
+   "target": 2.25,
+   "stop": 1.2,
+   "reasoning": "BEAR, trend aligned, VWAP resistance, strong liquidity",
+   "confidence": 8,
+   "a_plus": false,
+   "status": "GO",
+   "flags": "hold OK until Fri 10/30 close \u00b7 close before the weekend",
+   "data_source": "schwab",
+   "contract": "PLTR261030P00192500",
+   "underlying": 194.9,
+   "underlying_asof": "6:04 AM HST live",
+   "target1": 1.8
+  }
+ ],
+ "passing": 1,
+ "rejected": 72,
+ "rejections": []
+}
