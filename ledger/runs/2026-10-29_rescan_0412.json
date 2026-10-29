@@ -1,0 +1,122 @@
+{
+ "trade_date": "2026-10-29",
+ "mode": "rescan",
+ "ran_at": "2026-10-29T04:12:31.887707-10:00",
+ "test": false,
+ "open_hst": "2026-10-29T03:30:00-10:00",
+ "close_hst": "2026-10-29T10:00:00-10:00",
+ "early_close": false,
+ "bias": {
+  "regime": "BEAR",
+  "favored": "P",
+  "clean": false,
+  "notes": [
+   "ES red (-0.56%), NQ red (-1.57%), YM red (-0.46%)",
+   "ES+YM red \u2192 broad bear, puts favored",
+   "VIX 16.92 (+0.06%) \u2192 does not confirm",
+   "SPY red (-0.55%), QQQ red (-1.59%) \u2192 confirms"
+  ]
+ },
+ "quotes": {
+  "ES": {
+   "last": 7740.0,
+   "prev_close": 7783.25,
+   "chg_pct": -0.5556804676709601,
+   "source": "schwab"
+  },
+  "NQ": {
+   "last": 29509.25,
+   "prev_close": 29979.5,
+   "chg_pct": -1.5685718574359144,
+   "source": "schwab"
+  },
+  "YM": {
+   "last": 52453.0,
+   "prev_close": 52696.0,
+   "chg_pct": -0.46113557006224376,
+   "source": "schwab"
+  },
+  "VIX": {
+   "last": 16.92,
+   "prev_close": 16.91,
+   "chg_pct": 0.05913660555885016,
+   "source": "schwab"
+  },
+  "SPY": {
+   "last": 768.08,
+   "prev_close": 772.31,
+   "chg_pct": -0.547707526770326,
+   "source": "schwab"
+  },
+  "QQQ": {
+   "last": 714.05,
+   "prev_close": 725.61,
+   "chg_pct": -1.593142321632841,
+   "source": "schwab"
+  }
+ },
+ "flags": [
+  "THURSDAY: reassess all open contracts by 11:00 AM HST",
+  "Amateur hour until 04:00 AM; institutional 04:00\u201304:30 AM HST",
+  "No damaged contracts overnight. No earnings holds overnight."
+ ],
+ "headlines": [],
+ "data_note": "live data: Schwab (Yahoo fallback)",
+ "cards": [
+  {
+   "id": "2026-10-29_rescan_SPX_PUT_2026-10-30_7700",
+   "trade_date": "2026-10-29",
+   "mode": "rescan",
+   "locked_at": "2026-10-29T04:12:31.887707-10:00",
+   "ticker": "SPX",
+   "type": "PUT",
+   "bias": "BEAR",
+   "expiry": "2026-10-30",
+   "strike": 7700.0,
+   "entry_floor": 26.1,
+   "entry_ceiling": 31.32,
+   "premium": 26.1,
+   "target": 39.15,
+   "stop": 20.88,
+   "reasoning": "BEAR, trend aligned, PDL resistance, institutional window, strong liquidity",
+   "confidence": 9,
+   "a_plus": false,
+   "status": "GO",
+   "flags": "hold OK until Fri 10/30 close \u00b7 close before the weekend",
+   "data_source": "schwab",
+   "contract": "SPXW261030P07700000",
+   "underlying": 7704.37,
+   "underlying_asof": "4:12 AM HST live",
+   "target1": 31.32
+  },
+  {
+   "id": "2026-10-29_rescan_SPY_PUT_2026-10-30_768",
+   "trade_date": "2026-10-29",
+   "mode": "rescan",
+   "locked_at": "2026-10-29T04:12:31.887707-10:00",
+   "ticker": "SPY",
+   "type": "PUT",
+   "bias": "BEAR",
+   "expiry": "2026-10-30",
+   "strike": 768.0,
+   "entry_floor": 2.79,
+   "entry_ceiling": 3.35,
+   "premium": 2.79,
+   "target": 4.19,
+   "stop": 2.23,
+   "reasoning": "BEAR, trend aligned, PDL resistance, institutional window, strong liquidity",
+   "confidence": 9,
+   "a_plus": false,
+   "status": "GO",
+   "flags": "hold OK until Fri 10/30 close \u00b7 close before the weekend",
+   "data_source": "schwab",
+   "contract": "SPY261030P00768000",
+   "underlying": 768.05,
+   "underlying_asof": "4:12 AM HST live",
+   "target1": 3.35
+  }
+ ],
+ "passing": 2,
+ "rejected": 71,
+ "rejections": []
+}
