@@ -1,0 +1,122 @@
+{
+ "trade_date": "2026-10-29",
+ "mode": "rescan",
+ "ran_at": "2026-10-29T04:42:31.683371-10:00",
+ "test": false,
+ "open_hst": "2026-10-29T03:30:00-10:00",
+ "close_hst": "2026-10-29T10:00:00-10:00",
+ "early_close": false,
+ "bias": {
+  "regime": "BEAR",
+  "favored": "P",
+  "clean": false,
+  "notes": [
+   "ES red (-0.42%), NQ red (-1.44%), YM red (-0.38%)",
+   "ES+YM red \u2192 broad bear, puts favored",
+   "VIX 16.58 (-1.95%) \u2192 does not confirm",
+   "SPY red (-0.42%), QQQ red (-1.48%) \u2192 confirms"
+  ]
+ },
+ "quotes": {
+  "ES": {
+   "last": 7750.75,
+   "prev_close": 7783.25,
+   "chg_pct": -0.41756335720939197,
+   "source": "schwab"
+  },
+  "NQ": {
+   "last": 29546.75,
+   "prev_close": 29979.5,
+   "chg_pct": -1.4434863823612802,
+   "source": "schwab"
+  },
+  "YM": {
+   "last": 52496.0,
+   "prev_close": 52696.0,
+   "chg_pct": -0.3795354486109003,
+   "source": "schwab"
+  },
+  "VIX": {
+   "last": 16.58,
+   "prev_close": 16.91,
+   "chg_pct": -1.9515079834417612,
+   "source": "schwab"
+  },
+  "SPY": {
+   "last": 769.0878,
+   "prev_close": 772.31,
+   "chg_pct": -0.41721588481308414,
+   "source": "schwab"
+  },
+  "QQQ": {
+   "last": 714.87,
+   "prev_close": 725.61,
+   "chg_pct": -1.4801339562574949,
+   "source": "schwab"
+  }
+ },
+ "flags": [
+  "THURSDAY: reassess all open contracts by 11:00 AM HST",
+  "Amateur hour until 04:00 AM; institutional 04:00\u201304:30 AM HST",
+  "No damaged contracts overnight. No earnings holds overnight."
+ ],
+ "headlines": [],
+ "data_note": "live data: Schwab (Yahoo fallback)",
+ "cards": [
+  {
+   "id": "2026-10-29_rescan_NFLX_PUT_2026-10-30_61",
+   "trade_date": "2026-10-29",
+   "mode": "rescan",
+   "locked_at": "2026-10-29T04:42:31.683371-10:00",
+   "ticker": "NFLX",
+   "type": "PUT",
+   "bias": "BEAR",
+   "expiry": "2026-10-30",
+   "strike": 61.0,
+   "entry_floor": 0.18,
+   "entry_ceiling": 0.22,
+   "premium": 0.18,
+   "target": 0.27,
+   "stop": 0.14,
+   "reasoning": "BEAR, trend aligned, VWAP resistance",
+   "confidence": 7,
+   "a_plus": false,
+   "status": "GO",
+   "flags": "hold OK until Fri 10/30 close \u00b7 close before the weekend",
+   "data_source": "schwab",
+   "contract": "NFLX261030P00061000",
+   "underlying": 61.83,
+   "underlying_asof": "4:44 AM HST live",
+   "target1": 0.22
+  },
+  {
+   "id": "2026-10-29_rescan_XLE_PUT_2026-10-30_68.5",
+   "trade_date": "2026-10-29",
+   "mode": "rescan",
+   "locked_at": "2026-10-29T04:42:31.683371-10:00",
+   "ticker": "XLE",
+   "type": "PUT",
+   "bias": "BEAR",
+   "expiry": "2026-10-30",
+   "strike": 68.5,
+   "entry_floor": 0.42,
+   "entry_ceiling": 0.5,
+   "premium": 0.42,
+   "target": 0.63,
+   "stop": 0.33,
+   "reasoning": "BEAR, trend aligned, PML resistance",
+   "confidence": 7,
+   "a_plus": false,
+   "status": "GO",
+   "flags": "hold OK until Fri 10/30 close \u00b7 close before the weekend",
+   "data_source": "schwab",
+   "contract": "XLE261030P00068500",
+   "underlying": 68.71,
+   "underlying_asof": "4:42 AM HST live",
+   "target1": 0.5
+  }
+ ],
+ "passing": 2,
+ "rejected": 71,
+ "rejections": []
+}
