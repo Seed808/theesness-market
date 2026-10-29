@@ -1,0 +1,122 @@
+{
+ "trade_date": "2026-10-29",
+ "mode": "rescan",
+ "ran_at": "2026-10-29T04:52:30.547511-10:00",
+ "test": false,
+ "open_hst": "2026-10-29T03:30:00-10:00",
+ "close_hst": "2026-10-29T10:00:00-10:00",
+ "early_close": false,
+ "bias": {
+  "regime": "BEAR",
+  "favored": "P",
+  "clean": false,
+  "notes": [
+   "ES red (-0.57%), NQ red (-1.68%), YM red (-0.46%)",
+   "ES+YM red \u2192 broad bear, puts favored",
+   "VIX 16.81 (-0.59%) \u2192 does not confirm",
+   "SPY red (-0.56%), QQQ red (-1.69%) \u2192 confirms"
+  ]
+ },
+ "quotes": {
+  "ES": {
+   "last": 7739.25,
+   "prev_close": 7783.25,
+   "chg_pct": -0.5653165451450229,
+   "source": "schwab"
+  },
+  "NQ": {
+   "last": 29475.25,
+   "prev_close": 29979.5,
+   "chg_pct": -1.6819826881702495,
+   "source": "schwab"
+  },
+  "YM": {
+   "last": 52454.0,
+   "prev_close": 52696.0,
+   "chg_pct": -0.45923789281918936,
+   "source": "schwab"
+  },
+  "VIX": {
+   "last": 16.81,
+   "prev_close": 16.91,
+   "chg_pct": -0.5913660555884177,
+   "source": "schwab"
+  },
+  "SPY": {
+   "last": 767.989,
+   "prev_close": 772.31,
+   "chg_pct": -0.5594903600885542,
+   "source": "schwab"
+  },
+  "QQQ": {
+   "last": 713.32,
+   "prev_close": 725.61,
+   "chg_pct": -1.6937473298328252,
+   "source": "schwab"
+  }
+ },
+ "flags": [
+  "THURSDAY: reassess all open contracts by 11:00 AM HST",
+  "Amateur hour until 04:00 AM; institutional 04:00\u201304:30 AM HST",
+  "No damaged contracts overnight. No earnings holds overnight."
+ ],
+ "headlines": [],
+ "data_note": "live data: Schwab (Yahoo fallback)",
+ "cards": [
+  {
+   "id": "2026-10-29_rescan_NVDA_PUT_2026-10-30_212.5",
+   "trade_date": "2026-10-29",
+   "mode": "rescan",
+   "locked_at": "2026-10-29T04:52:30.547511-10:00",
+   "ticker": "NVDA",
+   "type": "PUT",
+   "bias": "BEAR",
+   "expiry": "2026-10-30",
+   "strike": 212.5,
+   "entry_floor": 1.41,
+   "entry_ceiling": 1.69,
+   "premium": 1.41,
+   "target": 2.11,
+   "stop": 1.12,
+   "reasoning": "BEAR, trend aligned, PML resistance, strong liquidity",
+   "confidence": 8,
+   "a_plus": false,
+   "status": "GO",
+   "flags": "hold OK until Fri 10/30 close \u00b7 close before the weekend",
+   "data_source": "schwab",
+   "contract": "NVDA261030P00212500",
+   "underlying": 213.45,
+   "underlying_asof": "4:54 AM HST live",
+   "target1": 1.69
+  },
+  {
+   "id": "2026-10-29_rescan_DIA_PUT_2026-10-30_520",
+   "trade_date": "2026-10-29",
+   "mode": "rescan",
+   "locked_at": "2026-10-29T04:52:30.547511-10:00",
+   "ticker": "DIA",
+   "type": "PUT",
+   "bias": "BEAR",
+   "expiry": "2026-10-30",
+   "strike": 520.0,
+   "entry_floor": 1.09,
+   "entry_ceiling": 1.31,
+   "premium": 1.09,
+   "target": 1.64,
+   "stop": 0.87,
+   "reasoning": "BEAR, trend aligned, PDL resistance",
+   "confidence": 7,
+   "a_plus": false,
+   "status": "GO",
+   "flags": "hold OK until Fri 10/30 close \u00b7 close before the weekend",
+   "data_source": "schwab",
+   "contract": "DIA261030P00520000",
+   "underlying": 522.22,
+   "underlying_asof": "4:52 AM HST live",
+   "target1": 1.31
+  }
+ ],
+ "passing": 5,
+ "rejected": 68,
+ "rejections": []
+}
