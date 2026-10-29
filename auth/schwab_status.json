@@ -6,7 +6,7 @@
  "expires_at": "2026-10-30T19:39:04.074660+00:00",
  "last_ok": "2026-10-29T13:22:32.923420+00:00",
  "last_error": null,
- "hours_left": 30.3,
+ "hours_left": 29.9,
  "futures_probe": {
   "/ESZ26": {
    "answered": true,
@@ -266,5 +266,6 @@
     }
    }
   }
- }
+ },
+ "reminded_at": "2026-10-29T03:42:33.044015-10:00"
 }
