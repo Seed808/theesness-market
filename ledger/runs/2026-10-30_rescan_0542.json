@@ -1,0 +1,96 @@
+{
+ "trade_date": "2026-10-30",
+ "mode": "rescan",
+ "ran_at": "2026-10-30T05:42:34.002480-10:00",
+ "test": false,
+ "open_hst": "2026-10-30T03:30:00-10:00",
+ "close_hst": "2026-10-30T10:00:00-10:00",
+ "early_close": false,
+ "bias": {
+  "regime": "BEAR",
+  "favored": "P",
+  "clean": true,
+  "notes": [
+   "ES red (-1.60%), NQ red (-3.17%), YM red (-0.77%)",
+   "ES+YM red \u2192 broad bear, puts favored",
+   "VIX 19.94 (+15.93%) \u2192 confirms",
+   "SPY red (-1.55%), QQQ red (-3.13%) \u2192 confirms"
+  ]
+ },
+ "quotes": {
+  "ES": {
+   "last": 7630.0,
+   "prev_close": 7754.25,
+   "chg_pct": -1.6023470999774316,
+   "source": "schwab"
+  },
+  "NQ": {
+   "last": 28625.5,
+   "prev_close": 29562.0,
+   "chg_pct": -3.1679182734591707,
+   "source": "schwab"
+  },
+  "YM": {
+   "last": 52107.0,
+   "prev_close": 52512.0,
+   "chg_pct": -0.7712522851919561,
+   "source": "schwab"
+  },
+  "VIX": {
+   "last": 19.94,
+   "prev_close": 17.2,
+   "chg_pct": 15.930232558139549,
+   "source": "schwab"
+  },
+  "SPY": {
+   "last": 757.4599,
+   "prev_close": 769.36,
+   "chg_pct": -1.5467531454715693,
+   "source": "schwab"
+  },
+  "QQQ": {
+   "last": 692.93,
+   "prev_close": 715.34,
+   "chg_pct": -3.132776022590668,
+   "source": "schwab"
+  }
+ },
+ "flags": [
+  "Friday/pre-holiday rules: 0DTE only, no overnight",
+  "Amateur hour until 04:00 AM; institutional 04:00\u201304:30 AM HST",
+  "No damaged contracts overnight. No earnings holds overnight."
+ ],
+ "headlines": [],
+ "data_note": "live data: Schwab (Yahoo fallback)",
+ "cards": [
+  {
+   "id": "2026-10-30_rescan_UBER_PUT_2026-10-30_65",
+   "trade_date": "2026-10-30",
+   "mode": "rescan",
+   "locked_at": "2026-10-30T05:42:34.002480-10:00",
+   "ticker": "UBER",
+   "type": "PUT",
+   "bias": "BEAR",
+   "expiry": "2026-10-30",
+   "strike": 65.0,
+   "entry_floor": 0.17,
+   "entry_ceiling": 0.2,
+   "premium": 0.17,
+   "target": 0.26,
+   "stop": 0.13,
+   "reasoning": "BEAR, bias clean, trend aligned, VWAP resistance",
+   "confidence": 8,
+   "a_plus": false,
+   "status": "GO",
+   "flags": "0DTE only / no overnight",
+   "data_source": "schwab",
+   "contract": "UBER261030P00065000",
+   "underlying": 65.14,
+   "underlying_asof": "5:45 AM HST live",
+   "target1": 0.2
+  }
+ ],
+ "passing": 1,
+ "rejected": 72,
+ "rejections": []
+}
