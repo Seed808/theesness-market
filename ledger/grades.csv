@@ -47,3 +47,4 @@ id,graded_at,result,exit_premium,pnl_pct,method
 2026-10-29_rescan_PLTR_PUT_2026-10-30_192.5,2026-10-29T10:02:32.184672-10:00,LOSS,1.17,-22.0,STOP (gapped through) · schwab 1m
 2026-10-30_rescan_DIA_PUT_2026-10-30_518,2026-10-30T04:31:30.350759-10:00,LOSS,0.68,-20.0,STOP · schwab 1m
 2026-10-30_rescan_XLF_PUT_2026-10-30_56.5,2026-10-30T04:42:32.406008-10:00,LOSS,0.08,-27.3,STOP (gapped through) · schwab 1m
+2026-10-30_rescan_UBER_PUT_2026-10-30_65,2026-10-30T06:02:27.585981-10:00,LOSS,0.13,-23.5,STOP (gapped through) · schwab 1m
