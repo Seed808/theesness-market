@@ -4,9 +4,9 @@
  "expired_notice_at": "2026-10-23T08:58:20.702561-10:00",
  "login_at": "2026-10-23T19:39:04.074660+00:00",
  "expires_at": "2026-10-30T19:39:04.074660+00:00",
- "last_ok": "2026-10-30T11:52:33.714566+00:00",
+ "last_ok": "2026-10-30T12:22:31.890818+00:00",
  "last_error": null,
- "hours_left": 7.8,
+ "hours_left": 7.3,
  "futures_probe": {
   "/ESZ26": {
    "answered": true,
@@ -39,17 +39,17 @@
     "tradeTime"
    ],
    "values": {
-    "closePrice": 7783.25,
-    "lastPrice": 7735.25,
-    "netChange": -48.0,
-    "futurePercentChange": -0.61670896,
-    "settleTime": 1793288675489,
-    "tradeTime": 1793299956020
+    "closePrice": 7754.25,
+    "lastPrice": 7667.0,
+    "netChange": -87.25,
+    "futurePercentChange": -1.12518941,
+    "settleTime": 1793315610361,
+    "tradeTime": 1793362951836
    },
    "check": {
     "netChange_diff": 0.0,
-    "my_pct": -0.6167,
-    "schwab_pct": -0.61670896,
+    "my_pct": -1.1252,
+    "schwab_pct": -1.12518941,
     "pct_diff": 0.0
    },
    "used": true
@@ -91,17 +91,17 @@
     "tradeTime"
    ],
    "values": {
-    "closePrice": 29979.5,
-    "lastPrice": 29476.25,
-    "netChange": -503.25,
-    "futurePercentChange": -1.67864708,
-    "settleTime": 1793295043455,
-    "tradeTime": 1793299956612
+    "closePrice": 29562.0,
+    "lastPrice": 28786.5,
+    "netChange": -775.5,
+    "futurePercentChange": -2.62330018,
+    "settleTime": 1793315565851,
+    "tradeTime": 1793362951813
    },
    "check": {
     "netChange_diff": 0.0,
-    "my_pct": -1.6786,
-    "schwab_pct": -1.67864708,
+    "my_pct": -2.6233,
+    "schwab_pct": -2.62330018,
     "pct_diff": 0.0
    },
    "used": true
@@ -143,17 +143,17 @@
     "tradeTime"
    ],
    "values": {
-    "closePrice": 52696.0,
-    "lastPrice": 52367.0,
-    "netChange": -329.0,
-    "futurePercentChange": -0.62433581,
-    "settleTime": 1793288676229,
-    "tradeTime": 1793299952996
+    "closePrice": 52512.0,
+    "lastPrice": 52454.0,
+    "netChange": -58.0,
+    "futurePercentChange": -0.11045094,
+    "settleTime": 1793315730973,
+    "tradeTime": 1793362950057
    },
    "check": {
     "netChange_diff": 0.0,
-    "my_pct": -0.6243,
-    "schwab_pct": -0.62433581,
+    "my_pct": -0.1105,
+    "schwab_pct": -0.11045094,
     "pct_diff": 0.0
    },
    "used": true
