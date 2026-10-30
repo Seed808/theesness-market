@@ -1,0 +1,96 @@
+{
+ "trade_date": "2026-10-30",
+ "mode": "rescan",
+ "ran_at": "2026-10-30T04:22:35.373359-10:00",
+ "test": false,
+ "open_hst": "2026-10-30T03:30:00-10:00",
+ "close_hst": "2026-10-30T10:00:00-10:00",
+ "early_close": false,
+ "bias": {
+  "regime": "BEAR",
+  "favored": "P",
+  "clean": true,
+  "notes": [
+   "ES red (-1.55%), NQ red (-3.08%), YM red (-0.81%)",
+   "ES+YM red \u2192 broad bear, puts favored",
+   "VIX 19.98 (+16.16%) \u2192 confirms",
+   "SPY red (-1.50%), QQQ red (-3.04%) \u2192 confirms"
+  ]
+ },
+ "quotes": {
+  "ES": {
+   "last": 7634.0,
+   "prev_close": 7754.25,
+   "chg_pct": -1.5507624850888222,
+   "source": "schwab"
+  },
+  "NQ": {
+   "last": 28651.75,
+   "prev_close": 29562.0,
+   "chg_pct": -3.079121845612611,
+   "source": "schwab"
+  },
+  "YM": {
+   "last": 52087.0,
+   "prev_close": 52512.0,
+   "chg_pct": -0.809338817794028,
+   "source": "schwab"
+  },
+  "VIX": {
+   "last": 19.98,
+   "prev_close": 17.2,
+   "chg_pct": 16.162790697674424,
+   "source": "schwab"
+  },
+  "SPY": {
+   "last": 757.8268,
+   "prev_close": 769.36,
+   "chg_pct": -1.4990641572215821,
+   "source": "schwab"
+  },
+  "QQQ": {
+   "last": 693.56,
+   "prev_close": 715.34,
+   "chg_pct": -3.0447060139234607,
+   "source": "schwab"
+  }
+ },
+ "flags": [
+  "Friday/pre-holiday rules: 0DTE only, no overnight",
+  "Amateur hour until 04:00 AM; institutional 04:00\u201304:30 AM HST",
+  "No damaged contracts overnight. No earnings holds overnight."
+ ],
+ "headlines": [],
+ "data_note": "live data: Schwab (Yahoo fallback)",
+ "cards": [
+  {
+   "id": "2026-10-30_rescan_DIA_PUT_2026-10-30_518",
+   "trade_date": "2026-10-30",
+   "mode": "rescan",
+   "locked_at": "2026-10-30T04:22:35.373359-10:00",
+   "ticker": "DIA",
+   "type": "PUT",
+   "bias": "BEAR",
+   "expiry": "2026-10-30",
+   "strike": 518.0,
+   "entry_floor": 0.85,
+   "entry_ceiling": 1.02,
+   "premium": 0.85,
+   "target": 1.27,
+   "stop": 0.68,
+   "reasoning": "BEAR, bias clean, trend aligned, institutional window",
+   "confidence": 8,
+   "a_plus": false,
+   "status": "GO",
+   "flags": "0DTE only / no overnight",
+   "data_source": "schwab",
+   "contract": "DIA261030P00518000",
+   "underlying": 518.79,
+   "underlying_asof": "4:22 AM HST live",
+   "target1": 1.02
+  }
+ ],
+ "passing": 2,
+ "rejected": 71,
+ "rejections": []
+}
