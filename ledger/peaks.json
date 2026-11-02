@@ -446,5 +446,12 @@
    "how": "TARGET"
   },
   "final": true
+ },
+ "2026-11-02_rescan_SPX_CALL_2026-11-06_7660": {
+  "source": "schwab 1m",
+  "as_of": "2026-11-02T05:44:45.141023-10:00",
+  "peak_pct": 0.3,
+  "peak_at": "2026-11-02T05:42:00-10:00",
+  "final": false
  }
 }
