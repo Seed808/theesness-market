@@ -1,14 +1,11 @@
 {
  "2026-11-02_rescan_TLT_CALL_2026-11-06_82.5": {
-  "high": null,
-  "low": null,
   "last": 0.41,
-  "last_time": "2026-11-02T17:05:05.039000+00:00",
+  "last_time": "2026-11-02T17:15:10.311000+00:00",
+  "high": 0.41,
+  "low": 0.41,
   "source": "schwab quote (mark)",
   "pnl_pct": 0.0,
-  "as_of": "2026-11-02T07:02:30.788306-10:00"
- },
- "_errors": {
-  "2026-11-02_rescan_TLT_CALL_2026-11-06_82.5": "bars returned but none after lock (60 rows)"
+  "as_of": "2026-11-02T07:12:34.495718-10:00"
  }
 }
