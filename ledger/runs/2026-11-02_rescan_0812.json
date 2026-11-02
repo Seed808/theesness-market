@@ -1,0 +1,68 @@
+{
+ "trade_date": "2026-11-02",
+ "mode": "rescan",
+ "ran_at": "2026-11-02T08:12:36.199522-10:00",
+ "test": false,
+ "open_hst": "2026-11-02T04:30:00-10:00",
+ "close_hst": "2026-11-02T11:00:00-10:00",
+ "early_close": false,
+ "bias": {
+  "regime": "BULL",
+  "favored": "C",
+  "clean": false,
+  "notes": [
+   "ES green (+0.40%), NQ green (+0.16%), YM green (+1.06%)",
+   "ES+YM green \u2192 NO put setups",
+   "VIX 19.55 (+0.67%) \u2192 does not confirm",
+   "SPY green (+0.43%), QQQ green (+0.20%) \u2192 confirms"
+  ]
+ },
+ "quotes": {
+  "ES": {
+   "last": 7644.75,
+   "prev_close": 7614.0,
+   "chg_pct": 0.40386130811662724,
+   "source": "schwab"
+  },
+  "NQ": {
+   "last": 28580.75,
+   "prev_close": 28534.0,
+   "chg_pct": 0.16383962991518888,
+   "source": "schwab"
+  },
+  "YM": {
+   "last": 52467.0,
+   "prev_close": 51918.0,
+   "chg_pct": 1.0574367271466543,
+   "source": "schwab"
+  },
+  "VIX": {
+   "last": 19.55,
+   "prev_close": 19.42,
+   "chg_pct": 0.6694129763130741,
+   "source": "schwab"
+  },
+  "SPY": {
+   "last": 758.99,
+   "prev_close": 755.72,
+   "chg_pct": 0.4326999417773755,
+   "source": "schwab"
+  },
+  "QQQ": {
+   "last": 691.86,
+   "prev_close": 690.49,
+   "chg_pct": 0.19840982490695078,
+   "source": "schwab"
+  }
+ },
+ "flags": [
+  "Amateur hour until 05:00 AM; institutional 05:00\u201305:30 AM HST",
+  "No damaged contracts overnight. No earnings holds overnight."
+ ],
+ "headlines": [],
+ "data_note": "live data: Schwab (Yahoo fallback)",
+ "cards": [],
+ "passing": 1,
+ "rejected": 72,
+ "rejections": []
+}
