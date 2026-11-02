@@ -50,3 +50,4 @@ id,graded_at,result,exit_premium,pnl_pct,method
 2026-10-30_rescan_UBER_PUT_2026-10-30_65,2026-10-30T06:02:27.585981-10:00,LOSS,0.13,-23.5,STOP (gapped through) · schwab 1m
 2026-10-30_rescan_AAPL_PUT_2026-10-30_345,2026-10-30T07:57:30.555859-10:00,WIN,0.68,51.1,TARGET · schwab 1m
 2026-11-02_rescan_SPX_CALL_2026-11-06_7660,2026-11-02T06:32:33.364045-10:00,LOSS,44.1,-20.2,STOP (gapped through) · schwab 1m
+2026-11-02_rescan_TLT_CALL_2026-11-06_82.5,2026-11-02T10:12:35.082142-10:00,LOSS,0.31,-24.4,STOP (gapped through) · schwab 1m
