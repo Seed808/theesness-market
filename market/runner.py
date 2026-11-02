@@ -558,7 +558,7 @@ def connect_schwab(now: datetime) -> None:
 # main
 # --------------------------------------------------------------------------------------------
 
-def announce(snap: dict, r: E.ScanResult, now: datetime) -> None:
+def announce(snap: dict, r: E.ScanResult, now: datetime, pre_block: str = "") -> None:
     ideas = snap["_ideas"]
     if r.mode == "rescan":
         if ideas:
@@ -570,7 +570,8 @@ def announce(snap: dict, r: E.ScanResult, now: datetime) -> None:
         except Exception as e:  # noqa: BLE001
             print(f"[warn] marks: {type(e).__name__}: {e}", file=sys.stderr)
         ob = open_block(now)
-        E.send_telegram(E.tg_report(r, ideas, extra=[ob] if ob else None), html=True)
+        extra = [x for x in (pre_block, ob) if x]
+        E.send_telegram(E.tg_report(r, ideas, extra=extra or None), html=True)
     for i in ideas:
         if i.a_plus:
             E.send_telegram(f"<b>A+ ALERT</b> · {E._short_t(now)} HST\n\n{E.tg_card(i)}", html=True)
@@ -604,7 +605,15 @@ def main() -> int:
             r.mode = mode
             snap = lock(r)
             print(f"{mode}: locked {len(snap['cards'])} card(s)")
-            announce(snap, r, now)
+            pre_block = ""
+            try:                                  # pre-market card statuses + watch cards
+                import watch
+                rows = watch.record_watch(today)
+                if mode == "confirm":
+                    pre_block = watch.status_block(rows)
+            except Exception as e:  # noqa: BLE001
+                print(f"[warn] watch: {type(e).__name__}: {e}", file=sys.stderr)
+            announce(snap, r, now, pre_block)
     else:
         print("Market closed today.")
 
@@ -616,6 +625,15 @@ def main() -> int:
             E.send_telegram(tracking.t1_hit_message(hits, now), html=True)
     except Exception as e:  # noqa: BLE001  (tracking must never break a run)
         print(f"[warn] tracking: {type(e).__name__}: {e}", file=sys.stderr)
+    try:
+        import watch
+        if session is not None and run_path(today, "confirm").exists():
+            late = [r for r in watch.record_watch(today) if r.get("_new")]   # idempotent catch-up
+            if late:
+                E.send_telegram(watch.status_block(late, late=True), html=True)
+        watch.track_watch(now)
+    except Exception as e:  # noqa: BLE001
+        print(f"[warn] watch tracking: {type(e).__name__}: {e}", file=sys.stderr)
     try:
         update_marks(now)
     except Exception as e:  # noqa: BLE001  (a live-price view must never break a run)
