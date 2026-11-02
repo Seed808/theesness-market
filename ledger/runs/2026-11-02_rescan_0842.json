@@ -1,0 +1,147 @@
+{
+ "trade_date": "2026-11-02",
+ "mode": "rescan",
+ "ran_at": "2026-11-02T08:42:48.487995-10:00",
+ "test": false,
+ "open_hst": "2026-11-02T04:30:00-10:00",
+ "close_hst": "2026-11-02T11:00:00-10:00",
+ "early_close": false,
+ "bias": {
+  "regime": "ROTATION",
+  "favored": "P",
+  "clean": false,
+  "notes": [
+   "ES green (+0.20%), NQ red (-0.19%), YM green (+0.91%)",
+   "YM green + NQ/ES red \u2192 rotation; puts may fade midday",
+   "VIX 19.99 (+2.94%) \u2192 confirms",
+   "SPY green (+0.23%), QQQ red (-0.16%) \u2192 does not confirm"
+  ]
+ },
+ "quotes": {
+  "ES": {
+   "last": 7629.0,
+   "prev_close": 7614.0,
+   "chg_pct": 0.1970055161544523,
+   "source": "schwab"
+  },
+  "NQ": {
+   "last": 28479.0,
+   "prev_close": 28534.0,
+   "chg_pct": -0.1927525057825752,
+   "source": "schwab"
+  },
+  "YM": {
+   "last": 52393.0,
+   "prev_close": 51918.0,
+   "chg_pct": 0.9149042721214221,
+   "source": "schwab"
+  },
+  "VIX": {
+   "last": 19.99,
+   "prev_close": 19.42,
+   "chg_pct": 2.9351184346034844,
+   "source": "schwab"
+  },
+  "SPY": {
+   "last": 757.44,
+   "prev_close": 755.72,
+   "chg_pct": 0.22759752289208002,
+   "source": "schwab"
+  },
+  "QQQ": {
+   "last": 689.4,
+   "prev_close": 690.49,
+   "chg_pct": -0.15785891178728612,
+   "source": "schwab"
+  }
+ },
+ "flags": [
+  "Amateur hour until 05:00 AM; institutional 05:00\u201305:30 AM HST",
+  "No damaged contracts overnight. No earnings holds overnight."
+ ],
+ "headlines": [],
+ "data_note": "live data: Schwab (Yahoo fallback)",
+ "cards": [
+  {
+   "id": "2026-11-02_rescan_QQQ_PUT_2026-11-06_689",
+   "trade_date": "2026-11-02",
+   "mode": "rescan",
+   "locked_at": "2026-11-02T08:42:48.487995-10:00",
+   "ticker": "QQQ",
+   "type": "PUT",
+   "bias": "ROTATION",
+   "expiry": "2026-11-06",
+   "strike": 689.0,
+   "entry_floor": 9.88,
+   "entry_ceiling": 11.86,
+   "premium": 9.88,
+   "target": 14.82,
+   "stop": 7.9,
+   "reasoning": "ROTATION, trend aligned, PML resistance, exit before midday fade",
+   "confidence": 7,
+   "a_plus": false,
+   "status": "GO",
+   "flags": "hold OK until Fri 11/6 close \u00b7 close before the weekend",
+   "data_source": "schwab",
+   "contract": "QQQ261106P00689000",
+   "underlying": 689.47,
+   "underlying_asof": "8:42 AM HST live",
+   "target1": 11.86
+  },
+  {
+   "id": "2026-11-02_rescan_AVGO_PUT_2026-11-06_327.5",
+   "trade_date": "2026-11-02",
+   "mode": "rescan",
+   "locked_at": "2026-11-02T08:42:48.487995-10:00",
+   "ticker": "AVGO",
+   "type": "PUT",
+   "bias": "ROTATION",
+   "expiry": "2026-11-06",
+   "strike": 327.5,
+   "entry_floor": 7.88,
+   "entry_ceiling": 9.46,
+   "premium": 7.88,
+   "target": 11.82,
+   "stop": 6.3,
+   "reasoning": "ROTATION, trend aligned, exit before midday fade",
+   "confidence": 6,
+   "a_plus": false,
+   "status": "GO",
+   "flags": "hold OK until Fri 11/6 close \u00b7 close before the weekend",
+   "data_source": "schwab",
+   "contract": "AVGO261106P00327500",
+   "underlying": 327.87,
+   "underlying_asof": "8:43 AM HST live",
+   "target1": 9.46
+  },
+  {
+   "id": "2026-11-02_rescan_TSM_PUT_2026-11-06_400",
+   "trade_date": "2026-11-02",
+   "mode": "rescan",
+   "locked_at": "2026-11-02T08:42:48.487995-10:00",
+   "ticker": "TSM",
+   "type": "PUT",
+   "bias": "ROTATION",
+   "expiry": "2026-11-06",
+   "strike": 400.0,
+   "entry_floor": 6.93,
+   "entry_ceiling": 8.32,
+   "premium": 6.93,
+   "target": 10.39,
+   "stop": 5.54,
+   "reasoning": "ROTATION, trend aligned, exit before midday fade",
+   "confidence": 6,
+   "a_plus": false,
+   "status": "GO",
+   "flags": "hold OK until Fri 11/6 close \u00b7 close before the weekend",
+   "data_source": "schwab",
+   "contract": "TSM261106P00400000",
+   "underlying": 403.72,
+   "underlying_asof": "8:45 AM HST live",
+   "target1": 8.32
+  }
+ ],
+ "passing": 3,
+ "rejected": 70,
+ "rejections": []
+}

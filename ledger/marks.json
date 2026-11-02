@@ -1,22 +1,56 @@
 {
  "2026-11-02_rescan_TLT_CALL_2026-11-06_82.5": {
-  "last": 0.39,
-  "last_time": "2026-11-02T18:35:19.767000+00:00",
+  "last": 0.36,
+  "last_time": "2026-11-02T18:45:28.149000+00:00",
   "high": 0.46,
   "low": 0.38,
   "source": "schwab quote (mark)",
-  "underlying": 81.985,
-  "pnl_pct": -4.9,
-  "as_of": "2026-11-02T08:32:42.885478-10:00"
+  "underlying": 81.915,
+  "pnl_pct": -12.2,
+  "as_of": "2026-11-02T08:42:48.487995-10:00"
  },
  "2026-11-02_rescan_NFLX_CALL_2026-11-06_63": {
-  "last": 0.87,
-  "last_time": "2026-11-02T18:35:17.887000+00:00",
-  "high": 0.95,
+  "last": 0.96,
+  "last_time": "2026-11-02T18:45:30.989000+00:00",
+  "high": 0.97,
   "low": 0.82,
   "source": "schwab quote (mark)",
-  "underlying": 62.55,
-  "pnl_pct": 1.2,
-  "as_of": "2026-11-02T08:32:42.885478-10:00"
+  "underlying": 62.725,
+  "pnl_pct": 11.6,
+  "as_of": "2026-11-02T08:42:48.487995-10:00"
+ },
+ "2026-11-02_rescan_QQQ_PUT_2026-11-06_689": {
+  "last": 9.77,
+  "last_time": "2026-11-02T18:45:32.963000+00:00",
+  "high": 10.1,
+  "low": 9.79,
+  "source": "schwab quote (mark)",
+  "underlying": 689.63,
+  "pnl_pct": -1.1,
+  "as_of": "2026-11-02T08:42:48.487995-10:00"
+ },
+ "2026-11-02_rescan_AVGO_PUT_2026-11-06_327.5": {
+  "high": null,
+  "low": null,
+  "last": 7.65,
+  "last_time": "2026-11-02T18:45:33.976000+00:00",
+  "source": "schwab quote (mark)",
+  "underlying": 328.235,
+  "pnl_pct": -2.9,
+  "as_of": "2026-11-02T08:42:48.487995-10:00"
+ },
+ "2026-11-02_rescan_TSM_PUT_2026-11-06_400": {
+  "high": null,
+  "low": null,
+  "last": 6.92,
+  "last_time": "2026-11-02T18:45:33.866000+00:00",
+  "source": "schwab quote (mark)",
+  "underlying": 403.8725,
+  "pnl_pct": -0.1,
+  "as_of": "2026-11-02T08:42:48.487995-10:00"
+ },
+ "_errors": {
+  "2026-11-02_rescan_AVGO_PUT_2026-11-06_327.5": "bars returned but none after lock (60 rows)",
+  "2026-11-02_rescan_TSM_PUT_2026-11-06_400": "bars returned but none after lock (78 rows)"
  }
 }
