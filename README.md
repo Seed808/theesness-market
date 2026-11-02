@@ -11,8 +11,8 @@ Site: https://seed808.github.io/theesness-market/
 
 | When | What |
 |---|---|
-| first run after the bell (≈ open + 2 min) | **Open update.** Pre-market cards re-priced at live option prices (price only — amateur hour, nothing passed or rejected); shown on each card with its time, and sent to Telegram. |
 | first run in the 75 min before the open | **Pre-market read.** ES/NQ/YM + VIX + SPY/QQQ bias, watchlist scan, up to 5 *conditional* cards. Not graded. |
+| first run after the bell (≈ open + 2 min) | **Open update.** Pre-market cards re-priced at live option prices (price only — amateur hour, nothing passed or rejected); shown on each card with its time, and sent to Telegram. |
 | open + 30 min (first run after) | **Confirmation read.** Every pre-market card gets a status right away (confirmed / not confirmed + the reasons and the stock's move / passed but not top 5), in Telegram and on the card, and is re-priced at that moment and tracked in the separate *Pre-market watch* record. Re-checks with 1m/5m/15m trend, first 5-minute candle, VWAP, relative volume. Up to 5 locked cards. A+ cards trigger a Telegram alert. |
 | every ~10 min until 9:00am | **Re-scans.** Posts and locks only NEW setups (a ticker + direction already posted today is skipped). Graded like confirmation cards. |
 | every run | **Target/stop check** on every open card (Schwab 1-minute contract prices); a hit closes the card right away and Telegram says CLOSED. |
