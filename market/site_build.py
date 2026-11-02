@@ -274,11 +274,33 @@ def tracking_lines(c: dict) -> str:
     return out
 
 
+OPEN_PX: dict = {}      # pre-market card id -> price at the open (ledger/open/<date>.json)
+
+
+def load_open() -> dict:
+    out = {}
+    for p in sorted((LEDGER / "open").glob("*.json")):
+        try:
+            out.update(json.loads(p.read_text()).get("cards", {}))
+        except ValueError:
+            continue
+    return out
+
+
 def price_lines_premarket(c: dict) -> str:
     """Pre-market: stock options aren't trading yet, so the premium is the prior close's bid/ask
-    mid. Entry, target and stop come from the live price once the confirmation read runs."""
+    mid. Re-priced at the open (price only), then judged at the confirmation read."""
+    o = OPEN_PX.get(c["id"])
+    at_open = ""
+    if o:
+        stock = f' · stock {_money(o["underlying"])}' if o.get("underlying") else ""
+        when = datetime.fromisoformat(o["time"]).astimezone(E.HST)
+        stamp = _t(o["time"]) if when.date().isoformat() == c["trade_date"] else \
+            f'{when.strftime("%a")} {_t(o["time"])} (last trade, no trade yet today)'
+        at_open = (f'<dt>At the open</dt><dd>{_money(o["price"])} <span class="eyebrow">{e(stamp)}'
+                   f'{e(stock)} · price only, amateur hour</span></dd>')
     return (f'<dt>Premium</dt><dd>{_money(c["premium"])} '
-            f'<span class="eyebrow">last close · options not trading yet</span></dd>'
+            f'<span class="eyebrow">last close · options not trading yet</span></dd>' + at_open +
             f'<dt>Entry · target · stop</dt><dd class="eyebrow">set at the confirmation read</dd>')
 
 
@@ -472,6 +494,8 @@ def build(out: Path, now: datetime) -> None:
     runs, grades = load_runs(), load_grades()
     global MARKS, T1, PEAKS, W_ROWS, W_GRADES, W_PEAKS
     MARKS, T1, PEAKS = load_marks(), load_t1(), load_peaks()
+    global OPEN_PX
+    OPEN_PX = load_open()
     try:
         import watch as W
         W_ROWS, W_GRADES, W_PEAKS = W.load_watch(), W.load_watch_grades(), W.load_watch_peaks()

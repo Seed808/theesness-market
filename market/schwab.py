@@ -452,7 +452,7 @@ def option_quote(contract: str) -> Optional[dict]:
     else:
         return None
     t = datetime.fromtimestamp(int(qt) / 1000, timezone.utc).isoformat() if qt else None
-    return {"last": px, "last_time": t, "source": src}
+    return {"last": px, "last_time": t, "source": src, "underlying": _num(q, "underlyingPrice")}
 
 
 # ------------------------------------------------------------------ provider for the engine
