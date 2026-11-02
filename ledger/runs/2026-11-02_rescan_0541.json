@@ -1,0 +1,95 @@
+{
+ "trade_date": "2026-11-02",
+ "mode": "rescan",
+ "ran_at": "2026-11-02T05:41:03.858857-10:00",
+ "test": false,
+ "open_hst": "2026-11-02T04:30:00-10:00",
+ "close_hst": "2026-11-02T11:00:00-10:00",
+ "early_close": false,
+ "bias": {
+  "regime": "BULL",
+  "favored": "C",
+  "clean": true,
+  "notes": [
+   "ES green (+0.89%), NQ green (+0.98%), YM green (+1.12%)",
+   "ES+YM green \u2192 NO put setups",
+   "VIX 18.21 (-6.23%) \u2192 confirms",
+   "SPY green (+0.92%), QQQ green (+1.02%) \u2192 confirms"
+  ]
+ },
+ "quotes": {
+  "ES": {
+   "last": 7681.75,
+   "prev_close": 7614.0,
+   "chg_pct": 0.8898082479642763,
+   "source": "schwab"
+  },
+  "NQ": {
+   "last": 28812.75,
+   "prev_close": 28534.0,
+   "chg_pct": 0.9769047452162333,
+   "source": "schwab"
+  },
+  "YM": {
+   "last": 52502.0,
+   "prev_close": 51918.0,
+   "chg_pct": 1.1248507261450749,
+   "source": "schwab"
+  },
+  "VIX": {
+   "last": 18.21,
+   "prev_close": 19.42,
+   "chg_pct": -6.230690010298665,
+   "source": "schwab"
+  },
+  "SPY": {
+   "last": 762.66,
+   "prev_close": 755.72,
+   "chg_pct": 0.9183295400412773,
+   "source": "schwab"
+  },
+  "QQQ": {
+   "last": 697.525,
+   "prev_close": 690.49,
+   "chg_pct": 1.01884169213167,
+   "source": "schwab"
+  }
+ },
+ "flags": [
+  "Amateur hour until 05:00 AM; institutional 05:00\u201305:30 AM HST",
+  "No damaged contracts overnight. No earnings holds overnight."
+ ],
+ "headlines": [],
+ "data_note": "live data: Schwab (Yahoo fallback)",
+ "cards": [
+  {
+   "id": "2026-11-02_rescan_SPX_CALL_2026-11-06_7660",
+   "trade_date": "2026-11-02",
+   "mode": "rescan",
+   "locked_at": "2026-11-02T05:41:03.858857-10:00",
+   "ticker": "SPX",
+   "type": "CALL",
+   "bias": "BULL",
+   "expiry": "2026-11-06",
+   "strike": 7660.0,
+   "entry_floor": 55.25,
+   "entry_ceiling": 66.3,
+   "premium": 55.25,
+   "target": 82.88,
+   "stop": 44.2,
+   "reasoning": "BULL, bias clean, trend aligned, PDH support",
+   "confidence": 8,
+   "a_plus": false,
+   "status": "GO",
+   "flags": "hold OK until Fri 11/6 close \u00b7 close before the weekend",
+   "data_source": "schwab",
+   "contract": "SPXW261106C07660000",
+   "underlying": 7650.52,
+   "underlying_asof": "5:41 AM HST live",
+   "target1": 66.3
+  }
+ ],
+ "passing": 1,
+ "rejected": 72,
+ "rejections": []
+}
