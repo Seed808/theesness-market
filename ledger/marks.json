@@ -1,46 +1,55 @@
 {
  "2026-11-03_confirm_TLT_PUT_2026-11-06_81": {
-  "last": 0.48,
-  "last_time": "2026-11-03T15:05:31.754000+00:00",
-  "high": 0.45,
+  "last": 0.51,
+  "last_time": "2026-11-03T15:15:31.678000+00:00",
+  "high": 0.54,
   "low": 0.44,
   "source": "schwab quote (mark)",
-  "underlying": 81.08,
-  "pnl_pct": 11.6,
-  "as_of": "2026-11-03T05:02:36.994717-10:00"
+  "underlying": 81.03,
+  "pnl_pct": 18.6,
+  "as_of": "2026-11-03T05:12:34.845388-10:00"
  },
  "2026-11-03_confirm_IBIT_CALL_2026-11-06_44": {
-  "last": 0.65,
-  "last_time": "2026-11-03T15:05:32.879000+00:00",
-  "high": 0.69,
-  "low": 0.69,
+  "last": 0.69,
+  "last_time": "2026-11-03T15:15:33.310000+00:00",
+  "high": 0.7,
+  "low": 0.65,
   "source": "schwab quote (mark)",
-  "underlying": 43.65,
-  "pnl_pct": -4.4,
-  "as_of": "2026-11-03T05:02:36.994717-10:00"
+  "underlying": 43.73,
+  "pnl_pct": 1.5,
+  "as_of": "2026-11-03T05:12:34.845388-10:00"
  },
  "2026-11-03_confirm_BABA_PUT_2026-11-06_100": {
-  "high": null,
-  "low": null,
-  "last": 1.52,
-  "last_time": "2026-11-03T15:05:34.021000+00:00",
+  "last": 1.48,
+  "last_time": "2026-11-03T15:15:33.976000+00:00",
+  "high": 1.5,
+  "low": 1.43,
   "source": "schwab quote (mark)",
-  "underlying": 100.65,
-  "pnl_pct": 0.0,
-  "as_of": "2026-11-03T05:02:36.994717-10:00"
+  "underlying": 100.81,
+  "pnl_pct": -2.6,
+  "as_of": "2026-11-03T05:12:34.845388-10:00"
  },
  "2026-11-03_confirm_XLF_PUT_2026-11-06_56.5": {
   "high": null,
   "low": null,
-  "last": 0.3,
-  "last_time": "2026-11-03T15:05:34.277000+00:00",
+  "last": 0.27,
+  "last_time": "2026-11-03T14:57:25.046000+00:00",
+  "source": "schwab last trade",
+  "underlying": 57.205,
+  "pnl_pct": -10.0,
+  "as_of": "2026-11-03T05:12:34.845388-10:00"
+ },
+ "2026-11-03_rescan_QQQ_CALL_2026-11-06_686": {
+  "last": 10.07,
+  "last_time": "2026-11-03T15:15:36.640000+00:00",
+  "high": 10.35,
+  "low": 10.04,
   "source": "schwab quote (mark)",
-  "underlying": 57.135,
-  "pnl_pct": 0.0,
-  "as_of": "2026-11-03T05:02:36.994717-10:00"
+  "underlying": 685.52,
+  "pnl_pct": -2.7,
+  "as_of": "2026-11-03T05:12:34.845388-10:00"
  },
  "_errors": {
-  "2026-11-03_confirm_BABA_PUT_2026-11-06_100": "bars returned but none after lock (23 rows)",
   "2026-11-03_confirm_XLF_PUT_2026-11-06_56.5": "bars returned but none after lock (6 rows)"
  }
 }
