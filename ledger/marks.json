@@ -1,32 +1,32 @@
 {
  "2026-11-02_rescan_NFLX_CALL_2026-11-06_63": {
   "last": 0.78,
-  "last_time": "2026-11-02T21:00:00.236000+00:00",
+  "last_time": "2026-11-02T20:59:59.489000+00:00",
   "high": 1.05,
   "low": 0.71,
-  "source": "schwab quote (mark)",
-  "underlying": 62.4111,
+  "source": "schwab last trade",
+  "underlying": 62.29,
   "pnl_pct": -9.3,
-  "as_of": "2026-11-03T02:22:29.047291-10:00"
+  "as_of": "2026-11-03T02:32:34.542425-10:00"
  },
  "2026-11-02_rescan_AVGO_PUT_2026-11-06_327.5": {
-  "last": 11.05,
-  "last_time": "2026-11-03T11:30:00.565000+00:00",
+  "last": 11.25,
+  "last_time": "2026-11-02T20:57:30.369000+00:00",
   "high": 11.25,
   "low": 7.75,
-  "source": "schwab quote (mark)",
-  "underlying": 327.65,
-  "pnl_pct": 40.2,
-  "as_of": "2026-11-03T02:22:29.047291-10:00"
+  "source": "schwab last trade",
+  "underlying": 328.54,
+  "pnl_pct": 42.8,
+  "as_of": "2026-11-03T02:32:34.542425-10:00"
  },
  "2026-11-02_rescan_TSM_PUT_2026-11-06_400": {
-  "last": 9.93,
-  "last_time": "2026-11-03T11:30:05.505000+00:00",
+  "last": 9.97,
+  "last_time": "2026-11-02T20:58:20.176000+00:00",
   "high": 10.1,
   "low": 6.9,
-  "source": "schwab quote (mark)",
-  "underlying": 402.25,
-  "pnl_pct": 43.3,
-  "as_of": "2026-11-03T02:22:29.047291-10:00"
+  "source": "schwab last trade",
+  "underlying": 402.71,
+  "pnl_pct": 43.9,
+  "as_of": "2026-11-03T02:32:34.542425-10:00"
  }
 }
