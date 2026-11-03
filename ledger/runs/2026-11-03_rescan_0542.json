@@ -1,0 +1,121 @@
+{
+ "trade_date": "2026-11-03",
+ "mode": "rescan",
+ "ran_at": "2026-11-03T05:42:36.007141-10:00",
+ "test": false,
+ "open_hst": "2026-11-03T04:30:00-10:00",
+ "close_hst": "2026-11-03T11:00:00-10:00",
+ "early_close": false,
+ "bias": {
+  "regime": "MIXED",
+  "favored": null,
+  "clean": false,
+  "notes": [
+   "ES green (+0.40%), NQ green (+0.86%), YM red (-0.42%)",
+   "No ES/YM rule matched \u2192 no favored side, no A+",
+   "VIX 20.44 (-3.36%) \u2192 does not confirm",
+   "SPY green (+0.41%), QQQ green (+0.85%) \u2192 does not confirm"
+  ]
+ },
+ "quotes": {
+  "ES": {
+   "last": 7605.0,
+   "prev_close": 7574.5,
+   "chg_pct": 0.4026668426958875,
+   "source": "schwab"
+  },
+  "NQ": {
+   "last": 28368.25,
+   "prev_close": 28127.5,
+   "chg_pct": 0.8559239178739667,
+   "source": "schwab"
+  },
+  "YM": {
+   "last": 51914.0,
+   "prev_close": 52133.0,
+   "chg_pct": -0.420079412272457,
+   "source": "schwab"
+  },
+  "VIX": {
+   "last": 20.44,
+   "prev_close": 21.15,
+   "chg_pct": -3.356973995271855,
+   "source": "schwab"
+  },
+  "SPY": {
+   "last": 755.21,
+   "prev_close": 752.1,
+   "chg_pct": 0.4135088419093224,
+   "source": "schwab"
+  },
+  "QQQ": {
+   "last": 686.85,
+   "prev_close": 681.09,
+   "chg_pct": 0.8457032110293781,
+   "source": "schwab"
+  }
+ },
+ "flags": [
+  "Amateur hour until 05:00 AM; institutional 05:00\u201305:30 AM HST",
+  "No damaged contracts overnight. No earnings holds overnight."
+ ],
+ "headlines": [],
+ "data_note": "live data: Schwab (Yahoo fallback)",
+ "cards": [
+  {
+   "id": "2026-11-03_rescan_IWM_CALL_2026-11-06_282",
+   "trade_date": "2026-11-03",
+   "mode": "rescan",
+   "locked_at": "2026-11-03T05:42:36.007141-10:00",
+   "ticker": "IWM",
+   "type": "CALL",
+   "bias": "MIXED",
+   "expiry": "2026-11-06",
+   "strike": 282.0,
+   "entry_floor": 3.1,
+   "entry_ceiling": 3.72,
+   "premium": 3.1,
+   "target": 4.65,
+   "stop": 2.48,
+   "reasoning": "MIXED, against/no favored side, trend aligned, PMH support, strong liquidity",
+   "confidence": 7,
+   "a_plus": false,
+   "status": "GO",
+   "flags": "hold OK until Fri 11/6 close \u00b7 close before the weekend",
+   "data_source": "schwab",
+   "contract": "IWM261106C00282000",
+   "underlying": 281.82,
+   "underlying_asof": "5:42 AM HST live",
+   "target1": 3.72
+  },
+  {
+   "id": "2026-11-03_rescan_SPY_CALL_2026-11-06_756",
+   "trade_date": "2026-11-03",
+   "mode": "rescan",
+   "locked_at": "2026-11-03T05:42:36.007141-10:00",
+   "ticker": "SPY",
+   "type": "CALL",
+   "bias": "MIXED",
+   "expiry": "2026-11-06",
+   "strike": 756.0,
+   "entry_floor": 6.12,
+   "entry_ceiling": 7.34,
+   "premium": 6.12,
+   "target": 9.18,
+   "stop": 4.89,
+   "reasoning": "MIXED, against/no favored side, trend aligned, PMH support",
+   "confidence": 6,
+   "a_plus": false,
+   "status": "GO",
+   "flags": "hold OK until Fri 11/6 close \u00b7 close before the weekend",
+   "data_source": "schwab",
+   "contract": "SPY261106C00756000",
+   "underlying": 755.21,
+   "underlying_asof": "5:42 AM HST live",
+   "target1": 7.34
+  }
+ ],
+ "passing": 3,
+ "rejected": 142,
+ "rejections": []
+}
