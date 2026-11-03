@@ -1,0 +1,95 @@
+{
+ "trade_date": "2026-11-03",
+ "mode": "rescan",
+ "ran_at": "2026-11-03T05:22:33.964200-10:00",
+ "test": false,
+ "open_hst": "2026-11-03T04:30:00-10:00",
+ "close_hst": "2026-11-03T11:00:00-10:00",
+ "early_close": false,
+ "bias": {
+  "regime": "MIXED",
+  "favored": null,
+  "clean": false,
+  "notes": [
+   "ES green (+0.30%), NQ green (+0.75%), YM red (-0.56%)",
+   "No ES/YM rule matched \u2192 no favored side, no A+",
+   "VIX 20.55 (-2.84%) \u2192 does not confirm",
+   "SPY green (+0.32%), QQQ green (+0.76%) \u2192 does not confirm"
+  ]
+ },
+ "quotes": {
+  "ES": {
+   "last": 7597.25,
+   "prev_close": 7574.5,
+   "chg_pct": 0.3003498580764407,
+   "source": "schwab"
+  },
+  "NQ": {
+   "last": 28339.5,
+   "prev_close": 28127.5,
+   "chg_pct": 0.7537107812638877,
+   "source": "schwab"
+  },
+  "YM": {
+   "last": 51843.0,
+   "prev_close": 52133.0,
+   "chg_pct": -0.556269541365354,
+   "source": "schwab"
+  },
+  "VIX": {
+   "last": 20.55,
+   "prev_close": 21.15,
+   "chg_pct": -2.836879432624104,
+   "source": "schwab"
+  },
+  "SPY": {
+   "last": 754.49,
+   "prev_close": 752.1,
+   "chg_pct": 0.31777689137082654,
+   "source": "schwab"
+  },
+  "QQQ": {
+   "last": 686.26,
+   "prev_close": 681.09,
+   "chg_pct": 0.7590773612885168,
+   "source": "schwab"
+  }
+ },
+ "flags": [
+  "Amateur hour until 05:00 AM; institutional 05:00\u201305:30 AM HST",
+  "No damaged contracts overnight. No earnings holds overnight."
+ ],
+ "headlines": [],
+ "data_note": "live data: Schwab (Yahoo fallback)",
+ "cards": [
+  {
+   "id": "2026-11-03_rescan_TSLA_PUT_2026-11-06_400",
+   "trade_date": "2026-11-03",
+   "mode": "rescan",
+   "locked_at": "2026-11-03T05:22:33.964200-10:00",
+   "ticker": "TSLA",
+   "type": "PUT",
+   "bias": "MIXED",
+   "expiry": "2026-11-06",
+   "strike": 400.0,
+   "entry_floor": 8.35,
+   "entry_ceiling": 10.02,
+   "premium": 8.35,
+   "target": 12.52,
+   "stop": 6.68,
+   "reasoning": "MIXED, against/no favored side, trend aligned, PML resistance, institutional window, strong liquidity",
+   "confidence": 8,
+   "a_plus": false,
+   "status": "GO",
+   "flags": "hold OK until Fri 11/6 close \u00b7 close before the weekend",
+   "data_source": "schwab",
+   "contract": "TSLA261106P00400000",
+   "underlying": 401.42,
+   "underlying_asof": "5:24 AM HST live",
+   "target1": 10.02
+  }
+ ],
+ "passing": 2,
+ "rejected": 143,
+ "rejections": []
+}
