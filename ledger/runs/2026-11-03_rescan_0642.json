@@ -1,0 +1,121 @@
+{
+ "trade_date": "2026-11-03",
+ "mode": "rescan",
+ "ran_at": "2026-11-03T06:42:48.074537-10:00",
+ "test": false,
+ "open_hst": "2026-11-03T04:30:00-10:00",
+ "close_hst": "2026-11-03T11:00:00-10:00",
+ "early_close": false,
+ "bias": {
+  "regime": "MIXED",
+  "favored": null,
+  "clean": false,
+  "notes": [
+   "ES green (+0.36%), NQ green (+0.66%), YM red (-0.44%)",
+   "No ES/YM rule matched \u2192 no favored side, no A+",
+   "VIX 20.83 (-1.51%) \u2192 does not confirm",
+   "SPY green (+0.37%), QQQ green (+0.65%) \u2192 does not confirm"
+  ]
+ },
+ "quotes": {
+  "ES": {
+   "last": 7601.5,
+   "prev_close": 7574.5,
+   "chg_pct": 0.35645917222258894,
+   "source": "schwab"
+  },
+  "NQ": {
+   "last": 28313.25,
+   "prev_close": 28127.5,
+   "chg_pct": 0.6603857434894677,
+   "source": "schwab"
+  },
+  "YM": {
+   "last": 51904.0,
+   "prev_close": 52133.0,
+   "chg_pct": -0.43926112059540023,
+   "source": "schwab"
+  },
+  "VIX": {
+   "last": 20.83,
+   "prev_close": 21.15,
+   "chg_pct": -1.5130023640661954,
+   "source": "schwab"
+  },
+  "SPY": {
+   "last": 754.85,
+   "prev_close": 752.1,
+   "chg_pct": 0.36564286664007445,
+   "source": "schwab"
+  },
+  "QQQ": {
+   "last": 685.52,
+   "prev_close": 681.09,
+   "chg_pct": 0.6504279904271021,
+   "source": "schwab"
+  }
+ },
+ "flags": [
+  "Amateur hour until 05:00 AM; institutional 05:00\u201305:30 AM HST",
+  "No damaged contracts overnight. No earnings holds overnight."
+ ],
+ "headlines": [],
+ "data_note": "live data: Schwab (Yahoo fallback)",
+ "cards": [
+  {
+   "id": "2026-11-03_rescan_SOFI_PUT_2026-11-06_16.5",
+   "trade_date": "2026-11-03",
+   "mode": "rescan",
+   "locked_at": "2026-11-03T06:42:48.074537-10:00",
+   "ticker": "SOFI",
+   "type": "PUT",
+   "bias": "MIXED",
+   "expiry": "2026-11-06",
+   "strike": 16.5,
+   "entry_floor": 0.34,
+   "entry_ceiling": 0.41,
+   "premium": 0.34,
+   "target": 0.51,
+   "stop": 0.27,
+   "reasoning": "MIXED, against/no favored side, trend aligned, VWAP resistance, strong liquidity",
+   "confidence": 7,
+   "a_plus": false,
+   "status": "GO",
+   "flags": "hold OK until Fri 11/6 close \u00b7 close before the weekend",
+   "data_source": "schwab",
+   "contract": "SOFI261106P00016500",
+   "underlying": 16.66,
+   "underlying_asof": "6:45 AM HST live",
+   "target1": 0.41
+  },
+  {
+   "id": "2026-11-03_rescan_PLTR_CALL_2026-11-06_175",
+   "trade_date": "2026-11-03",
+   "mode": "rescan",
+   "locked_at": "2026-11-03T06:42:48.074537-10:00",
+   "ticker": "PLTR",
+   "type": "CALL",
+   "bias": "MIXED",
+   "expiry": "2026-11-06",
+   "strike": 175.0,
+   "entry_floor": 4.15,
+   "entry_ceiling": 4.98,
+   "premium": 4.15,
+   "target": 6.23,
+   "stop": 3.32,
+   "reasoning": "MIXED, against/no favored side, trend aligned",
+   "confidence": 5,
+   "a_plus": false,
+   "status": "GO",
+   "flags": "hold OK until Fri 11/6 close \u00b7 close before the weekend",
+   "data_source": "schwab",
+   "contract": "PLTR261106C00175000",
+   "underlying": 173.29,
+   "underlying_asof": "6:44 AM HST live",
+   "target1": 4.98
+  }
+ ],
+ "passing": 2,
+ "rejected": 143,
+ "rejections": []
+}
