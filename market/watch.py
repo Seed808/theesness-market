@@ -118,7 +118,7 @@ def _price_contract(c: dict, raw_t: Optional[dict], at: datetime) -> tuple:
                     return round(float(b["Close"].iloc[-1]), 2), bars.attrs.get("source", "bars")
                 a = bars[(bars.index > at) & (bars.index <= at + timedelta(minutes=10))]
                 if not a.empty:                  # no trade just before: first trade right after
-                    return round(float(a["Open"].iloc[0]), 2), f'{bars.attrs.get("source", "bars")} (next trade {E._short_t(a.index[0])})'
+                    return round(float(a["Open"].iloc[0]), 2), f'{bars.attrs.get("source", "bars")} (next trade {E._dt(a.index[0])})'
         except Exception as e:  # noqa: BLE001
             print(f"[warn] watch price {c['contract']}: {type(e).__name__}: {e}", file=sys.stderr)
     # Live quote, only if we're pricing "now" (the read that just ran), never for a past time.
@@ -261,7 +261,7 @@ def status_block(rows: list, late: bool = False) -> str:
     if not rows:
         return ""
     icon = {"CONFIRMED": "✓", "NOT CONFIRMED": "✗", "PASSED": "•", "NOT SCANNED": "?"}
-    when = E._short_t(datetime.fromisoformat(rows[0]["priced_at"]))
+    when = E._dt(rows[0]["priced_at"])
     lines = [f"<b>PRE-MARKET CARDS</b> · at the {when} HST confirmation read" + (" (late notice)" if late else "")]
     for r in rows:
         mv = f" · stock {float(r['stock_move_pct']):+.1f}% vs prior close" if r.get("stock_move_pct") not in ("", None) else ""

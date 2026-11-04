@@ -13,7 +13,7 @@ on:
       test:
         description: "Test scan right now (ignores the clock, never graded)"
         type: choice
-        options: [none, premarket, confirm, study, probe, diag, peak]
+        options: [none, premarket, confirm, study, probe, diag, peak, preopen]
         default: none
 permissions:
   contents: write
@@ -47,7 +47,10 @@ jobs:
         run: |
           git pull --rebase --autostash -q || true
           T="${{ github.event.inputs.test }}"
-          if [ "$T" = "peak" ]; then
+          if [ "$T" = "preopen" ]; then
+            python market/schwab.py preopen 2>&1 | tee run_log.txt
+            python market/runner.py 2>&1 | tee -a run_log.txt
+          elif [ "$T" = "peak" ]; then
             python market/peak_study.py 2>&1 | tee run_log.txt
             python market/runner.py 2>&1 | tee -a run_log.txt
           elif [ "$T" = "diag" ]; then

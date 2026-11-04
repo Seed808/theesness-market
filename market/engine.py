@@ -1196,6 +1196,21 @@ def _short_t(dt: datetime) -> str:
     return dt.astimezone(HST).strftime("%I:%M %p").lstrip("0")
 
 
+def _dt(dt) -> str:
+    """Weekday + date + time in HST, e.g. 'Wed 11/04 5:43 AM' (added 2026-11-04)."""
+    if isinstance(dt, str):
+        dt = datetime.fromisoformat(dt)
+    dt = dt.astimezone(HST)
+    return f"{dt.strftime('%a %m/%d')} {_short_t(dt)}"
+
+
+def _day(d) -> str:
+    """'Wed 11/04' for a date or ISO date string."""
+    if isinstance(d, str):
+        d = date.fromisoformat(d[:10])
+    return d.strftime("%a %m/%d")
+
+
 def tg_card(i: "Idea") -> str:
     """One trade card as a short block. Same fields as the pipe format, one idea per line."""
     exp = datetime.strptime(i.expiry, "%Y-%m-%d").strftime("%a %-m/%-d")
@@ -1205,7 +1220,7 @@ def tg_card(i: "Idea") -> str:
     reasons = ", ".join(x for x in i.reasoning.split(", ") if x != i.bias)
     lines = [
         head,
-        (f"Stock ${i.underlying:,.2f} ({_h(i.underlying_asof)})" if i.underlying is not None
+        (f"Stock ${i.underlying:,.2f} ({_day(now_hst().date())} {_h(i.underlying_asof)})" if i.underlying is not None
          else "Stock price n/a"),
     ]
     if i.status.startswith("CONDITIONAL"):

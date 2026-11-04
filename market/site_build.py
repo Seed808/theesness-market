@@ -43,7 +43,8 @@ def page(title: str, body: str, depth: int, active: str) -> str:
 
 
 def _t(iso: str) -> str:
-    return datetime.fromisoformat(iso).astimezone(E.HST).strftime("%I:%M %p HST").lstrip("0")
+    """Every time on the site carries its weekday + date, e.g. 'Wed 11/04 5:43 AM HST'."""
+    return E._dt(iso) + " HST"
 
 
 def _money(x) -> str:
@@ -357,7 +358,7 @@ def card_html(c: dict, g: dict | None) -> str:
             f'<span class="conf">{e(str(c["confidence"]))}/10</span></div>'
             + (pre_header(c) if c["mode"] == "premarket" else
                (f'<div class="px">Stock {_money(c["underlying"])} '
-                f'<span class="eyebrow">as of {e(str(c.get("underlying_asof") or ""))}</span></div>'
+                f'<span class="eyebrow">as of {e(E._day(c["locked_at"]))} {e(str(c.get("underlying_asof") or ""))}</span></div>'
                 if c.get("underlying") not in (None, "") else "")
                + f'<div class="status">{e(c["status"])} · locked {_t(c["locked_at"])}</div>')
             + f'<dl class="lines">'
@@ -416,7 +417,8 @@ def gapchase_section(d: str) -> str:
         cards += (f'<div class="card"><div class="head"><span><span class="tk">{e(w["ticker"])}</span> '
                   f'<span class="ty {e(w["type"])}">{e(w["type"])}</span></span>'
                   f'<span class="eyebrow">not a signal</span></div>'
-                  f'<div class="px">Stock {_money(w["underlying"])} <span class="eyebrow">as of {e(w["underlying_asof"])}</span></div>'
+                  f'<div class="px">Stock {_money(w["underlying"])} <span class="eyebrow">as of {e(_t(w["priced_at"]))}</span></div>'
+                  f'<div class="status">blocked {e(_t(w["called_at"]))}</div>'
                   f'<dl class="lines"><dt>Expiry</dt><dd>{e(date.fromisoformat(w["expiry"]).strftime("%a %b %-d"))}</dd>'
                   f'<dt>Strike</dt><dd>{float(w["strike"]):g}</dd>{watch_lines(w)}</dl></div>')
     return ('<h2>Blocked by gap chase only — tracked for comparison</h2><p class="note">Setups that passed '

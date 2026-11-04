@@ -484,6 +484,7 @@ def open_block(now: datetime) -> str:
         m = marks.get(c["id"])
         px = (f"last ${m['last']:.2f} ({m['pnl_pct']:+.1f}%)" if m else "price n/a")
         lines.append(f"<b>{E._h(c['ticker'])} {E._h(c['type'])} {float(c['strike']):g}</b> exp {exp} · "
+                     f"called {E._dt(c['locked_at'])} · "
                      f"entry ${float(c['premium']):.2f} · {px} · T1 ${float(c.get('target1') or 0) or E.target1_price(float(c['premium'])):.2f}"
                      f" · T2 ${float(c['target']):.2f} / S ${float(c['stop']):.2f}")
     return "\n".join(lines)
@@ -502,7 +503,7 @@ OPEN_UPDATE_DUE = (1, 30)        # minutes after the open (first run after the b
 def _when(iso: str, d: date) -> str:
     """Time of a price, with the day added when it isn't today (e.g. a last trade from Friday)."""
     t = datetime.fromisoformat(iso).astimezone(E.HST)
-    return E._short_t(t) if t.date() == d else f"{t.strftime('%a')} {E._short_t(t)} (old)"
+    return E._dt(t) if t.date() == d else f"{E._dt(t)} (old)"
 
 
 def open_update(session: E.Session, now: datetime) -> Optional[dict]:
@@ -530,11 +531,11 @@ def open_update(session: E.Session, now: datetime) -> Optional[dict]:
                                      "source": q.get("source", ""), "underlying": q.get("underlying")}
     OPEN_DIR.mkdir(parents=True, exist_ok=True)
     out_p.write_text(json.dumps(res, indent=1))
-    lines = [f"<b>MARKET OPEN</b> · {E._short_t(now)} HST · pre-market cards at live prices "
+    lines = [f"<b>MARKET OPEN</b> · {E._dt(now)} HST · pre-market cards at live prices "
              f"(amateur hour until {E._short_t(session.at(E.AMATEUR_HOUR_MIN))} — no entries yet)"]
     for c in cards:
         o = res["cards"].get(c["id"])
-        px = (f"option ${o['price']:.2f} (was ${float(c['premium']):.2f} at {E._short_t(datetime.fromisoformat(c['locked_at']))})"
+        px = (f"option ${o['price']:.2f} (was ${float(c['premium']):.2f} at {E._dt(c['locked_at'])})"
               + (f" · stock ${o['underlying']:,.2f}" if o.get("underlying") else "")
               + f" · {_when(o['time'], d)}") if o else "price n/a"
         lines.append(f"<b>{E._h(c['ticker'])} {E._h(c['type'])} {float(c['strike']):g}</b> · {px}")
@@ -549,9 +550,9 @@ def open_update(session: E.Session, now: datetime) -> Optional[dict]:
 def after_close(now: datetime) -> None:
     graded = grade_due(now)
     if graded:
-        lines = [f"<b>CLOSED</b> · {now.strftime('%a %-m/%-d')} {E._short_t(now)} HST"]
-        lines += [f"<b>{E._h(g['ticker'])} {E._h(g['type'])} {float(g['strike']):g}</b> → "
-                  f"<b>{E._h(g['result'])}</b>"
+        lines = [f"<b>CLOSED</b> · {E._dt(now)} HST"]
+        lines += [f"<b>{E._h(g['ticker'])} {E._h(g['type'])} {float(g['strike']):g}</b> "
+                  f"(called {E._dt(g['locked_at'])}) → <b>{E._h(g['result'])}</b>"
                   + (f" ({float(g['pnl_pct']):+.1f}%)" if g['pnl_pct'] not in ('', None) else "")
                   + f" · {E._h(g['method'])}" for g in graded]
         update_marks(now)
@@ -615,7 +616,7 @@ def announce(snap: dict, r: E.ScanResult, now: datetime, pre_block: str = "") ->
     ideas = snap["_ideas"]
     if r.mode == "rescan":
         if ideas:
-            E.send_telegram(f"<b>NEW SETUP</b> · {E._short_t(now)} HST · bias {E._h(r.bias.regime)}"
+            E.send_telegram(f"<b>NEW SETUP</b> · {E._dt(now)} HST · bias {E._h(r.bias.regime)}"
                             + "\n\n" + "\n\n".join(E.tg_card(i) for i in ideas), html=True)
     else:
         try:
@@ -627,7 +628,7 @@ def announce(snap: dict, r: E.ScanResult, now: datetime, pre_block: str = "") ->
         E.send_telegram(E.tg_report(r, ideas, extra=extra or None), html=True)
     for i in ideas:
         if i.a_plus:
-            E.send_telegram(f"<b>A+ ALERT</b> · {E._short_t(now)} HST\n\n{E.tg_card(i)}", html=True)
+            E.send_telegram(f"<b>A+ ALERT</b> · {E._dt(now)} HST\n\n{E.tg_card(i)}", html=True)
 
 
 def main() -> int:

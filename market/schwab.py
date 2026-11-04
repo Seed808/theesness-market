@@ -576,6 +576,25 @@ def main() -> int:
         p.write_text(json.dumps(out, indent=1, default=str))
         print(json.dumps(out, indent=1, default=str)[:4000])
         return 0
+    if cmd == "preopen":
+        # Read-only: raw 1-minute option bars around the open for contracts graded before the bell.
+        out = {}
+        for k in ["SPY261106C00756000", "QQQ261106C00686000", "TSLA261106P00400000", "BABA261106P00100000",
+                  "BA261106P00172500", "SOFI261106P00016500"]:
+            s = datetime(2026, 11, 4, 11, 0, tzinfo=timezone.utc)      # 1:00am HST
+            e = datetime(2026, 11, 4, 15, 0, tzinfo=timezone.utc)      # 5:00am HST
+            df = option_history(k, s, e)
+            if df is None:
+                out[k] = None
+                continue
+            df.index = df.index.tz_convert("Pacific/Honolulu")
+            out[k] = {"source": df.attrs.get("source"), "rows": len(df),
+                      "bars": [[str(i), *[float(x) for x in r[["Open", "High", "Low", "Close"]]], float(r["Volume"])]
+                               for i, r in df.head(25).iterrows()]}
+        p = Path(__file__).resolve().parent.parent / "ledger" / "tests" / "preopen_bars.json"
+        p.write_text(json.dumps(out, indent=1))
+        print("written")
+        return 0
     if cmd == "test":
         ok = bool(access_token())
         print("token:", "ok" if ok else "none")
