@@ -116,7 +116,7 @@ def _price_contract(c: dict, raw_t: Optional[dict], at: datetime) -> tuple:
                 b = bars[bars.index <= at]
                 if not b.empty and at - b.index[-1] <= timedelta(minutes=10):
                     return round(float(b["Close"].iloc[-1]), 2), bars.attrs.get("source", "bars")
-                a = bars[(bars.index > at) & (bars.index <= at + timedelta(minutes=5))]
+                a = bars[(bars.index > at) & (bars.index <= at + timedelta(minutes=10))]
                 if not a.empty:                  # no trade just before: first trade right after
                     return round(float(a["Open"].iloc[0]), 2), f'{bars.attrs.get("source", "bars")} (next trade {E._short_t(a.index[0])})'
         except Exception as e:  # noqa: BLE001
@@ -146,18 +146,6 @@ def fill_missing_prices() -> int:
         if E.now_hst() - at > timedelta(days=3):
             continue
         prem, src = _price_contract(r, None, at)
-        try:                                   # leave a trace of what the bars looked like
-            d = date.fromisoformat(r["trade_date"])
-            b = R.fetch_contract_bars(r["contract"], d, d)
-            dbg = {"contract": r["contract"], "at": r["priced_at"], "rows": 0 if b is None else len(b),
-                   "first": None if b is None or b.empty else str(b.index[0]),
-                   "last": None if b is None or b.empty else str(b.index[-1]),
-                   "near": [] if b is None or b.empty else
-                   [[str(i), float(x)] for i, x in b["Close"][(b.index >= at - timedelta(minutes=30)) &
-                                                              (b.index <= at + timedelta(minutes=30))].items()][:20]}
-            (R.LEDGER / "tests" / "watch_fill_debug.json").write_text(json.dumps(dbg, indent=1))
-        except Exception as e:  # noqa: BLE001
-            print(f"[warn] fill debug: {e}", file=sys.stderr)
         if prem is not None:
             r.update(_row(r, prem, f"{src} · filled in later"))
             changed += 1
