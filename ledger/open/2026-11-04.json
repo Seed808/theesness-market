@@ -1,0 +1,36 @@
+{
+ "trade_date": "2026-11-04",
+ "ran_at": "2026-11-04T04:32:36.569686-10:00",
+ "cards": {
+  "2026-11-04_premarket_SOFI_CALL_2026-11-06_17": {
+   "price": 0.55,
+   "time": "2026-11-04T14:32:37.418000+00:00",
+   "source": "schwab quote (mark)",
+   "underlying": 17.31
+  },
+  "2026-11-04_premarket_COIN_CALL_2026-11-06_143": {
+   "price": 5.97,
+   "time": "2026-11-04T14:32:36.120000+00:00",
+   "source": "schwab quote (mark)",
+   "underlying": 145.74
+  },
+  "2026-11-04_premarket_MSTR_CALL_2026-11-06_136": {
+   "price": 5.7,
+   "time": "2026-11-04T14:32:38.386000+00:00",
+   "source": "schwab quote (mark)",
+   "underlying": 138.7562
+  },
+  "2026-11-04_premarket_XOM_CALL_2026-11-06_177.5": {
+   "price": 0.72,
+   "time": "2026-11-04T14:32:27.423000+00:00",
+   "source": "schwab last trade",
+   "underlying": 172.32
+  },
+  "2026-11-04_premarket_CIFR_CALL_2026-11-06_7": {
+   "price": 0.55,
+   "time": "2026-11-04T14:32:22.909000+00:00",
+   "source": "schwab last trade",
+   "underlying": 7.115
+  }
+ }
+}
