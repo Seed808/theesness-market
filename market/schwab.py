@@ -579,6 +579,21 @@ def main() -> int:
     if cmd == "preopen":
         # Read-only: raw 1-minute option bars around the open for contracts graded before the bell.
         out = {}
+        sys.path.insert(0, str(Path(__file__).resolve().parent))
+        import engine as E
+        import runner as R
+        E.PROVIDER = provider_if_connected()
+        from datetime import date as _d
+        for k in ["SPY261106C00756000", "QQQ261106C00686000"]:
+            df = R.fetch_contract_bars(k, _d(2026, 11, 3), _d(2026, 11, 4))
+            if df is None:
+                out["multi_" + k] = None
+                continue
+            w = df[(df.index >= "2026-11-03 09:50") & (df.index <= "2026-11-04 04:35")]
+            out["multi_" + k] = {"source": df.attrs.get("source"), "rows": len(df), "first": str(df.index[0]),
+                                 "last": str(df.index[-1]),
+                                 "around_gap": [[str(i), float(r["Open"]), float(r["Close"]), float(r["Volume"])]
+                                                for i, r in w.iterrows()][:40]}
         for k in ["SPY261106C00756000", "QQQ261106C00686000", "TSLA261106P00400000", "BABA261106P00100000",
                   "BA261106P00172500", "SOFI261106P00016500"]:
             s = datetime(2026, 11, 4, 11, 0, tzinfo=timezone.utc)      # 1:00am HST
