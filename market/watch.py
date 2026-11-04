@@ -280,8 +280,8 @@ def track_watch(now: datetime, fetch=None) -> None:
     new = []
     for c in load_watch():
         wid = c["id"]
-        if c.get("premium") in ("", None):
-            continue
+        if c.get("premium") in ("", None) or c["kind"] == "baseline":
+            continue                      # baseline rows are graded once after expiry (grade_baseline)
         g = grades.get(wid, {})
         if "T1" in g and "T2" in g and peaks.get(wid, {}).get("final"):
             continue
@@ -339,3 +339,99 @@ def track_watch(now: datetime, fetch=None) -> None:
         peaks[wid] = p
     R._append_csv(WATCH_GRADES, WG_FIELDS, new)
     WATCH_PEAKS.write_text(json.dumps(peaks, indent=1))
+
+
+# ------------------------------------------------------------------ baseline (added 2026-11-04)
+# Every setup the rules looked at in the confirmation read that has a LIQUID contract (passes
+# OI / bid / spread) — called or not, any direction, any rejection reason — priced from that read's
+# own chain. Answers: do the rules beat taking everything? Watch-only, never a signal.
+# Graded once, after the contract's expiry-day close, in batches (keeps Schwab calls low).
+
+BASELINE_BATCH = 60
+
+
+def record_baseline(d: date) -> int:
+    conf_p = R.run_path(d, "confirm")
+    if not conf_p.exists():
+        return 0
+    conf = json.loads(conf_p.read_text())
+    raw = _raw(d, conf["ran_at"], "confirm") or {}
+    have = {r["id"] for r in load_watch()}
+    names = [x.partition(":")[0].strip() for x in conf["rejections"]]
+    names += [f'{c["ticker"]} {"C" if c["type"] == "CALL" else "P"}' for c in conf["cards"]]
+    official = {(c["ticker"], c["type"]) for c in conf["cards"]}
+    rej = {x.partition(":")[0].strip(): x.partition(":")[2].strip() for x in conf["rejections"]}
+    new = []
+    for name in dict.fromkeys(names):
+        try:
+            sym, right = name.split()
+        except ValueError:
+            continue
+        raw_t = (raw.get("tickers") or {}).get(sym)
+        spot = ((raw_t or {}).get("tech") or {}).get("last")
+        if not raw_t or not spot:
+            continue
+        opt = E.pick_strike(_chain(raw_t), date.fromisoformat(raw_t["expiry"]), right, spot)
+        if opt is None or not opt.mid or not E.liquidity_check(opt)[0]:
+            continue
+        typ = "CALL" if right == "C" else "PUT"
+        wid = f"{d.isoformat()}_watch-baseline_{sym}_{typ}_{opt.expiry.isoformat()}_{opt.strike:g}"
+        if wid in have:
+            continue
+        status = "OFFICIAL" if (sym, typ) in official else "REJECTED"
+        base = {"id": wid, "trade_date": d.isoformat(), "kind": "baseline", "ticker": sym, "type": typ,
+                "expiry": opt.expiry.isoformat(), "strike": opt.strike,
+                "contract": E.occ_symbol("SPXW" if sym == "SPX" else sym, opt),
+                "called_at": conf["ran_at"], "priced_at": conf["ran_at"], "underlying": spot,
+                "underlying_asof": E._short_t(datetime.fromisoformat(conf["ran_at"])) + " HST",
+                "stock_move_pct": "" if _move(raw_t) is None else _move(raw_t),
+                "status": status, "reason": rej.get(name, "official card")}
+        new.append(_row(base, round(opt.mid, 2), f"chain {opt.source}"))
+    R._append_csv(WATCH, WATCH_FIELDS, new)
+    return len(new)
+
+
+def grade_baseline(now: datetime, fetch=None) -> int:
+    fetch = fetch or R.fetch_contract_bars
+    grades = load_watch_grades()
+    new, done = [], 0
+    for c in load_watch():
+        if c["kind"] != "baseline" or c.get("premium") in ("", None):
+            continue
+        g = grades.get(c["id"], {})
+        if "T1" in g and "T2" in g:
+            continue
+        d, exp = date.fromisoformat(c["trade_date"]), date.fromisoformat(c["expiry"])
+        s_exp = E.session_for(exp) or E.session_for(d)
+        if now < s_exp.close_hst + timedelta(minutes=R.GRADE_AFTER_CLOSE_MIN):
+            continue
+        if done >= BASELINE_BATCH:
+            break
+        done += 1
+        try:
+            bars = fetch(c["contract"], d, exp) if c.get("contract") else None
+        except Exception:  # noqa: BLE001
+            bars = None
+        start = datetime.fromisoformat(c["priced_at"])
+        w = None if bars is None else bars[(bars.index > start) & (bars.index <= s_exp.close_hst)]
+        if w is None or w.empty:
+            if (now.date() - exp).days >= R.GRADE_GIVE_UP_DAYS:
+                for tgt in ("T1", "T2"):
+                    if tgt not in g:
+                        new.append({"id": c["id"], "target": tgt, "graded_at": now.isoformat(),
+                                    "result": "UNGRADABLE", "exit_premium": "", "pnl_pct": "", "hit_at": "",
+                                    "method": "no contract price data"})
+            continue
+        entry, stop, src = float(c["premium"]), float(c["stop"]), bars.attrs.get("source", "")
+        for tgt, level in (("T1", float(c["target1"])), ("T2", float(c["target"]))):
+            if tgt in g:
+                continue
+            r, px, at, how = walk(w, level, stop)
+            if r is None:
+                r, how, at = ("WIN" if px > entry else "LOSS" if px < entry else "FLAT"), \
+                    f"TIME ({exp.strftime('%a')} close)", None
+            new.append({"id": c["id"], "target": tgt, "graded_at": now.isoformat(), "result": r,
+                        "exit_premium": round(px, 2), "pnl_pct": _pct(px, entry),
+                        "hit_at": at.isoformat() if at is not None else "", "method": f"{how} · {src}"})
+    R._append_csv(WATCH_GRADES, WG_FIELDS, new)
+    return done

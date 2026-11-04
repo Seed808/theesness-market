@@ -81,7 +81,7 @@ Telegram confirms. Tokens are stored encrypted in `auth/schwab_token.enc` (key d
 | `ledger/locks.csv`, `ledger/grades.csv` | Flat record of every card and every T2 grade. |
 | `ledger/grades_t1.csv`, `ledger/peaks.json` | T1 grades (write-once); peaks + break-even side numbers (live, frozen after expiry). |
 | `market/tracking.py` | T1 scoring, peaks, break-even side number. |
-| `market/watch.py`, `ledger/watch*.csv/json` | Watch records (not trade signals): pre-market cards priced at the confirmation read, and setups blocked only by the gap-chase rule, each tracked to T1/T2/stop. |
+| `market/watch.py`, `ledger/watch*.csv/json` | Watch records (not trade signals): pre-market cards priced at the confirmation read; setups blocked only by gap chase; and a baseline of every liquid setup at the confirmation read (called or not, graded once after expiry) — each to T1/T2/stop. |
 | `ledger/tests/` | Hand-started test runs (never graded). |
 | `ledger/backtest.json` | Latest bias backtest (rebuilt once a day after the close). |
 | `data/raw/`, `data/bars/` | Saved market data for backtesting. |

@@ -466,6 +466,24 @@ def next_run_note(now: datetime) -> str:
             f'{s.open_hst.strftime("%I:%M %p")} HST (open {s.open_hst.strftime("%I:%M %p")}).')
 
 
+def baseline_tiles() -> str:
+    """Official vs everything: average result per card if exited at T1 or held for T2."""
+    def stat(rows):
+        res = [r for r in rows if r and r["result"] in ("WIN", "LOSS", "FLAT")]
+        if not res:
+            return "—", "no graded cards yet"
+        w = sum(r["result"] == "WIN" for r in res)
+        avg = sum(float(r["pnl_pct"]) for r in res) / len(res)
+        return f"{w}-{len(res) - w}", f"win rate {w / len(res) * 100:.0f}% · avg {avg:+.1f}%/card"
+    base = [w for w in W_ROWS if w["kind"] == "baseline"]
+    out = ""
+    for tgt, lab in (("T1", f"+{int(E.TARGET1_PCT * 100)}%"), ("T2", f"+{int(E.TARGET_PCT * 100)}%")):
+        rec, s = stat([W_GRADES.get(w["id"], {}).get(tgt) for w in base])
+        out += (f'<div class="tile"><span class="k">Baseline: every liquid setup · {tgt} ({lab})</span>'
+                f'<span class="v">{rec}</span><span class="s">{s} · {len(base)} tracked, graded after expiry</span></div>')
+    return out
+
+
 def watch_record() -> str:
     def tally(kind, tgt):
         rs = [W_GRADES.get(w["id"], {}).get(tgt) for w in W_ROWS if w["kind"] == kind]
@@ -480,7 +498,7 @@ def watch_record() -> str:
             rec, pct = tally(kind, tgt)
             tiles_ += (f'<div class="tile"><span class="k">{label} · {tgt} ({lab})</span>'
                        f'<span class="v">{rec}</span><span class="s">win rate {pct}</span></div>')
-    rows = sorted(W_ROWS, key=lambda w: w["priced_at"], reverse=True)
+    rows = sorted([w for w in W_ROWS if w["kind"] != "baseline"], key=lambda w: w["priced_at"], reverse=True)
     trs = "".join(
         f'<tr><td class="mono">{e(w["trade_date"])}</td><td>{e("Pre-market" if w["kind"] == "premarket" else "Gap chase")}</td>'
         f'<td>{e(w["ticker"])}</td><td>{e(w["type"])}</td><td>{float(w["strike"]):g}</td>'
@@ -491,10 +509,13 @@ def watch_record() -> str:
     table = ('<div class="tbl"><table><thead><tr><th>Date</th><th>Kind</th><th>Ticker</th><th>Type</th>'
              '<th>Strike</th><th>Status</th><th>Priced at</th><th>T1</th><th>T2</th><th>Went on to</th></tr></thead>'
              f'<tbody>{trs}</tbody></table></div>') if rows else '<div class="empty">Nothing tracked yet.</div>'
+    tiles_ += baseline_tiles()
     return ('<h2>Watch records — not trade signals</h2><p class="note">Kept apart from the official record. '
             '<b>Pre-market watch</b>: every pre-market card, priced at the confirmation read (whether or not it '
             'was confirmed). <b>Gap-chase blocked</b>: setups rejected only by the gap-chase rule, priced when '
-            'blocked. Same T1/T2/−20% stop rules as real cards. Started 11/2.</p>'
+            'blocked. <b>Baseline</b>: every setup at the confirmation read with a liquid contract, called or not '
+            '(answers whether the rules beat taking everything); graded once after expiry. '
+            'Same T1/T2/−20% stop rules as real cards. Started 11/2.</p>'
             f'<div class="tiles">{tiles_}</div>{table}')
 
 

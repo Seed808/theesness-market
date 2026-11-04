@@ -691,6 +691,9 @@ def main() -> int:
                 E.send_telegram(watch.status_block(late, late=True), html=True)
         watch.fill_missing_prices()
         watch.track_watch(now)
+        if session is not None:
+            watch.record_baseline(today)          # idempotent; needs today's confirmation read
+        watch.grade_baseline(now)                 # only contracts past their expiry-day close
     except Exception as e:  # noqa: BLE001
         print(f"[warn] watch tracking: {type(e).__name__}: {e}", file=sys.stderr)
     try:
