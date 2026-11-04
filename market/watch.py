@@ -146,6 +146,18 @@ def fill_missing_prices() -> int:
         if E.now_hst() - at > timedelta(days=3):
             continue
         prem, src = _price_contract(r, None, at)
+        try:                                   # leave a trace of what the bars looked like
+            d = date.fromisoformat(r["trade_date"])
+            b = R.fetch_contract_bars(r["contract"], d, d)
+            dbg = {"contract": r["contract"], "at": r["priced_at"], "rows": 0 if b is None else len(b),
+                   "first": None if b is None or b.empty else str(b.index[0]),
+                   "last": None if b is None or b.empty else str(b.index[-1]),
+                   "near": [] if b is None or b.empty else
+                   [[str(i), float(x)] for i, x in b["Close"][(b.index >= at - timedelta(minutes=30)) &
+                                                              (b.index <= at + timedelta(minutes=30))].items()][:20]}
+            (R.LEDGER / "tests" / "watch_fill_debug.json").write_text(json.dumps(dbg, indent=1))
+        except Exception as e:  # noqa: BLE001
+            print(f"[warn] fill debug: {e}", file=sys.stderr)
         if prem is not None:
             r.update(_row(r, prem, f"{src} · filled in later"))
             changed += 1
