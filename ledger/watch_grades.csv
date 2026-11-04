@@ -36,3 +36,4 @@ id,target,graded_at,result,exit_premium,pnl_pct,hit_at,method
 2026-11-03_watch-premarket_CRWV_PUT_2026-11-06_51,T1,2026-11-04T04:32:36.569686-10:00,WIN,2.76,40.8,2026-11-04T04:30:00-10:00,TARGET (gapped through) · schwab 1m
 2026-11-03_watch-premarket_GLD_PUT_2026-11-06_356,T2,2026-11-04T04:32:36.569686-10:00,LOSS,0.25,-86.1,2026-11-04T03:57:00-10:00,STOP (gapped through) · schwab 1m
 2026-11-03_watch-gapchase_APLD_CALL_2026-11-06_17.5,T2,2026-11-04T04:42:38.366615-10:00,LOSS,0.6,-25.9,2026-11-04T04:36:00-10:00,STOP (gapped through) · schwab 1m
+2026-11-03_watch-premarket_CRWV_PUT_2026-11-06_51,T2,2026-11-04T05:02:34.634316-10:00,WIN,2.94,50.0,2026-11-04T05:02:00-10:00,TARGET · schwab 1m
