@@ -304,6 +304,29 @@ def price_lines_premarket(c: dict) -> str:
             f'<dt>Entry · target · stop</dt><dd class="eyebrow">set at the confirmation read</dd>')
 
 
+def pre_header(c: dict) -> str:
+    """Pre-market card header showing its LATEST state (3:22 read -> open -> confirmation read)."""
+    w, o = watch_for_pre(c), OPEN_PX.get(c["id"])
+    stock, when = c.get("underlying"), str(c.get("underlying_asof") or "")
+    if o and o.get("underlying"):
+        stock, when = o["underlying"], f'{_t(o["time"])} (open)'
+    if w and w.get("underlying") not in ("", None):
+        stock, when = w["underlying"], f'{_t(w["priced_at"])} (confirmation read)'
+    was = (f' · was {_money(c["underlying"])} at {_t(c["locked_at"])}'
+           if c.get("underlying") not in (None, "") and stock != c.get("underlying") else "")
+    px = (f'<div class="px">Stock {_money(stock)} <span class="eyebrow">as of {e(when)}{e(was)}</span></div>'
+          if stock not in (None, "") else "")
+    if w:
+        icon = {"CONFIRMED": "✓", "NOT CONFIRMED": "✗", "PASSED": "•", "NOT SCANNED": "?"}.get(w["status"], "")
+        st = f'{icon} {w["status"]} at {_t(w["priced_at"])} — {w["reason"]}'
+    elif o:
+        st = f'Re-priced at the open {_t(o["time"])} · confirmation read at {_t(E.session_for(date.fromisoformat(c["trade_date"])).at(E.AMATEUR_HOUR_MIN).isoformat())}'
+    else:
+        st = f'{c["status"]} · called {_t(c["locked_at"])}'
+    return px + f'<div class="status">{e(st)} · called {_t(c["locked_at"])}</div>' if (w or o) else \
+        px + f'<div class="status">{e(st)}</div>'
+
+
 def card_html(c: dict, g: dict | None) -> str:
     res = ""
     if g:
@@ -329,11 +352,12 @@ def card_html(c: dict, g: dict | None) -> str:
             f'<div class="head"><span><span class="tk">{e(c["ticker"])}</span> '
             f'<span class="ty {e(c["type"])}">{e(c["type"])}</span> {badge}</span>'
             f'<span class="conf">{e(str(c["confidence"]))}/10</span></div>'
-            + (f'<div class="px">Stock {_money(c["underlying"])} '
-               f'<span class="eyebrow">as of {e(str(c.get("underlying_asof") or ""))}</span></div>'
-               if c.get("underlying") not in (None, "") else "")
-            + f'<div class="status">{e(c["status"])} · locked {_t(c["locked_at"])}</div>'
-            f'<dl class="lines">'
+            + (pre_header(c) if c["mode"] == "premarket" else
+               (f'<div class="px">Stock {_money(c["underlying"])} '
+                f'<span class="eyebrow">as of {e(str(c.get("underlying_asof") or ""))}</span></div>'
+                if c.get("underlying") not in (None, "") else "")
+               + f'<div class="status">{e(c["status"])} · locked {_t(c["locked_at"])}</div>')
+            + f'<dl class="lines">'
             f'<dt>Bias</dt><dd>{e(c["bias"])}</dd>'
             f'<dt>Expiry</dt><dd>{e(date.fromisoformat(c["expiry"]).strftime("%a %b %-d"))}</dd>'
             f'<dt>Strike</dt><dd>{float(c["strike"]):g}</dd>'

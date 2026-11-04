@@ -116,9 +116,45 @@ def _price_contract(c: dict, raw_t: Optional[dict], at: datetime) -> tuple:
                 b = bars[bars.index <= at]
                 if not b.empty and at - b.index[-1] <= timedelta(minutes=10):
                     return round(float(b["Close"].iloc[-1]), 2), bars.attrs.get("source", "bars")
+                a = bars[(bars.index > at) & (bars.index <= at + timedelta(minutes=5))]
+                if not a.empty:                  # no trade just before: first trade right after
+                    return round(float(a["Open"].iloc[0]), 2), f'{bars.attrs.get("source", "bars")} (next trade {E._short_t(a.index[0])})'
         except Exception as e:  # noqa: BLE001
             print(f"[warn] watch price {c['contract']}: {type(e).__name__}: {e}", file=sys.stderr)
+    # Live quote, only if we're pricing "now" (the read that just ran), never for a past time.
+    if c.get("contract") and E.PROVIDER is not None and abs(E.now_hst() - at) <= timedelta(minutes=10):
+        try:
+            import schwab as S
+            q = S.option_quote(c["contract"])
+            if q and q.get("last"):
+                return round(q["last"], 2), q.get("source", "schwab quote")
+        except Exception as e:  # noqa: BLE001
+            print(f"[warn] watch quote {c['contract']}: {type(e).__name__}: {e}", file=sys.stderr)
+    print(f"[warn] watch: no price for {c.get('contract')} at {at.isoformat()}", file=sys.stderr)
     return None, ""
+
+
+def fill_missing_prices() -> int:
+    """Pre-market watch rows that got no price at the confirmation read are re-tried from the
+    contract's minute bars at that same time (a fill-in of a missing value, never a change)."""
+    rows = load_watch()
+    changed = 0
+    for r in rows:
+        if r.get("premium") not in ("", None) or not r.get("contract"):
+            continue
+        at = datetime.fromisoformat(r["priced_at"])
+        if E.now_hst() - at > timedelta(days=3):
+            continue
+        prem, src = _price_contract(r, None, at)
+        if prem is not None:
+            r.update(_row(r, prem, f"{src} · filled in later"))
+            changed += 1
+    if changed:
+        with WATCH.open("w", newline="") as f:
+            w = csv.DictWriter(f, fieldnames=WATCH_FIELDS, extrasaction="ignore")
+            w.writeheader()
+            w.writerows(rows)
+    return changed
 
 
 def _row(base: dict, premium: Optional[float], src: str) -> dict:

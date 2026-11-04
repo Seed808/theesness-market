@@ -688,6 +688,7 @@ def main() -> int:
             late = [r for r in watch.record_watch(today) if r.get("_new")]   # idempotent catch-up
             if late:
                 E.send_telegram(watch.status_block(late, late=True), html=True)
+        watch.fill_missing_prices()
         watch.track_watch(now)
     except Exception as e:  # noqa: BLE001
         print(f"[warn] watch tracking: {type(e).__name__}: {e}", file=sys.stderr)
