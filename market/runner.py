@@ -8,7 +8,7 @@ right now?" instead of assuming it fired on time:
 
   premarket   open-30 min until the open, once per day. Conditional cards, never graded.
   confirm     open+30 until open+120 min, once per day. Locked cards, graded.
-  rescan      after confirm, every ~10 min until ACTIVE_WINDOW_END_HST (9:00am HST). Posts
+  rescan      after confirm, every ~10 min until the market close (was 9:00am HST until 11/4). Posts
               NEW setups only (a ticker+direction already posted today is skipped). Locked,
               graded.
   after close grade GO cards · save the day's 1-minute bars · re-run the bias backtest.
@@ -48,7 +48,8 @@ GRADES = LEDGER / "grades.csv"
 INPUTS = REPO / "inputs"
 DATA = REPO / "data"
 
-PREMARKET_DUE = (-75, 0)      # minutes relative to the open (2:15–3:30am HST in summer, 3:15–4:30 winter).
+PREMARKET_DUE = (-20, 0)      # minutes relative to the open (4:10–4:30am HST winter, 3:10–3:30 summer).
+                              # Kalani 2026-11-04: an hour before the open is too early. Was (-75, 0) 10/26–11/4.
                               # Was (-30, 0) until 2026-10-26; widened because GitHub's timer skipped the 30-min window.
 CONFIRM_DUE = (30, 120)
 RESCAN_EVERY_MIN = 10
@@ -100,8 +101,7 @@ def day_runs(d: date) -> list:
 
 
 def active_end(session: E.Session) -> datetime:
-    return min(datetime.combine(session.trade_date, E.ACTIVE_WINDOW_END_HST, tzinfo=E.HST),
-               session.close_hst)
+    return session.close_hst
 
 
 def due_modes(session: E.Session, now: datetime) -> list:

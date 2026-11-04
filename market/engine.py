@@ -115,8 +115,10 @@ EARLY_CLOSE_ET = time(13, 0)
 # --- Your windows ---------------------------------------------------------------------------
 AMATEUR_HOUR_MIN = 30                  # first 30 min after open = amateur hour
 INSTITUTIONAL_WINDOW_MIN = (30, 60)    # "4:00–4:30am HST" = open+30 to open+60 (tracks DST)
-ACTIVE_WINDOW_END_HST = time(9, 0)     # literal HST, as stated
-THURSDAY_REASSESS_HST = time(11, 0)    # literal HST, as stated (note: after the close in summer)
+# Active window = until the close (Kalani 2026-11-04: "Rescans should run into market close").
+# Was 9:00am HST literal until 2026-11-04.
+THURSDAY_REASSESS_BEFORE_CLOSE_MIN = 60   # Thursday: reassess open contracts 1 hour before the close
+                                          # (Kalani 2026-11-04; was 11:00am HST literal, which is at/after the close)
 FOMC_DECISION_ET = time(14, 0)         # statement release
 FOMC_CLEAR_MIN = 15                    # "decision clears" = statement + 15 min (adjust)
 
@@ -1112,7 +1114,7 @@ def evaluate(sym: str, right: str, bias: Bias, tech: Technicals, opt: Optional[O
         status = "CONDITIONAL — needs first 5-min candle confirmation"
     elif fomc_blocking:
         status = "WAIT — FOMC"
-    elif now > datetime.combine(session.trade_date, ACTIVE_WINDOW_END_HST, tzinfo=HST):
+    elif now >= session.close_hst:
         status = "PAST ACTIVE WINDOW"
     else:
         status = "GO" if realistic else "WAIT — ask above entry ceiling"
@@ -1361,7 +1363,7 @@ def day_flags(session: Session, rules: dict) -> list:
         flags.append("Friday/pre-holiday rules: 0DTE only, no overnight")
     if rules["thursday_reassess"]:
         flags.append(f"THURSDAY: reassess all open contracts by "
-                     f"{THURSDAY_REASSESS_HST.strftime('%I:%M %p')} HST")
+                     f"{(session.close_hst - timedelta(minutes=THURSDAY_REASSESS_BEFORE_CLOSE_MIN)).strftime('%I:%M %p')} HST (1 hour before the close)")
     flags.append(f"Amateur hour until {session.at(AMATEUR_HOUR_MIN).strftime('%I:%M %p')}; "
                  f"institutional {session.at(INSTITUTIONAL_WINDOW_MIN[0]).strftime('%I:%M')}–"
                  f"{session.at(INSTITUTIONAL_WINDOW_MIN[1]).strftime('%I:%M %p')} HST")
