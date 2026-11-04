@@ -4,9 +4,9 @@
  "expired_notice_at": "2026-10-23T08:58:20.702561-10:00",
  "login_at": "2026-10-30T18:14:13.015468+00:00",
  "expires_at": "2026-11-06T18:14:13.015468+00:00",
- "last_ok": "2026-11-04T18:32:39.712413+00:00",
+ "last_ok": "2026-11-04T19:02:36.584380+00:00",
  "last_error": null,
- "hours_left": 47.4,
+ "hours_left": 47.2,
  "futures_probe": {
   "/ESZ26": {
    "answered": true,
@@ -40,16 +40,16 @@
    ],
    "values": {
     "closePrice": 7596.75,
-    "lastPrice": 7732.0,
-    "netChange": 135.25,
-    "futurePercentChange": 1.7803666,
+    "lastPrice": 7728.75,
+    "netChange": 132.0,
+    "futurePercentChange": 1.73758515,
     "settleTime": 1793816539302,
-    "tradeTime": 1793818355775
+    "tradeTime": 1793818956296
    },
    "check": {
     "netChange_diff": 0.0,
-    "my_pct": 1.7804,
-    "schwab_pct": 1.7803666,
+    "my_pct": 1.7376,
+    "schwab_pct": 1.73758515,
     "pct_diff": 0.0
    },
    "used": true
@@ -92,16 +92,16 @@
    ],
    "values": {
     "closePrice": 28305.75,
-    "lastPrice": 28648.25,
-    "netChange": 342.5,
-    "futurePercentChange": 1.2100015,
+    "lastPrice": 28631.25,
+    "netChange": 325.5,
+    "futurePercentChange": 1.14994303,
     "settleTime": 1793816555901,
-    "tradeTime": 1793818356670
+    "tradeTime": 1793818956704
    },
    "check": {
     "netChange_diff": 0.0,
-    "my_pct": 1.21,
-    "schwab_pct": 1.2100015,
+    "my_pct": 1.1499,
+    "schwab_pct": 1.14994303,
     "pct_diff": 0.0
    },
    "used": true
@@ -144,16 +144,16 @@
    ],
    "values": {
     "closePrice": 51895.0,
-    "lastPrice": 53451.0,
-    "netChange": 1556.0,
-    "futurePercentChange": 2.99836208,
+    "lastPrice": 53446.0,
+    "netChange": 1551.0,
+    "futurePercentChange": 2.98872724,
     "settleTime": 1793816438326,
-    "tradeTime": 1793818355221
+    "tradeTime": 1793818953784
    },
    "check": {
     "netChange_diff": 0.0,
-    "my_pct": 2.9984,
-    "schwab_pct": 2.99836208,
+    "my_pct": 2.9887,
+    "schwab_pct": 2.98872724,
     "pct_diff": 0.0
    },
    "used": true
