@@ -589,7 +589,7 @@ def main() -> int:
             if df is None:
                 out["multi_" + k] = None
                 continue
-            w = df[(df.index >= "2026-11-03 09:50") & (df.index <= "2026-11-04 04:35")]
+            w = df[(df.index >= "2026-11-03 10:55") & (df.index <= "2026-11-04 04:35")]
             out["multi_" + k] = {"source": df.attrs.get("source"), "rows": len(df), "first": str(df.index[0]),
                                  "last": str(df.index[-1]),
                                  "around_gap": [[str(i), float(r["Open"]), float(r["Close"]), float(r["Volume"])]
