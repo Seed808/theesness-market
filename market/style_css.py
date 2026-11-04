@@ -85,6 +85,9 @@ footer{margin-top:44px;padding-top:14px;border-top:1px solid var(--rule);font-si
 
 .card{background:var(--panel);border:1px solid var(--rule);padding:12px 14px;display:flex;flex-direction:column;gap:8px;min-width:0}
 .card.aplus{border-color:var(--edge);box-shadow:inset 6px 0 0 var(--edge)}
+.card.official{border:2px solid var(--ink);box-shadow:inset 6px 0 0 var(--ink)}
+.card.official.aplus{border-color:var(--edge);box-shadow:inset 6px 0 0 var(--edge)}
+.card .offtag{font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.08em;padding:1px 6px;border-radius:3px;background:var(--ink);color:var(--panel);margin-left:6px;vertical-align:4px}
 .card .head{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
 .card .tk{font-family:var(--display);font-weight:700;font-size:26px;letter-spacing:.02em}
 .card .ty{font-family:var(--mono);font-size:13px;font-weight:600}
