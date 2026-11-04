@@ -19,11 +19,13 @@ permissions:
   contents: write
   pages: write
   id-token: write
-concurrency:
-  group: market
-  cancel-in-progress: false
 jobs:
   run:
+    # One data run at a time. The site publish (deploy) has its own line, so a slow GitHub Pages
+    # publish can't hold up the next data run (11/4: one publish sat queued 37 min and blocked all runs).
+    concurrency:
+      group: market
+      cancel-in-progress: false
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
@@ -74,6 +76,9 @@ jobs:
         with: { path: _site }
   deploy:
     needs: run
+    concurrency:
+      group: pages
+      cancel-in-progress: false
     runs-on: ubuntu-latest
     environment: { name: github-pages, url: "${{ steps.d.outputs.page_url }}" }
     steps:
