@@ -1,0 +1,96 @@
+{
+ "trade_date": "2026-11-05",
+ "mode": "rescan",
+ "ran_at": "2026-11-05T05:12:30.954748-10:00",
+ "test": false,
+ "open_hst": "2026-11-05T04:30:00-10:00",
+ "close_hst": "2026-11-05T11:00:00-10:00",
+ "early_close": false,
+ "bias": {
+  "regime": "BEAR",
+  "favored": "P",
+  "clean": true,
+  "notes": [
+   "ES red (-2.16%), NQ red (-4.32%), YM red (-1.13%)",
+   "ES+YM red \u2192 broad bear, puts favored",
+   "VIX 22.32 (+34.38%) \u2192 confirms",
+   "SPY red (-2.16%), QQQ red (-4.34%) \u2192 confirms"
+  ]
+ },
+ "quotes": {
+  "ES": {
+   "last": 7553.75,
+   "prev_close": 7720.5,
+   "chg_pct": -2.1598342076290398,
+   "source": "schwab"
+  },
+  "NQ": {
+   "last": 27332.0,
+   "prev_close": 28566.75,
+   "chg_pct": -4.322332781993051,
+   "source": "schwab"
+  },
+  "YM": {
+   "last": 52901.0,
+   "prev_close": 53503.0,
+   "chg_pct": -1.1251705511840457,
+   "source": "schwab"
+  },
+  "VIX": {
+   "last": 22.32,
+   "prev_close": 16.61,
+   "chg_pct": 34.376881396748956,
+   "source": "schwab"
+  },
+  "SPY": {
+   "last": 750.21,
+   "prev_close": 766.81,
+   "chg_pct": -2.164812665458185,
+   "source": "schwab"
+  },
+  "QQQ": {
+   "last": 661.9,
+   "prev_close": 691.95,
+   "chg_pct": -4.342799335212091,
+   "source": "schwab"
+  }
+ },
+ "flags": [
+  "THURSDAY: reassess all open contracts by 10:00 AM HST (1 hour before the close)",
+  "Amateur hour until 05:00 AM; institutional 05:00\u201305:30 AM HST",
+  "No damaged contracts overnight. No earnings holds overnight."
+ ],
+ "headlines": [],
+ "data_note": "live data: Schwab (Yahoo fallback)",
+ "cards": [
+  {
+   "id": "2026-11-05_rescan_NFLX_PUT_2026-11-06_65",
+   "trade_date": "2026-11-05",
+   "mode": "rescan",
+   "locked_at": "2026-11-05T05:12:30.954748-10:00",
+   "ticker": "NFLX",
+   "type": "PUT",
+   "bias": "BEAR",
+   "expiry": "2026-11-06",
+   "strike": 65.0,
+   "entry_floor": 0.36,
+   "entry_ceiling": 0.43,
+   "premium": 0.36,
+   "target": 0.54,
+   "stop": 0.28,
+   "reasoning": "BEAR, bias clean, trend aligned, institutional window",
+   "confidence": 8,
+   "a_plus": false,
+   "status": "GO",
+   "flags": "hold OK until Fri 11/6 close \u00b7 close before the weekend",
+   "data_source": "schwab",
+   "contract": "NFLX261106P00065000",
+   "underlying": 65.94,
+   "underlying_asof": "5:14 AM HST live",
+   "target1": 0.43
+  }
+ ],
+ "passing": 1,
+ "rejected": 72,
+ "rejections": []
+}
