@@ -123,3 +123,5 @@ id,target,graded_at,result,exit_premium,pnl_pct,hit_at,method
 2026-10-28_watch-gapchase_AMAT_CALL_2026-10-30_410,T2,2026-11-04T14:16:00.090560-10:00,UNGRADABLE,,,,no contract price data
 2026-10-28_watch-gapchase_BA_PUT_2026-10-30_165,T1,2026-11-04T14:16:00.090560-10:00,UNGRADABLE,,,,no contract price data
 2026-10-28_watch-gapchase_BA_PUT_2026-10-30_165,T2,2026-11-04T14:16:00.090560-10:00,UNGRADABLE,,,,no contract price data
+2026-11-04_watch-premarket_COIN_CALL_2026-11-06_143,T1,2026-11-05T04:52:32.754462-10:00,LOSS,3.72,-60.4,2026-11-05T04:45:00-10:00,STOP (gapped through) · schwab 1m
+2026-11-04_watch-premarket_COIN_CALL_2026-11-06_143,T2,2026-11-05T04:52:32.754462-10:00,LOSS,3.72,-60.4,2026-11-05T04:45:00-10:00,STOP (gapped through) · schwab 1m
