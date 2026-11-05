@@ -218,6 +218,38 @@ def record_watch(d: date) -> list:
             new.append(row)
             pre_rows.append({**row, "_new": True})     # _new is not written to the CSV
 
+    # 1b) pre-market cards tracked from THE OPEN too (Kalani 2026-11-04, after COIN 143C ran
+    #     +57% between the 4:32 open price and the 5:10 trade). Price = the open update's price
+    #     when it's a trade from today; otherwise the contract's first minute bar after the bell.
+    #     Entering here breaks the amateur-hour rule — tracked only to measure what that rule costs.
+    if pre:
+        sess = E.session_for(d)
+        op = R.OPEN_DIR / f"{d.isoformat()}.json"
+        opened = json.loads(op.read_text()) if op.exists() else {}
+        at_default = sess.at(R.OPEN_UPDATE_DUE[0] + 1) if sess else None
+        for c in pre["cards"]:
+            wid = f"{d.isoformat()}_watch-preopen_{c['ticker']}_{c['type']}_{c['expiry']}_{float(c['strike']):g}"
+            if wid in have or at_default is None:
+                continue
+            o = (opened.get("cards") or {}).get(c["id"])
+            prem, src, at = None, "", datetime.fromisoformat(opened["ran_at"]) if opened else at_default
+            if o and datetime.fromisoformat(o["time"]).astimezone(E.HST).date() == d:
+                prem, src, at = o["price"], f'open update · {o.get("source", "")}', datetime.fromisoformat(o["time"])
+            elif E.now_hst() >= at:
+                prem, src = _price_contract({**c, "trade_date": d.isoformat()}, None, at)
+            else:
+                continue                              # bell hasn't rung yet
+            if prem is None:
+                continue                              # retried next run (no row written)
+            at = at.astimezone(E.HST)
+            base = {"id": wid, "trade_date": d.isoformat(), "kind": "preopen", "ticker": c["ticker"],
+                    "type": c["type"], "expiry": c["expiry"], "strike": c["strike"],
+                    "contract": c.get("contract", ""), "called_at": c["locked_at"], "priced_at": at.isoformat(),
+                    "underlying": (o or {}).get("underlying") or "", "underlying_asof": E._short_t(at) + " HST",
+                    "stock_move_pct": "", "status": "AT THE OPEN",
+                    "reason": "tracked from the open price — amateur hour, not a rule-approved entry"}
+            new.append(_row(base, prem, src))
+
     # 2) gap-chase-only blocks (confirmation read + re-scans), first per ticker/direction/day
     seen = {(r["ticker"], r["type"]) for r in have.values() if r["kind"] == "gapchase" and r["trade_date"] == d.isoformat()}
     for mode in ("confirm", "rescan"):

@@ -689,6 +689,10 @@ def main() -> int:
             late = [r for r in watch.record_watch(today) if r.get("_new")]   # idempotent catch-up
             if late:
                 E.send_telegram(watch.status_block(late, late=True), html=True)
+        for back in range(1, 8):                  # fill anything missing from the past week (idempotent)
+            dd = today - timedelta(days=back)
+            if run_path(dd, "confirm").exists():
+                watch.record_watch(dd)
         watch.fill_missing_prices()
         watch.track_watch(now)
         if session is not None:

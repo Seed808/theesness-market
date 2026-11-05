@@ -111,9 +111,9 @@ W_GRADES: dict = {}     # watch id -> {"T1": row, "T2": row}
 W_PEAKS: dict = {}      # ledger/watch_peaks.json
 
 
-def watch_for_pre(c: dict) -> dict | None:
+def watch_for_pre(c: dict, kind: str = "premarket") -> dict | None:
     for w in W_ROWS:
-        if (w["kind"] == "premarket" and w["trade_date"] == c["trade_date"] and w["ticker"] == c["ticker"]
+        if (w["kind"] == kind and w["trade_date"] == c["trade_date"] and w["ticker"] == c["ticker"]
                 and w["type"] == c["type"] and w["expiry"] == c["expiry"]
                 and float(w["strike"]) == float(c["strike"])):
             return w
@@ -131,7 +131,8 @@ def _res(g: dict | None, tgt: str) -> str:
 
 def watch_lines(w: dict) -> str:
     """Status + price-at-confirmation + T1/T2 tracking for a watch card (not the official record)."""
-    icon = {"CONFIRMED": "✓", "NOT CONFIRMED": "✗", "PASSED": "•", "NOT SCANNED": "?", "BLOCKED": "✗"}
+    icon = {"CONFIRMED": "✓", "NOT CONFIRMED": "✗", "PASSED": "•", "NOT SCANNED": "?", "BLOCKED": "✗",
+            "AT THE OPEN": "⏱"}
     mv = (f' · stock {float(w["stock_move_pct"]):+.1f}% vs prior close'
           if w.get("stock_move_pct") not in ("", None) else "")
     out = (f'<dt>At {_t(w["priced_at"])}</dt><dd><b>{icon.get(w["status"], "")} {e(w["status"].title())}</b>: '
@@ -365,7 +366,11 @@ def card_html(c: dict, g: dict | None) -> str:
             f'<dt>Bias</dt><dd>{e(c["bias"])}</dd>'
             f'<dt>Expiry</dt><dd>{e(date.fromisoformat(c["expiry"]).strftime("%a %b %-d"))}</dd>'
             f'<dt>Strike</dt><dd>{float(c["strike"]):g}</dd>'
-            + ((price_lines_premarket(c) + (watch_lines(watch_for_pre(c)) if watch_for_pre(c) else ""))
+            + ((price_lines_premarket(c)
+                + (('<dt>From the open</dt><dd class="eyebrow">tracked from the open price (amateur hour)</dd>'
+                    + watch_lines(watch_for_pre(c, "preopen"))) if watch_for_pre(c, "preopen") else "")
+                + (('<dt>From 5:00 read</dt><dd class="eyebrow">tracked from the confirmation read</dd>'
+                    + watch_lines(watch_for_pre(c))) if watch_for_pre(c) else ""))
                if c["mode"] == "premarket" else price_lines(c)) +
             f'{flags}{res}'
             + (tracking_lines(c) if c["mode"] in ("confirm", "rescan") else "") + '</dl>'
@@ -493,14 +498,15 @@ def watch_record() -> str:
         pct = f"{wn / (wn + ln) * 100:.0f}%" if wn + ln else "—"
         return f"{wn}-{ln}", pct
     tiles_ = ""
-    for kind, label in (("premarket", "Pre-market watch"), ("gapchase", "Gap-chase blocked")):
+    for kind, label in (("preopen", "Pre-market from the open"), ("premarket", "Pre-market from 5:00 read"),
+                        ("gapchase", "Gap-chase blocked")):
         for tgt, lab in (("T1", f"+{int(E.TARGET1_PCT * 100)}%"), ("T2", f"+{int(E.TARGET_PCT * 100)}%")):
             rec, pct = tally(kind, tgt)
             tiles_ += (f'<div class="tile"><span class="k">{label} · {tgt} ({lab})</span>'
                        f'<span class="v">{rec}</span><span class="s">win rate {pct}</span></div>')
     rows = sorted([w for w in W_ROWS if w["kind"] != "baseline"], key=lambda w: w["priced_at"], reverse=True)
     trs = "".join(
-        f'<tr><td class="mono">{e(w["trade_date"])}</td><td>{e("Pre-market" if w["kind"] == "premarket" else "Gap chase")}</td>'
+        f'<tr><td class="mono">{e(w["trade_date"])}</td><td>{e({"premarket": "Pre-market (5:00 read)", "preopen": "Pre-market (open)"}.get(w["kind"], "Gap chase"))}</td>'
         f'<td>{e(w["ticker"])}</td><td>{e(w["type"])}</td><td>{float(w["strike"]):g}</td>'
         f'<td>{e(w["status"].title())}</td><td>{_money(w["premium"]) if w.get("premium") not in ("", None) else "—"}</td>'
         f'<td>{_res(W_GRADES.get(w["id"]), "T1")}</td><td>{_res(W_GRADES.get(w["id"]), "T2")}</td>'
@@ -511,8 +517,8 @@ def watch_record() -> str:
              f'<tbody>{trs}</tbody></table></div>') if rows else '<div class="empty">Nothing tracked yet.</div>'
     tiles_ += baseline_tiles()
     return ('<h2>Watch records — not trade signals</h2><p class="note">Kept apart from the official record. '
-            '<b>Pre-market watch</b>: every pre-market card, priced at the confirmation read (whether or not it '
-            'was confirmed). <b>Gap-chase blocked</b>: setups rejected only by the gap-chase rule, priced when '
+            '<b>Pre-market</b>: every pre-market card, tracked twice — from the open price (amateur hour; shows what '
+            'that rule costs or saves) and from the confirmation read (whether or not it was confirmed). <b>Gap-chase blocked</b>: setups rejected only by the gap-chase rule, priced when '
             'blocked. <b>Baseline</b>: every setup at the confirmation read with a liquid contract, called or not '
             '(answers whether the rules beat taking everything); graded once after expiry. '
             'Same T1/T2/−20% stop rules as real cards. Started 11/2.</p>'
