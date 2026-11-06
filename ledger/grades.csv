@@ -90,3 +90,4 @@ id,graded_at,result,exit_premium,pnl_pct,method
 2026-11-06_rescan_MU_PUT_2026-11-06_680,2026-11-06T08:02:37.675202-10:00,LOSS,5.44,-20.0,STOP · schwab 1m
 2026-11-06_rescan_HOOD_PUT_2026-11-06_78,2026-11-06T08:02:37.675202-10:00,LOSS,0.36,-20.0,STOP (gapped through) · schwab 1m
 2026-11-06_rescan_SMH_PUT_2026-11-06_455,2026-11-06T08:02:37.675202-10:00,LOSS,1.6,-38.2,STOP (gapped through) · schwab 1m
+2026-11-06_rescan_GLD_CALL_2026-11-06_374,2026-11-06T09:12:33.139429-10:00,LOSS,0.27,-20.6,STOP · schwab 1m
