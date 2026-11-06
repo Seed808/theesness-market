@@ -1,13 +1,13 @@
 name: market
-# Wakes every 10 minutes from before the open until 9:00am HST, and every 30 minutes after the
+# Backup clock (cron-job.org is the main one): every 10 minutes from before the open until the
 # close (weekdays). GitHub's timer can run late or skip, so runner.py decides what is due.
 # All cron times are UTC. Hawaii = UTC-10 year-round.
-#   12:04–18:54 UTC = 2:04–8:54am HST  (pre-market, confirm, morning re-scans; summer + winter)
+#   12:04–20:54 UTC = 2:04–10:54am HST (pre-market, confirm, re-scans to the close; summer + winter)
 #   21:24, 21:54 UTC = 11:24, 11:54am HST (after-close grading, daily bars, backtest).
 #   Nothing after that until the next weekday morning (Kalani 11/06: no scans after the close).
 on:
   schedule:
-    - cron: "4,14,24,34,44,54 12-18 * * 1-5"
+    - cron: "4,14,24,34,44,54 12-20 * * 1-5"
     - cron: "24,54 21 * * 1-5"
   workflow_dispatch:
     inputs:
