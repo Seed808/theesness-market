@@ -83,7 +83,21 @@ jobs:
       group: pages
       cancel-in-progress: false
     runs-on: ubuntu-latest
-    environment: { name: github-pages, url: "${{ steps.d.outputs.page_url }}" }
+    environment: { name: github-pages, url: "${{ steps.d1.outputs.page_url || steps.d2.outputs.page_url || steps.d.outputs.page_url }}" }
     steps:
+      # GitHub rejects a publish while the previous one is still finishing ("in progress
+      # deployment"). On 11/06 that skipped 4 publishes. Wait and retry instead of giving up.
+      - id: d1
+        continue-on-error: true
+        uses: actions/deploy-pages@v4
+      - if: steps.d1.outcome == 'failure'
+        run: sleep 75
+      - id: d2
+        if: steps.d1.outcome == 'failure'
+        continue-on-error: true
+        uses: actions/deploy-pages@v4
+      - if: steps.d1.outcome == 'failure' && steps.d2.outcome == 'failure'
+        run: sleep 120
       - id: d
+        if: steps.d1.outcome == 'failure' && steps.d2.outcome == 'failure'
         uses: actions/deploy-pages@v4
