@@ -148,7 +148,7 @@ def snapshot(r: E.ScanResult, cards: list, test: bool = False) -> dict:
         "flags": r.flags, "headlines": r.headlines, "data_note": E.data_note(),
         "cards": [public_card(i, d, r.mode, locked_at) for i in cards],
         "passing": len(r.ideas), "rejected": len(r.skipped),
-        "rejections": [] if r.mode == "rescan" else r.skipped[:80],
+        "rejections": r.skipped,          # all of them (was first 80, none on re-scans, until 11/06)
     }
 
 

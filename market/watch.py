@@ -202,8 +202,10 @@ def record_watch(d: date) -> list:
                           + ("" if float(cc["strike"]) == float(c["strike"]) else f" at strike {float(cc['strike']):g}"))
             elif key in rej:
                 status, reason = "NOT CONFIRMED", rej[key]
-            elif raw_t is not None:
+            elif raw_t is not None and conf.get("passing", 0) > len(conf["cards"]):
                 status, reason = "PASSED", f"passed every rule but wasn't in the top {E.MAX_CARDS}"
+            elif raw_t is not None:
+                status, reason = "NOT CONFIRMED", "rejected — reason not recorded"
             else:
                 status, reason = "NOT SCANNED", "no data for this ticker at the confirmation read"
             prem, src = _price_contract({**c, "trade_date": d.isoformat()}, raw_t, at)
