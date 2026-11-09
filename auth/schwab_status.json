@@ -6,7 +6,7 @@
  "expires_at": "2026-11-12T17:54:26.074811+00:00",
  "last_ok": "2026-11-09T16:02:34.775771+00:00",
  "last_error": null,
- "hours_left": 73.9,
+ "hours_left": 73.7,
  "futures_probe": {
   "/ESZ26": {
    "answered": true,
@@ -40,16 +40,16 @@
    ],
    "values": {
     "closePrice": 7402.0,
-    "lastPrice": 7557.75,
-    "netChange": 155.75,
-    "futurePercentChange": 2.10416104,
-    "settleTime": 1794238753642,
-    "tradeTime": 1794240155236
+    "lastPrice": 7549.25,
+    "netChange": 147.25,
+    "futurePercentChange": 1.98932721,
+    "settleTime": 1794240737873,
+    "tradeTime": 1794240754094
    },
    "check": {
     "netChange_diff": 0.0,
-    "my_pct": 2.1042,
-    "schwab_pct": 2.10416104,
+    "my_pct": 1.9893,
+    "schwab_pct": 1.98932721,
     "pct_diff": 0.0
    },
    "used": true
@@ -92,16 +92,16 @@
    ],
    "values": {
     "closePrice": 27085.25,
-    "lastPrice": 27983.0,
-    "netChange": 897.75,
-    "futurePercentChange": 3.31453466,
-    "settleTime": 1794238771008,
-    "tradeTime": 1794240155401
+    "lastPrice": 27914.25,
+    "netChange": 829.0,
+    "futurePercentChange": 3.06070647,
+    "settleTime": 1794240576544,
+    "tradeTime": 1794240735472
    },
    "check": {
     "netChange_diff": 0.0,
-    "my_pct": 3.3145,
-    "schwab_pct": 3.31453466,
+    "my_pct": 3.0607,
+    "schwab_pct": 3.06070647,
     "pct_diff": 0.0
    },
    "used": true
@@ -144,16 +144,16 @@
    ],
    "values": {
     "closePrice": 51385.0,
-    "lastPrice": 52252.0,
-    "netChange": 867.0,
-    "futurePercentChange": 1.68726282,
-    "settleTime": 1794238754451,
-    "tradeTime": 1794240154726
+    "lastPrice": 52283.0,
+    "netChange": 898.0,
+    "futurePercentChange": 1.74759171,
+    "settleTime": 1794240738634,
+    "tradeTime": 1794240751730
    },
    "check": {
     "netChange_diff": 0.0,
-    "my_pct": 1.6873,
-    "schwab_pct": 1.68726282,
+    "my_pct": 1.7476,
+    "schwab_pct": 1.74759171,
     "pct_diff": 0.0
    },
    "used": true
