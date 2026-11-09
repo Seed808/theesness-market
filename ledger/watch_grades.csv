@@ -468,3 +468,4 @@ id,target,graded_at,result,exit_premium,pnl_pct,hit_at,method
 2026-11-09_watch-gapchase_SPY_CALL_2026-11-13_749,T1,2026-11-09T07:12:34.662163-10:00,WIN,8.18,19.9,2026-11-09T07:10:00-10:00,TARGET (gapped through) · schwab 1m
 2026-11-09_watch-premarket_SPX_CALL_2026-11-13_7400,T1,2026-11-09T07:52:32.844333-10:00,WIN,171.46,24.5,2026-11-09T07:50:00-10:00,TARGET (gapped through) · schwab 1m
 2026-11-09_watch-gapchase_PYPL_CALL_2026-11-13_61,T1,2026-11-09T07:52:32.844333-10:00,WIN,0.64,23.1,2026-11-09T07:45:00-10:00,TARGET (gapped through) · schwab 1m
+2026-11-09_watch-gapchase_IWM_CALL_2026-11-13_280,T2,2026-11-09T08:02:36.350620-10:00,WIN,3.71,52.7,2026-11-09T08:01:00-10:00,TARGET (gapped through) · schwab 1m
