@@ -465,3 +465,4 @@ id,target,graded_at,result,exit_premium,pnl_pct,hit_at,method
 2026-11-09_watch-gapchase_HOOD_CALL_2026-11-13_85,T1,2026-11-09T06:42:28.396747-10:00,LOSS,2.36,-20.5,2026-11-09T06:37:00-10:00,STOP (gapped through) · schwab 1m
 2026-11-09_watch-gapchase_HOOD_CALL_2026-11-13_85,T2,2026-11-09T06:42:28.396747-10:00,LOSS,2.36,-20.5,2026-11-09T06:37:00-10:00,STOP (gapped through) · schwab 1m
 2026-11-09_watch-gapchase_IONQ_CALL_2026-11-13_35,T1,2026-11-09T06:52:32.505108-10:00,WIN,1.91,20.1,2026-11-09T06:48:00-10:00,TARGET · schwab 1m
+2026-11-09_watch-gapchase_SPY_CALL_2026-11-13_749,T1,2026-11-09T07:12:34.662163-10:00,WIN,8.18,19.9,2026-11-09T07:10:00-10:00,TARGET (gapped through) · schwab 1m
