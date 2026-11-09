@@ -474,3 +474,4 @@ id,target,graded_at,result,exit_premium,pnl_pct,hit_at,method
 2026-11-09_watch-gapchase_MSFT_CALL_2026-11-13_545,T1,2026-11-09T09:42:32.821429-10:00,WIN,7.5,20.6,2026-11-09T09:38:00-10:00,TARGET (gapped through) · schwab 1m
 2026-11-09_watch-gapchase_PYPL_CALL_2026-11-13_61,T2,2026-11-09T09:42:32.821429-10:00,LOSS,0.4,-23.1,2026-11-09T09:34:00-10:00,STOP (gapped through) · schwab 1m
 2026-11-09_watch-gapchase_META_CALL_2026-11-13_645,T1,2026-11-09T10:22:34.530032-10:00,WIN,13.75,20.1,2026-11-09T10:21:00-10:00,TARGET (gapped through) · schwab 1m
+2026-11-09_watch-gapchase_CVNA_CALL_2026-11-13_76,T1,2026-11-09T10:42:32.411175-10:00,WIN,2.03,29.3,2026-11-09T10:40:00-10:00,TARGET (gapped through) · schwab 1m
