@@ -459,12 +459,14 @@ def option_quote(contract: str) -> Optional[dict]:
 
 # ------------------------------------------------------------------ market movers (2026-11-10)
 MOVER_INDEXES = {"$SPX": "S&P 500", "$COMPX": "Nasdaq", "$DJI": "Dow"}
-MOVER_SORTS = {"PERCENT_CHANGE_UP": "top gainer", "PERCENT_CHANGE_DOWN": "top loser", "VOLUME": "most active"}
+# 11/10 live check: the "sort" parameter made no difference (same 10 names for gainers, losers and
+# volume), and the names match the day's most-active stocks, so only the volume list is used.
+MOVER_SORTS = {"VOLUME": "most active"}
 
 
 def movers() -> dict:
-    """Schwab's top-10 movers per index and sort. -> {SYMBOL: {"tags": [...], "pct": float|None}}.
-    Each tag like "top gainer · S&P 500". Empty dict on any failure."""
+    """Schwab's top-10 movers per index (most active). -> {SYMBOL: {"tags": [...], "pct": float|None}}.
+    Each tag like "most active · S&P 500". Empty dict on any failure."""
     out: dict = {}
     for idx, idx_name in MOVER_INDEXES.items():
         for sort, label in MOVER_SORTS.items():

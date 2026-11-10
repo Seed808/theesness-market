@@ -869,8 +869,12 @@ def catalyst(sym: str, tech: "Technicals", today: date, now: datetime) -> str:
         return "ETF (company catalyst n/a)"
     if tech.earnings is not None and 0 <= (today - tech.earnings).days <= 1:
         return f"earnings {tech.earnings.strftime('%a %-m/%-d')}"
-    if tech.mover:
-        return f"Schwab mover: {tech.mover}"
+    move = (None if not (tech.last and tech.prev_close) else (tech.last - tech.prev_close) / tech.prev_close * 100)
+    own = None if move is None else move - (tech.market_move or 0.0)
+    if tech.mover and own is not None and abs(own) >= CATALYST_MOVE_PCT:
+        # Mega-caps are "most active" every day, so the list only counts when the stock is also
+        # moving on its own (>= 1.5% beyond QQQ).
+        return f"Schwab most active + moving {move:+.1f}% vs market {tech.market_move or 0:+.1f}%"
     for h in load_headlines():
         if f" {sym} " in f" {h.upper()} " or h.upper().startswith(sym + ":"):
             return f"headline: {h[:80]}"
