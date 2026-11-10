@@ -207,7 +207,7 @@ def tiles(st: dict) -> str:
     def avg(t):
         return "—" if t["avg"] is None else f'{t["avg"]:+.1f}%'
     a, p, t1 = st["all"], st["aplus"], st["t1"]
-    unk = f' · {t1["unknown"]} unknown' if t1.get("unknown") else ""
+    unk = ""                                   # unknowns aren't shown (Kalani 11/10: "scrub it")
     return ('<div class="tiles">'
             f'<a class="tile" href="record.html"><span class="k">Target 1 record (+{int(E.TARGET1_PCT * 100)}%)</span>'
             f'<span class="v">{rec(t1)}</span><span class="s">win rate {pct(t1)}{unk}</span></a>'
@@ -275,7 +275,7 @@ def tracking_lines(c: dict) -> str:
     """T1 result, how high the contract went, and the break-even side number."""
     pk, g1 = PEAKS.get(c["id"], {}), T1.get(c["id"])
     out = ""
-    if g1:
+    if g1 and g1["result"] != "UNKNOWN":
         r = g1["result"]
         lab = {"WIN": f"✓ hit +{int(E.TARGET1_PCT * 100)}%", "LOSS": "✗ stopped before T1",
                "UNKNOWN": "unknown", "UNGRADABLE": "no price data"}.get(r, r)
@@ -548,6 +548,8 @@ def watch_record() -> str:
 
 def t1_cell(cid: str) -> str:
     g = T1.get(cid)
+    if g and g["result"] == "UNKNOWN":
+        return ""
     if not g:
         return '<span class="eyebrow">open</span>'
     r = g["result"]
@@ -616,7 +618,7 @@ def build(out: Path, now: datetime) -> None:
                 'open), otherwise the last price at the close of the expiry day. "Went on to" is the highest '
                 'contract price while the trade was alive — the best possible exit, not a fill. Cards from '
                 '10/20–10/23 have no minute prices left: T1 counts as hit when the Banger was hit, or when a saved run '
-                'quote showed it; otherwise it is "unknown" and not counted as a loss. Mon–Thu cards may be held overnight up to the last '
+                'quote showed it before the stop; the rest are left out of the T1 record. Mon–Thu cards may be held overnight up to the last '
                 'trading day before a weekend or holiday; Friday cards are 0DTE. Pre-market cards are conditional and never graded.</p>' + table)
     rec_body += watch_record()
     (out / "record.html").write_text(page("Record — TheEsness Market", rec_body, 0, "record"))
