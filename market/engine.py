@@ -144,6 +144,8 @@ NEAR_LEVEL_PCT = 0.30      # within 0.30% of a key level counts as "at the level
 RVOL_CONFIRM = 1.5         # last 5-min volume vs prior 20-bar avg
 HIGH_IVP = 60              # earnings 0DTE: IV percentile >= this = stand down (PLACEHOLDER)
 A_PLUS_MIN_CONFIDENCE = 8
+CAP_NO_VOLUME = 7            # 2026-11-10: confidence can't exceed this without volume confirmation
+CAP_NO_CATALYST = 8          # 2026-11-10: ... or this without a catalyst (news, recent earnings, RVOL >= 2)
 MAX_CARDS = 5
 STRIKE_SEARCH_PCT = 2.0    # how far OTM to look for a liquid strike (% of stock price)
 EXPIRY_PICK = "latest"     # Mon–Thu: "latest" = this week's Friday expiry; "nearest" = soonest after today
@@ -343,6 +345,13 @@ class Technicals:
     first5_close: Optional[float] = None
     rvol: Optional[float] = None
     source: str = "yahoo"
+    # daily context (added 2026-11-10): closes before today
+    sma20: Optional[float] = None
+    sma50: Optional[float] = None
+    daily_trend: str = ""                  # "up" / "down" / "mixed" / "" (not enough data)
+    daily_note: str = ""                   # e.g. "below 20d & 50d, 20d falling, -6.2% over 20d"
+    earnings: Optional[date] = None        # next/most recent earnings date known
+    news: list = field(default_factory=list)   # [[iso time, title], ...] fresh headlines
 
 
 @dataclass
@@ -634,6 +643,7 @@ def fetch_technicals(symbol: str, session: Session, mode: str) -> Technicals:
         tech.prev_low = float(prior["Low"].iloc[-1])
         tech.prev_close = float(prior["Close"].iloc[-1])
         tech.avg_volume = float(prior["Volume"].tail(50).mean())
+        daily_context(tech, prior["Close"])
 
         m1 = m1_pre if m1_pre is not None else \
             t.history(period="5d", interval="1m", prepost=True, auto_adjust=False)
@@ -748,6 +758,76 @@ def fetch_earnings_date(symbol: str) -> Optional[date]:
     except Exception as e:  # noqa: BLE001
         print(f"[warn] earnings {symbol}: {type(e).__name__}: {e}", file=sys.stderr)
     return None
+
+
+# ---- catalyst (added 2026-11-10) ------------------------------------------------------------
+# A catalyst is any of: a headline about the ticker in the last NEWS_FRESH_HOURS (Yahoo Finance
+# news via yfinance, cached), earnings today or the session before, a pasted headline in
+# inputs/headlines.txt naming the ticker, or RVOL >= CATALYST_RVOL. No catalyst -> confidence
+# capped at CAP_NO_CATALYST. Yahoo's feed can include general-market stories that mention the
+# ticker, so a headline is shown on the card for you to judge.
+NEWS_FRESH_HOURS = 24
+NEWS_CACHE_MIN = 60
+CATALYST_RVOL = 2.0
+NEWS_DIR = BASE_DIR / "data" / "news"
+_NEWS_MEM: dict = {}
+
+
+def _news_items(raw) -> list:
+    out = []
+    for it in raw or []:
+        c = it.get("content", it) if isinstance(it, dict) else {}
+        title = c.get("title") or ""
+        ts = c.get("pubDate") or c.get("displayTime") or c.get("providerPublishTime")
+        try:
+            if isinstance(ts, (int, float)):
+                when = datetime.fromtimestamp(ts, tz=HST)
+            else:
+                when = datetime.fromisoformat(str(ts).replace("Z", "+00:00")).astimezone(HST)
+        except (TypeError, ValueError):
+            continue
+        if title:
+            out.append([when.isoformat(), title[:160]])
+    return sorted(out, reverse=True)[:5]
+
+
+def fetch_news(sym: str, now: datetime) -> list:
+    """Fresh headlines for sym, cached in data/news/<date>.json (refreshed hourly). Never raises."""
+    if sym in INDICATOR_ONLY:
+        return []
+    day = now.date().isoformat()
+    path = NEWS_DIR / f"{day}.json"
+    try:
+        if day not in _NEWS_MEM:
+            _NEWS_MEM[day] = json.loads(path.read_text()) if path.exists() else {}
+        cache = _NEWS_MEM[day]
+        hit = cache.get(sym)
+        if hit and now - datetime.fromisoformat(hit["fetched"]) < timedelta(minutes=NEWS_CACHE_MIN):
+            items = hit["items"]
+        else:
+            items = _news_items(_yf().Ticker(YF_SYMBOL_MAP.get(sym, sym)).news)
+            cache[sym] = {"fetched": now.isoformat(), "items": items}
+            NEWS_DIR.mkdir(parents=True, exist_ok=True)
+            path.write_text(json.dumps(cache, indent=0))
+    except Exception as e:  # noqa: BLE001
+        print(f"[warn] news {sym}: {type(e).__name__}: {e}", file=sys.stderr)
+        return []
+    cut = now - timedelta(hours=NEWS_FRESH_HOURS)
+    return [x for x in items if cut <= datetime.fromisoformat(x[0]) <= now]
+
+
+def catalyst(sym: str, tech: "Technicals", today: date, now: datetime) -> str:
+    """Short description of the catalyst, or "" if none found."""
+    if tech.earnings is not None and 0 <= (today - tech.earnings).days <= 1:
+        return f"earnings {tech.earnings.strftime('%a %-m/%-d')}"
+    for h in load_headlines():
+        if f" {sym} " in f" {h.upper()} " or h.upper().startswith(sym + ":"):
+            return f"headline: {h[:80]}"
+    if tech.news:
+        return f"news: {tech.news[0][1][:80]}"
+    if tech.rvol is not None and tech.rvol >= CATALYST_RVOL:
+        return f"unusual volume (RVOL {tech.rvol:.1f})"
+    return ""
 
 
 def load_headlines() -> list:
@@ -969,6 +1049,39 @@ def trend_aligned(tech: Technicals, right: str, mode: str) -> bool:
     return all(tech.trend.get(f) == want for f in frames)
 
 
+# ---- daily trend (added 2026-11-10, Kalani: "the stock has been sliding since its earnings report")
+DAILY_SLOPE_DAYS = 5          # 20-day average now vs 5 trading days ago
+
+
+def daily_context(tech: "Technicals", closes) -> None:
+    """Bigger-picture trend from daily closes BEFORE today.
+    up   = last close above the 20-day and 50-day averages, and the 20-day is rising
+    down = last close below both, and the 20-day is falling
+    else mixed. Needs 50+ days; with 20–49 days uses the 20-day only."""
+    c = [float(x) for x in closes if x == x]
+    if len(c) < 20 + DAILY_SLOPE_DAYS:
+        return
+    sma20 = sum(c[-20:]) / 20
+    sma20_prev = sum(c[-20 - DAILY_SLOPE_DAYS:-DAILY_SLOPE_DAYS]) / 20
+    sma50 = sum(c[-50:]) / 50 if len(c) >= 50 else None
+    last, rising = c[-1], sma20 > sma20_prev
+    above20, below20 = last > sma20, last < sma20
+    above50 = sma50 is None or last > sma50
+    below50 = sma50 is None or last < sma50
+    if above20 and above50 and rising:
+        tr = "up"
+    elif below20 and below50 and not rising:
+        tr = "down"
+    else:
+        tr = "mixed"
+    chg20 = (last - c[-21]) / c[-21] * 100
+    parts = [("above" if above20 else "below") + " 20d",
+             ("" if sma50 is None else ("above" if last > sma50 else "below") + " 50d"),
+             "20d " + ("rising" if rising else "falling"), f"{chg20:+.1f}% over 20d"]
+    tech.sma20, tech.sma50, tech.daily_trend = round(sma20, 4), (None if sma50 is None else round(sma50, 4)), tr
+    tech.daily_note = ", ".join(x for x in parts if x)
+
+
 def first5_confirms(tech: Technicals, right: str) -> Optional[bool]:
     """First 5-min candle color must match the trade (red for puts, green for calls)."""
     if tech.first5_open is None or tech.first5_close is None:
@@ -1082,9 +1195,26 @@ def evaluate(sym: str, right: str, bias: Bias, tech: Technicals, opt: Optional[O
         score += 1; reasons.append("strong liquidity")
     if expiry_flag:
         score -= 1
+    # Daily trend (2026-11-10): with the trade +1, against it -2.
+    want = "up" if right == "C" else "down"
+    if tech.daily_trend == want:
+        score += 1; reasons.append(f"daily {want}trend")
+    elif tech.daily_trend in ("up", "down"):
+        score -= 2; reasons.append(f"against daily {tech.daily_trend}trend ({tech.daily_note})")
     if bias.regime == "ROTATION" and right == "P":
         reasons.append("exit before midday fade")
-    score = max(1, min(10, score))
+    # Caps (2026-11-10): no volume confirmation -> max 7; no catalyst found -> max 8.
+    cap = 10
+    if not vol_ok:
+        cap = min(cap, CAP_NO_VOLUME)
+        reasons.append("no volume confirmation" + (f" (RVOL {tech.rvol:.1f})" if tech.rvol is not None else ""))
+    cat = catalyst(sym, tech, session.trade_date, now)
+    if cat:
+        reasons.append(f"catalyst: {cat}")
+    else:
+        cap = min(cap, CAP_NO_CATALYST)
+        reasons.append("no catalyst found")
+    score = max(1, min(cap, score))
 
     flags = [f for f in (expiry_flag, earn_result[1]) if f]
     if rules["fomc_day"]:
@@ -1422,9 +1552,11 @@ def scan(mode: str, session: Session, ov: Overrides, now: Optional[datetime] = N
                                         else fetch_earnings_date(sym))
         earn_res = ("", "") if sym in NO_EARNINGS else \
             earnings_check(sym, earn, expiry, session.trade_date, ov.ivp.get(sym))
+        tech.earnings = earn
+        tech.news = fetch_news(sym, now)
         near = sorted((o for o in chain if o.expiry == expiry),
                       key=lambda o: abs(o.strike - tech.last))[:RAW_CHAIN_ROWS]
-        raw[sym] = {"tech": {k: (v.isoformat() if isinstance(v, datetime) else v)
+        raw[sym] = {"tech": {k: (v.isoformat() if isinstance(v, (datetime, date)) else v)
                              for k, v in asdict(tech).items()},
                     "expiry": expiry.isoformat(), "earnings": str(earn) if earn else None,
                     "chain": [[o.right, o.strike, o.bid, o.ask, o.oi, o.iv, o.source]
@@ -1644,6 +1776,25 @@ def selftest() -> int:
     ACCOUNT_SIZE, RISK_PCT = 10_000.0, 0.10
     check("sizing 10% of 10k, (1.32-0.72)*100 risk -> 16", max_contracts(1.32, 0.72) == "16")
     RISK_PCT, ACCOUNT_SIZE = saved
+
+    # daily trend + caps (2026-11-10)
+    tt = Technicals()
+    daily_context(tt, [100 - i * 0.5 for i in range(60)])          # steady slide
+    check("sliding stock -> daily downtrend", tt.daily_trend == "down")
+    tt2 = Technicals()
+    daily_context(tt2, [100 + i * 0.5 for i in range(60)])
+    check("rising stock -> daily uptrend", tt2.daily_trend == "up")
+    tt3 = Technicals()
+    daily_context(tt3, [100.0] * 10)
+    check("too few days -> no daily trend", tt3.daily_trend == "")
+    _saved_hl = globals()["load_headlines"]
+    globals()["load_headlines"] = lambda: []
+    nt = Technicals(rvol=0.4)
+    check("no news, no earnings, low RVOL -> no catalyst", catalyst("NFLX", nt, date(2026, 11, 9), now_hst()) == "")
+    nt.news = [["2026-11-09T04:00:00-10:00", "Netflix shares jump on ad deal"]]
+    check("fresh headline -> catalyst", catalyst("NFLX", nt, date(2026, 11, 9), now_hst()).startswith("news:"))
+    check("RVOL 2.5 -> catalyst", catalyst("X", Technicals(rvol=2.5), date(2026, 11, 9), now_hst()).startswith("unusual"))
+    globals()["load_headlines"] = _saved_hl
 
     # two targets + stop rounding (2026-10-27)
     check("T1 = +20%: 0.78 -> 0.94", target1_price(0.78) == 0.94)
