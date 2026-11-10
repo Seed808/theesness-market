@@ -769,6 +769,7 @@ def fetch_earnings_date(symbol: str) -> Optional[date]:
 NEWS_FRESH_HOURS = 24
 NEWS_CACHE_MIN = 60
 CATALYST_RVOL = 2.0
+CATALYST_MOVE_PCT = 1.0       # a headline counts only if the stock is also up/down this much (or RVOL >= 1.5)
 NEWS_DIR = BASE_DIR / "data" / "news"
 _NEWS_MEM: dict = {}
 
@@ -816,15 +817,55 @@ def fetch_news(sym: str, now: datetime) -> list:
     return [x for x in items if cut <= datetime.fromisoformat(x[0]) <= now]
 
 
+# Words a headline must contain to count as news ABOUT that company (Yahoo's per-ticker feed also
+# carries general market stories). Ticker symbol always counts too.
+COMPANY_NAMES = {
+    "AAPL": ["apple"], "AMAT": ["applied materials"], "AMD": ["amd", "advanced micro"],
+    "AMZN": ["amazon", "aws"], "ANET": ["arista"], "APLD": ["applied digital"], "APP": ["applovin"],
+    "ASTS": ["ast spacemobile"], "AVGO": ["broadcom"], "BA": ["boeing"], "BABA": ["alibaba"],
+    "BAC": ["bank of america", "bofa"], "BILI": ["bilibili"], "CIFR": ["cipher"], "COIN": ["coinbase"],
+    "CORZ": ["core scientific"], "CRM": ["salesforce"], "CRWV": ["coreweave"], "CVNA": ["carvana"],
+    "DKNG": ["draftkings"], "F": ["ford"], "GOOGL": ["google", "alphabet", "waymo", "youtube"],
+    "HOOD": ["robinhood"], "INTC": ["intel"], "IONQ": ["ionq"], "IREN": ["iren"],
+    "JPM": ["jpmorgan", "jp morgan", "jamie dimon"], "LRCX": ["lam research"], "MARA": ["mara holdings", "marathon digital"],
+    "META": ["meta", "facebook", "instagram", "whatsapp", "zuckerberg"], "MSFT": ["microsoft", "azure"],
+    "MSTR": ["strategy", "microstrategy", "saylor"], "MU": ["micron"], "NFLX": ["netflix"], "NIO": ["nio"],
+    "NVDA": ["nvidia"], "OKLO": ["oklo"], "ORCL": ["oracle"], "PLTR": ["palantir"], "PLUG": ["plug power"],
+    "PYPL": ["paypal"], "QCOM": ["qualcomm"], "RBLX": ["roblox"], "RDDT": ["reddit"], "RGTI": ["rigetti"],
+    "RKLB": ["rocket lab"], "SHOP": ["shopify"], "SMCI": ["super micro", "supermicro"], "SMR": ["nuscale"],
+    "SNAP": ["snap", "snapchat"], "SOFI": ["sofi"], "TSLA": ["tesla", "musk"], "TSM": ["tsmc", "taiwan semi"],
+    "UBER": ["uber"], "WMT": ["walmart"], "XOM": ["exxon"],
+}
+
+
+def headline_about(sym: str, title: str) -> bool:
+    import re
+    low = f" {title.lower()} "
+    if re.search(rf"(^|[^a-z0-9]){re.escape(sym.lower())}([^a-z0-9]|$)", low) and len(sym) >= 3:
+        return True
+    return any(re.search(rf"(^|[^a-z]){re.escape(n)}([^a-z]|$)", low) for n in COMPANY_NAMES.get(sym, []))
+
+
 def catalyst(sym: str, tech: "Technicals", today: date, now: datetime) -> str:
-    """Short description of the catalyst, or "" if none found."""
+    """Short description of the catalyst, or "" if none found. Index/sector ETFs (NO_EARNINGS)
+    have no company news, so they're never capped for it."""
+    if sym in NO_EARNINGS:
+        return "ETF (company catalyst n/a)"
     if tech.earnings is not None and 0 <= (today - tech.earnings).days <= 1:
         return f"earnings {tech.earnings.strftime('%a %-m/%-d')}"
     for h in load_headlines():
         if f" {sym} " in f" {h.upper()} " or h.upper().startswith(sym + ":"):
             return f"headline: {h[:80]}"
-    if tech.news:
-        return f"news: {tech.news[0][1][:80]}"
+    # Yahoo has an article about almost every big name every day ("3 key takeaways", "is it
+    # undervalued?"), so a headline alone isn't a catalyst: the stock must also be reacting —
+    # moved >= CATALYST_MOVE_PCT vs the prior close, or RVOL >= RVOL_CONFIRM.
+    about = [x for x in tech.news if headline_about(sym, x[1])]
+    move = (None if not (tech.last and tech.prev_close) else (tech.last - tech.prev_close) / tech.prev_close * 100)
+    reacting = (move is not None and abs(move) >= CATALYST_MOVE_PCT) or \
+        (tech.rvol is not None and tech.rvol >= RVOL_CONFIRM)
+    if about and reacting:
+        mv = f"{move:+.1f}%" if move is not None else ""
+        return f"news + stock moving {mv}: {about[0][1][:80]}"
     if tech.rvol is not None and tech.rvol >= CATALYST_RVOL:
         return f"unusual volume (RVOL {tech.rvol:.1f})"
     return ""
@@ -1791,9 +1832,15 @@ def selftest() -> int:
     globals()["load_headlines"] = lambda: []
     nt = Technicals(rvol=0.4)
     check("no news, no earnings, low RVOL -> no catalyst", catalyst("NFLX", nt, date(2026, 11, 9), now_hst()) == "")
+    nt.news = [["2026-11-09T04:00:00-10:00", "Cathie Wood Is Buying Nvidia Again"]]
+    check("unrelated headline -> no catalyst", catalyst("NFLX", nt, date(2026, 11, 9), now_hst()) == "")
     nt.news = [["2026-11-09T04:00:00-10:00", "Netflix shares jump on ad deal"]]
-    check("fresh headline -> catalyst", catalyst("NFLX", nt, date(2026, 11, 9), now_hst()).startswith("news:"))
-    check("RVOL 2.5 -> catalyst", catalyst("X", Technicals(rvol=2.5), date(2026, 11, 9), now_hst()).startswith("unusual"))
+    nt.last, nt.prev_close = 63.8, 63.6
+    check("headline but stock not reacting -> no catalyst", catalyst("NFLX", nt, date(2026, 11, 9), now_hst()) == "")
+    nt.last = 66.0
+    check("headline + stock moving -> catalyst", catalyst("NFLX", nt, date(2026, 11, 9), now_hst()).startswith("news +"))
+    check("RVOL 2.5 -> catalyst", catalyst("XYZ", Technicals(rvol=2.5), date(2026, 11, 9), now_hst()).startswith("unusual"))
+    check("SPY: ETF, not capped for news", catalyst("SPY", Technicals(rvol=0.3), date(2026, 11, 9), now_hst()).startswith("ETF"))
     globals()["load_headlines"] = _saved_hl
 
     # two targets + stop rounding (2026-10-27)
