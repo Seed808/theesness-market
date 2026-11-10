@@ -849,7 +849,7 @@ SEC_ITEMS = {"1.01": "material agreement", "1.02": "agreement terminated", "1.03
              "2.03": "new debt", "2.05": "restructuring/layoffs", "2.06": "impairment",
              "3.01": "delisting notice", "3.02": "unregistered share sale", "4.02": "financials can't be relied on",
              "5.01": "change in control", "5.02": "executive/director change", "7.01": "Reg FD disclosure",
-             "8.01": "other material event"}
+             "8.01": "other material event", "9.01": "exhibits"}
 _SEC_MEM: dict = {}
 
 
@@ -1001,8 +1001,11 @@ def catalyst(sym: str, tech: "Technicals", today: date, now: datetime) -> str:
     # Yahoo has an article about almost every big name every day ("3 key takeaways", "is it
     # undervalued?"), so a headline alone isn't a catalyst: the stock must also be reacting —
     # moved >= CATALYST_MOVE_PCT vs the prior close, or RVOL >= RVOL_CONFIRM.
+    # SEC filings are filed BY the company, so they're always about it. Finnhub's "related" tag
+    # turned out to be loose (11/10: NVDA's feed had "This Industrial Stock Could Make You Rich"),
+    # so Finnhub and Yahoo headlines must still name the company.
     about = [x for x in tech.news if is_event(x[1]) and
-             (len(x) > 2 and (x[2] == "sec" or str(x[2]).startswith("finnhub")) or headline_about(sym, x[1]))]
+             ((len(x) > 2 and x[2] == "sec") or headline_about(sym, x[1]))]
     move = (None if not (tech.last and tech.prev_close) else (tech.last - tech.prev_close) / tech.prev_close * 100)
     own = None if move is None else move - (tech.market_move or 0.0)      # move beyond the market's
     reacting = (own is not None and abs(own) >= CATALYST_MOVE_PCT) or \
