@@ -45,6 +45,8 @@ jobs:
           RISK_FIXED_DOLLARS: ${{ secrets.RISK_FIXED_DOLLARS }}
           SCHWAB_APP_KEY: ${{ secrets.SCHWAB_APP_KEY }}
           SCHWAB_APP_SECRET: ${{ secrets.SCHWAB_APP_SECRET }}
+          FINNHUB_API_KEY: ${{ secrets.FINNHUB_API_KEY }}
+          SEC_CONTACT_EMAIL: ${{ secrets.SEC_CONTACT_EMAIL }}
         run: |
           git pull --rebase --autostash -q || true
           T="${{ github.event.inputs.test }}"

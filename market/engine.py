@@ -777,7 +777,8 @@ CATALYST_MOVE_PCT = 1.5       # ...and the stock moves this much MORE than the m
 EVENT_WORDS = r"earnings|results|revenue|guidance|outlook|forecast|beat|miss|upgrad|downgrad|price target|target cut|" \
     r"target rais|initiat|deal|acquir|acquisition|merger|buyout|stake|partner|contract|order|launch|approv|fda|" \
     r"probe|investigat|lawsuit|sued|settle|recall|fine|ban|tariff|sanction|buyback|dividend|split|offering|ipo|" \
-    r"layoff|ceo|resign|hire|spy|hack|outage|delay|halt|record|surge|soar|plunge|sink|jump|tumble|crash|rall"
+    r"layoff|ceo|resign|hire|spy|hack|outage|delay|halt|record|surge|soar|plunge|sink|jump|tumble|crash|rall|" \
+    r"8-k filed: (results|material|acquisition|restructuring|impairment|delisting|bankruptcy|change in control|executive|financials|other material)"
 FLUFF_WORDS = r"takeaways|undervalued|overvalued|better buy|to buy|should you|is it time|trending stock|" \
     r"what is driving|facts to know|here's why|here’s why|could .* be|bargain or trap|momentum stocks|is still down"
 NEWS_DIR = BASE_DIR / "data" / "news"
@@ -802,29 +803,148 @@ def _news_items(raw) -> list:
     return sorted(out, reverse=True)[:5]
 
 
+FINNHUB_API_KEY = os.environ.get("FINNHUB_API_KEY", "").strip()
+SEC_CONTACT_EMAIL = os.environ.get("SEC_CONTACT_EMAIL", "").strip()
+_FINNHUB_LAST = [0.0]
+FINNHUB_MIN_GAP = 1.1          # seconds between calls (free plan: ~60 calls/minute)
+
+
+def _finnhub_news(sym: str, now: datetime) -> Optional[list]:
+    """Finnhub company-news (2026-11-10). Only articles whose `related` tickers include sym.
+    -> [[iso time HST, title, source], ...] newest first, or None if unavailable."""
+    if not FINNHUB_API_KEY:
+        return None
+    import requests
+    import time as _t
+    wait = FINNHUB_MIN_GAP - (_t.time() - _FINNHUB_LAST[0])
+    if wait > 0:
+        _t.sleep(wait)
+    _FINNHUB_LAST[0] = _t.time()
+    d0 = (now - timedelta(days=2)).date().isoformat()
+    r = requests.get("https://finnhub.io/api/v1/company-news",
+                     params={"symbol": sym, "from": d0, "to": now.date().isoformat(), "token": FINNHUB_API_KEY},
+                     timeout=15)
+    if r.status_code != 200:
+        print(f"[warn] finnhub {sym}: HTTP {r.status_code}", file=sys.stderr)
+        return None
+    out = []
+    for a in r.json() or []:
+        rel = {x.strip().upper() for x in str(a.get("related", "")).split(",") if x.strip()}
+        if rel and sym.upper() not in rel:
+            continue
+        try:
+            when = datetime.fromtimestamp(int(a["datetime"]), tz=HST)
+        except (KeyError, TypeError, ValueError):
+            continue
+        if a.get("headline"):
+            out.append([when.isoformat(), str(a["headline"])[:160], f'finnhub/{a.get("source", "")}'])
+    return sorted(out, reverse=True)[:8]
+
+
+# ---- SEC 8-K filings (2026-11-10): official company announcements, free, no account. ----------
+SEC_FEED = "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&type=8-K&company=&dateb=&owner=include&count=100&output=atom"
+SEC_TICKERS = "https://www.sec.gov/files/company_tickers.json"
+SEC_ITEMS = {"1.01": "material agreement", "1.02": "agreement terminated", "1.03": "bankruptcy",
+             "2.01": "acquisition/disposition completed", "2.02": "results of operations (earnings)",
+             "2.03": "new debt", "2.05": "restructuring/layoffs", "2.06": "impairment",
+             "3.01": "delisting notice", "3.02": "unregistered share sale", "4.02": "financials can't be relied on",
+             "5.01": "change in control", "5.02": "executive/director change", "7.01": "Reg FD disclosure",
+             "8.01": "other material event"}
+_SEC_MEM: dict = {}
+
+
+def _sec_headers() -> dict:
+    return {"User-Agent": f"TheEsness Market personal research {SEC_CONTACT_EMAIL}",
+            "Accept-Encoding": "gzip, deflate"}
+
+
+def sec_filings(now: datetime) -> dict:
+    """{TICKER: [[iso time HST, "8-K: item text", "sec"], ...]} for 8-Ks in the current feed.
+    Fetched once per run (1 request) + ticker map once a week. {} if SEC_CONTACT_EMAIL isn't set."""
+    if not SEC_CONTACT_EMAIL:
+        return {}
+    if "feed" in _SEC_MEM:
+        return _SEC_MEM["feed"]
+    import re
+    import requests
+    out: dict = {}
+    try:
+        mp = BASE_DIR / "data" / "sec_tickers.json"
+        cik2t = {}
+        if mp.exists() and (now.timestamp() - mp.stat().st_mtime) < 7 * 86400:
+            cik2t = json.loads(mp.read_text())
+        else:
+            j = requests.get(SEC_TICKERS, headers=_sec_headers(), timeout=20).json()
+            cik2t = {str(int(v["cik_str"])): v["ticker"].upper() for v in j.values()}
+            mp.parent.mkdir(parents=True, exist_ok=True)
+            mp.write_text(json.dumps(cik2t))
+        x = requests.get(SEC_FEED, headers=_sec_headers(), timeout=20).text
+        for e in re.findall(r"<entry>(.*?)</entry>", x, re.S):
+            m = re.search(r"\((\d{10})\)", e)
+            upd = re.search(r"<updated>([^<]+)</updated>", e)
+            if not m or not upd:
+                continue
+            tk = cik2t.get(str(int(m.group(1))))
+            if not tk:
+                continue
+            items = re.findall(r"Item (\d\.\d\d)", e)
+            desc = "; ".join(SEC_ITEMS.get(i, f"item {i}") for i in dict.fromkeys(items)) or "items not listed"
+            when = datetime.fromisoformat(upd.group(1)).astimezone(HST)
+            out.setdefault(tk, []).append([when.isoformat(), f"8-K filed: {desc}", "sec"])
+    except Exception as e:  # noqa: BLE001
+        print(f"[warn] sec 8-K feed: {type(e).__name__}: {e}", file=sys.stderr)
+    # The live feed only holds the latest 100 filings, so keep today's hits in data/news/<day>_sec.json
+    try:
+        sp = NEWS_DIR / f"{now.date().isoformat()}_sec.json"
+        kept = json.loads(sp.read_text()) if sp.exists() else {}
+        for tk, rows in out.items():
+            have = {tuple(r) for r in kept.get(tk, [])}
+            kept[tk] = sorted([list(r) for r in have | {tuple(r) for r in rows}], reverse=True)
+        if out:
+            NEWS_DIR.mkdir(parents=True, exist_ok=True)
+            sp.write_text(json.dumps(kept, indent=0))
+        out = kept
+    except Exception as e:  # noqa: BLE001
+        print(f"[warn] sec cache: {type(e).__name__}: {e}", file=sys.stderr)
+    _SEC_MEM["feed"] = out
+    return out
+
+
 def fetch_news(sym: str, now: datetime) -> list:
-    """Fresh headlines for sym, cached in data/news/<date>.json (refreshed hourly). Never raises."""
+    """Fresh headlines for sym: Finnhub (ticker-tagged) when FINNHUB_API_KEY is set, else Yahoo;
+    plus SEC 8-K filings. Cached in data/news/<date>.json (refreshed hourly). Never raises."""
     if sym in INDICATOR_ONLY:
         return []
     day = now.date().isoformat()
     path = NEWS_DIR / f"{day}.json"
+    items = []
     try:
         if day not in _NEWS_MEM:
             _NEWS_MEM[day] = json.loads(path.read_text()) if path.exists() else {}
         cache = _NEWS_MEM[day]
         hit = cache.get(sym)
-        if hit and now - datetime.fromisoformat(hit["fetched"]) < timedelta(minutes=NEWS_CACHE_MIN):
+        want_src = "finnhub" if FINNHUB_API_KEY else "yahoo"
+        if hit and hit.get("src", "yahoo") == want_src and \
+                now - datetime.fromisoformat(hit["fetched"]) < timedelta(minutes=NEWS_CACHE_MIN):
             items = hit["items"]
         else:
-            items = _news_items(_yf().Ticker(YF_SYMBOL_MAP.get(sym, sym)).news)
-            cache[sym] = {"fetched": now.isoformat(), "items": items}
+            got = None
+            try:
+                got = _finnhub_news(sym, now)
+            except Exception as e:  # noqa: BLE001
+                print(f"[warn] finnhub {sym}: {type(e).__name__}: {e}", file=sys.stderr)
+            src = "finnhub"
+            if got is None:
+                got, src = _news_items(_yf().Ticker(YF_SYMBOL_MAP.get(sym, sym)).news), "yahoo"
+            items = got
+            cache[sym] = {"fetched": now.isoformat(), "src": src, "items": items}
             NEWS_DIR.mkdir(parents=True, exist_ok=True)
             path.write_text(json.dumps(cache, indent=0))
     except Exception as e:  # noqa: BLE001
         print(f"[warn] news {sym}: {type(e).__name__}: {e}", file=sys.stderr)
-        return []
+    items = list(items) + sec_filings(now).get(sym.upper(), [])
     cut = now - timedelta(hours=NEWS_FRESH_HOURS)
-    return [x for x in items if cut <= datetime.fromisoformat(x[0]) <= now]
+    return sorted([x for x in items if cut <= datetime.fromisoformat(x[0]) <= now], reverse=True)
 
 
 # Words a headline must contain to count as news ABOUT that company (Yahoo's per-ticker feed also
@@ -881,7 +1001,8 @@ def catalyst(sym: str, tech: "Technicals", today: date, now: datetime) -> str:
     # Yahoo has an article about almost every big name every day ("3 key takeaways", "is it
     # undervalued?"), so a headline alone isn't a catalyst: the stock must also be reacting —
     # moved >= CATALYST_MOVE_PCT vs the prior close, or RVOL >= RVOL_CONFIRM.
-    about = [x for x in tech.news if headline_about(sym, x[1]) and is_event(x[1])]
+    about = [x for x in tech.news if is_event(x[1]) and
+             (len(x) > 2 and (x[2] == "sec" or str(x[2]).startswith("finnhub")) or headline_about(sym, x[1]))]
     move = (None if not (tech.last and tech.prev_close) else (tech.last - tech.prev_close) / tech.prev_close * 100)
     own = None if move is None else move - (tech.market_move or 0.0)      # move beyond the market's
     reacting = (own is not None and abs(own) >= CATALYST_MOVE_PCT) or \
