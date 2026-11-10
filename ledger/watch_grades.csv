@@ -521,3 +521,5 @@ id,target,graded_at,result,exit_premium,pnl_pct,hit_at,method
 2026-11-10_watch-gapchase_UBER_PUT_2026-11-13_70,T1,2026-11-10T06:12:31.668536-10:00,WIN,1.2,23.7,2026-11-10T06:11:00-10:00,TARGET (gapped through) · schwab 1m
 2026-11-10_watch-gapchase_TLT_PUT_2026-11-13_80.5,T1,2026-11-10T06:22:33.460268-10:00,WIN,0.25,19.0,2026-11-10T06:22:00-10:00,TARGET (gapped through) · schwab 1m
 2026-11-10_watch-gapchase_GLD_PUT_2026-11-13_370,T1,2026-11-10T06:22:33.460268-10:00,WIN,3.7,21.3,2026-11-10T06:22:00-10:00,TARGET (gapped through) · schwab 1m
+2026-11-10_watch-premarket_UBER_PUT_2026-11-13_70,T2,2026-11-10T06:42:34.285025-10:00,WIN,1.42,51.1,2026-11-10T06:42:00-10:00,TARGET (gapped through) · schwab 1m
+2026-11-10_watch-gapchase_TLT_PUT_2026-11-13_80.5,T2,2026-11-10T06:42:34.285025-10:00,WIN,0.32,52.4,2026-11-10T06:42:00-10:00,TARGET (gapped through) · schwab 1m
