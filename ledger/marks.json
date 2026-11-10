@@ -1,22 +1,35 @@
 {
  "2026-11-10_rescan_AAPL_PUT_2026-11-13_345": {
-  "last": 2.56,
-  "last_time": "2026-11-10T15:55:40.723000+00:00",
-  "high": 2.74,
-  "low": 2.55,
+  "last": 2.52,
+  "last_time": "2026-11-10T16:05:38.562000+00:00",
+  "high": 2.75,
+  "low": 2.44,
   "source": "schwab quote (mark)",
-  "underlying": 347.58,
-  "pnl_pct": -4.8,
-  "as_of": "2026-11-10T05:52:34.431684-10:00"
+  "underlying": 347.6,
+  "pnl_pct": -6.3,
+  "as_of": "2026-11-10T06:02:31.760538-10:00"
  },
  "2026-11-10_rescan_BAC_PUT_2026-11-13_50": {
   "last": 0.34,
-  "last_time": "2026-11-10T15:55:41.813000+00:00",
+  "last_time": "2026-11-10T16:05:37.586000+00:00",
   "high": 0.37,
-  "low": 0.32,
+  "low": 0.31,
   "source": "schwab quote (mark)",
-  "underlying": 50.57,
+  "underlying": 50.575,
   "pnl_pct": -5.6,
-  "as_of": "2026-11-10T05:52:34.431684-10:00"
+  "as_of": "2026-11-10T06:02:31.760538-10:00"
+ },
+ "2026-11-10_rescan_JPM_PUT_2026-11-13_340": {
+  "high": null,
+  "low": null,
+  "last": 2.79,
+  "last_time": "2026-11-10T16:05:40.672000+00:00",
+  "source": "schwab quote (mark)",
+  "underlying": 341.855,
+  "pnl_pct": -2.1,
+  "as_of": "2026-11-10T06:02:31.760538-10:00"
+ },
+ "_errors": {
+  "2026-11-10_rescan_JPM_PUT_2026-11-13_340": "bars returned but none after lock (28 rows)"
  }
 }
