@@ -19,7 +19,7 @@
  "last_reading": {
   "regime": "CHOP",
   "clean": false,
-  "why": "SPY +0.05% from VWAP, 15m flat; QQQ -0.20% from VWAP, 15m flat",
-  "at": "2026-11-10T10:02:35.236018-10:00"
+  "why": "SPY +0.10% from VWAP, 15m flat; QQQ -0.05% from VWAP, 15m flat",
+  "at": "2026-11-10T10:12:35.743989-10:00"
  }
 }
