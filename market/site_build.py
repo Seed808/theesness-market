@@ -226,6 +226,25 @@ def bias_panel(s: dict) -> str:
     notes = "".join(f"<li>{e(n)}</li>" for n in b["notes"])
     flags = "".join(f"<li>{e(f)}</li>" for f in s["flags"])
     hl = "".join(f"<li>{e(h)}</li>" for h in s.get("headlines") or [])
+    hist = []
+    if s["mode"] in ("confirm", "rescan"):
+        try:
+            import biaswatch
+            hist = biaswatch.load(date.fromisoformat(s["trade_date"])).get("history", [])
+        except Exception:  # noqa: BLE001
+            hist = []
+    if len(hist) > 1:                         # the day's bias changed: newest big, earlier ones small
+        cur = hist[-1]
+        older = "".join(f'<div class="eyebrow">was {e(h["regime"])}'
+                        f'{"" if h["regime"] == "CHOP" else (" (clean)" if h["clean"] else " (not clean)")}'
+                        f' · {_t(h["at"])}</div>' for h in reversed(hist[:-1]))
+        return (f'<div class="bias"><div class="eyebrow">Bias · now</div>'
+                f'<div class="reg">{e(cur["regime"])}</div>'
+                f'<div>since {_t(cur["at"])} · {e(cur["why"])}</div>{older}'
+                f'<div class="eyebrow" style="margin-top:6px">Intraday changes are display only this week.</div>'
+                f'<ul>{notes}</ul><div class="eyebrow" style="margin-top:10px">Flags</div><ul>{flags}</ul>'
+                + (f'<div class="eyebrow" style="margin-top:10px">Headlines</div><ul>{hl}</ul>' if hl else "")
+                + '</div>')
     return (f'<div class="bias"><div class="eyebrow">Bias · {e(s["mode"])} read at {_t(s["ran_at"])}'
             f'</div><div class="reg">{e(b["regime"])}</div><div>{e(fav)} · {e(clean)}</div>'
             f'<ul>{notes}</ul><div class="eyebrow" style="margin-top:10px">Flags</div><ul>{flags}</ul>'

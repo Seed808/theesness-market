@@ -672,6 +672,13 @@ def main() -> int:
             except Exception as e:  # noqa: BLE001
                 print(f"[warn] watch: {type(e).__name__}: {e}", file=sys.stderr)
             announce(snap, r, now, pre_block)
+            try:                                  # intraday bias tracker (display + alert only)
+                import biaswatch
+                bmsg = biaswatch.update(r, mode, now)
+                if bmsg:
+                    E.send_telegram(bmsg, html=True)
+            except Exception as e:  # noqa: BLE001
+                print(f"[warn] biaswatch: {type(e).__name__}: {e}", file=sys.stderr)
     else:
         print("Market closed today.")
 
