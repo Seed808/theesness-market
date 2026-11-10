@@ -353,6 +353,7 @@ class Technicals:
     earnings: Optional[date] = None        # next/most recent earnings date known
     news: list = field(default_factory=list)   # [[iso time, title], ...] fresh headlines
     market_move: Optional[float] = None    # QQQ % vs prior close at read time (for "moving on its own")
+    mover: str = ""                        # Schwab Market Movers tag(s), e.g. "top loser · Nasdaq"
 
 
 @dataclass
@@ -482,6 +483,7 @@ class Idea:
     underlying: Optional[float] = None    # stock price when the card was made
     underlying_asof: str = ""             # time of that price (HST) or "ToS"
     target1: float = 0.0                  # Target 1 (+20%); Target 2 is `target`
+    mover: str = ""                       # Schwab Market Movers tag(s) at the time of the card ("MM")
 
     def price_tag(self) -> str:
         if self.underlying is None:
@@ -867,6 +869,8 @@ def catalyst(sym: str, tech: "Technicals", today: date, now: datetime) -> str:
         return "ETF (company catalyst n/a)"
     if tech.earnings is not None and 0 <= (today - tech.earnings).days <= 1:
         return f"earnings {tech.earnings.strftime('%a %-m/%-d')}"
+    if tech.mover:
+        return f"Schwab mover: {tech.mover}"
     for h in load_headlines():
         if f" {sym} " in f" {h.upper()} " or h.upper().startswith(sym + ":"):
             return f"headline: {h[:80]}"
@@ -1311,7 +1315,7 @@ def evaluate(sym: str, right: str, bias: Bias, tech: Technicals, opt: Optional[O
                 opt.contract or occ_symbol(sym, opt), round(tech.last, 2),
                 (tech.last_time.strftime("%I:%M %p HST").lstrip("0")
                  + (" live" if tech.source == "schwab" else "")) if tech.last_time else "ToS",
-                target1)
+                target1, tech.mover)
     return idea, []
 
 
@@ -1405,6 +1409,8 @@ def tg_card(i: "Idea") -> str:
     head = f"<b>{_h(i.ticker)} {_h(i.type)} {i.strike:g}</b> · exp {exp} · <b>{i.confidence}/10</b>"
     if i.a_plus:
         head += " · <b>A+</b>"
+    if i.mover:
+        head += " · <b>MM</b>"
     reasons = ", ".join(x for x in i.reasoning.split(", ") if x != i.bias)
     lines = [
         head,
@@ -1574,6 +1580,14 @@ def scan(mode: str, session: Session, ov: Overrides, now: Optional[datetime] = N
     q["QQQ"] = apply_quote_override(fetch_quote("QQQ"), ov, "QQQ")
     bias = compute_bias(q["ES"], q["NQ"], q["YM"], q["VIX"], q["SPY"], q["QQQ"])
 
+    # --- Schwab Market Movers (2026-11-10): top-10 gainers / losers / most active per index ---
+    mm = {}
+    if PROVIDER is not None and hasattr(PROVIDER, "movers"):
+        try:
+            mm = PROVIDER.movers() or {}
+        except Exception as e:  # noqa: BLE001
+            print(f"[warn] movers: {type(e).__name__}: {e}", file=sys.stderr)
+
     # --- Scan ---
     ideas, skipped, raw = [], [], {}
     for sym in load_watchlist():
@@ -1611,6 +1625,9 @@ def scan(mode: str, session: Session, ov: Overrides, now: Optional[datetime] = N
         tech.earnings = earn
         tech.news = fetch_news(sym, now)
         tech.market_move = q["QQQ"].chg_pct if q["QQQ"].chg_pct is not None else q["SPY"].chg_pct
+        if sym in mm:
+            pct = mm[sym].get("pct")
+            tech.mover = " / ".join(mm[sym]["tags"]) + (f" ({pct:+.1f}%)" if pct is not None else "")
         near = sorted((o for o in chain if o.expiry == expiry),
                       key=lambda o: abs(o.strike - tech.last))[:RAW_CHAIN_ROWS]
         raw[sym] = {"tech": {k: (v.isoformat() if isinstance(v, (datetime, date)) else v)

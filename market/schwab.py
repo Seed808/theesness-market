@@ -457,6 +457,49 @@ def option_quote(contract: str) -> Optional[dict]:
 
 # ------------------------------------------------------------------ provider for the engine
 
+# ------------------------------------------------------------------ market movers (2026-11-10)
+MOVER_INDEXES = {"$SPX": "S&P 500", "$COMPX": "Nasdaq", "$DJI": "Dow"}
+MOVER_SORTS = {"PERCENT_CHANGE_UP": "top gainer", "PERCENT_CHANGE_DOWN": "top loser", "VOLUME": "most active"}
+
+
+def movers() -> dict:
+    """Schwab's top-10 movers per index and sort. -> {SYMBOL: {"tags": [...], "pct": float|None}}.
+    Each tag like "top gainer · S&P 500". Empty dict on any failure."""
+    out: dict = {}
+    for idx, idx_name in MOVER_INDEXES.items():
+        for sort, label in MOVER_SORTS.items():
+            try:
+                j = get(f"/marketdata/v1/movers/{idx}", {"sort": sort})
+            except Exception:  # noqa: BLE001
+                j = None
+            rows = []
+            if isinstance(j, dict):
+                for v in j.values():
+                    if isinstance(v, list):
+                        rows = v
+                        break
+            elif isinstance(j, list):
+                rows = j
+            for r in rows[:10]:
+                if not isinstance(r, dict) or not r.get("symbol"):
+                    continue
+                s = str(r["symbol"]).upper()
+                pct = r.get("netPercentChange", r.get("percentChange"))
+                try:
+                    pct = float(pct) if pct is not None else None
+                    if pct is not None and abs(pct) <= 1.5 and sort != "VOLUME":
+                        pct = pct * 100           # some responses give a fraction
+                except (TypeError, ValueError):
+                    pct = None
+                e = out.setdefault(s, {"tags": [], "pct": pct})
+                tag = f"{label} · {idx_name}"
+                if tag not in e["tags"]:
+                    e["tags"].append(tag)
+                if e["pct"] is None:
+                    e["pct"] = pct
+    return out
+
+
 class Provider:
     """Plugged into engine.PROVIDER when Schwab is connected. Each method: data or None."""
 
@@ -476,6 +519,9 @@ class Provider:
 
     def chain(self, name, start, end):
         return chain(name, start, end)
+
+    def movers(self):
+        return movers()
 
 
 def provider_if_connected() -> Optional[Provider]:

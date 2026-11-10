@@ -353,6 +353,8 @@ def card_html(c: dict, g: dict | None) -> str:
     official = c["mode"] in ("confirm", "rescan") and c["status"] == "GO"
     cls = "card" + (" official" if official else "") + (" aplus" if aplus else "")
     tag = '<span class="offtag">OFFICIAL</span>' if official else ""
+    if c.get("mover"):
+        tag += f'<span class="offtag mm" title="Schwab Market Movers: {e(c["mover"])}">MM</span>'
     return (f'<div class="{cls}">'
             f'<div class="head"><span><span class="tk">{e(c["ticker"])}</span>{tag} '
             f'<span class="ty {e(c["type"])}">{e(c["type"])}</span> {badge}</span>'
