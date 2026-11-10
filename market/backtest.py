@@ -105,7 +105,8 @@ def run(out: Path, now: datetime) -> dict:
                "premarket_bar": pm_bar}
         for name in ("SPY", "QQQ"):
             row[name] = outcome(data[name][1], d, open_et, b.favored)[0] if b.favored else "—"
-        days.append(row)
+        if b.regime != "UNKNOWN":         # days with missing futures data are dropped (Kalani 11/10)
+            days.append(row)
 
     def tally(rows, key):
         r = [x[key] for x in rows]

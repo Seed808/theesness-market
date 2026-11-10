@@ -190,7 +190,6 @@ def stats(rows: list) -> dict:
                 "avg": (sum(pn) / len(pn)) if pn else None}
     t1 = [T1[r["id"]] for r in rows if r["id"] in T1]
     t1_tally = tally(t1)
-    t1_tally["unknown"] = sum(x["result"] == "UNKNOWN" for x in t1)
     return {"all": tally(rows), "aplus": tally([r for r in rows if r["a_plus"] in (True, "True")]),
             "t1": t1_tally}
 
@@ -207,7 +206,7 @@ def tiles(st: dict) -> str:
     def avg(t):
         return "—" if t["avg"] is None else f'{t["avg"]:+.1f}%'
     a, p, t1 = st["all"], st["aplus"], st["t1"]
-    unk = ""                                   # unknowns aren't shown (Kalani 11/10: "scrub it")
+    unk = ""
     return ('<div class="tiles">'
             f'<a class="tile" href="record.html"><span class="k">Target 1 record (+{int(E.TARGET1_PCT * 100)}%)</span>'
             f'<span class="v">{rec(t1)}</span><span class="s">win rate {pct(t1)}{unk}</span></a>'
@@ -275,10 +274,10 @@ def tracking_lines(c: dict) -> str:
     """T1 result, how high the contract went, and the break-even side number."""
     pk, g1 = PEAKS.get(c["id"], {}), T1.get(c["id"])
     out = ""
-    if g1 and g1["result"] != "UNKNOWN":
+    if g1:
         r = g1["result"]
         lab = {"WIN": f"✓ hit +{int(E.TARGET1_PCT * 100)}%", "LOSS": "✗ stopped before T1",
-               "UNKNOWN": "unknown", "UNGRADABLE": "no price data"}.get(r, r)
+               "UNGRADABLE": "no price data"}.get(r, r)
         when = f' {_t(g1["hit_at"])}' if g1.get("hit_at") and r == "WIN" else ""
         out += (f'<dt>Target 1</dt><dd><span class="res-{e(r)}">{e(lab)}</span>{e(when)} '
                 f'<span class="eyebrow">{e(g1["method"])}</span></dd>')
@@ -548,8 +547,6 @@ def watch_record() -> str:
 
 def t1_cell(cid: str) -> str:
     g = T1.get(cid)
-    if g and g["result"] == "UNKNOWN":
-        return ""
     if not g:
         return '<span class="eyebrow">open</span>'
     r = g["result"]

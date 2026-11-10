@@ -15,7 +15,7 @@ Earlier cards whose contracts Schwab no longer returns prices for (10/20-10/23):
   T2 WIN -> T1 WIN (it had to pass +20% on the way to +50%).
   Otherwise the option quotes saved in data/raw/ at each run (~every 35 min) are checked: a tight
   quote at or above T1, earlier than any saved quote at or below the stop -> T1 WIN; if none ->
-  T1 UNKNOWN (it may have touched +20% between runs). UNKNOWN is never counted as a loss.
+  no T1 result at all — those cards are left out of the T1 record (Kalani 11/10).
 """
 from __future__ import annotations
 
@@ -156,7 +156,7 @@ def track(now: datetime, fetch=None) -> list:
         locked = datetime.fromisoformat(c["locked_at"])
         if now < locked:
             continue
-        if cid in t1_done and peaks.get(cid, {}).get("final"):
+        if peaks.get(cid, {}).get("final") and (cid in t1_done or peaks[cid].get("no_prices")):
             continue
         d, exp = date.fromisoformat(c["trade_date"]), date.fromisoformat(c["expiry"])
         s_exp = E.session_for(exp) or E.session_for(d)
@@ -184,13 +184,13 @@ def track(now: datetime, fetch=None) -> list:
                     row = ("UNGRADABLE", None, "", "no contract price data")
                 else:
                     s = snapshot_t1(c)
-                    row = (s[0], s[1], s[2].isoformat(), s[3]) if s else \
-                        ("UNKNOWN", None, "", "no minute prices; saved run quotes don't show it")
-                res, px, at, how = row
-                new_rows.append({"id": cid, "graded_at": now.isoformat(), "result": res,
-                                 "exit_premium": "" if px is None else round(px, 2),
-                                 "pnl_pct": "" if px is None else _pct(px, entry),
-                                 "hit_at": at, "method": how})
+                    row = (s[0], s[1], s[2].isoformat(), s[3]) if s else None
+                if row:                       # no evidence either way -> no T1 row at all (11/10)
+                    res, px, at, how = row
+                    new_rows.append({"id": cid, "graded_at": now.isoformat(), "result": res,
+                                     "exit_premium": "" if px is None else round(px, 2),
+                                     "pnl_pct": "" if px is None else _pct(px, entry),
+                                     "hit_at": at, "method": how})
                 peaks[cid] = {"final": True, "no_prices": True, "as_of": now.isoformat()}
             continue
 
