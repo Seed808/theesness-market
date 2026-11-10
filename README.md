@@ -23,7 +23,7 @@ trading day before the market next closes (normally Friday), so they can be held
 never over a weekend or holiday. Friday and pre-holiday days: 0DTE only. Cards are graded at
 their target or stop as soon as either is hit, otherwise at the expiry day's close.
 
-**Targets / stop.** Target 1 = signal premium +20%, Target 2 = +50%. Stop = −20%, rounded down to
+**Targets / stop.** Target 1 = signal premium +20%, Target 2 ("Banger" on the site and Telegram) = +50%. Stop = −20%, rounded down to
 the cent so it's never tighter than −20% (from 2026-10-27; it was −35% for cards locked before
 2026-10-22; locked cards keep the stop they were posted with). The stop stays at −20% after T1.
 Each card is scored twice — T1 record (`ledger/grades_t1.csv`) and T2 record (`ledger/grades.csv`,

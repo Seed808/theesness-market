@@ -1560,7 +1560,7 @@ def tg_card(i: "Idea") -> str:
         t1 = i.target1 or target1_price(i.premium)
         lines += [
         f"Entry ${i.entry_floor:.2f}–${i.entry_ceiling:.2f} · Premium ${i.premium:.2f} · Max {_h(i.max_contracts)}",
-        lv("T1", t1, "t1") + " · " + lv("T2", i.target, "t2"),
+        lv("T1", t1, "t1") + " · " + lv("Banger", i.target, "t2"),
         lv("Stop", i.stop, "stop"),
         ]
     lines += [

@@ -147,7 +147,7 @@ def watch_lines(w: dict) -> str:
     out += (f'<dt>Option then</dt><dd>{_money(w["premium"])} <span class="eyebrow">{_t(w["priced_at"])} · '
             f'{e(w.get("price_source", ""))} · tracked from here</span></dd>'
             f'<dt>Target 1</dt><dd>{_money(w["target1"])}{stock("t1")} · {_res(g, "T1")}</dd>'
-            f'<dt>Target 2</dt><dd>{_money(w["target"])}{stock("t2")} · {_res(g, "T2")}</dd>'
+            f'<dt>Banger</dt><dd>{_money(w["target"])}{stock("t2")} · {_res(g, "T2")}</dd>'
             f'<dt>Stop</dt><dd>{_money(w["stop"])}{stock("stop")}</dd>')
     if pk.get("last") is not None and not (g and "T2" in g):
         out += (f'<dt>Last</dt><dd>{_money(pk["last"])} ({pk["last_pct"]:+.1f}%) '
@@ -211,12 +211,12 @@ def tiles(st: dict) -> str:
     return ('<div class="tiles">'
             f'<a class="tile" href="record.html"><span class="k">Target 1 record (+{int(E.TARGET1_PCT * 100)}%)</span>'
             f'<span class="v">{rec(t1)}</span><span class="s">win rate {pct(t1)}{unk}</span></a>'
-            f'<a class="tile" href="record.html"><span class="k">Target 2 record (+{int(E.TARGET_PCT * 100)}%)</span>'
+            f'<a class="tile" href="record.html"><span class="k">Bangers record (+{int(E.TARGET_PCT * 100)}%)</span>'
             f'<span class="v">{rec(a)}</span><span class="s">win rate {pct(a)}</span></a>'
             f'<a class="tile" href="record.html"><span class="k">A+ record</span>'
             f'<span class="v">{rec(p)}</span><span class="s">win rate {pct(p)}</span></a>'
             f'<div class="tile"><span class="k">Avg premium P&amp;L</span>'
-            f'<span class="v">{avg(a)}</span><span class="s">per graded card (T2 trade)</span></div></div>')
+            f'<span class="v">{avg(a)}</span><span class="s">per graded card (Banger trade)</span></div></div>')
 
 
 def bias_panel(s: dict) -> str:
@@ -265,7 +265,7 @@ def price_lines(c: dict) -> str:
             f'<dt>Premium</dt><dd>{_money(c["premium"])}</dd>'
             f'<dt>Max contracts</dt><dd class="eyebrow">Telegram only</dd>'
             f'<dt>Target 1</dt><dd>{_money(t1_of(c))}{stock("t1")}{hit("t1_at")}</dd>'
-            f'<dt>Target 2</dt><dd>{_money(c["target"])}{stock("t2")}{hit("t2_at")}</dd>'
+            f'<dt>Banger</dt><dd>{_money(c["target"])}{stock("t2")}{hit("t2_at")}</dd>'
             f'<dt>Stop</dt><dd>{_money(c["stop"])}{stock("stop")}</dd>'
             + ('<dd class="eyebrow" style="grid-column:1/-1">stock ≈ = estimate if reached the day the '
                'card was locked; later in the week the stock has to move further</dd>' if st else ""))
@@ -352,7 +352,7 @@ def card_html(c: dict, g: dict | None) -> str:
     res = ""
     if g:
         pnl = f' ({float(g["pnl_pct"]):+.1f}%)' if g.get("pnl_pct") not in ("", None) else ""
-        res = (f'<dt>Result (T2)</dt><dd><span class="res-{e(g["result"])}">{e(g["result"])}</span>'
+        res = (f'<dt>Result (Banger)</dt><dd><span class="res-{e(g["result"])}">{e(g["result"])}</span>'
                f'{pnl} <span class="eyebrow">{e(g["method"])}</span></dd>')
     elif c["mode"] in ("confirm", "rescan") and c["status"] == "GO":
         exp_day = date.fromisoformat(c["expiry"]).strftime("%a %-m/%-d")
@@ -365,7 +365,7 @@ def card_html(c: dict, g: dict | None) -> str:
             px = (f' last {_money(m["last"])} ({m["pnl_pct"]:+.1f}%) '
                   f'<span class="eyebrow">{when}{rng}</span>')
         res = (f'<dt>Status</dt><dd><span class="res-INPLAY">IN PLAY</span>{px}</dd>'
-               f'<dt>Ends</dt><dd class="eyebrow">at Target 2, stop, or {exp_day} close</dd>')
+               f'<dt>Ends</dt><dd class="eyebrow">at the Banger, stop, or {exp_day} close</dd>')
     aplus = c["a_plus"] in (True, "True")
     badge = '<span class="badge gap2">A+</span>' if aplus else ""
     flags = f'<dt>Flags</dt><dd>{e(c["flags"])}</dd>' if c.get("flags") else ""
@@ -448,7 +448,7 @@ def gapchase_section(d: str) -> str:
                   f'<dl class="lines"><dt>Expiry</dt><dd>{e(date.fromisoformat(w["expiry"]).strftime("%a %b %-d"))}</dd>'
                   f'<dt>Strike</dt><dd>{float(w["strike"]):g}</dd>{watch_lines(w)}</dl></div>')
     return ('<h2>Blocked by gap chase only — tracked for comparison</h2><p class="note">Setups that passed '
-            'every rule except gap chase, priced when they were blocked and tracked to T1/T2/stop. Not trade '
+            'every rule except gap chase, priced when they were blocked and tracked to T1/Banger/stop. Not trade '
             'signals and not in the official record — they show whether the gap-chase rule saves or costs '
             f'money.</p><div class="board">{cards}</div>')
 
@@ -505,7 +505,7 @@ def baseline_tiles() -> str:
     out = ""
     for tgt, lab in (("T1", f"+{int(E.TARGET1_PCT * 100)}%"), ("T2", f"+{int(E.TARGET_PCT * 100)}%")):
         rec, s = stat([W_GRADES.get(w["id"], {}).get(tgt) for w in base])
-        out += (f'<div class="tile"><span class="k">Baseline: every liquid setup · {tgt} ({lab})</span>'
+        out += (f'<div class="tile"><span class="k">Baseline: every liquid setup · {"Banger" if tgt == "T2" else tgt} ({lab})</span>'
                 f'<span class="v">{rec}</span><span class="s">{s} · {len(base)} tracked, graded after expiry</span></div>')
     return out
 
@@ -523,7 +523,7 @@ def watch_record() -> str:
                         ("gapchase", "Gap-chase blocked")):
         for tgt, lab in (("T1", f"+{int(E.TARGET1_PCT * 100)}%"), ("T2", f"+{int(E.TARGET_PCT * 100)}%")):
             rec, pct = tally(kind, tgt)
-            tiles_ += (f'<div class="tile"><span class="k">{label} · {tgt} ({lab})</span>'
+            tiles_ += (f'<div class="tile"><span class="k">{label} · {"Banger" if tgt == "T2" else tgt} ({lab})</span>'
                        f'<span class="v">{rec}</span><span class="s">win rate {pct}</span></div>')
     rows = sorted([w for w in W_ROWS if w["kind"] != "baseline"], key=lambda w: w["priced_at"], reverse=True)
     trs = "".join(
@@ -534,7 +534,7 @@ def watch_record() -> str:
         f'<td>{"" if W_PEAKS.get(w["id"], {}).get("peak_pct") is None else f"{W_PEAKS[w['id']]['peak_pct']:+.1f}%"}</td></tr>'
         for w in rows)
     table = ('<div class="tbl"><table><thead><tr><th>Date</th><th>Kind</th><th>Ticker</th><th>Type</th>'
-             '<th>Strike</th><th>Status</th><th>Priced at</th><th>T1</th><th>T2</th><th>Went on to</th></tr></thead>'
+             '<th>Strike</th><th>Status</th><th>Priced at</th><th>T1</th><th>Banger</th><th>Went on to</th></tr></thead>'
              f'<tbody>{trs}</tbody></table></div>') if rows else '<div class="empty">Nothing tracked yet.</div>'
     tiles_ += baseline_tiles()
     return ('<h2>Watch records — not trade signals</h2><p class="note">Kept apart from the official record. '
@@ -542,7 +542,7 @@ def watch_record() -> str:
             'that rule costs or saves) and from the confirmation read (whether or not it was confirmed). <b>Gap-chase blocked</b>: setups rejected only by the gap-chase rule, priced when '
             'blocked. <b>Baseline</b>: every setup at the confirmation read with a liquid contract, called or not '
             '(answers whether the rules beat taking everything); graded once after expiry. '
-            'Same T1/T2/−20% stop rules as real cards. Started 11/2.</p>'
+            'Same T1/Banger/−20% stop rules as real cards. Started 11/2.</p>'
             f'<div class="tiles">{tiles_}</div>{table}')
 
 
@@ -606,16 +606,16 @@ def build(out: Path, now: datetime) -> None:
         f'<td class="mono">{e(r["method"])}</td></tr>' for r in rows)
     table = ('<div class="tbl"><table><thead><tr><th>Date</th><th>Ticker</th><th>Type</th><th>Expiry'
              '</th><th>Strike</th><th>Entry</th><th>Exit</th><th>P&amp;L</th><th>Conf</th><th>A+</th>'
-             f'<th>T1</th><th>T2 result</th><th>Went on to</th><th>How (T2)</th></tr></thead><tbody>{trs}</tbody></table></div>') if rows \
+             f'<th>T1</th><th>Banger result</th><th>Went on to</th><th>How (Banger)</th></tr></thead><tbody>{trs}</tbody></table></div>') if rows \
         else '<div class="empty">No graded cards yet.</div>'
     rec_body = (f'<h1>Locked record</h1>{tiles(st)}<p class="lede">Only GO cards from the confirmation '
                 'read and the morning re-scans are graded. Entry is the locked signal premium. Each card is '
                 f'scored twice with the same −{int(E.STOP_PCT * 100)}% stop: Target 1 (+{int(E.TARGET1_PCT * 100)}%) '
-                f'and Target 2 (+{int(E.TARGET_PCT * 100)}%). Exit is the first of target or stop on the contract\'s '
+                f'and the Banger (+{int(E.TARGET_PCT * 100)}%). Exit is the first of target or stop on the contract\'s '
                 'minute prices (both in one bar counts as a stop; a bar that opens past a level exits at that '
                 'open), otherwise the last price at the close of the expiry day. "Went on to" is the highest '
                 'contract price while the trade was alive — the best possible exit, not a fill. Cards from '
-                '10/20–10/23 have no minute prices left: T1 counts as hit when T2 was hit, or when a saved run '
+                '10/20–10/23 have no minute prices left: T1 counts as hit when the Banger was hit, or when a saved run '
                 'quote showed it; otherwise it is "unknown" and not counted as a loss. Mon–Thu cards may be held overnight up to the last '
                 'trading day before a weekend or holiday; Friday cards are 0DTE. Pre-market cards are conditional and never graded.</p>' + table)
     rec_body += watch_record()

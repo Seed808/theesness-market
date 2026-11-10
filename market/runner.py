@@ -486,7 +486,7 @@ def open_block(now: datetime) -> str:
         lines.append(f"<b>{E._h(c['ticker'])} {E._h(c['type'])} {float(c['strike']):g}</b> exp {exp} · "
                      f"called {E._dt(c['locked_at'])} · "
                      f"entry ${float(c['premium']):.2f} · {px} · T1 ${float(c.get('target1') or 0) or E.target1_price(float(c['premium'])):.2f}"
-                     f" · T2 ${float(c['target']):.2f} / S ${float(c['stop']):.2f}")
+                     f" · Banger ${float(c['target']):.2f} / S ${float(c['stop']):.2f}")
     return "\n".join(lines)
 
 
