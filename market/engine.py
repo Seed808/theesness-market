@@ -352,6 +352,7 @@ class Technicals:
     daily_note: str = ""                   # e.g. "below 20d & 50d, 20d falling, -6.2% over 20d"
     earnings: Optional[date] = None        # next/most recent earnings date known
     news: list = field(default_factory=list)   # [[iso time, title], ...] fresh headlines
+    market_move: Optional[float] = None    # QQQ % vs prior close at read time (for "moving on its own")
 
 
 @dataclass
@@ -769,7 +770,14 @@ def fetch_earnings_date(symbol: str) -> Optional[date]:
 NEWS_FRESH_HOURS = 24
 NEWS_CACHE_MIN = 60
 CATALYST_RVOL = 2.0
-CATALYST_MOVE_PCT = 1.0       # a headline counts only if the stock is also up/down this much (or RVOL >= 1.5)
+CATALYST_MOVE_PCT = 1.5       # ...and the stock moves this much MORE than the market (QQQ), or RVOL >= 1.5
+# A headline must describe an event, not commentary.
+EVENT_WORDS = r"earnings|results|revenue|guidance|outlook|forecast|beat|miss|upgrad|downgrad|price target|target cut|" \
+    r"target rais|initiat|deal|acquir|acquisition|merger|buyout|stake|partner|contract|order|launch|approv|fda|" \
+    r"probe|investigat|lawsuit|sued|settle|recall|fine|ban|tariff|sanction|buyback|dividend|split|offering|ipo|" \
+    r"layoff|ceo|resign|hire|spy|hack|outage|delay|halt|record|surge|soar|plunge|sink|jump|tumble|crash|rall"
+FLUFF_WORDS = r"takeaways|undervalued|overvalued|better buy|to buy|should you|is it time|trending stock|" \
+    r"what is driving|facts to know|here's why|here’s why|could .* be|bargain or trap|momentum stocks|is still down"
 NEWS_DIR = BASE_DIR / "data" / "news"
 _NEWS_MEM: dict = {}
 
@@ -838,6 +846,12 @@ COMPANY_NAMES = {
 }
 
 
+def is_event(title: str) -> bool:
+    import re
+    low = title.lower()
+    return bool(re.search(EVENT_WORDS, low)) and not re.search(FLUFF_WORDS, low)
+
+
 def headline_about(sym: str, title: str) -> bool:
     import re
     low = f" {title.lower()} "
@@ -859,13 +873,14 @@ def catalyst(sym: str, tech: "Technicals", today: date, now: datetime) -> str:
     # Yahoo has an article about almost every big name every day ("3 key takeaways", "is it
     # undervalued?"), so a headline alone isn't a catalyst: the stock must also be reacting —
     # moved >= CATALYST_MOVE_PCT vs the prior close, or RVOL >= RVOL_CONFIRM.
-    about = [x for x in tech.news if headline_about(sym, x[1])]
+    about = [x for x in tech.news if headline_about(sym, x[1]) and is_event(x[1])]
     move = (None if not (tech.last and tech.prev_close) else (tech.last - tech.prev_close) / tech.prev_close * 100)
-    reacting = (move is not None and abs(move) >= CATALYST_MOVE_PCT) or \
+    own = None if move is None else move - (tech.market_move or 0.0)      # move beyond the market's
+    reacting = (own is not None and abs(own) >= CATALYST_MOVE_PCT) or \
         (tech.rvol is not None and tech.rvol >= RVOL_CONFIRM)
     if about and reacting:
-        mv = f"{move:+.1f}%" if move is not None else ""
-        return f"news + stock moving {mv}: {about[0][1][:80]}"
+        mv = f"{move:+.1f}% vs market {tech.market_move or 0:+.1f}%" if move is not None else "unusual volume"
+        return f"news ({mv}): {about[0][1][:80]}"
     if tech.rvol is not None and tech.rvol >= CATALYST_RVOL:
         return f"unusual volume (RVOL {tech.rvol:.1f})"
     return ""
@@ -1595,6 +1610,7 @@ def scan(mode: str, session: Session, ov: Overrides, now: Optional[datetime] = N
             earnings_check(sym, earn, expiry, session.trade_date, ov.ivp.get(sym))
         tech.earnings = earn
         tech.news = fetch_news(sym, now)
+        tech.market_move = q["QQQ"].chg_pct if q["QQQ"].chg_pct is not None else q["SPY"].chg_pct
         near = sorted((o for o in chain if o.expiry == expiry),
                       key=lambda o: abs(o.strike - tech.last))[:RAW_CHAIN_ROWS]
         raw[sym] = {"tech": {k: (v.isoformat() if isinstance(v, (datetime, date)) else v)
@@ -1835,10 +1851,15 @@ def selftest() -> int:
     nt.news = [["2026-11-09T04:00:00-10:00", "Cathie Wood Is Buying Nvidia Again"]]
     check("unrelated headline -> no catalyst", catalyst("NFLX", nt, date(2026, 11, 9), now_hst()) == "")
     nt.news = [["2026-11-09T04:00:00-10:00", "Netflix shares jump on ad deal"]]
-    nt.last, nt.prev_close = 63.8, 63.6
+    nt.last, nt.prev_close, nt.market_move = 63.8, 63.6, 0.0
     check("headline but stock not reacting -> no catalyst", catalyst("NFLX", nt, date(2026, 11, 9), now_hst()) == "")
     nt.last = 66.0
-    check("headline + stock moving -> catalyst", catalyst("NFLX", nt, date(2026, 11, 9), now_hst()).startswith("news +"))
+    check("headline + stock moving -> catalyst", catalyst("NFLX", nt, date(2026, 11, 9), now_hst()).startswith("news ("))
+    nt.market_move = 3.5
+    check("moving only with the market -> no catalyst", catalyst("NFLX", nt, date(2026, 11, 9), now_hst()) == "")
+    nt.market_move = 0.0
+    nt.news = [["2026-11-09T04:00:00-10:00", "Netflix: 3 Key Takeaways for Long-Term Investors"]]
+    check("commentary headline -> no catalyst", catalyst("NFLX", nt, date(2026, 11, 9), now_hst()) == "")
     check("RVOL 2.5 -> catalyst", catalyst("XYZ", Technicals(rvol=2.5), date(2026, 11, 9), now_hst()).startswith("unusual"))
     check("SPY: ETF, not capped for news", catalyst("SPY", Technicals(rvol=0.3), date(2026, 11, 9), now_hst()).startswith("ETF"))
     globals()["load_headlines"] = _saved_hl
