@@ -525,3 +525,5 @@ id,target,graded_at,result,exit_premium,pnl_pct,hit_at,method
 2026-11-10_watch-gapchase_TLT_PUT_2026-11-13_80.5,T2,2026-11-10T06:42:34.285025-10:00,WIN,0.32,52.4,2026-11-10T06:42:00-10:00,TARGET (gapped through) · schwab 1m
 2026-11-10_watch-gapchase_PLTR_PUT_2026-11-13_165,T1,2026-11-10T06:52:38.231773-10:00,WIN,3.25,20.8,2026-11-10T06:43:00-10:00,TARGET (gapped through) · schwab 1m
 2026-11-10_watch-gapchase_SMCI_PUT_2026-11-13_27.5,T1,2026-11-10T07:02:36.392306-10:00,WIN,1.11,27.6,2026-11-10T06:56:00-10:00,TARGET (gapped through) · schwab 1m
+2026-11-10_watch-gapchase_MSFT_PUT_2026-11-13_530,T1,2026-11-10T07:29:46.542708-10:00,LOSS,3.0,-23.5,2026-11-10T07:23:00-10:00,STOP (gapped through) · schwab 1m
+2026-11-10_watch-gapchase_MSFT_PUT_2026-11-13_530,T2,2026-11-10T07:29:46.542708-10:00,LOSS,3.0,-23.5,2026-11-10T07:23:00-10:00,STOP (gapped through) · schwab 1m
