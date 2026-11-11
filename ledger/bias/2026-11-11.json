@@ -1,10 +1,5 @@
 {
- "pending": {
-  "regime": "CHOP",
-  "clean": false,
-  "why": "SPY +0.19% from VWAP, 15m flat; QQQ +0.26% from VWAP, 15m flat",
-  "at": "2026-11-11T09:42:33.339692-10:00"
- },
+ "pending": null,
  "history": [
   {
    "regime": "BULL",
@@ -33,12 +28,19 @@
    "why": "ES green (+1.28%), NQ green (+2.68%), YM green (+0.12%); ES+YM green \u2192 NO put setups",
    "at": "2026-11-11T06:52:58.188885-10:00",
    "source": "re-scan (held 2 reads)"
+  },
+  {
+   "regime": "CHOP",
+   "clean": false,
+   "why": "SPY +0.19% from VWAP, 15m flat; QQQ +0.29% from VWAP, 15m flat",
+   "at": "2026-11-11T09:52:34.981961-10:00",
+   "source": "re-scan (held 2 reads)"
   }
  ],
  "last_reading": {
   "regime": "CHOP",
   "clean": false,
-  "why": "SPY +0.19% from VWAP, 15m flat; QQQ +0.26% from VWAP, 15m flat",
-  "at": "2026-11-11T09:42:33.339692-10:00"
+  "why": "SPY +0.19% from VWAP, 15m flat; QQQ +0.29% from VWAP, 15m flat",
+  "at": "2026-11-11T09:52:34.981961-10:00"
  }
 }
