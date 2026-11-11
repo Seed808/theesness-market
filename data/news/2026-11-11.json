@@ -1,8 +1,13 @@
 {
 "SPY": {
-"fetched": "2026-11-11T08:32:36.201575-10:00",
+"fetched": "2026-11-11T09:42:33.339692-10:00",
 "src": "finnhub",
 "items": [
+[
+"2026-11-11T04:13:12-10:00",
+"Option Data Supports A Continuing Bull Market",
+"finnhub/SeekingAlpha"
+],
 [
 "2026-11-11T04:11:31-10:00",
 "Exchange-Traded Funds, Equity Futures Higher Pre-Bell Wednesday as Nvidia Stock Recovers",
@@ -37,18 +42,18 @@
 "2026-11-11T01:03:06-10:00",
 "SPDR S&P 500 ETF (SPY) Adds Apple and Nvidia on Monday",
 "finnhub/Yahoo"
-],
-[
-"2026-11-11T01:02:07-10:00",
-"ETFs Bought $231.4 Million of Lam Research (LRCX) on Monday",
-"finnhub/Yahoo"
 ]
 ]
 },
 "QQQ": {
-"fetched": "2026-11-11T08:32:36.201575-10:00",
+"fetched": "2026-11-11T09:42:33.339692-10:00",
 "src": "finnhub",
 "items": [
+[
+"2026-11-11T04:13:12-10:00",
+"Option Data Supports A Continuing Bull Market",
+"finnhub/SeekingAlpha"
+],
 [
 "2026-11-11T02:40:00-10:00",
 "When And How To Buy The Dip",
@@ -83,18 +88,18 @@
 "2026-11-10T22:46:58-10:00",
 "Retail Pours Billions Into ETFs As Hedge Funds Go Underweight AI",
 "finnhub/Benzinga"
-],
-[
-"2026-11-10T22:30:39-10:00",
-"S&P 500 Bulls And Bears Are Seeking Beta, Not Alpha; Here's My Alternative",
-"finnhub/SeekingAlpha"
 ]
 ]
 },
 "IWM": {
-"fetched": "2026-11-11T08:32:36.201575-10:00",
+"fetched": "2026-11-11T09:42:33.339692-10:00",
 "src": "finnhub",
 "items": [
+[
+"2026-11-11T04:13:12-10:00",
+"Option Data Supports A Continuing Bull Market",
+"finnhub/SeekingAlpha"
+],
 [
 "2026-11-11T02:40:00-10:00",
 "When And How To Buy The Dip",
@@ -129,18 +134,18 @@
 "2026-11-10T21:16:21-10:00",
 "CPI, A Lagging Indicator, Came In Hot: The Fed Is About To Overreact",
 "finnhub/SeekingAlpha"
-],
-[
-"2026-11-10T21:05:00-10:00",
-"Waller Threatens A Half-Point Hike While Oil Falls And Productivity Surges Beneath His Inflation Case",
-"finnhub/SeekingAlpha"
 ]
 ]
 },
 "DIA": {
-"fetched": "2026-11-11T08:32:36.201575-10:00",
+"fetched": "2026-11-11T09:42:33.339692-10:00",
 "src": "finnhub",
 "items": [
+[
+"2026-11-11T04:13:12-10:00",
+"Option Data Supports A Continuing Bull Market",
+"finnhub/SeekingAlpha"
+],
 [
 "2026-11-10T23:36:01-10:00",
 "Stock Market Today: Dow Jones, S&P 500, Nasdaq 100 Futures Rise as Bessent Urges US-China to \u2018De-Risk\u2019\u2014 Alcon, CoreWeave, Telefonica Brasil in Focus (UPDATED)",
@@ -175,18 +180,18 @@
 "2026-11-10T17:40:00-10:00",
 "Inflation Is Sticky, But This Isn't 2022 All Over Again",
 "finnhub/SeekingAlpha"
-],
-[
-"2026-11-10T16:19:23-10:00",
-"Stock Market: Will S&P 500 Open Up or Down Today?",
-"finnhub/Benzinga"
 ]
 ]
 },
 "SPX": {
-"fetched": "2026-11-11T08:32:36.201575-10:00",
+"fetched": "2026-11-11T09:42:33.339692-10:00",
 "src": "finnhub",
 "items": [
+[
+"2026-11-11T04:13:12-10:00",
+"Option Data Supports A Continuing Bull Market",
+"finnhub/SeekingAlpha"
+],
 [
 "2026-11-10T23:30:00-10:00",
 "Grey Inflation Picture For October Makes Unconvincing Rate Hike Case",
@@ -221,16 +226,11 @@
 "2026-11-10T17:40:00-10:00",
 "Inflation Is Sticky, But This Isn't 2022 All Over Again",
 "finnhub/SeekingAlpha"
-],
-[
-"2026-11-10T15:35:00-10:00",
-"October CPI: Broadening Price Pressures Keep Fed Tightening On Track",
-"finnhub/SeekingAlpha"
 ]
 ]
 },
 "TQQQ": {
-"fetched": "2026-11-11T08:32:36.201575-10:00",
+"fetched": "2026-11-11T09:42:33.339692-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -276,7 +276,7 @@
 ]
 },
 "SMH": {
-"fetched": "2026-11-11T08:32:36.201575-10:00",
+"fetched": "2026-11-11T09:42:33.339692-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -322,7 +322,7 @@
 ]
 },
 "SOXL": {
-"fetched": "2026-11-11T08:32:36.201575-10:00",
+"fetched": "2026-11-11T09:42:33.339692-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -368,7 +368,7 @@
 ]
 },
 "XLF": {
-"fetched": "2026-11-11T08:32:36.201575-10:00",
+"fetched": "2026-11-11T09:42:33.339692-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -414,7 +414,7 @@
 ]
 },
 "XLE": {
-"fetched": "2026-11-11T08:32:36.201575-10:00",
+"fetched": "2026-11-11T09:42:33.339692-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -460,7 +460,7 @@
 ]
 },
 "XLK": {
-"fetched": "2026-11-11T08:32:36.201575-10:00",
+"fetched": "2026-11-11T09:42:33.339692-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -506,7 +506,7 @@
 ]
 },
 "GLD": {
-"fetched": "2026-11-11T08:32:36.201575-10:00",
+"fetched": "2026-11-11T09:42:33.339692-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -552,7 +552,7 @@
 ]
 },
 "SLV": {
-"fetched": "2026-11-11T08:32:36.201575-10:00",
+"fetched": "2026-11-11T09:42:33.339692-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -573,7 +573,7 @@
 ]
 },
 "TLT": {
-"fetched": "2026-11-11T08:32:36.201575-10:00",
+"fetched": "2026-11-11T09:42:33.339692-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -619,7 +619,7 @@
 ]
 },
 "IBIT": {
-"fetched": "2026-11-11T08:32:36.201575-10:00",
+"fetched": "2026-11-11T09:42:33.339692-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -665,7 +665,7 @@
 ]
 },
 "TNA": {
-"fetched": "2026-11-11T08:32:36.201575-10:00",
+"fetched": "2026-11-11T09:42:33.339692-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -676,7 +676,7 @@
 ]
 },
 "UVXY": {
-"fetched": "2026-11-11T08:32:36.201575-10:00",
+"fetched": "2026-11-11T09:42:33.339692-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -697,7 +697,7 @@
 ]
 },
 "AAPL": {
-"fetched": "2026-11-11T08:32:36.201575-10:00",
+"fetched": "2026-11-11T09:42:33.339692-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -743,7 +743,7 @@
 ]
 },
 "AMAT": {
-"fetched": "2026-11-11T08:32:36.201575-10:00",
+"fetched": "2026-11-11T09:42:33.339692-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -789,7 +789,7 @@
 ]
 },
 "AMD": {
-"fetched": "2026-11-11T08:32:36.201575-10:00",
+"fetched": "2026-11-11T09:42:33.339692-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -835,7 +835,7 @@
 ]
 },
 "AMZN": {
-"fetched": "2026-11-11T08:32:36.201575-10:00",
+"fetched": "2026-11-11T09:42:33.339692-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -881,7 +881,7 @@
 ]
 },
 "ANET": {
-"fetched": "2026-11-11T08:32:36.201575-10:00",
+"fetched": "2026-11-11T09:42:33.339692-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -927,9 +927,14 @@
 ]
 },
 "APLD": {
-"fetched": "2026-11-11T08:32:36.201575-10:00",
+"fetched": "2026-11-11T09:42:33.339692-10:00",
 "src": "finnhub",
 "items": [
+[
+"2026-11-11T04:23:48-10:00",
+"CoreWeave: Things Aren't The Same (Rating Downgrade)",
+"finnhub/SeekingAlpha"
+],
 [
 "2026-11-11T02:27:00-10:00",
 "Wall Street Lunch: Cancer Could Become History Thanks To AI, Says Anthropic CEO",
@@ -964,16 +969,11 @@
 "2026-11-10T09:02:06-10:00",
 "CoreWeave Has \u201ca Sentiment Problem.\u201d Its Landlord Applied Digital Has $11 Billion Riding on It",
 "finnhub/Yahoo"
-],
-[
-"2026-11-10T07:45:44-10:00",
-"If CoreWeave Implodes, It\u2019s Taking This Neocloud With It First",
-"finnhub/Yahoo"
 ]
 ]
 },
 "APP": {
-"fetched": "2026-11-11T08:32:36.201575-10:00",
+"fetched": "2026-11-11T09:42:33.339692-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1019,7 +1019,7 @@
 ]
 },
 "ASTS": {
-"fetched": "2026-11-11T08:32:36.201575-10:00",
+"fetched": "2026-11-11T09:42:33.339692-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1065,7 +1065,7 @@
 ]
 },
 "AVGO": {
-"fetched": "2026-11-11T08:32:36.201575-10:00",
+"fetched": "2026-11-11T09:42:33.339692-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1111,7 +1111,7 @@
 ]
 },
 "BA": {
-"fetched": "2026-11-11T08:32:36.201575-10:00",
+"fetched": "2026-11-11T09:42:33.339692-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1157,7 +1157,7 @@
 ]
 },
 "BABA": {
-"fetched": "2026-11-11T08:32:36.201575-10:00",
+"fetched": "2026-11-11T09:42:33.339692-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1203,7 +1203,7 @@
 ]
 },
 "BAC": {
-"fetched": "2026-11-11T08:32:36.201575-10:00",
+"fetched": "2026-11-11T09:42:33.339692-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1249,7 +1249,7 @@
 ]
 },
 "CIFR": {
-"fetched": "2026-11-11T08:32:36.201575-10:00",
+"fetched": "2026-11-11T09:42:33.339692-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1295,7 +1295,7 @@
 ]
 },
 "COIN": {
-"fetched": "2026-11-11T08:32:36.201575-10:00",
+"fetched": "2026-11-11T09:42:33.339692-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1341,7 +1341,7 @@
 ]
 },
 "CORZ": {
-"fetched": "2026-11-11T08:32:36.201575-10:00",
+"fetched": "2026-11-11T09:42:33.339692-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1387,7 +1387,7 @@
 ]
 },
 "CRM": {
-"fetched": "2026-11-11T08:32:36.201575-10:00",
+"fetched": "2026-11-11T09:42:33.339692-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1433,7 +1433,7 @@
 ]
 },
 "CRWV": {
-"fetched": "2026-11-11T08:32:36.201575-10:00",
+"fetched": "2026-11-11T09:42:33.339692-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1479,7 +1479,7 @@
 ]
 },
 "CVNA": {
-"fetched": "2026-11-11T08:32:36.201575-10:00",
+"fetched": "2026-11-11T09:42:33.339692-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1515,9 +1515,14 @@
 ]
 },
 "DKNG": {
-"fetched": "2026-11-11T08:32:36.201575-10:00",
+"fetched": "2026-11-11T09:42:33.339692-10:00",
 "src": "finnhub",
 "items": [
+[
+"2026-11-11T03:18:14-10:00",
+"DraftKings: Too Challenging Given The Economics Of Prediction Markets",
+"finnhub/SeekingAlpha"
+],
 [
 "2026-11-10T12:23:32-10:00",
 "DraftKings (DKNG) Management Called the Quarter \u201cA Pivotal Moment.\u201d Here\u2019s Why Three Firms Downgraded It.",
@@ -1552,16 +1557,11 @@
 "2026-11-10T04:46:58-10:00",
 "DraftKings downgraded, Sarepta upgraded: Wall Street's top analyst calls",
 "finnhub/Yahoo"
-],
-[
-"2026-11-10T03:00:02-10:00",
-"DraftKings Inc. (DKNG) Is a Trending Stock: Facts to Know Before Betting on It",
-"finnhub/Yahoo"
 ]
 ]
 },
 "F": {
-"fetched": "2026-11-11T08:32:36.201575-10:00",
+"fetched": "2026-11-11T09:42:33.339692-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1607,7 +1607,7 @@
 ]
 },
 "GOOGL": {
-"fetched": "2026-11-11T08:32:36.201575-10:00",
+"fetched": "2026-11-11T09:42:33.339692-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1653,7 +1653,7 @@
 ]
 },
 "HOOD": {
-"fetched": "2026-11-11T08:32:36.201575-10:00",
+"fetched": "2026-11-11T09:42:33.339692-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1665,6 +1665,11 @@
 "2026-11-11T05:34:00-10:00",
 "OKXICE to Launch Tokenized Stock Trading with Coinbase, Circle, Strategy",
 "finnhub/Yahoo"
+],
+[
+"2026-11-11T03:39:44-10:00",
+"Robinhood Markets, Inc. (HOOD) Presents at 2026 Wolfe Research Wealth Symposium Transcript",
+"finnhub/SeekingAlpha"
 ],
 [
 "2026-11-10T23:30:00-10:00",
@@ -1690,16 +1695,11 @@
 "2026-11-10T07:51:41-10:00",
 "Coinbase Falls 4%, Robinhood Slides 3% as Hot Inflation Data Drags Bitcoin Lower; Webull Declines 2%",
 "finnhub/Yahoo"
-],
-[
-"2026-11-10T07:50:32-10:00",
-"DraftKings Sinks 12% in a Week on a Bigger Predictions Bill. JPMorgan: \u201cIncreasingly Difficult to Recommend\u201d",
-"finnhub/Yahoo"
 ]
 ]
 },
 "INTC": {
-"fetched": "2026-11-11T08:32:36.201575-10:00",
+"fetched": "2026-11-11T09:42:33.339692-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1745,7 +1745,7 @@
 ]
 },
 "IONQ": {
-"fetched": "2026-11-11T08:32:36.201575-10:00",
+"fetched": "2026-11-11T09:42:33.339692-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1791,7 +1791,7 @@
 ]
 },
 "IREN": {
-"fetched": "2026-11-11T08:32:36.201575-10:00",
+"fetched": "2026-11-11T09:42:33.339692-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1837,7 +1837,7 @@
 ]
 },
 "JPM": {
-"fetched": "2026-11-11T08:32:36.201575-10:00",
+"fetched": "2026-11-11T09:42:33.339692-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1883,7 +1883,7 @@
 ]
 },
 "LRCX": {
-"fetched": "2026-11-11T08:32:36.201575-10:00",
+"fetched": "2026-11-11T09:42:33.339692-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1929,53 +1929,53 @@
 ]
 },
 "MARA": {
-"fetched": "2026-11-11T08:32:36.201575-10:00",
+"fetched": "2026-11-11T09:42:33.339692-10:00",
 "src": "finnhub",
 "items": [
+[
+"2026-11-11T05:29:00-10:00",
+"CoreWeave Revenue Climbs 168% to $3.66 Billion, Raises 2026 Guidance",
+"finnhub/Yahoo"
+],
+[
+"2026-11-11T04:52:11-10:00",
+"Needham cuts MARA estimates after Q3 mining miss, holds rating on HPC leasing outlook",
+"finnhub/Yahoo"
+],
+[
+"2026-11-11T04:25:48-10:00",
+"RIOT Stock Sees Downgrade On \u2018Substantial\u2019 Anthropic Reliance: HUT, MARA Shares See Price Target Cuts",
+"finnhub/Yahoo"
+],
+[
+"2026-11-11T03:12:03-10:00",
+"MARA Holdings (MARA) Turned $1.1 Billion In Bitcoin Into Debt Relief And Buybacks",
+"finnhub/Yahoo"
+],
+[
+"2026-11-11T00:50:18-10:00",
+"MARA Sinks 18% to a 52-Week Low, Then Rebounds 25%. Is the Selling Over?",
+"finnhub/Yahoo"
+],
 [
 "2026-11-10T21:30:00-10:00",
 "MARA Holdings: I Saw An AI Transformation That Didn't Manifest (Rating Downgrade)",
 "finnhub/SeekingAlpha"
 ],
 [
-"2026-11-10T08:59:51-10:00",
-"MARA Holdings Stocks Jump 10.77% on $500 Million Buyback and Debt Paydown",
+"2026-11-10T18:25:56-10:00",
+"Compass Point\u2019s New $20 Target Says MARA\u2019s Selloff Went Too Far",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-10T07:03:00-10:00",
-"Sen. Warren targets Trump family crypto firms, and miner MARA sold BTC for $1.1 B",
-"finnhub/Yahoo"
-],
-[
-"2026-11-10T06:04:19-10:00",
-"MARA Holdings Jumps 11% on $500 Million Buyback, Riot Platforms Climbs 2% on Jefferies Upgrade Despite Bitcoin\u2019s Drop; Core Scientific Edges Higher",
-"finnhub/Yahoo"
-],
-[
-"2026-11-10T05:33:38-10:00",
-"MARA authorizes $500 million buyback, repays $750 million in bitcoin-backed loans as Q3 revenue falls 35%",
-"finnhub/Yahoo"
-],
-[
-"2026-11-10T05:30:19-10:00",
-"BC-Most Active Stocks",
-"finnhub/Yahoo"
-],
-[
-"2026-11-10T05:08:40-10:00",
-"MARA Soars 13% on $500 Million Buyback, Vows to \u201cMaximize the Value of Every Megawatt\u201d",
-"finnhub/Yahoo"
-],
-[
-"2026-11-10T03:17:29-10:00",
-"RIOT Stock Gains After Jefferies Upgrade, JP Morgan Price Target Hike: Analysts See Favorable Economics In Corsicana Data Center Deal",
+"2026-11-10T11:11:05-10:00",
+"Anthropic IPO Pricing, Ben Gagnon on KEEL\u2019s Q3 Earnings, MARA\u2019s Earnings, and Goldman Sachs on IREN",
 "finnhub/Yahoo"
 ]
 ]
 },
 "META": {
-"fetched": "2026-11-11T08:32:36.201575-10:00",
+"fetched": "2026-11-11T09:42:33.339692-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2021,7 +2021,7 @@
 ]
 },
 "MSFT": {
-"fetched": "2026-11-11T08:32:36.201575-10:00",
+"fetched": "2026-11-11T09:42:33.339692-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2067,7 +2067,7 @@
 ]
 },
 "MSTR": {
-"fetched": "2026-11-11T08:32:36.201575-10:00",
+"fetched": "2026-11-11T09:42:33.339692-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2113,7 +2113,7 @@
 ]
 },
 "MU": {
-"fetched": "2026-11-11T08:32:36.201575-10:00",
+"fetched": "2026-11-11T09:42:33.339692-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2159,7 +2159,7 @@
 ]
 },
 "NFLX": {
-"fetched": "2026-11-11T08:32:36.201575-10:00",
+"fetched": "2026-11-11T09:42:33.339692-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2205,7 +2205,7 @@
 ]
 },
 "NIO": {
-"fetched": "2026-11-11T08:32:36.201575-10:00",
+"fetched": "2026-11-11T09:42:33.339692-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2241,7 +2241,7 @@
 ]
 },
 "NVDA": {
-"fetched": "2026-11-11T08:32:36.201575-10:00",
+"fetched": "2026-11-11T09:42:33.339692-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2287,7 +2287,7 @@
 ]
 },
 "OKLO": {
-"fetched": "2026-11-11T08:32:36.201575-10:00",
+"fetched": "2026-11-11T09:42:33.339692-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2333,7 +2333,7 @@
 ]
 },
 "ORCL": {
-"fetched": "2026-11-11T08:32:36.201575-10:00",
+"fetched": "2026-11-11T09:42:33.339692-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2372,14 +2372,14 @@
 "finnhub/Yahoo"
 ],
 [
-"2026-11-11T04:14:00-10:00",
-"Oracle Commodity Holding Announces $105,000 Private Placement",
-"finnhub/Yahoo"
+"2026-11-11T04:23:48-10:00",
+"CoreWeave: Things Aren't The Same (Rating Downgrade)",
+"finnhub/SeekingAlpha"
 ]
 ]
 },
 "PLTR": {
-"fetched": "2026-11-11T08:32:36.201575-10:00",
+"fetched": "2026-11-11T09:42:33.339692-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2425,7 +2425,7 @@
 ]
 },
 "PLUG": {
-"fetched": "2026-11-11T08:32:36.201575-10:00",
+"fetched": "2026-11-11T09:42:33.339692-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2471,7 +2471,7 @@
 ]
 },
 "PYPL": {
-"fetched": "2026-11-11T08:32:36.201575-10:00",
+"fetched": "2026-11-11T09:42:33.339692-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2517,7 +2517,7 @@
 ]
 },
 "QCOM": {
-"fetched": "2026-11-11T08:32:36.201575-10:00",
+"fetched": "2026-11-11T09:42:33.339692-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2563,7 +2563,7 @@
 ]
 },
 "RBLX": {
-"fetched": "2026-11-11T08:32:36.201575-10:00",
+"fetched": "2026-11-11T09:42:33.339692-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2589,7 +2589,7 @@
 ]
 },
 "RDDT": {
-"fetched": "2026-11-11T08:32:36.201575-10:00",
+"fetched": "2026-11-11T09:42:33.339692-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2635,7 +2635,7 @@
 ]
 },
 "RGTI": {
-"fetched": "2026-11-11T08:32:36.201575-10:00",
+"fetched": "2026-11-11T09:42:33.339692-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2681,7 +2681,7 @@
 ]
 },
 "RKLB": {
-"fetched": "2026-11-11T08:32:36.201575-10:00",
+"fetched": "2026-11-11T09:42:33.339692-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2727,7 +2727,7 @@
 ]
 },
 "SHOP": {
-"fetched": "2026-11-11T08:32:36.201575-10:00",
+"fetched": "2026-11-11T09:42:33.339692-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2773,7 +2773,7 @@
 ]
 },
 "SMCI": {
-"fetched": "2026-11-11T08:32:36.201575-10:00",
+"fetched": "2026-11-11T09:42:33.339692-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2819,7 +2819,7 @@
 ]
 },
 "SMR": {
-"fetched": "2026-11-11T08:32:36.201575-10:00",
+"fetched": "2026-11-11T09:42:33.339692-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2865,7 +2865,7 @@
 ]
 },
 "SNAP": {
-"fetched": "2026-11-11T08:32:36.201575-10:00",
+"fetched": "2026-11-11T09:42:33.339692-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2911,7 +2911,7 @@
 ]
 },
 "SOFI": {
-"fetched": "2026-11-11T08:32:36.201575-10:00",
+"fetched": "2026-11-11T09:42:33.339692-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2957,7 +2957,7 @@
 ]
 },
 "TSLA": {
-"fetched": "2026-11-11T08:32:36.201575-10:00",
+"fetched": "2026-11-11T09:42:33.339692-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -3003,7 +3003,7 @@
 ]
 },
 "TSM": {
-"fetched": "2026-11-11T08:32:36.201575-10:00",
+"fetched": "2026-11-11T09:42:33.339692-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -3049,7 +3049,7 @@
 ]
 },
 "UBER": {
-"fetched": "2026-11-11T08:32:36.201575-10:00",
+"fetched": "2026-11-11T09:42:33.339692-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -3095,7 +3095,7 @@
 ]
 },
 "WMT": {
-"fetched": "2026-11-11T08:32:36.201575-10:00",
+"fetched": "2026-11-11T09:42:33.339692-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -3141,7 +3141,7 @@
 ]
 },
 "XOM": {
-"fetched": "2026-11-11T08:32:36.201575-10:00",
+"fetched": "2026-11-11T09:42:33.339692-10:00",
 "src": "finnhub",
 "items": [
 [
