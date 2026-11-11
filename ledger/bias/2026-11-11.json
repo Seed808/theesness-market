@@ -10,9 +10,9 @@
   }
  ],
  "last_reading": {
-  "regime": "BULL",
-  "clean": true,
-  "why": "ES green (+0.93%), NQ green (+1.86%), YM green (+0.28%); ES+YM green \u2192 NO put setups",
-  "at": "2026-11-11T04:12:33.200672-10:00"
+  "regime": "MIXED",
+  "clean": false,
+  "why": "ES green (+0.89%), NQ green (+1.70%), YM flat (-0.02%); No ES/YM rule matched \u2192 no favored side, no A+",
+  "at": "2026-11-11T05:02:34.575488-10:00"
  }
 }
