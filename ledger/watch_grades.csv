@@ -535,3 +535,6 @@ id,target,graded_at,result,exit_premium,pnl_pct,hit_at,method
 2026-11-10_watch-gapchase_NFLX_PUT_2026-11-13_62,T2,2026-11-10T09:42:37.623706-10:00,LOSS,0.45,-21.1,2026-11-10T09:34:00-10:00,STOP (gapped through) · schwab 1m
 2026-11-10_watch-premarket_JPM_PUT_2026-11-13_340,T2,2026-11-10T09:46:07.039345-10:00,LOSS,1.91,-21.1,2026-11-10T09:45:00-10:00,STOP (gapped through) · schwab 1m
 2026-11-10_watch-preopen_JPM_PUT_2026-11-13_340,T2,2026-11-10T09:46:07.039345-10:00,LOSS,1.91,-20.7,2026-11-10T09:45:00-10:00,STOP (gapped through) · schwab 1m
+2026-11-10_watch-premarket_SPX_PUT_2026-11-13_7545,T2,2026-11-11T04:32:30.304454-10:00,LOSS,39.9,-29.4,2026-11-10T16:09:00-10:00,STOP (gapped through) · schwab 1m
+2026-11-10_watch-gapchase_SLV_PUT_2026-11-13_46.5,T2,2026-11-11T04:32:30.304454-10:00,LOSS,0.35,-50.0,2026-11-11T04:30:00-10:00,STOP (gapped through) · schwab 1m
+2026-11-10_watch-gapchase_SMCI_PUT_2026-11-13_27.5,T2,2026-11-11T04:32:30.304454-10:00,LOSS,0.26,-70.1,2026-11-11T04:30:00-10:00,STOP (gapped through) · schwab 1m
