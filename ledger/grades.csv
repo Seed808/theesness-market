@@ -99,3 +99,4 @@ id,graded_at,result,exit_premium,pnl_pct,method
 2026-11-10_rescan_GOOGL_PUT_2026-11-13_287.5,2026-11-11T04:32:30.304454-10:00,LOSS,2.34,-40.8,STOP (gapped through) · schwab 1m
 2026-11-11_rescan_TLT_PUT_2026-11-13_80.5,2026-11-11T06:06:32.269138-10:00,LOSS,0.21,-22.2,STOP · schwab 1m
 2026-11-11_rescan_BA_PUT_2026-11-13_172.5,2026-11-11T06:52:58.188885-10:00,LOSS,1.25,-20.9,STOP (gapped through) · schwab 1m
+2026-11-11_confirm_SPX_CALL_2026-11-13_7590,2026-11-11T07:02:37.892130-10:00,WIN,57.18,53.5,TARGET (gapped through) · schwab 1m
