@@ -7,7 +7,7 @@
   "source": "schwab last trade",
   "underlying": 59.48,
   "pnl_pct": 48.2,
-  "as_of": "2026-11-11T11:02:34.728662-10:00"
+  "as_of": "2026-11-11T11:12:21.142224-10:00"
  },
  "2026-11-11_rescan_UBER_CALL_2026-11-13_71": {
   "last": 0.64,
@@ -15,8 +15,8 @@
   "high": 0.84,
   "low": 0.52,
   "source": "schwab quote (mark)",
-  "underlying": 70.65,
+  "underlying": 70.575,
   "pnl_pct": 10.3,
-  "as_of": "2026-11-11T11:02:34.728662-10:00"
+  "as_of": "2026-11-11T11:12:21.142224-10:00"
  }
 }
