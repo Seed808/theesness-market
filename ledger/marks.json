@@ -1,42 +1,55 @@
 {
  "2026-11-11_confirm_SPX_CALL_2026-11-13_7590": {
-  "last": 49.0,
-  "last_time": "2026-11-11T16:26:15.001000+00:00",
-  "high": 46.8,
+  "last": 47.4,
+  "last_time": "2026-11-11T16:36:20.325000+00:00",
+  "high": 49.55,
   "low": 31.7,
   "source": "schwab quote (mark)",
-  "underlying": 7613.77,
-  "pnl_pct": 31.5,
-  "as_of": "2026-11-11T06:22:32.873296-10:00"
+  "underlying": 7610.61,
+  "pnl_pct": 27.2,
+  "as_of": "2026-11-11T06:32:33.297812-10:00"
  },
  "2026-11-11_rescan_GLD_PUT_2026-11-13_367": {
-  "last": 2.6,
-  "last_time": "2026-11-11T16:26:14.918000+00:00",
+  "last": 2.65,
+  "last_time": "2026-11-11T16:36:18.380000+00:00",
   "high": 2.88,
   "low": 2.4,
   "source": "schwab quote (mark)",
-  "underlying": 366.88,
-  "pnl_pct": 10.2,
-  "as_of": "2026-11-11T06:22:32.873296-10:00"
+  "underlying": 366.76,
+  "pnl_pct": 12.3,
+  "as_of": "2026-11-11T06:32:33.297812-10:00"
  },
  "2026-11-11_rescan_NFLX_CALL_2026-11-13_64": {
-  "last": 0.56,
-  "last_time": "2026-11-11T16:26:15.540000+00:00",
-  "high": 0.57,
+  "last": 0.57,
+  "last_time": "2026-11-11T16:36:21.615000+00:00",
+  "high": 0.59,
   "low": 0.45,
   "source": "schwab quote (mark)",
-  "underlying": 63.625,
-  "pnl_pct": 14.3,
-  "as_of": "2026-11-11T06:22:32.873296-10:00"
+  "underlying": 63.6601,
+  "pnl_pct": 16.3,
+  "as_of": "2026-11-11T06:32:33.297812-10:00"
  },
  "2026-11-11_rescan_BA_PUT_2026-11-13_172.5": {
-  "last": 1.37,
-  "last_time": "2026-11-11T16:26:17.492000+00:00",
+  "last": 1.32,
+  "last_time": "2026-11-11T16:36:11.570000+00:00",
   "high": 1.65,
-  "low": 1.39,
+  "low": 1.31,
   "source": "schwab quote (mark)",
-  "underlying": 173.4,
-  "pnl_pct": -13.3,
-  "as_of": "2026-11-11T06:22:32.873296-10:00"
+  "underlying": 173.48,
+  "pnl_pct": -16.5,
+  "as_of": "2026-11-11T06:32:33.297812-10:00"
+ },
+ "2026-11-11_rescan_PYPL_CALL_2026-11-13_59": {
+  "high": null,
+  "low": null,
+  "last": 0.56,
+  "last_time": "2026-11-11T16:36:10.568000+00:00",
+  "source": "schwab quote (mark)",
+  "underlying": 58.94,
+  "pnl_pct": 0.0,
+  "as_of": "2026-11-11T06:32:33.297812-10:00"
+ },
+ "_errors": {
+  "2026-11-11_rescan_PYPL_CALL_2026-11-13_59": "bars returned but none after lock (27 rows)"
  }
 }
