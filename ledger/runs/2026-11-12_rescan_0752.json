@@ -1,0 +1,142 @@
+{
+ "trade_date": "2026-11-12",
+ "mode": "rescan",
+ "ran_at": "2026-11-12T07:52:34.915195-10:00",
+ "test": false,
+ "open_hst": "2026-11-12T04:30:00-10:00",
+ "close_hst": "2026-11-12T11:00:00-10:00",
+ "early_close": false,
+ "bias": {
+  "regime": "BULL",
+  "favored": "C",
+  "clean": false,
+  "notes": [
+   "ES green (+0.28%), NQ green (+0.34%), YM green (+0.38%)",
+   "ES+YM green \u2192 NO put setups",
+   "VIX 17.42 (-0.40%) \u2192 does not confirm",
+   "SPY green (+0.26%), QQQ green (+0.32%) \u2192 confirms"
+  ]
+ },
+ "quotes": {
+  "ES": {
+   "last": 7662.0,
+   "prev_close": 7640.5,
+   "chg_pct": 0.2813951966494339,
+   "source": "schwab"
+  },
+  "NQ": {
+   "last": 28569.75,
+   "prev_close": 28473.25,
+   "chg_pct": 0.3389145952780241,
+   "source": "schwab"
+  },
+  "YM": {
+   "last": 52778.0,
+   "prev_close": 52578.0,
+   "chg_pct": 0.3803872342044201,
+   "source": "schwab"
+  },
+  "VIX": {
+   "last": 17.42,
+   "prev_close": 17.49,
+   "chg_pct": -0.40022870211547595,
+   "source": "schwab"
+  },
+  "SPY": {
+   "last": 761.8,
+   "prev_close": 759.81,
+   "chg_pct": 0.2619075821586988,
+   "source": "schwab"
+  },
+  "QQQ": {
+   "last": 692.56,
+   "prev_close": 690.38,
+   "chg_pct": 0.3157681276977824,
+   "source": "schwab"
+  }
+ },
+ "flags": [
+  "THURSDAY: reassess all open contracts by 10:00 AM HST (1 hour before the close)",
+  "Amateur hour until 05:00 AM; institutional 05:00\u201305:30 AM HST",
+  "No damaged contracts overnight. No earnings holds overnight."
+ ],
+ "headlines": [
+  "NVDA: Nvidia CEO Jensen Huang has resigned, effective immediately; CFO Colette Kress named interim CEO (company announcement Thu 11/12 ~8:56am ET / 3:56am HST)"
+ ],
+ "data_note": "live data: Schwab (Yahoo fallback)",
+ "cards": [],
+ "passing": 3,
+ "rejected": 70,
+ "rejections": [
+  "SPY C: call into resistance (PDH)",
+  "IWM C: first 5-min candle does not confirm, trend not aligned (1m up/5m up/15m flat), call into resistance (PDL)",
+  "DIA C: first 5-min candle does not confirm",
+  "SPX C: call into resistance (PDH)",
+  "SMH C: mid-range",
+  "SOXL C: gap chase",
+  "XLF C: spread 13.3% > 10.0%, first 5-min candle does not confirm, trend not aligned (1m flat/5m flat/15m down), call into resistance (PDH)",
+  "XLE C: gap chase, first 5-min candle does not confirm, trend not aligned (1m flat/5m up/15m up)",
+  "XLK C: mid-range, spread 29.4% > 10.0%",
+  "GLD C: OI 93 < 500, first 5-min candle does not confirm, trend not aligned (1m up/5m flat/15m flat), call into resistance (PML)",
+  "SLV C: first 5-min candle does not confirm, trend not aligned (1m up/5m flat/15m down), call into resistance (PML)",
+  "TLT C: first 5-min candle does not confirm, trend not aligned (1m down/5m down/15m down)",
+  "IBIT C: trend not aligned (1m up/5m up/15m flat)",
+  "TNA C: spread 27.3% > 10.0%, first 5-min candle does not confirm, trend not aligned (1m up/5m up/15m flat)",
+  "UVXY C: spread 13.3% > 10.0%, first 5-min candle does not confirm, trend not aligned (1m flat/5m down/15m down)",
+  "AAPL C: first 5-min candle does not confirm, trend not aligned (1m down/5m down/15m down), call into resistance (PDH)",
+  "AMAT C: mid-range, earnings today, expiry later (no overnight earnings hold)",
+  "AMD C: gap chase, first 5-min candle does not confirm",
+  "AMZN C: gap chase, mid-range, trend not aligned (1m flat/5m down/15m flat)",
+  "ANET C: gap chase, OI 136 < 500",
+  "APLD C: spread 20.7% > 10.0%",
+  "APP C: OI 292 < 500, trend not aligned (1m down/5m down/15m flat), call into resistance (VWAP)",
+  "ASTS C: trend not aligned (1m flat/5m down/15m down), call into resistance (VWAP)",
+  "AVGO C: gap chase, trend not aligned (1m flat/5m flat/15m up)",
+  "BA C: trend not aligned (1m down/5m down/15m flat), call into resistance (VWAP)",
+  "BABA C: OI 45 < 500, first 5-min candle does not confirm, trend not aligned (1m up/5m flat/15m down)",
+  "BAC C: first 5-min candle does not confirm",
+  "BILI: no expiry between tomorrow and Fri 11/13",
+  "CIFR C: gap chase, spread 19.4% > 10.0%, trend not aligned (1m flat/5m up/15m up)",
+  "CORZ C: spread 14.6% > 10.0%, trend not aligned (1m flat/5m up/15m up)",
+  "CRM C: spread 12.5% > 10.0%, first 5-min candle does not confirm, trend not aligned (1m down/5m flat/15m up)",
+  "CRWV C: mid-range",
+  "CVNA C: spread 11.1% > 10.0%, first 5-min candle does not confirm, trend not aligned (1m up/5m flat/15m flat)",
+  "DKNG C: spread 47.1% > 10.0%, first 5-min candle does not confirm, trend not aligned (1m down/5m flat/15m down)",
+  "F C: no bid, first 5-min candle does not confirm, trend not aligned (1m up/5m flat/15m flat), call into resistance (VWAP)",
+  "GOOGL C: gap chase",
+  "HOOD C: mid-range",
+  "INTC C: mid-range",
+  "IONQ C: spread 19.2% > 10.0%, trend not aligned (1m up/5m flat/15m down)",
+  "IREN C: trend not aligned (1m flat/5m up/15m up)",
+  "JPM C: spread 14.5% > 10.0%, first 5-min candle does not confirm, call into resistance (PDH)",
+  "LRCX C: mid-range, OI 283 < 500",
+  "MARA C: spread 15.4% > 10.0%, trend not aligned (1m flat/5m up/15m up)",
+  "META C: first 5-min candle does not confirm, call into resistance (PDL)",
+  "MSFT C: gap chase",
+  "MSTR C: OI 224 < 500, first 5-min candle does not confirm",
+  "MU C: mid-range",
+  "NFLX C: mid-range, first 5-min candle does not confirm, trend not aligned (1m flat/5m up/15m flat)",
+  "NIO C: no bid, first 5-min candle does not confirm, trend not aligned (1m up/5m flat/15m down)",
+  "NVDA C: trend not aligned (1m flat/5m up/15m up)",
+  "OKLO C: OI 457 < 500, trend not aligned (1m up/5m up/15m flat)",
+  "ORCL C: trend not aligned (1m flat/5m up/15m up)",
+  "PLTR C: mid-range, first 5-min candle does not confirm, trend not aligned (1m flat/5m up/15m up)",
+  "PLUG C: no bid, first 5-min candle does not confirm, trend not aligned (1m up/5m flat/15m flat)",
+  "PYPL C: spread 52.6% > 10.0%, first 5-min candle does not confirm, trend not aligned (1m up/5m flat/15m down), call into resistance (PML)",
+  "QCOM C: gap chase, trend not aligned (1m up/5m flat/15m flat), call into resistance (VWAP)",
+  "RBLX C: OI 348 < 500, trend not aligned (1m down/5m down/15m flat), call into resistance (VWAP)",
+  "RDDT C: OI 447 < 500, first 5-min candle does not confirm, trend not aligned (1m flat/5m down/15m down)",
+  "RGTI C: spread 16.7% > 10.0%, first 5-min candle does not confirm, trend not aligned (1m flat/5m flat/15m down)",
+  "RKLB C: trend not aligned (1m flat/5m down/15m flat), call into resistance (VWAP)",
+  "SHOP C: OI 152 < 500, first 5-min candle does not confirm, trend not aligned (1m up/5m flat/15m flat)",
+  "SMCI C: trend not aligned (1m up/5m flat/15m down), call into resistance (PML)",
+  "SMR C: spread 66.7% > 10.0%, first 5-min candle does not confirm, trend not aligned (1m flat/5m up/15m up)",
+  "SNAP C: mid-range, spread 66.7% > 10.0%, first 5-min candle does not confirm, trend not aligned (1m up/5m up/15m flat)",
+  "SOFI C: trend not aligned (1m up/5m flat/15m down), call into resistance (VWAP)",
+  "TSLA C: trend not aligned (1m flat/5m up/15m up)",
+  "TSM C: spread 18.8% > 10.0%, trend not aligned (1m flat/5m up/15m up)",
+  "UBER C: spread 17.8% > 10.0%, first 5-min candle does not confirm, trend not aligned (1m down/5m down/15m down), call into resistance (PML)",
+  "WMT C: first 5-min candle does not confirm, trend not aligned (1m down/5m flat/15m down), call into resistance (PDH)",
+  "XOM C: gap chase, first 5-min candle does not confirm, trend not aligned (1m flat/5m up/15m up)"
+ ]
+}
