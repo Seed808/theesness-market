@@ -105,3 +105,4 @@ id,graded_at,result,exit_premium,pnl_pct,method
 2026-11-11_rescan_WMT_CALL_2026-11-13_125,2026-11-11T10:57:15.026827-10:00,WIN,1.45,54.3,TARGET (gapped through) · schwab 1m
 2026-11-11_rescan_UBER_CALL_2026-11-13_71,2026-11-12T04:32:32.874024-10:00,LOSS,0.46,-20.7,STOP · schwab 1m
 2026-11-11_rescan_PYPL_CALL_2026-11-13_59,2026-11-12T04:43:12.643372-10:00,LOSS,0.35,-37.5,STOP (gapped through) · schwab 1m
+2026-11-12_rescan_AMD_PUT_2026-11-13_555,2026-11-12T05:22:37.284154-10:00,LOSS,8.35,-21.2,STOP (gapped through) · schwab 1m
