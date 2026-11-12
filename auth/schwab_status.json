@@ -1,12 +1,12 @@
 {
  "configured": true,
- "connected": true,
- "expired_notice_at": "2026-10-23T08:58:20.702561-10:00",
+ "connected": false,
+ "expired_notice_at": "2026-11-12T08:02:34.990331-10:00",
  "login_at": "2026-11-05T17:54:26.074811+00:00",
  "expires_at": "2026-11-12T17:54:26.074811+00:00",
  "last_ok": "2026-11-12T17:32:32.344555+00:00",
- "last_error": null,
- "hours_left": 0.0,
+ "last_error": "token HTTP 400: {\"error\":\"unsupported_token_type\",\"error_description\":\"400 Bad Request: \\\"{\\\"error_description\\\":\\\"Refresh token is inva",
+ "hours_left": -0.1,
  "futures_probe": {
   "/ESZ26": {
    "answered": true,
