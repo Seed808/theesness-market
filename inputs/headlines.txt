@@ -1,4 +1,4 @@
 # Key headlines for the report. Used ONLY if the first non-comment line is today's date (HST).
-# Remove the "# " from the date line, set today's date, add one headline per line.
-#
-# date=2026-10-19
+# One headline per line. Start a line with "TICKER:" to tie it to a ticker (counts as that ticker's catalyst).
+date=2026-11-12
+NVDA: Nvidia CEO Jensen Huang has resigned, effective immediately; CFO Colette Kress named interim CEO (company announcement Thu 11/12 ~8:56am ET / 3:56am HST)

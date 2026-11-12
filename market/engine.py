@@ -1019,9 +1019,15 @@ def catalyst(sym: str, tech: "Technicals", today: date, now: datetime) -> str:
 
 
 def load_headlines() -> list:
-    if HEADLINES_PATH.exists():
-        return [l.strip() for l in HEADLINES_PATH.read_text().splitlines() if l.strip()][:8]
-    return []
+    """Headlines from inputs/headlines.txt — only when its first non-comment line is
+    date=<today HST>. Comment lines (#) are skipped. (Before 11/12 the date wasn't checked.)"""
+    if not HEADLINES_PATH.exists():
+        return []
+    lines = [l.strip() for l in HEADLINES_PATH.read_text().splitlines()
+             if l.strip() and not l.strip().startswith("#")]
+    if not lines or lines[0] != f"date={now_hst().date().isoformat()}":
+        return []
+    return lines[1:9]
 
 
 def load_watchlist(path: Path = WATCHLIST_PATH) -> list:
