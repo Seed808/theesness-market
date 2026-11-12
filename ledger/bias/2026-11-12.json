@@ -1,9 +1,9 @@
 {
  "pending": {
-  "regime": "CHOP",
+  "regime": "MIXED",
   "clean": false,
-  "why": "SPY +0.00% from VWAP, 15m flat; QQQ -0.05% from VWAP, 15m flat",
-  "at": "2026-11-12T08:12:35.589717-10:00"
+  "why": "ES flat (+0.02%), NQ flat (-0.05%), YM green (+0.13%); No ES/YM rule matched \u2192 no favored side, no A+",
+  "at": "2026-11-12T08:21:25.590275-10:00"
  },
  "history": [
   {
@@ -36,9 +36,9 @@
   }
  ],
  "last_reading": {
-  "regime": "CHOP",
+  "regime": "MIXED",
   "clean": false,
-  "why": "SPY +0.00% from VWAP, 15m flat; QQQ -0.05% from VWAP, 15m flat",
-  "at": "2026-11-12T08:12:35.589717-10:00"
+  "why": "ES flat (+0.02%), NQ flat (-0.05%), YM green (+0.13%); No ES/YM rule matched \u2192 no favored side, no A+",
+  "at": "2026-11-12T08:21:25.590275-10:00"
  }
 }
