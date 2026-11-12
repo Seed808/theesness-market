@@ -33,7 +33,7 @@
  "last_reading": {
   "regime": "BULL",
   "clean": false,
-  "why": "ES green (+0.20%), NQ green (+0.24%), YM green (+0.29%); ES+YM green \u2192 NO put setups",
-  "at": "2026-11-12T06:52:33.682104-10:00"
+  "why": "ES green (+0.18%), NQ green (+0.15%), YM green (+0.29%); ES+YM green \u2192 NO put setups",
+  "at": "2026-11-12T07:02:33.564824-10:00"
  }
 }
