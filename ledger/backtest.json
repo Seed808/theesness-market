@@ -1,9 +1,9 @@
 {
- "built_for": "2026-11-11",
- "built_at": "2026-11-11T11:22:29.610122-10:00",
+ "built_for": "2026-11-12",
+ "built_at": "2026-11-12T11:22:35.469946-10:00",
  "range": [
-  "2026-09-02",
-  "2026-11-11"
+  "2026-09-03",
+  "2026-11-12"
  ],
  "params": {
   "move_pct": 0.3,
@@ -12,7 +12,7 @@
   "flat_band_pct": 0.1,
   "vix_confirm_pct": 2.0
  },
- "unscored_days": 8,
+ "unscored_days": 9,
  "vix_premarket_bar_days": 50,
  "summary": [
   {
@@ -73,18 +73,18 @@
    "regime": "ROTATION",
    "clean": false,
    "SPY": {
-    "days": 5,
+    "days": 4,
     "win": 2,
-    "loss": 1,
+    "loss": 0,
     "none": 2,
-    "win_pct": 66.7
+    "win_pct": 100.0
    },
    "QQQ": {
-    "days": 5,
+    "days": 4,
     "win": 2,
-    "loss": 2,
+    "loss": 1,
     "none": 1,
-    "win_pct": 50.0
+    "win_pct": 66.7
    }
   },
   {
@@ -126,6 +126,32 @@
  ],
  "days": [
   {
+   "date": "2026-11-12",
+   "regime": "MIXED",
+   "favored": null,
+   "clean": false,
+   "vix_confirms": false,
+   "index_confirms": false,
+   "chg": {
+    "ES": -0.59,
+    "NQ": -1.22,
+    "YM": -0.06,
+    "VIX": 7.03,
+    "SPY": -0.63,
+    "QQQ": -1.27
+   },
+   "premarket_bar": {
+    "ES": true,
+    "NQ": true,
+    "YM": true,
+    "VIX": true,
+    "SPY": true,
+    "QQQ": true
+   },
+   "SPY": "\u2014",
+   "QQQ": "\u2014"
+  },
+  {
    "date": "2026-11-11",
    "regime": "BULL",
    "favored": "C",
@@ -135,7 +161,7 @@
    "chg": {
     "ES": 0.99,
     "NQ": 1.94,
-    "YM": 0.35,
+    "YM": 0.34,
     "VIX": -6.22,
     "SPY": 0.99,
     "QQQ": 1.92
@@ -160,7 +186,7 @@
    "index_confirms": true,
    "chg": {
     "ES": -0.77,
-    "NQ": -1.3,
+    "NQ": -1.29,
     "YM": -0.27,
     "VIX": 7.18,
     "SPY": -0.73,
@@ -211,8 +237,8 @@
    "vix_confirms": false,
    "index_confirms": false,
    "chg": {
-    "ES": 0.15,
-    "NQ": 1.5,
+    "ES": 0.16,
+    "NQ": 1.49,
     "YM": -0.99,
     "VIX": -5.64,
     "SPY": 0.24,
@@ -290,7 +316,7 @@
    "index_confirms": false,
    "chg": {
     "ES": 0.14,
-    "NQ": 0.68,
+    "NQ": 0.67,
     "YM": -0.3,
     "VIX": -1.28,
     "SPY": 0.15,
@@ -342,7 +368,7 @@
    "index_confirms": true,
    "chg": {
     "ES": -1.05,
-    "NQ": -2.52,
+    "NQ": -2.53,
     "YM": -0.1,
     "VIX": 8.31,
     "SPY": -0.98,
@@ -471,7 +497,7 @@
    "vix_confirms": true,
    "index_confirms": true,
    "chg": {
-    "ES": -0.48,
+    "ES": -0.49,
     "NQ": -0.31,
     "YM": -0.89,
     "VIX": 6.31,
@@ -525,7 +551,7 @@
    "chg": {
     "ES": 0.31,
     "NQ": 0.61,
-    "YM": 0.43,
+    "YM": 0.44,
     "VIX": -1.16,
     "SPY": 0.27,
     "QQQ": 0.58
@@ -653,7 +679,7 @@
    "vix_confirms": true,
    "index_confirms": true,
    "chg": {
-    "ES": -0.4,
+    "ES": -0.39,
     "NQ": -0.76,
     "YM": -0.34,
     "VIX": 3.67,
@@ -679,7 +705,7 @@
    "vix_confirms": false,
    "index_confirms": false,
    "chg": {
-    "ES": -0.09,
+    "ES": -0.1,
     "NQ": -0.78,
     "YM": 0.82,
     "VIX": 0.59,
@@ -758,7 +784,7 @@
    "index_confirms": true,
    "chg": {
     "ES": -0.4,
-    "NQ": -0.64,
+    "NQ": -0.65,
     "YM": -0.62,
     "VIX": 3.85,
     "SPY": -0.38,
@@ -1096,7 +1122,7 @@
    "index_confirms": true,
    "chg": {
     "ES": 1.36,
-    "NQ": 2.06,
+    "NQ": 2.07,
     "YM": 1.4,
     "VIX": 0.47,
     "SPY": 0.62,
@@ -1252,7 +1278,7 @@
    "index_confirms": true,
    "chg": {
     "ES": 1.02,
-    "NQ": 1.14,
+    "NQ": 1.15,
     "YM": 1.04,
     "VIX": -10.59,
     "SPY": 1.05,
@@ -1277,7 +1303,7 @@
    "vix_confirms": true,
    "index_confirms": true,
    "chg": {
-    "ES": -0.55,
+    "ES": -0.56,
     "NQ": -1.33,
     "YM": -0.24,
     "VIX": 7.9,
@@ -1305,7 +1331,7 @@
    "chg": {
     "ES": -0.33,
     "NQ": -0.5,
-    "YM": -0.52,
+    "YM": -0.51,
     "VIX": 3.31,
     "SPY": -0.31,
     "QQQ": -0.48
@@ -1397,32 +1423,6 @@
     "QQQ": true
    },
    "SPY": "WIN",
-   "QQQ": "LOSS"
-  },
-  {
-   "date": "2026-09-02",
-   "regime": "ROTATION",
-   "favored": "P",
-   "clean": false,
-   "vix_confirms": false,
-   "index_confirms": false,
-   "chg": {
-    "ES": -0.03,
-    "NQ": -0.29,
-    "YM": 0.16,
-    "VIX": -0.12,
-    "SPY": -0.05,
-    "QQQ": -0.28
-   },
-   "premarket_bar": {
-    "ES": true,
-    "NQ": true,
-    "YM": true,
-    "VIX": true,
-    "SPY": true,
-    "QQQ": true
-   },
-   "SPY": "LOSS",
    "QQQ": "LOSS"
   }
  ]
