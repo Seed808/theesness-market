@@ -118,3 +118,4 @@ id,graded_at,result,exit_premium,pnl_pct,method
 2026-11-12_rescan_SPX_CALL_2026-11-13_7650,2026-11-12T06:27:33.655410-10:00,LOSS,21.8,-20.0,STOP · schwab 1m
 2026-11-12_rescan_BA_CALL_2026-11-13_175,2026-11-12T06:32:34.605878-10:00,LOSS,1.14,-21.4,STOP (gapped through) · schwab 1m
 2026-11-12_rescan_COIN_CALL_2026-11-13_135,2026-11-12T06:32:34.605878-10:00,LOSS,1.96,-20.6,STOP (gapped through) · schwab 1m
+2026-11-12_rescan_TSM_CALL_2026-11-13_410,2026-11-12T06:42:36.922436-10:00,LOSS,3.65,-27.0,STOP (gapped through) · schwab 1m
