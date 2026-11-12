@@ -1,14 +1,14 @@
 {
  "2026-11-12_rescan_AAPL_PUT_2026-11-13_355": {
-  "last": 1.47,
-  "last_time": "2026-11-12T10:29:38-10:00",
+  "last": 1.58,
+  "last_time": "2026-11-12T10:38:38-10:00",
   "high": null,
   "low": null,
   "source": "chain quote",
-  "pnl_pct": 2.1,
-  "as_of": "2026-11-12T10:42:32.316009-10:00"
+  "pnl_pct": 9.7,
+  "as_of": "2026-11-12T10:52:28.974229-10:00"
  },
  "_errors": {
-  "2026-11-12_rescan_AAPL_PUT_2026-11-13_355": "bars returned but none after lock (72 rows)"
+  "2026-11-12_rescan_AAPL_PUT_2026-11-13_355": "bars returned but none after lock (74 rows)"
  }
 }
