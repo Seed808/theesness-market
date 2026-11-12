@@ -1,6 +1,6 @@
 {
 "SPY": {
-"fetched": "2026-11-12T08:32:31.800584-10:00",
+"fetched": "2026-11-12T09:32:38.702916-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -19,6 +19,16 @@
 "finnhub/Yahoo"
 ],
 [
+"2026-11-12T03:48:19-10:00",
+"Protests, Inflation, And Unrealistic Expectations: Skip Europe, Buy American",
+"finnhub/SeekingAlpha"
+],
+[
+"2026-11-12T03:30:43-10:00",
+"Why Jensen's Resignation Rotates The AI Trade Instead Of Ending It",
+"finnhub/SeekingAlpha"
+],
+[
 "2026-11-12T02:15:04-10:00",
 "Seagate\u2019s Legitimacy as a Play on AI Hardware Demand is About To Be Tested",
 "finnhub/Yahoo"
@@ -32,23 +42,23 @@
 "2026-11-12T01:02:47-10:00",
 "ETFs Are Net Sellers of Dominion (D) on Nov. 10",
 "finnhub/Yahoo"
-],
-[
-"2026-11-12T01:02:01-10:00",
-"45 ETFs Add to Amgen (AMGN) Holdings on Tuesday",
-"finnhub/Yahoo"
-],
-[
-"2026-11-12T01:01:55-10:00",
-"48 ETFs Add to Cisco (CSCO) Holdings on Nov. 10",
-"finnhub/Yahoo"
 ]
 ]
 },
 "QQQ": {
-"fetched": "2026-11-12T08:32:31.800584-10:00",
+"fetched": "2026-11-12T09:32:38.702916-10:00",
 "src": "finnhub",
 "items": [
+[
+"2026-11-12T03:48:19-10:00",
+"Protests, Inflation, And Unrealistic Expectations: Skip Europe, Buy American",
+"finnhub/SeekingAlpha"
+],
+[
+"2026-11-12T03:30:43-10:00",
+"Why Jensen's Resignation Rotates The AI Trade Instead Of Ending It",
+"finnhub/SeekingAlpha"
+],
 [
 "2026-11-12T01:04:09-10:00",
 "INVESCO QQQ (QQQ) Adds Apple and NVIDIA on Tuesday",
@@ -78,23 +88,23 @@
 "2026-11-12T01:01:35-10:00",
 "Alphabet (GOOGL) Sees $91.2 Million in Net ETF Buying on Nov. 10",
 "finnhub/Yahoo"
-],
-[
-"2026-11-12T01:01:31-10:00",
-"ETFs Bought $99.3 Million of SpaceX (SPCX) on Nov. 10",
-"finnhub/Yahoo"
-],
-[
-"2026-11-12T01:01:22-10:00",
-"52 ETFs Add to Micron (MU) Holdings on Tuesday",
-"finnhub/Yahoo"
 ]
 ]
 },
 "IWM": {
-"fetched": "2026-11-12T08:32:31.800584-10:00",
+"fetched": "2026-11-12T09:32:38.702916-10:00",
 "src": "finnhub",
 "items": [
+[
+"2026-11-12T03:48:19-10:00",
+"Protests, Inflation, And Unrealistic Expectations: Skip Europe, Buy American",
+"finnhub/SeekingAlpha"
+],
+[
+"2026-11-12T03:30:43-10:00",
+"Why Jensen's Resignation Rotates The AI Trade Instead Of Ending It",
+"finnhub/SeekingAlpha"
+],
 [
 "2026-11-12T01:00:57-10:00",
 "The S&P 500 May Have A Major Nvidia Problem (Technical Analysis)",
@@ -124,23 +134,23 @@
 "2026-11-11T22:25:00-10:00",
 "The Stock Market Is At A Record Valuation, But That Isn't A Recession Signal",
 "finnhub/SeekingAlpha"
-],
-[
-"2026-11-11T22:24:11-10:00",
-"Understanding Economic Reality Will Help You As An Investor",
-"finnhub/SeekingAlpha"
-],
-[
-"2026-11-11T22:15:00-10:00",
-"AIER's Everyday Price Index Rises On Grocery And Restaurant Prices",
-"finnhub/SeekingAlpha"
 ]
 ]
 },
 "DIA": {
-"fetched": "2026-11-12T08:32:31.800584-10:00",
+"fetched": "2026-11-12T09:32:38.702916-10:00",
 "src": "finnhub",
 "items": [
+[
+"2026-11-12T03:48:19-10:00",
+"Protests, Inflation, And Unrealistic Expectations: Skip Europe, Buy American",
+"finnhub/SeekingAlpha"
+],
+[
+"2026-11-12T03:30:43-10:00",
+"Why Jensen's Resignation Rotates The AI Trade Instead Of Ending It",
+"finnhub/SeekingAlpha"
+],
 [
 "2026-11-12T01:00:57-10:00",
 "The S&P 500 May Have A Major Nvidia Problem (Technical Analysis)",
@@ -170,23 +180,23 @@
 "2026-11-11T22:25:00-10:00",
 "The Stock Market Is At A Record Valuation, But That Isn't A Recession Signal",
 "finnhub/SeekingAlpha"
-],
-[
-"2026-11-11T22:24:11-10:00",
-"Understanding Economic Reality Will Help You As An Investor",
-"finnhub/SeekingAlpha"
-],
-[
-"2026-11-11T22:15:00-10:00",
-"AIER's Everyday Price Index Rises On Grocery And Restaurant Prices",
-"finnhub/SeekingAlpha"
 ]
 ]
 },
 "SPX": {
-"fetched": "2026-11-12T08:32:31.800584-10:00",
+"fetched": "2026-11-12T09:32:38.702916-10:00",
 "src": "finnhub",
 "items": [
+[
+"2026-11-12T03:48:19-10:00",
+"Protests, Inflation, And Unrealistic Expectations: Skip Europe, Buy American",
+"finnhub/SeekingAlpha"
+],
+[
+"2026-11-12T03:30:43-10:00",
+"Why Jensen's Resignation Rotates The AI Trade Instead Of Ending It",
+"finnhub/SeekingAlpha"
+],
 [
 "2026-11-12T01:00:57-10:00",
 "The S&P 500 May Have A Major Nvidia Problem (Technical Analysis)",
@@ -216,21 +226,11 @@
 "2026-11-11T22:24:11-10:00",
 "Understanding Economic Reality Will Help You As An Investor",
 "finnhub/SeekingAlpha"
-],
-[
-"2026-11-11T22:15:00-10:00",
-"AIER's Everyday Price Index Rises On Grocery And Restaurant Prices",
-"finnhub/SeekingAlpha"
-],
-[
-"2026-11-11T22:00:03-10:00",
-"The Texas AI Meltdown: Buy The Toll Road, Not The Dream",
-"finnhub/SeekingAlpha"
 ]
 ]
 },
 "TQQQ": {
-"fetched": "2026-11-12T08:32:31.800584-10:00",
+"fetched": "2026-11-12T09:32:38.702916-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -266,7 +266,7 @@
 ]
 },
 "SMH": {
-"fetched": "2026-11-12T08:32:31.800584-10:00",
+"fetched": "2026-11-12T09:32:38.702916-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -312,7 +312,7 @@
 ]
 },
 "SOXL": {
-"fetched": "2026-11-12T08:32:31.800584-10:00",
+"fetched": "2026-11-12T09:32:38.702916-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -358,7 +358,7 @@
 ]
 },
 "XLF": {
-"fetched": "2026-11-12T08:32:31.800584-10:00",
+"fetched": "2026-11-12T09:32:38.702916-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -404,7 +404,7 @@
 ]
 },
 "XLE": {
-"fetched": "2026-11-12T08:32:31.800584-10:00",
+"fetched": "2026-11-12T09:32:38.702916-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -450,7 +450,7 @@
 ]
 },
 "XLK": {
-"fetched": "2026-11-12T08:32:31.800584-10:00",
+"fetched": "2026-11-12T09:32:38.702916-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -496,7 +496,7 @@
 ]
 },
 "GLD": {
-"fetched": "2026-11-12T08:32:31.800584-10:00",
+"fetched": "2026-11-12T09:32:38.702916-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -542,7 +542,7 @@
 ]
 },
 "SLV": {
-"fetched": "2026-11-12T08:32:31.800584-10:00",
+"fetched": "2026-11-12T09:32:38.702916-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -558,7 +558,7 @@
 ]
 },
 "TLT": {
-"fetched": "2026-11-12T08:32:31.800584-10:00",
+"fetched": "2026-11-12T09:32:38.702916-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -604,7 +604,7 @@
 ]
 },
 "IBIT": {
-"fetched": "2026-11-12T08:32:31.800584-10:00",
+"fetched": "2026-11-12T09:32:38.702916-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -650,17 +650,17 @@
 ]
 },
 "TNA": {
-"fetched": "2026-11-12T08:32:31.800584-10:00",
+"fetched": "2026-11-12T09:32:38.702916-10:00",
 "src": "finnhub",
 "items": []
 },
 "UVXY": {
-"fetched": "2026-11-12T08:32:31.800584-10:00",
+"fetched": "2026-11-12T09:32:38.702916-10:00",
 "src": "finnhub",
 "items": []
 },
 "AAPL": {
-"fetched": "2026-11-12T08:32:31.800584-10:00",
+"fetched": "2026-11-12T09:32:38.702916-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -706,7 +706,7 @@
 ]
 },
 "AMAT": {
-"fetched": "2026-11-12T08:32:31.800584-10:00",
+"fetched": "2026-11-12T09:32:38.702916-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -752,7 +752,7 @@
 ]
 },
 "AMD": {
-"fetched": "2026-11-12T08:32:31.800584-10:00",
+"fetched": "2026-11-12T09:32:38.702916-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -798,7 +798,7 @@
 ]
 },
 "AMZN": {
-"fetched": "2026-11-12T08:32:31.800584-10:00",
+"fetched": "2026-11-12T09:32:38.702916-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -844,7 +844,7 @@
 ]
 },
 "ANET": {
-"fetched": "2026-11-12T08:32:31.800584-10:00",
+"fetched": "2026-11-12T09:32:38.702916-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -890,7 +890,7 @@
 ]
 },
 "APLD": {
-"fetched": "2026-11-12T08:32:31.800584-10:00",
+"fetched": "2026-11-12T09:32:38.702916-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -936,7 +936,7 @@
 ]
 },
 "APP": {
-"fetched": "2026-11-12T08:32:31.800584-10:00",
+"fetched": "2026-11-12T09:32:38.702916-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -982,7 +982,7 @@
 ]
 },
 "ASTS": {
-"fetched": "2026-11-12T08:32:31.800584-10:00",
+"fetched": "2026-11-12T09:32:38.702916-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1028,7 +1028,7 @@
 ]
 },
 "AVGO": {
-"fetched": "2026-11-12T08:32:31.800584-10:00",
+"fetched": "2026-11-12T09:32:38.702916-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1074,7 +1074,7 @@
 ]
 },
 "BA": {
-"fetched": "2026-11-12T08:32:31.800584-10:00",
+"fetched": "2026-11-12T09:32:38.702916-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1120,7 +1120,7 @@
 ]
 },
 "BABA": {
-"fetched": "2026-11-12T08:32:31.800584-10:00",
+"fetched": "2026-11-12T09:32:38.702916-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1166,7 +1166,7 @@
 ]
 },
 "BAC": {
-"fetched": "2026-11-12T08:32:31.800584-10:00",
+"fetched": "2026-11-12T09:32:38.702916-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1212,7 +1212,7 @@
 ]
 },
 "CIFR": {
-"fetched": "2026-11-12T08:32:31.800584-10:00",
+"fetched": "2026-11-12T09:32:38.702916-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1258,7 +1258,7 @@
 ]
 },
 "COIN": {
-"fetched": "2026-11-12T08:32:31.800584-10:00",
+"fetched": "2026-11-12T09:32:38.702916-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1304,7 +1304,7 @@
 ]
 },
 "CORZ": {
-"fetched": "2026-11-12T08:32:31.800584-10:00",
+"fetched": "2026-11-12T09:32:38.702916-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1350,7 +1350,7 @@
 ]
 },
 "CRM": {
-"fetched": "2026-11-12T08:32:31.800584-10:00",
+"fetched": "2026-11-12T09:32:38.702916-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1396,7 +1396,7 @@
 ]
 },
 "CRWV": {
-"fetched": "2026-11-12T08:32:31.800584-10:00",
+"fetched": "2026-11-12T09:32:38.702916-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1442,7 +1442,7 @@
 ]
 },
 "CVNA": {
-"fetched": "2026-11-12T08:32:31.800584-10:00",
+"fetched": "2026-11-12T09:32:38.702916-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1468,7 +1468,7 @@
 ]
 },
 "DKNG": {
-"fetched": "2026-11-12T08:32:31.800584-10:00",
+"fetched": "2026-11-12T09:32:38.702916-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1514,7 +1514,7 @@
 ]
 },
 "F": {
-"fetched": "2026-11-12T08:32:31.800584-10:00",
+"fetched": "2026-11-12T09:32:38.702916-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1560,7 +1560,7 @@
 ]
 },
 "GOOGL": {
-"fetched": "2026-11-12T08:32:31.800584-10:00",
+"fetched": "2026-11-12T09:32:38.702916-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1606,7 +1606,7 @@
 ]
 },
 "HOOD": {
-"fetched": "2026-11-12T08:32:31.800584-10:00",
+"fetched": "2026-11-12T09:32:38.702916-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1652,7 +1652,7 @@
 ]
 },
 "INTC": {
-"fetched": "2026-11-12T08:32:31.800584-10:00",
+"fetched": "2026-11-12T09:32:38.702916-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1698,7 +1698,7 @@
 ]
 },
 "IONQ": {
-"fetched": "2026-11-12T08:32:31.800584-10:00",
+"fetched": "2026-11-12T09:32:38.702916-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1744,7 +1744,7 @@
 ]
 },
 "IREN": {
-"fetched": "2026-11-12T08:32:31.800584-10:00",
+"fetched": "2026-11-12T09:32:38.702916-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1790,7 +1790,7 @@
 ]
 },
 "JPM": {
-"fetched": "2026-11-12T08:32:31.800584-10:00",
+"fetched": "2026-11-12T09:32:38.702916-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1836,7 +1836,7 @@
 ]
 },
 "LRCX": {
-"fetched": "2026-11-12T08:32:31.800584-10:00",
+"fetched": "2026-11-12T09:32:38.702916-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1882,7 +1882,7 @@
 ]
 },
 "MARA": {
-"fetched": "2026-11-12T08:32:31.800584-10:00",
+"fetched": "2026-11-12T09:32:38.702916-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1928,7 +1928,7 @@
 ]
 },
 "META": {
-"fetched": "2026-11-12T08:32:31.800584-10:00",
+"fetched": "2026-11-12T09:32:38.702916-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1974,7 +1974,7 @@
 ]
 },
 "MSFT": {
-"fetched": "2026-11-12T08:32:31.800584-10:00",
+"fetched": "2026-11-12T09:32:38.702916-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2020,7 +2020,7 @@
 ]
 },
 "MSTR": {
-"fetched": "2026-11-12T08:32:31.800584-10:00",
+"fetched": "2026-11-12T09:32:38.702916-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2066,7 +2066,7 @@
 ]
 },
 "MU": {
-"fetched": "2026-11-12T08:32:31.800584-10:00",
+"fetched": "2026-11-12T09:32:38.702916-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2112,7 +2112,7 @@
 ]
 },
 "NFLX": {
-"fetched": "2026-11-12T08:32:31.800584-10:00",
+"fetched": "2026-11-12T09:32:38.702916-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2158,7 +2158,7 @@
 ]
 },
 "NIO": {
-"fetched": "2026-11-12T08:32:31.800584-10:00",
+"fetched": "2026-11-12T09:32:38.702916-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2184,7 +2184,7 @@
 ]
 },
 "NVDA": {
-"fetched": "2026-11-12T08:32:31.800584-10:00",
+"fetched": "2026-11-12T09:32:38.702916-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2230,7 +2230,7 @@
 ]
 },
 "OKLO": {
-"fetched": "2026-11-12T08:32:31.800584-10:00",
+"fetched": "2026-11-12T09:32:38.702916-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2276,7 +2276,7 @@
 ]
 },
 "ORCL": {
-"fetched": "2026-11-12T08:32:31.800584-10:00",
+"fetched": "2026-11-12T09:32:38.702916-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2322,7 +2322,7 @@
 ]
 },
 "PLTR": {
-"fetched": "2026-11-12T08:32:31.800584-10:00",
+"fetched": "2026-11-12T09:32:38.702916-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2368,7 +2368,7 @@
 ]
 },
 "PLUG": {
-"fetched": "2026-11-12T08:32:31.800584-10:00",
+"fetched": "2026-11-12T09:32:38.702916-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2414,7 +2414,7 @@
 ]
 },
 "PYPL": {
-"fetched": "2026-11-12T08:32:31.800584-10:00",
+"fetched": "2026-11-12T09:32:38.702916-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2460,7 +2460,7 @@
 ]
 },
 "QCOM": {
-"fetched": "2026-11-12T08:32:31.800584-10:00",
+"fetched": "2026-11-12T09:32:38.702916-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2506,7 +2506,7 @@
 ]
 },
 "RBLX": {
-"fetched": "2026-11-12T08:32:31.800584-10:00",
+"fetched": "2026-11-12T09:32:38.702916-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2537,7 +2537,7 @@
 ]
 },
 "RDDT": {
-"fetched": "2026-11-12T08:32:31.800584-10:00",
+"fetched": "2026-11-12T09:32:38.702916-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2583,7 +2583,7 @@
 ]
 },
 "RGTI": {
-"fetched": "2026-11-12T08:32:31.800584-10:00",
+"fetched": "2026-11-12T09:32:38.702916-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2629,7 +2629,7 @@
 ]
 },
 "RKLB": {
-"fetched": "2026-11-12T08:32:31.800584-10:00",
+"fetched": "2026-11-12T09:32:38.702916-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2675,7 +2675,7 @@
 ]
 },
 "SHOP": {
-"fetched": "2026-11-12T08:32:31.800584-10:00",
+"fetched": "2026-11-12T09:32:38.702916-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2721,7 +2721,7 @@
 ]
 },
 "SMCI": {
-"fetched": "2026-11-12T08:32:31.800584-10:00",
+"fetched": "2026-11-12T09:32:38.702916-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2767,7 +2767,7 @@
 ]
 },
 "SMR": {
-"fetched": "2026-11-12T08:32:31.800584-10:00",
+"fetched": "2026-11-12T09:32:38.702916-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2813,7 +2813,7 @@
 ]
 },
 "SNAP": {
-"fetched": "2026-11-12T08:32:31.800584-10:00",
+"fetched": "2026-11-12T09:32:38.702916-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2859,7 +2859,7 @@
 ]
 },
 "SOFI": {
-"fetched": "2026-11-12T08:32:31.800584-10:00",
+"fetched": "2026-11-12T09:32:38.702916-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2905,7 +2905,7 @@
 ]
 },
 "TSLA": {
-"fetched": "2026-11-12T08:32:31.800584-10:00",
+"fetched": "2026-11-12T09:32:38.702916-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2951,9 +2951,14 @@
 ]
 },
 "TSM": {
-"fetched": "2026-11-12T08:32:31.800584-10:00",
+"fetched": "2026-11-12T09:32:38.702916-10:00",
 "src": "finnhub",
 "items": [
+[
+"2026-11-12T03:30:43-10:00",
+"Why Jensen's Resignation Rotates The AI Trade Instead Of Ending It",
+"finnhub/SeekingAlpha"
+],
 [
 "2026-11-12T02:37:32-10:00",
 "Broadcom: Jensen Huang's Resignation Is A $2 Trillion Game Changer",
@@ -2988,16 +2993,11 @@
 "2026-11-12T01:00:00-10:00",
 "Nvidia's boardroom bombshell hits a fragile chip rally: Chart of the Day",
 "finnhub/Yahoo"
-],
-[
-"2026-11-11T23:23:46-10:00",
-"Nvidia Stock\u2019s 'Very Sad Day,' Analyst Cuts Price Target by $100",
-"finnhub/Benzinga"
 ]
 ]
 },
 "UBER": {
-"fetched": "2026-11-12T08:32:31.800584-10:00",
+"fetched": "2026-11-12T09:32:38.702916-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -3043,7 +3043,7 @@
 ]
 },
 "WMT": {
-"fetched": "2026-11-12T08:32:31.800584-10:00",
+"fetched": "2026-11-12T09:32:38.702916-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -3089,7 +3089,7 @@
 ]
 },
 "XOM": {
-"fetched": "2026-11-12T08:32:31.800584-10:00",
+"fetched": "2026-11-12T09:32:38.702916-10:00",
 "src": "finnhub",
 "items": [
 [
