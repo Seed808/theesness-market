@@ -1,0 +1,18 @@
+{
+ "pending": null,
+ "history": [
+  {
+   "regime": "MIXED",
+   "clean": false,
+   "why": "ES red (-0.66%), NQ red (-1.37%), YM flat (-0.04%); No ES/YM rule matched \u2192 no favored side, no A+",
+   "at": "2026-11-12T04:12:32.951904-10:00",
+   "source": "confirmation read"
+  }
+ ],
+ "last_reading": {
+  "regime": "MIXED",
+  "clean": false,
+  "why": "ES red (-0.66%), NQ red (-1.37%), YM flat (-0.04%); No ES/YM rule matched \u2192 no favored side, no A+",
+  "at": "2026-11-12T04:12:32.951904-10:00"
+ }
+}
