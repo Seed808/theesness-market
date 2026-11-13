@@ -1,9 +1,9 @@
 {
- "built_for": "2026-11-12",
- "built_at": "2026-11-12T11:22:35.469946-10:00",
+ "built_for": "2026-11-13",
+ "built_at": "2026-11-13T11:22:33.386326-10:00",
  "range": [
-  "2026-09-03",
-  "2026-11-12"
+  "2026-09-04",
+  "2026-11-13"
  ],
  "params": {
   "move_pct": 0.3,
@@ -91,40 +91,66 @@
    "regime": "BULL",
    "clean": true,
    "SPY": {
-    "days": 9,
+    "days": 10,
     "win": 4,
-    "loss": 3,
+    "loss": 4,
     "none": 2,
-    "win_pct": 57.1
+    "win_pct": 50.0
    },
    "QQQ": {
-    "days": 9,
+    "days": 10,
     "win": 4,
-    "loss": 3,
+    "loss": 4,
     "none": 2,
-    "win_pct": 57.1
+    "win_pct": 50.0
    }
   },
   {
    "regime": "BULL",
    "clean": false,
    "SPY": {
-    "days": 10,
-    "win": 4,
+    "days": 9,
+    "win": 3,
     "loss": 2,
     "none": 4,
-    "win_pct": 66.7
+    "win_pct": 60.0
    },
    "QQQ": {
-    "days": 10,
+    "days": 9,
     "win": 3,
-    "loss": 4,
+    "loss": 3,
     "none": 3,
-    "win_pct": 42.9
+    "win_pct": 50.0
    }
   }
  ],
  "days": [
+  {
+   "date": "2026-11-13",
+   "regime": "BULL",
+   "favored": "C",
+   "clean": true,
+   "vix_confirms": true,
+   "index_confirms": true,
+   "chg": {
+    "ES": 0.4,
+    "NQ": 0.11,
+    "YM": 0.41,
+    "VIX": -3.53,
+    "SPY": 0.43,
+    "QQQ": 0.14
+   },
+   "premarket_bar": {
+    "ES": true,
+    "NQ": true,
+    "YM": true,
+    "VIX": true,
+    "SPY": true,
+    "QQQ": true
+   },
+   "SPY": "LOSS",
+   "QQQ": "LOSS"
+  },
   {
    "date": "2026-11-12",
    "regime": "MIXED",
@@ -1398,32 +1424,6 @@
    },
    "SPY": "WIN",
    "QQQ": "WIN"
-  },
-  {
-   "date": "2026-09-03",
-   "regime": "BULL",
-   "favored": "C",
-   "clean": false,
-   "vix_confirms": false,
-   "index_confirms": true,
-   "chg": {
-    "ES": 0.32,
-    "NQ": 0.2,
-    "YM": 0.62,
-    "VIX": -1.12,
-    "SPY": 0.31,
-    "QQQ": 0.21
-   },
-   "premarket_bar": {
-    "ES": true,
-    "NQ": true,
-    "YM": true,
-    "VIX": true,
-    "SPY": true,
-    "QQQ": true
-   },
-   "SPY": "WIN",
-   "QQQ": "LOSS"
   }
  ]
 }
