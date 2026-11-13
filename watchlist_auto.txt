@@ -1,0 +1,3 @@
+# Managed by the system (market/autowatch.py). Market movers added automatically;
+# dropped when they stop moving or their options thin out. Edit watchlist.txt, not this.
+
