@@ -22,60 +22,45 @@ TRAILS = [0.10, 0.15, 0.20, 0.25]       # trailing stop distance below the highe
 
 def exit_plans(w, entry, stop, t1, t2):
     """Exit plans compared on the same bars (11/12, Kalani asked about a trailing stop after T1).
-    Every plan: -20% stop until T1. Bars are processed in order; a bar that opens past a level exits
-    at that open; target and stop in the same bar = stop. Returns {plan: pnl %}."""
+    Same conventions as the live grader: a bar that opens past a level exits at that open; target
+    and stop in the same bar = stop; once a bar's High reaches T1, the moved stop applies from the
+    NEXT bar. Returns {plan: pnl %}."""
     def pct(px):
         return round((px - entry) / entry * 100, 1)
-    last = float(w["Close"].iloc[-1])
-    out = {}
-    r1, p1, at1 = walk(w, t1, stop)
-    r2, p2, _ = walk(w, t2, stop)
-    out["now_banger"] = pct(p2)                                   # rule before 11/13
-    out["sell_all_t1"] = pct(p1)
-    if r1 != "WIN":                                               # never reached T1: every plan is the same
-        for k in ["be_stop", "half_be"] + [f"trail{int(x*100)}{s}" for x in TRAILS for s in ("", "_cap")]:
-            out[k] = pct(p1)
-        return out
-    after = w[w.index > at1]
-    if after.empty:
-        rb, pb = None, last
-    else:
-        rb, pb, _ = walk(after, t2, entry)
-    out["be_stop"] = pct(pb)
-    out["half_be"] = round((pct(t1) + pct(pb)) / 2, 1)
+
+    def run(sell_t1, cap, trail):
+        """trail None = keep the -20% stop; 0 = stop to entry after T1; x = trail x below the high."""
+        hit, hi, st = False, None, stop
+        for _, b in w.iterrows():
+            o, h, l = float(b["Open"]), float(b["High"]), float(b["Low"])
+            if o <= st:
+                return o
+            if sell_t1 and o >= t1:
+                return o
+            if cap and o >= cap:
+                return o
+            if l <= st:
+                return st
+            if sell_t1 and h >= t1:
+                return t1
+            if cap and h >= cap:
+                return cap
+            if not hit and h >= t1:
+                hit, hi = True, h
+            elif hit:
+                hi = max(hi, h)
+            if hit and trail is not None:
+                st = max(entry, hi * (1 - trail)) if trail else entry
+        return float(w["Close"].iloc[-1])
+
+    out = {"now_banger": pct(run(False, t2, None)),            # rule before 11/13
+           "sell_all_t1": pct(run(True, None, None)),
+           "be_stop": pct(run(False, t2, 0))}                   # built for cards from 11/13
+    out["half_be"] = round((out["sell_all_t1"] + out["be_stop"]) / 2, 1)
     for tr in TRAILS:
-        for cap in (False, True):
-            hi = max(float(w.loc[at1, "High"]), t1)
-            px = None
-            for _, b in after.iterrows():
-                st = max(entry, hi * (1 - tr))                    # never below entry once T1 hit
-                o = float(b["Open"])
-                if o <= st:
-                    px = o; break
-                if cap and o >= t2:
-                    px = o; break
-                if float(b["Low"]) <= st:
-                    px = st; break
-                if cap and float(b["High"]) >= t2:
-                    px = t2; break
-                hi = max(hi, float(b["High"]))
-            out[f"trail{int(tr*100)}{'_cap' if cap else ''}"] = pct(px if px is not None else last)
+        out[f"trail{int(tr*100)}"] = pct(run(False, None, tr))        # no Banger cap
+        out[f"trail{int(tr*100)}_cap"] = pct(run(False, t2, tr))      # still sells at the Banger
     return out
-
-
-def walk(w, target, stop):
-    for t, b in w.iterrows():
-        o = float(b["Open"])
-        if o <= stop:
-            return "LOSS", o, t
-        if o >= target:
-            return "WIN", o, t
-        hit_t, hit_s = b["High"] >= target, b["Low"] <= stop
-        if hit_s:
-            return "LOSS", stop, t
-        if hit_t:
-            return "WIN", target, t
-    return None, float(w["Close"].iloc[-1]), w.index[-1]
 
 
 def main() -> int:
