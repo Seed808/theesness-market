@@ -1,12 +1,12 @@
 {
  "2026-11-12_rescan_AAPL_PUT_2026-11-13_355": {
-  "last": 0.95,
-  "last_time": "2026-11-13T13:43:55.692000+00:00",
+  "last": 1.03,
+  "last_time": "2026-11-13T13:53:46.470000+00:00",
   "high": 2.04,
   "low": 1.5,
-  "source": "schwab quote (mark)",
-  "underlying": 356.5887,
-  "pnl_pct": -34.0,
-  "as_of": "2026-11-13T03:42:34.586199-10:00"
+  "source": "schwab last trade",
+  "underlying": 356.5497,
+  "pnl_pct": -28.5,
+  "as_of": "2026-11-13T03:52:29.846171-10:00"
  }
 }
