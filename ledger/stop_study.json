@@ -1,46 +1,46 @@
 {
- "built_at": "2026-10-21T15:08:07.800652-10:00",
+ "built_at": "2026-11-12T14:31:33.548401-10:00",
  "target_pct": 50.0,
  "summary": {
   "stop15": {
-   "win": 5,
-   "loss": 6,
+   "win": 9,
+   "loss": 28,
    "flat": 0,
-   "open": 0,
-   "total_pnl_pct": 161.7,
-   "avg_pnl_pct": 14.7
+   "open": 1,
+   "total_pnl_pct": -43.2,
+   "avg_pnl_pct": -1.2
   },
   "stop20": {
-   "win": 5,
-   "loss": 6,
+   "win": 10,
+   "loss": 27,
    "flat": 0,
-   "open": 0,
-   "total_pnl_pct": 131.4,
-   "avg_pnl_pct": 11.9
+   "open": 1,
+   "total_pnl_pct": -48.8,
+   "avg_pnl_pct": -1.3
   },
   "stop25": {
-   "win": 5,
-   "loss": 6,
+   "win": 10,
+   "loss": 26,
    "flat": 0,
-   "open": 0,
-   "total_pnl_pct": 104.7,
-   "avg_pnl_pct": 9.5
+   "open": 2,
+   "total_pnl_pct": -98.1,
+   "avg_pnl_pct": -2.7
   },
   "stop30": {
-   "win": 5,
-   "loss": 5,
+   "win": 11,
+   "loss": 25,
    "flat": 0,
-   "open": 1,
-   "total_pnl_pct": 102.5,
-   "avg_pnl_pct": 10.2
+   "open": 2,
+   "total_pnl_pct": -114.6,
+   "avg_pnl_pct": -3.2
   },
   "stop35": {
-   "win": 6,
-   "loss": 4,
+   "win": 13,
+   "loss": 23,
    "flat": 0,
-   "open": 1,
-   "total_pnl_pct": 162.6,
-   "avg_pnl_pct": 16.3
+   "open": 2,
+   "total_pnl_pct": -18.0,
+   "avg_pnl_pct": -0.5
   }
  },
  "cards": [
@@ -49,362 +49,1897 @@
    "card": "BABA CALL 109",
    "locked_at": "2026-10-20T04:19:55.693350-10:00",
    "entry": 1.54,
-   "worst_pct": -91.6,
-   "best_pct": -72.1,
-   "stop15": {
-    "result": "LOSS",
-    "pnl_pct": -14.9,
-    "at": "2026-10-21T03:30:00-10:00"
-   },
-   "stop20": {
-    "result": "LOSS",
-    "pnl_pct": -20.1,
-    "at": "2026-10-21T03:30:00-10:00"
-   },
-   "stop25": {
-    "result": "LOSS",
-    "pnl_pct": -24.7,
-    "at": "2026-10-21T03:30:00-10:00"
-   },
-   "stop30": {
-    "result": "LOSS",
-    "pnl_pct": -29.9,
-    "at": "2026-10-21T03:30:00-10:00"
-   },
-   "stop35": {
-    "result": "LOSS",
-    "pnl_pct": -35.1,
-    "at": "2026-10-21T03:30:00-10:00"
-   }
+   "error": "no 5m bars"
   },
   {
    "id": "2026-10-20_confirm_AMD_CALL_2026-10-23_542.5",
    "card": "AMD CALL 542.5",
    "locked_at": "2026-10-20T04:19:55.693350-10:00",
    "entry": 9.27,
-   "worst_pct": 5.7,
-   "best_pct": 112.1,
-   "stop15": {
-    "result": "WIN",
-    "pnl_pct": 49.9,
-    "at": "2026-10-21T03:30:00-10:00"
-   },
-   "stop20": {
-    "result": "WIN",
-    "pnl_pct": 49.9,
-    "at": "2026-10-21T03:30:00-10:00"
-   },
-   "stop25": {
-    "result": "WIN",
-    "pnl_pct": 49.9,
-    "at": "2026-10-21T03:30:00-10:00"
-   },
-   "stop30": {
-    "result": "WIN",
-    "pnl_pct": 49.9,
-    "at": "2026-10-21T03:30:00-10:00"
-   },
-   "stop35": {
-    "result": "WIN",
-    "pnl_pct": 49.9,
-    "at": "2026-10-21T03:30:00-10:00"
-   }
+   "error": "no 5m bars"
   },
   {
    "id": "2026-10-20_confirm_MU_CALL_2026-10-23_910",
    "card": "MU CALL 910",
    "locked_at": "2026-10-20T04:19:55.693350-10:00",
    "entry": 16.27,
-   "worst_pct": -29.3,
-   "best_pct": 74.2,
-   "stop15": {
-    "result": "WIN",
-    "pnl_pct": 50.0,
-    "at": "2026-10-21T03:30:00-10:00"
-   },
-   "stop20": {
-    "result": "WIN",
-    "pnl_pct": 50.0,
-    "at": "2026-10-21T03:30:00-10:00"
-   },
-   "stop25": {
-    "result": "WIN",
-    "pnl_pct": 50.0,
-    "at": "2026-10-21T03:30:00-10:00"
-   },
-   "stop30": {
-    "result": "WIN",
-    "pnl_pct": 50.0,
-    "at": "2026-10-21T03:30:00-10:00"
-   },
-   "stop35": {
-    "result": "WIN",
-    "pnl_pct": 50.0,
-    "at": "2026-10-21T03:30:00-10:00"
-   }
+   "error": "no 5m bars"
   },
   {
    "id": "2026-10-20_rescan_SPX_CALL_2026-10-23_7740",
    "card": "SPX CALL 7740",
    "locked_at": "2026-10-20T04:54:31.322214-10:00",
    "entry": 40.1,
-   "worst_pct": -42.6,
-   "best_pct": 24.4,
-   "stop15": {
-    "result": "LOSS",
-    "pnl_pct": -15.0,
-    "at": "2026-10-21T03:30:00-10:00"
-   },
-   "stop20": {
-    "result": "LOSS",
-    "pnl_pct": -20.0,
-    "at": "2026-10-21T03:30:00-10:00"
-   },
-   "stop25": {
-    "result": "LOSS",
-    "pnl_pct": -25.0,
-    "at": "2026-10-21T03:30:00-10:00"
-   },
-   "stop30": {
-    "result": "LOSS",
-    "pnl_pct": -30.0,
-    "at": "2026-10-21T04:05:00-10:00"
-   },
-   "stop35": {
-    "result": "LOSS",
-    "pnl_pct": -35.0,
-    "at": "2026-10-21T04:05:00-10:00"
-   }
+   "error": "no 5m bars"
   },
   {
    "id": "2026-10-21_rescan_INTC_PUT_2026-10-23_91",
    "card": "INTC PUT 91",
    "locked_at": "2026-10-21T05:02:00.296702-10:00",
    "entry": 1.56,
-   "worst_pct": -30.1,
-   "best_pct": 10.3,
-   "stop15": {
-    "result": "LOSS",
-    "pnl_pct": -14.7,
-    "at": "2026-10-21T05:45:00-10:00"
-   },
-   "stop20": {
-    "result": "LOSS",
-    "pnl_pct": -19.9,
-    "at": "2026-10-21T06:50:00-10:00"
-   },
-   "stop25": {
-    "result": "LOSS",
-    "pnl_pct": -25.0,
-    "at": "2026-10-21T09:45:00-10:00"
-   },
-   "stop30": {
-    "result": "OPEN",
-    "pnl_pct": -29.5,
-    "at": "2026-10-21T09:55:00-10:00"
-   },
-   "stop35": {
-    "result": "OPEN",
-    "pnl_pct": -29.5,
-    "at": "2026-10-21T09:55:00-10:00"
-   }
+   "error": "no 5m bars"
   },
   {
    "id": "2026-10-21_rescan_QQQ_CALL_2026-10-23_724",
    "card": "QQQ CALL 724",
    "locked_at": "2026-10-21T05:02:00.296702-10:00",
    "entry": 4.72,
-   "worst_pct": 3.8,
-   "best_pct": 60.4,
-   "stop15": {
-    "result": "WIN",
-    "pnl_pct": 50.0,
-    "at": "2026-10-21T06:40:00-10:00"
-   },
-   "stop20": {
-    "result": "WIN",
-    "pnl_pct": 50.0,
-    "at": "2026-10-21T06:40:00-10:00"
-   },
-   "stop25": {
-    "result": "WIN",
-    "pnl_pct": 50.0,
-    "at": "2026-10-21T06:40:00-10:00"
-   },
-   "stop30": {
-    "result": "WIN",
-    "pnl_pct": 50.0,
-    "at": "2026-10-21T06:40:00-10:00"
-   },
-   "stop35": {
-    "result": "WIN",
-    "pnl_pct": 50.0,
-    "at": "2026-10-21T06:40:00-10:00"
-   }
+   "error": "no 5m bars"
   },
   {
    "id": "2026-10-21_rescan_NFLX_CALL_2026-10-23_66",
    "card": "NFLX CALL 66",
    "locked_at": "2026-10-21T05:02:00.296702-10:00",
    "entry": 0.59,
-   "worst_pct": -35.6,
-   "best_pct": 27.1,
-   "stop15": {
-    "result": "LOSS",
-    "pnl_pct": -15.3,
-    "at": "2026-10-21T05:50:00-10:00"
-   },
-   "stop20": {
-    "result": "LOSS",
-    "pnl_pct": -20.3,
-    "at": "2026-10-21T06:15:00-10:00"
-   },
-   "stop25": {
-    "result": "LOSS",
-    "pnl_pct": -25.4,
-    "at": "2026-10-21T06:15:00-10:00"
-   },
-   "stop30": {
-    "result": "LOSS",
-    "pnl_pct": -30.5,
-    "at": "2026-10-21T06:20:00-10:00"
-   },
-   "stop35": {
-    "result": "LOSS",
-    "pnl_pct": -35.6,
-    "at": "2026-10-21T06:20:00-10:00"
-   }
+   "error": "no 5m bars"
   },
   {
    "id": "2026-10-21_rescan_SLV_PUT_2026-10-23_51.5",
    "card": "SLV PUT 51.5",
    "locked_at": "2026-10-21T05:02:00.296702-10:00",
    "entry": 0.34,
-   "worst_pct": -32.4,
-   "best_pct": 85.3,
-   "stop15": {
-    "result": "LOSS",
-    "pnl_pct": -14.7,
-    "at": "2026-10-21T05:40:00-10:00"
-   },
-   "stop20": {
-    "result": "LOSS",
-    "pnl_pct": -20.6,
-    "at": "2026-10-21T08:05:00-10:00"
-   },
-   "stop25": {
-    "result": "LOSS",
-    "pnl_pct": -23.5,
-    "at": "2026-10-21T08:05:00-10:00"
-   },
-   "stop30": {
-    "result": "LOSS",
-    "pnl_pct": -29.4,
-    "at": "2026-10-21T08:30:00-10:00"
-   },
-   "stop35": {
-    "result": "WIN",
-    "pnl_pct": 50.0,
-    "at": "2026-10-21T09:00:00-10:00"
-   }
+   "error": "no 5m bars"
   },
   {
    "id": "2026-10-21_rescan_UBER_PUT_2026-10-23_68",
    "card": "UBER PUT 68",
    "locked_at": "2026-10-21T05:02:00.296702-10:00",
    "entry": 0.54,
-   "worst_pct": 13.0,
-   "best_pct": 103.7,
-   "stop15": {
-    "result": "WIN",
-    "pnl_pct": 50.0,
-    "at": "2026-10-21T05:20:00-10:00"
-   },
-   "stop20": {
-    "result": "WIN",
-    "pnl_pct": 50.0,
-    "at": "2026-10-21T05:20:00-10:00"
-   },
-   "stop25": {
-    "result": "WIN",
-    "pnl_pct": 50.0,
-    "at": "2026-10-21T05:20:00-10:00"
-   },
-   "stop30": {
-    "result": "WIN",
-    "pnl_pct": 50.0,
-    "at": "2026-10-21T05:20:00-10:00"
-   },
-   "stop35": {
-    "result": "WIN",
-    "pnl_pct": 50.0,
-    "at": "2026-10-21T05:20:00-10:00"
-   }
+   "error": "no 5m bars"
   },
   {
    "id": "2026-10-21_rescan_DKNG_CALL_2026-10-23_21",
    "card": "DKNG CALL 21",
    "locked_at": "2026-10-21T05:31:42.600763-10:00",
    "entry": 0.21,
-   "worst_pct": 19.0,
-   "best_pct": 133.3,
-   "stop15": {
-    "result": "WIN",
-    "pnl_pct": 52.4,
-    "at": "2026-10-21T06:25:00-10:00"
-   },
-   "stop20": {
-    "result": "WIN",
-    "pnl_pct": 52.4,
-    "at": "2026-10-21T06:25:00-10:00"
-   },
-   "stop25": {
-    "result": "WIN",
-    "pnl_pct": 52.4,
-    "at": "2026-10-21T06:25:00-10:00"
-   },
-   "stop30": {
-    "result": "WIN",
-    "pnl_pct": 52.4,
-    "at": "2026-10-21T06:25:00-10:00"
-   },
-   "stop35": {
-    "result": "WIN",
-    "pnl_pct": 52.4,
-    "at": "2026-10-21T06:25:00-10:00"
-   }
+   "error": "no 5m bars"
   },
   {
    "id": "2026-10-21_rescan_WMT_CALL_2026-10-23_119",
    "card": "WMT CALL 119",
    "locked_at": "2026-10-21T05:31:42.600763-10:00",
    "entry": 0.5,
-   "worst_pct": -40.0,
-   "best_pct": 10.0,
+   "error": "no 5m bars"
+  },
+  {
+   "id": "2026-10-22_rescan_IWM_CALL_2026-10-23_277",
+   "card": "IWM CALL 277",
+   "locked_at": "2026-10-22T06:11:10.463128-10:00",
+   "entry": 1.06,
+   "error": "no 5m bars"
+  },
+  {
+   "id": "2026-10-22_rescan_DIA_CALL_2026-10-23_529",
+   "card": "DIA CALL 529",
+   "locked_at": "2026-10-22T06:11:10.463128-10:00",
+   "entry": 1.23,
+   "error": "no 5m bars"
+  },
+  {
+   "id": "2026-10-23_confirm_GLD_PUT_2026-10-23_366",
+   "card": "GLD PUT 366",
+   "locked_at": "2026-10-23T04:23:08.128597-10:00",
+   "entry": 0.3,
+   "error": "no 5m bars"
+  },
+  {
+   "id": "2026-10-23_rescan_TSLA_PUT_2026-10-23_370",
+   "card": "TSLA PUT 370",
+   "locked_at": "2026-10-23T07:12:51.533478-10:00",
+   "entry": 0.49,
+   "error": "no 5m bars"
+  },
+  {
+   "id": "2026-10-23_rescan_SPX_PUT_2026-10-23_7625",
+   "card": "SPX PUT 7625",
+   "locked_at": "2026-10-23T07:38:55.679280-10:00",
+   "entry": 8.45,
+   "error": "no 5m bars"
+  },
+  {
+   "id": "2026-10-26_confirm_CRM_CALL_2026-10-30_250",
+   "card": "CRM CALL 250",
+   "locked_at": "2026-10-26T04:33:46.866198-10:00",
+   "entry": 5.1,
+   "error": "no 5m bars"
+  },
+  {
+   "id": "2026-10-26_rescan_XLE_CALL_2026-10-30_70",
+   "card": "XLE CALL 70",
+   "locked_at": "2026-10-26T06:34:59.385171-10:00",
+   "entry": 0.78,
+   "error": "no 5m bars"
+  },
+  {
+   "id": "2026-10-27_confirm_DIA_PUT_2026-10-30_520",
+   "card": "DIA PUT 520",
+   "locked_at": "2026-10-27T04:02:31.308647-10:00",
+   "entry": 2.57,
+   "error": "no 5m bars"
+  },
+  {
+   "id": "2026-10-27_rescan_AAPL_CALL_2026-10-30_345",
+   "card": "AAPL CALL 345",
+   "locked_at": "2026-10-27T04:12:32.961246-10:00",
+   "entry": 3.17,
+   "error": "no 5m bars"
+  },
+  {
+   "id": "2026-10-27_rescan_GLD_CALL_2026-10-30_372",
+   "card": "GLD CALL 372",
+   "locked_at": "2026-10-27T04:12:32.961246-10:00",
+   "entry": 2.57,
+   "error": "no 5m bars"
+  },
+  {
+   "id": "2026-10-27_rescan_SLV_CALL_2026-10-30_49",
+   "card": "SLV CALL 49",
+   "locked_at": "2026-10-27T04:12:32.961246-10:00",
+   "entry": 0.76,
+   "error": "no 5m bars"
+  },
+  {
+   "id": "2026-10-27_rescan_WMT_PUT_2026-10-30_119",
+   "card": "WMT PUT 119",
+   "locked_at": "2026-10-27T04:12:32.961246-10:00",
+   "entry": 0.95,
+   "error": "no 5m bars"
+  },
+  {
+   "id": "2026-10-27_rescan_QQQ_CALL_2026-10-30_718",
+   "card": "QQQ CALL 718",
+   "locked_at": "2026-10-27T04:42:30.878722-10:00",
+   "entry": 6.94,
+   "error": "no 5m bars"
+  },
+  {
+   "id": "2026-10-27_rescan_SPX_CALL_2026-10-30_7705",
+   "card": "SPX CALL 7705",
+   "locked_at": "2026-10-27T04:52:32.864279-10:00",
+   "entry": 48.8,
+   "error": "no 5m bars"
+  },
+  {
+   "id": "2026-10-27_rescan_PLTR_CALL_2026-10-30_200",
+   "card": "PLTR CALL 200",
+   "locked_at": "2026-10-27T05:02:36.385329-10:00",
+   "entry": 3.67,
+   "error": "no 5m bars"
+  },
+  {
+   "id": "2026-10-27_rescan_SPY_CALL_2026-10-30_770",
+   "card": "SPY CALL 770",
+   "locked_at": "2026-10-27T05:02:36.385329-10:00",
+   "entry": 4.44,
+   "error": "no 5m bars"
+  },
+  {
+   "id": "2026-10-27_rescan_BABA_CALL_2026-10-30_100",
+   "card": "BABA CALL 100",
+   "locked_at": "2026-10-27T05:02:36.385329-10:00",
+   "entry": 1.63,
+   "error": "no 5m bars"
+  },
+  {
+   "id": "2026-10-27_rescan_QCOM_CALL_2026-10-30_182.5",
+   "card": "QCOM CALL 182.5",
+   "locked_at": "2026-10-27T05:12:33.147348-10:00",
+   "entry": 3.02,
+   "error": "no 5m bars"
+  },
+  {
+   "id": "2026-10-27_rescan_XLF_PUT_2026-10-30_55",
+   "card": "XLF PUT 55",
+   "locked_at": "2026-10-27T05:12:33.147348-10:00",
+   "entry": 0.12,
+   "error": "no 5m bars"
+  },
+  {
+   "id": "2026-10-27_rescan_NVDA_CALL_2026-10-30_220",
+   "card": "NVDA CALL 220",
+   "locked_at": "2026-10-27T05:22:31.937290-10:00",
+   "entry": 2.2,
+   "error": "no 5m bars"
+  },
+  {
+   "id": "2026-10-27_rescan_BAC_PUT_2026-10-30_50",
+   "card": "BAC PUT 50",
+   "locked_at": "2026-10-27T06:22:29.244272-10:00",
+   "entry": 0.26,
+   "error": "no 5m bars"
+  },
+  {
+   "id": "2026-10-27_rescan_META_PUT_2026-10-30_620",
+   "card": "META PUT 620",
+   "locked_at": "2026-10-27T06:42:33.925951-10:00",
+   "entry": 8.15,
+   "error": "no 5m bars"
+  },
+  {
+   "id": "2026-10-27_rescan_UBER_PUT_2026-10-30_65",
+   "card": "UBER PUT 65",
+   "locked_at": "2026-10-27T07:07:20.731739-10:00",
+   "entry": 0.49,
+   "error": "no 5m bars"
+  },
+  {
+   "id": "2026-10-27_rescan_APP_PUT_2026-10-30_260",
+   "card": "APP PUT 260",
+   "locked_at": "2026-10-27T08:02:27.165424-10:00",
+   "entry": 5.25,
+   "error": "no 5m bars"
+  },
+  {
+   "id": "2026-10-27_rescan_UVXY_CALL_2026-10-30_18",
+   "card": "UVXY CALL 18",
+   "locked_at": "2026-10-27T08:32:35.433159-10:00",
+   "entry": 0.65,
+   "error": "no 5m bars"
+  },
+  {
+   "id": "2026-10-28_rescan_IWM_CALL_2026-10-30_282",
+   "card": "IWM CALL 282",
+   "locked_at": "2026-10-28T08:42:35.867917-10:00",
+   "entry": 1.57,
+   "error": "no 5m bars"
+  },
+  {
+   "id": "2026-10-28_rescan_QQQ_CALL_2026-10-30_726",
+   "card": "QQQ CALL 726",
+   "locked_at": "2026-10-28T08:42:35.867917-10:00",
+   "entry": 5.93,
+   "error": "no 5m bars"
+  },
+  {
+   "id": "2026-10-28_rescan_SMCI_CALL_2026-10-30_35.5",
+   "card": "SMCI CALL 35.5",
+   "locked_at": "2026-10-28T08:52:28.854468-10:00",
+   "entry": 0.77,
+   "error": "no 5m bars"
+  },
+  {
+   "id": "2026-10-29_rescan_SPX_PUT_2026-10-30_7700",
+   "card": "SPX PUT 7700",
+   "locked_at": "2026-10-29T04:12:31.887707-10:00",
+   "entry": 26.1,
+   "error": "no 5m bars"
+  },
+  {
+   "id": "2026-10-29_rescan_SPY_PUT_2026-10-30_768",
+   "card": "SPY PUT 768",
+   "locked_at": "2026-10-29T04:12:31.887707-10:00",
+   "entry": 2.79,
+   "error": "no 5m bars"
+  },
+  {
+   "id": "2026-10-29_rescan_NFLX_PUT_2026-10-30_61",
+   "card": "NFLX PUT 61",
+   "locked_at": "2026-10-29T04:42:31.683371-10:00",
+   "entry": 0.18,
+   "error": "no 5m bars"
+  },
+  {
+   "id": "2026-10-29_rescan_XLE_PUT_2026-10-30_68.5",
+   "card": "XLE PUT 68.5",
+   "locked_at": "2026-10-29T04:42:31.683371-10:00",
+   "entry": 0.42,
+   "error": "no 5m bars"
+  },
+  {
+   "id": "2026-10-29_rescan_NVDA_PUT_2026-10-30_212.5",
+   "card": "NVDA PUT 212.5",
+   "locked_at": "2026-10-29T04:52:30.547511-10:00",
+   "entry": 1.41,
+   "error": "no 5m bars"
+  },
+  {
+   "id": "2026-10-29_rescan_DIA_PUT_2026-10-30_520",
+   "card": "DIA PUT 520",
+   "locked_at": "2026-10-29T04:52:30.547511-10:00",
+   "entry": 1.09,
+   "error": "no 5m bars"
+  },
+  {
+   "id": "2026-10-29_rescan_PLTR_PUT_2026-10-30_192.5",
+   "card": "PLTR PUT 192.5",
+   "locked_at": "2026-10-29T06:02:28.908040-10:00",
+   "entry": 1.5,
+   "error": "no 5m bars"
+  },
+  {
+   "id": "2026-10-30_rescan_XLF_PUT_2026-10-30_56.5",
+   "card": "XLF PUT 56.5",
+   "locked_at": "2026-10-30T04:12:30.589174-10:00",
+   "entry": 0.11,
+   "error": "no 5m bars"
+  },
+  {
+   "id": "2026-10-30_rescan_DIA_PUT_2026-10-30_518",
+   "card": "DIA PUT 518",
+   "locked_at": "2026-10-30T04:22:35.373359-10:00",
+   "entry": 0.85,
+   "error": "no 5m bars"
+  },
+  {
+   "id": "2026-10-30_rescan_UBER_PUT_2026-10-30_65",
+   "card": "UBER PUT 65",
+   "locked_at": "2026-10-30T05:42:34.002480-10:00",
+   "entry": 0.17,
+   "error": "no 5m bars"
+  },
+  {
+   "id": "2026-10-30_rescan_AAPL_PUT_2026-10-30_345",
+   "card": "AAPL PUT 345",
+   "locked_at": "2026-10-30T07:32:33.908972-10:00",
+   "entry": 0.45,
+   "error": "no 5m bars"
+  },
+  {
+   "id": "2026-11-02_rescan_SPX_CALL_2026-11-06_7660",
+   "card": "SPX CALL 7660",
+   "locked_at": "2026-11-02T05:41:03.858857-10:00",
+   "entry": 55.25,
+   "error": "no 5m bars"
+  },
+  {
+   "id": "2026-11-02_rescan_TLT_CALL_2026-11-06_82.5",
+   "card": "TLT CALL 82.5",
+   "locked_at": "2026-11-02T07:02:30.788306-10:00",
+   "entry": 0.41,
+   "error": "no 5m bars"
+  },
+  {
+   "id": "2026-11-02_rescan_NFLX_CALL_2026-11-06_63",
+   "card": "NFLX CALL 63",
+   "locked_at": "2026-11-02T07:32:35.999893-10:00",
+   "entry": 0.86,
+   "error": "no 5m bars"
+  },
+  {
+   "id": "2026-11-02_rescan_QQQ_PUT_2026-11-06_689",
+   "card": "QQQ PUT 689",
+   "locked_at": "2026-11-02T08:42:48.487995-10:00",
+   "entry": 9.88,
+   "error": "no 5m bars"
+  },
+  {
+   "id": "2026-11-02_rescan_AVGO_PUT_2026-11-06_327.5",
+   "card": "AVGO PUT 327.5",
+   "locked_at": "2026-11-02T08:42:48.487995-10:00",
+   "entry": 7.88,
+   "error": "no 5m bars"
+  },
+  {
+   "id": "2026-11-02_rescan_TSM_PUT_2026-11-06_400",
+   "card": "TSM PUT 400",
+   "locked_at": "2026-11-02T08:42:48.487995-10:00",
+   "entry": 6.93,
+   "error": "no 5m bars"
+  },
+  {
+   "id": "2026-11-03_confirm_TLT_PUT_2026-11-06_81",
+   "card": "TLT PUT 81",
+   "locked_at": "2026-11-03T05:02:36.994717-10:00",
+   "entry": 0.43,
+   "error": "no 5m bars"
+  },
+  {
+   "id": "2026-11-03_confirm_IBIT_CALL_2026-11-06_44",
+   "card": "IBIT CALL 44",
+   "locked_at": "2026-11-03T05:02:36.994717-10:00",
+   "entry": 0.68,
+   "error": "no 5m bars"
+  },
+  {
+   "id": "2026-11-03_confirm_BABA_PUT_2026-11-06_100",
+   "card": "BABA PUT 100",
+   "locked_at": "2026-11-03T05:02:36.994717-10:00",
+   "entry": 1.52,
+   "error": "no 5m bars"
+  },
+  {
+   "id": "2026-11-03_confirm_XLF_PUT_2026-11-06_56.5",
+   "card": "XLF PUT 56.5",
+   "locked_at": "2026-11-03T05:02:36.994717-10:00",
+   "entry": 0.3,
+   "error": "no 5m bars"
+  },
+  {
+   "id": "2026-11-03_rescan_QQQ_CALL_2026-11-06_686",
+   "card": "QQQ CALL 686",
+   "locked_at": "2026-11-03T05:12:34.845388-10:00",
+   "entry": 10.35,
+   "error": "no 5m bars"
+  },
+  {
+   "id": "2026-11-03_rescan_TSLA_PUT_2026-11-06_400",
+   "card": "TSLA PUT 400",
+   "locked_at": "2026-11-03T05:22:33.964200-10:00",
+   "entry": 8.35,
+   "error": "no 5m bars"
+  },
+  {
+   "id": "2026-11-03_rescan_GOOGL_PUT_2026-11-06_277.5",
+   "card": "GOOGL PUT 277.5",
+   "locked_at": "2026-11-03T05:32:34.127899-10:00",
+   "entry": 4.2,
+   "error": "no 5m bars"
+  },
+  {
+   "id": "2026-11-03_rescan_IWM_CALL_2026-11-06_282",
+   "card": "IWM CALL 282",
+   "locked_at": "2026-11-03T05:42:36.007141-10:00",
+   "entry": 3.1,
+   "error": "no 5m bars"
+  },
+  {
+   "id": "2026-11-03_rescan_SPY_CALL_2026-11-06_756",
+   "card": "SPY CALL 756",
+   "locked_at": "2026-11-03T05:42:36.007141-10:00",
+   "entry": 6.12,
+   "error": "no 5m bars"
+  },
+  {
+   "id": "2026-11-03_rescan_AAPL_CALL_2026-11-06_332.5",
+   "card": "AAPL CALL 332.5",
+   "locked_at": "2026-11-03T06:02:34.161056-10:00",
+   "entry": 3.45,
+   "error": "no 5m bars"
+  },
+  {
+   "id": "2026-11-03_rescan_SOFI_PUT_2026-11-06_16.5",
+   "card": "SOFI PUT 16.5",
+   "locked_at": "2026-11-03T06:42:48.074537-10:00",
+   "entry": 0.34,
+   "error": "no 5m bars"
+  },
+  {
+   "id": "2026-11-03_rescan_PLTR_CALL_2026-11-06_175",
+   "card": "PLTR CALL 175",
+   "locked_at": "2026-11-03T06:42:48.074537-10:00",
+   "entry": 4.15,
+   "error": "no 5m bars"
+  },
+  {
+   "id": "2026-11-03_rescan_DIA_PUT_2026-11-06_515",
+   "card": "DIA PUT 515",
+   "locked_at": "2026-11-03T07:02:39.773080-10:00",
+   "entry": 3.25,
+   "error": "no 5m bars"
+  },
+  {
+   "id": "2026-11-03_rescan_BA_PUT_2026-11-06_172.5",
+   "card": "BA PUT 172.5",
+   "locked_at": "2026-11-03T07:12:41.946353-10:00",
+   "entry": 1.58,
+   "error": "no 5m bars"
+  },
+  {
+   "id": "2026-11-04_rescan_PLTR_CALL_2026-11-06_177.5",
+   "card": "PLTR CALL 177.5",
+   "locked_at": "2026-11-04T05:22:34.427930-10:00",
+   "entry": 3.47,
+   "error": "no 5m bars"
+  },
+  {
+   "id": "2026-11-04_rescan_TLT_CALL_2026-11-06_82",
+   "card": "TLT CALL 82",
+   "locked_at": "2026-11-04T06:42:38.265597-10:00",
+   "entry": 0.23,
+   "error": "no 5m bars"
+  },
+  {
+   "id": "2026-11-04_rescan_ORCL_CALL_2026-11-06_128",
+   "card": "ORCL CALL 128",
+   "locked_at": "2026-11-04T06:52:35.982077-10:00",
+   "entry": 2.58,
+   "error": "no 5m bars"
+  },
+  {
+   "id": "2026-11-04_rescan_MARA_CALL_2026-11-06_7",
+   "card": "MARA CALL 7",
+   "locked_at": "2026-11-04T07:32:34.037419-10:00",
+   "entry": 0.29,
+   "error": "no 5m bars"
+  },
+  {
+   "id": "2026-11-05_confirm_GOOGL_PUT_2026-11-06_285",
+   "card": "GOOGL PUT 285",
+   "locked_at": "2026-11-05T05:02:30.790896-10:00",
+   "entry": 2.76,
+   "error": "no 5m bars"
+  },
+  {
+   "id": "2026-11-05_rescan_NFLX_PUT_2026-11-06_65",
+   "card": "NFLX PUT 65",
+   "locked_at": "2026-11-05T05:12:30.954748-10:00",
+   "entry": 0.36,
+   "error": "no 5m bars"
+  },
+  {
+   "id": "2026-11-06_rescan_BABA_CALL_2026-11-06_109",
+   "card": "BABA CALL 109",
+   "locked_at": "2026-11-06T05:12:28.630729-10:00",
+   "entry": 0.71,
+   "error": "no 5m bars"
+  },
+  {
+   "id": "2026-11-06_rescan_COIN_PUT_2026-11-06_135",
+   "card": "COIN PUT 135",
+   "locked_at": "2026-11-06T05:22:32.296362-10:00",
+   "entry": 1.44,
+   "error": "no 5m bars"
+  },
+  {
+   "id": "2026-11-06_rescan_IBIT_PUT_2026-11-06_42.5",
+   "card": "IBIT PUT 42.5",
+   "locked_at": "2026-11-06T05:32:31.025167-10:00",
+   "entry": 0.21,
+   "error": "no 5m bars"
+  },
+  {
+   "id": "2026-11-06_rescan_AAPL_CALL_2026-11-06_345",
+   "card": "AAPL CALL 345",
+   "locked_at": "2026-11-06T05:32:31.025167-10:00",
+   "entry": 1.1,
+   "error": "no 5m bars"
+  },
+  {
+   "id": "2026-11-06_rescan_MSFT_CALL_2026-11-06_535",
+   "card": "MSFT CALL 535",
+   "locked_at": "2026-11-06T05:32:31.025167-10:00",
+   "entry": 2.36,
+   "error": "no 5m bars"
+  },
+  {
+   "id": "2026-11-06_rescan_TLT_CALL_2026-11-06_82",
+   "card": "TLT CALL 82",
+   "locked_at": "2026-11-06T05:32:31.025167-10:00",
+   "entry": 0.12,
+   "error": "no 5m bars"
+  },
+  {
+   "id": "2026-11-06_rescan_AVGO_PUT_2026-11-06_295",
+   "card": "AVGO PUT 295",
+   "locked_at": "2026-11-06T06:02:37.583153-10:00",
+   "entry": 1.65,
+   "error": "no 5m bars"
+  },
+  {
+   "id": "2026-11-06_rescan_CRWV_PUT_2026-11-06_44.5",
+   "card": "CRWV PUT 44.5",
+   "locked_at": "2026-11-06T06:12:28.894693-10:00",
+   "entry": 0.62,
+   "error": "no 5m bars"
+  },
+  {
+   "id": "2026-11-06_rescan_ORCL_PUT_2026-11-06_115",
+   "card": "ORCL PUT 115",
+   "locked_at": "2026-11-06T06:12:28.894693-10:00",
+   "entry": 0.78,
+   "error": "no 5m bars"
+  },
+  {
+   "id": "2026-11-06_rescan_SPY_CALL_2026-11-06_741",
+   "card": "SPY CALL 741",
+   "locked_at": "2026-11-06T06:32:32.651692-10:00",
+   "entry": 1.85,
+   "error": "no 5m bars"
+  },
+  {
+   "id": "2026-11-06_rescan_SLV_CALL_2026-11-06_47",
+   "card": "SLV CALL 47",
+   "locked_at": "2026-11-06T06:52:28.346884-10:00",
+   "entry": 0.17,
+   "error": "no 5m bars"
+  },
+  {
+   "id": "2026-11-06_rescan_SOXL_PUT_2026-11-06_45",
+   "card": "SOXL PUT 45",
+   "locked_at": "2026-11-06T07:02:32.543272-10:00",
+   "entry": 0.72,
+   "error": "no 5m bars"
+  },
+  {
+   "id": "2026-11-06_rescan_MU_PUT_2026-11-06_680",
+   "card": "MU PUT 680",
+   "locked_at": "2026-11-06T07:52:33.455146-10:00",
+   "entry": 6.8,
+   "error": "no 5m bars"
+  },
+  {
+   "id": "2026-11-06_rescan_HOOD_PUT_2026-11-06_78",
+   "card": "HOOD PUT 78",
+   "locked_at": "2026-11-06T07:52:33.455146-10:00",
+   "entry": 0.45,
+   "error": "no 5m bars"
+  },
+  {
+   "id": "2026-11-06_rescan_SMH_PUT_2026-11-06_455",
+   "card": "SMH PUT 455",
+   "locked_at": "2026-11-06T07:52:33.455146-10:00",
+   "entry": 2.59,
+   "error": "no 5m bars"
+  },
+  {
+   "id": "2026-11-06_rescan_GLD_CALL_2026-11-06_374",
+   "card": "GLD CALL 374",
+   "locked_at": "2026-11-06T09:02:30.088881-10:00",
+   "entry": 0.34,
+   "error": "no 5m bars"
+  },
+  {
+   "id": "2026-11-09_rescan_NFLX_CALL_2026-11-13_64",
+   "card": "NFLX CALL 64",
+   "locked_at": "2026-11-09T05:22:30.332093-10:00",
+   "entry": 1.0,
+   "worst_pct": -90.0,
+   "best_pct": -24.0,
    "stop15": {
     "result": "LOSS",
-    "pnl_pct": -16.0,
-    "at": "2026-10-21T07:30:00-10:00"
+    "pnl_pct": -32.0,
+    "at": "2026-11-12T04:30:00-10:00"
+   },
+   "stop20": {
+    "result": "LOSS",
+    "pnl_pct": -32.0,
+    "at": "2026-11-12T04:30:00-10:00"
+   },
+   "stop25": {
+    "result": "LOSS",
+    "pnl_pct": -32.0,
+    "at": "2026-11-12T04:30:00-10:00"
+   },
+   "stop30": {
+    "result": "LOSS",
+    "pnl_pct": -32.0,
+    "at": "2026-11-12T04:30:00-10:00"
+   },
+   "stop35": {
+    "result": "LOSS",
+    "pnl_pct": -35.0,
+    "at": "2026-11-12T04:30:00-10:00"
+   }
+  },
+  {
+   "id": "2026-11-09_rescan_DKNG_CALL_2026-11-13_19",
+   "card": "DKNG CALL 19",
+   "locked_at": "2026-11-09T06:42:28.396747-10:00",
+   "entry": 0.37,
+   "worst_pct": -56.8,
+   "best_pct": 59.5,
+   "stop15": {
+    "result": "LOSS",
+    "pnl_pct": -29.7,
+    "at": "2026-11-12T05:10:00-10:00"
+   },
+   "stop20": {
+    "result": "LOSS",
+    "pnl_pct": -29.7,
+    "at": "2026-11-12T05:10:00-10:00"
+   },
+   "stop25": {
+    "result": "LOSS",
+    "pnl_pct": -29.7,
+    "at": "2026-11-12T05:10:00-10:00"
+   },
+   "stop30": {
+    "result": "LOSS",
+    "pnl_pct": -29.7,
+    "at": "2026-11-12T05:10:00-10:00"
+   },
+   "stop35": {
+    "result": "LOSS",
+    "pnl_pct": -37.8,
+    "at": "2026-11-12T05:20:00-10:00"
+   }
+  },
+  {
+   "id": "2026-11-10_rescan_AAPL_PUT_2026-11-13_345",
+   "card": "AAPL PUT 345",
+   "locked_at": "2026-11-10T05:52:34.431684-10:00",
+   "entry": 2.69,
+   "worst_pct": -97.4,
+   "best_pct": -91.4,
+   "stop15": {
+    "result": "LOSS",
+    "pnl_pct": -93.3,
+    "at": "2026-11-12T04:30:00-10:00"
+   },
+   "stop20": {
+    "result": "LOSS",
+    "pnl_pct": -93.3,
+    "at": "2026-11-12T04:30:00-10:00"
+   },
+   "stop25": {
+    "result": "LOSS",
+    "pnl_pct": -93.3,
+    "at": "2026-11-12T04:30:00-10:00"
+   },
+   "stop30": {
+    "result": "LOSS",
+    "pnl_pct": -93.3,
+    "at": "2026-11-12T04:30:00-10:00"
+   },
+   "stop35": {
+    "result": "LOSS",
+    "pnl_pct": -93.3,
+    "at": "2026-11-12T04:30:00-10:00"
+   }
+  },
+  {
+   "id": "2026-11-10_rescan_BAC_PUT_2026-11-13_50",
+   "card": "BAC PUT 50",
+   "locked_at": "2026-11-10T05:52:34.431684-10:00",
+   "entry": 0.36,
+   "worst_pct": -77.8,
+   "best_pct": -50.0,
+   "stop15": {
+    "result": "LOSS",
+    "pnl_pct": -55.6,
+    "at": "2026-11-12T04:30:00-10:00"
+   },
+   "stop20": {
+    "result": "LOSS",
+    "pnl_pct": -55.6,
+    "at": "2026-11-12T04:30:00-10:00"
+   },
+   "stop25": {
+    "result": "LOSS",
+    "pnl_pct": -55.6,
+    "at": "2026-11-12T04:30:00-10:00"
+   },
+   "stop30": {
+    "result": "LOSS",
+    "pnl_pct": -55.6,
+    "at": "2026-11-12T04:30:00-10:00"
+   },
+   "stop35": {
+    "result": "LOSS",
+    "pnl_pct": -55.6,
+    "at": "2026-11-12T04:30:00-10:00"
+   }
+  },
+  {
+   "id": "2026-11-10_rescan_JPM_PUT_2026-11-13_340",
+   "card": "JPM PUT 340",
+   "locked_at": "2026-11-10T06:02:31.760538-10:00",
+   "entry": 2.85,
+   "worst_pct": -86.7,
+   "best_pct": -64.2,
+   "stop15": {
+    "result": "LOSS",
+    "pnl_pct": -71.6,
+    "at": "2026-11-12T04:30:00-10:00"
+   },
+   "stop20": {
+    "result": "LOSS",
+    "pnl_pct": -71.6,
+    "at": "2026-11-12T04:30:00-10:00"
+   },
+   "stop25": {
+    "result": "LOSS",
+    "pnl_pct": -71.6,
+    "at": "2026-11-12T04:30:00-10:00"
+   },
+   "stop30": {
+    "result": "LOSS",
+    "pnl_pct": -71.6,
+    "at": "2026-11-12T04:30:00-10:00"
+   },
+   "stop35": {
+    "result": "LOSS",
+    "pnl_pct": -71.6,
+    "at": "2026-11-12T04:30:00-10:00"
+   }
+  },
+  {
+   "id": "2026-11-10_rescan_GOOGL_PUT_2026-11-13_287.5",
+   "card": "GOOGL PUT 287.5",
+   "locked_at": "2026-11-10T06:12:31.668536-10:00",
+   "entry": 3.95,
+   "worst_pct": -98.0,
+   "best_pct": -81.0,
+   "stop15": {
+    "result": "LOSS",
+    "pnl_pct": -82.5,
+    "at": "2026-11-12T04:30:00-10:00"
+   },
+   "stop20": {
+    "result": "LOSS",
+    "pnl_pct": -82.5,
+    "at": "2026-11-12T04:30:00-10:00"
+   },
+   "stop25": {
+    "result": "LOSS",
+    "pnl_pct": -82.5,
+    "at": "2026-11-12T04:30:00-10:00"
+   },
+   "stop30": {
+    "result": "LOSS",
+    "pnl_pct": -82.5,
+    "at": "2026-11-12T04:30:00-10:00"
+   },
+   "stop35": {
+    "result": "LOSS",
+    "pnl_pct": -82.5,
+    "at": "2026-11-12T04:30:00-10:00"
+   }
+  },
+  {
+   "id": "2026-11-11_confirm_SPX_CALL_2026-11-13_7590",
+   "card": "SPX CALL 7590",
+   "locked_at": "2026-11-11T05:02:34.575488-10:00",
+   "entry": 37.25,
+   "worst_pct": -32.6,
+   "best_pct": 92.2,
+   "stop15": {
+    "result": "LOSS",
+    "pnl_pct": -32.6,
+    "at": "2026-11-12T04:30:00-10:00"
+   },
+   "stop20": {
+    "result": "LOSS",
+    "pnl_pct": -32.6,
+    "at": "2026-11-12T04:30:00-10:00"
+   },
+   "stop25": {
+    "result": "LOSS",
+    "pnl_pct": -32.6,
+    "at": "2026-11-12T04:30:00-10:00"
+   },
+   "stop30": {
+    "result": "LOSS",
+    "pnl_pct": -32.6,
+    "at": "2026-11-12T04:30:00-10:00"
+   },
+   "stop35": {
+    "result": "WIN",
+    "pnl_pct": 59.7,
+    "at": "2026-11-12T06:05:00-10:00"
+   }
+  },
+  {
+   "id": "2026-11-11_rescan_GLD_PUT_2026-11-13_367",
+   "card": "GLD PUT 367",
+   "locked_at": "2026-11-11T05:22:36.906535-10:00",
+   "entry": 2.36,
+   "worst_pct": 304.7,
+   "best_pct": 485.2,
+   "stop15": {
+    "result": "WIN",
+    "pnl_pct": 304.7,
+    "at": "2026-11-12T04:30:00-10:00"
+   },
+   "stop20": {
+    "result": "WIN",
+    "pnl_pct": 304.7,
+    "at": "2026-11-12T04:30:00-10:00"
+   },
+   "stop25": {
+    "result": "WIN",
+    "pnl_pct": 304.7,
+    "at": "2026-11-12T04:30:00-10:00"
+   },
+   "stop30": {
+    "result": "WIN",
+    "pnl_pct": 304.7,
+    "at": "2026-11-12T04:30:00-10:00"
+   },
+   "stop35": {
+    "result": "WIN",
+    "pnl_pct": 304.7,
+    "at": "2026-11-12T04:30:00-10:00"
+   }
+  },
+  {
+   "id": "2026-11-11_rescan_TLT_PUT_2026-11-13_80.5",
+   "card": "TLT PUT 80.5",
+   "locked_at": "2026-11-11T05:22:36.906535-10:00",
+   "entry": 0.27,
+   "worst_pct": -37.0,
+   "best_pct": 196.3,
+   "stop15": {
+    "result": "LOSS",
+    "pnl_pct": -37.0,
+    "at": "2026-11-12T04:30:00-10:00"
+   },
+   "stop20": {
+    "result": "LOSS",
+    "pnl_pct": -37.0,
+    "at": "2026-11-12T04:30:00-10:00"
+   },
+   "stop25": {
+    "result": "LOSS",
+    "pnl_pct": -37.0,
+    "at": "2026-11-12T04:30:00-10:00"
+   },
+   "stop30": {
+    "result": "LOSS",
+    "pnl_pct": -37.0,
+    "at": "2026-11-12T04:30:00-10:00"
+   },
+   "stop35": {
+    "result": "LOSS",
+    "pnl_pct": -37.0,
+    "at": "2026-11-12T04:30:00-10:00"
+   }
+  },
+  {
+   "id": "2026-11-11_rescan_NFLX_CALL_2026-11-13_64",
+   "card": "NFLX CALL 64",
+   "locked_at": "2026-11-11T05:32:36.511390-10:00",
+   "entry": 0.49,
+   "worst_pct": -79.6,
+   "best_pct": 55.1,
+   "stop15": {
+    "result": "WIN",
+    "pnl_pct": 49.0,
+    "at": "2026-11-12T04:30:00-10:00"
+   },
+   "stop20": {
+    "result": "WIN",
+    "pnl_pct": 49.0,
+    "at": "2026-11-12T04:30:00-10:00"
+   },
+   "stop25": {
+    "result": "WIN",
+    "pnl_pct": 49.0,
+    "at": "2026-11-12T04:30:00-10:00"
+   },
+   "stop30": {
+    "result": "WIN",
+    "pnl_pct": 49.0,
+    "at": "2026-11-12T04:30:00-10:00"
+   },
+   "stop35": {
+    "result": "WIN",
+    "pnl_pct": 49.0,
+    "at": "2026-11-12T04:30:00-10:00"
+   }
+  },
+  {
+   "id": "2026-11-11_rescan_BA_PUT_2026-11-13_172.5",
+   "card": "BA PUT 172.5",
+   "locked_at": "2026-11-11T05:42:35.067411-10:00",
+   "entry": 1.58,
+   "worst_pct": -68.4,
+   "best_pct": 10.1,
+   "stop15": {
+    "result": "LOSS",
+    "pnl_pct": -49.4,
+    "at": "2026-11-12T04:30:00-10:00"
+   },
+   "stop20": {
+    "result": "LOSS",
+    "pnl_pct": -49.4,
+    "at": "2026-11-12T04:30:00-10:00"
+   },
+   "stop25": {
+    "result": "LOSS",
+    "pnl_pct": -49.4,
+    "at": "2026-11-12T04:30:00-10:00"
+   },
+   "stop30": {
+    "result": "LOSS",
+    "pnl_pct": -49.4,
+    "at": "2026-11-12T04:30:00-10:00"
+   },
+   "stop35": {
+    "result": "LOSS",
+    "pnl_pct": -49.4,
+    "at": "2026-11-12T04:30:00-10:00"
+   }
+  },
+  {
+   "id": "2026-11-11_rescan_PYPL_CALL_2026-11-13_59",
+   "card": "PYPL CALL 59",
+   "locked_at": "2026-11-11T06:32:33.297812-10:00",
+   "entry": 0.56,
+   "worst_pct": -67.9,
+   "best_pct": 12.5,
+   "stop15": {
+    "result": "LOSS",
+    "pnl_pct": -46.4,
+    "at": "2026-11-12T04:35:00-10:00"
+   },
+   "stop20": {
+    "result": "LOSS",
+    "pnl_pct": -46.4,
+    "at": "2026-11-12T04:35:00-10:00"
+   },
+   "stop25": {
+    "result": "LOSS",
+    "pnl_pct": -46.4,
+    "at": "2026-11-12T04:35:00-10:00"
+   },
+   "stop30": {
+    "result": "LOSS",
+    "pnl_pct": -46.4,
+    "at": "2026-11-12T04:35:00-10:00"
+   },
+   "stop35": {
+    "result": "LOSS",
+    "pnl_pct": -46.4,
+    "at": "2026-11-12T04:35:00-10:00"
+   }
+  },
+  {
+   "id": "2026-11-11_rescan_UBER_CALL_2026-11-13_71",
+   "card": "UBER CALL 71",
+   "locked_at": "2026-11-11T07:12:28.130468-10:00",
+   "entry": 0.58,
+   "worst_pct": -89.7,
+   "best_pct": 8.6,
+   "stop15": {
+    "result": "LOSS",
+    "pnl_pct": -15.5,
+    "at": "2026-11-12T04:30:00-10:00"
+   },
+   "stop20": {
+    "result": "LOSS",
+    "pnl_pct": -20.7,
+    "at": "2026-11-12T04:30:00-10:00"
+   },
+   "stop25": {
+    "result": "LOSS",
+    "pnl_pct": -25.9,
+    "at": "2026-11-12T04:30:00-10:00"
+   },
+   "stop30": {
+    "result": "LOSS",
+    "pnl_pct": -29.3,
+    "at": "2026-11-12T04:30:00-10:00"
+   },
+   "stop35": {
+    "result": "LOSS",
+    "pnl_pct": -34.5,
+    "at": "2026-11-12T04:30:00-10:00"
+   }
+  },
+  {
+   "id": "2026-11-11_rescan_WMT_CALL_2026-11-13_125",
+   "card": "WMT CALL 125",
+   "locked_at": "2026-11-11T09:12:31.397616-10:00",
+   "entry": 0.94,
+   "worst_pct": 24.5,
+   "best_pct": 196.8,
+   "stop15": {
+    "result": "WIN",
+    "pnl_pct": 139.4,
+    "at": "2026-11-12T04:30:00-10:00"
+   },
+   "stop20": {
+    "result": "WIN",
+    "pnl_pct": 139.4,
+    "at": "2026-11-12T04:30:00-10:00"
+   },
+   "stop25": {
+    "result": "WIN",
+    "pnl_pct": 139.4,
+    "at": "2026-11-12T04:30:00-10:00"
+   },
+   "stop30": {
+    "result": "WIN",
+    "pnl_pct": 139.4,
+    "at": "2026-11-12T04:30:00-10:00"
+   },
+   "stop35": {
+    "result": "WIN",
+    "pnl_pct": 139.4,
+    "at": "2026-11-12T04:30:00-10:00"
+   }
+  },
+  {
+   "id": "2026-11-12_rescan_BAC_PUT_2026-11-13_50",
+   "card": "BAC PUT 50",
+   "locked_at": "2026-11-12T05:12:36.569757-10:00",
+   "entry": 0.15,
+   "worst_pct": -46.7,
+   "best_pct": 20.0,
+   "stop15": {
+    "result": "LOSS",
+    "pnl_pct": -13.3,
+    "at": "2026-11-12T05:35:00-10:00"
    },
    "stop20": {
     "result": "LOSS",
     "pnl_pct": -20.0,
-    "at": "2026-10-21T08:10:00-10:00"
+    "at": "2026-11-12T05:35:00-10:00"
    },
    "stop25": {
     "result": "LOSS",
-    "pnl_pct": -24.0,
-    "at": "2026-10-21T08:25:00-10:00"
+    "pnl_pct": -26.7,
+    "at": "2026-11-12T05:45:00-10:00"
+   },
+   "stop30": {
+    "result": "LOSS",
+    "pnl_pct": -46.7,
+    "at": "2026-11-12T06:10:00-10:00"
+   },
+   "stop35": {
+    "result": "LOSS",
+    "pnl_pct": -46.7,
+    "at": "2026-11-12T06:10:00-10:00"
+   }
+  },
+  {
+   "id": "2026-11-12_rescan_TLT_PUT_2026-11-13_80",
+   "card": "TLT PUT 80",
+   "locked_at": "2026-11-12T05:12:36.569757-10:00",
+   "entry": 0.15,
+   "worst_pct": -33.3,
+   "best_pct": 173.3,
+   "stop15": {
+    "result": "LOSS",
+    "pnl_pct": -20.0,
+    "at": "2026-11-12T05:30:00-10:00"
+   },
+   "stop20": {
+    "result": "LOSS",
+    "pnl_pct": -20.0,
+    "at": "2026-11-12T05:30:00-10:00"
+   },
+   "stop25": {
+    "result": "LOSS",
+    "pnl_pct": -26.7,
+    "at": "2026-11-12T05:30:00-10:00"
+   },
+   "stop30": {
+    "result": "WIN",
+    "pnl_pct": 46.7,
+    "at": "2026-11-12T06:50:00-10:00"
+   },
+   "stop35": {
+    "result": "WIN",
+    "pnl_pct": 46.7,
+    "at": "2026-11-12T06:50:00-10:00"
+   }
+  },
+  {
+   "id": "2026-11-12_rescan_AMD_PUT_2026-11-13_555",
+   "card": "AMD PUT 555",
+   "locked_at": "2026-11-12T05:12:36.569757-10:00",
+   "entry": 10.6,
+   "worst_pct": -82.1,
+   "best_pct": -1.9,
+   "stop15": {
+    "result": "LOSS",
+    "pnl_pct": -15.0,
+    "at": "2026-11-12T05:15:00-10:00"
+   },
+   "stop20": {
+    "result": "LOSS",
+    "pnl_pct": -20.0,
+    "at": "2026-11-12T05:20:00-10:00"
+   },
+   "stop25": {
+    "result": "LOSS",
+    "pnl_pct": -29.2,
+    "at": "2026-11-12T05:40:00-10:00"
    },
    "stop30": {
     "result": "LOSS",
     "pnl_pct": -30.0,
-    "at": "2026-10-21T09:00:00-10:00"
+    "at": "2026-11-12T05:40:00-10:00"
    },
    "stop35": {
     "result": "LOSS",
-    "pnl_pct": -34.0,
-    "at": "2026-10-21T09:15:00-10:00"
+    "pnl_pct": -35.0,
+    "at": "2026-11-12T05:40:00-10:00"
+   }
+  },
+  {
+   "id": "2026-11-12_rescan_DIA_PUT_2026-11-13_522",
+   "card": "DIA PUT 522",
+   "locked_at": "2026-11-12T05:22:37.284154-10:00",
+   "entry": 1.42,
+   "worst_pct": -66.9,
+   "best_pct": 11.3,
+   "stop15": {
+    "result": "LOSS",
+    "pnl_pct": -25.4,
+    "at": "2026-11-12T05:35:00-10:00"
+   },
+   "stop20": {
+    "result": "LOSS",
+    "pnl_pct": -25.4,
+    "at": "2026-11-12T05:35:00-10:00"
+   },
+   "stop25": {
+    "result": "LOSS",
+    "pnl_pct": -25.4,
+    "at": "2026-11-12T05:35:00-10:00"
+   },
+   "stop30": {
+    "result": "LOSS",
+    "pnl_pct": -36.6,
+    "at": "2026-11-12T05:50:00-10:00"
+   },
+   "stop35": {
+    "result": "LOSS",
+    "pnl_pct": -36.6,
+    "at": "2026-11-12T05:50:00-10:00"
+   }
+  },
+  {
+   "id": "2026-11-12_rescan_XLF_PUT_2026-11-13_58.5",
+   "card": "XLF PUT 58.5",
+   "locked_at": "2026-11-12T05:22:37.284154-10:00",
+   "entry": 0.24,
+   "worst_pct": -50.0,
+   "best_pct": 75.0,
+   "stop15": {
+    "result": "LOSS",
+    "pnl_pct": -29.2,
+    "at": "2026-11-12T05:35:00-10:00"
+   },
+   "stop20": {
+    "result": "LOSS",
+    "pnl_pct": -29.2,
+    "at": "2026-11-12T05:35:00-10:00"
+   },
+   "stop25": {
+    "result": "LOSS",
+    "pnl_pct": -29.2,
+    "at": "2026-11-12T05:35:00-10:00"
+   },
+   "stop30": {
+    "result": "LOSS",
+    "pnl_pct": -33.3,
+    "at": "2026-11-12T05:40:00-10:00"
+   },
+   "stop35": {
+    "result": "LOSS",
+    "pnl_pct": -33.3,
+    "at": "2026-11-12T05:40:00-10:00"
+   }
+  },
+  {
+   "id": "2026-11-12_rescan_MSFT_CALL_2026-11-13_527.5",
+   "card": "MSFT CALL 527.5",
+   "locked_at": "2026-11-12T05:32:30.942024-10:00",
+   "entry": 3.08,
+   "worst_pct": -44.8,
+   "best_pct": 63.0,
+   "stop15": {
+    "result": "LOSS",
+    "pnl_pct": -14.9,
+    "at": "2026-11-12T05:50:00-10:00"
+   },
+   "stop20": {
+    "result": "WIN",
+    "pnl_pct": 50.0,
+    "at": "2026-11-12T06:10:00-10:00"
+   },
+   "stop25": {
+    "result": "WIN",
+    "pnl_pct": 50.0,
+    "at": "2026-11-12T06:10:00-10:00"
+   },
+   "stop30": {
+    "result": "WIN",
+    "pnl_pct": 50.0,
+    "at": "2026-11-12T06:10:00-10:00"
+   },
+   "stop35": {
+    "result": "WIN",
+    "pnl_pct": 50.0,
+    "at": "2026-11-12T06:10:00-10:00"
+   }
+  },
+  {
+   "id": "2026-11-12_rescan_SPY_CALL_2026-11-13_758",
+   "card": "SPY CALL 758",
+   "locked_at": "2026-11-12T05:32:30.942024-10:00",
+   "entry": 2.84,
+   "worst_pct": -24.6,
+   "best_pct": 125.4,
+   "stop15": {
+    "result": "WIN",
+    "pnl_pct": 50.0,
+    "at": "2026-11-12T05:55:00-10:00"
+   },
+   "stop20": {
+    "result": "WIN",
+    "pnl_pct": 50.0,
+    "at": "2026-11-12T05:55:00-10:00"
+   },
+   "stop25": {
+    "result": "WIN",
+    "pnl_pct": 50.0,
+    "at": "2026-11-12T05:55:00-10:00"
+   },
+   "stop30": {
+    "result": "WIN",
+    "pnl_pct": 50.0,
+    "at": "2026-11-12T05:55:00-10:00"
+   },
+   "stop35": {
+    "result": "WIN",
+    "pnl_pct": 50.0,
+    "at": "2026-11-12T05:55:00-10:00"
+   }
+  },
+  {
+   "id": "2026-11-12_rescan_QQQ_CALL_2026-11-13_687",
+   "card": "QQQ CALL 687",
+   "locked_at": "2026-11-12T05:42:35.662233-10:00",
+   "entry": 4.89,
+   "worst_pct": -13.5,
+   "best_pct": 96.1,
+   "stop15": {
+    "result": "WIN",
+    "pnl_pct": 49.9,
+    "at": "2026-11-12T05:55:00-10:00"
+   },
+   "stop20": {
+    "result": "WIN",
+    "pnl_pct": 49.9,
+    "at": "2026-11-12T05:55:00-10:00"
+   },
+   "stop25": {
+    "result": "WIN",
+    "pnl_pct": 49.9,
+    "at": "2026-11-12T05:55:00-10:00"
+   },
+   "stop30": {
+    "result": "WIN",
+    "pnl_pct": 49.9,
+    "at": "2026-11-12T05:55:00-10:00"
+   },
+   "stop35": {
+    "result": "WIN",
+    "pnl_pct": 49.9,
+    "at": "2026-11-12T05:55:00-10:00"
+   }
+  },
+  {
+   "id": "2026-11-12_rescan_TQQQ_CALL_2026-11-13_60",
+   "card": "TQQQ CALL 60",
+   "locked_at": "2026-11-12T05:42:35.662233-10:00",
+   "entry": 1.01,
+   "worst_pct": -15.8,
+   "best_pct": 112.9,
+   "stop15": {
+    "result": "WIN",
+    "pnl_pct": 50.5,
+    "at": "2026-11-12T05:55:00-10:00"
+   },
+   "stop20": {
+    "result": "WIN",
+    "pnl_pct": 50.5,
+    "at": "2026-11-12T05:55:00-10:00"
+   },
+   "stop25": {
+    "result": "WIN",
+    "pnl_pct": 50.5,
+    "at": "2026-11-12T05:55:00-10:00"
+   },
+   "stop30": {
+    "result": "WIN",
+    "pnl_pct": 50.5,
+    "at": "2026-11-12T05:55:00-10:00"
+   },
+   "stop35": {
+    "result": "WIN",
+    "pnl_pct": 50.5,
+    "at": "2026-11-12T05:55:00-10:00"
+   }
+  },
+  {
+   "id": "2026-11-12_rescan_TSM_CALL_2026-11-13_410",
+   "card": "TSM CALL 410",
+   "locked_at": "2026-11-12T05:52:35.970393-10:00",
+   "entry": 5.0,
+   "worst_pct": -46.2,
+   "best_pct": 20.0,
+   "stop15": {
+    "result": "LOSS",
+    "pnl_pct": -15.0,
+    "at": "2026-11-12T06:30:00-10:00"
+   },
+   "stop20": {
+    "result": "LOSS",
+    "pnl_pct": -20.0,
+    "at": "2026-11-12T07:00:00-10:00"
+   },
+   "stop25": {
+    "result": "LOSS",
+    "pnl_pct": -25.0,
+    "at": "2026-11-12T07:00:00-10:00"
+   },
+   "stop30": {
+    "result": "LOSS",
+    "pnl_pct": -35.0,
+    "at": "2026-11-12T07:10:00-10:00"
+   },
+   "stop35": {
+    "result": "LOSS",
+    "pnl_pct": -35.0,
+    "at": "2026-11-12T07:10:00-10:00"
+   }
+  },
+  {
+   "id": "2026-11-12_rescan_INTC_CALL_2026-11-13_62",
+   "card": "INTC CALL 62",
+   "locked_at": "2026-11-12T05:52:35.970393-10:00",
+   "entry": 1.15,
+   "worst_pct": -40.9,
+   "best_pct": 41.7,
+   "stop15": {
+    "result": "LOSS",
+    "pnl_pct": -17.4,
+    "at": "2026-11-12T06:45:00-10:00"
+   },
+   "stop20": {
+    "result": "LOSS",
+    "pnl_pct": -23.5,
+    "at": "2026-11-12T07:15:00-10:00"
+   },
+   "stop25": {
+    "result": "LOSS",
+    "pnl_pct": -25.2,
+    "at": "2026-11-12T07:20:00-10:00"
+   },
+   "stop30": {
+    "result": "LOSS",
+    "pnl_pct": -30.4,
+    "at": "2026-11-12T10:50:00-10:00"
+   },
+   "stop35": {
+    "result": "LOSS",
+    "pnl_pct": -40.9,
+    "at": "2026-11-12T10:55:00-10:00"
+   }
+  },
+  {
+   "id": "2026-11-12_rescan_NVDA_CALL_2026-11-13_165",
+   "card": "NVDA CALL 165",
+   "locked_at": "2026-11-12T05:52:35.970393-10:00",
+   "entry": 3.73,
+   "worst_pct": -38.3,
+   "best_pct": 28.7,
+   "stop15": {
+    "result": "LOSS",
+    "pnl_pct": -15.0,
+    "at": "2026-11-12T06:40:00-10:00"
+   },
+   "stop20": {
+    "result": "LOSS",
+    "pnl_pct": -20.1,
+    "at": "2026-11-12T09:00:00-10:00"
+   },
+   "stop25": {
+    "result": "LOSS",
+    "pnl_pct": -24.9,
+    "at": "2026-11-12T09:05:00-10:00"
+   },
+   "stop30": {
+    "result": "LOSS",
+    "pnl_pct": -30.0,
+    "at": "2026-11-12T09:35:00-10:00"
+   },
+   "stop35": {
+    "result": "LOSS",
+    "pnl_pct": -35.1,
+    "at": "2026-11-12T10:30:00-10:00"
+   }
+  },
+  {
+   "id": "2026-11-12_rescan_SMH_CALL_2026-11-13_505",
+   "card": "SMH CALL 505",
+   "locked_at": "2026-11-12T05:52:35.970393-10:00",
+   "entry": 5.6,
+   "worst_pct": -34.8,
+   "best_pct": 58.8,
+   "stop15": {
+    "result": "WIN",
+    "pnl_pct": 55.4,
+    "at": "2026-11-12T06:10:00-10:00"
+   },
+   "stop20": {
+    "result": "WIN",
+    "pnl_pct": 55.4,
+    "at": "2026-11-12T06:10:00-10:00"
+   },
+   "stop25": {
+    "result": "WIN",
+    "pnl_pct": 55.4,
+    "at": "2026-11-12T06:10:00-10:00"
+   },
+   "stop30": {
+    "result": "WIN",
+    "pnl_pct": 55.4,
+    "at": "2026-11-12T06:10:00-10:00"
+   },
+   "stop35": {
+    "result": "WIN",
+    "pnl_pct": 55.4,
+    "at": "2026-11-12T06:10:00-10:00"
+   }
+  },
+  {
+   "id": "2026-11-12_rescan_ORCL_CALL_2026-11-13_128",
+   "card": "ORCL CALL 128",
+   "locked_at": "2026-11-12T06:02:36.150709-10:00",
+   "entry": 1.78,
+   "worst_pct": -38.2,
+   "best_pct": 47.2,
+   "stop15": {
+    "result": "LOSS",
+    "pnl_pct": -15.2,
+    "at": "2026-11-12T07:10:00-10:00"
+   },
+   "stop20": {
+    "result": "LOSS",
+    "pnl_pct": -20.2,
+    "at": "2026-11-12T07:15:00-10:00"
+   },
+   "stop25": {
+    "result": "LOSS",
+    "pnl_pct": -25.3,
+    "at": "2026-11-12T10:00:00-10:00"
+   },
+   "stop30": {
+    "result": "LOSS",
+    "pnl_pct": -29.8,
+    "at": "2026-11-12T10:10:00-10:00"
+   },
+   "stop35": {
+    "result": "LOSS",
+    "pnl_pct": -34.8,
+    "at": "2026-11-12T10:30:00-10:00"
+   }
+  },
+  {
+   "id": "2026-11-12_rescan_BA_CALL_2026-11-13_175",
+   "card": "BA CALL 175",
+   "locked_at": "2026-11-12T06:12:34.214046-10:00",
+   "entry": 1.45,
+   "worst_pct": -84.8,
+   "best_pct": -5.5,
+   "stop15": {
+    "result": "LOSS",
+    "pnl_pct": -21.4,
+    "at": "2026-11-12T06:30:00-10:00"
+   },
+   "stop20": {
+    "result": "LOSS",
+    "pnl_pct": -21.4,
+    "at": "2026-11-12T06:30:00-10:00"
+   },
+   "stop25": {
+    "result": "LOSS",
+    "pnl_pct": -29.0,
+    "at": "2026-11-12T06:35:00-10:00"
+   },
+   "stop30": {
+    "result": "LOSS",
+    "pnl_pct": -30.3,
+    "at": "2026-11-12T06:35:00-10:00"
+   },
+   "stop35": {
+    "result": "LOSS",
+    "pnl_pct": -35.2,
+    "at": "2026-11-12T06:35:00-10:00"
+   }
+  },
+  {
+   "id": "2026-11-12_rescan_SPX_CALL_2026-11-13_7650",
+   "card": "SPX CALL 7650",
+   "locked_at": "2026-11-12T06:22:38.838076-10:00",
+   "entry": 27.25,
+   "worst_pct": -80.6,
+   "best_pct": -7.2,
+   "stop15": {
+    "result": "LOSS",
+    "pnl_pct": -15.0,
+    "at": "2026-11-12T06:25:00-10:00"
+   },
+   "stop20": {
+    "result": "LOSS",
+    "pnl_pct": -20.0,
+    "at": "2026-11-12T06:30:00-10:00"
+   },
+   "stop25": {
+    "result": "LOSS",
+    "pnl_pct": -25.0,
+    "at": "2026-11-12T06:30:00-10:00"
+   },
+   "stop30": {
+    "result": "LOSS",
+    "pnl_pct": -30.0,
+    "at": "2026-11-12T06:30:00-10:00"
+   },
+   "stop35": {
+    "result": "LOSS",
+    "pnl_pct": -35.0,
+    "at": "2026-11-12T06:40:00-10:00"
+   }
+  },
+  {
+   "id": "2026-11-12_rescan_COIN_CALL_2026-11-13_135",
+   "card": "COIN CALL 135",
+   "locked_at": "2026-11-12T06:22:38.838076-10:00",
+   "entry": 2.47,
+   "worst_pct": -72.9,
+   "best_pct": -9.3,
+   "stop15": {
+    "result": "LOSS",
+    "pnl_pct": -20.6,
+    "at": "2026-11-12T06:30:00-10:00"
+   },
+   "stop20": {
+    "result": "LOSS",
+    "pnl_pct": -20.6,
+    "at": "2026-11-12T06:30:00-10:00"
+   },
+   "stop25": {
+    "result": "LOSS",
+    "pnl_pct": -25.1,
+    "at": "2026-11-12T06:35:00-10:00"
+   },
+   "stop30": {
+    "result": "LOSS",
+    "pnl_pct": -30.0,
+    "at": "2026-11-12T06:40:00-10:00"
+   },
+   "stop35": {
+    "result": "LOSS",
+    "pnl_pct": -34.8,
+    "at": "2026-11-12T07:05:00-10:00"
+   }
+  },
+  {
+   "id": "2026-11-12_rescan_MU_CALL_2026-11-13_790",
+   "card": "MU CALL 790",
+   "locked_at": "2026-11-12T06:52:33.682104-10:00",
+   "entry": 15.15,
+   "worst_pct": -21.1,
+   "best_pct": 27.3,
+   "stop15": {
+    "result": "LOSS",
+    "pnl_pct": -15.0,
+    "at": "2026-11-12T07:10:00-10:00"
+   },
+   "stop20": {
+    "result": "LOSS",
+    "pnl_pct": -20.0,
+    "at": "2026-11-12T07:20:00-10:00"
+   },
+   "stop25": {
+    "result": "OPEN",
+    "pnl_pct": 21.6,
+    "at": "2026-11-12T10:55:00-10:00"
+   },
+   "stop30": {
+    "result": "OPEN",
+    "pnl_pct": 21.6,
+    "at": "2026-11-12T10:55:00-10:00"
+   },
+   "stop35": {
+    "result": "OPEN",
+    "pnl_pct": 21.6,
+    "at": "2026-11-12T10:55:00-10:00"
+   }
+  },
+  {
+   "id": "2026-11-12_rescan_TSLA_CALL_2026-11-13_392.5",
+   "card": "TSLA CALL 392.5",
+   "locked_at": "2026-11-12T07:32:31.507720-10:00",
+   "entry": 4.08,
+   "worst_pct": -31.9,
+   "best_pct": 166.7,
+   "stop15": {
+    "result": "LOSS",
+    "pnl_pct": -15.0,
+    "at": "2026-11-12T08:45:00-10:00"
+   },
+   "stop20": {
+    "result": "LOSS",
+    "pnl_pct": -24.0,
+    "at": "2026-11-12T08:50:00-10:00"
+   },
+   "stop25": {
+    "result": "LOSS",
+    "pnl_pct": -25.0,
+    "at": "2026-11-12T08:50:00-10:00"
+   },
+   "stop30": {
+    "result": "LOSS",
+    "pnl_pct": -29.9,
+    "at": "2026-11-12T10:05:00-10:00"
+   },
+   "stop35": {
+    "result": "WIN",
+    "pnl_pct": 50.0,
+    "at": "2026-11-12T10:05:00-10:00"
+   }
+  },
+  {
+   "id": "2026-11-12_rescan_IREN_CALL_2026-11-13_20",
+   "card": "IREN CALL 20",
+   "locked_at": "2026-11-12T07:42:33.322108-10:00",
+   "entry": 0.48,
+   "worst_pct": -62.5,
+   "best_pct": 2.1,
+   "stop15": {
+    "result": "LOSS",
+    "pnl_pct": -14.6,
+    "at": "2026-11-12T08:00:00-10:00"
+   },
+   "stop20": {
+    "result": "LOSS",
+    "pnl_pct": -20.8,
+    "at": "2026-11-12T08:15:00-10:00"
+   },
+   "stop25": {
+    "result": "LOSS",
+    "pnl_pct": -25.0,
+    "at": "2026-11-12T08:40:00-10:00"
+   },
+   "stop30": {
+    "result": "LOSS",
+    "pnl_pct": -29.2,
+    "at": "2026-11-12T08:40:00-10:00"
+   },
+   "stop35": {
+    "result": "LOSS",
+    "pnl_pct": -41.7,
+    "at": "2026-11-12T08:50:00-10:00"
+   }
+  },
+  {
+   "id": "2026-11-12_rescan_CRWV_CALL_2026-11-13_57",
+   "card": "CRWV CALL 57",
+   "locked_at": "2026-11-12T08:21:25.590275-10:00",
+   "entry": 1.53,
+   "worst_pct": -44.4,
+   "best_pct": 22.9,
+   "stop15": {
+    "result": "LOSS",
+    "pnl_pct": -15.0,
+    "at": "2026-11-12T09:00:00-10:00"
+   },
+   "stop20": {
+    "result": "LOSS",
+    "pnl_pct": -22.2,
+    "at": "2026-11-12T09:30:00-10:00"
+   },
+   "stop25": {
+    "result": "LOSS",
+    "pnl_pct": -24.8,
+    "at": "2026-11-12T09:35:00-10:00"
+   },
+   "stop30": {
+    "result": "LOSS",
+    "pnl_pct": -30.1,
+    "at": "2026-11-12T10:25:00-10:00"
+   },
+   "stop35": {
+    "result": "LOSS",
+    "pnl_pct": -36.6,
+    "at": "2026-11-12T10:30:00-10:00"
+   }
+  },
+  {
+   "id": "2026-11-12_rescan_IWM_PUT_2026-11-13_280",
+   "card": "IWM PUT 280",
+   "locked_at": "2026-11-12T08:32:31.800584-10:00",
+   "entry": 1.09,
+   "worst_pct": -10.1,
+   "best_pct": 113.8,
+   "stop15": {
+    "result": "WIN",
+    "pnl_pct": 50.5,
+    "at": "2026-11-12T09:00:00-10:00"
+   },
+   "stop20": {
+    "result": "WIN",
+    "pnl_pct": 50.5,
+    "at": "2026-11-12T09:00:00-10:00"
+   },
+   "stop25": {
+    "result": "WIN",
+    "pnl_pct": 50.5,
+    "at": "2026-11-12T09:00:00-10:00"
+   },
+   "stop30": {
+    "result": "WIN",
+    "pnl_pct": 50.5,
+    "at": "2026-11-12T09:00:00-10:00"
+   },
+   "stop35": {
+    "result": "WIN",
+    "pnl_pct": 50.5,
+    "at": "2026-11-12T09:00:00-10:00"
+   }
+  },
+  {
+   "id": "2026-11-12_rescan_META_PUT_2026-11-13_622.5",
+   "card": "META PUT 622.5",
+   "locked_at": "2026-11-12T08:52:31.596312-10:00",
+   "entry": 4.28,
+   "worst_pct": 19.2,
+   "best_pct": 68.7,
+   "stop15": {
+    "result": "WIN",
+    "pnl_pct": 50.0,
+    "at": "2026-11-12T09:35:00-10:00"
+   },
+   "stop20": {
+    "result": "WIN",
+    "pnl_pct": 50.0,
+    "at": "2026-11-12T09:35:00-10:00"
+   },
+   "stop25": {
+    "result": "WIN",
+    "pnl_pct": 50.0,
+    "at": "2026-11-12T09:35:00-10:00"
+   },
+   "stop30": {
+    "result": "WIN",
+    "pnl_pct": 50.0,
+    "at": "2026-11-12T09:35:00-10:00"
+   },
+   "stop35": {
+    "result": "WIN",
+    "pnl_pct": 50.0,
+    "at": "2026-11-12T09:35:00-10:00"
+   }
+  },
+  {
+   "id": "2026-11-12_rescan_AAPL_PUT_2026-11-13_355",
+   "card": "AAPL PUT 355",
+   "locked_at": "2026-11-12T10:42:32.316009-10:00",
+   "entry": 1.44,
+   "worst_pct": 5.6,
+   "best_pct": 38.9,
+   "stop15": {
+    "result": "OPEN",
+    "pnl_pct": 20.1,
+    "at": "2026-11-12T10:55:00-10:00"
+   },
+   "stop20": {
+    "result": "OPEN",
+    "pnl_pct": 20.1,
+    "at": "2026-11-12T10:55:00-10:00"
+   },
+   "stop25": {
+    "result": "OPEN",
+    "pnl_pct": 20.1,
+    "at": "2026-11-12T10:55:00-10:00"
+   },
+   "stop30": {
+    "result": "OPEN",
+    "pnl_pct": 20.1,
+    "at": "2026-11-12T10:55:00-10:00"
+   },
+   "stop35": {
+    "result": "OPEN",
+    "pnl_pct": 20.1,
+    "at": "2026-11-12T10:55:00-10:00"
    }
   }
  ]
