@@ -1,0 +1,18 @@
+{
+ "pending": null,
+ "history": [
+  {
+   "regime": "BULL",
+   "clean": true,
+   "why": "ES green (+0.40%), NQ green (+0.15%), YM green (+0.37%); ES+YM green \u2192 NO put setups",
+   "at": "2026-11-13T04:12:32.504334-10:00",
+   "source": "confirmation read"
+  }
+ ],
+ "last_reading": {
+  "regime": "BULL",
+  "clean": true,
+  "why": "ES green (+0.40%), NQ green (+0.15%), YM green (+0.37%); ES+YM green \u2192 NO put setups",
+  "at": "2026-11-13T04:12:32.504334-10:00"
+ }
+}
