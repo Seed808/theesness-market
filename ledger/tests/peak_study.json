@@ -1,5 +1,5 @@
 {
- "built_at": "2026-11-12T18:13:07.718260-10:00",
+ "built_at": "2026-11-12T18:24:12.115476-10:00",
  "cards": [
   {
    "card": "2026-10-20 confirm BABA CALL 109",
@@ -932,7 +932,7 @@
     "now_banger": -29.7,
     "sell_all_t1": 21.6,
     "be_stop": -29.7,
-    "half_be": -5.4,
+    "half_be": -4.0,
     "trail10": -29.7,
     "trail10_cap": -29.7,
     "trail15": -29.7,
@@ -1273,16 +1273,16 @@
    "plans": {
     "now_banger": 304.7,
     "sell_all_t1": 304.7,
-    "be_stop": 336.9,
-    "half_be": 178.4,
+    "be_stop": 304.7,
+    "half_be": 304.7,
     "trail10": 408.5,
-    "trail10_cap": 336.9,
+    "trail10_cap": 304.7,
     "trail15": 393.6,
-    "trail15_cap": 336.9,
+    "trail15_cap": 304.7,
     "trail20": 381.8,
-    "trail20_cap": 336.9,
+    "trail20_cap": 304.7,
     "trail25": 381.8,
-    "trail25_cap": 336.9
+    "trail25_cap": 304.7
    }
   },
   {
@@ -1387,16 +1387,16 @@
    "plans": {
     "now_banger": 49.0,
     "sell_all_t1": 38.8,
-    "be_stop": 0.0,
-    "half_be": 10.2,
+    "be_stop": 49.0,
+    "half_be": 43.9,
     "trail10": 18.4,
-    "trail10_cap": 18.4,
+    "trail10_cap": 49.0,
     "trail15": 18.4,
-    "trail15_cap": 18.4,
+    "trail15_cap": 49.0,
     "trail20": 18.4,
-    "trail20_cap": 18.4,
+    "trail20_cap": 49.0,
     "trail25": 16.3,
-    "trail25_cap": 16.3
+    "trail25_cap": 49.0
    }
   },
   {
@@ -1615,16 +1615,16 @@
    "plans": {
     "now_banger": 139.4,
     "sell_all_t1": 139.4,
-    "be_stop": 89.4,
-    "half_be": 54.8,
+    "be_stop": 139.4,
+    "half_be": 139.4,
     "trail10": 89.4,
-    "trail10_cap": 89.4,
+    "trail10_cap": 139.4,
     "trail15": 89.4,
-    "trail15_cap": 89.4,
+    "trail15_cap": 139.4,
     "trail20": 89.4,
-    "trail20_cap": 89.4,
+    "trail20_cap": 139.4,
     "trail25": 89.4,
-    "trail25_cap": 89.4
+    "trail25_cap": 139.4
    }
   },
   {
@@ -2414,7 +2414,7 @@
     "now_banger": -20.2,
     "sell_all_t1": 23.6,
     "be_stop": -9.6,
-    "half_be": 5.3,
+    "half_be": 7.0,
     "trail10": 27.5,
     "trail10_cap": 27.5,
     "trail15": 25.1,
@@ -2927,7 +2927,7 @@
     "now_banger": 50.0,
     "sell_all_t1": 26.2,
     "be_stop": 50.0,
-    "half_be": 35.0,
+    "half_be": 38.1,
     "trail10": 22.0,
     "trail10_cap": 22.0,
     "trail15": 33.9,
@@ -2998,13 +2998,13 @@
   },
   "be_stop": {
    "n": 37,
-   "avg_pnl_pct": -0.2,
-   "win": 9,
+   "avg_pnl_pct": 1.6,
+   "win": 10,
    "loss": 24
   },
   "half_be": {
    "n": 37,
-   "avg_pnl_pct": -5.5,
+   "avg_pnl_pct": 1.2,
    "win": 16,
    "loss": 21
   },
@@ -3016,7 +3016,7 @@
   },
   "trail10_cap": {
    "n": 37,
-   "avg_pnl_pct": -0.1,
+   "avg_pnl_pct": 1.2,
    "win": 15,
    "loss": 21
   },
@@ -3028,7 +3028,7 @@
   },
   "trail15_cap": {
    "n": 37,
-   "avg_pnl_pct": 0.8,
+   "avg_pnl_pct": 2.2,
    "win": 14,
    "loss": 21
   },
@@ -3040,7 +3040,7 @@
   },
   "trail20_cap": {
    "n": 37,
-   "avg_pnl_pct": 0.4,
+   "avg_pnl_pct": 1.7,
    "win": 13,
    "loss": 22
   },
@@ -3052,7 +3052,7 @@
   },
   "trail25_cap": {
    "n": 37,
-   "avg_pnl_pct": 1.0,
+   "avg_pnl_pct": 2.3,
    "win": 12,
    "loss": 22
   }
