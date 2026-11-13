@@ -304,14 +304,40 @@ def fetch_contract_bars(contract: str, start: date, end: Optional[date] = None):
         return None
 
 
+# Break-even stop (Kalani 11/12, from the Nov 12 review: on 109 cards, "stop -> entry after T1"
+# averaged +1.8%/card vs -2.4% for the old rule). Once a bar touches Target 1, the stop for the
+# rest of the trade moves up to the entry price. Applies to cards locked from BE_STOP_FROM on;
+# earlier cards keep the rule they were posted with.
+BE_STOP_FROM = "2026-11-13T00:00:00-10:00"
+
+
+def be_stop_applies(c: dict) -> bool:
+    return datetime.fromisoformat(c["locked_at"]) >= datetime.fromisoformat(BE_STOP_FROM)
+
+
 def grade_from_bars(bars, entry: float, target: float, stop: float,
-                    start: datetime, end: datetime) -> Optional[tuple]:
-    """(result, exit_premium, method) or None if no bars in the window. Pure function."""
+                    start: datetime, end: datetime, t1: Optional[float] = None) -> Optional[tuple]:
+    """(result, exit_premium, method) or None if no bars in the window. Pure function.
+    t1 given -> break-even stop: after a bar reaches t1, the stop is the entry price."""
     w = bars[(bars.index >= start) & (bars.index <= end)]
     if w.empty:
         return None
+    be = False
     for _, b in w.iterrows():
+        if be and stop < entry:
+            stop = entry
         o = float(b["Open"])
+        if be and o <= stop:
+            return ("FLAT" if o == entry else "LOSS"), o, "BREAK-EVEN STOP (gapped through)"
+        if be:
+            hit_t, hit_s = b["High"] >= target, b["Low"] <= stop
+            if o >= target:
+                return "WIN", o, "TARGET (gapped through)"
+            if hit_s:
+                return "FLAT", entry, "BREAK-EVEN STOP"
+            if hit_t:
+                return "WIN", target, "TARGET"
+            continue
         # Gap through a level: the bar OPENED past it, so the realistic exit is the open price.
         if o <= stop:
             return "LOSS", o, "STOP (gapped through)"
@@ -324,6 +350,8 @@ def grade_from_bars(bars, entry: float, target: float, stop: float,
             return "LOSS", stop, "STOP"
         if hit_t:
             return "WIN", target, "TARGET"
+        if t1 is not None and b["High"] >= t1:
+            be = True                       # T1 reached: from the next bar the stop is the entry
     last = float(w["Close"].iloc[-1])
     res = "WIN" if last > entry else "LOSS" if last < entry else "FLAT"
     return res, last, "TIME (close)"
@@ -356,9 +384,10 @@ def grade_due(now: datetime, fetch=None) -> list:
         g = None
         bars = fetch(c["contract"], d, min(exp, now.date())) if c.get("contract") else None
         if bars is not None:
+            t1 = (float(c.get("target1") or 0) or E.target1_price(entry)) if be_stop_applies(c) else None
             g = grade_from_bars(bars, entry, float(c["target"]), float(c["stop"]),
                                 datetime.fromisoformat(c["locked_at"]),
-                                s_exp.close_hst if finished else now)
+                                s_exp.close_hst if finished else now, t1)
             if g and not finished and g[2].startswith("TIME"):
                 continue                    # still open: no target/stop yet, wait for expiry
             if g and finished and g[2].startswith("TIME"):

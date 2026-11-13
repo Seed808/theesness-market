@@ -138,7 +138,7 @@ HARD_MAX_DTE = 14          # 8–14 DTE allowed only with a WIDE-DTE flag; beyon
 MAX_SPREAD_PCT = 10.0      # (ask-bid)/mid * 100
 STRONG_OI = 2_000
 TIGHT_SPREAD_PCT = 5.0
-GAP_CHASE_PCT = 1.0        # gap of >= 1% in the trade's direction = chasing -> reject
+GAP_CHASE_PCT = 1.0          # move >= 1% in the trade direction = chasing; since 11/12 only a CHASING flag (no longer rejects)
 MID_RANGE_BAND = (0.35, 0.65)   # position inside prior-day range treated as "mid-range"
 NEAR_LEVEL_PCT = 0.30      # within 0.30% of a key level counts as "at the level"
 RVOL_CONFIRM = 1.5         # last 5-min volume vs prior 20-bar avg
@@ -1337,8 +1337,11 @@ def evaluate(sym: str, right: str, bias: Bias, tech: Technicals, opt: Optional[O
         rejects.append("ES+YM green: no put setups")
     if tech.avg_volume is None or tech.avg_volume < MIN_AVG_VOLUME:
         rejects.append(f"avg vol {tech.avg_volume or 0:,.0f} < {MIN_AVG_VOLUME:,}")
-    if gap_chase(tech, right):
-        rejects.append("gap chase")
+    # Gap chase no longer rejects (Kalani 11/12, from the Nov 12 review: setups blocked only by it
+    # went 17-10 on the Banger, avg +24.4%/card, and no size of move did worse — stocks already up
+    # 5%+ did best). It's now a flag on the card, and a chased card can't be A+ (your A+ list
+    # names gap chase as a hard filter).
+    chasing = gap_chase(tech, right)
     if mid_range(tech):
         rejects.append("mid-range")
     if earn_result[0]:
@@ -1429,7 +1432,10 @@ def evaluate(sym: str, right: str, bias: Bias, tech: Technicals, opt: Optional[O
     realistic = opt.ask is not None and opt.ask <= ceiling
 
     fomc_blocking = rules["fomc_day"] and now < fomc_clear_time_hst(session.trade_date)
-    a_plus = (mode == "confirm" and clean and strong_liq and aligned and lvl is not None
+    if chasing:
+        g = (tech.last - tech.prev_close) / tech.prev_close * 100
+        flags.append(f"CHASING {g:+.1f}% vs prior close")
+    a_plus = (mode == "confirm" and not chasing and clean and strong_liq and aligned and lvl is not None
               and vol_ok and f5 is True and score >= A_PLUS_MIN_CONFIDENCE and realistic
               and not fomc_blocking and "EARNINGS?" not in flags
               and not any(f.startswith("WIDE-DTE") for f in flags))

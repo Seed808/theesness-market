@@ -249,8 +249,10 @@ def track(now: datetime, fetch=None) -> list:
 def t1_hit_message(hits: list, now: datetime) -> str:
     lines = [f"<b>T1 HIT</b> · {E._dt(now)} HST · +{int(E.TARGET1_PCT * 100)}% reached, card still running to the Banger"]
     for h in hits:
-        lines.append(f"<b>{E._h(h['ticker'])} {E._h(h['type'])} {float(h['strike']):g}</b> · called "
+        be = R.be_stop_applies(h)
+        lines.append(f"<b>{E._h(h['ticker'])} {E._h(h['type'])} {float(h['strike']):g}</b>"
+                     + (f" · <b>stop now at entry ${float(h['premium']):.2f}</b>" if be else "") + " · called "
                      f"{E._dt(h['locked_at'])} · entry "
                      f"${float(h['premium']):.2f} → T1 ${h['t1_price']:.2f} at {E._dt(h['t1_at'])} · "
-                     f"Banger ${float(h['target']):.2f} / stop ${float(h['stop']):.2f}")
+                     f"Banger ${float(h['target']):.2f} / stop ${float(h['premium']) if R.be_stop_applies(h) else float(h['stop']):.2f}")
     return "\n".join(lines)

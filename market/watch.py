@@ -202,6 +202,11 @@ def record_watch(d: date) -> list:
                           + ("" if float(cc["strike"]) == float(c["strike"]) else f" at strike {float(cc['strike']):g}"))
             elif key in rej:
                 status, reason = "NOT CONFIRMED", rej[key]
+            elif (conf.get("bias") or {}).get("favored") and key[-1] != conf["bias"]["favored"]:
+                fav = conf["bias"]["favored"]
+                status, reason = "NOT CONFIRMED", (
+                    f"{'calls' if key[-1] == 'C' else 'puts'} not checked — the 5:00 read was "
+                    f"{conf['bias'].get('regime')}, so only {'puts' if fav == 'P' else 'calls'} were scanned")
             elif raw_t is not None and conf.get("passing", 0) > len(conf["cards"]):
                 status, reason = "PASSED", f"passed every rule but wasn't in the top {E.MAX_CARDS}"
             elif raw_t is not None:
@@ -250,6 +255,41 @@ def record_watch(d: date) -> list:
                     "underlying": (o or {}).get("underlying") or "", "underlying_asof": E._short_t(at) + " HST",
                     "stock_move_pct": "", "status": "AT THE OPEN",
                     "reason": "tracked from the open price — amateur hour, not a rule-approved entry"}
+            new.append(_row(base, prem, src))
+
+    # 1c) FIRST-CANDLE ENTRY (Nov 12 review, item 5): the honest version of Kalani's pattern.
+    #     If the first 5-minute candle (open -> open+5) closed in the card's direction, the card is
+    #     priced at open+5 (the first trade at/after the candle closes) and tracked from there.
+    #     If it closed against, it's logged as SKIPPED (not tracked). The candle comes from the
+    #     confirmation read's own 1-minute data.
+    if pre and conf:
+        sess = E.session_for(d)
+        raw_c = _raw(d, conf["ran_at"], "confirm") or {}
+        at5 = sess.at(5) if sess else None
+        for c in pre["cards"]:
+            wid = f"{d.isoformat()}_watch-firstcandle_{c['ticker']}_{c['type']}_{c['expiry']}_{float(c['strike']):g}"
+            if wid in have or at5 is None:
+                continue
+            tech = ((raw_c.get("tickers") or {}).get(c["ticker"]) or {}).get("tech") or {}
+            o5, c5 = tech.get("first5_open"), tech.get("first5_close")
+            if not o5 or not c5:
+                continue
+            up = c5 > o5
+            agree = up if c["type"] == "CALL" else (c5 < o5)
+            base = {"id": wid, "trade_date": d.isoformat(), "kind": "firstcandle", "ticker": c["ticker"],
+                    "type": c["type"], "expiry": c["expiry"], "strike": c["strike"],
+                    "contract": c.get("contract", ""), "called_at": c["locked_at"], "priced_at": at5.isoformat(),
+                    "underlying": c5, "underlying_asof": E._short_t(at5) + " HST",
+                    "stock_move_pct": round((c5 - o5) / o5 * 100, 2),
+                    "status": "ENTERED" if agree else "SKIPPED",
+                    "reason": (f"first 5-min candle {'green' if up else 'red'} "
+                               f"({o5:,.2f} → {c5:,.2f}) — {'agrees with' if agree else 'goes against'} the {c['type'].lower()}")}
+            if not agree:
+                new.append(_row(base, None, ""))
+                continue
+            prem, src = _price_contract({**c, "trade_date": d.isoformat()}, None, at5)
+            if prem is None:
+                continue                              # retried next run
             new.append(_row(base, prem, src))
 
     # 2) gap-chase-only blocks (confirmation read + re-scans), first per ticker/direction/day
@@ -302,6 +342,11 @@ def status_block(rows: list, late: bool = False) -> str:
         px = (f" · option ${float(r['premium']):.2f}" if r.get("premium") not in ("", None) else " · price n/a")
         lines.append(f"{icon.get(r['status'], '')} <b>{E._h(r['ticker'])} {E._h(r['type'])} {float(r['strike']):g}</b> "
                      f"{E._h(r['status'].lower())}: {E._h(r['reason'])}{mv}{px}")
+        fc = next((w for w in load_watch() if w["kind"] == "firstcandle" and w["trade_date"] == r["trade_date"]
+                   and w["ticker"] == r["ticker"] and w["type"] == r["type"]), None)
+        if fc:
+            lines.append(f"   1st candle: {'✓ entered' if fc['status'] == 'ENTERED' else '✗ skipped'}"
+                         + (f" at ${float(fc['premium']):.2f}" if fc.get("premium") not in ("", None) else ""))
     lines.append("<i>All are tracked from this price on the site (Pre-market watch).</i>")
     return "\n".join(lines)
 

@@ -132,7 +132,7 @@ def _res(g: dict | None, tgt: str) -> str:
 def watch_lines(w: dict) -> str:
     """Status + price-at-confirmation + T1/T2 tracking for a watch card (not the official record)."""
     icon = {"CONFIRMED": "✓", "NOT CONFIRMED": "✗", "PASSED": "•", "NOT SCANNED": "?", "BLOCKED": "✗",
-            "AT THE OPEN": "⏱"}
+            "AT THE OPEN": "⏱", "ENTERED": "✓", "SKIPPED": "✗"}
     mv = (f' · stock {float(w["stock_move_pct"]):+.1f}% vs prior close'
           if w.get("stock_move_pct") not in ("", None) else "")
     out = (f'<dt>At {_t(w["priced_at"])}</dt><dd><b>{icon.get(w["status"], "")} {e(w["status"].title())}</b>: '
@@ -251,6 +251,14 @@ def bias_panel(s: dict) -> str:
             + '</div>')
 
 
+def _be(c: dict) -> bool:
+    try:
+        import runner as R
+        return R.be_stop_applies(c)
+    except Exception:  # noqa: BLE001
+        return False
+
+
 def price_lines(c: dict) -> str:
     st = E.card_level_stocks(c)
     pk = PEAKS.get(c["id"], {})
@@ -265,7 +273,9 @@ def price_lines(c: dict) -> str:
             f'<dt>Max contracts</dt><dd class="eyebrow">Telegram only</dd>'
             f'<dt>Target 1</dt><dd>{_money(t1_of(c))}{stock("t1")}{hit("t1_at")}</dd>'
             f'<dt>Banger</dt><dd>{_money(c["target"])}{stock("t2")}{hit("t2_at")}</dd>'
-            f'<dt>Stop</dt><dd>{_money(c["stop"])}{stock("stop")}</dd>'
+            + (f'<dt>Stop</dt><dd>{_money(c["premium"])} <span class="eyebrow">moved up to entry (break-even) when T1 hit · was {_money(c["stop"])}</span></dd>'
+               if pk.get("t1_at") and _be(c) else f'<dt>Stop</dt><dd>{_money(c["stop"])}{stock("stop")}'
+               + (' <span class="eyebrow">→ moves to entry once T1 hits</span>' if _be(c) else "") + '</dd>')
             + ('<dd class="eyebrow" style="grid-column:1/-1">stock ≈ = estimate if reached the day the '
                'card was locked; later in the week the stock has to move further</dd>' if st else ""))
 
@@ -287,7 +297,7 @@ def tracking_lines(c: dict) -> str:
             end = "before the stop"
         out += (f'<dt>Went on to</dt><dd>{pk["peak_pct"]:+.1f}% <span class="eyebrow">highest '
                 f'contract price {_t(pk["peak_at"])} · {e(end)} · best possible exit, not a fill</span></dd>')
-    if pk.get("be"):
+    if pk.get("be") and not _be(c):              # for cards under the break-even rule it IS the result
         b = pk["be"]
         out += (f'<dt>BE stop</dt><dd class="eyebrow">if the stop had moved to entry after T1: '
                 f'{e(b["result"])} ({b["pnl_pct"]:+.1f}%) · {e(b["how"])} — tracking only</dd>')
@@ -389,6 +399,9 @@ def card_html(c: dict, g: dict | None) -> str:
             + ((price_lines_premarket(c)
                 + (('<dt>From the open</dt><dd class="eyebrow">tracked from the open price (amateur hour)</dd>'
                     + watch_lines(watch_for_pre(c, "preopen"))) if watch_for_pre(c, "preopen") else "")
+                + (('<dt>1st candle</dt><dd class="eyebrow">entered at the open + 5 min only if the first '
+                    '5-minute candle went the card\'s way</dd>'
+                    + watch_lines(watch_for_pre(c, "firstcandle"))) if watch_for_pre(c, "firstcandle") else "")
                 + (('<dt>From 5:00 read</dt><dd class="eyebrow">tracked from the confirmation read</dd>'
                     + watch_lines(watch_for_pre(c))) if watch_for_pre(c) else ""))
                if c["mode"] == "premarket" else price_lines(c)) +
@@ -518,7 +531,8 @@ def watch_record() -> str:
         pct = f"{wn / (wn + ln) * 100:.0f}%" if wn + ln else "—"
         return f"{wn}-{ln}", pct
     tiles_ = ""
-    for kind, label in (("preopen", "Pre-market from the open"), ("premarket", "Pre-market from 5:00 read"),
+    for kind, label in (("preopen", "Pre-market from the open"), ("firstcandle", "First-candle entry (open+5)"),
+                        ("premarket", "Pre-market from 5:00 read"),
                         ("gapchase", "Gap-chase blocked")):
         for tgt, lab in (("T1", f"+{int(E.TARGET1_PCT * 100)}%"), ("T2", f"+{int(E.TARGET_PCT * 100)}%")):
             rec, pct = tally(kind, tgt)
@@ -526,7 +540,7 @@ def watch_record() -> str:
                        f'<span class="v">{rec}</span><span class="s">win rate {pct}</span></div>')
     rows = sorted([w for w in W_ROWS if w["kind"] != "baseline"], key=lambda w: w["priced_at"], reverse=True)
     trs = "".join(
-        f'<tr><td class="mono">{e(w["trade_date"])}</td><td>{e({"premarket": "Pre-market (5:00 read)", "preopen": "Pre-market (open)"}.get(w["kind"], "Gap chase"))}</td>'
+        f'<tr><td class="mono">{e(w["trade_date"])}</td><td>{e({"premarket": "Pre-market (5:00 read)", "preopen": "Pre-market (open)", "firstcandle": "1st-candle entry"}.get(w["kind"], "Gap chase"))}</td>'
         f'<td>{e(w["ticker"])}</td><td>{e(w["type"])}</td><td>{float(w["strike"]):g}</td>'
         f'<td>{e(w["status"].title())}</td><td>{_money(w["premium"]) if w.get("premium") not in ("", None) else "—"}</td>'
         f'<td>{_res(W_GRADES.get(w["id"]), "T1")}</td><td>{_res(W_GRADES.get(w["id"]), "T2")}</td>'
