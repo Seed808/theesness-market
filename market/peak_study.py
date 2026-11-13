@@ -20,6 +20,21 @@ TARGETS = [0.15, 0.20, 0.25, 0.30, 0.40, 0.50]
 TRAILS = [0.10, 0.15, 0.20, 0.25]       # trailing stop distance below the highest price since T1
 
 
+def walk(w, target, stop):
+    for t, b in w.iterrows():
+        o = float(b["Open"])
+        if o <= stop:
+            return "LOSS", o, t
+        if o >= target:
+            return "WIN", o, t
+        hit_t, hit_s = b["High"] >= target, b["Low"] <= stop
+        if hit_s:
+            return "LOSS", stop, t
+        if hit_t:
+            return "WIN", target, t
+    return None, float(w["Close"].iloc[-1]), w.index[-1]
+
+
 def exit_plans(w, entry, stop, t1, t2):
     """Exit plans compared on the same bars (11/12, Kalani asked about a trailing stop after T1).
     Same conventions as the live grader: a bar that opens past a level exits at that open; target
