@@ -1,4 +1,21 @@
 # Key headlines for the report. Used ONLY if the first non-comment line is today's date (HST).
 # One headline per line. Start a line with "TICKER:" to tie it to a ticker (counts as that ticker's catalyst).
-date=2026-11-12
-NVDA: Nvidia CEO Jensen Huang has resigned, effective immediately; CFO Colette Kress named interim CEO (company announcement Thu 11/12 ~8:56am ET / 3:56am HST)
+# Source: Tenet Research Market Wake-Up / Pre Market Movers, Nov 13 2026 (pasted by Kalani).
+# Analyst actions: only top-tier banks count (Kalani 11/13); Rothschild Redburn, KeyBanc, Loop,
+# Jefferies, Deutsche, Evercore, Piper, Baird are left out on purpose.
+date=2026-11-13
+Macro: PPI m/m 0.3% vs 0.4% exp; PPI y/y 6.5% vs 6.6% exp; core PPI m/m 0.3% in line, core y/y 5.0% in line
+Macro: SPX futures +0.60%, Nasdaq futures +0.48%; 10-yr 5.15% (+5 bp); BTC futures -2.27%
+NVDA: Nvidia +1.71% pre-market, recovering after the prior-session drop on the CEO resignation; interim CEO Colette Kress favors cautious AI investments
+NVDA: Treasury Sec. Bessent flags chip-export leakage, seeks tighter China controls above H100 (also AMD, AVGO)
+AMD: Bessent flags chip-export leakage, seeks tighter China controls above H100
+MSFT: Microsoft -1.30% pre-market on a service outage in Asia-Pacific hours; Cerebras signs Microsoft cloud deal
+CSCO: Cisco -3.75% pre-market despite beating EPS by $0.07 and revenue, raising FY27 EPS/revenue guidance
+AMAT: Applied Materials beats EPS/revenue, guides Q1 above estimates
+NU: Nu Holdings +4.14% pre-market, EPS in line, beats on revenue
+HOOD: Robinhood -2.03% pre-market; October deposits $15.1B, crypto volumes -21% m/m
+RKLB: Rocket Lab 100th Electron launch milestone this week; featured in U.S. Air Force test-modernization push
+TSM: TSMC launches $500M chip startup fund
+LLY: Eli Lilly breaks ground on $3.5B Pennsylvania drug plant
+XOM: Exxon greenlights $12.5B Guyana gas project
+AMZN: Amazon plans vast global product data collection

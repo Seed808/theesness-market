@@ -779,7 +779,7 @@ CATALYST_MOVE_PCT = 1.5       # ...and the stock moves this much MORE than the m
 # A headline must describe an event, not commentary.
 EVENT_WORDS = r"earnings|results|revenue|guidance|outlook|forecast|beat|miss|upgrad|downgrad|price target|target cut|" \
     r"target rais|initiat|deal|acquir|acquisition|merger|buyout|stake|partner|contract|order|launch|approv|fda|" \
-    r"probe|investigat|lawsuit|sued|settle|recall|fine|ban|tariff|sanction|buyback|dividend|split|offering|ipo|" \
+    r"probe|investigat|lawsuit|sued|settle|recall|fine|\bban(s|ned)?\b|tariff|sanction|buyback|dividend|split|offering|ipo|" \
     r"layoff|ceo|resign|hire|spy|hack|outage|delay|halt|record|surge|soar|plunge|sink|jump|tumble|crash|rall|" \
     r"8-k filed: (results|material|acquisition|restructuring|impairment|delisting|bankruptcy|change in control|executive|financials|other material)"
 FLUFF_WORDS = r"takeaways|undervalued|overvalued|better buy|to buy|should you|is it time|trending stock|" \
@@ -971,10 +971,26 @@ COMPANY_NAMES = {
 }
 
 
+# Analyst actions (Kalani 11/13): "I only trust the big institutions like Goldman Sachs, Morgan
+# Stanley, etc. like the top 5". An upgrade/downgrade/price-target headline counts as a catalyst
+# only if one of these firms is named; from any other firm it's ignored (the headline can still
+# count if it ALSO reports a real event, e.g. earnings). Add/remove firms here.
+TRUSTED_ANALYSTS = r"goldman|morgan stanley|jpmorgan|j\.p\. morgan|jp morgan|bank of america|bofa|" \
+    r"\bciti\b|citigroup|citi research"
+ANALYST_WORDS = r"upgrad\w*|downgrad\w*|price target|target cut|target rais\w*|initiat\w*|reiterat\w*|" \
+    r"overweight|underweight|outperform|underperform|equal[- ]weight|sector weight|in line|\bneutral\b|" \
+    r"\bbuy\b|\bsell\b|\bhold\b|\bpt\b|analyst\w*|rating\w*"
+
+
 def is_event(title: str) -> bool:
     import re
     low = title.lower()
-    return bool(re.search(EVENT_WORDS, low)) and not re.search(FLUFF_WORDS, low)
+    if not re.search(EVENT_WORDS, low) or re.search(FLUFF_WORDS, low):
+        return False
+    if re.search(r"upgrad|downgrad|price target|target cut|target rais|initiat", low) \
+            and not re.search(TRUSTED_ANALYSTS, low):
+        return bool(re.search(EVENT_WORDS, re.sub(ANALYST_WORDS, " ", low)))   # anything besides the call?
+    return True
 
 
 def headline_about(sym: str, title: str) -> bool:
