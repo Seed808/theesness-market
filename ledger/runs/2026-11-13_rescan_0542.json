@@ -1,0 +1,140 @@
+{
+ "trade_date": "2026-11-13",
+ "mode": "rescan",
+ "ran_at": "2026-11-13T05:42:32.605805-10:00",
+ "test": false,
+ "open_hst": "2026-11-13T04:30:00-10:00",
+ "close_hst": "2026-11-13T11:00:00-10:00",
+ "early_close": false,
+ "bias": {
+  "regime": "BEAR",
+  "favored": "P",
+  "clean": true,
+  "notes": [
+   "ES red (-0.97%), NQ red (-2.05%), YM red (-0.17%)",
+   "ES+YM red \u2192 broad bear, puts favored",
+   "VIX 20.25 (+8.29%) \u2192 confirms",
+   "SPY red (-0.92%), QQQ red (-2.06%) \u2192 confirms"
+  ]
+ },
+ "quotes": {
+  "ES": {
+   "last": 7541.75,
+   "prev_close": 7615.25,
+   "chg_pct": -0.9651685762122059,
+   "source": "schwab"
+  },
+  "NQ": {
+   "last": 27803.25,
+   "prev_close": 28384.5,
+   "chg_pct": -2.047772551920943,
+   "source": "schwab"
+  },
+  "YM": {
+   "last": 52299.0,
+   "prev_close": 52390.0,
+   "chg_pct": -0.17369727047146402,
+   "source": "schwab"
+  },
+  "VIX": {
+   "last": 20.25,
+   "prev_close": 18.7,
+   "chg_pct": 8.28877005347594,
+   "source": "schwab"
+  },
+  "SPY": {
+   "last": 750.16,
+   "prev_close": 757.12,
+   "chg_pct": -0.9192730346576549,
+   "source": "schwab"
+  },
+  "QQQ": {
+   "last": 673.97,
+   "prev_close": 688.17,
+   "chg_pct": -2.0634436258482545,
+   "source": "schwab"
+  }
+ },
+ "flags": [
+  "Friday/pre-holiday rules: 0DTE only, no overnight",
+  "Amateur hour until 05:00 AM; institutional 05:00\u201305:30 AM HST",
+  "No damaged contracts overnight. No earnings holds overnight."
+ ],
+ "headlines": [
+  "Macro: PPI m/m 0.3% vs 0.4% exp; PPI y/y 6.5% vs 6.6% exp; core PPI m/m 0.3% in line, core y/y 5.0% in line",
+  "Macro: SPX futures +0.60%, Nasdaq futures +0.48%; 10-yr 5.15% (+5 bp); BTC futures -2.27%",
+  "NVDA: Nvidia +1.71% pre-market, recovering after the prior-session drop on the CEO resignation; interim CEO Colette Kress favors cautious AI investments",
+  "NVDA: Treasury Sec. Bessent flags chip-export leakage, seeks tighter China controls above H100 (also AMD, AVGO)",
+  "AMD: Bessent flags chip-export leakage, seeks tighter China controls above H100",
+  "MSFT: Microsoft -1.30% pre-market on a service outage in Asia-Pacific hours; Cerebras signs Microsoft cloud deal",
+  "CSCO: Cisco -3.75% pre-market despite beating EPS by $0.07 and revenue, raising FY27 EPS/revenue guidance",
+  "AMAT: Applied Materials beats EPS/revenue, guides Q1 above estimates"
+ ],
+ "data_note": "live data: Schwab (Yahoo fallback)",
+ "cards": [],
+ "passing": 3,
+ "rejected": 61,
+ "rejections": [
+  "SPY P: trend not aligned (1m flat/5m down/15m down)",
+  "QQQ P: trend not aligned (1m flat/5m down/15m down)",
+  "IWM P: trend not aligned (1m flat/5m down/15m down)",
+  "DIA P: OI 473 < 500, trend not aligned (1m flat/5m flat/15m down)",
+  "SPX P: trend not aligned (1m up/5m down/15m down)",
+  "TQQQ P: trend not aligned (1m flat/5m down/15m down)",
+  "SMH P: trend not aligned (1m flat/5m down/15m down)",
+  "SOXL P: spread 14.0% > 10.0%, trend not aligned (1m flat/5m down/15m down)",
+  "XLF P: spread 28.6% > 10.0%, trend not aligned (1m flat/5m flat/15m up), put into support (PML)",
+  "XLE P: spread 25.0% > 10.0%, put into support (PML)",
+  "GLD P: first 5-min candle does not confirm, put into support (PML)",
+  "SLV P: spread 22.2% > 10.0%, first 5-min candle does not confirm",
+  "TLT P: trend not aligned (1m up/5m up/15m flat), put into support (VWAP)",
+  "TNA P: OI 226 < 500, trend not aligned (1m up/5m down/15m down)",
+  "UVXY P: OI 345 < 500, first 5-min candle does not confirm, trend not aligned (1m up/5m up/15m up)",
+  "AAPL P: first 5-min candle does not confirm, trend not aligned (1m flat/5m up/15m up)",
+  "AMAT P: spread 28.9% > 10.0%",
+  "AMD P: trend not aligned (1m flat/5m down/15m down)",
+  "APLD P: spread 29.8% > 10.0%, trend not aligned (1m flat/5m down/15m down)",
+  "APP P: mid-range, OI 59 < 500, trend not aligned (1m down/5m flat/15m up)",
+  "ASTS P: OI 470 < 500, trend not aligned (1m flat/5m down/15m down)",
+  "BA P: spread 21.8% > 10.0%, trend not aligned (1m flat/5m down/15m down)",
+  "BABA P: spread 26.1% > 10.0%, first 5-min candle does not confirm, trend not aligned (1m flat/5m flat/15m flat)",
+  "BAC P: spread 28.6% > 10.0%, trend not aligned (1m flat/5m down/15m down)",
+  "BILI: no 0DTE expiry (Friday/pre-holiday rule)",
+  "CIFR P: spread 120.0% > 10.0%, trend not aligned (1m flat/5m down/15m down)",
+  "COIN P: first 5-min candle does not confirm, trend not aligned (1m flat/5m down/15m down)",
+  "CRM P: mid-range, OI 368 < 500, trend not aligned (1m flat/5m down/15m down)",
+  "CRWV P: trend not aligned (1m flat/5m down/15m down)",
+  "CVNA P: mid-range, OI 382 < 500, first 5-min candle does not confirm, trend not aligned (1m flat/5m flat/15m flat)",
+  "DKNG P: spread 63.2% > 10.0%, trend not aligned (1m up/5m down/15m down)",
+  "GOOGL P: first 5-min candle does not confirm, trend not aligned (1m flat/5m down/15m down)",
+  "HOOD P: trend not aligned (1m flat/5m down/15m down)",
+  "INTC P: trend not aligned (1m flat/5m down/15m down)",
+  "IONQ P: OI 206 < 500, trend not aligned (1m up/5m down/15m down)",
+  "IREN P: trend not aligned (1m up/5m down/15m down)",
+  "JPM P: OI 309 < 500, trend not aligned (1m flat/5m down/15m flat), put into support (PML)",
+  "LRCX P: spread 12.1% > 10.0%, first 5-min candle does not confirm, trend not aligned (1m flat/5m down/15m down)",
+  "MARA P: spread 40.0% > 10.0%, trend not aligned (1m up/5m flat/15m down)",
+  "META P: first 5-min candle does not confirm, trend not aligned (1m down/5m down/15m flat)",
+  "MSFT P: trend not aligned (1m up/5m up/15m up), put into support (PMH)",
+  "MSTR P: trend not aligned (1m flat/5m down/15m down)",
+  "MU P: first 5-min candle does not confirm, trend not aligned (1m flat/5m down/15m down)",
+  "NFLX P: spread 18.2% > 10.0%, first 5-min candle does not confirm, trend not aligned (1m down/5m down/15m flat)",
+  "NVDA P: mid-range",
+  "OKLO P: OI 225 < 500",
+  "ORCL P: trend not aligned (1m up/5m flat/15m down), put into support (VWAP)",
+  "PLTR P: trend not aligned (1m up/5m down/15m down)",
+  "PLUG P: no bid",
+  "PYPL P: spread 61.5% > 10.0%, first 5-min candle does not confirm, trend not aligned (1m flat/5m up/15m up), put into support (VWAP)",
+  "QCOM P: OI 314 < 500, first 5-min candle does not confirm",
+  "RGTI P: no bid",
+  "RKLB P: spread 12.9% > 10.0%",
+  "SHOP P: OI 227 < 500, first 5-min candle does not confirm",
+  "SMCI P: spread 15.4% > 10.0%",
+  "SOFI P: spread 28.6% > 10.0%",
+  "TSLA P: trend not aligned (1m flat/5m down/15m down)",
+  "TSM P: OI 439 < 500",
+  "UBER P: spread 16.7% > 10.0%, first 5-min candle does not confirm, trend not aligned (1m flat/5m down/15m flat), put into support (PML)",
+  "WMT P: spread 19.4% > 10.0%, first 5-min candle does not confirm, trend not aligned (1m flat/5m up/15m up), put into support (PDH)",
+  "XOM P: spread 12.2% > 10.0%, trend not aligned (1m down/5m down/15m flat), put into support (PML)"
+ ]
+}
