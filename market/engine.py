@@ -100,6 +100,8 @@ ENTRY_CEILING_PCT = 0.20          # must be between 0.15 and 0.20 per your rule
 # --- Files ----------------------------------------------------------------------------------
 BASE_DIR = Path(__file__).resolve().parent.parent     # repository root
 WATCHLIST_PATH = BASE_DIR / "watchlist.txt"
+AUTO_WATCHLIST_PATH = BASE_DIR / "watchlist_auto.txt"   # market movers the system adds/drops (autowatch.py)
+MOVERS_DIR = BASE_DIR / "data" / "movers"
 IDEA_LOG_PATH = BASE_DIR / "idea_log.csv"             # used only by local CLI runs
 HEADLINES_PATH = BASE_DIR / "inputs" / "headlines.txt"  # optional, one headline per line
 
@@ -1030,14 +1032,35 @@ def load_headlines() -> list:
     return lines[1:9]
 
 
-def load_watchlist(path: Path = WATCHLIST_PATH) -> list:
-    """One ticker per line, '#' comments. Core index ETFs are always included."""
+def _record_movers(mm: dict, now: datetime) -> None:
+    """Keep the day's movers (for the living watchlist): first/last time seen, reads, biggest move."""
+    try:
+        MOVERS_DIR.mkdir(parents=True, exist_ok=True)
+        p = MOVERS_DIR / f"{now.date().isoformat()}.json"
+        day = json.loads(p.read_text()) if p.exists() else {}
+        for sym, v in mm.items():
+            e = day.setdefault(sym, {"first": now.isoformat(), "reads": 0, "pct": None, "tags": []})
+            e["last"] = now.isoformat()
+            e["reads"] += 1
+            pc = v.get("pct")
+            if pc is not None and (e["pct"] is None or abs(pc) > abs(e["pct"])):
+                e["pct"] = pc
+            e["tags"] = sorted(set(e["tags"]) | set(v.get("tags") or []))
+        p.write_text(json.dumps(day, indent=1))
+    except Exception as e:  # noqa: BLE001
+        print(f"[warn] record movers: {type(e).__name__}: {e}", file=sys.stderr)
+
+
+def load_watchlist(path: Path = WATCHLIST_PATH, auto: bool = True) -> list:
+    """One ticker per line, '#' comments. Core index ETFs are always included. With auto=True the
+    system-managed market movers (watchlist_auto.txt) are appended after your own names."""
     names = []
-    if path.exists():
-        for line in path.read_text().splitlines():
-            s = line.split("#", 1)[0].strip().upper()
-            if s and s not in names:
-                names.append(s)
+    for p in [path] + ([AUTO_WATCHLIST_PATH] if auto and path == WATCHLIST_PATH else []):
+        if p.exists():
+            for line in p.read_text().splitlines():
+                s = line.split("#", 1)[0].strip().upper()
+                if s and s not in names:
+                    names.append(s)
     for c in CORE_INDEX:
         if c not in names:
             names.insert(0, c)
@@ -1727,6 +1750,8 @@ def scan(mode: str, session: Session, ov: Overrides, now: Optional[datetime] = N
             mm = PROVIDER.movers() or {}
         except Exception as e:  # noqa: BLE001
             print(f"[warn] movers: {type(e).__name__}: {e}", file=sys.stderr)
+    if mm:
+        _record_movers(mm, now)
 
     # --- Scan ---
     ideas, skipped, raw = [], [], {}

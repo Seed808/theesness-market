@@ -595,6 +595,11 @@ def after_close(now: datetime) -> None:
         stale = not bt.exists() or json.loads(bt.read_text()).get("built_for") != now.date().isoformat()
         if stale:
             backtest.run(bt, now)
+        try:                                   # living watchlist (11/12): add/drop market movers
+            import autowatch
+            autowatch.maintain(now)
+        except Exception as e:  # noqa: BLE001
+            print(f"[warn] autowatch: {type(e).__name__}: {e}", file=sys.stderr)
 
 
 # --------------------------------------------------------------------------------------------
