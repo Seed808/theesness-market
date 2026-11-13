@@ -210,12 +210,12 @@ def tiles(st: dict) -> str:
     return ('<div class="tiles">'
             f'<a class="tile" href="record.html"><span class="k">Target 1 record (+{int(E.TARGET1_PCT * 100)}%)</span>'
             f'<span class="v">{rec(t1)}</span><span class="s">win rate {pct(t1)}{unk}</span></a>'
-            f'<a class="tile" href="record.html"><span class="k">Bangers record (+{int(E.TARGET_PCT * 100)}%)</span>'
-            f'<span class="v">{rec(a)}</span><span class="s">win rate {pct(a)}</span></a>'
+            f'<a class="tile" href="record.html"><span class="k">Trade record</span>'
+            f'<span class="v">{rec(a)}</span><span class="s">win rate {pct(a)} · Banger/−20% to 11/12, trailing stop from 11/13</span></a>'
             f'<a class="tile" href="record.html"><span class="k">A+ record</span>'
             f'<span class="v">{rec(p)}</span><span class="s">win rate {pct(p)}</span></a>'
             f'<div class="tile"><span class="k">Avg premium P&amp;L</span>'
-            f'<span class="v">{avg(a)}</span><span class="s">per graded card (Banger trade)</span></div></div>')
+            f'<span class="v">{avg(a)}</span><span class="s">per graded card (each card&#39;s own exit rule)</span></div></div>')
 
 
 def bias_panel(s: dict) -> str:
@@ -254,9 +254,25 @@ def bias_panel(s: dict) -> str:
 def _be(c: dict) -> bool:
     try:
         import runner as R
-        return R.be_stop_applies(c)
+        return R.trail_applies(c)
     except Exception:  # noqa: BLE001
         return False
+
+
+def _stop_line(c: dict, pk: dict, stock) -> str:
+    if not _be(c):
+        return f'<dt>Stop</dt><dd>{_money(c["stop"])}{stock("stop")}</dd>'
+    import runner as R
+    pct = int(R.TRAIL_PCT * 100)
+    tr = pk.get("trail")
+    if tr:
+        return (f'<dt>Stop</dt><dd>{_money(tr["stop"])} <span class="eyebrow">trailing {pct}% below the high '
+                f'{_money(tr["high"])}, never below entry · was {_money(c["stop"])} before T1</span></dd>')
+    if pk.get("exit_how", "").startswith("TRAILING"):
+        return (f'<dt>Stop</dt><dd>trailing stop hit {_t(pk["exit_at"])} '
+                f'<span class="eyebrow">{pct}% below the high after T1</span></dd>')
+    return (f'<dt>Stop</dt><dd>{_money(c["stop"])}{stock("stop")} <span class="eyebrow">→ once T1 hits, '
+            f'trails {pct}% below the high (never below entry), no cap</span></dd>')
 
 
 def price_lines(c: dict) -> str:
@@ -272,10 +288,10 @@ def price_lines(c: dict) -> str:
             f'<dt>Premium</dt><dd>{_money(c["premium"])}</dd>'
             f'<dt>Max contracts</dt><dd class="eyebrow">Telegram only</dd>'
             f'<dt>Target 1</dt><dd>{_money(t1_of(c))}{stock("t1")}{hit("t1_at")}</dd>'
-            f'<dt>Banger</dt><dd>{_money(c["target"])}{stock("t2")}{hit("t2_at")}</dd>'
-            + (f'<dt>Stop</dt><dd>{_money(c["premium"])} <span class="eyebrow">moved up to entry (break-even) when T1 hit · was {_money(c["stop"])}</span></dd>'
-               if pk.get("t1_at") and _be(c) else f'<dt>Stop</dt><dd>{_money(c["stop"])}{stock("stop")}'
-               + (' <span class="eyebrow">→ moves to entry once T1 hits</span>' if _be(c) else "") + '</dd>')
+            + (f'<dt>Banger</dt><dd>{_money(c["target"])}{stock("t2")}{hit("t2_at")}'
+               + (' <span class="eyebrow">milestone only · no cap, the trail decides the exit</span>' if _be(c) else "")
+               + '</dd>')
+            + _stop_line(c, pk, stock)
             + ('<dd class="eyebrow" style="grid-column:1/-1">stock ≈ = estimate if reached the day the '
                'card was locked; later in the week the stock has to move further</dd>' if st else ""))
 
@@ -295,9 +311,11 @@ def tracking_lines(c: dict) -> str:
         end = "frozen at expiry close" if pk.get("final") else "updates until expiry close"
         if pk.get("stop_at"):
             end = "before the stop"
+        elif pk.get("exit_how", "").startswith("TRAILING"):
+            end = "before the trailing stop"
         out += (f'<dt>Went on to</dt><dd>{pk["peak_pct"]:+.1f}% <span class="eyebrow">highest '
                 f'contract price {_t(pk["peak_at"])} · {e(end)} · best possible exit, not a fill</span></dd>')
-    if pk.get("be") and not _be(c):              # for cards under the break-even rule it IS the result
+    if pk.get("be") and not _be(c):              # trailing cards don't get the break-even side number
         b = pk["be"]
         out += (f'<dt>BE stop</dt><dd class="eyebrow">if the stop had moved to entry after T1: '
                 f'{e(b["result"])} ({b["pnl_pct"]:+.1f}%) · {e(b["how"])} — tracking only</dd>')
@@ -361,7 +379,7 @@ def card_html(c: dict, g: dict | None) -> str:
     res = ""
     if g:
         pnl = f' ({float(g["pnl_pct"]):+.1f}%)' if g.get("pnl_pct") not in ("", None) else ""
-        res = (f'<dt>Result (Banger)</dt><dd><span class="res-{e(g["result"])}">{e(g["result"])}</span>'
+        res = (f'<dt>Result ({"trailing stop" if _be(c) else "Banger"})</dt><dd><span class="res-{e(g["result"])}">{e(g["result"])}</span>'
                f'{pnl} <span class="eyebrow">{e(g["method"])}</span></dd>')
     elif c["mode"] in ("confirm", "rescan") and c["status"] == "GO":
         exp_day = date.fromisoformat(c["expiry"]).strftime("%a %-m/%-d")
@@ -374,7 +392,8 @@ def card_html(c: dict, g: dict | None) -> str:
             px = (f' last {_money(m["last"])} ({m["pnl_pct"]:+.1f}%) '
                   f'<span class="eyebrow">{when}{rng}</span>')
         res = (f'<dt>Status</dt><dd><span class="res-INPLAY">IN PLAY</span>{px}</dd>'
-               f'<dt>Ends</dt><dd class="eyebrow">at the Banger, stop, or {exp_day} close</dd>')
+               + (f'<dt>Ends</dt><dd class="eyebrow">at the stop, the trailing stop after T1, or {exp_day} close</dd>'
+                  if _be(c) else f'<dt>Ends</dt><dd class="eyebrow">at the Banger, stop, or {exp_day} close</dd>'))
     aplus = c["a_plus"] in (True, "True")
     badge = '<span class="badge gap2">A+</span>' if aplus else ""
     flags = f'<dt>Flags</dt><dd>{e(c["flags"])}</dd>' if c.get("flags") else ""

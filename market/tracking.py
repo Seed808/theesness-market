@@ -8,8 +8,10 @@ Two-target tracking (added 2026-10-27, Kalani's spec).
 * "Went on to": the contract's highest minute price while the trade was alive (from lock until
   the stop was hit, or until the expiry-day close), as % vs entry. That's the best possible exit,
   not one you could reliably get. Kept in ledger/peaks.json and frozen after the expiry-day close.
-* Break-even side number (tracking only, not a rule): if the stop had moved to the entry price
-  once T1 was hit, what would the T2 trade have done? Kept in ledger/peaks.json.
+* Break-even side number (tracking only, cards before 11/13): if the stop had moved to the entry
+  price once T1 was hit, what would the T2 trade have done? Kept in ledger/peaks.json.
+* Cards from 11/13 use the trailing stop (runner.TRAIL_FROM): peaks run until the trail exit, and
+  while the card is open peaks.json keeps the live trailing stop ("trail": high + stop).
 
 Earlier cards whose contracts Schwab no longer returns prices for (10/20-10/23):
   T2 WIN -> T1 WIN (it had to pass +20% on the way to +50%).
@@ -212,18 +214,33 @@ def track(now: datetime, fetch=None) -> list:
                 new_rows.append({"id": cid, "graded_at": now.isoformat(), "result": res,
                                  "exit_premium": round(px1, 2), "pnl_pct": _pct(px1, entry),
                                  "hit_at": "", "method": f"TIME ({exp.strftime('%a')} close) · {src}"})
-        # --- Target 2 path: when did it end, and the peak while the trade was alive
-        r2, px2, at2, _ = walk(w, t2, stop)
-        if r2 == "WIN":
-            p["t2_at"] = at2.isoformat()
-        alive = w[w.index <= at2] if r2 == "LOSS" else w          # after a stop the trade is over
-        if r2 == "LOSS":
-            p["stop_at"] = at2.isoformat()
+        # --- Trade path: when did it end, and the peak while the trade was alive
+        trail = R.trail_applies(c)
+        if trail:                         # trailing-stop cards (from 11/13): no Banger cap
+            rr, pxr, howr, atr = R._grade_walk(w, entry, t2, stop, t1)
+            open_now = howr.startswith("TIME") and not finished
+            alive = w if open_now else w[w.index <= atr]
+            if not open_now:
+                p["exit_at"], p["exit_how"] = atr.isoformat(), howr
+            if howr.startswith("STOP"):
+                p["stop_at"] = atr.isoformat()
+            if float(alive["High"].max()) >= t2:
+                p["t2_at"] = alive[alive["High"] >= t2].index[0].isoformat()   # Banger level passed
+            lt = R.live_trail(alive, entry, stop, t1, locked, end)
+            if lt and open_now:
+                p["trail"] = {"high": round(lt[1], 2), "stop": lt[2]}
+        else:
+            r2, px2, at2, _ = walk(w, t2, stop)
+            if r2 == "WIN":
+                p["t2_at"] = at2.isoformat()
+            alive = w[w.index <= at2] if r2 == "LOSS" else w      # after a stop the trade is over
+            if r2 == "LOSS":
+                p["stop_at"] = at2.isoformat()
         hi = float(alive["High"].max())
         p["peak_pct"] = _pct(hi, entry)
         p["peak_at"] = alive["High"].idxmax().isoformat()
         # --- Break-even side number: stop moved to entry once T1 was hit
-        if r1 == "WIN":
+        if r1 == "WIN" and not trail:
             after = w[w.index > at1]
             if after.empty:
                 be = None
@@ -241,18 +258,25 @@ def track(now: datetime, fetch=None) -> list:
                 p["be"] = be
         p["final"] = finished
         peaks[cid] = p
+    for h in hits:                                # live trailing stop, for the T1 HIT message
+        tr = peaks.get(h["id"], {}).get("trail")
+        if tr:
+            h["trail_now"] = tr
     R._append_csv(GRADES_T1, GRADE_T1_FIELDS, new_rows)
     PEAKS.write_text(json.dumps(peaks, indent=1))
     return hits
 
 
 def t1_hit_message(hits: list, now: datetime) -> str:
-    lines = [f"<b>T1 HIT</b> · {E._dt(now)} HST · +{int(E.TARGET1_PCT * 100)}% reached, card still running to the Banger"]
+    lines = [f"<b>T1 HIT</b> · {E._dt(now)} HST · +{int(E.TARGET1_PCT * 100)}% reached"]
     for h in hits:
-        be = R.be_stop_applies(h)
-        lines.append(f"<b>{E._h(h['ticker'])} {E._h(h['type'])} {float(h['strike']):g}</b>"
-                     + (f" · <b>stop now at entry ${float(h['premium']):.2f}</b>" if be else "") + " · called "
-                     f"{E._dt(h['locked_at'])} · entry "
-                     f"${float(h['premium']):.2f} → T1 ${h['t1_price']:.2f} at {E._dt(h['t1_at'])} · "
-                     f"Banger ${float(h['target']):.2f} / stop ${float(h['premium']) if R.be_stop_applies(h) else float(h['stop']):.2f}")
+        entry = float(h["premium"])
+        if R.trail_applies(h):
+            tail = (f" · <b>trailing stop on</b>: {int(R.TRAIL_PCT * 100)}% below the high, never below entry "
+                    f"(now ${(h.get('trail_now') or {}).get('stop', R.trail_stop(entry, h['t1_price'])):.2f}) · no cap, runs until the trail or the close")
+        else:
+            tail = f" · still running to the Banger ${float(h['target']):.2f} / stop ${float(h['stop']):.2f}"
+        lines.append(f"<b>{E._h(h['ticker'])} {E._h(h['type'])} {float(h['strike']):g}</b> · called "
+                     f"{E._dt(h['locked_at'])} · entry ${entry:.2f} → T1 ${h['t1_price']:.2f} at "
+                     f"{E._dt(h['t1_at'])}{tail}")
     return "\n".join(lines)

@@ -25,12 +25,19 @@ their target or stop as soon as either is hit, otherwise at the expiry day's clo
 
 **Targets / stop.** Target 1 = signal premium +20%, Target 2 ("Banger" on the site and Telegram) = +50%. Stop = −20%, rounded down to
 the cent so it's never tighter than −20% (from 2026-10-27; it was −35% for cards locked before
-2026-10-22; locked cards keep the stop they were posted with). The stop stays at −20% after T1.
+2026-10-22; locked cards keep the stop they were posted with).
+**Trailing stop after T1 (cards locked from Fri 2026-11-13, Kalani 11/12):** once T1 is touched,
+from the next minute the stop trails 15% below the contract's highest price since then, never
+below the entry price, and only moves up. No Banger cap: the Banger (+50%) is a milestone and the
+trade runs until the trailing stop or the expiry-day close. A minute that opens below the stop
+exits at that open. Cards locked before 11/13 keep Banger/−20%. (`runner.TRAIL_FROM`, `TRAIL_PCT`.)
+Run `peak` from Actions to compare exit plans (old rule, sell at T1, stop-to-entry, half+runner,
+10–25% trails with and without the Banger cap) on Schwab 1-minute prices.
 Each card is scored twice — T1 record (`ledger/grades_t1.csv`) and T2 record (`ledger/grades.csv`,
-the card's official result). A card stays in play until T2, the stop or its expiry-day close;
+the card's official result). A card stays in play until its exit rule fires or its expiry-day close;
 Telegram sends "T1 HIT" when +20% is reached. `ledger/peaks.json` keeps how high the contract went
 while the trade was alive ("went on to", best possible exit, not a fill) and a tracking-only
-number: what T2 would have done if the stop had moved to break-even after T1.
+number (cards before 11/13): what T2 would have done if the stop had moved to break-even after T1.
 Cards show the estimated stock price at T1, T2 and the stop (Black-Scholes, using the volatility
 implied by the entry premium; "if reached the day the card was locked").
 Run `study` from Actions → market → Run workflow to regrade every card at 15/20/25/30/35% stops

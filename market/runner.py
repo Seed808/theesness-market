@@ -304,57 +304,93 @@ def fetch_contract_bars(contract: str, start: date, end: Optional[date] = None):
         return None
 
 
-# Break-even stop (Kalani 11/12, from the Nov 12 review: on 109 cards, "stop -> entry after T1"
-# averaged +1.8%/card vs -2.4% for the old rule). Once a bar touches Target 1, the stop for the
-# rest of the trade moves up to the entry price. Applies to cards locked from BE_STOP_FROM on;
-# earlier cards keep the rule they were posted with.
-BE_STOP_FROM = "2026-11-13T00:00:00-10:00"
+# Trailing stop after T1 (Kalani 11/12 6:51pm, "trail 15% with no cap"). Chosen after replaying
+# 37 cards (11/09-11/12) on Schwab 1-minute prices: trail 15% no cap +7.9%/card vs +3.8% for the
+# stop-to-entry plan and -1.1% for the old Banger/-20% rule (small sample, mostly one up day).
+# Rule, for cards locked from TRAIL_FROM on:
+#   * until a bar reaches Target 1 (+20%): the -20% stop, as before
+#   * from the NEXT bar: stop = TRAIL_PCT below the highest price since T1 was hit, and never
+#     below the entry price. It only moves up.
+#   * no Banger cap: the trade runs until the trailing stop is hit or the expiry-day close.
+#   * a bar that OPENS below the stop exits at that open (gap), like every other level.
+# Earlier cards keep the rule they were posted with (Banger +50% / -20% stop).
+TRAIL_FROM = "2026-11-13T00:00:00-10:00"
+TRAIL_PCT = 0.15
 
 
-def be_stop_applies(c: dict) -> bool:
-    return datetime.fromisoformat(c["locked_at"]) >= datetime.fromisoformat(BE_STOP_FROM)
+def trail_applies(c: dict) -> bool:
+    return datetime.fromisoformat(c["locked_at"]) >= datetime.fromisoformat(TRAIL_FROM)
+
+
+def trail_stop(entry: float, high: float) -> float:
+    return round(max(entry, high * (1 - TRAIL_PCT)), 2)
+
+
+def _trail_result(px: float, entry: float) -> str:
+    return "WIN" if px > entry + 1e-9 else "LOSS" if px < entry - 1e-9 else "FLAT"
 
 
 def grade_from_bars(bars, entry: float, target: float, stop: float,
-                    start: datetime, end: datetime, t1: Optional[float] = None) -> Optional[tuple]:
+                    start: datetime, end: datetime, t1: Optional[float] = None,
+                    with_time: bool = False) -> Optional[tuple]:
     """(result, exit_premium, method) or None if no bars in the window. Pure function.
-    t1 given -> break-even stop: after a bar reaches t1, the stop is the entry price."""
+    t1 given -> trailing-stop rule (see TRAIL_FROM): no fixed target; after a bar reaches t1 the
+    stop trails TRAIL_PCT below the high since then, never below entry."""
     w = bars[(bars.index >= start) & (bars.index <= end)]
     if w.empty:
         return None
-    be = False
-    for _, b in w.iterrows():
-        if be and stop < entry:
-            stop = entry
-        o = float(b["Open"])
-        if be and o <= stop:
-            return ("FLAT" if o == entry else "LOSS"), o, "BREAK-EVEN STOP (gapped through)"
-        if be:
-            hit_t, hit_s = b["High"] >= target, b["Low"] <= stop
-            if o >= target:
-                return "WIN", o, "TARGET (gapped through)"
-            if hit_s:
-                return "FLAT", entry, "BREAK-EVEN STOP"
-            if hit_t:
-                return "WIN", target, "TARGET"
+    out = _grade_walk(w, entry, target, stop, t1)
+    return out if with_time else out[:3]
+
+
+def _grade_walk(w, entry, target, stop, t1):
+    hi = None                                # highest price since T1 (None = T1 not reached yet)
+    for t, b in w.iterrows():
+        o, h, l = float(b["Open"]), float(b["High"]), float(b["Low"])
+        if hi is not None:
+            st = trail_stop(entry, hi)
+            if o <= st:
+                return _trail_result(o, entry), o, "TRAILING STOP (gapped through)", t
+            if l <= st:
+                return _trail_result(st, entry), st, "TRAILING STOP", t
+            hi = max(hi, h)
             continue
         # Gap through a level: the bar OPENED past it, so the realistic exit is the open price.
         if o <= stop:
-            return "LOSS", o, "STOP (gapped through)"
-        if o >= target:
-            return "WIN", o, "TARGET (gapped through)"
-        hit_t, hit_s = b["High"] >= target, b["Low"] <= stop
-        if hit_t and hit_s:
-            return "LOSS", stop, "STOP (target+stop same bar)"
-        if hit_s:
-            return "LOSS", stop, "STOP"
-        if hit_t:
-            return "WIN", target, "TARGET"
-        if t1 is not None and b["High"] >= t1:
-            be = True                       # T1 reached: from the next bar the stop is the entry
+            return "LOSS", o, "STOP (gapped through)", t
+        if t1 is None:
+            if o >= target:
+                return "WIN", o, "TARGET (gapped through)", t
+            hit_t, hit_s = h >= target, l <= stop
+            if hit_t and hit_s:
+                return "LOSS", stop, "STOP (target+stop same bar)", t
+            if hit_s:
+                return "LOSS", stop, "STOP", t
+            if hit_t:
+                return "WIN", target, "TARGET", t
+            continue
+        if l <= stop:
+            return "LOSS", stop, "STOP", t
+        if h >= t1:
+            hi = h                           # T1 reached: the trailing stop starts next bar
     last = float(w["Close"].iloc[-1])
     res = "WIN" if last > entry else "LOSS" if last < entry else "FLAT"
-    return res, last, "TIME (close)"
+    return res, last, "TIME (close)", w.index[-1]
+
+
+def live_trail(bars, entry: float, stop: float, t1: float, start: datetime, end: datetime):
+    """(t1_hit_at, high_since_t1, current_stop) for an open trailing card, or None before T1."""
+    w = bars[(bars.index >= start) & (bars.index <= end)]
+    hit = None
+    hi = None
+    for t, b in w.iterrows():
+        if hi is None and float(b["High"]) >= t1:
+            hit, hi = t, float(b["High"])
+        elif hi is not None:
+            hi = max(hi, float(b["High"]))
+    if hi is None:
+        return None
+    return hit, hi, trail_stop(entry, hi)
 
 
 def grade_due(now: datetime, fetch=None) -> list:
@@ -384,7 +420,7 @@ def grade_due(now: datetime, fetch=None) -> list:
         g = None
         bars = fetch(c["contract"], d, min(exp, now.date())) if c.get("contract") else None
         if bars is not None:
-            t1 = (float(c.get("target1") or 0) or E.target1_price(entry)) if be_stop_applies(c) else None
+            t1 = (float(c.get("target1") or 0) or E.target1_price(entry)) if trail_applies(c) else None
             g = grade_from_bars(bars, entry, float(c["target"]), float(c["stop"]),
                                 datetime.fromisoformat(c["locked_at"]),
                                 s_exp.close_hst if finished else now, t1)

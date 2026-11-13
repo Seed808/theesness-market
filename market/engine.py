@@ -91,8 +91,9 @@ TARGET_PCT = 0.50                 # Target 2 premium = signal premium * (1 + TAR
 TARGET1_PCT = 0.20                # Target 1 premium = signal premium * (1 + TARGET1_PCT)  (added 2026-10-27).
                                   # T1 is tracked and scored on its own; the card keeps running to T2.
 STOP_PCT = 0.20                   # stop premium   = signal premium * (1 - STOP_PCT)  (was 0.35 until 2026-10-21)
-                                  # The stop stays here after T1 (break-even stop after T1 is only tracked
-                                  # as a side number for now — Kalani may switch to it later).
+                                  # From 11/13: after T1 the stop trails 15% below the contract's high
+                                  # (never below entry) and the Banger is a milestone, not an exit
+                                  # (runner.TRAIL_FROM / TRAIL_PCT).
 
 # --- Entry range rule: floor = signal premium, ceiling = +15–20% ---------------------------
 ENTRY_CEILING_PCT = 0.20          # must be between 0.15 and 0.20 per your rule
@@ -1596,7 +1597,7 @@ def tg_card(i: "Idea") -> str:
         lines += [
         f"Entry ${i.entry_floor:.2f}–${i.entry_ceiling:.2f} · Premium ${i.premium:.2f} · Max {_h(i.max_contracts)}",
         lv("T1", t1, "t1") + " · " + lv("Banger", i.target, "t2"),
-        lv("Stop", i.stop, "stop"),
+        lv("Stop", i.stop, "stop") + " → after T1: trails 15% below the high, never below entry, no cap",
         ]
     lines += [
         f"Bias {_h(i.bias)} · {_h(reasons)}",
