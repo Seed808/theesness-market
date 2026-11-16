@@ -1,1 +1,52 @@
-{}
+{
+ "2026-11-16_confirm_AAPL_PUT_2026-11-20_352.5": {
+  "last": 3.58,
+  "last_time": "2026-11-16T15:05:32.561000+00:00",
+  "high": 3.65,
+  "low": 3.42,
+  "source": "schwab quote (mark)",
+  "underlying": 353.59,
+  "pnl_pct": 3.8,
+  "as_of": "2026-11-16T05:02:32.168966-10:00"
+ },
+ "2026-11-16_confirm_AMZN_PUT_2026-11-20_260": {
+  "last": 4.7,
+  "last_time": "2026-11-16T15:05:33.791000+00:00",
+  "high": 4.75,
+  "low": 4.63,
+  "source": "schwab quote (mark)",
+  "underlying": 260.3515,
+  "pnl_pct": 6.8,
+  "as_of": "2026-11-16T05:02:32.168966-10:00"
+ },
+ "2026-11-16_confirm_BA_PUT_2026-11-20_167.5": {
+  "last": 2.52,
+  "last_time": "2026-11-16T15:05:27.440000+00:00",
+  "high": 2.55,
+  "low": 2.5,
+  "source": "schwab quote (mark)",
+  "underlying": 167.88,
+  "pnl_pct": 3.3,
+  "as_of": "2026-11-16T05:02:32.168966-10:00"
+ },
+ "2026-11-16_confirm_GOOGL_PUT_2026-11-20_285": {
+  "last": 4.17,
+  "last_time": "2026-11-16T15:05:35.798000+00:00",
+  "high": 4.2,
+  "low": 4.0,
+  "source": "schwab quote (mark)",
+  "underlying": 287.205,
+  "pnl_pct": 3.0,
+  "as_of": "2026-11-16T05:02:32.168966-10:00"
+ },
+ "2026-11-16_confirm_INTC_PUT_2026-11-20_56": {
+  "last": 2.36,
+  "last_time": "2026-11-16T15:05:37.015000+00:00",
+  "high": 2.36,
+  "low": 2.21,
+  "source": "schwab quote (mark)",
+  "underlying": 55.9,
+  "pnl_pct": 4.9,
+  "as_of": "2026-11-16T05:02:32.168966-10:00"
+ }
+}

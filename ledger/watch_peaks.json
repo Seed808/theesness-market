@@ -2778,5 +2778,110 @@
   "last_pct": -93.3,
   "last_time": "2026-11-13T10:59:00-10:00",
   "final": true
+ },
+ "2026-11-16_watch-preopen_QQQ_PUT_2026-11-20_670": {
+  "source": "schwab 1m",
+  "as_of": "2026-11-16T05:02:32.168966-10:00",
+  "peak_pct": 17.3,
+  "peak_at": "2026-11-16T05:00:00-10:00",
+  "last": 12.41,
+  "last_pct": 11.5,
+  "last_time": "2026-11-16T05:02:00-10:00",
+  "final": false
+ },
+ "2026-11-16_watch-preopen_SOFI_PUT_2026-11-20_15": {
+  "source": "schwab 1m",
+  "as_of": "2026-11-16T05:02:32.168966-10:00",
+  "peak_pct": 13.5,
+  "peak_at": "2026-11-16T05:00:00-10:00",
+  "last": 0.4,
+  "last_pct": 8.1,
+  "last_time": "2026-11-16T05:02:00-10:00",
+  "final": false
+ },
+ "2026-11-16_watch-preopen_CRM_PUT_2026-11-20_215": {
+  "source": "schwab 1m",
+  "as_of": "2026-11-16T05:02:32.168966-10:00",
+  "t1_at": "2026-11-16T04:36:00-10:00",
+  "peak_pct": 48.6,
+  "peak_at": "2026-11-16T04:37:00-10:00",
+  "last": 4.0,
+  "last_pct": 14.3,
+  "last_time": "2026-11-16T05:02:00-10:00",
+  "final": false
+ },
+ "2026-11-16_watch-preopen_CRWV_PUT_2026-11-20_49": {
+  "source": "schwab 1m",
+  "as_of": "2026-11-16T05:02:32.168966-10:00",
+  "stop_at": "2026-11-16T04:45:00-10:00",
+  "peak_pct": 12.7,
+  "peak_at": "2026-11-16T04:36:00-10:00",
+  "last": 2.53,
+  "last_pct": 3.3,
+  "last_time": "2026-11-16T05:02:00-10:00",
+  "final": false
+ },
+ "2026-11-16_watch-preopen_IREN_PUT_2026-11-20_17": {
+  "source": "schwab 1m",
+  "as_of": "2026-11-16T05:02:32.168966-10:00",
+  "peak_pct": 19.0,
+  "peak_at": "2026-11-16T05:00:00-10:00",
+  "last": 1.44,
+  "last_pct": 14.3,
+  "last_time": "2026-11-16T05:02:00-10:00",
+  "final": false
+ },
+ "2026-11-16_watch-firstcandle_QQQ_PUT_2026-11-20_670": {
+  "source": "schwab 1m",
+  "as_of": "2026-11-16T05:02:32.168966-10:00",
+  "peak_pct": 9.7,
+  "peak_at": "2026-11-16T05:00:00-10:00",
+  "last": 12.41,
+  "last_pct": 4.3,
+  "last_time": "2026-11-16T05:02:00-10:00",
+  "final": false
+ },
+ "2026-11-16_watch-firstcandle_SOFI_PUT_2026-11-20_15": {
+  "source": "schwab 1m",
+  "as_of": "2026-11-16T05:02:32.168966-10:00",
+  "t1_at": "2026-11-16T05:00:00-10:00",
+  "peak_pct": 20.0,
+  "peak_at": "2026-11-16T05:00:00-10:00",
+  "last": 0.4,
+  "last_pct": 14.3,
+  "last_time": "2026-11-16T05:02:00-10:00",
+  "final": false
+ },
+ "2026-11-16_watch-firstcandle_CRM_PUT_2026-11-20_215": {
+  "source": "schwab 1m",
+  "as_of": "2026-11-16T05:02:32.168966-10:00",
+  "t1_at": "2026-11-16T04:36:00-10:00",
+  "peak_pct": 44.0,
+  "peak_at": "2026-11-16T04:37:00-10:00",
+  "last": 4.0,
+  "last_pct": 10.8,
+  "last_time": "2026-11-16T05:02:00-10:00",
+  "final": false
+ },
+ "2026-11-16_watch-firstcandle_CRWV_PUT_2026-11-20_49": {
+  "source": "schwab 1m",
+  "as_of": "2026-11-16T05:02:32.168966-10:00",
+  "stop_at": "2026-11-16T04:45:00-10:00",
+  "peak_pct": 10.8,
+  "peak_at": "2026-11-16T04:36:00-10:00",
+  "last": 2.53,
+  "last_pct": 1.6,
+  "last_time": "2026-11-16T05:02:00-10:00",
+  "final": false
+ },
+ "2026-11-16_watch-firstcandle_IREN_PUT_2026-11-20_17": {
+  "source": "schwab 1m",
+  "as_of": "2026-11-16T05:02:32.168966-10:00",
+  "peak_pct": 15.4,
+  "peak_at": "2026-11-16T05:00:00-10:00",
+  "last": 1.44,
+  "last_pct": 10.8,
+  "last_time": "2026-11-16T05:02:00-10:00",
+  "final": false
  }
 }

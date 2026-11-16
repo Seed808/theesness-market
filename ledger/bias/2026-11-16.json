@@ -10,9 +10,9 @@
   }
  ],
  "last_reading": {
-  "regime": "MIXED",
-  "clean": false,
-  "why": "ES red (-0.62%), NQ red (-1.33%), YM flat (-0.10%); No ES/YM rule matched \u2192 no favored side, no A+",
-  "at": "2026-11-16T04:12:31.730592-10:00"
+  "regime": "BEAR",
+  "clean": true,
+  "why": "ES red (-1.13%), NQ red (-1.97%), YM red (-0.51%); ES+YM red \u2192 broad bear, puts favored",
+  "at": "2026-11-16T05:02:32.168966-10:00"
  }
 }
