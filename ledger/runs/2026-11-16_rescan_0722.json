@@ -1,0 +1,141 @@
+{
+ "trade_date": "2026-11-16",
+ "mode": "rescan",
+ "ran_at": "2026-11-16T07:22:36.263954-10:00",
+ "test": false,
+ "open_hst": "2026-11-16T04:30:00-10:00",
+ "close_hst": "2026-11-16T11:00:00-10:00",
+ "early_close": false,
+ "bias": {
+  "regime": "BEAR",
+  "favored": "P",
+  "clean": true,
+  "notes": [
+   "ES red (-1.37%), NQ red (-2.12%), YM red (-0.83%)",
+   "ES+YM red \u2192 broad bear, puts favored",
+   "VIX 21.43 (+11.04%) \u2192 confirms",
+   "SPY red (-1.40%), QQQ red (-2.12%) \u2192 confirms"
+  ]
+ },
+ "quotes": {
+  "ES": {
+   "last": 7478.75,
+   "prev_close": 7583.0,
+   "chg_pct": -1.374785704866148,
+   "source": "schwab"
+  },
+  "NQ": {
+   "last": 27440.25,
+   "prev_close": 28034.75,
+   "chg_pct": -2.1205824913723146,
+   "source": "schwab"
+  },
+  "YM": {
+   "last": 51981.0,
+   "prev_close": 52418.0,
+   "chg_pct": -0.8336830859628372,
+   "source": "schwab"
+  },
+  "VIX": {
+   "last": 21.43,
+   "prev_close": 19.3,
+   "chg_pct": 11.036269430051808,
+   "source": "schwab"
+  },
+  "SPY": {
+   "last": 743.82,
+   "prev_close": 754.37,
+   "chg_pct": -1.3985179686360745,
+   "source": "schwab"
+  },
+  "QQQ": {
+   "last": 665.49,
+   "prev_close": 679.89,
+   "chg_pct": -2.1179896748003317,
+   "source": "schwab"
+  }
+ },
+ "flags": [
+  "Amateur hour until 05:00 AM; institutional 05:00\u201305:30 AM HST",
+  "No damaged contracts overnight. No earnings holds overnight."
+ ],
+ "headlines": [],
+ "data_note": "live data: Schwab (Yahoo fallback)",
+ "cards": [
+  {
+   "id": "2026-11-16_rescan_MU_PUT_2026-11-20_725",
+   "trade_date": "2026-11-16",
+   "mode": "rescan",
+   "locked_at": "2026-11-16T07:22:36.263954-10:00",
+   "ticker": "MU",
+   "type": "PUT",
+   "bias": "BEAR",
+   "expiry": "2026-11-20",
+   "strike": 725.0,
+   "entry_floor": 28.98,
+   "entry_ceiling": 34.78,
+   "premium": 28.98,
+   "target": 43.47,
+   "stop": 23.18,
+   "reasoning": "BEAR, bias clean, trend aligned, VWAP resistance, daily downtrend, no volume confirmation (RVOL 0.9), catalyst: Schwab most active + moving -6.3% vs market -2.1%",
+   "confidence": 7,
+   "a_plus": false,
+   "status": "GO",
+   "flags": "hold OK until Fri 11/20 close \u00b7 close before the weekend; CHASING -6.3% vs prior close",
+   "data_source": "schwab",
+   "contract": "MU261120P00725000",
+   "underlying": 729.53,
+   "underlying_asof": "7:24 AM HST live",
+   "target1": 34.78,
+   "mover": "most active \u00b7 S&P 500 (-0.1%)"
+  }
+ ],
+ "passing": 20,
+ "rejected": 44,
+ "rejections": [
+  "IWM P: first 5-min candle does not confirm",
+  "DIA P: trend not aligned (1m flat/5m down/15m down)",
+  "SMH P: put into support (PML)",
+  "SOXL P: trend not aligned (1m down/5m flat/15m down)",
+  "XLF P: first 5-min candle does not confirm, trend not aligned (1m up/5m down/15m down)",
+  "XLE P: trend not aligned (1m up/5m flat/15m down), put into support (VWAP)",
+  "GLD P: first 5-min candle does not confirm, trend not aligned (1m flat/5m up/15m flat), put into support (PML)",
+  "SLV P: first 5-min candle does not confirm, trend not aligned (1m flat/5m up/15m flat), put into support (PML)",
+  "TLT P: first 5-min candle does not confirm, trend not aligned (1m up/5m flat/15m down)",
+  "IBIT P: first 5-min candle does not confirm, trend not aligned (1m up/5m up/15m flat)",
+  "TNA P: OI 108 < 500, first 5-min candle does not confirm",
+  "UVXY P: OI 268 < 500, first 5-min candle does not confirm, trend not aligned (1m up/5m up/15m up)",
+  "AMAT P: trend not aligned (1m flat/5m flat/15m down)",
+  "AMD P: first 5-min candle does not confirm",
+  "APLD P: OI 233 < 500",
+  "APP P: OI 85 < 500, trend not aligned (1m flat/5m up/15m up)",
+  "ASTS P: OI 308 < 500",
+  "AVGO P: trend not aligned (1m down/5m flat/15m down)",
+  "BA P: trend not aligned (1m flat/5m flat/15m down)",
+  "BABA P: earnings before expiry (no overnight earnings hold), trend not aligned (1m flat/5m down/15m down), put into support (PML)",
+  "BILI P: spread 15.4% > 10.0%",
+  "CIFR P: first 5-min candle does not confirm, trend not aligned (1m down/5m flat/15m down)",
+  "COIN P: OI 0 < 500, first 5-min candle does not confirm, trend not aligned (1m flat/5m up/15m flat), put into support (PMH)",
+  "CRM P: trend not aligned (1m down/5m flat/15m down), put into support (PML)",
+  "CRWV P: first 5-min candle does not confirm",
+  "DKNG P: spread 21.1% > 10.0%, trend not aligned (1m flat/5m up/15m flat)",
+  "HOOD P: first 5-min candle does not confirm",
+  "JPM P: trend not aligned (1m flat/5m down/15m down)",
+  "LRCX P: put into support (VWAP)",
+  "MARA P: first 5-min candle does not confirm",
+  "MSFT P: trend not aligned (1m down/5m flat/15m flat), put into support (VWAP)",
+  "MSTR P: first 5-min candle does not confirm",
+  "NVDA P: earnings before expiry (no overnight earnings hold)",
+  "OKLO P: first 5-min candle does not confirm",
+  "PLUG P: spread 66.7% > 10.0%, put into support (PML)",
+  "PYPL P: spread 14.2% > 10.0%, trend not aligned (1m up/5m up/15m up), put into support (PDH)",
+  "QCOM P: trend not aligned (1m down/5m flat/15m flat), put into support (PMH)",
+  "RKLB P: first 5-min candle does not confirm",
+  "SHOP P: spread 12.3% > 10.0%, first 5-min candle does not confirm, trend not aligned (1m up/5m up/15m up)",
+  "SOFI P: first 5-min candle does not confirm",
+  "TSM P: put into support (PML)",
+  "UBER P: trend not aligned (1m down/5m flat/15m up), put into support (PDH)",
+  "WMT P: earnings before expiry (no overnight earnings hold), trend not aligned (1m up/5m flat/15m down), put into support (PDH)",
+  "XOM P: trend not aligned (1m flat/5m flat/15m down)"
+ ]
+}
