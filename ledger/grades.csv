@@ -156,3 +156,5 @@ id,graded_at,result,exit_premium,pnl_pct,method
 2026-11-16_rescan_PLTR_PUT_2026-11-20_160,2026-11-16T05:42:43.970097-10:00,WIN,4.2,1.9,TRAILING STOP (gapped through) · schwab 1m
 2026-11-16_confirm_BA_PUT_2026-11-20_167.5,2026-11-16T05:52:30.679039-10:00,WIN,2.47,1.2,TRAILING STOP (gapped through) · schwab 1m
 2026-11-16_rescan_META_PUT_2026-11-20_620,2026-11-16T05:52:30.679039-10:00,LOSS,9.2,-20.1,STOP (gapped through) · schwab 1m
+2026-11-16_confirm_AAPL_PUT_2026-11-20_352.5,2026-11-16T06:02:34.670669-10:00,LOSS,2.76,-20.0,STOP · schwab 1m
+2026-11-16_rescan_CRM_PUT_2026-11-20_215,2026-11-16T06:02:34.670669-10:00,LOSS,3.6,-20.0,STOP (gapped through) · schwab 1m
