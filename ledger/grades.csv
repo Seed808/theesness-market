@@ -160,3 +160,5 @@ id,graded_at,result,exit_premium,pnl_pct,method
 2026-11-16_rescan_CRM_PUT_2026-11-20_215,2026-11-16T06:02:34.670669-10:00,LOSS,3.6,-20.0,STOP (gapped through) · schwab 1m
 2026-11-16_rescan_SOXL_PUT_2026-11-20_49,2026-11-16T06:22:33.736892-10:00,LOSS,3.9,-20.1,STOP · schwab 1m
 2026-11-16_rescan_TSM_PUT_2026-11-20_372.5,2026-11-16T06:22:33.736892-10:00,LOSS,7.85,-20.3,STOP (gapped through) · schwab 1m
+2026-11-16_rescan_LRCX_PUT_2026-11-20_210,2026-11-16T06:42:37.902037-10:00,LOSS,5.75,-24.8,STOP (gapped through) · schwab 1m
+2026-11-16_rescan_SMH_PUT_2026-11-20_460,2026-11-16T06:42:37.902037-10:00,LOSS,9.65,-22.1,STOP (gapped through) · schwab 1m
