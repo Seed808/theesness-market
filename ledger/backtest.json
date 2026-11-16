@@ -1,9 +1,9 @@
 {
- "built_for": "2026-11-13",
- "built_at": "2026-11-13T11:22:33.386326-10:00",
+ "built_for": "2026-11-16",
+ "built_at": "2026-11-16T11:22:41.586264-10:00",
  "range": [
-  "2026-09-04",
-  "2026-11-13"
+  "2026-09-08",
+  "2026-11-16"
  ],
  "params": {
   "move_pct": 0.3,
@@ -19,36 +19,36 @@
    "regime": "BEAR",
    "clean": true,
    "SPY": {
-    "days": 12,
-    "win": 6,
+    "days": 13,
+    "win": 7,
     "loss": 3,
     "none": 3,
-    "win_pct": 66.7
+    "win_pct": 70.0
    },
    "QQQ": {
-    "days": 12,
-    "win": 7,
+    "days": 13,
+    "win": 8,
     "loss": 4,
     "none": 1,
-    "win_pct": 63.6
+    "win_pct": 66.7
    }
   },
   {
    "regime": "BEAR",
    "clean": false,
    "SPY": {
-    "days": 4,
-    "win": 2,
+    "days": 3,
+    "win": 1,
     "loss": 0,
     "none": 2,
     "win_pct": 100.0
    },
    "QQQ": {
-    "days": 4,
-    "win": 3,
+    "days": 3,
+    "win": 2,
     "loss": 1,
     "none": 0,
-    "win_pct": 75.0
+    "win_pct": 66.7
    }
   },
   {
@@ -126,6 +126,32 @@
  ],
  "days": [
   {
+   "date": "2026-11-16",
+   "regime": "BEAR",
+   "favored": "P",
+   "clean": true,
+   "vix_confirms": true,
+   "index_confirms": true,
+   "chg": {
+    "ES": -0.67,
+    "NQ": -1.39,
+    "YM": -0.18,
+    "VIX": 6.89,
+    "SPY": -0.69,
+    "QQQ": -1.38
+   },
+   "premarket_bar": {
+    "ES": true,
+    "NQ": true,
+    "YM": true,
+    "VIX": true,
+    "SPY": true,
+    "QQQ": true
+   },
+   "SPY": "WIN",
+   "QQQ": "WIN"
+  },
+  {
    "date": "2026-11-13",
    "regime": "BULL",
    "favored": "C",
@@ -187,7 +213,7 @@
    "chg": {
     "ES": 0.99,
     "NQ": 1.94,
-    "YM": 0.34,
+    "YM": 0.35,
     "VIX": -6.22,
     "SPY": 0.99,
     "QQQ": 1.92
@@ -212,7 +238,7 @@
    "index_confirms": true,
    "chg": {
     "ES": -0.77,
-    "NQ": -1.29,
+    "NQ": -1.3,
     "YM": -0.27,
     "VIX": 7.18,
     "SPY": -0.73,
@@ -263,8 +289,8 @@
    "vix_confirms": false,
    "index_confirms": false,
    "chg": {
-    "ES": 0.16,
-    "NQ": 1.49,
+    "ES": 0.15,
+    "NQ": 1.5,
     "YM": -0.99,
     "VIX": -5.64,
     "SPY": 0.24,
@@ -342,7 +368,7 @@
    "index_confirms": false,
    "chg": {
     "ES": 0.14,
-    "NQ": 0.67,
+    "NQ": 0.68,
     "YM": -0.3,
     "VIX": -1.28,
     "SPY": 0.15,
@@ -394,7 +420,7 @@
    "index_confirms": true,
    "chg": {
     "ES": -1.05,
-    "NQ": -2.53,
+    "NQ": -2.52,
     "YM": -0.1,
     "VIX": 8.31,
     "SPY": -0.98,
@@ -523,7 +549,7 @@
    "vix_confirms": true,
    "index_confirms": true,
    "chg": {
-    "ES": -0.49,
+    "ES": -0.48,
     "NQ": -0.31,
     "YM": -0.89,
     "VIX": 6.31,
@@ -577,7 +603,7 @@
    "chg": {
     "ES": 0.31,
     "NQ": 0.61,
-    "YM": 0.44,
+    "YM": 0.43,
     "VIX": -1.16,
     "SPY": 0.27,
     "QQQ": 0.58
@@ -705,7 +731,7 @@
    "vix_confirms": true,
    "index_confirms": true,
    "chg": {
-    "ES": -0.39,
+    "ES": -0.4,
     "NQ": -0.76,
     "YM": -0.34,
     "VIX": 3.67,
@@ -731,7 +757,7 @@
    "vix_confirms": false,
    "index_confirms": false,
    "chg": {
-    "ES": -0.1,
+    "ES": -0.09,
     "NQ": -0.78,
     "YM": 0.82,
     "VIX": 0.59,
@@ -810,7 +836,7 @@
    "index_confirms": true,
    "chg": {
     "ES": -0.4,
-    "NQ": -0.65,
+    "NQ": -0.64,
     "YM": -0.62,
     "VIX": 3.85,
     "SPY": -0.38,
@@ -1148,7 +1174,7 @@
    "index_confirms": true,
    "chg": {
     "ES": 1.36,
-    "NQ": 2.07,
+    "NQ": 2.06,
     "YM": 1.4,
     "VIX": 0.47,
     "SPY": 0.62,
@@ -1304,7 +1330,7 @@
    "index_confirms": true,
    "chg": {
     "ES": 1.02,
-    "NQ": 1.15,
+    "NQ": 1.14,
     "YM": 1.04,
     "VIX": -10.59,
     "SPY": 1.05,
@@ -1329,7 +1355,7 @@
    "vix_confirms": true,
    "index_confirms": true,
    "chg": {
-    "ES": -0.56,
+    "ES": -0.55,
     "NQ": -1.33,
     "YM": -0.24,
     "VIX": 7.9,
@@ -1357,7 +1383,7 @@
    "chg": {
     "ES": -0.33,
     "NQ": -0.5,
-    "YM": -0.51,
+    "YM": -0.52,
     "VIX": 3.31,
     "SPY": -0.31,
     "QQQ": -0.48
@@ -1398,32 +1424,6 @@
    },
    "SPY": "NONE",
    "QQQ": "LOSS"
-  },
-  {
-   "date": "2026-09-04",
-   "regime": "BEAR",
-   "favored": "P",
-   "clean": false,
-   "vix_confirms": false,
-   "index_confirms": false,
-   "chg": {
-    "ES": -0.21,
-    "NQ": 0.07,
-    "YM": -0.29,
-    "VIX": -1.12,
-    "SPY": -0.2,
-    "QQQ": 0.09
-   },
-   "premarket_bar": {
-    "ES": true,
-    "NQ": true,
-    "YM": true,
-    "VIX": true,
-    "SPY": true,
-    "QQQ": true
-   },
-   "SPY": "WIN",
-   "QQQ": "WIN"
   }
  ]
 }

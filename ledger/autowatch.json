@@ -1,5 +1,65 @@
 {
- "auto": {},
- "last_run": "2026-11-13",
- "log": []
+ "auto": {
+  "NKE": {
+   "added": "2026-11-16",
+   "why": "Schwab most-active 2 of last 5 days; avg vol 33.8M, options liquid both sides"
+  },
+  "SPCX": {
+   "added": "2026-11-16",
+   "why": "Schwab most-active 2 of last 5 days; avg vol 101.3M, options liquid both sides"
+  }
+ },
+ "last_run": "2026-11-16",
+ "log": [
+  {
+   "on": "2026-11-16",
+   "action": "add",
+   "sym": "NKE",
+   "why": "Schwab most-active 2 of last 5 days; avg vol 33.8M, options liquid both sides"
+  },
+  {
+   "on": "2026-11-16",
+   "action": "add",
+   "sym": "SPCX",
+   "why": "Schwab most-active 2 of last 5 days; avg vol 101.3M, options liquid both sides"
+  }
+ ],
+ "passed_over": {
+  "AKAN": {
+   "on": "2026-11-16",
+   "why": "no option chain"
+  },
+  "SHFS": {
+   "on": "2026-11-16",
+   "why": "no option chain"
+  },
+  "YFOR": {
+   "on": "2026-11-16",
+   "why": "no option chain"
+  },
+  "CSCO": {
+   "on": "2026-11-16",
+   "why": "calls: spread 17.1% > 10.0%; puts: spread 14.4% > 10.0%"
+  },
+  "F": {
+   "on": "2026-11-16",
+   "why": "calls: spread 22.2% > 10.0%; puts: spread 13.3% > 10.0%"
+  },
+  "PG": {
+   "on": "2026-11-16",
+   "why": "calls: spread 12.7% > 10.0%; puts: OI 42 < 500"
+  },
+  "KO": {
+   "on": "2026-11-16",
+   "why": "calls: spread 11.1% > 10.0%"
+  },
+  "T": {
+   "on": "2026-11-16",
+   "why": "calls: spread 16.0% > 10.0%; puts: spread 12.5% > 10.0%"
+  },
+  "DIS": {
+   "on": "2026-11-16",
+   "why": "puts: OI 230 < 500"
+  }
+ }
 }
