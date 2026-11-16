@@ -1,6 +1,6 @@
 {
 "SPY": {
-"fetched": "2026-11-16T05:12:32.799575-10:00",
+"fetched": "2026-11-16T06:12:44.027388-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -46,7 +46,7 @@
 ]
 },
 "QQQ": {
-"fetched": "2026-11-16T05:12:32.799575-10:00",
+"fetched": "2026-11-16T06:12:44.027388-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -92,12 +92,12 @@
 ]
 },
 "IWM": {
-"fetched": "2026-11-16T05:12:32.799575-10:00",
+"fetched": "2026-11-16T06:12:44.027388-10:00",
 "src": "finnhub",
 "items": []
 },
 "DIA": {
-"fetched": "2026-11-16T05:12:32.799575-10:00",
+"fetched": "2026-11-16T06:12:44.027388-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -118,17 +118,17 @@
 ]
 },
 "SPX": {
-"fetched": "2026-11-16T05:12:32.799575-10:00",
+"fetched": "2026-11-16T06:12:44.027388-10:00",
 "src": "finnhub",
 "items": []
 },
 "TQQQ": {
-"fetched": "2026-11-16T05:12:32.799575-10:00",
+"fetched": "2026-11-16T06:12:44.027388-10:00",
 "src": "finnhub",
 "items": []
 },
 "SMH": {
-"fetched": "2026-11-16T05:12:32.799575-10:00",
+"fetched": "2026-11-16T06:12:44.027388-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -154,12 +154,12 @@
 ]
 },
 "SOXL": {
-"fetched": "2026-11-16T05:12:32.799575-10:00",
+"fetched": "2026-11-16T06:12:44.027388-10:00",
 "src": "finnhub",
 "items": []
 },
 "XLF": {
-"fetched": "2026-11-16T05:12:32.799575-10:00",
+"fetched": "2026-11-16T06:12:44.027388-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -170,7 +170,7 @@
 ]
 },
 "XLE": {
-"fetched": "2026-11-16T05:12:32.799575-10:00",
+"fetched": "2026-11-16T06:12:44.027388-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -181,7 +181,7 @@
 ]
 },
 "GLD": {
-"fetched": "2026-11-16T05:12:32.799575-10:00",
+"fetched": "2026-11-16T06:12:44.027388-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -202,7 +202,7 @@
 ]
 },
 "SLV": {
-"fetched": "2026-11-16T05:12:32.799575-10:00",
+"fetched": "2026-11-16T06:12:44.027388-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -213,7 +213,7 @@
 ]
 },
 "TLT": {
-"fetched": "2026-11-16T05:12:32.799575-10:00",
+"fetched": "2026-11-16T06:12:44.027388-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -224,7 +224,7 @@
 ]
 },
 "IBIT": {
-"fetched": "2026-11-16T05:12:32.799575-10:00",
+"fetched": "2026-11-16T06:12:44.027388-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -235,19 +235,44 @@
 ]
 },
 "TNA": {
-"fetched": "2026-11-16T05:12:32.799575-10:00",
+"fetched": "2026-11-16T06:12:44.027388-10:00",
 "src": "finnhub",
 "items": []
 },
 "UVXY": {
-"fetched": "2026-11-16T05:12:32.799575-10:00",
+"fetched": "2026-11-16T06:12:44.027388-10:00",
 "src": "finnhub",
 "items": []
 },
 "AAPL": {
-"fetched": "2026-11-16T05:12:32.799575-10:00",
+"fetched": "2026-11-16T06:12:44.027388-10:00",
 "src": "finnhub",
 "items": [
+[
+"2026-11-16T05:31:02-10:00",
+"Is an Equal-Weight S&P 500 Fund Safer Right Now Than the One You Own?",
+"finnhub/Yahoo"
+],
+[
+"2026-11-16T05:20:12-10:00",
+"Trump Says Jensen Huang Did Not Put National Security at Risk",
+"finnhub/Yahoo"
+],
+[
+"2026-11-16T04:20:02-10:00",
+"Is Apple Losing Its Memory?",
+"finnhub/Yahoo"
+],
+[
+"2026-11-16T04:10:52-10:00",
+"Apple (AAPL) Picks Core Foldable Glass Supplier For iPhone Duo",
+"finnhub/Yahoo"
+],
+[
+"2026-11-16T04:00:00-10:00",
+"unspun Appoints Chuck Shehadi as Chief Executive Officer",
+"finnhub/Yahoo"
+],
 [
 "2026-11-16T03:40:18-10:00",
 "Wall Street\u2019s 5 Safest Dividend Stocks Built for Any Market",
@@ -262,42 +287,37 @@
 "2026-11-16T02:00:00-10:00",
 "Nobody can replace Jensen Huang. What that means for AI",
 "finnhub/Yahoo"
-],
-[
-"2026-11-16T01:05:35-10:00",
-"What State Street SPDR Portfolio S&P 500 (SPYM) Bought: Apple Leads on Nov. 12",
-"finnhub/Yahoo"
-],
-[
-"2026-11-16T01:05:31-10:00",
-"What iShares S&P 500 Growth ETF (IVW) Bought: NVIDIA Leads on Thursday",
-"finnhub/Yahoo"
-],
-[
-"2026-11-16T01:05:23-10:00",
-"Proshares Trust (TQQQ) Buys $72.9 Million More Moderna on Nov. 12",
-"finnhub/Yahoo"
-],
-[
-"2026-11-16T01:05:20-10:00",
-"What NEOS Nasdaq 100 High Income ETF (QQQI) Bought: Apple Leads on Nov. 12",
-"finnhub/Yahoo"
-],
-[
-"2026-11-16T01:04:59-10:00",
-"Direxion Daily Technology Bull 3X (TECL) Adds Apple and Nvidia on Thursday",
-"finnhub/Yahoo"
 ]
 ]
 },
 "AMAT": {
-"fetched": "2026-11-16T05:12:32.799575-10:00",
+"fetched": "2026-11-16T06:12:44.027388-10:00",
 "src": "finnhub",
 "items": [
+[
+"2026-11-16T04:40:00-10:00",
+"Can Applied Materials Capitalize on Rising HBM Demand in 2026?",
+"finnhub/Yahoo"
+],
+[
+"2026-11-16T04:12:00-10:00",
+"Is TSM Still a Buy as AI Growth Faces Heavy Spending and Valuation?",
+"finnhub/Yahoo"
+],
 [
 "2026-11-16T03:22:02-10:00",
 "Stock Market Today: Jensen Huang Eyes a Comeback as Nvidia Closes Its Worst Week Since April 2025",
 "finnhub/ChartMill"
+],
+[
+"2026-11-16T03:15:03-10:00",
+"Why Applied Materials (AMAT) International Revenue Trends Deserve Your Attention",
+"finnhub/Yahoo"
+],
+[
+"2026-11-16T03:00:04-10:00",
+"Here is What to Know Beyond Why Applied Materials, Inc. (AMAT) is a Trending Stock",
+"finnhub/Yahoo"
 ],
 [
 "2026-11-16T02:30:00-10:00",
@@ -313,123 +333,103 @@
 "2026-11-16T00:15:18-10:00",
 "\u201cBig Short\u201d Investor: Big Tech Could Return to \u201cPositive Cash Flow\u201d in 2027. Meta Gains Most",
 "finnhub/Yahoo"
-],
-[
-"2026-11-15T21:40:05-10:00",
-"5 Stock Picks Last Week From Wall Street's Most Accurate Analysts",
-"finnhub/Benzinga"
-],
-[
-"2026-11-15T07:00:51-10:00",
-"4 Dividend Stocks Retirees Can Buy Before They Go Ex-Dividend in the Week Ahead",
-"finnhub/Yahoo"
-],
-[
-"2026-11-15T00:09:40-10:00",
-"Top 3 Quality Stocks To Watch In November 2026",
-"finnhub/Yahoo"
-],
-[
-"2026-11-14T23:58:56-10:00",
-"Consumer Tech (Nov 9-13): Jensen Resigns From Nvidia Amid Affair Controvery, Microsoft Faces Massive Outage & More",
-"finnhub/Benzinga"
 ]
 ]
 },
 "AMD": {
-"fetched": "2026-11-16T05:12:32.799575-10:00",
+"fetched": "2026-11-16T06:12:44.027388-10:00",
 "src": "finnhub",
 "items": [
 [
-"2026-11-16T03:22:02-10:00",
-"Stock Market Today: Jensen Huang Eyes a Comeback as Nvidia Closes Its Worst Week Since April 2025",
-"finnhub/ChartMill"
-],
-[
-"2026-11-16T02:54:35-10:00",
-"Can Edge AI Replace Intel\u2019s Shrinking PC Business?",
+"2026-11-16T05:45:24-10:00",
+"Broadcom\u2019s Quiet 8% November Move Could Ramp Up Very Quickly in This Volatile Climate and I\u2019m Buying",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-16T02:00:00-10:00",
-"Nobody can replace Jensen Huang. What that means for AI",
+"2026-11-16T05:41:20-10:00",
+"Cathie Wood's Latest Chip Trades Tell Two Different Stories",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-16T01:56:52-10:00",
-"Nvidia Faces Bessent\u2019s Question on Whether China Sales \u201cgoose\u201d Earnings. Here\u2019s What Tuesday\u2019s Report Has to Show",
+"2026-11-16T05:00:19-10:00",
+"Chip stocks fall on US semiconductor restrictions: AlphaCheck",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-16T01:45:19-10:00",
-"AMD, Intel and Nvidia Fall as AI Chip Selloff Continues",
+"2026-11-16T04:32:00-10:00",
+"Graid Technology Extends VROC(TM) to AMD EPYC(TM) Platforms, Expanding Choice in Enterprise RAID",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-16T01:42:11-10:00",
-"Why Did Credo Technology Stock Fall?",
+"2026-11-16T04:24:53-10:00",
+"AMD, Broadcom stocks sink on tighter US chip rules, CoreWeave and Nebius shares drop",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-16T01:42:11-10:00",
-"What Is Micron Building That Investors Should Watch?",
+"2026-11-16T04:10:51-10:00",
+"NVIDIA Falls 4% Ahead of Earnings as Elon Musk Joins Calls to Reinstate Jensen Huang; AMD Drops 6%, Taiwan Semiconductor Slides 5%",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-16T01:42:11-10:00",
-"What Has Changed About Owning Intel Stock?",
+"2026-11-16T04:05:00-10:00",
+"AMD Completes Acquisition of World Labs",
+"finnhub/Yahoo"
+],
+[
+"2026-11-16T04:00:00-10:00",
+"TensorWave Announces Agreement with OpenAI to Deliver More Than 450MW of AMD Powered AI Infrastructure",
 "finnhub/Yahoo"
 ]
 ]
 },
 "AMZN": {
-"fetched": "2026-11-16T05:12:32.799575-10:00",
+"fetched": "2026-11-16T06:12:44.027388-10:00",
 "src": "finnhub",
 "items": [
 [
-"2026-11-16T02:40:36-10:00",
-"Amazon Just Lost 40 Leo Satellites. The Bigger Problem Is the Rocket It Booked 38 Launches On",
+"2026-11-16T05:31:02-10:00",
+"Is an Equal-Weight S&P 500 Fund Safer Right Now Than the One You Own?",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-16T02:01:00-10:00",
-"Blackstone Digital Infrastructure Trust Reports Third-Quarter 2026 Results",
+"2026-11-16T05:30:32-10:00",
+"Blackstone Digital Infrastructure stock surges on $5B AWS deal",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-16T02:00:00-10:00",
-"Zoox robotaxis are now on the Uber app in Las Vegas",
+"2026-11-16T05:01:00-10:00",
+"TeacherLists Data Show 2026 Back-to-School Shopping Started Earlier and Lasted Longer",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-16T02:00:00-10:00",
-"Nobody can replace Jensen Huang. What that means for AI",
+"2026-11-16T05:00:54-10:00",
+"Why Starship's breakthrough could give SpaceX a massive edge",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-16T01:53:57-10:00",
-"Blackstone REIT to Buy Amazon Data Centers in $5 Billion Deal",
+"2026-11-16T04:56:00-10:00",
+"Amazon puts Arnold Schwarzenegger in Santa suit to extend holiday push",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-16T01:42:11-10:00",
-"What Sent CoreWeave Shares Lower?",
+"2026-11-16T04:52:43-10:00",
+"Blackstone\u2019s Data Center REIT Makes First Investment With $5B AWS Deal",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-16T01:42:11-10:00",
-"How Has eBay's Growth Story Changed?",
+"2026-11-16T04:30:04-10:00",
+"Amazon faces first North American union contract at Canadian warehouse",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-16T01:18:47-10:00",
-"Rocket failure wipes out dozens of Amazon Leo satellites",
+"2026-11-16T04:08:41-10:00",
+"One Magnificent Seven Stock Looks Ready for Its Next Big Move",
 "finnhub/Yahoo"
 ]
 ]
 },
 "APLD": {
-"fetched": "2026-11-16T05:12:32.799575-10:00",
+"fetched": "2026-11-16T06:12:44.027388-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -450,9 +450,14 @@
 ]
 },
 "APP": {
-"fetched": "2026-11-16T05:12:32.799575-10:00",
+"fetched": "2026-11-16T06:12:44.027388-10:00",
 "src": "finnhub",
 "items": [
+[
+"2026-11-16T04:27:02-10:00",
+"Best 2027 stocks: Jefferies picks top 3 names to own next year",
+"finnhub/Yahoo"
+],
 [
 "2026-11-16T01:42:11-10:00",
 "Why Is Unity Stock Going Up?",
@@ -491,7 +496,7 @@
 ]
 },
 "ASTS": {
-"fetched": "2026-11-16T05:12:32.799575-10:00",
+"fetched": "2026-11-16T06:12:44.027388-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -527,58 +532,78 @@
 ]
 },
 "AVGO": {
-"fetched": "2026-11-16T05:12:32.799575-10:00",
+"fetched": "2026-11-16T06:12:44.027388-10:00",
 "src": "finnhub",
 "items": [
 [
+"2026-11-16T05:45:24-10:00",
+"Broadcom\u2019s Quiet 8% November Move Could Ramp Up Very Quickly in This Volatile Climate and I\u2019m Buying",
+"finnhub/Yahoo"
+],
+[
+"2026-11-16T05:00:19-10:00",
+"Chip stocks fall on US semiconductor restrictions: AlphaCheck",
+"finnhub/Yahoo"
+],
+[
+"2026-11-16T04:41:14-10:00",
+"Can Credo Stock Double From Here?",
+"finnhub/Yahoo"
+],
+[
+"2026-11-16T04:38:36-10:00",
+"A $2.3 Billion Fund Just Bought These 3 Stocks",
+"finnhub/Yahoo"
+],
+[
+"2026-11-16T04:33:39-10:00",
+"Arm Stock Could Be Worth Much More if These 3 Catalysts Materialize",
+"finnhub/Yahoo"
+],
+[
+"2026-11-16T04:24:53-10:00",
+"AMD, Broadcom stocks sink on tighter US chip rules, CoreWeave and Nebius shares drop",
+"finnhub/Yahoo"
+],
+[
+"2026-11-16T04:10:51-10:00",
+"NVIDIA Falls 4% Ahead of Earnings as Elon Musk Joins Calls to Reinstate Jensen Huang; AMD Drops 6%, Taiwan Semiconductor Slides 5%",
+"finnhub/Yahoo"
+],
+[
 "2026-11-16T03:45:36-10:00",
 "Broadcom Management Says AI Chip Revenue to Double to $115 Billion in 2027, Giving Bulls Plenty to Cheer",
-"finnhub/Yahoo"
-],
-[
-"2026-11-16T03:22:02-10:00",
-"Stock Market Today: Jensen Huang Eyes a Comeback as Nvidia Closes Its Worst Week Since April 2025",
-"finnhub/ChartMill"
-],
-[
-"2026-11-16T03:07:30-10:00",
-"Broadcom (AVGO) Downgraded As Wall Street Questions Its AI Financing Model",
-"finnhub/Yahoo"
-],
-[
-"2026-11-16T02:26:51-10:00",
-"Renaissance Technologies Sold 99.7% Of Its $1.42 Billion Nvidia Stake Before Jensen Huang\u2019s Exit, While Building A $1.62 Billion Stake In Another Chip Stock",
-"finnhub/Yahoo"
-],
-[
-"2026-11-16T02:20:15-10:00",
-"Musk: Nvidia\u2019s Key Supply Deals Were \u201ca Handshake With Jensen.\u201d Now Google Is Begging for Capacity",
-"finnhub/Yahoo"
-],
-[
-"2026-11-16T02:00:00-10:00",
-"Time to Buy the Dip in NVIDIA Despite Leadership Turmoil? ETFs in Focus",
-"finnhub/Yahoo"
-],
-[
-"2026-11-16T02:00:00-10:00",
-"Nobody can replace Jensen Huang. What that means for AI",
-"finnhub/Yahoo"
-],
-[
-"2026-11-16T01:42:11-10:00",
-"Why Did Credo Technology Stock Fall?",
 "finnhub/Yahoo"
 ]
 ]
 },
 "BA": {
-"fetched": "2026-11-16T05:12:32.799575-10:00",
+"fetched": "2026-11-16T06:12:44.027388-10:00",
 "src": "finnhub",
 "items": [
 [
+"2026-11-16T05:11:59-10:00",
+"A high-stakes week for tech: Anthropic IPO and Nvidia earnings",
+"finnhub/Yahoo"
+],
+[
+"2026-11-16T05:00:54-10:00",
+"Why Starship's breakthrough could give SpaceX a massive edge",
+"finnhub/Yahoo"
+],
+[
+"2026-11-16T03:42:00-10:00",
+"Vulcan Rocket Mishap Hurts Amazon\u2019s Satellite Aspirations",
+"finnhub/Yahoo"
+],
+[
 "2026-11-16T02:40:36-10:00",
 "Amazon Just Lost 40 Leo Satellites. The Bigger Problem Is the Rocket It Booked 38 Launches On",
+"finnhub/Yahoo"
+],
+[
+"2026-11-16T02:25:00-10:00",
+"FedEx launches China-US air capacity ahead of peak season",
 "finnhub/Yahoo"
 ],
 [
@@ -595,31 +620,11 @@
 "2026-11-16T01:18:02-10:00",
 "Dozens of satellites lost in space after Amazon rocket failure",
 "finnhub/Yahoo"
-],
-[
-"2026-11-16T01:05:39-10:00",
-"United Launch Alliance Vulcan Rocket Fails After Launch, Losing 40 Amazon Leo Satellites",
-"finnhub/Yahoo"
-],
-[
-"2026-11-16T01:05:06-10:00",
-"Amazon loses 40 satellites in major rocket failure",
-"finnhub/Yahoo"
-],
-[
-"2026-11-16T01:03:54-10:00",
-"iShares U.S. Preferred Stock (PFF) Buys $400.9 Million More Strategy on Thursday",
-"finnhub/Yahoo"
-],
-[
-"2026-11-16T00:37:54-10:00",
-"Lies, spies and sex are just one part of the Nvidia story. The real stakes are much bigger",
-"finnhub/Yahoo"
 ]
 ]
 },
 "BABA": {
-"fetched": "2026-11-16T05:12:32.799575-10:00",
+"fetched": "2026-11-16T06:12:44.027388-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -665,9 +670,29 @@
 ]
 },
 "BAC": {
-"fetched": "2026-11-16T05:12:32.799575-10:00",
+"fetched": "2026-11-16T06:12:44.027388-10:00",
 "src": "finnhub",
 "items": [
+[
+"2026-11-16T04:54:14-10:00",
+"Warren Buffett Sold More Than Half His Bank of America Stock. Monday Could Reveal Another Big Move",
+"finnhub/Yahoo"
+],
+[
+"2026-11-16T04:45:06-10:00",
+"Bank of America CEO Moynihan on IPO Pipeline, AI, Consumer Strength",
+"finnhub/Yahoo"
+],
+[
+"2026-11-16T04:12:00-10:00",
+"EVelution Energy Engages Bank of America to Assist in Structuring Proposed U.S. EXIM Financing",
+"finnhub/Yahoo"
+],
+[
+"2026-11-16T04:05:00-10:00",
+"Bank of America Moves to Settle Fake-Accounts Lawsuit: What's Next?",
+"finnhub/Yahoo"
+],
 [
 "2026-11-15T16:21:33-10:00",
 "Bad News for the AI Trade: Nebius\u2019s 2027 Guide Works Out to \u201c$8-9M per MW,\u201d the Same as 2026 per Jim Chanos",
@@ -687,16 +712,11 @@
 "2026-11-14T16:08:00-10:00",
 "Bank Of America (BAC) Agrees To Settle Unauthorized Account Openings Class Action",
 "finnhub/Yahoo"
-],
-[
-"2026-11-14T00:15:00-10:00",
-"Bank of America's $1.2B Treasury fine sparks investor class-action suit \u2014 What to do if you own stock",
-"finnhub/Yahoo"
 ]
 ]
 },
 "BILI": {
-"fetched": "2026-11-16T05:12:32.799575-10:00",
+"fetched": "2026-11-16T06:12:44.027388-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -712,7 +732,7 @@
 ]
 },
 "CIFR": {
-"fetched": "2026-11-16T05:12:32.799575-10:00",
+"fetched": "2026-11-16T06:12:44.027388-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -728,9 +748,34 @@
 ]
 },
 "COIN": {
-"fetched": "2026-11-16T05:12:32.799575-10:00",
+"fetched": "2026-11-16T06:12:44.027388-10:00",
 "src": "finnhub",
 "items": [
+[
+"2026-11-16T05:47:00-10:00",
+"Coinbase, Broadridge to Bring Shareholder Voting Rights to Tokenized Stocks",
+"finnhub/Yahoo"
+],
+[
+"2026-11-16T04:58:00-10:00",
+"Strategy Sinks 6% as Bitcoin Slides Near Three-Month Low in a Collapse Peter Schiff Says Is \u201cGathering Steam\u201d",
+"finnhub/Yahoo"
+],
+[
+"2026-11-16T04:29:26-10:00",
+"Bitcoin's November rout echoes past crypto downturns",
+"finnhub/Yahoo"
+],
+[
+"2026-11-16T04:19:56-10:00",
+"Bitcoin Tumbles Ahead Of Anthropic IPO. Is It Paralleling Its SpaceX Sell Off?",
+"finnhub/Yahoo"
+],
+[
+"2026-11-16T04:08:25-10:00",
+"Strategy Sinks 8% as Bitcoin Selloff Deepens; Coinbase and MARA Fall 7%",
+"finnhub/Yahoo"
+],
 [
 "2026-11-16T03:35:59-10:00",
 "S&P 500 Premarket Losers on Nov. 16, 2026: COIN, LITE, COHR",
@@ -745,38 +790,43 @@
 "2026-11-16T02:11:07-10:00",
 "Should Equity Perpetual Futures Require Action From Coinbase (COIN) Investors?",
 "finnhub/Yahoo"
-],
-[
-"2026-11-16T01:25:47-10:00",
-"Cryptocurrency Stocks Fall in Premarket Trading as Bitcoin Drops Towards $64,600",
-"finnhub/Yahoo"
-],
-[
-"2026-11-16T00:57:29-10:00",
-"Crypto stocks slide premarket as Bitcoin selloff continues",
-"finnhub/Yahoo"
-],
-[
-"2026-11-15T22:08:04-10:00",
-"The Single Most Important Metric For Robinhood Stock",
-"finnhub/Yahoo"
-],
-[
-"2026-11-15T17:11:24-10:00",
-"Coinbase Global (COIN) Is Upgrading Custody After 35% Of Bitcoin Was Flagged At Risk",
-"finnhub/Yahoo"
-],
-[
-"2026-11-14T16:26:59-10:00",
-"Strategy Is Down 27% in 2026: Dead Money, or Due for a Bounce?",
-"finnhub/Yahoo"
 ]
 ]
 },
 "CRM": {
-"fetched": "2026-11-16T05:12:32.799575-10:00",
+"fetched": "2026-11-16T06:12:44.027388-10:00",
 "src": "finnhub",
 "items": [
+[
+"2026-11-16T05:35:48-10:00",
+"Salesforce Spent $32 Billion on Buybacks in 5 Years. Somehow, Its Share Count Still Rose",
+"finnhub/Yahoo"
+],
+[
+"2026-11-16T05:00:00-10:00",
+"Trifecta Technologies Expands Product Data Capabilities with Salsify and Salesforce B2B Commerce Integration",
+"finnhub/Yahoo"
+],
+[
+"2026-11-16T04:54:00-10:00",
+"Main Capital Partners Invests in TaskRay, Joining Cloud Coach and JustOn to Transform Customer Delivery on Salesforce",
+"finnhub/Yahoo"
+],
+[
+"2026-11-16T04:15:00-10:00",
+"AI-native CRM Dreamteam raises $53M to challenge incumbents with AI coworkers who actually get work done",
+"finnhub/Yahoo"
+],
+[
+"2026-11-16T04:12:29-10:00",
+"3 AI Stocks With Earnings Growth Over 45%",
+"finnhub/Yahoo"
+],
+[
+"2026-11-16T04:00:00-10:00",
+"GReminders Rebrands to GRworks, Reflecting Its Evolution into a Client Engagement Platform for Financial Professionals",
+"finnhub/Yahoo"
+],
 [
 "2026-11-16T02:53:00-10:00",
 "Salesforce vs. Oracle: Which AI Cloud Stock Is the Smarter Pick Now?",
@@ -786,36 +836,11 @@
 "2026-11-16T02:30:00-10:00",
 "Freshworks alums raise $53M to take on Salesforce, HubSpot with AI-native CRM",
 "finnhub/Yahoo"
-],
-[
-"2026-11-16T01:00:00-10:00",
-"AI Startup Dreamteam Raises Capital to Challenge Salesforce, SAP",
-"finnhub/Yahoo"
-],
-[
-"2026-11-15T22:08:05-10:00",
-"Has Microsoft Stock Become A Different Bet?",
-"finnhub/Yahoo"
-],
-[
-"2026-11-15T07:35:06-10:00",
-"Anthropic IPO Is Coming Up: Top Companies Set to Benefit if ANT Stock Jumps",
-"finnhub/Benzinga"
-],
-[
-"2026-11-14T04:04:00-10:00",
-"Mint All About AI Tech4Good Awards 2026 Spotlight AI Innovations Across Five Asian Countries",
-"finnhub/Yahoo"
-],
-[
-"2026-11-13T19:38:39-10:00",
-"Salesforce Buys Cresta 13 Days After Braze Because Voice Is \u201cHardest to Get Right\u201d",
-"finnhub/Yahoo"
 ]
 ]
 },
 "CRWV": {
-"fetched": "2026-11-16T05:12:32.799575-10:00",
+"fetched": "2026-11-16T06:12:44.027388-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -861,9 +886,19 @@
 ]
 },
 "CVNA": {
-"fetched": "2026-11-16T05:12:32.799575-10:00",
+"fetched": "2026-11-16T06:12:44.027388-10:00",
 "src": "finnhub",
 "items": [
+[
+"2026-11-16T05:16:34-10:00",
+"Q4 Guidance Signals Long-Awaited Margin Inflection Point for Carvana Co. (CVNA)",
+"finnhub/Yahoo"
+],
+[
+"2026-11-15T23:32:49-10:00",
+"Carvana Sold a Record 217,385 Cars in Q3: \u201cThe Moat Is Widening,\u201d but Profit per Car Fell $365",
+"finnhub/Yahoo"
+],
 [
 "2026-11-14T08:50:02-10:00",
 "Carvana: 3 Key Takeaways for Long-Term Investors",
@@ -877,7 +912,7 @@
 ]
 },
 "DKNG": {
-"fetched": "2026-11-16T05:12:32.799575-10:00",
+"fetched": "2026-11-16T06:12:44.027388-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -898,7 +933,7 @@
 ]
 },
 "GOOGL": {
-"fetched": "2026-11-16T05:12:32.799575-10:00",
+"fetched": "2026-11-16T06:12:44.027388-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -944,7 +979,7 @@
 ]
 },
 "HOOD": {
-"fetched": "2026-11-16T05:12:32.799575-10:00",
+"fetched": "2026-11-16T06:12:44.027388-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -990,7 +1025,7 @@
 ]
 },
 "INTC": {
-"fetched": "2026-11-16T05:12:32.799575-10:00",
+"fetched": "2026-11-16T06:12:44.027388-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1036,7 +1071,7 @@
 ]
 },
 "IONQ": {
-"fetched": "2026-11-16T05:12:32.799575-10:00",
+"fetched": "2026-11-16T06:12:44.027388-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1047,7 +1082,7 @@
 ]
 },
 "IREN": {
-"fetched": "2026-11-16T05:12:32.799575-10:00",
+"fetched": "2026-11-16T06:12:44.027388-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1068,7 +1103,7 @@
 ]
 },
 "JPM": {
-"fetched": "2026-11-16T05:12:32.799575-10:00",
+"fetched": "2026-11-16T06:12:44.027388-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1114,7 +1149,7 @@
 ]
 },
 "LRCX": {
-"fetched": "2026-11-16T05:12:32.799575-10:00",
+"fetched": "2026-11-16T06:12:44.027388-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1155,7 +1190,7 @@
 ]
 },
 "MARA": {
-"fetched": "2026-11-16T05:12:32.799575-10:00",
+"fetched": "2026-11-16T06:12:44.027388-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1176,7 +1211,7 @@
 ]
 },
 "META": {
-"fetched": "2026-11-16T05:12:32.799575-10:00",
+"fetched": "2026-11-16T06:12:44.027388-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1222,7 +1257,7 @@
 ]
 },
 "MSFT": {
-"fetched": "2026-11-16T05:12:32.799575-10:00",
+"fetched": "2026-11-16T06:12:44.027388-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1268,7 +1303,7 @@
 ]
 },
 "MSTR": {
-"fetched": "2026-11-16T05:12:32.799575-10:00",
+"fetched": "2026-11-16T06:12:44.027388-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1314,7 +1349,7 @@
 ]
 },
 "MU": {
-"fetched": "2026-11-16T05:12:32.799575-10:00",
+"fetched": "2026-11-16T06:12:44.027388-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1360,7 +1395,7 @@
 ]
 },
 "NFLX": {
-"fetched": "2026-11-16T05:12:32.799575-10:00",
+"fetched": "2026-11-16T06:12:44.027388-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1406,7 +1441,7 @@
 ]
 },
 "NVDA": {
-"fetched": "2026-11-16T05:12:32.799575-10:00",
+"fetched": "2026-11-16T06:12:44.027388-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1452,7 +1487,7 @@
 ]
 },
 "OKLO": {
-"fetched": "2026-11-16T05:12:32.799575-10:00",
+"fetched": "2026-11-16T06:12:44.027388-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1478,7 +1513,7 @@
 ]
 },
 "ORCL": {
-"fetched": "2026-11-16T05:12:32.799575-10:00",
+"fetched": "2026-11-16T06:12:44.027388-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1524,7 +1559,7 @@
 ]
 },
 "PLTR": {
-"fetched": "2026-11-16T05:12:32.799575-10:00",
+"fetched": "2026-11-16T06:12:44.027388-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1570,12 +1605,12 @@
 ]
 },
 "PLUG": {
-"fetched": "2026-11-16T05:12:32.799575-10:00",
+"fetched": "2026-11-16T06:12:44.027388-10:00",
 "src": "finnhub",
 "items": []
 },
 "PYPL": {
-"fetched": "2026-11-16T05:12:32.799575-10:00",
+"fetched": "2026-11-16T06:12:44.027388-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1601,7 +1636,7 @@
 ]
 },
 "QCOM": {
-"fetched": "2026-11-16T05:12:32.799575-10:00",
+"fetched": "2026-11-16T06:12:44.027388-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1647,7 +1682,7 @@
 ]
 },
 "RGTI": {
-"fetched": "2026-11-16T05:12:32.799575-10:00",
+"fetched": "2026-11-16T06:12:44.027388-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1668,7 +1703,7 @@
 ]
 },
 "RKLB": {
-"fetched": "2026-11-16T05:12:32.799575-10:00",
+"fetched": "2026-11-16T06:12:44.027388-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1714,7 +1749,7 @@
 ]
 },
 "SHOP": {
-"fetched": "2026-11-16T05:12:32.799575-10:00",
+"fetched": "2026-11-16T06:12:44.027388-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1740,7 +1775,7 @@
 ]
 },
 "SMCI": {
-"fetched": "2026-11-16T05:12:32.799575-10:00",
+"fetched": "2026-11-16T06:12:44.027388-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1786,7 +1821,7 @@
 ]
 },
 "SOFI": {
-"fetched": "2026-11-16T05:12:32.799575-10:00",
+"fetched": "2026-11-16T06:12:44.027388-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1832,7 +1867,7 @@
 ]
 },
 "TSLA": {
-"fetched": "2026-11-16T05:12:32.799575-10:00",
+"fetched": "2026-11-16T06:12:44.027388-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1878,7 +1913,7 @@
 ]
 },
 "TSM": {
-"fetched": "2026-11-16T05:12:32.799575-10:00",
+"fetched": "2026-11-16T06:12:44.027388-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1924,7 +1959,7 @@
 ]
 },
 "UBER": {
-"fetched": "2026-11-16T05:12:32.799575-10:00",
+"fetched": "2026-11-16T06:12:44.027388-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1970,7 +2005,7 @@
 ]
 },
 "WMT": {
-"fetched": "2026-11-16T05:12:32.799575-10:00",
+"fetched": "2026-11-16T06:12:44.027388-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2016,7 +2051,7 @@
 ]
 },
 "XOM": {
-"fetched": "2026-11-16T05:12:32.799575-10:00",
+"fetched": "2026-11-16T06:12:44.027388-10:00",
 "src": "finnhub",
 "items": [
 [
