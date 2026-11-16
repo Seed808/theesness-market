@@ -1,0 +1,128 @@
+{
+ "trade_date": "2026-11-16",
+ "mode": "rescan",
+ "ran_at": "2026-11-16T10:52:32.904606-10:00",
+ "test": false,
+ "open_hst": "2026-11-16T04:30:00-10:00",
+ "close_hst": "2026-11-16T11:00:00-10:00",
+ "early_close": false,
+ "bias": {
+  "regime": "BEAR",
+  "favored": "P",
+  "clean": true,
+  "notes": [
+   "ES red (-1.88%), NQ red (-2.57%), YM red (-1.40%)",
+   "ES+YM red \u2192 broad bear, puts favored",
+   "VIX 23.57 (+22.12%) \u2192 confirms",
+   "SPY red (-1.91%), QQQ red (-2.57%) \u2192 confirms"
+  ]
+ },
+ "quotes": {
+  "ES": {
+   "last": 7440.25,
+   "prev_close": 7583.0,
+   "chg_pct": -1.8825003296848213,
+   "source": "schwab"
+  },
+  "NQ": {
+   "last": 27315.0,
+   "prev_close": 28034.75,
+   "chg_pct": -2.5673494502358682,
+   "source": "schwab"
+  },
+  "YM": {
+   "last": 51684.0,
+   "prev_close": 52418.0,
+   "chg_pct": -1.4002823457590903,
+   "source": "schwab"
+  },
+  "VIX": {
+   "last": 23.57,
+   "prev_close": 19.3,
+   "chg_pct": 22.124352331606215,
+   "source": "schwab"
+  },
+  "SPY": {
+   "last": 739.985,
+   "prev_close": 754.37,
+   "chg_pct": -1.9068891923061615,
+   "source": "schwab"
+  },
+  "QQQ": {
+   "last": 662.44,
+   "prev_close": 679.89,
+   "chg_pct": -2.566591654532341,
+   "source": "schwab"
+  }
+ },
+ "flags": [
+  "Amateur hour until 05:00 AM; institutional 05:00\u201305:30 AM HST",
+  "No damaged contracts overnight. No earnings holds overnight."
+ ],
+ "headlines": [],
+ "data_note": "live data: Schwab (Yahoo fallback)",
+ "cards": [],
+ "passing": 5,
+ "rejected": 59,
+ "rejections": [
+  "SPY P: trend not aligned (1m up/5m flat/15m down)",
+  "QQQ P: trend not aligned (1m up/5m flat/15m down)",
+  "IWM P: first 5-min candle does not confirm, trend not aligned (1m up/5m flat/15m down)",
+  "DIA P: trend not aligned (1m up/5m flat/15m down)",
+  "SPX P: trend not aligned (1m up/5m flat/15m down)",
+  "TQQQ P: trend not aligned (1m up/5m flat/15m down)",
+  "SMH P: trend not aligned (1m up/5m flat/15m down)",
+  "SOXL P: trend not aligned (1m up/5m flat/15m down)",
+  "XLF P: first 5-min candle does not confirm, trend not aligned (1m up/5m up/15m flat)",
+  "XLE P: trend not aligned (1m up/5m flat/15m flat)",
+  "GLD P: first 5-min candle does not confirm, trend not aligned (1m flat/5m down/15m down)",
+  "SLV P: first 5-min candle does not confirm, trend not aligned (1m up/5m flat/15m flat), put into support (VWAP)",
+  "TLT P: first 5-min candle does not confirm, trend not aligned (1m down/5m down/15m flat), put into support (PML)",
+  "IBIT P: first 5-min candle does not confirm, trend not aligned (1m up/5m up/15m flat)",
+  "TNA P: first 5-min candle does not confirm, trend not aligned (1m up/5m flat/15m down)",
+  "UVXY P: OI 75 < 500, first 5-min candle does not confirm, trend not aligned (1m down/5m flat/15m up)",
+  "AAPL P: trend not aligned (1m up/5m flat/15m down)",
+  "AMAT P: trend not aligned (1m up/5m down/15m down)",
+  "AMD P: first 5-min candle does not confirm, trend not aligned (1m up/5m flat/15m down)",
+  "APLD P: OI 233 < 500, trend not aligned (1m flat/5m flat/15m down)",
+  "APP P: OI 0 < 500, trend not aligned (1m up/5m up/15m flat), put into support (PDH)",
+  "ASTS P: OI 229 < 500, trend not aligned (1m up/5m flat/15m down)",
+  "AVGO P: trend not aligned (1m up/5m flat/15m flat), put into support (VWAP)",
+  "BA P: trend not aligned (1m up/5m flat/15m down)",
+  "BABA P: earnings before expiry (no overnight earnings hold)",
+  "BAC P: trend not aligned (1m up/5m up/15m flat)",
+  "BILI P: spread 50.0% > 10.0%, trend not aligned (1m up/5m flat/15m down)",
+  "CIFR P: spread 15.0% > 10.0%, first 5-min candle does not confirm, trend not aligned (1m up/5m up/15m up)",
+  "COIN P: first 5-min candle does not confirm, trend not aligned (1m up/5m up/15m up)",
+  "CRM P: trend not aligned (1m up/5m flat/15m flat), put into support (PDL)",
+  "CRWV P: first 5-min candle does not confirm, trend not aligned (1m up/5m up/15m flat)",
+  "CVNA P: trend not aligned (1m up/5m up/15m up)",
+  "DKNG P: spread 23.5% > 10.0%, trend not aligned (1m flat/5m up/15m flat)",
+  "HOOD P: first 5-min candle does not confirm, trend not aligned (1m up/5m flat/15m flat)",
+  "INTC P: trend not aligned (1m up/5m flat/15m flat)",
+  "IONQ P: OI 200 < 500, trend not aligned (1m up/5m flat/15m flat)",
+  "JPM P: trend not aligned (1m up/5m flat/15m down)",
+  "MARA P: first 5-min candle does not confirm, trend not aligned (1m down/5m flat/15m flat), put into support (PDL)",
+  "META P: put into support (PDL)",
+  "MSFT P: trend not aligned (1m flat/5m down/15m down)",
+  "MSTR P: first 5-min candle does not confirm, trend not aligned (1m up/5m up/15m flat)",
+  "NFLX P: trend not aligned (1m up/5m flat/15m down)",
+  "NVDA P: earnings before expiry (no overnight earnings hold), trend not aligned (1m up/5m flat/15m down), put into support (PML)",
+  "OKLO P: spread 10.5% > 10.0%, first 5-min candle does not confirm, trend not aligned (1m up/5m up/15m flat)",
+  "ORCL P: trend not aligned (1m up/5m flat/15m flat)",
+  "PLTR P: trend not aligned (1m up/5m flat/15m down)",
+  "PLUG P: spread 120.0% > 10.0%, trend not aligned (1m up/5m flat/15m flat)",
+  "PYPL P: OI 469 < 500, trend not aligned (1m up/5m flat/15m down)",
+  "QCOM P: trend not aligned (1m up/5m flat/15m down)",
+  "RGTI P: spread 11.1% > 10.0%, trend not aligned (1m up/5m flat/15m flat)",
+  "RKLB P: first 5-min candle does not confirm, trend not aligned (1m flat/5m flat/15m down)",
+  "SHOP P: mid-range, OI 51 < 500, first 5-min candle does not confirm, trend not aligned (1m flat/5m flat/15m flat)",
+  "SMCI P: trend not aligned (1m up/5m flat/15m flat)",
+  "SOFI P: first 5-min candle does not confirm, trend not aligned (1m up/5m up/15m flat)",
+  "TSLA P: trend not aligned (1m up/5m up/15m flat)",
+  "TSM P: trend not aligned (1m up/5m flat/15m down)",
+  "UBER P: mid-range, spread 10.5% > 10.0%, trend not aligned (1m up/5m up/15m flat)",
+  "WMT P: earnings before expiry (no overnight earnings hold), trend not aligned (1m up/5m up/15m flat), put into support (PDH)",
+  "XOM P: trend not aligned (1m up/5m flat/15m flat)"
+ ]
+}

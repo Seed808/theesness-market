@@ -170,3 +170,4 @@ id,graded_at,result,exit_premium,pnl_pct,method
 2026-11-16_rescan_MU_PUT_2026-11-20_725,2026-11-16T08:52:46.299184-10:00,WIN,29.5,1.8,TRAILING STOP (gapped through) · schwab 1m
 2026-11-16_confirm_INTC_PUT_2026-11-20_56,2026-11-16T09:12:33.599900-10:00,WIN,2.41,7.1,TRAILING STOP (gapped through) · schwab 1m
 2026-11-16_rescan_NFLX_PUT_2026-11-20_61,2026-11-16T10:12:34.672972-10:00,WIN,1.12,33.3,TRAILING STOP (gapped through) · schwab 1m
+2026-11-16_rescan_TSLA_PUT_2026-11-20_380,2026-11-16T10:52:32.904606-10:00,WIN,10.33,16.1,TRAILING STOP (gapped through) · schwab 1m
