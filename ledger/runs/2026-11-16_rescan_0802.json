@@ -1,0 +1,160 @@
+{
+ "trade_date": "2026-11-16",
+ "mode": "rescan",
+ "ran_at": "2026-11-16T08:02:33.121008-10:00",
+ "test": false,
+ "open_hst": "2026-11-16T04:30:00-10:00",
+ "close_hst": "2026-11-16T11:00:00-10:00",
+ "early_close": false,
+ "bias": {
+  "regime": "BEAR",
+  "favored": "P",
+  "clean": true,
+  "notes": [
+   "ES red (-1.55%), NQ red (-2.31%), YM red (-0.98%)",
+   "ES+YM red \u2192 broad bear, puts favored",
+   "VIX 22.23 (+15.18%) \u2192 confirms",
+   "SPY red (-1.57%), QQQ red (-2.32%) \u2192 confirms"
+  ]
+ },
+ "quotes": {
+  "ES": {
+   "last": 7465.25,
+   "prev_close": 7583.0,
+   "chg_pct": -1.5528155083739943,
+   "source": "schwab"
+  },
+  "NQ": {
+   "last": 27386.0,
+   "prev_close": 28034.75,
+   "chg_pct": -2.314092331838165,
+   "source": "schwab"
+  },
+  "YM": {
+   "last": 51906.0,
+   "prev_close": 52418.0,
+   "chg_pct": -0.9767637071235072,
+   "source": "schwab"
+  },
+  "VIX": {
+   "last": 22.23,
+   "prev_close": 19.3,
+   "chg_pct": 15.181347150259064,
+   "source": "schwab"
+  },
+  "SPY": {
+   "last": 742.49,
+   "prev_close": 754.37,
+   "chg_pct": -1.574824025345652,
+   "source": "schwab"
+  },
+  "QQQ": {
+   "last": 664.1,
+   "prev_close": 679.89,
+   "chg_pct": -2.3224345114650844,
+   "source": "schwab"
+  }
+ },
+ "flags": [
+  "Amateur hour until 05:00 AM; institutional 05:00\u201305:30 AM HST",
+  "No damaged contracts overnight. No earnings holds overnight."
+ ],
+ "headlines": [],
+ "data_note": "live data: Schwab (Yahoo fallback)",
+ "cards": [
+  {
+   "id": "2026-11-16_rescan_AVGO_PUT_2026-11-20_330",
+   "trade_date": "2026-11-16",
+   "mode": "rescan",
+   "locked_at": "2026-11-16T08:02:33.121008-10:00",
+   "ticker": "AVGO",
+   "type": "PUT",
+   "bias": "BEAR",
+   "expiry": "2026-11-20",
+   "strike": 330.0,
+   "entry_floor": 9.65,
+   "entry_ceiling": 11.58,
+   "premium": 9.65,
+   "target": 14.48,
+   "stop": 7.72,
+   "reasoning": "BEAR, bias clean, trend aligned, VWAP resistance, strong liquidity, no volume confirmation (RVOL 1.0), catalyst: news (-4.3% vs market -2.3%): AMD, Broadcom stocks sink on tighter US chip rules, CoreWeave and Nebius shares ",
+   "confidence": 7,
+   "a_plus": false,
+   "status": "GO",
+   "flags": "hold OK until Fri 11/20 close \u00b7 close before the weekend; CHASING -4.3% vs prior close",
+   "data_source": "schwab",
+   "contract": "AVGO261120P00330000",
+   "underlying": 332.26,
+   "underlying_asof": "8:03 AM HST live",
+   "target1": 11.58,
+   "mover": ""
+  },
+  {
+   "id": "2026-11-16_rescan_MSFT_PUT_2026-11-20_520",
+   "trade_date": "2026-11-16",
+   "mode": "rescan",
+   "locked_at": "2026-11-16T08:02:33.121008-10:00",
+   "ticker": "MSFT",
+   "type": "PUT",
+   "bias": "BEAR",
+   "expiry": "2026-11-20",
+   "strike": 520.0,
+   "entry_floor": 8.93,
+   "entry_ceiling": 10.72,
+   "premium": 8.93,
+   "target": 13.39,
+   "stop": 7.14,
+   "reasoning": "BEAR, bias clean, trend aligned, PML resistance, strong liquidity, no volume confirmation (RVOL 1.4), catalyst: Schwab most active + moving -0.5% vs market -2.3%",
+   "confidence": 7,
+   "a_plus": false,
+   "status": "GO",
+   "flags": "hold OK until Fri 11/20 close \u00b7 close before the weekend",
+   "data_source": "schwab",
+   "contract": "MSFT261120P00520000",
+   "underlying": 521.49,
+   "underlying_asof": "8:04 AM HST live",
+   "target1": 10.72,
+   "mover": "most active \u00b7 Dow (-0.0%)"
+  }
+ ],
+ "passing": 28,
+ "rejected": 36,
+ "rejections": [
+  "IWM P: first 5-min candle does not confirm",
+  "XLF P: first 5-min candle does not confirm, put into support (PDL)",
+  "GLD P: first 5-min candle does not confirm",
+  "SLV P: first 5-min candle does not confirm, trend not aligned (1m down/5m flat/15m down), put into support (VWAP)",
+  "TLT P: first 5-min candle does not confirm, trend not aligned (1m up/5m up/15m flat), put into support (PML)",
+  "IBIT P: first 5-min candle does not confirm, trend not aligned (1m down/5m flat/15m flat), put into support (VWAP)",
+  "TNA P: OI 373 < 500, first 5-min candle does not confirm",
+  "UVXY P: OI 144 < 500, first 5-min candle does not confirm, trend not aligned (1m up/5m up/15m up)",
+  "AAPL P: trend not aligned (1m up/5m flat/15m down)",
+  "AMAT P: put into support (PDL)",
+  "AMD P: first 5-min candle does not confirm",
+  "APLD P: OI 233 < 500",
+  "APP P: OI 85 < 500, trend not aligned (1m down/5m flat/15m flat)",
+  "BABA P: earnings before expiry (no overnight earnings hold), put into support (PML)",
+  "BILI P: spread 15.4% > 10.0%",
+  "CIFR P: first 5-min candle does not confirm",
+  "COIN P: OI 0 < 500, first 5-min candle does not confirm, trend not aligned (1m down/5m flat/15m down), put into support (PMH)",
+  "CRM P: put into support (PML)",
+  "CRWV P: first 5-min candle does not confirm",
+  "DKNG P: spread 13.3% > 10.0%, trend not aligned (1m flat/5m flat/15m down)",
+  "GOOGL P: trend not aligned (1m flat/5m down/15m down)",
+  "HOOD P: OI 333 < 500, first 5-min candle does not confirm",
+  "LRCX P: put into support (PML)",
+  "MARA P: first 5-min candle does not confirm",
+  "META P: put into support (PDL)",
+  "MSTR P: first 5-min candle does not confirm",
+  "NVDA P: earnings before expiry (no overnight earnings hold), put into support (PML)",
+  "OKLO P: first 5-min candle does not confirm, put into support (PDL)",
+  "PLUG P: spread 66.7% > 10.0%, put into support (PML)",
+  "PYPL P: spread 19.3% > 10.0%, trend not aligned (1m down/5m down/15m flat), put into support (PML)",
+  "QCOM P: mid-range, trend not aligned (1m flat/5m flat/15m up)",
+  "RKLB P: first 5-min candle does not confirm",
+  "SHOP P: OI 26 < 500, first 5-min candle does not confirm, trend not aligned (1m down/5m flat/15m up)",
+  "SOFI P: first 5-min candle does not confirm",
+  "UBER P: trend not aligned (1m down/5m down/15m flat)",
+  "WMT P: earnings before expiry (no overnight earnings hold), trend not aligned (1m up/5m flat/15m down), put into support (PDH)"
+ ]
+}
