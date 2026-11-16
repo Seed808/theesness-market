@@ -1196,3 +1196,4 @@ id,target,graded_at,result,exit_premium,pnl_pct,hit_at,method
 2026-11-16_watch-premarket_CRM_PUT_2026-11-20_215,T2,2026-11-16T06:02:34.670669-10:00,LOSS,3.36,-20.0,2026-11-16T06:01:00-10:00,STOP · schwab 1m
 2026-11-16_watch-premarket_CRWV_PUT_2026-11-20_49,T1,2026-11-16T06:22:33.736892-10:00,LOSS,2.0,-23.4,2026-11-16T06:21:00-10:00,STOP (gapped through) · schwab 1m
 2026-11-16_watch-premarket_CRWV_PUT_2026-11-20_49,T2,2026-11-16T06:22:33.736892-10:00,LOSS,2.0,-23.4,2026-11-16T06:21:00-10:00,STOP (gapped through) · schwab 1m
+2026-11-16_watch-premarket_QQQ_PUT_2026-11-20_670,T1,2026-11-16T08:32:29.551581-10:00,WIN,15.29,20.3,2026-11-16T08:31:00-10:00,TARGET (gapped through) · schwab 1m
