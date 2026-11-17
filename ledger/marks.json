@@ -1,42 +1,55 @@
 {
  "2026-11-16_rescan_SPX_PUT_2026-11-20_7470": {
-  "last": 153.5,
-  "last_time": "2026-11-17T19:25:51.526000+00:00",
+  "last": 154.4,
+  "last_time": "2026-11-17T19:35:46.476000+00:00",
   "high": 156.9,
   "low": 57.25,
   "source": "schwab quote (mark)",
-  "underlying": 7327.93,
-  "pnl_pct": 149.2,
-  "as_of": "2026-11-17T09:22:44.227528-10:00"
+  "underlying": 7327.6,
+  "pnl_pct": 150.6,
+  "as_of": "2026-11-17T09:32:31.394586-10:00"
  },
  "2026-11-17_rescan_META_PUT_2026-11-20_615": {
-  "last": 10.97,
-  "last_time": "2026-11-17T19:25:51.509000+00:00",
+  "last": 11.3,
+  "last_time": "2026-11-17T19:35:46.996000+00:00",
   "high": 14.3,
   "low": 10.02,
   "source": "schwab quote (mark)",
-  "underlying": 620.245,
-  "pnl_pct": -9.0,
-  "as_of": "2026-11-17T09:22:44.227528-10:00"
+  "underlying": 619.695,
+  "pnl_pct": -6.2,
+  "as_of": "2026-11-17T09:32:31.394586-10:00"
  },
  "2026-11-17_rescan_XLE_PUT_2026-11-20_63": {
   "last": 0.68,
-  "last_time": "2026-11-17T19:25:45.270000+00:00",
+  "last_time": "2026-11-17T19:35:45.572000+00:00",
   "high": 0.67,
   "low": 0.54,
   "source": "schwab quote (mark)",
-  "underlying": 63.27,
+  "underlying": 63.29,
   "pnl_pct": 17.2,
-  "as_of": "2026-11-17T09:22:44.227528-10:00"
+  "as_of": "2026-11-17T09:32:31.394586-10:00"
  },
  "2026-11-17_rescan_AAPL_PUT_2026-11-20_350": {
-  "last": 3.8,
-  "last_time": "2026-11-17T19:25:54.121000+00:00",
+  "last": 3.95,
+  "last_time": "2026-11-17T19:35:42.431000+00:00",
   "high": 4.2,
   "low": 3.4,
   "source": "schwab quote (mark)",
-  "underlying": 350.47,
-  "pnl_pct": 0.0,
-  "as_of": "2026-11-17T09:22:44.227528-10:00"
+  "underlying": 350.25,
+  "pnl_pct": 3.9,
+  "as_of": "2026-11-17T09:32:31.394586-10:00"
+ },
+ "2026-11-17_rescan_TNA_PUT_2026-11-20_50": {
+  "high": null,
+  "low": null,
+  "last": 1.25,
+  "last_time": "2026-11-17T19:35:50.202000+00:00",
+  "source": "schwab quote (mark)",
+  "underlying": 50.84,
+  "pnl_pct": 0.8,
+  "as_of": "2026-11-17T09:32:31.394586-10:00"
+ },
+ "_errors": {
+  "2026-11-17_rescan_TNA_PUT_2026-11-20_50": "bars returned but none after lock (44 rows)"
  }
 }
