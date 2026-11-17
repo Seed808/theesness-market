@@ -1,10 +1,5 @@
 {
- "pending": {
-  "regime": "BEAR",
-  "clean": true,
-  "why": "ES red (-1.07%), NQ red (-1.06%), YM red (-1.40%); ES+YM red \u2192 broad bear, puts favored",
-  "at": "2026-11-17T07:42:33.868581-10:00"
- },
+ "pending": null,
  "history": [
   {
    "regime": "BEAR",
@@ -19,12 +14,19 @@
    "why": "SPY +0.05% from VWAP, 15m flat; QQQ +0.11% from VWAP, 15m flat",
    "at": "2026-11-17T07:32:39.078449-10:00",
    "source": "re-scan (held 2 reads)"
+  },
+  {
+   "regime": "BEAR",
+   "clean": true,
+   "why": "ES red (-1.11%), NQ red (-1.13%), YM red (-1.40%); ES+YM red \u2192 broad bear, puts favored",
+   "at": "2026-11-17T07:52:32.243277-10:00",
+   "source": "re-scan (held 2 reads)"
   }
  ],
  "last_reading": {
   "regime": "BEAR",
   "clean": true,
-  "why": "ES red (-1.07%), NQ red (-1.06%), YM red (-1.40%); ES+YM red \u2192 broad bear, puts favored",
-  "at": "2026-11-17T07:42:33.868581-10:00"
+  "why": "ES red (-1.11%), NQ red (-1.13%), YM red (-1.40%); ES+YM red \u2192 broad bear, puts favored",
+  "at": "2026-11-17T07:52:32.243277-10:00"
  }
 }
