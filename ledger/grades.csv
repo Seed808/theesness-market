@@ -211,3 +211,4 @@ id,graded_at,result,exit_premium,pnl_pct,method
 2026-11-17_rescan_LRCX_PUT_2026-11-20_200,2026-11-17T06:12:30.184764-10:00,LOSS,5.35,-29.1,STOP (gapped through) · schwab 1m
 2026-11-16_rescan_MSFT_PUT_2026-11-20_520,2026-11-17T07:12:36.395402-10:00,WIN,21.98,146.1,TRAILING STOP (gapped through) · schwab 1m
 2026-11-17_rescan_RGTI_PUT_2026-11-20_8,2026-11-17T07:12:36.395402-10:00,LOSS,0.21,-22.2,STOP (gapped through) · schwab 1m
+2026-11-17_rescan_CIFR_PUT_2026-11-20_6,2026-11-17T09:12:44.446372-10:00,WIN,0.24,9.1,TRAILING STOP (gapped through) · schwab 1m
