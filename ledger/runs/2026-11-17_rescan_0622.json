@@ -1,0 +1,124 @@
+{
+ "trade_date": "2026-11-17",
+ "mode": "rescan",
+ "ran_at": "2026-11-17T06:22:32.437218-10:00",
+ "test": false,
+ "open_hst": "2026-11-17T04:30:00-10:00",
+ "close_hst": "2026-11-17T11:00:00-10:00",
+ "early_close": false,
+ "bias": {
+  "regime": "BEAR",
+  "favored": "P",
+  "clean": true,
+  "notes": [
+   "ES red (-1.12%), NQ red (-1.21%), YM red (-1.44%)",
+   "ES+YM red \u2192 broad bear, puts favored",
+   "VIX 25.40 (+10.87%) \u2192 confirms",
+   "SPY red (-1.11%), QQQ red (-1.20%) \u2192 confirms"
+  ]
+ },
+ "quotes": {
+  "ES": {
+   "last": 7356.0,
+   "prev_close": 7439.0,
+   "chg_pct": -1.1157413630864363,
+   "source": "schwab"
+  },
+  "NQ": {
+   "last": 26954.0,
+   "prev_close": 27284.25,
+   "chg_pct": -1.210405270439906,
+   "source": "schwab"
+  },
+  "YM": {
+   "last": 50924.0,
+   "prev_close": 51670.0,
+   "chg_pct": -1.4437778207857557,
+   "source": "schwab"
+  },
+  "VIX": {
+   "last": 25.4,
+   "prev_close": 22.91,
+   "chg_pct": 10.868616324749011,
+   "source": "schwab"
+  },
+  "SPY": {
+   "last": 731.76,
+   "prev_close": 739.95,
+   "chg_pct": -1.1068315426718096,
+   "source": "schwab"
+  },
+  "QQQ": {
+   "last": 653.81,
+   "prev_close": 661.75,
+   "chg_pct": -1.1998488855307978,
+   "source": "schwab"
+  }
+ },
+ "flags": [
+  "Amateur hour until 05:00 AM; institutional 05:00\u201305:30 AM HST",
+  "No damaged contracts overnight. No earnings holds overnight."
+ ],
+ "headlines": [],
+ "data_note": "live data: Schwab (Yahoo fallback)",
+ "cards": [],
+ "passing": 11,
+ "rejected": 55,
+ "rejections": [
+  "SPY P: trend not aligned (1m flat/5m down/15m down)",
+  "QQQ P: trend not aligned (1m flat/5m down/15m down)",
+  "DIA P: first 5-min candle does not confirm",
+  "TQQQ P: trend not aligned (1m flat/5m down/15m down)",
+  "SMH P: trend not aligned (1m flat/5m down/15m down)",
+  "SOXL P: trend not aligned (1m flat/5m down/15m down)",
+  "XLF P: spread 12.0% > 10.0%, first 5-min candle does not confirm",
+  "XLE P: trend not aligned (1m down/5m down/15m flat), put into support (PML)",
+  "GLD P: first 5-min candle does not confirm, trend not aligned (1m down/5m flat/15m flat)",
+  "SLV P: first 5-min candle does not confirm, trend not aligned (1m down/5m down/15m flat)",
+  "TLT P: first 5-min candle does not confirm, trend not aligned (1m up/5m up/15m up), put into support (PMH)",
+  "IBIT P: first 5-min candle does not confirm",
+  "TNA P: spread 14.3% > 10.0%",
+  "UVXY P: OI 129 < 500, first 5-min candle does not confirm, trend not aligned (1m up/5m up/15m up)",
+  "AAPL P: trend not aligned (1m up/5m down/15m down), put into support (PDL)",
+  "AMAT P: OI 186 < 500",
+  "AMZN P: first 5-min candle does not confirm",
+  "APLD P: spread 16.8% > 10.0%, first 5-min candle does not confirm, trend not aligned (1m flat/5m down/15m down)",
+  "APP P: first 5-min candle does not confirm, trend not aligned (1m up/5m flat/15m down)",
+  "ASTS P: OI 301 < 500, first 5-min candle does not confirm",
+  "AVGO P: first 5-min candle does not confirm, trend not aligned (1m down/5m down/15m flat), put into support (PML)",
+  "BA P: spread 11.6% > 10.0%, first 5-min candle does not confirm, trend not aligned (1m flat/5m down/15m flat), put into support (PMH)",
+  "BABA P: earnings before expiry (no overnight earnings hold), OI 133 < 500, first 5-min candle does not confirm, trend not aligned (1m flat/5m down/15m down)",
+  "BILI P: spread 25.0% > 10.0%, first 5-min candle does not confirm, trend not aligned (1m flat/5m down/15m down)",
+  "CIFR P: spread 12.2% > 10.0%, trend not aligned (1m up/5m flat/15m down)",
+  "COIN P: first 5-min candle does not confirm",
+  "CRM P: spread 10.7% > 10.0%",
+  "CRWV P: first 5-min candle does not confirm, trend not aligned (1m flat/5m flat/15m down)",
+  "CVNA P: OI 480 < 500",
+  "DKNG P: spread 20.0% > 10.0%, first 5-min candle does not confirm",
+  "INTC P: trend not aligned (1m flat/5m down/15m down)",
+  "IONQ P: OI 144 < 500",
+  "IREN P: trend not aligned (1m flat/5m down/15m down)",
+  "JPM P: trend not aligned (1m flat/5m down/15m down)",
+  "MARA P: spread 13.3% > 10.0%, trend not aligned (1m flat/5m down/15m down)",
+  "NFLX P: first 5-min candle does not confirm, trend not aligned (1m flat/5m down/15m down)",
+  "NVDA P: earnings today, expiry later (no overnight earnings hold), trend not aligned (1m flat/5m flat/15m down)",
+  "OKLO P: spread 16.1% > 10.0%, first 5-min candle does not confirm, trend not aligned (1m flat/5m flat/15m down)",
+  "ORCL P: first 5-min candle does not confirm",
+  "PLTR P: first 5-min candle does not confirm",
+  "PLUG P: spread 40.0% > 10.0%, first 5-min candle does not confirm, trend not aligned (1m up/5m flat/15m down)",
+  "PYPL P: spread 31.7% > 10.0%, first 5-min candle does not confirm, trend not aligned (1m up/5m flat/15m down), put into support (PDL)",
+  "QCOM P: spread 10.5% > 10.0%, trend not aligned (1m up/5m flat/15m down)",
+  "RGTI P: spread 19.0% > 10.0%",
+  "RKLB P: first 5-min candle does not confirm, trend not aligned (1m flat/5m down/15m down)",
+  "SHOP P: OI 78 < 500, first 5-min candle does not confirm, put into support (PDL)",
+  "SMCI P: spread 11.8% > 10.0%",
+  "SOFI P: first 5-min candle does not confirm, trend not aligned (1m flat/5m down/15m down)",
+  "TSLA P: trend not aligned (1m up/5m flat/15m down), put into support (PML)",
+  "TSM P: OI 319 < 500, trend not aligned (1m flat/5m down/15m down)",
+  "UBER P: first 5-min candle does not confirm",
+  "WMT P: earnings before expiry (no overnight earnings hold), first 5-min candle does not confirm, trend not aligned (1m flat/5m down/15m down)",
+  "XOM P: first 5-min candle does not confirm, trend not aligned (1m down/5m down/15m flat)",
+  "NKE P: first 5-min candle does not confirm, trend not aligned (1m down/5m down/15m flat)",
+  "SPCX P: first 5-min candle does not confirm, trend not aligned (1m up/5m up/15m up)"
+ ]
+}
