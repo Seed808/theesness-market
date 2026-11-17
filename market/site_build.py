@@ -556,7 +556,11 @@ def _trail_cell(w: dict) -> str:
     import watch as _W
     if not _W._trail_era(w):
         return '<span class="eyebrow">—</span>'       # rows before 11/13: Banger/−20% era
-    return _res(W_GRADES.get(w["id"]), "TRAIL")
+    g = W_GRADES.get(w["id"], {})
+    if g.get("TRAIL", {}).get("result") == "UNGRADABLE" and ("T1" in g or "T2" in g):
+        # graded before the trail grade existed; the price data is gone, so no replay
+        return '<span class="eyebrow">no replay data</span>'
+    return _res(g, "TRAIL")
 
 
 def watch_record() -> str:
