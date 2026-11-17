@@ -16,6 +16,12 @@ Files (ledger/):
   watch_grades.csv   T1 and T2 results per watch card, write-once (target = T1 / T2)
   watch_peaks.json   live view: hit times, "went on to", frozen after the expiry-day close
 Everything is rebuilt from the locked run files + saved raw data, so it can be backfilled.
+
+From 11/13 the official cards exit on the trailing stop (runner.TRAIL_FROM), so watch and
+baseline rows priced from then on get a third grade, target="TRAIL": -20% stop until T1, then a
+15% trailing stop (never below entry), no Banger cap — the same exit as a real card, so the
+watch records stay comparable to the official record. T1 and T2(Banger) are still graded as
+fixed targets for continuity with rows before 11/13.
 """
 from __future__ import annotations
 
@@ -39,6 +45,11 @@ WATCH_FIELDS = ["id", "trade_date", "kind", "ticker", "type", "expiry", "strike"
                 "called_at", "priced_at", "premium", "price_source", "target1", "target", "stop",
                 "underlying", "underlying_asof", "stock_move_pct", "status", "reason"]
 WG_FIELDS = ["id", "target", "graded_at", "result", "exit_premium", "pnl_pct", "hit_at", "method"]
+
+
+def _trail_era(c: dict) -> bool:
+    """Watch rows priced from 11/13 on are also graded under the trailing-stop rule."""
+    return datetime.fromisoformat(c["priced_at"]) >= datetime.fromisoformat(R.TRAIL_FROM)
 
 
 def _read_csv(p: Path) -> list:
@@ -337,12 +348,13 @@ def status_block(rows: list, late: bool = False) -> str:
     icon = {"CONFIRMED": "✓", "NOT CONFIRMED": "✗", "PASSED": "•", "NOT SCANNED": "?"}
     when = E._dt(rows[0]["priced_at"])
     lines = [f"<b>PRE-MARKET CARDS</b> · at the {when} HST confirmation read" + (" (late notice)" if late else "")]
+    all_w = load_watch()
     for r in rows:
         mv = f" · stock {float(r['stock_move_pct']):+.1f}% vs prior close" if r.get("stock_move_pct") not in ("", None) else ""
         px = (f" · option ${float(r['premium']):.2f}" if r.get("premium") not in ("", None) else " · price n/a")
         lines.append(f"{icon.get(r['status'], '')} <b>{E._h(r['ticker'])} {E._h(r['type'])} {float(r['strike']):g}</b> "
                      f"{E._h(r['status'].lower())}: {E._h(r['reason'])}{mv}{px}")
-        fc = next((w for w in load_watch() if w["kind"] == "firstcandle" and w["trade_date"] == r["trade_date"]
+        fc = next((w for w in all_w if w["kind"] == "firstcandle" and w["trade_date"] == r["trade_date"]
                    and w["ticker"] == r["ticker"] and w["type"] == r["type"]), None)
         if fc:
             lines.append(f"   1st candle: {'✓ entered' if fc['status'] == 'ENTERED' else '✗ skipped'}"
@@ -362,12 +374,16 @@ def track_watch(now: datetime, fetch=None) -> None:
         if c.get("premium") in ("", None) or c["kind"] == "baseline":
             continue                      # baseline rows are graded once after expiry (grade_baseline)
         g = grades.get(wid, {})
-        if "T1" in g and "T2" in g and peaks.get(wid, {}).get("final"):
+        d, exp = date.fromisoformat(c["trade_date"]), date.fromisoformat(c["expiry"])
+        # TRAIL is graded for trail-era rows; once the price data is gone (give-up window past),
+        # stop waiting for it so old rows don't get retried forever.
+        need_trail = _trail_era(c) and "TRAIL" not in g \
+            and (now.date() - exp).days < R.GRADE_GIVE_UP_DAYS
+        if "T1" in g and "T2" in g and not need_trail and peaks.get(wid, {}).get("final"):
             continue
         start = datetime.fromisoformat(c["priced_at"])
         if now < start:
             continue
-        d, exp = date.fromisoformat(c["trade_date"]), date.fromisoformat(c["expiry"])
         s_exp = E.session_for(exp) or E.session_for(d)
         finished = now >= s_exp.close_hst + timedelta(minutes=R.GRADE_AFTER_CLOSE_MIN)
         try:
@@ -382,7 +398,7 @@ def track_watch(now: datetime, fetch=None) -> None:
                 w = None
         if w is None:
             if finished and (now.date() - exp).days >= R.GRADE_GIVE_UP_DAYS:
-                for tgt in ("T1", "T2"):
+                for tgt in ("T1", "T2") + (("TRAIL",) if _trail_era(c) else ()):
                     if tgt not in g:
                         new.append({"id": wid, "target": tgt, "graded_at": now.isoformat(), "result": "UNGRADABLE",
                                     "exit_premium": "", "pnl_pct": "", "hit_at": "", "method": "no contract price data"})
@@ -408,7 +424,21 @@ def track_watch(now: datetime, fetch=None) -> None:
                 new.append({"id": wid, "target": tgt, "graded_at": now.isoformat(), "result": res,
                             "exit_premium": round(px, 2), "pnl_pct": _pct(px, entry), "hit_at": "",
                             "method": f"TIME ({exp.strftime('%a')} close) · {src}"})
-        alive = w[w.index <= datetime.fromisoformat(p["stop_at"])] if p.get("stop_at") else w
+        trail_end = None
+        if _trail_era(c):                 # the trade's real exit (same rule as official cards)
+            rr, pxr, howr, atr = R._grade_walk(w, entry, float(c["target"]), stop, float(c["target1"]))
+            open_now = howr.startswith("TIME") and not finished
+            if not open_now:
+                trail_end = atr
+                p["exit_at"], p["exit_how"] = atr.isoformat(), howr
+                if "TRAIL" not in g:
+                    how = f"TIME ({exp.strftime('%a')} close)" if howr.startswith("TIME") else howr
+                    new.append({"id": wid, "target": "TRAIL", "graded_at": now.isoformat(), "result": rr,
+                                "exit_premium": round(pxr, 2), "pnl_pct": _pct(pxr, entry),
+                                "hit_at": "" if howr.startswith("TIME") else atr.isoformat(),
+                                "method": f"{how} · {src}"})
+        alive = w[w.index <= trail_end] if trail_end is not None else \
+            (w[w.index <= datetime.fromisoformat(p["stop_at"])] if p.get("stop_at") else w)
         p["peak_pct"] = _pct(float(alive["High"].max()), entry)
         p["peak_at"] = alive["High"].idxmax().isoformat()
         p["last"] = round(float(w["Close"].iloc[-1]), 2)
@@ -478,7 +508,8 @@ def grade_baseline(now: datetime, fetch=None) -> int:
         if c["kind"] != "baseline" or c.get("premium") in ("", None):
             continue
         g = grades.get(c["id"], {})
-        if "T1" in g and "T2" in g:
+        targets = ("T1", "T2") + (("TRAIL",) if _trail_era(c) else ())
+        if all(t in g for t in targets):
             continue
         d, exp = date.fromisoformat(c["trade_date"]), date.fromisoformat(c["expiry"])
         s_exp = E.session_for(exp) or E.session_for(d)
@@ -495,7 +526,7 @@ def grade_baseline(now: datetime, fetch=None) -> int:
         w = None if bars is None else bars[(bars.index > start) & (bars.index <= s_exp.close_hst)]
         if w is None or w.empty:
             if (now.date() - exp).days >= R.GRADE_GIVE_UP_DAYS:
-                for tgt in ("T1", "T2"):
+                for tgt in targets:
                     if tgt not in g:
                         new.append({"id": c["id"], "target": tgt, "graded_at": now.isoformat(),
                                     "result": "UNGRADABLE", "exit_premium": "", "pnl_pct": "", "hit_at": "",
@@ -512,5 +543,12 @@ def grade_baseline(now: datetime, fetch=None) -> int:
             new.append({"id": c["id"], "target": tgt, "graded_at": now.isoformat(), "result": r,
                         "exit_premium": round(px, 2), "pnl_pct": _pct(px, entry),
                         "hit_at": at.isoformat() if at is not None else "", "method": f"{how} · {src}"})
+        if "TRAIL" in targets and "TRAIL" not in g:   # the official exit rule, for comparison
+            r, px, how, at = R._grade_walk(w, entry, float(c["target"]), stop, float(c["target1"]))
+            timed = how.startswith("TIME")
+            new.append({"id": c["id"], "target": "TRAIL", "graded_at": now.isoformat(), "result": r,
+                        "exit_premium": round(px, 2), "pnl_pct": _pct(px, entry),
+                        "hit_at": "" if timed else at.isoformat(),
+                        "method": f'{f"TIME ({exp.strftime('%a')} close)" if timed else how} · {src}'})
     R._append_csv(WATCH_GRADES, WG_FIELDS, new)
     return done

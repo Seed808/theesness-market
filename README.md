@@ -33,6 +33,18 @@ trade runs until the trailing stop or the expiry-day close. A minute that opens 
 exits at that open. Cards locked before 11/13 keep Banger/−20%. (`runner.TRAIL_FROM`, `TRAIL_PCT`.)
 Run `peak` from Actions to compare exit plans (old rule, sell at T1, stop-to-entry, half+runner,
 10–25% trails with and without the Banger cap) on Schwab 1-minute prices.
+Watch and baseline rows priced from 11/13 get a third grade, `TRAIL` in `watch_grades.csv` — the
+same trailing-stop exit as official cards — so those records compare one-to-one with the official
+record (11/16). T1/Banger fixed-target grades continue for continuity with older rows.
+
+**Thursday reassess (11/16):** one Telegram message every Thursday, one hour before the close,
+listing every open card at live prices (`ledger/reassess/`). Implements the standing rule — hold
+into Friday only on an explicit decision.
+
+**Robustness (11/16):** if the confirmation read's whole window is missed (an outage), it now runs
+at the next chance before the close instead of silently skipping the day. Pasted headlines count
+up to 40 lines (was 8 — on 11/13, 9 of 17 were silently ignored); Telegram shows the first 8 and
+says how many more. The IN PLAY block shows the live trailing stop and a ✓ once T1 is hit.
 Each card is scored twice — T1 record (`ledger/grades_t1.csv`) and T2 record (`ledger/grades.csv`,
 the card's official result). A card stays in play until its exit rule fires or its expiry-day close;
 Telegram sends "T1 HIT" when +20% is reached. `ledger/peaks.json` keeps how high the contract went

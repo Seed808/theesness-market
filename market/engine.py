@@ -968,6 +968,8 @@ COMPANY_NAMES = {
     "RKLB": ["rocket lab"], "SHOP": ["shopify"], "SMCI": ["super micro", "supermicro"], "SMR": ["nuscale"],
     "SNAP": ["snap", "snapchat"], "SOFI": ["sofi"], "TSLA": ["tesla", "musk"], "TSM": ["tsmc", "taiwan semi"],
     "UBER": ["uber"], "WMT": ["walmart"], "XOM": ["exxon"],
+    # auto-watchlist names (autowatch.py) — add a line when a new name sticks around
+    "NKE": ["nike"], "SPCX": ["spacex", "starship"],
 }
 
 
@@ -1046,7 +1048,7 @@ def load_headlines() -> list:
              if l.strip() and not l.strip().startswith("#")]
     if not lines or lines[0] != f"date={now_hst().date().isoformat()}":
         return []
-    return lines[1:9]
+    return lines[1:41]        # was [1:9] until 11/16 — the 11/13 file had 17 lines and 9 were ignored
 
 
 def _record_movers(mm: dict, now: datetime) -> None:
@@ -1658,7 +1660,10 @@ def tg_report(r: "ScanResult", cards: Optional[list] = None, prefix: str = "",
     if flags:
         parts.append("<b>FLAGS</b>\n" + "\n".join(f"• {_h(f)}" for f in flags))
     if r.headlines:
-        parts.append("<b>HEADLINES</b>\n" + "\n".join(f"• {_h(h)}" for h in r.headlines))
+        shown = r.headlines[:8]
+        more = len(r.headlines) - len(shown)
+        parts.append("<b>HEADLINES</b>\n" + "\n".join(f"• {_h(h)}" for h in shown)
+                     + (f"\n<i>+{more} more (all count for catalysts; full list on the site)</i>" if more > 0 else ""))
     parts += extra or []
     if extra and cards:
         parts.append("<b>NEW CARDS</b>")

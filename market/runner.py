@@ -110,7 +110,10 @@ def due_modes(session: E.Session, now: datetime) -> list:
             and not run_path(d, "premarket").exists():
         return ["premarket"]
     confirm_done = run_path(d, "confirm").exists()
-    if session.at(CONFIRM_DUE[0]) <= now < session.at(CONFIRM_DUE[1]) and not confirm_done:
+    # The confirmation read normally runs at open+30. If every run in its window was missed
+    # (GitHub outage), it runs at the next chance before the close — otherwise no cards could
+    # be posted all day, because re-scans wait for the confirmation read (11/16).
+    if session.at(CONFIRM_DUE[0]) <= now < active_end(session) and not confirm_done:
         return ["confirm"]
     if confirm_done and session.at(CONFIRM_DUE[0]) <= now < active_end(session):
         last = max(datetime.fromisoformat(s["ran_at"]) for s in day_runs(d)
@@ -543,15 +546,26 @@ def open_block(now: datetime) -> str:
         return ""
     marks = json.loads(MARKS.read_text()) if MARKS.exists() else {}
     marks.pop("_errors", None)
+    try:
+        peaks = json.loads((LEDGER / "peaks.json").read_text()) if (LEDGER / "peaks.json").exists() else {}
+    except ValueError:
+        peaks = {}
     lines = [f"<b>IN PLAY ({len(cards)})</b>"]
     for c in cards:
         exp = date.fromisoformat(c["expiry"]).strftime("%a %-m/%-d")
         m = marks.get(c["id"])
+        pk = peaks.get(c["id"], {})
         px = (f"last ${m['last']:.2f} ({m['pnl_pct']:+.1f}%)" if m else "price n/a")
+        t1v = float(c.get("target1") or 0) or E.target1_price(float(c["premium"]))
+        t1s = f"T1 ${t1v:.2f}" + (" ✓" if pk.get("t1_at") else "")
+        if trail_applies(c) and pk.get("trail"):          # T1 hit: show the live trailing stop
+            tail = (f"Banger ${float(c['target']):.2f}{' ✓' if pk.get('t2_at') else ''} (milestone) / "
+                    f"<b>S ${pk['trail']['stop']:.2f} trailing</b> (high ${pk['trail']['high']:.2f})")
+        else:
+            tail = f"Banger ${float(c['target']):.2f} / S ${float(c['stop']):.2f}"
         lines.append(f"<b>{E._h(c['ticker'])} {E._h(c['type'])} {float(c['strike']):g}</b> exp {exp} · "
                      f"called {E._dt(c['locked_at'])} · "
-                     f"entry ${float(c['premium']):.2f} · {px} · T1 ${float(c.get('target1') or 0) or E.target1_price(float(c['premium'])):.2f}"
-                     f" · Banger ${float(c['target']):.2f} / S ${float(c['stop']):.2f}")
+                     f"entry ${float(c['premium']):.2f} · {px} · {t1s} · {tail}")
     return "\n".join(lines)
 
 
@@ -606,6 +620,39 @@ def open_update(session: E.Session, now: datetime) -> Optional[dict]:
         lines.append(f"<b>{E._h(c['ticker'])} {E._h(c['type'])} {float(c['strike']):g}</b> · {px}")
     E.send_telegram("\n".join(lines), html=True)
     return res
+
+
+# --------------------------------------------------------------------------------------------
+# Thursday reassess (Kalani's rule: reassess all open contracts 1 hour before Thursday's close).
+# Until 11/16 this was only a line in the day flags; now it's an actual Telegram message, sent
+# once, listing every open card at live prices so the hold-into-Friday decision gets made.
+# --------------------------------------------------------------------------------------------
+
+REASSESS_DIR = LEDGER / "reassess"
+
+
+def thursday_reassess(session: E.Session, now: datetime) -> bool:
+    d = session.trade_date
+    if d.weekday() != 3:
+        return False
+    due = session.close_hst - timedelta(minutes=E.THURSDAY_REASSESS_BEFORE_CLOSE_MIN)
+    p = REASSESS_DIR / f"{d.isoformat()}.json"
+    if not (due <= now < session.close_hst) or p.exists():
+        return False
+    try:
+        update_marks(now)
+    except Exception as e:  # noqa: BLE001
+        print(f"[warn] reassess marks: {type(e).__name__}", file=sys.stderr)
+    ob = open_block(now)
+    msg = (f"<b>THURSDAY REASSESS</b> · {E._dt(now)} HST · close {E._short_t(session.close_hst)}\n"
+           "Rule: reassess every open contract one hour before Thursday's close — "
+           "close it today, or hold into Friday (its expiry day) on an explicit decision. "
+           "Tomorrow is 0DTE-only; nothing opens a new overnight position.\n\n"
+           + (ob or "Nothing in play."))
+    E.send_telegram(msg, html=True)
+    REASSESS_DIR.mkdir(parents=True, exist_ok=True)
+    p.write_text(json.dumps({"sent_at": now.isoformat()}))
+    return True
 
 
 # --------------------------------------------------------------------------------------------
@@ -714,7 +761,7 @@ def main() -> int:
     today = now.date()
     session = E.session_for(today)
     hl = dated_input(INPUTS / "headlines.txt", today)
-    E.load_headlines = lambda: [h.strip() for h in hl.splitlines() if h.strip()][:8]
+    E.load_headlines = lambda: [h.strip() for h in hl.splitlines() if h.strip()][:40]
 
     if a.test:
         s = session or E.session_for(E.next_trading_day(today))
@@ -727,6 +774,10 @@ def main() -> int:
             open_update(session, now)
         except Exception as e:  # noqa: BLE001
             print(f"[warn] open update: {type(e).__name__}: {e}", file=sys.stderr)
+        try:
+            thursday_reassess(session, now)
+        except Exception as e:  # noqa: BLE001
+            print(f"[warn] thursday reassess: {type(e).__name__}: {e}", file=sys.stderr)
         for mode in due_modes(session, now):
             print(f"{mode} is due")
             r = E.scan("confirm" if mode == "rescan" else mode, session, overrides_for(today), now)

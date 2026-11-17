@@ -144,12 +144,19 @@ def watch_lines(w: dict) -> str:
     def stock(k):
         return f' <span class="eyebrow">(stock ≈ {_money(lv[k])})</span>' if k in lv else ""
     g, pk = W_GRADES.get(w["id"]), W_PEAKS.get(w["id"], {})
+    import watch as _W
+    trail = _W._trail_era(w)
     out += (f'<dt>Option then</dt><dd>{_money(w["premium"])} <span class="eyebrow">{_t(w["priced_at"])} · '
             f'{e(w.get("price_source", ""))} · tracked from here</span></dd>'
             f'<dt>Target 1</dt><dd>{_money(w["target1"])}{stock("t1")} · {_res(g, "T1")}</dd>'
-            f'<dt>Banger</dt><dd>{_money(w["target"])}{stock("t2")} · {_res(g, "T2")}</dd>'
-            f'<dt>Stop</dt><dd>{_money(w["stop"])}{stock("stop")}</dd>')
-    if pk.get("last") is not None and not (g and "T2" in g):
+            f'<dt>Banger</dt><dd>{_money(w["target"])}{stock("t2")} · {_res(g, "T2")}</dd>')
+    if trail:
+        out += (f'<dt>Trail exit</dt><dd>{_res(g, "TRAIL")} <span class="eyebrow">official rule: −20% to T1, '
+                f'then trails 15%, no cap</span></dd>'
+                f'<dt>Stop</dt><dd>{_money(w["stop"])}{stock("stop")} <span class="eyebrow">→ trails after T1</span></dd>')
+    else:
+        out += f'<dt>Stop</dt><dd>{_money(w["stop"])}{stock("stop")}</dd>'
+    if pk.get("last") is not None and not (g and ("TRAIL" if trail else "T2") in g):
         out += (f'<dt>Last</dt><dd>{_money(pk["last"])} ({pk["last_pct"]:+.1f}%) '
                 f'<span class="eyebrow">{_t(pk["last_time"])}</span></dd>')
     if pk.get("peak_pct") is not None:
@@ -534,11 +541,22 @@ def baseline_tiles() -> str:
         return f"{w}-{len(res) - w}", f"win rate {w / len(res) * 100:.0f}% · avg {avg:+.1f}%/card"
     base = [w for w in W_ROWS if w["kind"] == "baseline"]
     out = ""
-    for tgt, lab in (("T1", f"+{int(E.TARGET1_PCT * 100)}%"), ("T2", f"+{int(E.TARGET_PCT * 100)}%")):
+    labels = [("T1", f"+{int(E.TARGET1_PCT * 100)}%"), ("T2", f"+{int(E.TARGET_PCT * 100)}%")]
+    if any("TRAIL" in W_GRADES.get(w["id"], {}) for w in base):
+        labels.append(("TRAIL", "official exit rule"))
+    for tgt, lab in labels:
         rec, s = stat([W_GRADES.get(w["id"], {}).get(tgt) for w in base])
-        out += (f'<div class="tile"><span class="k">Baseline: every liquid setup · {"Banger" if tgt == "T2" else tgt} ({lab})</span>'
+        name = {"T2": "Banger", "TRAIL": "Trail"}.get(tgt, tgt)
+        out += (f'<div class="tile"><span class="k">Baseline: every liquid setup · {name} ({lab})</span>'
                 f'<span class="v">{rec}</span><span class="s">{s} · {len(base)} tracked, graded after expiry</span></div>')
     return out
+
+
+def _trail_cell(w: dict) -> str:
+    import watch as _W
+    if not _W._trail_era(w):
+        return '<span class="eyebrow">—</span>'       # rows before 11/13: Banger/−20% era
+    return _res(W_GRADES.get(w["id"]), "TRAIL")
 
 
 def watch_record() -> str:
@@ -553,9 +571,13 @@ def watch_record() -> str:
     for kind, label in (("preopen", "Pre-market from the open"), ("firstcandle", "First-candle entry (open+5)"),
                         ("premarket", "Pre-market from 5:00 read"),
                         ("gapchase", "Gap-chase blocked")):
-        for tgt, lab in (("T1", f"+{int(E.TARGET1_PCT * 100)}%"), ("T2", f"+{int(E.TARGET_PCT * 100)}%")):
+        tgts = [("T1", f"+{int(E.TARGET1_PCT * 100)}%"), ("T2", f"+{int(E.TARGET_PCT * 100)}%")]
+        if any("TRAIL" in W_GRADES.get(w["id"], {}) for w in W_ROWS if w["kind"] == kind):
+            tgts.append(("TRAIL", "official exit rule"))
+        for tgt, lab in tgts:
             rec, pct = tally(kind, tgt)
-            tiles_ += (f'<div class="tile"><span class="k">{label} · {"Banger" if tgt == "T2" else tgt} ({lab})</span>'
+            name = {"T2": "Banger", "TRAIL": "Trail"}.get(tgt, tgt)
+            tiles_ += (f'<div class="tile"><span class="k">{label} · {name} ({lab})</span>'
                        f'<span class="v">{rec}</span><span class="s">win rate {pct}</span></div>')
     rows = sorted([w for w in W_ROWS if w["kind"] != "baseline"], key=lambda w: w["priced_at"], reverse=True)
     trs = "".join(
@@ -563,10 +585,11 @@ def watch_record() -> str:
         f'<td>{e(w["ticker"])}</td><td>{e(w["type"])}</td><td>{float(w["strike"]):g}</td>'
         f'<td>{e(w["status"].title())}</td><td>{_money(w["premium"]) if w.get("premium") not in ("", None) else "—"}</td>'
         f'<td>{_res(W_GRADES.get(w["id"]), "T1")}</td><td>{_res(W_GRADES.get(w["id"]), "T2")}</td>'
+        f'<td>{_trail_cell(w)}</td>'
         f'<td>{"" if W_PEAKS.get(w["id"], {}).get("peak_pct") is None else f"{W_PEAKS[w['id']]['peak_pct']:+.1f}%"}</td></tr>'
         for w in rows)
     table = ('<div class="tbl"><table><thead><tr><th>Date</th><th>Kind</th><th>Ticker</th><th>Type</th>'
-             '<th>Strike</th><th>Status</th><th>Priced at</th><th>T1</th><th>Banger</th><th>Went on to</th></tr></thead>'
+             '<th>Strike</th><th>Status</th><th>Priced at</th><th>T1</th><th>Banger</th><th>Trail</th><th>Went on to</th></tr></thead>'
              f'<tbody>{trs}</tbody></table></div>') if rows else '<div class="empty">Nothing tracked yet.</div>'
     tiles_ += baseline_tiles()
     return ('<h2>Watch records — not trade signals</h2><p class="note">Kept apart from the official record. '
@@ -574,7 +597,9 @@ def watch_record() -> str:
             'that rule costs or saves) and from the confirmation read (whether or not it was confirmed). <b>Gap-chase blocked</b>: setups rejected only by the gap-chase rule, priced when '
             'blocked. <b>Baseline</b>: every setup at the confirmation read with a liquid contract, called or not '
             '(answers whether the rules beat taking everything); graded once after expiry. '
-            'Same T1/Banger/−20% stop rules as real cards. Started 11/2.</p>'
+            'T1 and Banger are fixed-target grades; <b>Trail</b> (rows from 11/13) is the official exit rule '
+            '— −20% stop to T1, then a 15% trailing stop, no cap — so watch records compare one-to-one '
+            'with the official record. Started 11/2.</p>'
             f'<div class="tiles">{tiles_}</div>{table}')
 
 
