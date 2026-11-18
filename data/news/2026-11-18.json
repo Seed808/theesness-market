@@ -1,8 +1,18 @@
 {
 "SPY": {
-"fetched": "2026-11-18T06:22:36.665485-10:00",
+"fetched": "2026-11-18T07:32:34.992724-10:00",
 "src": "finnhub",
 "items": [
+[
+"2026-11-18T05:21:08-10:00",
+"Buying SPY At The 2007 Top Still Paid Off",
+"finnhub/Yahoo"
+],
+[
+"2026-11-18T04:54:36-10:00",
+"Can A $2 Million Portfolio Pay You $4,000 A Month?",
+"finnhub/Yahoo"
+],
 [
 "2026-11-18T04:08:32-10:00",
 "Exchange-Traded Funds Higher, Equity Futures Mixed Pre-Bell Wednesday Amid Nvidia Earnings, Upcoming Fed Meeting Minutes",
@@ -24,29 +34,19 @@
 "finnhub/Yahoo"
 ],
 [
+"2026-11-18T01:21:53-10:00",
+"Buy BALI For Cash Income And Growing Principal",
+"finnhub/SeekingAlpha"
+],
+[
 "2026-11-18T01:04:04-10:00",
 "What SPDR S&P 500 ETF Trust (SPY) Bought: Apple Leads on Monday",
-"finnhub/Yahoo"
-],
-[
-"2026-11-18T01:02:14-10:00",
-"48 ETFs Add to Lilly (LLY) Holdings on Nov. 16",
-"finnhub/Yahoo"
-],
-[
-"2026-11-18T01:02:08-10:00",
-"27 ETFs Add to TransDigm (TDG) Holdings on Nov. 16",
-"finnhub/Yahoo"
-],
-[
-"2026-11-18T01:02:03-10:00",
-"Synopsys (SNPS) Sees $160.1 Million in Net ETF Buying on Nov. 16",
 "finnhub/Yahoo"
 ]
 ]
 },
 "QQQ": {
-"fetched": "2026-11-18T06:22:36.665485-10:00",
+"fetched": "2026-11-18T07:32:34.992724-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -92,7 +92,7 @@
 ]
 },
 "IWM": {
-"fetched": "2026-11-18T06:22:36.665485-10:00",
+"fetched": "2026-11-18T07:32:34.992724-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -138,7 +138,7 @@
 ]
 },
 "DIA": {
-"fetched": "2026-11-18T06:22:36.665485-10:00",
+"fetched": "2026-11-18T07:32:34.992724-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -184,7 +184,7 @@
 ]
 },
 "SPX": {
-"fetched": "2026-11-18T06:22:36.665485-10:00",
+"fetched": "2026-11-18T07:32:34.992724-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -230,7 +230,7 @@
 ]
 },
 "TQQQ": {
-"fetched": "2026-11-18T06:22:36.665485-10:00",
+"fetched": "2026-11-18T07:32:34.992724-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -266,7 +266,7 @@
 ]
 },
 "SMH": {
-"fetched": "2026-11-18T06:22:36.665485-10:00",
+"fetched": "2026-11-18T07:32:34.992724-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -312,7 +312,7 @@
 ]
 },
 "SOXL": {
-"fetched": "2026-11-18T06:22:36.665485-10:00",
+"fetched": "2026-11-18T07:32:34.992724-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -358,7 +358,7 @@
 ]
 },
 "XLF": {
-"fetched": "2026-11-18T06:22:36.665485-10:00",
+"fetched": "2026-11-18T07:32:34.992724-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -404,7 +404,7 @@
 ]
 },
 "XLE": {
-"fetched": "2026-11-18T06:22:36.665485-10:00",
+"fetched": "2026-11-18T07:32:34.992724-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -450,7 +450,7 @@
 ]
 },
 "GLD": {
-"fetched": "2026-11-18T06:22:36.665485-10:00",
+"fetched": "2026-11-18T07:32:34.992724-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -496,7 +496,7 @@
 ]
 },
 "SLV": {
-"fetched": "2026-11-18T06:22:36.665485-10:00",
+"fetched": "2026-11-18T07:32:34.992724-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -527,7 +527,7 @@
 ]
 },
 "TLT": {
-"fetched": "2026-11-18T06:22:36.665485-10:00",
+"fetched": "2026-11-18T07:32:34.992724-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -573,7 +573,7 @@
 ]
 },
 "IBIT": {
-"fetched": "2026-11-18T06:22:36.665485-10:00",
+"fetched": "2026-11-18T07:32:34.992724-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -619,12 +619,12 @@
 ]
 },
 "TNA": {
-"fetched": "2026-11-18T06:22:36.665485-10:00",
+"fetched": "2026-11-18T07:32:34.992724-10:00",
 "src": "finnhub",
 "items": []
 },
 "UVXY": {
-"fetched": "2026-11-18T06:22:36.665485-10:00",
+"fetched": "2026-11-18T07:32:34.992724-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -640,7 +640,7 @@
 ]
 },
 "AAPL": {
-"fetched": "2026-11-18T06:22:36.665485-10:00",
+"fetched": "2026-11-18T07:32:34.992724-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -686,7 +686,7 @@
 ]
 },
 "AMAT": {
-"fetched": "2026-11-18T06:22:36.665485-10:00",
+"fetched": "2026-11-18T07:32:34.992724-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -732,7 +732,7 @@
 ]
 },
 "AMD": {
-"fetched": "2026-11-18T06:22:36.665485-10:00",
+"fetched": "2026-11-18T07:32:34.992724-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -778,7 +778,7 @@
 ]
 },
 "AMZN": {
-"fetched": "2026-11-18T06:22:36.665485-10:00",
+"fetched": "2026-11-18T07:32:34.992724-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -824,7 +824,7 @@
 ]
 },
 "APLD": {
-"fetched": "2026-11-18T06:22:36.665485-10:00",
+"fetched": "2026-11-18T07:32:34.992724-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -870,9 +870,14 @@
 ]
 },
 "APP": {
-"fetched": "2026-11-18T06:22:36.665485-10:00",
+"fetched": "2026-11-18T07:32:34.992724-10:00",
 "src": "finnhub",
 "items": [
+[
+"2026-11-18T02:15:00-10:00",
+"Digital Advertising Industry Snapshot Q3 2026",
+"finnhub/SeekingAlpha"
+],
 [
 "2026-11-18T01:05:46-10:00",
 "First Trust NASDAQ-100 Tech (QTEC) Sells $5.0 Million More Applovin on Nov. 16",
@@ -907,16 +912,11 @@
 "2026-11-17T05:53:25-10:00",
 "Stanley Druckenmiller and 11 Other Big Funds Bought AppLovin Last Quarter, While 18 Sold. Who\u2019s Right?",
 "finnhub/Yahoo"
-],
-[
-"2026-11-17T05:53:13-10:00",
-"SpaceX Stock Lands in Stanley Druckenmiller\u2019s Duquesne Portfolio",
-"finnhub/Benzinga"
 ]
 ]
 },
 "ASTS": {
-"fetched": "2026-11-18T06:22:36.665485-10:00",
+"fetched": "2026-11-18T07:32:34.992724-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -962,7 +962,7 @@
 ]
 },
 "AVGO": {
-"fetched": "2026-11-18T06:22:36.665485-10:00",
+"fetched": "2026-11-18T07:32:34.992724-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1008,7 +1008,7 @@
 ]
 },
 "BA": {
-"fetched": "2026-11-18T06:22:36.665485-10:00",
+"fetched": "2026-11-18T07:32:34.992724-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1054,7 +1054,7 @@
 ]
 },
 "BABA": {
-"fetched": "2026-11-18T06:22:36.665485-10:00",
+"fetched": "2026-11-18T07:32:34.992724-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1100,7 +1100,7 @@
 ]
 },
 "BAC": {
-"fetched": "2026-11-18T06:22:36.665485-10:00",
+"fetched": "2026-11-18T07:32:34.992724-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1146,7 +1146,7 @@
 ]
 },
 "BILI": {
-"fetched": "2026-11-18T06:22:36.665485-10:00",
+"fetched": "2026-11-18T07:32:34.992724-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1172,7 +1172,7 @@
 ]
 },
 "CIFR": {
-"fetched": "2026-11-18T06:22:36.665485-10:00",
+"fetched": "2026-11-18T07:32:34.992724-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1218,7 +1218,7 @@
 ]
 },
 "COIN": {
-"fetched": "2026-11-18T06:22:36.665485-10:00",
+"fetched": "2026-11-18T07:32:34.992724-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1264,7 +1264,7 @@
 ]
 },
 "CRM": {
-"fetched": "2026-11-18T06:22:36.665485-10:00",
+"fetched": "2026-11-18T07:32:34.992724-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1310,53 +1310,53 @@
 ]
 },
 "CRWV": {
-"fetched": "2026-11-18T06:22:36.665485-10:00",
+"fetched": "2026-11-18T07:32:34.992724-10:00",
 "src": "finnhub",
 "items": [
 [
-"2026-11-18T03:10:03-10:00",
-"Nvidia Is More Than One Person, CoreWeave Says",
+"2026-11-18T05:56:04-10:00",
+"Has a Stock Market Crash Started? Here's What Sobering Lessons From the Dot-Com Bust Say Comes Next",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-18T03:00:00-10:00",
-"Should You Buy the Dip in Neocloud Stocks & ETF After NVIDIA Result?",
+"2026-11-18T05:30:23-10:00",
+"BC-Most Active Stocks",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-18T02:41:00-10:00",
-"Nvidia Chaos Is the Perfect Setup for Anthropic IPO",
+"2026-11-18T05:21:22-10:00",
+"5 Best Stocks to Buy Ahead of Anthropic\u2019s IPO",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-18T02:21:38-10:00",
-"Why Is CoreWeave Stock Rising Today?",
+"2026-11-18T05:07:00-10:00",
+"Nasdaq Futures Rise as Nvidia Earnings Calm AI Fears, Attention Turns to Anthropic",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-18T01:36:00-10:00",
-"CoreWeave Stock and More Big Winners From Nvidia Earnings",
+"2026-11-18T05:02:19-10:00",
+"CoreWeave Falls 5% Despite NVIDIA Sticking to Its Financing Commitments; Nebius Dips, Oracle Holds Steady",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-18T01:04:49-10:00",
-"What iShares A.I. Innovation ETF (BAI) Bought: CoreWeave Leads on Nov. 16",
+"2026-11-18T04:41:26-10:00",
+"Was Nvidia\u2019s strong report a clearing event for the wider chip sector?",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-18T00:20:29-10:00",
-"Nvidia\u2019s New AI Customers Are Growing 3X Faster Than Big Tech",
-"finnhub/Benzinga"
+"2026-11-18T04:17:31-10:00",
+"CoreWeave Says Nvidia Is \u2018Not One Person,\u2019 Remains a Key Partner",
+"finnhub/Yahoo"
 ],
 [
-"2026-11-18T00:08:02-10:00",
-"Stock Market Correction: 2 AI Stocks With 130% and 160% Upside, According to Wall Street.",
+"2026-11-18T03:37:00-10:00",
+"Why CoreWeave and Neocloud Stocks Are Rising More Than Nvidia",
 "finnhub/Yahoo"
 ]
 ]
 },
 "CVNA": {
-"fetched": "2026-11-18T06:22:36.665485-10:00",
+"fetched": "2026-11-18T07:32:34.992724-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1402,7 +1402,7 @@
 ]
 },
 "DKNG": {
-"fetched": "2026-11-18T06:22:36.665485-10:00",
+"fetched": "2026-11-18T07:32:34.992724-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1443,7 +1443,7 @@
 ]
 },
 "GOOGL": {
-"fetched": "2026-11-18T06:22:36.665485-10:00",
+"fetched": "2026-11-18T07:32:34.992724-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1489,7 +1489,7 @@
 ]
 },
 "HOOD": {
-"fetched": "2026-11-18T06:22:36.665485-10:00",
+"fetched": "2026-11-18T07:32:34.992724-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1535,7 +1535,7 @@
 ]
 },
 "INTC": {
-"fetched": "2026-11-18T06:22:36.665485-10:00",
+"fetched": "2026-11-18T07:32:34.992724-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1581,7 +1581,7 @@
 ]
 },
 "IONQ": {
-"fetched": "2026-11-18T06:22:36.665485-10:00",
+"fetched": "2026-11-18T07:32:34.992724-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1627,7 +1627,7 @@
 ]
 },
 "IREN": {
-"fetched": "2026-11-18T06:22:36.665485-10:00",
+"fetched": "2026-11-18T07:32:34.992724-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1673,7 +1673,7 @@
 ]
 },
 "JPM": {
-"fetched": "2026-11-18T06:22:36.665485-10:00",
+"fetched": "2026-11-18T07:32:34.992724-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1719,7 +1719,7 @@
 ]
 },
 "LRCX": {
-"fetched": "2026-11-18T06:22:36.665485-10:00",
+"fetched": "2026-11-18T07:32:34.992724-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1765,7 +1765,7 @@
 ]
 },
 "MARA": {
-"fetched": "2026-11-18T06:22:36.665485-10:00",
+"fetched": "2026-11-18T07:32:34.992724-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1811,7 +1811,7 @@
 ]
 },
 "META": {
-"fetched": "2026-11-18T06:22:36.665485-10:00",
+"fetched": "2026-11-18T07:32:34.992724-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1857,7 +1857,7 @@
 ]
 },
 "MSFT": {
-"fetched": "2026-11-18T06:22:36.665485-10:00",
+"fetched": "2026-11-18T07:32:34.992724-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1903,9 +1903,19 @@
 ]
 },
 "MSTR": {
-"fetched": "2026-11-18T06:22:36.665485-10:00",
+"fetched": "2026-11-18T07:32:34.992724-10:00",
 "src": "finnhub",
 "items": [
+[
+"2026-11-18T05:02:55-10:00",
+"Analyst Warns of 76% MSTR Stock Drop to $23: Strategy Falls 4%, Riot Climbs 4%, MARA Gains 2%",
+"finnhub/Yahoo"
+],
+[
+"2026-11-18T04:14:00-10:00",
+"Analyst Warns Strategy\u2019s Stock Could Fall More Than 75%",
+"finnhub/Yahoo"
+],
 [
 "2026-11-18T03:17:15-10:00",
 "Strategy Stock to $23? Analyst Warns of 76% Slide as Firm Sells MSTR to Buy Back STRC",
@@ -1935,21 +1945,11 @@
 "2026-11-17T16:52:44-10:00",
 "MARA Sinks 13% in a Week as Bitcoin Falls Below $70,000. Its AI Leases Could \u201cMove Into Next Year\u201d",
 "finnhub/Yahoo"
-],
-[
-"2026-11-17T12:11:10-10:00",
-"Bitcoin, Ethereum Dip, While XRP, Dogecoin Gain as US Launches 'Self-Defense' Strikes Against Iran: Analyst Asks BTC Investors to 'Endure' Next 2 Months of Pain",
-"finnhub/Benzinga"
-],
-[
-"2026-11-17T11:28:39-10:00",
-"Could Bitcoin\u2019s Market Value Reach $3 Trillion by 2030?",
-"finnhub/Yahoo"
 ]
 ]
 },
 "MU": {
-"fetched": "2026-11-18T06:22:36.665485-10:00",
+"fetched": "2026-11-18T07:32:34.992724-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1995,7 +1995,7 @@
 ]
 },
 "NFLX": {
-"fetched": "2026-11-18T06:22:36.665485-10:00",
+"fetched": "2026-11-18T07:32:34.992724-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2041,7 +2041,7 @@
 ]
 },
 "NVDA": {
-"fetched": "2026-11-18T06:22:36.665485-10:00",
+"fetched": "2026-11-18T07:32:34.992724-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2087,7 +2087,7 @@
 ]
 },
 "OKLO": {
-"fetched": "2026-11-18T06:22:36.665485-10:00",
+"fetched": "2026-11-18T07:32:34.992724-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2123,7 +2123,7 @@
 ]
 },
 "ORCL": {
-"fetched": "2026-11-18T06:22:36.665485-10:00",
+"fetched": "2026-11-18T07:32:34.992724-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2169,7 +2169,7 @@
 ]
 },
 "PLTR": {
-"fetched": "2026-11-18T06:22:36.665485-10:00",
+"fetched": "2026-11-18T07:32:34.992724-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2215,7 +2215,7 @@
 ]
 },
 "PLUG": {
-"fetched": "2026-11-18T06:22:36.665485-10:00",
+"fetched": "2026-11-18T07:32:34.992724-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2261,7 +2261,7 @@
 ]
 },
 "PYPL": {
-"fetched": "2026-11-18T06:22:36.665485-10:00",
+"fetched": "2026-11-18T07:32:34.992724-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2307,7 +2307,7 @@
 ]
 },
 "QCOM": {
-"fetched": "2026-11-18T06:22:36.665485-10:00",
+"fetched": "2026-11-18T07:32:34.992724-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2353,7 +2353,7 @@
 ]
 },
 "RGTI": {
-"fetched": "2026-11-18T06:22:36.665485-10:00",
+"fetched": "2026-11-18T07:32:34.992724-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2399,9 +2399,14 @@
 ]
 },
 "RKLB": {
-"fetched": "2026-11-18T06:22:36.665485-10:00",
+"fetched": "2026-11-18T07:32:34.992724-10:00",
 "src": "finnhub",
 "items": [
+[
+"2026-11-18T05:57:51-10:00",
+"AST SpaceMobile Falls 5% After Jim Cramer Calls It \u2018a Very Hard Stock to Own\u2019; SpaceX Rises 3%, Rocket Lab Holds Steady",
+"finnhub/Yahoo"
+],
 [
 "2026-11-18T03:45:45-10:00",
 "There Are 8 Billion Reasons to Buy Rocket Lab At $50",
@@ -2436,18 +2441,23 @@
 "2026-11-17T06:03:07-10:00",
 "Rocket Lab Slides 4% as SpaceX Shares a $985 Million Launch Award: Are Cathie Wood and David Tepper Picking SpaceX Over Rocket Lab?",
 "finnhub/Yahoo"
-],
-[
-"2026-11-17T04:40:50-10:00",
-"Rocket Lab Stock Is Down 62% But Not Cheap",
-"finnhub/Yahoo"
 ]
 ]
 },
 "SHOP": {
-"fetched": "2026-11-18T06:22:36.665485-10:00",
+"fetched": "2026-11-18T07:32:34.992724-10:00",
 "src": "finnhub",
 "items": [
+[
+"2026-11-18T05:29:15-10:00",
+"George Soros and 21 Other Big Funds Bought Shopify Last Quarter, While 14 Sold. Who\u2019s Right?",
+"finnhub/Yahoo"
+],
+[
+"2026-11-18T05:12:09-10:00",
+"Shopify (SHOP) Added Delivery Tracking To Its Merchant And Shop App Experience",
+"finnhub/Yahoo"
+],
 [
 "2026-11-18T04:05:01-10:00",
 "Airbnb vs. Shopify: Which Consumer Stock Is a Better Buy for 2027?",
@@ -2477,21 +2487,11 @@
 "2026-11-17T04:38:00-10:00",
 "Cathie Wood\u2019s ARK Invest Sells $85 Million of Nvidia, Adds Block, Circle and Coinbase",
 "finnhub/Yahoo"
-],
-[
-"2026-11-17T04:00:00-10:00",
-"Landing Welcomes Chief Marketing and Chief Product Officers To Drive Its Next Growth Phase",
-"finnhub/Yahoo"
-],
-[
-"2026-11-17T02:25:00-10:00",
-"SalesCloser Launches Live AI Video Sales Agent for Shopify Stores",
-"finnhub/Yahoo"
 ]
 ]
 },
 "SMCI": {
-"fetched": "2026-11-18T06:22:36.665485-10:00",
+"fetched": "2026-11-18T07:32:34.992724-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2537,7 +2537,7 @@
 ]
 },
 "SOFI": {
-"fetched": "2026-11-18T06:22:36.665485-10:00",
+"fetched": "2026-11-18T07:32:34.992724-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2583,7 +2583,7 @@
 ]
 },
 "TSLA": {
-"fetched": "2026-11-18T06:22:36.665485-10:00",
+"fetched": "2026-11-18T07:32:34.992724-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2629,7 +2629,7 @@
 ]
 },
 "TSM": {
-"fetched": "2026-11-18T06:22:36.665485-10:00",
+"fetched": "2026-11-18T07:32:34.992724-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2675,7 +2675,7 @@
 ]
 },
 "UBER": {
-"fetched": "2026-11-18T06:22:36.665485-10:00",
+"fetched": "2026-11-18T07:32:34.992724-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2704,6 +2704,11 @@
 "finnhub/Yahoo"
 ],
 [
+"2026-11-18T01:32:46-10:00",
+"Uber Technologies, Inc. (UBER) Presents at Morgan Stanley European Technology, Media and Telecom Conference Transcript",
+"finnhub/SeekingAlpha"
+],
+[
 "2026-11-18T00:12:34-10:00",
 "Uber Technologies Targets 10,000 Driverless Vehicles by 2028 Amid $10 Billion AV Push",
 "finnhub/Yahoo"
@@ -2712,16 +2717,11 @@
 "2026-11-17T21:10:54-10:00",
 "Jim Farley Says \u2018Bronco to the Rescue\u2019 As Woman Stranded by FAA Ground Stop Buys Ford SUV for 1,600-Mile Journey Home",
 "finnhub/Benzinga"
-],
-[
-"2026-11-17T19:50:52-10:00",
-"Grab vs. Uber Technologies: Which Gig Economy Stock Is a Better Buy for 2027?",
-"finnhub/Yahoo"
 ]
 ]
 },
 "WMT": {
-"fetched": "2026-11-18T06:22:36.665485-10:00",
+"fetched": "2026-11-18T07:32:34.992724-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2767,7 +2767,7 @@
 ]
 },
 "XOM": {
-"fetched": "2026-11-18T06:22:36.665485-10:00",
+"fetched": "2026-11-18T07:32:34.992724-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2813,7 +2813,7 @@
 ]
 },
 "NKE": {
-"fetched": "2026-11-18T06:22:36.665485-10:00",
+"fetched": "2026-11-18T07:32:34.992724-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2859,47 +2859,47 @@
 ]
 },
 "SPCX": {
-"fetched": "2026-11-18T06:22:36.665485-10:00",
+"fetched": "2026-11-18T07:32:34.992724-10:00",
 "src": "finnhub",
 "items": [
 [
-"2026-11-18T04:05:00-10:00",
-"Anthropic Will Pay SpaceX Up to $120.5 Billion for Compute Through 2029. That's More Than SpaceX Raised in the Biggest IPO in History.",
+"2026-11-18T05:57:51-10:00",
+"AST SpaceMobile Falls 5% After Jim Cramer Calls It \u2018a Very Hard Stock to Own\u2019; SpaceX Rises 3%, Rocket Lab Holds Steady",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-18T03:55:04-10:00",
-"Why the Anthropic IPO could be a trap for investors",
+"2026-11-18T05:53:00-10:00",
+"Coinbase Says AI Defenses Blocked $4.7M in Elon Musk Deepfake Crypto Scam",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-18T03:28:52-10:00",
-"ECB sounds alarm on AI ahead of Anthropic\u2019s $1.4tn listing",
+"2026-11-18T05:48:49-10:00",
+"Democrats Swept Congress. Could Elon Musk\u2019s SpaceX Be Nationalized After the 2028 Election?",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-18T02:41:00-10:00",
-"Nvidia Chaos Is the Perfect Setup for Anthropic IPO",
+"2026-11-18T05:41:12-10:00",
+"A $5.9 Billion Fund Dumps These 3 Stocks",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-18T02:25:48-10:00",
-"Investors \u2018Overwhelmingly Bullish\u2019 On Anthropic\u2019s AI Position, Says William Blair \u2014 Sees Valuation Below Peers",
+"2026-11-18T05:30:01-10:00",
+"Is Anthropic Worth $1.4 Trillion? Here's What Investors Have to Believe",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-18T02:12:00-10:00",
-"Why SpaceX Needs Anthropic to Grow",
+"2026-11-18T05:07:00-10:00",
+"Verizon and AT&T customers will soon get a major network upgrade",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-18T01:40:59-10:00",
-"Anthropic IPO Generates Strong Wall Street Interest Despite Selloff in AI Stocks",
+"2026-11-18T04:53:31-10:00",
+"Exclusive: Yorkville CEO Says SpaceX Won\u2019t Dominate Launch Forever as New Space ETF Debuts",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-18T01:19:30-10:00",
-"SpaceX Wants $4 Billion From Investors to Help Buy Nvidia's Powerful AI Chips",
+"2026-11-18T04:42:32-10:00",
+"SpaceX's X, X.AI Reach Agreements With South African Competition Commission Over Antitrust Dispute",
 "finnhub/Yahoo"
 ]
 ]
