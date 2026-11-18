@@ -141,6 +141,11 @@
 ],
 "CHRN": [
 [
+"2026-11-18T04:25:36-10:00",
+"8-K filed: other material event; exhibits",
+"sec"
+],
+[
 "2026-11-18T03:15:17-10:00",
 "8-K filed: material agreement; new debt; unregistered share sale; item 5.03; item 5.07; other material event; exhibits",
 "sec"
@@ -650,6 +655,48 @@
 [
 "2026-11-17T11:53:04-10:00",
 "8-K filed: other material event; exhibits",
+"sec"
+]
+],
+"RSSS": [
+[
+"2026-11-18T04:31:01-10:00",
+"8-K filed: item 5.07",
+"sec"
+]
+],
+"FDCT": [
+[
+"2026-11-18T04:30:13-10:00",
+"8-K filed: material agreement; unregistered share sale; exhibits",
+"sec"
+]
+],
+"SSTI": [
+[
+"2026-11-18T04:28:20-10:00",
+"8-K filed: material agreement; agreement terminated; acquisition/disposition completed; delisting notice; item 3.03; change in control; executive/director change; item 5.03; other material event; exhibits",
+"sec"
+]
+],
+"LSAK": [
+[
+"2026-11-18T04:25:30-10:00",
+"8-K filed: item 5.07; exhibits",
+"sec"
+]
+],
+"TJX": [
+[
+"2026-11-18T04:19:28-10:00",
+"8-K filed: results of operations (earnings); exhibits",
+"sec"
+]
+],
+"PDYN": [
+[
+"2026-11-18T04:12:07-10:00",
+"8-K filed: Reg FD disclosure; exhibits",
 "sec"
 ]
 ]
