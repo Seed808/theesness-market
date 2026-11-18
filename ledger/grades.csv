@@ -246,3 +246,4 @@ id,graded_at,result,exit_premium,pnl_pct,method
 2026-11-18_rescan_AMD_CALL_2026-11-20_522.5,2026-11-18T07:42:35.629094-10:00,LOSS,14.0,-20.9,STOP (gapped through) · schwab 1m
 2026-11-18_rescan_CVNA_CALL_2026-11-20_74,2026-11-18T09:02:30.909063-10:00,LOSS,0.89,-26.4,STOP (gapped through) · schwab 1m
 2026-11-18_rescan_UBER_CALL_2026-11-20_70,2026-11-18T09:02:30.909063-10:00,LOSS,0.63,-20.3,STOP (gapped through) · schwab 1m
+2026-11-18_rescan_IWM_CALL_2026-11-20_272,2026-11-18T09:12:42.216883-10:00,LOSS,1.78,-20.2,STOP · schwab 1m
