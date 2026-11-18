@@ -12,7 +12,7 @@
  "last_reading": {
   "regime": "MIXED",
   "clean": false,
-  "why": "ES flat (+0.05%), NQ green (+0.58%), YM red (-0.76%); No ES/YM rule matched \u2192 no favored side, no A+",
-  "at": "2026-11-18T05:12:36.844404-10:00"
+  "why": "ES flat (-0.01%), NQ green (+0.54%), YM red (-0.87%); No ES/YM rule matched \u2192 no favored side, no A+",
+  "at": "2026-11-18T05:22:33.873482-10:00"
  }
 }
