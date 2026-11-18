@@ -1331,3 +1331,5 @@ id,target,graded_at,result,exit_premium,pnl_pct,hit_at,method
 2026-11-18_watch-premarket_GLD_PUT_2026-11-20_343,T1,2026-11-18T06:12:32.257419-10:00,WIN,2.96,21.3,2026-11-18T06:12:00-10:00,TARGET (gapped through) · schwab 1m
 2026-11-18_watch-preopen_GLD_PUT_2026-11-20_343,T2,2026-11-18T06:32:30.474362-10:00,WIN,3.49,56.5,2026-11-18T06:31:00-10:00,TARGET (gapped through) · schwab 1m
 2026-11-18_watch-firstcandle_GLD_PUT_2026-11-20_343,T2,2026-11-18T06:32:30.474362-10:00,WIN,3.49,54.4,2026-11-18T06:31:00-10:00,TARGET (gapped through) · schwab 1m
+2026-11-17_watch-preopen_QCOM_PUT_2026-11-20_170,T2,2026-11-18T06:42:29.464992-10:00,WIN,9.34,53.1,2026-11-18T06:42:00-10:00,TARGET (gapped through) · schwab 1m
+2026-11-17_watch-firstcandle_QCOM_PUT_2026-11-20_170,T2,2026-11-18T06:42:29.464992-10:00,WIN,9.34,55.7,2026-11-18T06:42:00-10:00,TARGET (gapped through) · schwab 1m
