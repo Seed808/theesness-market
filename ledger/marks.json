@@ -1,52 +1,65 @@
 {
  "2026-11-18_confirm_AMZN_CALL_2026-11-20_265": {
-  "last": 5.33,
-  "last_time": "2026-11-18T18:16:22.331000+00:00",
-  "high": 5.45,
+  "last": 5.62,
+  "last_time": "2026-11-18T18:26:08.925000+00:00",
+  "high": 5.75,
   "low": 3.05,
   "source": "schwab quote (mark)",
-  "underlying": 266.75,
-  "pnl_pct": 47.2,
-  "as_of": "2026-11-18T08:12:36.554901-10:00"
+  "underlying": 267.185,
+  "pnl_pct": 55.2,
+  "as_of": "2026-11-18T08:22:28.629038-10:00"
  },
  "2026-11-18_rescan_NVDA_PUT_2026-11-20_150": {
-  "last": 2.98,
-  "last_time": "2026-11-18T18:16:24.666000+00:00",
+  "last": 2.74,
+  "last_time": "2026-11-18T18:26:10.284000+00:00",
   "high": 3.4,
   "low": 2.36,
   "source": "schwab quote (mark)",
-  "underlying": 151.695,
-  "pnl_pct": 3.8,
-  "as_of": "2026-11-18T08:12:36.554901-10:00"
+  "underlying": 152.14,
+  "pnl_pct": -4.5,
+  "as_of": "2026-11-18T08:22:28.629038-10:00"
  },
  "2026-11-18_rescan_CVNA_CALL_2026-11-20_74": {
-  "last": 1.05,
-  "last_time": "2026-11-18T18:16:23.916000+00:00",
+  "last": 1.07,
+  "last_time": "2026-11-18T18:26:04.581000+00:00",
   "high": 1.24,
   "low": 1.02,
   "source": "schwab quote (mark)",
-  "underlying": 73.0,
-  "pnl_pct": -13.2,
-  "as_of": "2026-11-18T08:12:36.554901-10:00"
+  "underlying": 73.005,
+  "pnl_pct": -11.6,
+  "as_of": "2026-11-18T08:22:28.629038-10:00"
  },
  "2026-11-18_rescan_IWM_CALL_2026-11-20_272": {
   "last": 2.04,
-  "last_time": "2026-11-18T18:16:26.866000+00:00",
+  "last_time": "2026-11-18T18:26:12.153000+00:00",
   "high": 2.58,
   "low": 1.95,
   "source": "schwab quote (mark)",
-  "underlying": 271.29,
+  "underlying": 271.4,
   "pnl_pct": -8.5,
-  "as_of": "2026-11-18T08:12:36.554901-10:00"
+  "as_of": "2026-11-18T08:22:28.629038-10:00"
  },
  "2026-11-18_rescan_AAPL_CALL_2026-11-20_355": {
-  "last": 2.46,
-  "last_time": "2026-11-18T18:16:27.923000+00:00",
+  "last": 2.62,
+  "last_time": "2026-11-18T18:26:13.135000+00:00",
   "high": 2.84,
   "low": 2.32,
   "source": "schwab quote (mark)",
-  "underlying": 353.16,
-  "pnl_pct": -11.8,
-  "as_of": "2026-11-18T08:12:36.554901-10:00"
+  "underlying": 353.6,
+  "pnl_pct": -6.1,
+  "as_of": "2026-11-18T08:22:28.629038-10:00"
+ },
+ "2026-11-18_rescan_UBER_CALL_2026-11-20_70": {
+  "high": null,
+  "low": null,
+  "last": 0.78,
+  "last_time": "2026-11-18T18:26:14.206000+00:00",
+  "source": "schwab quote (mark)",
+  "underlying": 69.56,
+  "pnl_pct": -1.3,
+  "as_of": "2026-11-18T08:22:28.629038-10:00"
+ },
+ "_errors": {
+  "2026-11-18_rescan_UBER_CALL_2026-11-20_70": "bars returned but none after lock (140 rows)"
  }
 }
