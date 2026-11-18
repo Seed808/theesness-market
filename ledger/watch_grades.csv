@@ -1299,3 +1299,4 @@ id,target,graded_at,result,exit_premium,pnl_pct,hit_at,method
 2026-11-17_watch-preopen_CRM_PUT_2026-11-20_210,TRAIL,2026-11-17T08:42:34.394935-10:00,WIN,13.45,128.0,2026-11-17T08:34:00-10:00,TRAILING STOP (gapped through) · schwab 1m
 2026-11-17_watch-firstcandle_CRM_PUT_2026-11-20_210,TRAIL,2026-11-17T08:42:34.394935-10:00,WIN,13.45,115.2,2026-11-17T08:34:00-10:00,TRAILING STOP (gapped through) · schwab 1m
 2026-11-17_watch-firstcandle_GLD_PUT_2026-11-20_351,T1,2026-11-17T09:32:31.394586-10:00,WIN,2.7,23.3,2026-11-17T09:26:00-10:00,TARGET (gapped through) · schwab 1m
+2026-11-17_watch-firstcandle_GLD_PUT_2026-11-20_351,T2,2026-11-18T04:32:31.059143-10:00,WIN,5.15,135.2,2026-11-18T02:30:00-10:00,TARGET (gapped through) · schwab 1m

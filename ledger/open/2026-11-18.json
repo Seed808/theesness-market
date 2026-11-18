@@ -1,0 +1,36 @@
+{
+ "trade_date": "2026-11-18",
+ "ran_at": "2026-11-18T04:32:31.059143-10:00",
+ "cards": {
+  "2026-11-18_premarket_CRWV_PUT_2026-11-20_51": {
+   "price": 3.52,
+   "time": "2026-11-18T14:32:31.875000+00:00",
+   "source": "schwab quote (mark)",
+   "underlying": 49.01
+  },
+  "2026-11-18_premarket_IREN_PUT_2026-11-20_16": {
+   "price": 0.94,
+   "time": "2026-11-18T14:32:32.386000+00:00",
+   "source": "schwab quote (mark)",
+   "underlying": 15.92
+  },
+  "2026-11-18_premarket_GLD_PUT_2026-11-20_343": {
+   "price": 2.23,
+   "time": "2026-11-18T14:32:33.731000+00:00",
+   "source": "schwab quote (mark)",
+   "underlying": 345.615
+  },
+  "2026-11-18_premarket_QQQ_PUT_2026-11-20_660": {
+   "price": 8.65,
+   "time": "2026-11-18T14:32:33.998000+00:00",
+   "source": "schwab quote (mark)",
+   "underlying": 661.88
+  },
+  "2026-11-18_premarket_SPCX_CALL_2026-11-20_143": {
+   "price": 3.75,
+   "time": "2026-11-18T14:32:34.470000+00:00",
+   "source": "schwab quote (mark)",
+   "underlying": 143.01
+  }
+ }
+}
