@@ -1348,3 +1348,4 @@ id,target,graded_at,result,exit_premium,pnl_pct,hit_at,method
 2026-11-18_watch-firstcandle_CRWV_PUT_2026-11-20_51,T2,2026-11-19T04:32:33.688532-10:00,LOSS,1.7,-60.0,2026-11-19T04:31:00-10:00,STOP (gapped through) · schwab 1m
 2026-11-18_watch-firstcandle_CRWV_PUT_2026-11-20_51,TRAIL,2026-11-19T04:32:33.688532-10:00,LOSS,1.7,-60.0,2026-11-19T04:31:00-10:00,STOP (gapped through) · schwab 1m
 2026-11-18_watch-firstcandle_IREN_PUT_2026-11-20_16,T2,2026-11-19T04:32:33.688532-10:00,LOSS,0.69,-37.8,2026-11-19T04:30:00-10:00,STOP (gapped through) · schwab 1m
+2026-11-18_watch-premarket_SPCX_CALL_2026-11-20_143,T2,2026-11-19T04:52:32.994232-10:00,LOSS,3.04,-20.0,2026-11-19T04:46:00-10:00,STOP · schwab 1m
