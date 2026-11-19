@@ -4,9 +4,9 @@
  "expired_notice_at": "2026-11-12T08:02:34.990331-10:00",
  "login_at": "2026-11-13T04:40:45.505549+00:00",
  "expires_at": "2026-11-20T04:40:45.505549+00:00",
- "last_ok": "2026-11-19T18:02:36.502201+00:00",
+ "last_ok": "2026-11-19T18:32:33.108996+00:00",
  "last_error": null,
- "hours_left": 10.3,
+ "hours_left": 10.1,
  "futures_probe": {
   "/ESZ26": {
    "answered": true,
@@ -40,16 +40,16 @@
    ],
    "values": {
     "closePrice": 7340.5,
-    "lastPrice": 7232.25,
-    "netChange": -108.25,
-    "futurePercentChange": -1.47469518,
+    "lastPrice": 7253.0,
+    "netChange": -87.5,
+    "futurePercentChange": -1.19201689,
     "settleTime": 1795112162709,
-    "tradeTime": 1795112564653
+    "tradeTime": 1795113153237
    },
    "check": {
     "netChange_diff": 0.0,
-    "my_pct": -1.4747,
-    "schwab_pct": -1.47469518,
+    "my_pct": -1.192,
+    "schwab_pct": -1.19201689,
     "pct_diff": 0.0
    },
    "used": true
@@ -92,16 +92,16 @@
    ],
    "values": {
     "closePrice": 27186.75,
-    "lastPrice": 26759.0,
-    "netChange": -427.75,
-    "futurePercentChange": -1.57337674,
+    "lastPrice": 26859.25,
+    "netChange": -327.5,
+    "futurePercentChange": -1.20463093,
     "settleTime": 1795112179390,
-    "tradeTime": 1795112564668
+    "tradeTime": 1795113153117
    },
    "check": {
     "netChange_diff": 0.0,
-    "my_pct": -1.5734,
-    "schwab_pct": -1.57337674,
+    "my_pct": -1.2046,
+    "schwab_pct": -1.20463093,
     "pct_diff": 0.0
    },
    "used": true
@@ -144,16 +144,16 @@
    ],
    "values": {
     "closePrice": 50273.0,
-    "lastPrice": 49368.0,
-    "netChange": -905.0,
-    "futurePercentChange": -1.80017107,
+    "lastPrice": 49495.0,
+    "netChange": -778.0,
+    "futurePercentChange": -1.54755037,
     "settleTime": 1795110897696,
-    "tradeTime": 1795112563902
+    "tradeTime": 1795113152373
    },
    "check": {
     "netChange_diff": 0.0,
-    "my_pct": -1.8002,
-    "schwab_pct": -1.80017107,
+    "my_pct": -1.5476,
+    "schwab_pct": -1.54755037,
     "pct_diff": 0.0
    },
    "used": true
