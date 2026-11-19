@@ -1,6 +1,6 @@
 {
 "SPY": {
-"fetched": "2026-11-19T08:22:44.312396-10:00",
+"fetched": "2026-11-19T09:32:34.942756-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -46,53 +46,53 @@
 ]
 },
 "QQQ": {
-"fetched": "2026-11-19T08:22:44.312396-10:00",
+"fetched": "2026-11-19T09:32:34.942756-10:00",
 "src": "finnhub",
 "items": [
 [
-"2026-11-19T03:08:07-10:00",
-"Stock Market Today: Dow Rises As Walmart Falls On Earnings; Anthropic IPO To Debut (Live Coverage)",
+"2026-11-19T08:23:21-10:00",
+"Amazon Beat QQQ, But The Ride Was Much Harder",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-19T03:04:27-10:00",
-"3 All Too Early Market Predictions For 2027",
-"finnhub/SeekingAlpha"
-],
-[
-"2026-11-19T02:57:49-10:00",
-"Almost Every Fed Official Discussed the Risk of an AI Bust, Minutes Show",
+"2026-11-19T08:17:33-10:00",
+"Exchange-Traded Funds Lower as US Equities Fall After Midday",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-19T01:04:10-10:00",
-"Invesco QQQ (QQQ) Sells Apple and Microsoft on Nov. 17",
+"2026-11-19T07:52:39-10:00",
+"Anthropic Opens Today With Demand Seven Times the Offering, So Remember What Musk\u2019s SpaceX Did After Its Debut",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-19T01:03:54-10:00",
-"ETFs Are Net Sellers of NXP Semiconductors (NXPI) on Nov. 17",
+"2026-11-19T07:27:07-10:00",
+"SpaceX Offers a Clue to What Anthropic\u2019s IPO Could Mean for QQQ Holders",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-19T01:03:44-10:00",
-"ETFs Are Net Sellers of Micron Technology (MU) on Nov. 17",
+"2026-11-19T07:10:08-10:00",
+"Do Nvidia, Alphabet, Meta Drops Hurt Your Index Fund?",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-19T01:03:41-10:00",
-"ETFs Are Net Sellers of Comcast (CMCSA) on Nov. 17",
+"2026-11-19T05:13:23-10:00",
+"What Ten Years Of VYM Did To $1 Million",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-19T01:03:34-10:00",
-"ETFs Are Net Sellers of Applied Materials (AMAT) on Nov. 17",
+"2026-11-19T05:05:25-10:00",
+"$1 Million In QQQ Five Years Ago: What Is It Worth Now?",
+"finnhub/Yahoo"
+],
+[
+"2026-11-19T04:33:11-10:00",
+"Why Anthropic investors don't want too much of a stock pop on day 1",
 "finnhub/Yahoo"
 ]
 ]
 },
 "IWM": {
-"fetched": "2026-11-19T08:22:44.312396-10:00",
+"fetched": "2026-11-19T09:32:34.942756-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -138,7 +138,7 @@
 ]
 },
 "DIA": {
-"fetched": "2026-11-19T08:22:44.312396-10:00",
+"fetched": "2026-11-19T09:32:34.942756-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -184,7 +184,7 @@
 ]
 },
 "SPX": {
-"fetched": "2026-11-19T08:22:44.312396-10:00",
+"fetched": "2026-11-19T09:32:34.942756-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -230,7 +230,7 @@
 ]
 },
 "TQQQ": {
-"fetched": "2026-11-19T08:22:44.312396-10:00",
+"fetched": "2026-11-19T09:32:34.942756-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -256,9 +256,14 @@
 ]
 },
 "SMH": {
-"fetched": "2026-11-19T08:22:44.312396-10:00",
+"fetched": "2026-11-19T09:32:34.942756-10:00",
 "src": "finnhub",
 "items": [
+[
+"2026-11-19T03:31:51-10:00",
+"Has Nvidia Peaked? TheTechTalk Podcast Episode 3",
+"finnhub/SeekingAlpha"
+],
 [
 "2026-11-19T01:47:16-10:00",
 "Dividend Stocks Or AI Stocks: Which Fits Now?",
@@ -293,16 +298,11 @@
 "2026-11-18T22:34:09-10:00",
 "The AI Selloff May Be Over. Here Are 3 Reasons Why",
 "finnhub/SeekingAlpha"
-],
-[
-"2026-11-18T22:15:00-10:00",
-"Build, Run, Harvest: The Just-In-Case Cycle Is Moving On",
-"finnhub/SeekingAlpha"
 ]
 ]
 },
 "SOXL": {
-"fetched": "2026-11-19T08:22:44.312396-10:00",
+"fetched": "2026-11-19T09:32:34.942756-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -338,7 +338,7 @@
 ]
 },
 "XLF": {
-"fetched": "2026-11-19T08:22:44.312396-10:00",
+"fetched": "2026-11-19T09:32:34.942756-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -384,7 +384,7 @@
 ]
 },
 "XLE": {
-"fetched": "2026-11-19T08:22:44.312396-10:00",
+"fetched": "2026-11-19T09:32:34.942756-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -430,7 +430,7 @@
 ]
 },
 "GLD": {
-"fetched": "2026-11-19T08:22:44.312396-10:00",
+"fetched": "2026-11-19T09:32:34.942756-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -476,7 +476,7 @@
 ]
 },
 "SLV": {
-"fetched": "2026-11-19T08:22:44.312396-10:00",
+"fetched": "2026-11-19T09:32:34.942756-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -517,7 +517,7 @@
 ]
 },
 "TLT": {
-"fetched": "2026-11-19T08:22:44.312396-10:00",
+"fetched": "2026-11-19T09:32:34.942756-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -563,7 +563,7 @@
 ]
 },
 "IBIT": {
-"fetched": "2026-11-19T08:22:44.312396-10:00",
+"fetched": "2026-11-19T09:32:34.942756-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -609,12 +609,12 @@
 ]
 },
 "TNA": {
-"fetched": "2026-11-19T08:22:44.312396-10:00",
+"fetched": "2026-11-19T09:32:34.942756-10:00",
 "src": "finnhub",
 "items": []
 },
 "UVXY": {
-"fetched": "2026-11-19T08:22:44.312396-10:00",
+"fetched": "2026-11-19T09:32:34.942756-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -625,7 +625,7 @@
 ]
 },
 "AAPL": {
-"fetched": "2026-11-19T08:22:44.312396-10:00",
+"fetched": "2026-11-19T09:32:34.942756-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -671,7 +671,7 @@
 ]
 },
 "AMAT": {
-"fetched": "2026-11-19T08:22:44.312396-10:00",
+"fetched": "2026-11-19T09:32:34.942756-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -717,7 +717,7 @@
 ]
 },
 "AMD": {
-"fetched": "2026-11-19T08:22:44.312396-10:00",
+"fetched": "2026-11-19T09:32:34.942756-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -763,7 +763,7 @@
 ]
 },
 "AMZN": {
-"fetched": "2026-11-19T08:22:44.312396-10:00",
+"fetched": "2026-11-19T09:32:34.942756-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -809,7 +809,7 @@
 ]
 },
 "APLD": {
-"fetched": "2026-11-19T08:22:44.312396-10:00",
+"fetched": "2026-11-19T09:32:34.942756-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -855,7 +855,7 @@
 ]
 },
 "APP": {
-"fetched": "2026-11-19T08:22:44.312396-10:00",
+"fetched": "2026-11-19T09:32:34.942756-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -901,7 +901,7 @@
 ]
 },
 "ASTS": {
-"fetched": "2026-11-19T08:22:44.312396-10:00",
+"fetched": "2026-11-19T09:32:34.942756-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -947,7 +947,7 @@
 ]
 },
 "AVGO": {
-"fetched": "2026-11-19T08:22:44.312396-10:00",
+"fetched": "2026-11-19T09:32:34.942756-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -993,7 +993,7 @@
 ]
 },
 "BA": {
-"fetched": "2026-11-19T08:22:44.312396-10:00",
+"fetched": "2026-11-19T09:32:34.942756-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1039,7 +1039,7 @@
 ]
 },
 "BABA": {
-"fetched": "2026-11-19T08:22:44.312396-10:00",
+"fetched": "2026-11-19T09:32:34.942756-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1085,7 +1085,7 @@
 ]
 },
 "BAC": {
-"fetched": "2026-11-19T08:22:44.312396-10:00",
+"fetched": "2026-11-19T09:32:34.942756-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1131,7 +1131,7 @@
 ]
 },
 "BILI": {
-"fetched": "2026-11-19T08:22:44.312396-10:00",
+"fetched": "2026-11-19T09:32:34.942756-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1152,7 +1152,7 @@
 ]
 },
 "CIFR": {
-"fetched": "2026-11-19T08:22:44.312396-10:00",
+"fetched": "2026-11-19T09:32:34.942756-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1198,7 +1198,7 @@
 ]
 },
 "COIN": {
-"fetched": "2026-11-19T08:22:44.312396-10:00",
+"fetched": "2026-11-19T09:32:34.942756-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1244,7 +1244,7 @@
 ]
 },
 "CRM": {
-"fetched": "2026-11-19T08:22:44.312396-10:00",
+"fetched": "2026-11-19T09:32:34.942756-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1290,7 +1290,7 @@
 ]
 },
 "CRWV": {
-"fetched": "2026-11-19T08:22:44.312396-10:00",
+"fetched": "2026-11-19T09:32:34.942756-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1336,7 +1336,7 @@
 ]
 },
 "CVNA": {
-"fetched": "2026-11-19T08:22:44.312396-10:00",
+"fetched": "2026-11-19T09:32:34.942756-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1382,7 +1382,7 @@
 ]
 },
 "DKNG": {
-"fetched": "2026-11-19T08:22:44.312396-10:00",
+"fetched": "2026-11-19T09:32:34.942756-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1423,7 +1423,7 @@
 ]
 },
 "GOOGL": {
-"fetched": "2026-11-19T08:22:44.312396-10:00",
+"fetched": "2026-11-19T09:32:34.942756-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1469,7 +1469,7 @@
 ]
 },
 "HOOD": {
-"fetched": "2026-11-19T08:22:44.312396-10:00",
+"fetched": "2026-11-19T09:32:34.942756-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1515,7 +1515,7 @@
 ]
 },
 "INTC": {
-"fetched": "2026-11-19T08:22:44.312396-10:00",
+"fetched": "2026-11-19T09:32:34.942756-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1561,7 +1561,7 @@
 ]
 },
 "IONQ": {
-"fetched": "2026-11-19T08:22:44.312396-10:00",
+"fetched": "2026-11-19T09:32:34.942756-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1607,7 +1607,7 @@
 ]
 },
 "IREN": {
-"fetched": "2026-11-19T08:22:44.312396-10:00",
+"fetched": "2026-11-19T09:32:34.942756-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1653,7 +1653,7 @@
 ]
 },
 "JPM": {
-"fetched": "2026-11-19T08:22:44.312396-10:00",
+"fetched": "2026-11-19T09:32:34.942756-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1699,7 +1699,7 @@
 ]
 },
 "LRCX": {
-"fetched": "2026-11-19T08:22:44.312396-10:00",
+"fetched": "2026-11-19T09:32:34.942756-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1745,7 +1745,7 @@
 ]
 },
 "MARA": {
-"fetched": "2026-11-19T08:22:44.312396-10:00",
+"fetched": "2026-11-19T09:32:34.942756-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1791,7 +1791,7 @@
 ]
 },
 "META": {
-"fetched": "2026-11-19T08:22:44.312396-10:00",
+"fetched": "2026-11-19T09:32:34.942756-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1837,7 +1837,7 @@
 ]
 },
 "MSFT": {
-"fetched": "2026-11-19T08:22:44.312396-10:00",
+"fetched": "2026-11-19T09:32:34.942756-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1883,7 +1883,7 @@
 ]
 },
 "MSTR": {
-"fetched": "2026-11-19T08:22:44.312396-10:00",
+"fetched": "2026-11-19T09:32:34.942756-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1907,6 +1907,11 @@
 "finnhub/Yahoo"
 ],
 [
+"2026-11-19T03:42:26-10:00",
+"PFFA Vs. PFF: Neither Is A Buy While Rates Keep Rising",
+"finnhub/SeekingAlpha"
+],
+[
 "2026-11-19T01:02:02-10:00",
 "Strategy Sinks 26% in a Week as MSCI Drops It. Saylor: \u201cSeller Exhaustion Will Come Long Before Saylor Exhaustion\u201d",
 "finnhub/Yahoo"
@@ -1920,16 +1925,11 @@
 "2026-11-18T17:31:11-10:00",
 "MSTR Stock Recovers Overnight After Dip \u2013 But Analyst Downgrades Strategy To 'Sell' As Bitcoin Premium Faces Pressure",
 "finnhub/Yahoo"
-],
-[
-"2026-11-18T16:10:00-10:00",
-"Is MicroStrategy\u2019s 12% Dividend Safe? Its $100 Stock Just Broke Again",
-"finnhub/Yahoo"
 ]
 ]
 },
 "MU": {
-"fetched": "2026-11-19T08:22:44.312396-10:00",
+"fetched": "2026-11-19T09:32:34.942756-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1975,7 +1975,7 @@
 ]
 },
 "NFLX": {
-"fetched": "2026-11-19T08:22:44.312396-10:00",
+"fetched": "2026-11-19T09:32:34.942756-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2021,7 +2021,7 @@
 ]
 },
 "NVDA": {
-"fetched": "2026-11-19T08:22:44.312396-10:00",
+"fetched": "2026-11-19T09:32:34.942756-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2067,7 +2067,7 @@
 ]
 },
 "OKLO": {
-"fetched": "2026-11-19T08:22:44.312396-10:00",
+"fetched": "2026-11-19T09:32:34.942756-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2093,7 +2093,7 @@
 ]
 },
 "ORCL": {
-"fetched": "2026-11-19T08:22:44.312396-10:00",
+"fetched": "2026-11-19T09:32:34.942756-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2139,7 +2139,7 @@
 ]
 },
 "PLTR": {
-"fetched": "2026-11-19T08:22:44.312396-10:00",
+"fetched": "2026-11-19T09:32:34.942756-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2185,7 +2185,7 @@
 ]
 },
 "PLUG": {
-"fetched": "2026-11-19T08:22:44.312396-10:00",
+"fetched": "2026-11-19T09:32:34.942756-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2231,7 +2231,7 @@
 ]
 },
 "PYPL": {
-"fetched": "2026-11-19T08:22:44.312396-10:00",
+"fetched": "2026-11-19T09:32:34.942756-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2277,7 +2277,7 @@
 ]
 },
 "QCOM": {
-"fetched": "2026-11-19T08:22:44.312396-10:00",
+"fetched": "2026-11-19T09:32:34.942756-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2323,7 +2323,7 @@
 ]
 },
 "RGTI": {
-"fetched": "2026-11-19T08:22:44.312396-10:00",
+"fetched": "2026-11-19T09:32:34.942756-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2369,7 +2369,7 @@
 ]
 },
 "RKLB": {
-"fetched": "2026-11-19T08:22:44.312396-10:00",
+"fetched": "2026-11-19T09:32:34.942756-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2415,7 +2415,7 @@
 ]
 },
 "SHOP": {
-"fetched": "2026-11-19T08:22:44.312396-10:00",
+"fetched": "2026-11-19T09:32:34.942756-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2461,7 +2461,7 @@
 ]
 },
 "SMCI": {
-"fetched": "2026-11-19T08:22:44.312396-10:00",
+"fetched": "2026-11-19T09:32:34.942756-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2507,7 +2507,7 @@
 ]
 },
 "SOFI": {
-"fetched": "2026-11-19T08:22:44.312396-10:00",
+"fetched": "2026-11-19T09:32:34.942756-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2553,7 +2553,7 @@
 ]
 },
 "TSLA": {
-"fetched": "2026-11-19T08:22:44.312396-10:00",
+"fetched": "2026-11-19T09:32:34.942756-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2599,13 +2599,18 @@
 ]
 },
 "TSM": {
-"fetched": "2026-11-19T08:22:44.312396-10:00",
+"fetched": "2026-11-19T09:32:34.942756-10:00",
 "src": "finnhub",
 "items": [
 [
 "2026-11-19T03:35:17-10:00",
 "Market Chatter: TSMC Tightening Restrictions on Chinese Chip Designers in Response to New US Rules",
 "finnhub/Yahoo"
+],
+[
+"2026-11-19T03:31:51-10:00",
+"Has Nvidia Peaked? TheTechTalk Podcast Episode 3",
+"finnhub/SeekingAlpha"
 ],
 [
 "2026-11-19T03:20:51-10:00",
@@ -2636,16 +2641,11 @@
 "2026-11-19T01:04:50-10:00",
 "iShares A.I. Innovation and Tech Active ETF (BAI) Adds AMD and Broadcom on Nov. 17",
 "finnhub/Yahoo"
-],
-[
-"2026-11-19T01:02:27-10:00",
-"ETFs Are Net Sellers of Taiwan Semiconductor (TSM) on Nov. 17",
-"finnhub/Yahoo"
 ]
 ]
 },
 "UBER": {
-"fetched": "2026-11-19T08:22:44.312396-10:00",
+"fetched": "2026-11-19T09:32:34.942756-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2691,7 +2691,7 @@
 ]
 },
 "WMT": {
-"fetched": "2026-11-19T08:22:44.312396-10:00",
+"fetched": "2026-11-19T09:32:34.942756-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2737,7 +2737,7 @@
 ]
 },
 "XOM": {
-"fetched": "2026-11-19T08:22:44.312396-10:00",
+"fetched": "2026-11-19T09:32:34.942756-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2783,7 +2783,7 @@
 ]
 },
 "NKE": {
-"fetched": "2026-11-19T08:22:44.312396-10:00",
+"fetched": "2026-11-19T09:32:34.942756-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2829,7 +2829,7 @@
 ]
 },
 "SPCX": {
-"fetched": "2026-11-19T08:22:44.312396-10:00",
+"fetched": "2026-11-19T09:32:34.942756-10:00",
 "src": "finnhub",
 "items": [
 [
