@@ -1,0 +1,36 @@
+{
+ "trade_date": "2026-11-19",
+ "ran_at": "2026-11-19T04:32:33.688532-10:00",
+ "cards": {
+  "2026-11-19_premarket_AMZN_CALL_2026-11-20_275": {
+   "price": 2.48,
+   "time": "2026-11-19T14:32:34.648000+00:00",
+   "source": "schwab quote (mark)",
+   "underlying": 272.86
+  },
+  "2026-11-19_premarket_SPCX_CALL_2026-11-20_145": {
+   "price": 3.33,
+   "time": "2026-11-19T14:32:35.134000+00:00",
+   "source": "schwab quote (mark)",
+   "underlying": 146.09
+  },
+  "2026-11-19_premarket_IWM_CALL_2026-11-20_272": {
+   "price": 1.62,
+   "time": "2026-11-19T14:32:35.793000+00:00",
+   "source": "schwab quote (mark)",
+   "underlying": 271.505
+  },
+  "2026-11-19_premarket_NVDA_CALL_2026-11-20_155": {
+   "price": 3.65,
+   "time": "2026-11-19T14:32:36.233000+00:00",
+   "source": "schwab quote (mark)",
+   "underlying": 156.32
+  },
+  "2026-11-19_premarket_SMCI_CALL_2026-11-20_25.5": {
+   "price": 0.58,
+   "time": "2026-11-19T14:31:46.024000+00:00",
+   "source": "schwab last trade",
+   "underlying": 25.26
+  }
+ }
+}
