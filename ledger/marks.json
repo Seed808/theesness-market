@@ -1,12 +1,12 @@
 {
  "2026-11-19_rescan_SHOP_PUT_2026-11-20_130": {
-  "last": 1.32,
-  "last_time": "2026-11-19T20:46:29.063000+00:00",
-  "high": 1.48,
+  "last": 1.4,
+  "last_time": "2026-11-19T20:52:23.716000+00:00",
+  "high": 1.53,
   "low": 1.28,
-  "source": "schwab quote (mark)",
-  "underlying": 132.29,
-  "pnl_pct": 1.5,
-  "as_of": "2026-11-19T10:42:29.718439-10:00"
+  "source": "schwab last trade",
+  "underlying": 131.95,
+  "pnl_pct": 7.7,
+  "as_of": "2026-11-19T10:52:38.564952-10:00"
  }
 }
