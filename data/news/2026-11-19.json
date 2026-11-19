@@ -1,8 +1,13 @@
 {
 "SPY": {
-"fetched": "2026-11-19T09:32:34.942756-10:00",
+"fetched": "2026-11-19T10:32:35.684326-10:00",
 "src": "finnhub",
 "items": [
+[
+"2026-11-19T08:17:41-10:00",
+"$1,000 Invested in Eli Lilly 10 Years Ago Would Be Worth a Fortune Today",
+"finnhub/Yahoo"
+],
 [
 "2026-11-19T07:13:02-10:00",
 "If You Have $1,000 to Invest Right Now, Here's the 1 ETF I'd Buy Without a Second Thought",
@@ -37,16 +42,11 @@
 "2026-11-19T05:05:25-10:00",
 "$1 Million In QQQ Five Years Ago: What Is It Worth Now?",
 "finnhub/Yahoo"
-],
-[
-"2026-11-19T04:32:38-10:00",
-"Why GM Stock's Gains Under Barra Outran Its Profit",
-"finnhub/Yahoo"
 ]
 ]
 },
 "QQQ": {
-"fetched": "2026-11-19T09:32:34.942756-10:00",
+"fetched": "2026-11-19T10:32:35.684326-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -92,7 +92,7 @@
 ]
 },
 "IWM": {
-"fetched": "2026-11-19T09:32:34.942756-10:00",
+"fetched": "2026-11-19T10:32:35.684326-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -138,7 +138,7 @@
 ]
 },
 "DIA": {
-"fetched": "2026-11-19T09:32:34.942756-10:00",
+"fetched": "2026-11-19T10:32:35.684326-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -184,7 +184,7 @@
 ]
 },
 "SPX": {
-"fetched": "2026-11-19T09:32:34.942756-10:00",
+"fetched": "2026-11-19T10:32:35.684326-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -230,7 +230,7 @@
 ]
 },
 "TQQQ": {
-"fetched": "2026-11-19T09:32:34.942756-10:00",
+"fetched": "2026-11-19T10:32:35.684326-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -256,7 +256,7 @@
 ]
 },
 "SMH": {
-"fetched": "2026-11-19T09:32:34.942756-10:00",
+"fetched": "2026-11-19T10:32:35.684326-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -302,7 +302,7 @@
 ]
 },
 "SOXL": {
-"fetched": "2026-11-19T09:32:34.942756-10:00",
+"fetched": "2026-11-19T10:32:35.684326-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -338,7 +338,7 @@
 ]
 },
 "XLF": {
-"fetched": "2026-11-19T09:32:34.942756-10:00",
+"fetched": "2026-11-19T10:32:35.684326-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -384,7 +384,7 @@
 ]
 },
 "XLE": {
-"fetched": "2026-11-19T09:32:34.942756-10:00",
+"fetched": "2026-11-19T10:32:35.684326-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -430,7 +430,7 @@
 ]
 },
 "GLD": {
-"fetched": "2026-11-19T09:32:34.942756-10:00",
+"fetched": "2026-11-19T10:32:35.684326-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -476,7 +476,7 @@
 ]
 },
 "SLV": {
-"fetched": "2026-11-19T09:32:34.942756-10:00",
+"fetched": "2026-11-19T10:32:35.684326-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -517,7 +517,7 @@
 ]
 },
 "TLT": {
-"fetched": "2026-11-19T09:32:34.942756-10:00",
+"fetched": "2026-11-19T10:32:35.684326-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -563,7 +563,7 @@
 ]
 },
 "IBIT": {
-"fetched": "2026-11-19T09:32:34.942756-10:00",
+"fetched": "2026-11-19T10:32:35.684326-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -609,12 +609,12 @@
 ]
 },
 "TNA": {
-"fetched": "2026-11-19T09:32:34.942756-10:00",
+"fetched": "2026-11-19T10:32:35.684326-10:00",
 "src": "finnhub",
 "items": []
 },
 "UVXY": {
-"fetched": "2026-11-19T09:32:34.942756-10:00",
+"fetched": "2026-11-19T10:32:35.684326-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -625,55 +625,70 @@
 ]
 },
 "AAPL": {
-"fetched": "2026-11-19T09:32:34.942756-10:00",
+"fetched": "2026-11-19T10:32:35.684326-10:00",
 "src": "finnhub",
 "items": [
 [
-"2026-11-19T07:47:48-10:00",
-"Citi CEO's Tech Warning Raises the Stakes for the Next Outage",
+"2026-11-19T09:19:22-10:00",
+"Walmart, Costco see some panic-buying after tech outages",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-19T07:35:55-10:00",
-"Is Snap Stock Ready For Shrinking Ad Sales?",
+"2026-11-19T09:15:55-10:00",
+"Apple (AAPL) Faces UK Backdoor Admission And French Obsolescence Trial",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-19T07:10:08-10:00",
-"Do Nvidia, Alphabet, Meta Drops Hurt Your Index Fund?",
+"2026-11-19T08:57:34-10:00",
+"Roundtable 100 analysts lift Apple on record R&D spend",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-19T07:03:54-10:00",
-"Apple\u2019s Longest-Serving Director Just Cashed Out $32 Million",
+"2026-11-19T08:55:51-10:00",
+"Apple\u2019s head of iPhone camera software retires after eight years - Bloomberg",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-19T06:58:02-10:00",
-"Prediction: SpaceX Will Be the Largest Company in the World by 2040",
+"2026-11-19T08:47:26-10:00",
+"Why Netflix's Fall Could Pay Off At Tax Time",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-19T06:53:41-10:00",
-"Visa, Mastercard, JPMorgan Hit By Reported Data Leak, Payment Information Not Affected",
+"2026-11-19T08:37:00-10:00",
+"Appalachian Wireless Among First Regional Carriers to Launch RCS for Business with ClearSky",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-19T06:30:37-10:00",
-"Britain forced to admit secret Apple \u2018backdoor\u2019 demand",
+"2026-11-19T08:24:30-10:00",
+"Why Alphabet's Cheap P/E May Mislead Investors",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-19T06:22:00-10:00",
-"Services Franchise and Installed Base Anchor Apple\u2019s (AAPL) Durable Earnings Growth",
+"2026-11-19T08:05:53-10:00",
+"Apple Marks a Big Moment for Its Free Radio Bet",
 "finnhub/Yahoo"
 ]
 ]
 },
 "AMAT": {
-"fetched": "2026-11-19T09:32:34.942756-10:00",
+"fetched": "2026-11-19T10:32:35.684326-10:00",
 "src": "finnhub",
 "items": [
+[
+"2026-11-19T07:33:00-10:00",
+"Top AI Stocks to Add to Your Portfolio for Healthy Returns",
+"finnhub/Yahoo"
+],
+[
+"2026-11-19T07:29:00-10:00",
+"ROK to Boost Intelligent Devices Segment With AGILOX Buyout",
+"finnhub/Yahoo"
+],
+[
+"2026-11-19T07:08:00-10:00",
+"ASML Rides on Improving Profitability: Will It Sustain?",
+"finnhub/Yahoo"
+],
 [
 "2026-11-19T07:04:46-10:00",
 "What Have Lattice Stock Holders Had To Sit Through?",
@@ -698,118 +713,103 @@
 "2026-11-19T03:09:41-10:00",
 "Premarket movers: Palo Alto soars, chip stocks rally ahead of Anthropic debut",
 "finnhub/Yahoo"
-],
-[
-"2026-11-19T02:06:16-10:00",
-"Applied Materials\u2019 2027 EPS Estimate Rose to $19.29 After Its Record Quarter. Its Average Price Target Fell to $562",
-"finnhub/Yahoo"
-],
-[
-"2026-11-19T01:27:07-10:00",
-"Global chip stocks rally as Anthropic\u2019s record IPO boosts confidence in AI trade",
-"finnhub/Yahoo"
-],
-[
-"2026-11-19T01:24:03-10:00",
-"Analysts Turned Bearish on These 5 Stocks on Monday",
-"finnhub/Yahoo"
 ]
 ]
 },
 "AMD": {
-"fetched": "2026-11-19T09:32:34.942756-10:00",
+"fetched": "2026-11-19T10:32:35.684326-10:00",
 "src": "finnhub",
 "items": [
 [
-"2026-11-19T07:45:22-10:00",
-"AMD Is Actually Cheap With Projected Earnings Now Costing Less Than 50 Cents on The Dollar",
+"2026-11-19T09:54:25-10:00",
+"Offshore yuan dip looks like a liquidity blip, not a trend shift",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-19T07:43:43-10:00",
-"Why AMD Stock Was Plunging on Thursday",
+"2026-11-19T09:46:51-10:00",
+"Billionaire Stanley Druckenmiller Cut TSMC 94% in One Quarter, Leaving Just $14.9 Million",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-19T07:41:08-10:00",
-"Anthropic's mega-IPO is still leaving investors working with 'imperfect information'",
+"2026-11-19T09:14:07-10:00",
+"What's Happening To Intel's Factory Cash?",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-19T07:30:26-10:00",
-"Broadcom Stocks Rise 4.21% as Chip Supplier Joins Anthropic's $26 Billion Placement",
+"2026-11-19T09:02:28-10:00",
+"AMD Is Still Up 125% This Year. Did Today Just Mark the Top for AMD Stock?",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-19T07:26:44-10:00",
-"Chip Stocks Waver On Anthropic IPO, AI Prospects",
+"2026-11-19T08:48:51-10:00",
+"Why AI competition from China won't be a risk US tech companies",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-19T07:26:06-10:00",
-"AMD Stocks Rise 3.77% as Anthropic Deal Points to $20 Billion-Plus of Helios Spending",
+"2026-11-19T08:41:39-10:00",
+"AMD Has a New Problem to Solve in Asia",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-19T07:23:26-10:00",
-"TSMC Stocks Rise 3.11% as Foundry Takes $500 Million Slice of Anthropic IPO Placement",
+"2026-11-19T08:35:46-10:00",
+"AMD Faces Its Own China Questions After Hunterbrook Report",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-19T07:18:19-10:00",
-"How Much Time Does Cerebras' Cash Buy?",
+"2026-11-19T08:23:21-10:00",
+"What Micron's Record Margin Means For Your Shares",
 "finnhub/Yahoo"
 ]
 ]
 },
 "AMZN": {
-"fetched": "2026-11-19T09:32:34.942756-10:00",
+"fetched": "2026-11-19T10:32:35.684326-10:00",
 "src": "finnhub",
 "items": [
 [
-"2026-11-19T07:49:59-10:00",
-"Anthropic's Record IPO Sets Up a $1.5 Trillion Test for Claude",
+"2026-11-19T09:47:02-10:00",
+"UPS Has Frozen Its Dividend at $1.64. Its 6% Yield Raises Questions",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-19T07:35:55-10:00",
-"Is Snap Stock Ready For Shrinking Ad Sales?",
+"2026-11-19T09:40:02-10:00",
+"Natera vs. Tempus AI: Which Blood Test Pioneer Has the Better Stock Buy for 2027?",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-19T07:34:06-10:00",
-"Amazon Stocks Rise 1.82% as Anthropic Listing Values Its 14.6% Stake Near $161 Billion",
+"2026-11-19T09:34:02-10:00",
+"3 Dirt Cheap Artificial Intelligence (AI) Stocks to Load Up on Before 2027",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-19T07:31:50-10:00",
-"Anthropic Now Earns $1.72 \u201cFor Every Dollar of Compute,\u201d Says Aaron Levie. Great News for Amazon and Alphabet",
+"2026-11-19T09:25:57-10:00",
+"Anthropic Soars 16% in Record $107 Billion IPO Debut: \u201cA Really Big Coming-of-Age Story\u201d",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-19T07:30:14-10:00",
-"Microsoft Stocks Rise 3.16% as Anthropic Commits $47.2 Billion Minimum to Azure",
+"2026-11-19T09:17:02-10:00",
+"Missed the Anthropic IPO? These 3 Stocks Give You Immediate Exposure.",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-19T07:25:28-10:00",
-"Amazon sets 2030 goal to cut carbon intensity of its electricity consumption",
+"2026-11-19T09:13:23-10:00",
+"Bath & Body Works: 3 Key Takeaways for Long-Term Investors",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-19T07:23:56-10:00",
-"A $467 Billion Fund Just Bought These 3 Stocks",
+"2026-11-19T09:03:02-10:00",
+"ServiceNow vs. UiPath: Which Technology Stock Is a Better Buy for 2027?",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-19T07:10:08-10:00",
-"Do Nvidia, Alphabet, Meta Drops Hurt Your Index Fund?",
+"2026-11-19T08:59:14-10:00",
+"Is AI Spending Eating Alibaba's Cash?",
 "finnhub/Yahoo"
 ]
 ]
 },
 "APLD": {
-"fetched": "2026-11-19T09:32:34.942756-10:00",
+"fetched": "2026-11-19T10:32:35.684326-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -855,7 +855,7 @@
 ]
 },
 "APP": {
-"fetched": "2026-11-19T09:32:34.942756-10:00",
+"fetched": "2026-11-19T10:32:35.684326-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -901,7 +901,7 @@
 ]
 },
 "ASTS": {
-"fetched": "2026-11-19T09:32:34.942756-10:00",
+"fetched": "2026-11-19T10:32:35.684326-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -947,58 +947,63 @@
 ]
 },
 "AVGO": {
-"fetched": "2026-11-19T09:32:34.942756-10:00",
+"fetched": "2026-11-19T10:32:35.684326-10:00",
 "src": "finnhub",
 "items": [
 [
-"2026-11-19T07:31:50-10:00",
-"Anthropic Now Earns $1.72 \u201cFor Every Dollar of Compute,\u201d Says Aaron Levie. Great News for Amazon and Alphabet",
+"2026-11-19T09:25:57-10:00",
+"Anthropic Soars 16% in Record $107 Billion IPO Debut: \u201cA Really Big Coming-of-Age Story\u201d",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-19T07:30:26-10:00",
-"Broadcom Stocks Rise 4.21% as Chip Supplier Joins Anthropic's $26 Billion Placement",
+"2026-11-19T09:14:07-10:00",
+"What's Happening To Intel's Factory Cash?",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-19T07:18:19-10:00",
-"How Much Time Does Cerebras' Cash Buy?",
+"2026-11-19T08:48:51-10:00",
+"Why AI competition from China won't be a risk US tech companies",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-19T07:07:00-10:00",
-"Anthropic shares jump 34% in Nasdaq debut after record IPO",
+"2026-11-19T08:23:20-10:00",
+"What Does A Fed Hike Mean For AI Stocks?",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-19T06:25:00-10:00",
-"Chip stocks rally as Anthropic\u2019s record IPO lifts AI investment sentiment",
+"2026-11-19T08:23:20-10:00",
+"$1 Million In Nvidia Five Years Ago: What Is It Worth Now?",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-19T06:18:52-10:00",
-"What Explains The Drop In Cerebras Stock?",
+"2026-11-19T08:15:09-10:00",
+"Should One Overlooked Number Scare You About AMD Stock?",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-19T05:50:40-10:00",
-"Cathie Wood and 26 Other Big Funds Bought Broadcom Last Quarter. David Tepper and 26 Others Sold. Who\u2019s Right?",
+"2026-11-19T08:04:00-10:00",
+"NVIDIA Doubled Its Revenue in Its First Quarter Without Huang. Here\u2019s Our Price Target.",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-19T05:45:36-10:00",
-"Broadcom\u2019s $13.67B Quarterly FCF Beats Marvell\u2019s Scaling Story, Plain and Simple",
+"2026-11-19T07:48:04-10:00",
+"Nvidia\u2019s Buyers Are Paying More Slowly. Its Free Cash Flow Is the Test After a Record Quarter",
 "finnhub/Yahoo"
 ]
 ]
 },
 "BA": {
-"fetched": "2026-11-19T09:32:34.942756-10:00",
+"fetched": "2026-11-19T10:32:35.684326-10:00",
 "src": "finnhub",
 "items": [
 [
 "2026-11-19T07:42:37-10:00",
 "Boeing Is Down 25% This Year, and a Director Just Bought In",
+"finnhub/Yahoo"
+],
+[
+"2026-11-19T07:09:00-10:00",
+"Voyager 1 Is a Light-Day From Earth. What It Tells Us About the Space Business.",
 "finnhub/Yahoo"
 ],
 [
@@ -1030,16 +1035,11 @@
 "2026-11-18T15:13:13-10:00",
 "Woodward Q4 Earnings Call Highlights",
 "finnhub/Yahoo"
-],
-[
-"2026-11-18T13:36:06-10:00",
-"Wall Street Bullish on The Boeing Company (BA) as Backlog Grows to $745B",
-"finnhub/Yahoo"
 ]
 ]
 },
 "BABA": {
-"fetched": "2026-11-19T09:32:34.942756-10:00",
+"fetched": "2026-11-19T10:32:35.684326-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1085,9 +1085,34 @@
 ]
 },
 "BAC": {
-"fetched": "2026-11-19T09:32:34.942756-10:00",
+"fetched": "2026-11-19T10:32:35.684326-10:00",
 "src": "finnhub",
 "items": [
+[
+"2026-11-19T09:27:41-10:00",
+"U.S. banks have another strong year in sight. But what could go wrong?",
+"finnhub/Yahoo"
+],
+[
+"2026-11-19T08:55:00-10:00",
+"MongoDB faces lower expectations ahead of earnings as Bank of America cuts price target",
+"finnhub/Yahoo"
+],
+[
+"2026-11-19T08:54:20-10:00",
+"Bank of America Corporation (BAC): One of the Best Affordable Blue Chip Stock to Buy Now",
+"finnhub/Yahoo"
+],
+[
+"2026-11-19T08:15:00-10:00",
+"Roblox shares face near-term pressure as Bank of America maintains 'neutral' rating",
+"finnhub/Yahoo"
+],
+[
+"2026-11-19T08:04:25-10:00",
+"Is A Fed Hike Still Good News For JPMorgan?",
+"finnhub/Yahoo"
+],
 [
 "2026-11-19T07:48:00-10:00",
 "Viridian Therapeutics initiated at 'buy' by Bank of America with $47 price target",
@@ -1102,36 +1127,11 @@
 "2026-11-19T07:04:33-10:00",
 "TSLL 2X Tesla ETF Is Down 50% in 2026: Can It Double to $20 from Here?",
 "finnhub/Yahoo"
-],
-[
-"2026-11-19T06:50:00-10:00",
-"Bank of America Chicago Marathon and Nike Extend Partnership Through 2036",
-"finnhub/Yahoo"
-],
-[
-"2026-11-19T06:16:39-10:00",
-"A $2.6 Billion Fund Dumps These 3 Stocks",
-"finnhub/Yahoo"
-],
-[
-"2026-11-19T04:24:00-10:00",
-"Dell Technologies and DraftKings have been highlighted as Zacks Bull and Bear of the Day",
-"finnhub/Yahoo"
-],
-[
-"2026-11-19T02:00:00-10:00",
-"Bank of America CPO Sheri Bronstein: \u2018The traditional definition of a working parent is too narrow\u2019",
-"finnhub/Yahoo"
-],
-[
-"2026-11-19T01:02:14-10:00",
-"ETFs Are Buying Bank of America (BAC) on Tuesday",
-"finnhub/Yahoo"
 ]
 ]
 },
 "BILI": {
-"fetched": "2026-11-19T09:32:34.942756-10:00",
+"fetched": "2026-11-19T10:32:35.684326-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1152,7 +1152,7 @@
 ]
 },
 "CIFR": {
-"fetched": "2026-11-19T09:32:34.942756-10:00",
+"fetched": "2026-11-19T10:32:35.684326-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1198,9 +1198,29 @@
 ]
 },
 "COIN": {
-"fetched": "2026-11-19T09:32:34.942756-10:00",
+"fetched": "2026-11-19T10:32:35.684326-10:00",
 "src": "finnhub",
 "items": [
+[
+"2026-11-19T08:57:32-10:00",
+"Sector Update: Financial Stocks Lower in Afternoon Trading",
+"finnhub/Yahoo"
+],
+[
+"2026-11-19T08:33:23-10:00",
+"Coinbase aims to bring prediction markets in-house by H1 of 2027, Bloomberg says",
+"finnhub/Yahoo"
+],
+[
+"2026-11-19T08:30:11-10:00",
+"Coinbase CEO Wants AI Agents to Hire and Pay Each Other In Decentralized Economy: 'Freedom of Choice and Real Competition'",
+"finnhub/Yahoo"
+],
+[
+"2026-11-19T08:16:02-10:00",
+"Coinbase introduces US crypto spot margin \u2014 with a $10M catch",
+"finnhub/Yahoo"
+],
 [
 "2026-11-19T07:36:04-10:00",
 "Brian Armstrong predicts that \u201cwell over 99.9%\u201d of transactions will be conducted by AI agents",
@@ -1220,33 +1240,23 @@
 "2026-11-19T07:20:02-10:00",
 "Coinbase Global vs. Interactive Brokers Group: Which Financial Stock Is a Better Buy for 2027?",
 "finnhub/Yahoo"
-],
-[
-"2026-11-19T07:10:06-10:00",
-"Coinbase CEO Predicts 99.999% of Financial Transactions Will Happen \u201cBetween Agents\u201d Within 10 Years",
-"finnhub/Yahoo"
-],
-[
-"2026-11-19T07:00:00-10:00",
-"Expect crypto to rebound after Anthropic's IPO, and Coinbase launching spot margin returns",
-"finnhub/Yahoo"
-],
-[
-"2026-11-19T06:50:02-10:00",
-"Coinbase Global vs. S&P Global: Which Financial Stock Is a Better Buy for 2027?",
-"finnhub/Yahoo"
-],
-[
-"2026-11-19T06:20:02-10:00",
-"Coinbase Global vs. Nu: Which Financial Stock Is a Better Buy for 2027?",
-"finnhub/Yahoo"
 ]
 ]
 },
 "CRM": {
-"fetched": "2026-11-19T09:32:34.942756-10:00",
+"fetched": "2026-11-19T10:32:35.684326-10:00",
 "src": "finnhub",
 "items": [
+[
+"2026-11-19T09:10:04-10:00",
+"Salesforce (CRM) Lands Commerce Backing For Global Trusted AI Export Push",
+"finnhub/Yahoo"
+],
+[
+"2026-11-19T08:56:08-10:00",
+"Here\u2019s Why You Should Add Salesforce (CRM) To Your Portfolio",
+"finnhub/Yahoo"
+],
 [
 "2026-11-19T06:01:00-10:00",
 "Software Stocks Are Throwing a Party. Salesforce Didn\u2019t Get the Invite\u2014Yet.",
@@ -1276,23 +1286,43 @@
 "2026-11-19T02:50:00-10:00",
 "Buy 3 Blue-Chip Stocks Amid Solid Upside Despite Dow's Recent Debacle",
 "finnhub/Yahoo"
-],
-[
-"2026-11-19T01:02:34-10:00",
-"ETFs Are Net Sellers of Salesforce (CRM) on Nov. 17",
-"finnhub/Yahoo"
-],
-[
-"2026-11-18T21:13:02-10:00",
-"NVIDIA\u2019s Board Must Decide Its Leadership Path: Satya Nadella Tells Jim Cramer",
-"finnhub/Benzinga"
 ]
 ]
 },
 "CRWV": {
-"fetched": "2026-11-19T09:32:34.942756-10:00",
+"fetched": "2026-11-19T10:32:35.684326-10:00",
 "src": "finnhub",
 "items": [
+[
+"2026-11-19T09:50:03-10:00",
+"CoreWeave vs. Nebius: Which Artificial Intelligence (AI) Stock Will Deliver Bigger Gains by 2028?",
+"finnhub/Yahoo"
+],
+[
+"2026-11-19T09:42:17-10:00",
+"\u2018SpaceX Has Gone All In With Nvidia\u2019: Nvidia\u2019s Biggest Customer Is Also Its Biggest Stock Holding at $19.7B",
+"finnhub/Yahoo"
+],
+[
+"2026-11-19T08:51:37-10:00",
+"CoreWeave's Debt Draws a Personal Bet From Its Co-Founder",
+"finnhub/Yahoo"
+],
+[
+"2026-11-19T08:23:21-10:00",
+"Why CoreWeave Can't Pay Down Debt From Its Cash",
+"finnhub/Yahoo"
+],
+[
+"2026-11-19T08:07:34-10:00",
+"Anthropic Jumps 17% in Record Nasdaq Debut but Fades From $111.50 Open; Alphabet Ticks Up, Amazon Dips",
+"finnhub/Yahoo"
+],
+[
+"2026-11-19T08:00:19-10:00",
+"Nvidia Holders' Real Risk Sits With Its Neocloud Buyers",
+"finnhub/Yahoo"
+],
 [
 "2026-11-19T05:52:47-10:00",
 "CoreWeave Rises 2% Ahead of Anthropic Debut as Co-Founder Who\u2019s \u201cNever Been More Confident\u201d Buys Its Bonds",
@@ -1302,41 +1332,11 @@
 "2026-11-19T05:45:25-10:00",
 "Why Wall Street Is Wrong: Buy Nebius as Customers Prepay Over 100% of Its CapEx",
 "finnhub/Yahoo"
-],
-[
-"2026-11-19T05:43:54-10:00",
-"The Fed Just Warned About a Hidden $3 Trillion AI Risk. Here\u2019s How It Can Spread Beyond Tech Stocks",
-"finnhub/Yahoo"
-],
-[
-"2026-11-19T05:35:40-10:00",
-"George Soros and 14 Other Big Funds Bought CoreWeave Last Quarter. Leopold Aschenbrenner and 5 Others Sold. Who\u2019s Right?",
-"finnhub/Yahoo"
-],
-[
-"2026-11-19T05:30:21-10:00",
-"BC-Most Active Stocks",
-"finnhub/Yahoo"
-],
-[
-"2026-11-19T05:30:20-10:00",
-"David Tepper and 27 Other Big Funds Bought Oracle Last Quarter, While 12 Sold. Who\u2019s Right?",
-"finnhub/Yahoo"
-],
-[
-"2026-11-19T05:23:38-10:00",
-"Opinion: Trump May Have Finally Killed the AI Trade",
-"finnhub/Yahoo"
-],
-[
-"2026-11-19T05:18:00-10:00",
-"History of CoreWeave: Company timeline, facts & milestones",
-"finnhub/Yahoo"
 ]
 ]
 },
 "CVNA": {
-"fetched": "2026-11-19T09:32:34.942756-10:00",
+"fetched": "2026-11-19T10:32:35.684326-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1382,7 +1382,7 @@
 ]
 },
 "DKNG": {
-"fetched": "2026-11-19T09:32:34.942756-10:00",
+"fetched": "2026-11-19T10:32:35.684326-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1423,53 +1423,53 @@
 ]
 },
 "GOOGL": {
-"fetched": "2026-11-19T09:32:34.942756-10:00",
+"fetched": "2026-11-19T10:32:35.684326-10:00",
 "src": "finnhub",
 "items": [
 [
-"2026-11-19T07:50:02-10:00",
-"Anthropic Is Leasing Its Own Data Centers to Cut Its Reliance on Amazon and Google. Here\u2019s Who Wires, Cools, and Powers Them.",
+"2026-11-19T09:34:02-10:00",
+"3 Dirt Cheap Artificial Intelligence (AI) Stocks to Load Up on Before 2027",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-19T07:35:55-10:00",
-"Is Snap Stock Ready For Shrinking Ad Sales?",
+"2026-11-19T09:25:57-10:00",
+"Anthropic Soars 16% in Record $107 Billion IPO Debut: \u201cA Really Big Coming-of-Age Story\u201d",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-19T07:33:48-10:00",
-"Meta\u2019s Advertising Business Could Drive Another Major Earnings Surprise",
+"2026-11-19T09:17:02-10:00",
+"Missed the Anthropic IPO? These 3 Stocks Give You Immediate Exposure.",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-19T07:33:34-10:00",
-"Alphabet Stocks Rise 3.41% as Anthropic IPO Puts a Price on Google's 13.4% Stake",
+"2026-11-19T08:59:54-10:00",
+"Nvidia will not be the leader 5 years from now: Tiernan Ray",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-19T07:31:50-10:00",
-"Anthropic Now Earns $1.72 \u201cFor Every Dollar of Compute,\u201d Says Aaron Levie. Great News for Amazon and Alphabet",
+"2026-11-19T08:48:51-10:00",
+"Why AI competition from China won't be a risk US tech companies",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-19T07:30:34-10:00",
-"Anthropic's $107 billion sale set to top SpaceX's IPO",
+"2026-11-19T08:42:28-10:00",
+"Google's AI Space Test Moves Beyond a Single Satellite",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-19T07:30:26-10:00",
-"Broadcom Stocks Rise 4.21% as Chip Supplier Joins Anthropic's $26 Billion Placement",
+"2026-11-19T08:28:00-10:00",
+"As Anthropic Goes Public, Open Source AI Is Closing In Says Google Pioneer",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-19T07:30:14-10:00",
-"Microsoft Stocks Rise 3.16% as Anthropic Commits $47.2 Billion Minimum to Azure",
+"2026-11-19T08:24:30-10:00",
+"Why Alphabet's Cheap P/E May Mislead Investors",
 "finnhub/Yahoo"
 ]
 ]
 },
 "HOOD": {
-"fetched": "2026-11-19T09:32:34.942756-10:00",
+"fetched": "2026-11-19T10:32:35.684326-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1515,53 +1515,53 @@
 ]
 },
 "INTC": {
-"fetched": "2026-11-19T09:32:34.942756-10:00",
+"fetched": "2026-11-19T10:32:35.684326-10:00",
 "src": "finnhub",
 "items": [
 [
+"2026-11-19T09:14:07-10:00",
+"What's Happening To Intel's Factory Cash?",
+"finnhub/Yahoo"
+],
+[
+"2026-11-19T09:08:44-10:00",
+"Intel (INTC) Stock Could Be 33% Undervalued On Chip Breakthrough News",
+"finnhub/Yahoo"
+],
+[
+"2026-11-19T09:08:38-10:00",
+"Analysts Are Bullish on This Blue Chip Stock: Should You Buy?",
+"finnhub/Yahoo"
+],
+[
+"2026-11-19T09:02:28-10:00",
+"AMD Is Still Up 125% This Year. Did Today Just Mark the Top for AMD Stock?",
+"finnhub/Yahoo"
+],
+[
+"2026-11-19T08:50:29-10:00",
+"Nvidia, Intel, Micron and Dell Stocks Jump as Anthropic Massive IPO Sparks Rally",
+"finnhub/Yahoo"
+],
+[
+"2026-11-19T08:23:21-10:00",
+"What Micron's Record Margin Means For Your Shares",
+"finnhub/Yahoo"
+],
+[
+"2026-11-19T08:15:09-10:00",
+"Should One Overlooked Number Scare You About AMD Stock?",
+"finnhub/Yahoo"
+],
+[
 "2026-11-19T07:45:22-10:00",
 "AMD Is Actually Cheap With Projected Earnings Now Costing Less Than 50 Cents on The Dollar",
-"finnhub/Yahoo"
-],
-[
-"2026-11-19T07:26:44-10:00",
-"Chip Stocks Waver On Anthropic IPO, AI Prospects",
-"finnhub/Yahoo"
-],
-[
-"2026-11-19T07:24:05-10:00",
-"Intel Stocks Jump 7.87% After Foundry Signs First Outside 18A Customer",
-"finnhub/Yahoo"
-],
-[
-"2026-11-19T07:18:19-10:00",
-"How Much Time Does Cerebras' Cash Buy?",
-"finnhub/Yahoo"
-],
-[
-"2026-11-19T06:59:01-10:00",
-"Why Intel Stock Is Gaining Today",
-"finnhub/Yahoo"
-],
-[
-"2026-11-19T06:43:30-10:00",
-"Intel\u2019s CEO Says It \u201cJust Signed the First Customer\u201d for 18A",
-"finnhub/Yahoo"
-],
-[
-"2026-11-19T06:32:23-10:00",
-"Inside George Soros\u2019s Portfolio: Every Move He Made in the Third Quarter",
-"finnhub/Yahoo"
-],
-[
-"2026-11-19T06:18:52-10:00",
-"What Explains The Drop In Cerebras Stock?",
 "finnhub/Yahoo"
 ]
 ]
 },
 "IONQ": {
-"fetched": "2026-11-19T09:32:34.942756-10:00",
+"fetched": "2026-11-19T10:32:35.684326-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1607,7 +1607,7 @@
 ]
 },
 "IREN": {
-"fetched": "2026-11-19T09:32:34.942756-10:00",
+"fetched": "2026-11-19T10:32:35.684326-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1653,53 +1653,53 @@
 ]
 },
 "JPM": {
-"fetched": "2026-11-19T09:32:34.942756-10:00",
+"fetched": "2026-11-19T10:32:35.684326-10:00",
 "src": "finnhub",
 "items": [
 [
+"2026-11-19T09:27:41-10:00",
+"U.S. banks have another strong year in sight. But what could go wrong?",
+"finnhub/Yahoo"
+],
+[
+"2026-11-19T09:19:22-10:00",
+"Walmart, Costco see some panic-buying after tech outages",
+"finnhub/Yahoo"
+],
+[
+"2026-11-19T09:03:14-10:00",
+"JPMorgan, Visa, and Mastercard disclose cyberattack on third-party vendors",
+"finnhub/Yahoo"
+],
+[
+"2026-11-19T08:45:43-10:00",
+"JPMorgan Chase Reveals Data Breach Involving Third-Party Vendors",
+"finnhub/Yahoo"
+],
+[
+"2026-11-19T08:04:25-10:00",
+"Is A Fed Hike Still Good News For JPMorgan?",
+"finnhub/Yahoo"
+],
+[
+"2026-11-19T08:02:49-10:00",
+"The link between \u2018patchmageddon\u2019 and recent tech outages",
+"finnhub/Yahoo"
+],
+[
+"2026-11-19T08:00:50-10:00",
+"How Retirees Can Turn $1 Million Into Passive Income With These 5 Dividend Stocks",
+"finnhub/Yahoo"
+],
+[
 "2026-11-19T07:47:48-10:00",
 "Citi CEO's Tech Warning Raises the Stakes for the Next Outage",
-"finnhub/Yahoo"
-],
-[
-"2026-11-19T07:00:00-10:00",
-"Top Fed official warns AI bots could pull money out of banks faster than regulators can step in. Keep your savings safe",
-"finnhub/Yahoo"
-],
-[
-"2026-11-19T06:27:29-10:00",
-"Two Big Winners of the Anthropic IPO",
-"finnhub/Yahoo"
-],
-[
-"2026-11-19T06:27:19-10:00",
-"How ex-JPMorgan execs came to occupy Wells Fargo\u2019s top ranks",
-"finnhub/Yahoo"
-],
-[
-"2026-11-19T06:24:00-10:00",
-"JPMorgan Chase says vendors hit in cyberattack, not related to earlier outage",
-"finnhub/Yahoo"
-],
-[
-"2026-11-19T05:08:00-10:00",
-"Citigroup Targets $5T in Client Wealth: Can Organic Growth Pay Off?",
-"finnhub/Yahoo"
-],
-[
-"2026-11-19T04:30:00-10:00",
-"J.P. Morgan Asset Management Launches JPMorgan All Country Research Enhanced Equity ETF (JALL) on NYSE Arca",
-"finnhub/Yahoo"
-],
-[
-"2026-11-19T04:24:00-10:00",
-"Dell Technologies and DraftKings have been highlighted as Zacks Bull and Bear of the Day",
 "finnhub/Yahoo"
 ]
 ]
 },
 "LRCX": {
-"fetched": "2026-11-19T09:32:34.942756-10:00",
+"fetched": "2026-11-19T10:32:35.684326-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1745,7 +1745,7 @@
 ]
 },
 "MARA": {
-"fetched": "2026-11-19T09:32:34.942756-10:00",
+"fetched": "2026-11-19T10:32:35.684326-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1791,101 +1791,106 @@
 ]
 },
 "META": {
-"fetched": "2026-11-19T09:32:34.942756-10:00",
+"fetched": "2026-11-19T10:32:35.684326-10:00",
 "src": "finnhub",
 "items": [
 [
-"2026-11-19T07:35:55-10:00",
-"Is Snap Stock Ready For Shrinking Ad Sales?",
+"2026-11-19T08:45:22-10:00",
+"Meta's New AI Agent Raises Serious Privacy Questions for Investors",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-19T07:33:48-10:00",
-"Meta\u2019s Advertising Business Could Drive Another Major Earnings Surprise",
+"2026-11-19T08:42:45-10:00",
+"Daniel Loeb's Meta Stock Bet Stands Out as Tiger Global Trims",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-19T07:26:56-10:00",
-"A $13 Billion Hedge Fund Just Bought These 3 Stocks",
+"2026-11-19T08:24:30-10:00",
+"Why Alphabet's Cheap P/E May Mislead Investors",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-19T07:26:22-10:00",
-"A $93 Billion Hedge Fund Just Bought These 3 Stocks",
+"2026-11-19T08:23:43-10:00",
+"Trump Media Gains 3% Despite Market Wobble and Looming $883.5 Million Note Deadline; Rumble Falls 3%",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-19T07:22:02-10:00",
-"Anthropic Stock Is Now Trading. Should You Buy ANT Today?",
+"2026-11-19T08:23:21-10:00",
+"Can Google Borrow Another $100 Billion?",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-19T07:10:08-10:00",
-"Do Nvidia, Alphabet, Meta Drops Hurt Your Index Fund?",
+"2026-11-19T08:23:21-10:00",
+"Amazon Beat QQQ, But The Ride Was Much Harder",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-19T07:01:58-10:00",
-"Why Is Oracle Spending $1.61 For Every Cash Dollar?",
+"2026-11-19T08:12:10-10:00",
+"Anthropic Debuted at a $1.5 Trillion Valuation. Here\u2019s What It Would Have to Be Worth to Match Tech\u2019s Greatest Runs",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-19T07:00:48-10:00",
-"Meta rethinks climate goal as AI emissions soar 45%",
+"2026-11-19T08:10:15-10:00",
+"Meta Stock Down 21%: Too Much AI Spending?",
 "finnhub/Yahoo"
 ]
 ]
 },
 "MSFT": {
-"fetched": "2026-11-19T09:32:34.942756-10:00",
+"fetched": "2026-11-19T10:32:35.684326-10:00",
 "src": "finnhub",
 "items": [
 [
-"2026-11-19T07:46:36-10:00",
-"Bill Ackman's Microsoft Bet Has More at Stake Than It Seems",
+"2026-11-19T09:19:22-10:00",
+"Walmart, Costco see some panic-buying after tech outages",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-19T07:30:34-10:00",
-"Anthropic's $107 billion sale set to top SpaceX's IPO",
+"2026-11-19T09:03:02-10:00",
+"ServiceNow vs. UiPath: Which Technology Stock Is a Better Buy for 2027?",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-19T07:30:14-10:00",
-"Microsoft Stocks Rise 3.16% as Anthropic Commits $47.2 Billion Minimum to Azure",
+"2026-11-19T08:45:43-10:00",
+"JPMorgan Chase Reveals Data Breach Involving Third-Party Vendors",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-19T07:26:56-10:00",
-"A $13 Billion Hedge Fund Just Bought These 3 Stocks",
+"2026-11-19T08:42:45-10:00",
+"Daniel Loeb's Meta Stock Bet Stands Out as Tiger Global Trims",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-19T07:26:22-10:00",
-"A $93 Billion Hedge Fund Just Bought These 3 Stocks",
+"2026-11-19T08:33:00-10:00",
+"Qualcomm lays off 100s amid global restructuring, raises $4 billion",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-19T07:24:05-10:00",
-"Intel Stocks Jump 7.87% After Foundry Signs First Outside 18A Customer",
+"2026-11-19T08:30:00-10:00",
+"Microsoft well positioned to weather AI slowdown, says Jefferies after Ignite meetings",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-19T07:10:08-10:00",
-"Do Nvidia, Alphabet, Meta Drops Hurt Your Index Fund?",
+"2026-11-19T08:24:30-10:00",
+"Why Alphabet's Cheap P/E May Mislead Investors",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-19T07:07:00-10:00",
-"Anthropic shares jump 34% in Nasdaq debut after record IPO",
+"2026-11-19T08:23:21-10:00",
+"Why CoreWeave Can't Pay Down Debt From Its Cash",
 "finnhub/Yahoo"
 ]
 ]
 },
 "MSTR": {
-"fetched": "2026-11-19T09:32:34.942756-10:00",
+"fetched": "2026-11-19T10:32:35.684326-10:00",
 "src": "finnhub",
 "items": [
+[
+"2026-11-19T08:31:16-10:00",
+"Grok AI Predicts What Anthropic\u2019s Record IPO Could Mean for Bitcoin",
+"finnhub/Yahoo"
+],
 [
 "2026-11-19T07:32:02-10:00",
 "Strategy Just Got Dropped From MSCI\u2019s Indexes. Can It Keep Buying Bitcoin?",
@@ -1920,64 +1925,84 @@
 "2026-11-18T18:58:05-10:00",
 "Strategy's Bitcoin Strategy Is Unraveling",
 "finnhub/SeekingAlpha"
-],
-[
-"2026-11-18T17:31:11-10:00",
-"MSTR Stock Recovers Overnight After Dip \u2013 But Analyst Downgrades Strategy To 'Sell' As Bitcoin Premium Faces Pressure",
-"finnhub/Yahoo"
 ]
 ]
 },
 "MU": {
-"fetched": "2026-11-19T09:32:34.942756-10:00",
+"fetched": "2026-11-19T10:32:35.684326-10:00",
 "src": "finnhub",
 "items": [
 [
-"2026-11-19T07:31:41-10:00",
-"Memory supply constraints will be even 'tighter' in 2027: Micron CTO",
+"2026-11-19T09:34:02-10:00",
+"3 Dirt Cheap Artificial Intelligence (AI) Stocks to Load Up on Before 2027",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-19T07:27:27-10:00",
-"Micron Stocks Jump 6.63% as 75% of 2027 Capacity Sells Out",
+"2026-11-19T09:14:07-10:00",
+"What's Happening To Intel's Factory Cash?",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-19T07:07:00-10:00",
-"Anthropic shares jump 34% in Nasdaq debut after record IPO",
+"2026-11-19T08:51:25-10:00",
+"5 Best Affordable Blue Chip Stocks to Buy Now",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-19T07:04:22-10:00",
-"Micron\u2019s Next $100 Billion Growth Opportunity Could Surprise Wall Street",
+"2026-11-19T08:50:29-10:00",
+"Nvidia, Intel, Micron and Dell Stocks Jump as Anthropic Massive IPO Sparks Rally",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-19T06:56:02-10:00",
-"Why Micron Stock Is Up Today",
+"2026-11-19T08:47:31-10:00",
+"Micron CEO Has a Stark Message for Memory Chip Buyers",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-19T06:25:00-10:00",
-"Chip stocks rally as Anthropic\u2019s record IPO lifts AI investment sentiment",
+"2026-11-19T08:26:37-10:00",
+"Seagate and Western Digital Climb 4% Despite Tech Profit-Taking After Anthropic\u2019s IPO Debut; SanDisk Edges Higher",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-19T05:52:13-10:00",
-"Micron Is 44% Below Its High With Over 75% of Its 2027 Output Already Committed",
+"2026-11-19T08:23:21-10:00",
+"What Micron's Record Margin Means For Your Shares",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-19T05:45:39-10:00",
-"Micron Cratered 20% This Month: This Wall Street Pro is Ardent That It Quadruples in Price From Here",
+"2026-11-19T08:23:20-10:00",
+"What Does A Fed Hike Mean For AI Stocks?",
 "finnhub/Yahoo"
 ]
 ]
 },
 "NFLX": {
-"fetched": "2026-11-19T09:32:34.942756-10:00",
+"fetched": "2026-11-19T10:32:35.684326-10:00",
 "src": "finnhub",
 "items": [
+[
+"2026-11-19T09:17:13-10:00",
+"Fixing Netflix's Growing Subscriber Satisfaction Problem",
+"finnhub/Yahoo"
+],
+[
+"2026-11-19T08:47:26-10:00",
+"Why Netflix's Fall Could Pay Off At Tax Time",
+"finnhub/Yahoo"
+],
+[
+"2026-11-19T08:24:30-10:00",
+"Why Alphabet's Cheap P/E May Mislead Investors",
+"finnhub/Yahoo"
+],
+[
+"2026-11-19T08:23:21-10:00",
+"Amazon Beat QQQ, But The Ride Was Much Harder",
+"finnhub/Yahoo"
+],
+[
+"2026-11-19T08:02:31-10:00",
+"Are You Overpaying For Alphabet Stock Versus Its Tech Rivals?",
+"finnhub/Yahoo"
+],
 [
 "2026-11-19T05:55:12-10:00",
 "With Alibaba Stock Down 45% In The Last Year, Michael Burry Reveals The Price He\u2019d Buy",
@@ -1992,82 +2017,57 @@
 "2026-11-19T05:30:06-10:00",
 "Netflix (NFLX) Down 8% Since Last Earnings Report: Can It Rebound?",
 "finnhub/Yahoo"
-],
-[
-"2026-11-19T04:25:45-10:00",
-"With Netflix Stock Down Nearly 46% In The Last Year, Michael Burry Reveals The Price He\u2019d Think About Buying",
-"finnhub/Yahoo"
-],
-[
-"2026-11-19T03:30:00-10:00",
-"A Billionaire's Bet on Hollywood Puts Media and Space Stocks in Focus",
-"finnhub/Yahoo"
-],
-[
-"2026-11-19T03:00:08-10:00",
-"Disney CEO Calls Netflix Licensing Deal a \u2018Smart Bet,\u2019 Says In-House AI Cuts Film Rendering Compute Needs by 30%",
-"finnhub/Yahoo"
-],
-[
-"2026-11-19T02:00:00-10:00",
-"GTA VI: Why the 13-year wait could be worth $8 billion",
-"finnhub/Yahoo"
-],
-[
-"2026-11-19T01:51:28-10:00",
-"What Are Netflix Stock Bears Missing?",
-"finnhub/Yahoo"
 ]
 ]
 },
 "NVDA": {
-"fetched": "2026-11-19T09:32:34.942756-10:00",
+"fetched": "2026-11-19T10:32:35.684326-10:00",
 "src": "finnhub",
 "items": [
 [
-"2026-11-19T07:52:40-10:00",
-"Anthropic's $81 billion IPO puts AI valuations to the test",
+"2026-11-19T09:49:17-10:00",
+"Short Seller Raises Questions About Nvidia's Former Top Sales Executive. $2.5 Billion China Chip Case In Focus.",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-19T07:51:00-10:00",
-"What to know about Anthropic's massive IPO as it breaks records on Wall Street",
+"2026-11-19T09:42:17-10:00",
+"\u2018SpaceX Has Gone All In With Nvidia\u2019: Nvidia\u2019s Biggest Customer Is Also Its Biggest Stock Holding at $19.7B",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-19T07:49:48-10:00",
-"Futu Holdings Limited Q3 2026 Earnings Call Summary",
+"2026-11-19T09:35:02-10:00",
+"Anthropic vs. SpaceX: How 2026's Two Biggest IPOs Stack Up.",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-19T07:49:15-10:00",
-"Warner Music Group Corp. Q4 2026 Earnings Call Summary",
+"2026-11-19T09:34:02-10:00",
+"3 Dirt Cheap Artificial Intelligence (AI) Stocks to Load Up on Before 2027",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-19T07:49:13-10:00",
-"Arbe Robotics Ltd. Q3 2026 Earnings Call Summary",
+"2026-11-19T09:22:08-10:00",
+"Trump Discloses Up to $380,000 in Nvidia Buys, Calls Huang\u2019s Exit \u2018Such a Tragedy\u2019",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-19T07:45:22-10:00",
-"AMD Is Actually Cheap With Projected Earnings Now Costing Less Than 50 Cents on The Dollar",
+"2026-11-19T09:20:02-10:00",
+"If I Could Buy Only 1 Dividend Stock With $1,000 Before 2027, It Would Be This One",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-19T07:45:06-10:00",
-"$310 And Falling: Why Nvidia\u2019s Turmoil and AI Server Margin Pressure Are Dragging Dell Lower Before Earnings",
+"2026-11-19T09:18:02-10:00",
+"Why SpaceX Stock Is Down Today",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-19T07:43:43-10:00",
-"Why AMD Stock Was Plunging on Thursday",
+"2026-11-19T09:17:02-10:00",
+"Missed the Anthropic IPO? These 3 Stocks Give You Immediate Exposure.",
 "finnhub/Yahoo"
 ]
 ]
 },
 "OKLO": {
-"fetched": "2026-11-19T09:32:34.942756-10:00",
+"fetched": "2026-11-19T10:32:35.684326-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2093,9 +2093,29 @@
 ]
 },
 "ORCL": {
-"fetched": "2026-11-19T09:32:34.942756-10:00",
+"fetched": "2026-11-19T10:32:35.684326-10:00",
 "src": "finnhub",
 "items": [
+[
+"2026-11-19T08:23:21-10:00",
+"Why CoreWeave Can't Pay Down Debt From Its Cash",
+"finnhub/Yahoo"
+],
+[
+"2026-11-19T08:23:21-10:00",
+"Can Google Borrow Another $100 Billion?",
+"finnhub/Yahoo"
+],
+[
+"2026-11-19T08:23:20-10:00",
+"What Does A Fed Hike Mean For AI Stocks?",
+"finnhub/Yahoo"
+],
+[
+"2026-11-19T08:00:19-10:00",
+"Nvidia Holders' Real Risk Sits With Its Neocloud Buyers",
+"finnhub/Yahoo"
+],
 [
 "2026-11-19T07:01:58-10:00",
 "Why Is Oracle Spending $1.61 For Every Cash Dollar?",
@@ -2115,33 +2135,33 @@
 "2026-11-19T05:23:38-10:00",
 "Opinion: Trump May Have Finally Killed the AI Trade",
 "finnhub/Yahoo"
-],
-[
-"2026-11-19T05:15:00-10:00",
-"IT Asset Management (ITAM) Software - Global Strategic Business Report 2026: Capitalize on the $3.5 Billion Market by 2032 with ServiceNow, IBM, Microsoft, Orac",
-"finnhub/Yahoo"
-],
-[
-"2026-11-19T04:48:00-10:00",
-"Global Job Costing Market Report 2026 | Capitalize on AI and Cloud as Market Hits $4.68 Billion by 2030 at 9.2% CAGR; Microsoft, Oracle, SAP, Intuit, and Autode",
-"finnhub/Yahoo"
-],
-[
-"2026-11-19T04:36:44-10:00",
-"Anthropic Or OpenAI: Can Both Win?",
-"finnhub/Yahoo"
-],
-[
-"2026-11-19T04:34:23-10:00",
-"Bloom Energy Soars 6% as One-Time Skeptic BMO Upgrades on Anthropic IPO Day",
-"finnhub/Yahoo"
 ]
 ]
 },
 "PLTR": {
-"fetched": "2026-11-19T09:32:34.942756-10:00",
+"fetched": "2026-11-19T10:32:35.684326-10:00",
 "src": "finnhub",
 "items": [
+[
+"2026-11-19T09:11:35-10:00",
+"How Does Palantir Technologies (PLTR) FedStart Milestone Change Its Federal AI Case?",
+"finnhub/Yahoo"
+],
+[
+"2026-11-19T08:50:46-10:00",
+"Why Palantir Stock is Jumping Today",
+"finnhub/Yahoo"
+],
+[
+"2026-11-19T08:50:02-10:00",
+"Warren Buffett Says Berkshire Will Never Prefer Cash Over Good Businesses. History Says Your Portfolio Shouldn't Either.",
+"finnhub/Yahoo"
+],
+[
+"2026-11-19T08:33:02-10:00",
+"Arista Networks vs. Palantir Technologies: Which Technology Stock Is a Better Buy for 2027?",
+"finnhub/Yahoo"
+],
 [
 "2026-11-19T06:35:00-10:00",
 "BigBear.ai Stock Down 19.4% in a Month: Is Buying the Dip Too Risky?",
@@ -2161,31 +2181,11 @@
 "2026-11-19T01:03:11-10:00",
 "ETFs Are Net Sellers of Palantir (PLTR) on Nov. 17",
 "finnhub/Yahoo"
-],
-[
-"2026-11-18T23:27:45-10:00",
-"Palantir just posted a record quarter\u2014so why did the stock sink?",
-"finnhub/Yahoo"
-],
-[
-"2026-11-18T22:22:22-10:00",
-"Kevin O\u2019Leary Warns China Is Doing \u2018Everything\u2019 to Outpace North America, Says Industrial Moratoriums Could Weaken Middle Class",
-"finnhub/Benzinga"
-],
-[
-"2026-11-18T21:59:09-10:00",
-"Palantir: I'm Still Bullish, But Not Adding More Yet",
-"finnhub/SeekingAlpha"
-],
-[
-"2026-11-18T19:56:05-10:00",
-"Russian Agent Reportedly Stalked Palantir Employees, Photographed Laptop Screens and Tracked One Worker for 30 Miles: DOJ Calls It 'State-Sponsored Operation to",
-"finnhub/Benzinga"
 ]
 ]
 },
 "PLUG": {
-"fetched": "2026-11-19T09:32:34.942756-10:00",
+"fetched": "2026-11-19T10:32:35.684326-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2231,9 +2231,14 @@
 ]
 },
 "PYPL": {
-"fetched": "2026-11-19T09:32:34.942756-10:00",
+"fetched": "2026-11-19T10:32:35.684326-10:00",
 "src": "finnhub",
 "items": [
+[
+"2026-11-19T07:33:00-10:00",
+"CRCL Has Fallen 36.8% in a Month: Is Circle Stock Ready to Rebound?",
+"finnhub/Yahoo"
+],
 [
 "2026-11-19T06:37:00-10:00",
 "PayPal\u2019s Comeback Plan Has Been Mixed. This Analyst Can\u2019t Wait and Says Time to Sell.",
@@ -2268,18 +2273,38 @@
 "2026-11-18T03:11:54-10:00",
 "Should You Buy Coinbase Stock Now Or Wait?",
 "finnhub/Yahoo"
-],
-[
-"2026-11-18T02:35:00-10:00",
-"I've Been Wrong About Paypal Stock for 2 Years. Here's Why I'm Finally Changing My Mind.",
-"finnhub/Yahoo"
 ]
 ]
 },
 "QCOM": {
-"fetched": "2026-11-19T09:32:34.942756-10:00",
+"fetched": "2026-11-19T10:32:35.684326-10:00",
 "src": "finnhub",
 "items": [
+[
+"2026-11-19T09:14:07-10:00",
+"What's Happening To Intel's Factory Cash?",
+"finnhub/Yahoo"
+],
+[
+"2026-11-19T08:33:00-10:00",
+"Qualcomm lays off 100s amid global restructuring, raises $4 billion",
+"finnhub/Yahoo"
+],
+[
+"2026-11-19T08:23:21-10:00",
+"What Micron's Record Margin Means For Your Shares",
+"finnhub/Yahoo"
+],
+[
+"2026-11-19T08:23:20-10:00",
+"Can SiTime Stock Double From Here?",
+"finnhub/Yahoo"
+],
+[
+"2026-11-19T08:15:09-10:00",
+"Should One Overlooked Number Scare You About AMD Stock?",
+"finnhub/Yahoo"
+],
 [
 "2026-11-19T07:03:02-10:00",
 "Qualcomm vs. Taiwan Semiconductor: Diverging Revenue Trends for Major Chipmakers",
@@ -2294,36 +2319,11 @@
 "2026-11-19T05:20:52-10:00",
 "4 Tech Dividend Stocks Yielding Over 2% That Retirees Can Own for Growth and Income",
 "finnhub/Yahoo"
-],
-[
-"2026-11-19T04:36:00-10:00",
-"Global Wired Interface Market Report 2026: Size, Share, Trends, and Forecast to 2030 | Capitalize on High-Speed, Fiber Optic Demand with Intel, Broadcom, Qualco",
-"finnhub/Yahoo"
-],
-[
-"2026-11-19T04:31:00-10:00",
-"Global Personal Computer Cards and Modems Market Report 2026-2030 | Capitalize on 5G, Wi-Fi 7 and Edge IoT as Samsung, Qualcomm, ZTE and Quectel Drive a $9.26 B",
-"finnhub/Yahoo"
-],
-[
-"2026-11-19T03:17:13-10:00",
-"3 Tech Dividend Stocks to Buy in December as AI Spending Accelerates",
-"finnhub/Yahoo"
-],
-[
-"2026-11-19T03:02:46-10:00",
-"Buy, Sell, Or Hold Anthropic Stock At $100?",
-"finnhub/Yahoo"
-],
-[
-"2026-11-19T02:37:19-10:00",
-"The Dates That Matter Most For Micron Stock",
-"finnhub/Yahoo"
 ]
 ]
 },
 "RGTI": {
-"fetched": "2026-11-19T09:32:34.942756-10:00",
+"fetched": "2026-11-19T10:32:35.684326-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2369,9 +2369,14 @@
 ]
 },
 "RKLB": {
-"fetched": "2026-11-19T09:32:34.942756-10:00",
+"fetched": "2026-11-19T10:32:35.684326-10:00",
 "src": "finnhub",
 "items": [
+[
+"2026-11-19T08:16:56-10:00",
+"Rocket Lab (RKLB) Stock Could Be Overvalued On Record Backlog Growth",
+"finnhub/Yahoo"
+],
 [
 "2026-11-19T07:03:43-10:00",
 "AST SpaceMobile Is Down 37% in a Month. Can B. Riley\u2019s Upgrade Get ASTS Stock Back to $48?",
@@ -2406,16 +2411,11 @@
 "2026-11-19T04:18:24-10:00",
 "How Much Downside Is Left In Rocket Lab Stock?",
 "finnhub/Yahoo"
-],
-[
-"2026-11-19T04:10:26-10:00",
-"Redwire Climbs 4% on $15 Million AscendArc Solar Deal and Oppenheimer Initiation; AST SpaceMobile Jumps 8%, Rocket Lab Gains 3%",
-"finnhub/Yahoo"
 ]
 ]
 },
 "SHOP": {
-"fetched": "2026-11-19T09:32:34.942756-10:00",
+"fetched": "2026-11-19T10:32:35.684326-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2461,9 +2461,14 @@
 ]
 },
 "SMCI": {
-"fetched": "2026-11-19T09:32:34.942756-10:00",
+"fetched": "2026-11-19T10:32:35.684326-10:00",
 "src": "finnhub",
 "items": [
+[
+"2026-11-19T09:49:17-10:00",
+"Short Seller Raises Questions About Nvidia's Former Top Sales Executive. $2.5 Billion China Chip Case In Focus.",
+"finnhub/Yahoo"
+],
 [
 "2026-11-19T06:46:00-10:00",
 "Vertiv's 800 VDC Push Boosts AI Prospects: Can It Beat APH and SMCI?",
@@ -2498,16 +2503,11 @@
 "2026-11-18T09:06:26-10:00",
 "S&P 500 Most Active Stocks on Nov. 18: AES Leads Volume, Freeport-McMoRan Drops 6.45%",
 "finnhub/ChartMill"
-],
-[
-"2026-11-18T09:04:59-10:00",
-"Supermicro Has an AI Bottleneck and Is Turning to AMD",
-"finnhub/Yahoo"
 ]
 ]
 },
 "SOFI": {
-"fetched": "2026-11-19T09:32:34.942756-10:00",
+"fetched": "2026-11-19T10:32:35.684326-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2553,9 +2553,34 @@
 ]
 },
 "TSLA": {
-"fetched": "2026-11-19T09:32:34.942756-10:00",
+"fetched": "2026-11-19T10:32:35.684326-10:00",
 "src": "finnhub",
 "items": [
+[
+"2026-11-19T09:03:57-10:00",
+"Trump's New Filing Reveals Nvidia, SpaceX And Tesla Purchases. White House Says He Didn't Direct Trades.",
+"finnhub/Yahoo"
+],
+[
+"2026-11-19T08:36:55-10:00",
+"Tesla Stocks Rise as Musk Pledges More Output From Shanghai Plant",
+"finnhub/Yahoo"
+],
+[
+"2026-11-19T08:23:20-10:00",
+"Can Tesla's Cash Cover $20 Billion Of Spending?",
+"finnhub/Yahoo"
+],
+[
+"2026-11-19T08:12:10-10:00",
+"Anthropic Debuted at a $1.5 Trillion Valuation. Here\u2019s What It Would Have to Be Worth to Match Tech\u2019s Greatest Runs",
+"finnhub/Yahoo"
+],
+[
+"2026-11-19T08:04:29-10:00",
+"Tesla Stock Rises as Musk Doubles Down on China",
+"finnhub/Yahoo"
+],
 [
 "2026-11-19T07:48:52-10:00",
 "Elon Musk Wants More Teslas From Shanghai as China Sales Fall",
@@ -2570,36 +2595,11 @@
 "2026-11-19T07:04:33-10:00",
 "TSLL 2X Tesla ETF Is Down 50% in 2026: Can It Double to $20 from Here?",
 "finnhub/Yahoo"
-],
-[
-"2026-11-19T06:58:02-10:00",
-"Prediction: SpaceX Will Be the Largest Company in the World by 2040",
-"finnhub/Yahoo"
-],
-[
-"2026-11-19T06:30:42-10:00",
-"Elon Musk Says He Shouldn\u2019t Get a Tesla Payday Just for Merging With SpaceX. Odds of a 2026 Announcement Slide to 16%",
-"finnhub/Yahoo"
-],
-[
-"2026-11-19T06:26:35-10:00",
-"A $78 Billion Hedge Fund Just Bought These 3 Stocks",
-"finnhub/Yahoo"
-],
-[
-"2026-11-19T05:34:58-10:00",
-"Tesla Stock Could Be Worth Much More in 2027. Here\u2019s the Number I\u2019m Watching",
-"finnhub/Yahoo"
-],
-[
-"2026-11-19T05:32:35-10:00",
-"Elon Musk Says Tesla and SpaceX Would \u201cProbably\u201d Be Better Together",
-"finnhub/Yahoo"
 ]
 ]
 },
 "TSM": {
-"fetched": "2026-11-19T09:32:34.942756-10:00",
+"fetched": "2026-11-19T10:32:35.684326-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2645,9 +2645,14 @@
 ]
 },
 "UBER": {
-"fetched": "2026-11-19T09:32:34.942756-10:00",
+"fetched": "2026-11-19T10:32:35.684326-10:00",
 "src": "finnhub",
 "items": [
+[
+"2026-11-19T08:15:35-10:00",
+"Tractor Supply (TSCO) Expands Delivery As Its Stock Looks Slightly Pricey",
+"finnhub/Yahoo"
+],
 [
 "2026-11-19T06:06:50-10:00",
 "$100K In Anthropic Stock: Buy Now Or Wait?",
@@ -2682,64 +2687,69 @@
 "2026-11-19T01:45:00-10:00",
 "NIQ Appoints Danny Lange and Chris Tung to Board of Directors",
 "finnhub/Yahoo"
-],
-[
-"2026-11-19T01:06:51-10:00",
-"iShares U.S. Transportation (IYT) Sells Union Pacific and Uber on Nov. 17",
-"finnhub/Yahoo"
 ]
 ]
 },
 "WMT": {
-"fetched": "2026-11-19T09:32:34.942756-10:00",
+"fetched": "2026-11-19T10:32:35.684326-10:00",
 "src": "finnhub",
 "items": [
 [
-"2026-11-19T07:49:45-10:00",
-"Walmart's Sales Hit $188.8 Billion. Its Online Business Is Growing Much Faster Than Stores.",
+"2026-11-19T09:26:55-10:00",
+"Tariff Refunds Appear to Fund Price Cuts at Target, Walmart, But No Direct Payouts to Customers",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-19T07:22:25-10:00",
-"Top Midday Stories: Anthropic Makes Nasdaq Debut; Walmart Raises Guidance But Shares Fall",
+"2026-11-19T09:19:32-10:00",
+"Walmart\u2019s CEO Revealed the Diesel Price That Could End the Company\u2019s Low-Price Streak",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-19T07:19:40-10:00",
-"Walmart Raised Its Outlook Again. At 46x Earnings, the Stock Fell Anyway",
+"2026-11-19T09:19:22-10:00",
+"Walmart, Costco see some panic-buying after tech outages",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-19T07:05:18-10:00",
-"Walmart Stocks Fall 1.95% Despite Earnings Beat and Raised Outlook",
+"2026-11-19T08:53:09-10:00",
+"TD Cowen Backs Walmart Despite a Soft Fourth-Quarter Guide",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-19T07:04:31-10:00",
-"Stock Market Today: Indexes Fall As Anthropic Starts Trading; These Players Hit Sell-Rule Alarms (Live Coverage)",
+"2026-11-19T08:48:15-10:00",
+"Walmart: 3 Key Takeaways for Long-Term Investors",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-19T06:39:30-10:00",
-"Sky-high diesel prices take a $2 billion bite out of Walmart",
+"2026-11-19T08:48:13-10:00",
+"Walmart Stock Falls After Earnings Beat. Why Wall Street Wasn't Impressed",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-19T06:16:28-10:00",
-"What Walmart (WMT) Said on Its Q3 Earnings Call",
+"2026-11-19T08:33:53-10:00",
+"Stock Market Today: Major Indexes, AI Players Slide After Anthropic's Debut (Live Coverage)",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-19T06:05:06-10:00",
-"Walmart Beats And Raises Again, Stock Slides Anyway",
+"2026-11-19T08:26:59-10:00",
+"Caterpillar CEO Joe Creed joins Walmart board of directors",
 "finnhub/Yahoo"
 ]
 ]
 },
 "XOM": {
-"fetched": "2026-11-19T09:32:34.942756-10:00",
+"fetched": "2026-11-19T10:32:35.684326-10:00",
 "src": "finnhub",
 "items": [
+[
+"2026-11-19T08:00:50-10:00",
+"How Retirees Can Turn $1 Million Into Passive Income With These 5 Dividend Stocks",
+"finnhub/Yahoo"
+],
+[
+"2026-11-19T07:05:00-10:00",
+"Will Eni's Expanded Lummus Partnership Boost Chemical Growth?",
+"finnhub/Yahoo"
+],
 [
 "2026-11-19T05:41:39-10:00",
 "Erste Group Upgrades ExxonMobil (XOM). Here\u2019s What Drove It.",
@@ -2769,23 +2779,18 @@
 "2026-11-19T03:14:00-10:00",
 "How XOM's Strong Balance Sheet Helps Manage Oil Market Volatility",
 "finnhub/Yahoo"
-],
-[
-"2026-11-19T02:41:40-10:00",
-"What Sent Valero Energy Stock Lower?",
-"finnhub/Yahoo"
-],
-[
-"2026-11-19T01:39:01-10:00",
-"Should You Buy Occidental Stock For Its Cash Flow?",
-"finnhub/Yahoo"
 ]
 ]
 },
 "NKE": {
-"fetched": "2026-11-19T09:32:34.942756-10:00",
+"fetched": "2026-11-19T10:32:35.684326-10:00",
 "src": "finnhub",
 "items": [
+[
+"2026-11-19T08:07:00-10:00",
+"Nike\u2019s CEO admitted a miss, but Morgan Stanley sees a bigger one",
+"finnhub/Yahoo"
+],
 [
 "2026-11-19T06:50:47-10:00",
 "A 67-Year-Old With $500,000 in Nike, HP and Truist Collects $1,872 a Month in Dividends. How Safe Is Each Check?",
@@ -2820,56 +2825,51 @@
 "2026-11-19T00:55:00-10:00",
 "Sporticast: Nike\u2019s Outlook Disappoints Investors Again",
 "finnhub/Yahoo"
-],
-[
-"2026-11-18T21:16:35-10:00",
-"Nike: The Investor Day Event Does Not Change My Bearish Stance",
-"finnhub/SeekingAlpha"
 ]
 ]
 },
 "SPCX": {
-"fetched": "2026-11-19T09:32:34.942756-10:00",
+"fetched": "2026-11-19T10:32:35.684326-10:00",
 "src": "finnhub",
 "items": [
 [
-"2026-11-19T07:56:39-10:00",
-"Is Anthropic the reason for bitcoin's pullback?",
+"2026-11-19T09:48:00-10:00",
+"Ripple CEO Blames Anthropic IPO for Crypto Selloff, Predicts Rally",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-19T07:52:39-10:00",
-"Anthropic Opens Today With Demand Seven Times the Offering, So Remember What Musk\u2019s SpaceX Did After Its Debut",
+"2026-11-19T09:46:51-10:00",
+"Billionaire Stanley Druckenmiller Cut TSMC 94% in One Quarter, Leaving Just $14.9 Million",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-19T07:51:00-10:00",
-"What to know about Anthropic's massive IPO as it breaks records on Wall Street",
+"2026-11-19T09:42:17-10:00",
+"\u2018SpaceX Has Gone All In With Nvidia\u2019: Nvidia\u2019s Biggest Customer Is Also Its Biggest Stock Holding at $19.7B",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-19T07:50:02-10:00",
-"Anthropic Is Leasing Its Own Data Centers to Cut Its Reliance on Amazon and Google. Here\u2019s Who Wires, Cools, and Powers Them.",
+"2026-11-19T09:37:42-10:00",
+"Anthropic pulled off the biggest IPO ever. What that means, by the numbers",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-19T07:49:59-10:00",
-"Anthropic's Record IPO Sets Up a $1.5 Trillion Test for Claude",
+"2026-11-19T09:35:02-10:00",
+"Anthropic vs. SpaceX: How 2026's Two Biggest IPOs Stack Up.",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-19T07:30:34-10:00",
-"Anthropic's $107 billion sale set to top SpaceX's IPO",
+"2026-11-19T09:30:00-10:00",
+"Cameron County rejects tax abatement for SpaceX\u2019s $24B data center",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-19T07:29:01-10:00",
-"Anthropic Just Raised $81 Billion in the Biggest IPO Ever, Ahead of SpaceX. But Is It the Better Buy?",
+"2026-11-19T09:18:02-10:00",
+"Why SpaceX Stock Is Down Today",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-19T07:27:07-10:00",
-"SpaceX Offers a Clue to What Anthropic\u2019s IPO Could Mean for QQQ Holders",
+"2026-11-19T09:14:54-10:00",
+"Moomoo CEO says retail investors used options to hedge, position for Anthropic IPO",
 "finnhub/Yahoo"
 ]
 ]
