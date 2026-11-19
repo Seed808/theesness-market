@@ -1,17 +1,16 @@
 {
  "auto": {
-  "NKE": {
-   "added": "2026-11-16",
-   "why": "Schwab most-active 2 of last 5 days; avg vol 33.8M, options liquid both sides",
-   "liq_fails": 2
-  },
   "SPCX": {
    "added": "2026-11-16",
    "why": "Schwab most-active 2 of last 5 days; avg vol 101.3M, options liquid both sides",
    "liq_fails": 0
+  },
+  "PG": {
+   "added": "2026-11-19",
+   "why": "Schwab most-active 2 of last 5 days; avg vol 9.4M, options liquid both sides"
   }
  },
- "last_run": "2026-11-18",
+ "last_run": "2026-11-19",
  "log": [
   {
    "on": "2026-11-16",
@@ -24,68 +23,112 @@
    "action": "add",
    "sym": "SPCX",
    "why": "Schwab most-active 2 of last 5 days; avg vol 101.3M, options liquid both sides"
+  },
+  {
+   "on": "2026-11-19",
+   "action": "add",
+   "sym": "PG",
+   "why": "Schwab most-active 2 of last 5 days; avg vol 9.4M, options liquid both sides"
+  },
+  {
+   "on": "2026-11-19",
+   "action": "drop",
+   "sym": "NKE",
+   "why": "options thin 3 checks in a row (calls: OI 74 < 500; puts: spread 18.2% > 10.0%)"
   }
  ],
  "passed_over": {
   "AKAN": {
-   "on": "2026-11-18",
+   "on": "2026-11-19",
    "why": "no option chain"
   },
   "SHFS": {
-   "on": "2026-11-18",
+   "on": "2026-11-19",
    "why": "no option chain"
   },
   "YFOR": {
-   "on": "2026-11-18",
-   "why": "no option chain"
+   "on": "2026-11-19",
+   "why": "avg volume 395,157 < 1,000,000"
   },
   "CSCO": {
-   "on": "2026-11-18",
-   "why": "calls: spread 23.7% > 10.0%; puts: spread 58.7% > 10.0%"
+   "on": "2026-11-19",
+   "why": "calls: spread 108.8% > 10.0%; puts: spread 64.9% > 10.0%"
   },
   "F": {
-   "on": "2026-11-18",
-   "why": "calls: spread 22.2% > 10.0%; puts: spread 28.6% > 10.0%"
+   "on": "2026-11-19",
+   "why": "calls: spread 66.7% > 10.0%; puts: spread 40.0% > 10.0%"
   },
   "PG": {
    "on": "2026-11-18",
    "why": "calls: spread 53.1% > 10.0%; puts: spread 19.4% > 10.0%"
   },
   "KO": {
-   "on": "2026-11-18",
-   "why": "calls: spread 20.0% > 10.0%; puts: spread 20.1% > 10.0%"
+   "on": "2026-11-19",
+   "why": "calls: spread 52.2% > 10.0%; puts: spread 72.2% > 10.0%"
   },
   "T": {
-   "on": "2026-11-18",
-   "why": "calls: spread 14.0% > 10.0%; puts: spread 90.9% > 10.0%"
+   "on": "2026-11-19",
+   "why": "calls: spread 50.0% > 10.0%; puts: spread 54.5% > 10.0%"
   },
   "DIS": {
-   "on": "2026-11-18",
-   "why": "calls: spread 14.6% > 10.0%; puts: OI 325 < 500"
+   "on": "2026-11-19",
+   "why": "calls: spread 46.8% > 10.0%; puts: spread 41.6% > 10.0%"
   },
   "POLA": {
-   "on": "2026-11-18",
+   "on": "2026-11-19",
    "why": "no option chain"
   },
   "LICN": {
-   "on": "2026-11-18",
+   "on": "2026-11-19",
    "why": "no option chain"
   },
   "HIHO": {
-   "on": "2026-11-18",
+   "on": "2026-11-19",
    "why": "no option chain"
   },
   "UNH": {
-   "on": "2026-11-18",
-   "why": "puts: OI 9 < 500"
+   "on": "2026-11-19",
+   "why": "calls: OI 236 < 500; puts: OI 235 < 500"
   },
   "MRVL": {
-   "on": "2026-11-18",
-   "why": "calls: OI 409 < 500"
+   "on": "2026-11-19",
+   "why": "calls: OI 406 < 500"
   },
   "GRAB": {
-   "on": "2026-11-18",
-   "why": "calls: no bid; puts: spread 100.0% > 10.0%"
+   "on": "2026-11-19",
+   "why": "calls: spread 100.0% > 10.0%; puts: no bid"
+  },
+  "NKE": {
+   "on": "2026-11-19",
+   "why": "calls: OI 74 < 500; puts: spread 18.2% > 10.0%"
+  },
+  "GMM": {
+   "on": "2026-11-19",
+   "why": "no option chain"
+  },
+  "CHSN": {
+   "on": "2026-11-19",
+   "why": "no option chain"
+  },
+  "FNGR": {
+   "on": "2026-11-19",
+   "why": "calls: OI 400 < 500; puts: no strikes"
+  },
+  "PFE": {
+   "on": "2026-11-19",
+   "why": "calls: spread 15.4% > 10.0%; puts: spread 62.1% > 10.0%"
+  },
+  "MMM": {
+   "on": "2026-11-19",
+   "why": "calls: spread 74.6% > 10.0%; puts: OI 67 < 500"
+  },
+  "HON": {
+   "on": "2026-11-19",
+   "why": "calls: spread 90.0% > 10.0%; puts: OI 51 < 500"
+  },
+  "AES": {
+   "on": "2026-11-19",
+   "why": "calls: no bid; puts: no bid"
   }
  }
 }
