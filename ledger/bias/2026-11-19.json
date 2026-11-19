@@ -25,8 +25,8 @@
  ],
  "last_reading": {
   "regime": "BEAR",
-  "clean": true,
-  "why": "ES red (-0.44%), NQ red (-0.27%), YM red (-1.02%); ES+YM red \u2192 broad bear, puts favored",
-  "at": "2026-11-19T05:52:35.749022-10:00"
+  "clean": false,
+  "why": "ES red (-0.17%), NQ green (+0.38%), YM red (-0.93%); ES+YM red \u2192 broad bear, puts favored",
+  "at": "2026-11-19T06:02:39.569619-10:00"
  }
 }
