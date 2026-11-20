@@ -1,8 +1,18 @@
 {
 "SPY": {
-"fetched": "2026-11-20T08:32:37.839436-10:00",
+"fetched": "2026-11-20T09:42:33.557548-10:00",
 "src": "finnhub",
 "items": [
+[
+"2026-11-20T07:31:58-10:00",
+"The Inflation Math In Five Lines",
+"finnhub/Yahoo"
+],
+[
+"2026-11-20T06:36:11-10:00",
+"Managed Futures Are a Hedge Fund Staple. RSST Stacks $1 of Them on Top of $1 of U.S. Stocks",
+"finnhub/Yahoo"
+],
 [
 "2026-11-20T04:00:12-10:00",
 "Exchange-Traded Funds, Equity Futures Fall Pre-Bell Friday Amid Continued AI Stock Selloff",
@@ -14,91 +24,96 @@
 "finnhub/ChartMill"
 ],
 [
-"2026-11-20T02:57:32-10:00",
-"The S&P 500 Just Had Its Biggest Reversal Since March 2020",
-"finnhub/Yahoo"
-],
-[
-"2026-11-20T02:36:06-10:00",
-"EOI: Weaker Results Continue As Discount Widens Even Further",
+"2026-11-20T03:49:48-10:00",
+"Why I'm Buying This Market Crash",
 "finnhub/SeekingAlpha"
 ],
 [
-"2026-11-20T02:35:00-10:00",
-"Volatility Surging - What Smart Options, Futures, And Stock Traders Are Doing Now",
+"2026-11-20T03:43:00-10:00",
+"Performance Insights - November 2026",
 "finnhub/SeekingAlpha"
 ],
 [
-"2026-11-20T01:47:08-10:00",
-"Trump's Accounts Turned Defensive",
+"2026-11-20T03:25:28-10:00",
+"Year-End Tax Loss Harvesting Ideas For 2026: Wash Rules, Sector Swaps & More",
 "finnhub/SeekingAlpha"
 ],
 [
-"2026-11-20T01:44:34-10:00",
-"SP500: Liquidity Shock, It's A Tactical Buying Opportunity",
+"2026-11-20T03:01:54-10:00",
+"Dividend Investing When Things Go South",
 "finnhub/SeekingAlpha"
-],
-[
-"2026-11-20T01:03:39-10:00",
-"SPDR S&P 500 ETF (SPY) Sells Apple and Microsoft on Nov. 18",
-"finnhub/Yahoo"
 ]
 ]
 },
 "QQQ": {
-"fetched": "2026-11-20T08:32:37.839436-10:00",
+"fetched": "2026-11-20T09:42:33.557548-10:00",
 "src": "finnhub",
 "items": [
+[
+"2026-11-20T04:14:50-10:00",
+"What To Do After Onto Innovation Fell Over 40% From Its June 2026 Peak",
+"finnhub/SeekingAlpha"
+],
 [
 "2026-11-20T03:52:09-10:00",
 "Stock Market Today: Anthropic Soars on Debut While the Rest of Wall Street Sinks",
 "finnhub/ChartMill"
 ],
 [
-"2026-11-20T02:35:00-10:00",
-"Volatility Surging - What Smart Options, Futures, And Stock Traders Are Doing Now",
+"2026-11-20T03:49:48-10:00",
+"Why I'm Buying This Market Crash",
 "finnhub/SeekingAlpha"
 ],
 [
-"2026-11-20T01:47:08-10:00",
-"Trump's Accounts Turned Defensive",
+"2026-11-20T03:43:00-10:00",
+"Performance Insights - November 2026",
 "finnhub/SeekingAlpha"
 ],
 [
-"2026-11-19T23:55:28-10:00",
-"A $178 Billion Holiday Showdown May Rock Markets Next Week",
+"2026-11-20T03:25:28-10:00",
+"Year-End Tax Loss Harvesting Ideas For 2026: Wash Rules, Sector Swaps & More",
 "finnhub/SeekingAlpha"
 ],
 [
-"2026-11-19T23:47:00-10:00",
-"Markets Reassess The AI Growth Story For 2027",
+"2026-11-20T03:22:12-10:00",
+"Anthropic And Nvidia Are Saying The AI Bubble Is Finally Popping",
 "finnhub/SeekingAlpha"
 ],
 [
-"2026-11-19T23:36:31-10:00",
-"Stock Market Today: Dow Jones, S&P 500, Nasdaq 100 Futures Fall as Trump Weighs Iran Decision\u2014 INTU, ROST, KEYS in Focus (UPDATED)",
-"finnhub/Benzinga"
-],
-[
-"2026-11-19T23:32:28-10:00",
-"A QQQ Option Income Strategy For Bear Markets",
+"2026-11-20T03:06:55-10:00",
+"What AI Bubble? Chips Exports Have Overtaken Oil For The First Time In History",
 "finnhub/SeekingAlpha"
 ],
 [
-"2026-11-19T23:08:42-10:00",
-"I Was Early In Calling A Bottom, But It's Coming",
+"2026-11-20T03:01:54-10:00",
+"Dividend Investing When Things Go South",
 "finnhub/SeekingAlpha"
 ]
 ]
 },
 "IWM": {
-"fetched": "2026-11-20T08:32:37.839436-10:00",
+"fetched": "2026-11-20T09:42:33.557548-10:00",
 "src": "finnhub",
 "items": [
 [
 "2026-11-20T03:52:09-10:00",
 "Stock Market Today: Anthropic Soars on Debut While the Rest of Wall Street Sinks",
 "finnhub/ChartMill"
+],
+[
+"2026-11-20T03:49:48-10:00",
+"Why I'm Buying This Market Crash",
+"finnhub/SeekingAlpha"
+],
+[
+"2026-11-20T03:43:00-10:00",
+"Performance Insights - November 2026",
+"finnhub/SeekingAlpha"
+],
+[
+"2026-11-20T03:25:28-10:00",
+"Year-End Tax Loss Harvesting Ideas For 2026: Wash Rules, Sector Swaps & More",
+"finnhub/SeekingAlpha"
 ],
 [
 "2026-11-20T02:35:00-10:00",
@@ -119,32 +134,27 @@
 "2026-11-19T23:47:00-10:00",
 "Markets Reassess The AI Growth Story For 2027",
 "finnhub/SeekingAlpha"
-],
-[
-"2026-11-19T23:08:42-10:00",
-"I Was Early In Calling A Bottom, But It's Coming",
-"finnhub/SeekingAlpha"
-],
-[
-"2026-11-19T22:45:00-10:00",
-"Oil And Stocks Drive Rates Lower, And Take Some Shine Off The U.S. Dollar",
-"finnhub/SeekingAlpha"
-],
-[
-"2026-11-19T21:30:00-10:00",
-"Patience In Gold Paid Off, Now Let's Get Bullish",
-"finnhub/SeekingAlpha"
 ]
 ]
 },
 "DIA": {
-"fetched": "2026-11-20T08:32:37.839436-10:00",
+"fetched": "2026-11-20T09:42:33.557548-10:00",
 "src": "finnhub",
 "items": [
 [
 "2026-11-20T03:52:09-10:00",
 "Stock Market Today: Anthropic Soars on Debut While the Rest of Wall Street Sinks",
 "finnhub/ChartMill"
+],
+[
+"2026-11-20T03:49:48-10:00",
+"Why I'm Buying This Market Crash",
+"finnhub/SeekingAlpha"
+],
+[
+"2026-11-20T03:25:28-10:00",
+"Year-End Tax Loss Harvesting Ideas For 2026: Wash Rules, Sector Swaps & More",
+"finnhub/SeekingAlpha"
 ],
 [
 "2026-11-20T03:01:54-10:00",
@@ -170,23 +180,23 @@
 "2026-11-19T23:47:00-10:00",
 "Markets Reassess The AI Growth Story For 2027",
 "finnhub/SeekingAlpha"
-],
-[
-"2026-11-19T23:36:31-10:00",
-"Stock Market Today: Dow Jones, S&P 500, Nasdaq 100 Futures Fall as Trump Weighs Iran Decision\u2014 INTU, ROST, KEYS in Focus (UPDATED)",
-"finnhub/Benzinga"
-],
-[
-"2026-11-19T23:08:42-10:00",
-"I Was Early In Calling A Bottom, But It's Coming",
-"finnhub/SeekingAlpha"
 ]
 ]
 },
 "SPX": {
-"fetched": "2026-11-20T08:32:37.839436-10:00",
+"fetched": "2026-11-20T09:42:33.557548-10:00",
 "src": "finnhub",
 "items": [
+[
+"2026-11-20T03:49:48-10:00",
+"Why I'm Buying This Market Crash",
+"finnhub/SeekingAlpha"
+],
+[
+"2026-11-20T03:25:28-10:00",
+"Year-End Tax Loss Harvesting Ideas For 2026: Wash Rules, Sector Swaps & More",
+"finnhub/SeekingAlpha"
+],
 [
 "2026-11-20T02:35:00-10:00",
 "Volatility Surging - What Smart Options, Futures, And Stock Traders Are Doing Now",
@@ -216,21 +226,11 @@
 "2026-11-19T23:32:28-10:00",
 "A QQQ Option Income Strategy For Bear Markets",
 "finnhub/SeekingAlpha"
-],
-[
-"2026-11-19T23:08:42-10:00",
-"I Was Early In Calling A Bottom, But It's Coming",
-"finnhub/SeekingAlpha"
-],
-[
-"2026-11-19T22:45:00-10:00",
-"Oil And Stocks Drive Rates Lower, And Take Some Shine Off The U.S. Dollar",
-"finnhub/SeekingAlpha"
 ]
 ]
 },
 "TQQQ": {
-"fetched": "2026-11-20T08:32:37.839436-10:00",
+"fetched": "2026-11-20T09:42:33.557548-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -251,9 +251,34 @@
 ]
 },
 "SMH": {
-"fetched": "2026-11-20T08:32:37.839436-10:00",
+"fetched": "2026-11-20T09:42:33.557548-10:00",
 "src": "finnhub",
 "items": [
+[
+"2026-11-20T03:49:48-10:00",
+"Why I'm Buying This Market Crash",
+"finnhub/SeekingAlpha"
+],
+[
+"2026-11-20T03:25:28-10:00",
+"Year-End Tax Loss Harvesting Ideas For 2026: Wash Rules, Sector Swaps & More",
+"finnhub/SeekingAlpha"
+],
+[
+"2026-11-20T03:22:12-10:00",
+"Anthropic And Nvidia Are Saying The AI Bubble Is Finally Popping",
+"finnhub/SeekingAlpha"
+],
+[
+"2026-11-20T03:18:11-10:00",
+"SMH: Cover The Shorts For Now (Rating Upgrade)",
+"finnhub/SeekingAlpha"
+],
+[
+"2026-11-20T03:06:55-10:00",
+"What AI Bubble? Chips Exports Have Overtaken Oil For The First Time In History",
+"finnhub/SeekingAlpha"
+],
 [
 "2026-11-20T02:35:00-10:00",
 "Volatility Surging - What Smart Options, Futures, And Stock Traders Are Doing Now",
@@ -268,36 +293,11 @@
 "2026-11-19T19:18:00-10:00",
 "2026 Semiconductor Stock Selloff: The Long-Term Outlook",
 "finnhub/SeekingAlpha"
-],
-[
-"2026-11-19T13:43:02-10:00",
-"The Semiconductor ETF Is on Track to Beat the S&P 500 for a 4th Straight Year. It Has Never Done That Before.",
-"finnhub/Yahoo"
-],
-[
-"2026-11-19T13:34:16-10:00",
-"Michael Burry Says He \u2018Tried to Warn\u2019 About Nvidia, CoreWeave: Shay Boloor Comes Back With \u2018I Also Warned Everyone About Rain Once\u2026\u2019",
-"finnhub/Benzinga"
-],
-[
-"2026-11-19T13:01:05-10:00",
-"S&P 500, Nasdaq, Dow End Lower As Anthropic Trading Debut Fails To Provide Adequate Confidence \u2014  ANT, META, AAPL, GME In Focus",
-"finnhub/Yahoo"
-],
-[
-"2026-11-19T06:58:50-10:00",
-"QUICK SPARK: Nvidia Stock Is Bleeding Like It's 2008",
-"finnhub/Benzinga"
-],
-[
-"2026-11-19T05:06:23-10:00",
-"Nvidia\u2019s earnings beat fails to lift chip sector as macro and policy risks weigh",
-"finnhub/Yahoo"
 ]
 ]
 },
 "SOXL": {
-"fetched": "2026-11-20T08:32:37.839436-10:00",
+"fetched": "2026-11-20T09:42:33.557548-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -308,7 +308,7 @@
 ]
 },
 "XLF": {
-"fetched": "2026-11-20T08:32:37.839436-10:00",
+"fetched": "2026-11-20T09:42:33.557548-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -354,7 +354,7 @@
 ]
 },
 "XLE": {
-"fetched": "2026-11-20T08:32:37.839436-10:00",
+"fetched": "2026-11-20T09:42:33.557548-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -400,7 +400,7 @@
 ]
 },
 "GLD": {
-"fetched": "2026-11-20T08:32:37.839436-10:00",
+"fetched": "2026-11-20T09:42:33.557548-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -446,7 +446,7 @@
 ]
 },
 "SLV": {
-"fetched": "2026-11-20T08:32:37.839436-10:00",
+"fetched": "2026-11-20T09:42:33.557548-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -477,9 +477,14 @@
 ]
 },
 "TLT": {
-"fetched": "2026-11-20T08:32:37.839436-10:00",
+"fetched": "2026-11-20T09:42:33.557548-10:00",
 "src": "finnhub",
 "items": [
+[
+"2026-11-20T03:01:54-10:00",
+"Dividend Investing When Things Go South",
+"finnhub/SeekingAlpha"
+],
 [
 "2026-11-19T23:02:00-10:00",
 "Build A Better Path, Part 3: A Modern Playbook For Income Investing",
@@ -514,16 +519,11 @@
 "2026-11-19T08:41:49-10:00",
 "Bond ETFs Haven\u2019t Been This Rewarding in Years, So Why Is Wall Street Dumping Them?",
 "finnhub/Yahoo"
-],
-[
-"2026-11-19T07:33:20-10:00",
-"A Monthly Check at 3 Levels of Risk: VTEB, TLT and EMB, Ranked",
-"finnhub/Yahoo"
 ]
 ]
 },
 "IBIT": {
-"fetched": "2026-11-20T08:32:37.839436-10:00",
+"fetched": "2026-11-20T09:42:33.557548-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -569,12 +569,12 @@
 ]
 },
 "TNA": {
-"fetched": "2026-11-20T08:32:37.839436-10:00",
+"fetched": "2026-11-20T09:42:33.557548-10:00",
 "src": "finnhub",
 "items": []
 },
 "UVXY": {
-"fetched": "2026-11-20T08:32:37.839436-10:00",
+"fetched": "2026-11-20T09:42:33.557548-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -585,7 +585,7 @@
 ]
 },
 "AAPL": {
-"fetched": "2026-11-20T08:32:37.839436-10:00",
+"fetched": "2026-11-20T09:42:33.557548-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -631,13 +631,18 @@
 ]
 },
 "AMAT": {
-"fetched": "2026-11-20T08:32:37.839436-10:00",
+"fetched": "2026-11-20T09:42:33.557548-10:00",
 "src": "finnhub",
 "items": [
 [
 "2026-11-20T05:02:00-10:00",
 "AMAT's AGS Gains From Growing Installed Base: What's Ahead?",
 "finnhub/Yahoo"
+],
+[
+"2026-11-20T04:14:50-10:00",
+"What To Do After Onto Innovation Fell Over 40% From Its June 2026 Peak",
+"finnhub/SeekingAlpha"
 ],
 [
 "2026-11-20T04:04:04-10:00",
@@ -668,16 +673,11 @@
 "2026-11-19T10:05:22-10:00",
 "Inside Brad Gerstner\u2019s Portfolio: Every Move He Made in the Third Quarter",
 "finnhub/Yahoo"
-],
-[
-"2026-11-19T07:33:00-10:00",
-"Top AI Stocks to Add to Your Portfolio for Healthy Returns",
-"finnhub/Yahoo"
 ]
 ]
 },
 "AMD": {
-"fetched": "2026-11-20T08:32:37.839436-10:00",
+"fetched": "2026-11-20T09:42:33.557548-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -723,7 +723,7 @@
 ]
 },
 "AMZN": {
-"fetched": "2026-11-20T08:32:37.839436-10:00",
+"fetched": "2026-11-20T09:42:33.557548-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -769,7 +769,7 @@
 ]
 },
 "APLD": {
-"fetched": "2026-11-20T08:32:37.839436-10:00",
+"fetched": "2026-11-20T09:42:33.557548-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -810,7 +810,7 @@
 ]
 },
 "APP": {
-"fetched": "2026-11-20T08:32:37.839436-10:00",
+"fetched": "2026-11-20T09:42:33.557548-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -856,7 +856,7 @@
 ]
 },
 "ASTS": {
-"fetched": "2026-11-20T08:32:37.839436-10:00",
+"fetched": "2026-11-20T09:42:33.557548-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -902,7 +902,7 @@
 ]
 },
 "AVGO": {
-"fetched": "2026-11-20T08:32:37.839436-10:00",
+"fetched": "2026-11-20T09:42:33.557548-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -948,7 +948,7 @@
 ]
 },
 "BA": {
-"fetched": "2026-11-20T08:32:37.839436-10:00",
+"fetched": "2026-11-20T09:42:33.557548-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -994,7 +994,7 @@
 ]
 },
 "BABA": {
-"fetched": "2026-11-20T08:32:37.839436-10:00",
+"fetched": "2026-11-20T09:42:33.557548-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1040,7 +1040,7 @@
 ]
 },
 "BAC": {
-"fetched": "2026-11-20T08:32:37.839436-10:00",
+"fetched": "2026-11-20T09:42:33.557548-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1086,7 +1086,7 @@
 ]
 },
 "BILI": {
-"fetched": "2026-11-20T08:32:37.839436-10:00",
+"fetched": "2026-11-20T09:42:33.557548-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1102,7 +1102,7 @@
 ]
 },
 "CIFR": {
-"fetched": "2026-11-20T08:32:37.839436-10:00",
+"fetched": "2026-11-20T09:42:33.557548-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1148,7 +1148,7 @@
 ]
 },
 "COIN": {
-"fetched": "2026-11-20T08:32:37.839436-10:00",
+"fetched": "2026-11-20T09:42:33.557548-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1194,7 +1194,7 @@
 ]
 },
 "CRM": {
-"fetched": "2026-11-20T08:32:37.839436-10:00",
+"fetched": "2026-11-20T09:42:33.557548-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1240,7 +1240,7 @@
 ]
 },
 "CRWV": {
-"fetched": "2026-11-20T08:32:37.839436-10:00",
+"fetched": "2026-11-20T09:42:33.557548-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1286,7 +1286,7 @@
 ]
 },
 "CVNA": {
-"fetched": "2026-11-20T08:32:37.839436-10:00",
+"fetched": "2026-11-20T09:42:33.557548-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1332,7 +1332,7 @@
 ]
 },
 "DKNG": {
-"fetched": "2026-11-20T08:32:37.839436-10:00",
+"fetched": "2026-11-20T09:42:33.557548-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1378,7 +1378,7 @@
 ]
 },
 "GOOGL": {
-"fetched": "2026-11-20T08:32:37.839436-10:00",
+"fetched": "2026-11-20T09:42:33.557548-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1424,7 +1424,7 @@
 ]
 },
 "HOOD": {
-"fetched": "2026-11-20T08:32:37.839436-10:00",
+"fetched": "2026-11-20T09:42:33.557548-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1470,7 +1470,7 @@
 ]
 },
 "INTC": {
-"fetched": "2026-11-20T08:32:37.839436-10:00",
+"fetched": "2026-11-20T09:42:33.557548-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1516,7 +1516,7 @@
 ]
 },
 "IONQ": {
-"fetched": "2026-11-20T08:32:37.839436-10:00",
+"fetched": "2026-11-20T09:42:33.557548-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1562,7 +1562,7 @@
 ]
 },
 "IREN": {
-"fetched": "2026-11-20T08:32:37.839436-10:00",
+"fetched": "2026-11-20T09:42:33.557548-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1608,7 +1608,7 @@
 ]
 },
 "JPM": {
-"fetched": "2026-11-20T08:32:37.839436-10:00",
+"fetched": "2026-11-20T09:42:33.557548-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1654,7 +1654,7 @@
 ]
 },
 "LRCX": {
-"fetched": "2026-11-20T08:32:37.839436-10:00",
+"fetched": "2026-11-20T09:42:33.557548-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1700,7 +1700,7 @@
 ]
 },
 "MARA": {
-"fetched": "2026-11-20T08:32:37.839436-10:00",
+"fetched": "2026-11-20T09:42:33.557548-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1746,7 +1746,7 @@
 ]
 },
 "META": {
-"fetched": "2026-11-20T08:32:37.839436-10:00",
+"fetched": "2026-11-20T09:42:33.557548-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1792,7 +1792,7 @@
 ]
 },
 "MSFT": {
-"fetched": "2026-11-20T08:32:37.839436-10:00",
+"fetched": "2026-11-20T09:42:33.557548-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1838,7 +1838,7 @@
 ]
 },
 "MSTR": {
-"fetched": "2026-11-20T08:32:37.839436-10:00",
+"fetched": "2026-11-20T09:42:33.557548-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1884,7 +1884,7 @@
 ]
 },
 "MU": {
-"fetched": "2026-11-20T08:32:37.839436-10:00",
+"fetched": "2026-11-20T09:42:33.557548-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1930,7 +1930,7 @@
 ]
 },
 "NFLX": {
-"fetched": "2026-11-20T08:32:37.839436-10:00",
+"fetched": "2026-11-20T09:42:33.557548-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -1976,7 +1976,7 @@
 ]
 },
 "NVDA": {
-"fetched": "2026-11-20T08:32:37.839436-10:00",
+"fetched": "2026-11-20T09:42:33.557548-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2022,7 +2022,7 @@
 ]
 },
 "OKLO": {
-"fetched": "2026-11-20T08:32:37.839436-10:00",
+"fetched": "2026-11-20T09:42:33.557548-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2063,7 +2063,7 @@
 ]
 },
 "ORCL": {
-"fetched": "2026-11-20T08:32:37.839436-10:00",
+"fetched": "2026-11-20T09:42:33.557548-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2109,7 +2109,7 @@
 ]
 },
 "PLTR": {
-"fetched": "2026-11-20T08:32:37.839436-10:00",
+"fetched": "2026-11-20T09:42:33.557548-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2155,7 +2155,7 @@
 ]
 },
 "PLUG": {
-"fetched": "2026-11-20T08:32:37.839436-10:00",
+"fetched": "2026-11-20T09:42:33.557548-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2201,7 +2201,7 @@
 ]
 },
 "PYPL": {
-"fetched": "2026-11-20T08:32:37.839436-10:00",
+"fetched": "2026-11-20T09:42:33.557548-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2247,7 +2247,7 @@
 ]
 },
 "QCOM": {
-"fetched": "2026-11-20T08:32:37.839436-10:00",
+"fetched": "2026-11-20T09:42:33.557548-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2293,7 +2293,7 @@
 ]
 },
 "RGTI": {
-"fetched": "2026-11-20T08:32:37.839436-10:00",
+"fetched": "2026-11-20T09:42:33.557548-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2334,7 +2334,7 @@
 ]
 },
 "RKLB": {
-"fetched": "2026-11-20T08:32:37.839436-10:00",
+"fetched": "2026-11-20T09:42:33.557548-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2380,7 +2380,7 @@
 ]
 },
 "SHOP": {
-"fetched": "2026-11-20T08:32:37.839436-10:00",
+"fetched": "2026-11-20T09:42:33.557548-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2426,7 +2426,7 @@
 ]
 },
 "SMCI": {
-"fetched": "2026-11-20T08:32:37.839436-10:00",
+"fetched": "2026-11-20T09:42:33.557548-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2472,7 +2472,7 @@
 ]
 },
 "SOFI": {
-"fetched": "2026-11-20T08:32:37.839436-10:00",
+"fetched": "2026-11-20T09:42:33.557548-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2518,7 +2518,7 @@
 ]
 },
 "TSLA": {
-"fetched": "2026-11-20T08:32:37.839436-10:00",
+"fetched": "2026-11-20T09:42:33.557548-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2564,7 +2564,7 @@
 ]
 },
 "TSM": {
-"fetched": "2026-11-20T08:32:37.839436-10:00",
+"fetched": "2026-11-20T09:42:33.557548-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2610,7 +2610,7 @@
 ]
 },
 "UBER": {
-"fetched": "2026-11-20T08:32:37.839436-10:00",
+"fetched": "2026-11-20T09:42:33.557548-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2656,7 +2656,7 @@
 ]
 },
 "WMT": {
-"fetched": "2026-11-20T08:32:37.839436-10:00",
+"fetched": "2026-11-20T09:42:33.557548-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2702,7 +2702,7 @@
 ]
 },
 "XOM": {
-"fetched": "2026-11-20T08:32:37.839436-10:00",
+"fetched": "2026-11-20T09:42:33.557548-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2748,7 +2748,7 @@
 ]
 },
 "PG": {
-"fetched": "2026-11-20T08:32:37.839436-10:00",
+"fetched": "2026-11-20T09:42:33.557548-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -2794,7 +2794,7 @@
 ]
 },
 "SPCX": {
-"fetched": "2026-11-20T08:32:37.839436-10:00",
+"fetched": "2026-11-20T09:42:33.557548-10:00",
 "src": "finnhub",
 "items": [
 [
