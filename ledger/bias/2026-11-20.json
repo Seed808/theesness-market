@@ -1,10 +1,5 @@
 {
- "pending": {
-  "regime": "BEAR",
-  "clean": true,
-  "why": "ES red (-1.63%), NQ red (-3.22%), YM red (-0.15%); ES+YM red \u2192 broad bear, puts favored",
-  "at": "2026-11-20T06:42:31.771322-10:00"
- },
+ "pending": null,
  "history": [
   {
    "regime": "BEAR",
@@ -19,12 +14,19 @@
    "why": "ES red (-0.19%), NQ red (-1.16%), YM green (+0.81%); YM green + NQ/ES red \u2192 rotation; puts may fade midday",
    "at": "2026-11-20T05:22:42.270261-10:00",
    "source": "re-scan (held 2 reads)"
+  },
+  {
+   "regime": "BEAR",
+   "clean": true,
+   "why": "ES red (-1.92%), NQ red (-3.53%), YM red (-0.47%); ES+YM red \u2192 broad bear, puts favored",
+   "at": "2026-11-20T06:52:38.983439-10:00",
+   "source": "re-scan (held 2 reads)"
   }
  ],
  "last_reading": {
   "regime": "BEAR",
   "clean": true,
-  "why": "ES red (-1.63%), NQ red (-3.22%), YM red (-0.15%); ES+YM red \u2192 broad bear, puts favored",
-  "at": "2026-11-20T06:42:31.771322-10:00"
+  "why": "ES red (-1.92%), NQ red (-3.53%), YM red (-0.47%); ES+YM red \u2192 broad bear, puts favored",
+  "at": "2026-11-20T06:52:38.983439-10:00"
  }
 }

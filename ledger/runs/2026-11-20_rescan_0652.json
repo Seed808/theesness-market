@@ -1,0 +1,147 @@
+{
+ "trade_date": "2026-11-20",
+ "mode": "rescan",
+ "ran_at": "2026-11-20T06:52:38.983439-10:00",
+ "test": false,
+ "open_hst": "2026-11-20T04:30:00-10:00",
+ "close_hst": "2026-11-20T11:00:00-10:00",
+ "early_close": false,
+ "bias": {
+  "regime": "BEAR",
+  "favored": "P",
+  "clean": true,
+  "notes": [
+   "ES red (-1.92%), NQ red (-3.53%), YM red (-0.47%)",
+   "ES+YM red \u2192 broad bear, puts favored",
+   "VIX 30.86 (+8.51%) \u2192 confirms",
+   "SPY red (-1.87%), QQQ red (-3.51%) \u2192 confirms"
+  ]
+ },
+ "quotes": {
+  "ES": {
+   "last": 7058.75,
+   "prev_close": 7197.25,
+   "chg_pct": -1.9243461044148806,
+   "source": "delayed"
+  },
+  "NQ": {
+   "last": 25661.75,
+   "prev_close": 26600.25,
+   "chg_pct": -3.528162329301417,
+   "source": "delayed"
+  },
+  "YM": {
+   "last": 48950.0,
+   "prev_close": 49180.0,
+   "chg_pct": -0.4676697844652297,
+   "source": "delayed"
+  },
+  "VIX": {
+   "last": 30.860000610351562,
+   "prev_close": 28.440000534057617,
+   "chg_pct": 8.509142161920618,
+   "source": "delayed"
+  },
+  "SPY": {
+   "last": 702.4500122070312,
+   "prev_close": 715.8699951171875,
+   "chg_pct": -1.8746396694499547,
+   "source": "delayed"
+  },
+  "QQQ": {
+   "last": 622.4176025390625,
+   "prev_close": 645.0399780273438,
+   "chg_pct": -3.507127660128109,
+   "source": "delayed"
+  }
+ },
+ "flags": [
+  "Friday/pre-holiday rules: 0DTE only, no overnight",
+  "Amateur hour until 05:00 AM; institutional 05:00\u201305:30 AM HST",
+  "No damaged contracts overnight. No earnings holds overnight."
+ ],
+ "headlines": [],
+ "data_note": "data ~15 min delayed (Yahoo)",
+ "cards": [
+  {
+   "id": "2026-11-20_rescan_INTC_PUT_2026-11-20_52.5",
+   "trade_date": "2026-11-20",
+   "mode": "rescan",
+   "locked_at": "2026-11-20T06:52:38.983439-10:00",
+   "ticker": "INTC",
+   "type": "PUT",
+   "bias": "BEAR",
+   "expiry": "2026-11-20",
+   "strike": 52.5,
+   "entry_floor": 0.25,
+   "entry_ceiling": 0.3,
+   "premium": 0.25,
+   "target": 0.38,
+   "stop": 0.2,
+   "reasoning": "BEAR, bias clean, trend aligned, RVOL 13.2, daily downtrend, catalyst: news (-4.9% vs market -3.5%): SpaceX Just Passed Intel as Nvidia\u2019s Largest Holding After It Sold a Quarter of ",
+   "confidence": 9,
+   "a_plus": false,
+   "status": "GO",
+   "flags": "0DTE only / no overnight; CHASING -4.9% vs prior close",
+   "data_source": "yfinance",
+   "contract": "INTC261120P00052500",
+   "underlying": 52.99,
+   "underlying_asof": "6:53 AM HST",
+   "target1": 0.3,
+   "mover": ""
+  }
+ ],
+ "passing": 17,
+ "rejected": 49,
+ "rejections": [
+  "IWM P: first 5-min candle does not confirm",
+  "DIA P: OI 93 < 500, first 5-min candle does not confirm, trend not aligned (1m flat/5m down/15m down), put into support (PML)",
+  "TQQQ P: spread 11.8% > 10.0%",
+  "SMH P: spread 10.5% > 10.0%",
+  "XLF P: spread 40.0% > 10.0%, first 5-min candle does not confirm, trend not aligned (1m flat/5m down/15m down), put into support (PDL)",
+  "XLE P: spread 12.5% > 10.0%, first 5-min candle does not confirm, trend not aligned (1m down/5m flat/15m up), put into support (PMH)",
+  "SLV P: spread 10.5% > 10.0%, first 5-min candle does not confirm, put into support (PML)",
+  "TLT P: spread 22.2% > 10.0%, first 5-min candle does not confirm, trend not aligned (1m flat/5m up/15m up), put into support (PMH)",
+  "IBIT P: spread 22.2% > 10.0%, trend not aligned (1m flat/5m flat/15m down)",
+  "TNA P: spread 28.6% > 10.0%, first 5-min candle does not confirm",
+  "UVXY P: OI 3 < 500, first 5-min candle does not confirm, trend not aligned (1m flat/5m up/15m up), put into support (PMH)",
+  "AMAT P: OI 205 < 500",
+  "AMD P: trend not aligned (1m flat/5m down/15m down)",
+  "APLD P: OI 206 < 500, trend not aligned (1m flat/5m down/15m down)",
+  "APP P: first 5-min candle does not confirm, trend not aligned (1m up/5m flat/15m down)",
+  "ASTS P: spread 30.8% > 10.0%",
+  "BA P: spread 28.6% > 10.0%, first 5-min candle does not confirm, trend not aligned (1m down/5m down/15m flat)",
+  "BABA P: spread 66.7% > 10.0%, first 5-min candle does not confirm, trend not aligned (1m flat/5m down/15m down), put into support (PML)",
+  "BAC P: trend not aligned (1m flat/5m down/15m down)",
+  "BILI P: OI 232 < 500, first 5-min candle does not confirm",
+  "CIFR P: spread 57.1% > 10.0%",
+  "COIN P: first 5-min candle does not confirm",
+  "CRM P: spread 20.7% > 10.0%, first 5-min candle does not confirm, trend not aligned (1m down/5m down/15m flat), put into support (PMH)",
+  "CVNA P: first 5-min candle does not confirm",
+  "DKNG P: no bid, first 5-min candle does not confirm",
+  "GOOGL P: first 5-min candle does not confirm, trend not aligned (1m flat/5m down/15m flat)",
+  "HOOD P: spread 100.0% > 10.0%",
+  "IONQ P: OI 93 < 500",
+  "IREN P: spread 15.4% > 10.0%",
+  "JPM P: spread 16.8% > 10.0%",
+  "LRCX P: OI 111 < 500",
+  "MARA P: spread 13.3% > 10.0%",
+  "MSFT P: first 5-min candle does not confirm",
+  "MSTR P: first 5-min candle does not confirm",
+  "NFLX P: first 5-min candle does not confirm",
+  "OKLO P: OI 129 < 500, first 5-min candle does not confirm, trend not aligned (1m down/5m down/15m flat)",
+  "ORCL P: spread 12.2% > 10.0%",
+  "PLTR P: first 5-min candle does not confirm",
+  "PLUG P: OI 10 < 500",
+  "PYPL P: OI 296 < 500, first 5-min candle does not confirm",
+  "QCOM P: spread 14.5% > 10.0%",
+  "RGTI P: OI 388 < 500",
+  "RKLB P: OI 76 < 500",
+  "SHOP P: spread 36.6% > 10.0%, first 5-min candle does not confirm",
+  "SOFI P: spread 40.0% > 10.0%, first 5-min candle does not confirm",
+  "UBER P: spread 16.2% > 10.0%, first 5-min candle does not confirm, trend not aligned (1m down/5m down/15m flat), put into support (PMH)",
+  "WMT P: first 5-min candle does not confirm, trend not aligned (1m down/5m flat/15m flat)",
+  "XOM P: spread 17.7% > 10.0%, first 5-min candle does not confirm, trend not aligned (1m flat/5m up/15m up), put into support (VWAP)",
+  "PG P: spread 25.0% > 10.0%, first 5-min candle does not confirm, trend not aligned (1m flat/5m down/15m flat), put into support (PMH)"
+ ]
+}
