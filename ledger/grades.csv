@@ -273,3 +273,4 @@ id,graded_at,result,exit_premium,pnl_pct,method
 2026-11-19_rescan_MSFT_PUT_2026-11-20_507.5,2026-11-19T09:02:33.619456-10:00,WIN,7.95,47.8,TRAILING STOP (gapped through) · schwab 1m
 2026-11-19_rescan_DKNG_PUT_2026-11-20_17.5,2026-11-19T10:22:34.442171-10:00,WIN,0.46,100.0,TRAILING STOP (gapped through) · schwab 1m
 2026-11-19_rescan_SHOP_PUT_2026-11-20_130,2026-11-20T04:52:33.569582-10:00,LOSS,1.0,-23.1,STOP (gapped through) · yahoo 5m
+2026-11-20_confirm_IBIT_PUT_2026-11-20_34,2026-11-20T05:42:34.145224-10:00,WIN,0.26,136.4,TRAILING STOP (gapped through) · yahoo 5m
