@@ -6,7 +6,7 @@
   "low": null,
   "source": "chain quote",
   "pnl_pct": 7.7,
-  "as_of": "2026-11-20T03:52:29.527139-10:00"
+  "as_of": "2026-11-20T04:02:38.487814-10:00"
  },
  "_errors": {
   "2026-11-19_rescan_SHOP_PUT_2026-11-20_130": "no 5m bars"
