@@ -3,14 +3,15 @@
   "SPCX": {
    "added": "2026-11-16",
    "why": "Schwab most-active 2 of last 5 days; avg vol 101.3M, options liquid both sides",
-   "liq_fails": 0
+   "liq_fails": 1
   },
   "PG": {
    "added": "2026-11-19",
-   "why": "Schwab most-active 2 of last 5 days; avg vol 9.4M, options liquid both sides"
+   "why": "Schwab most-active 2 of last 5 days; avg vol 9.4M, options liquid both sides",
+   "liq_fails": 1
   }
  },
- "last_run": "2026-11-19",
+ "last_run": "2026-11-20",
  "log": [
   {
    "on": "2026-11-16",
@@ -39,96 +40,108 @@
  ],
  "passed_over": {
   "AKAN": {
-   "on": "2026-11-19",
+   "on": "2026-11-20",
    "why": "no option chain"
   },
   "SHFS": {
-   "on": "2026-11-19",
+   "on": "2026-11-20",
    "why": "no option chain"
   },
   "YFOR": {
-   "on": "2026-11-19",
-   "why": "avg volume 395,157 < 1,000,000"
+   "on": "2026-11-20",
+   "why": "avg volume 471,750 < 1,000,000"
   },
   "CSCO": {
-   "on": "2026-11-19",
-   "why": "calls: spread 108.8% > 10.0%; puts: spread 64.9% > 10.0%"
+   "on": "2026-11-20",
+   "why": "no expiry between tomorrow and Wed 11/25"
   },
   "F": {
-   "on": "2026-11-19",
-   "why": "calls: spread 66.7% > 10.0%; puts: spread 40.0% > 10.0%"
+   "on": "2026-11-20",
+   "why": "no expiry between tomorrow and Wed 11/25"
   },
   "PG": {
    "on": "2026-11-18",
    "why": "calls: spread 53.1% > 10.0%; puts: spread 19.4% > 10.0%"
   },
   "KO": {
-   "on": "2026-11-19",
-   "why": "calls: spread 52.2% > 10.0%; puts: spread 72.2% > 10.0%"
+   "on": "2026-11-20",
+   "why": "no expiry between tomorrow and Wed 11/25"
   },
   "T": {
-   "on": "2026-11-19",
-   "why": "calls: spread 50.0% > 10.0%; puts: spread 54.5% > 10.0%"
+   "on": "2026-11-20",
+   "why": "no expiry between tomorrow and Wed 11/25"
   },
   "DIS": {
-   "on": "2026-11-19",
-   "why": "calls: spread 46.8% > 10.0%; puts: spread 41.6% > 10.0%"
+   "on": "2026-11-20",
+   "why": "no expiry between tomorrow and Wed 11/25"
   },
   "POLA": {
-   "on": "2026-11-19",
+   "on": "2026-11-20",
    "why": "no option chain"
   },
   "LICN": {
-   "on": "2026-11-19",
+   "on": "2026-11-20",
    "why": "no option chain"
   },
   "HIHO": {
-   "on": "2026-11-19",
+   "on": "2026-11-20",
    "why": "no option chain"
   },
   "UNH": {
-   "on": "2026-11-19",
-   "why": "calls: OI 236 < 500; puts: OI 235 < 500"
+   "on": "2026-11-20",
+   "why": "no expiry between tomorrow and Wed 11/25"
   },
   "MRVL": {
-   "on": "2026-11-19",
-   "why": "calls: OI 406 < 500"
+   "on": "2026-11-20",
+   "why": "no expiry between tomorrow and Wed 11/25"
   },
   "GRAB": {
-   "on": "2026-11-19",
-   "why": "calls: spread 100.0% > 10.0%; puts: no bid"
+   "on": "2026-11-20",
+   "why": "no expiry between tomorrow and Wed 11/25"
   },
   "NKE": {
-   "on": "2026-11-19",
-   "why": "calls: OI 74 < 500; puts: spread 18.2% > 10.0%"
+   "on": "2026-11-20",
+   "why": "no expiry between tomorrow and Wed 11/25"
   },
   "GMM": {
-   "on": "2026-11-19",
+   "on": "2026-11-20",
    "why": "no option chain"
   },
   "CHSN": {
-   "on": "2026-11-19",
+   "on": "2026-11-20",
    "why": "no option chain"
   },
   "FNGR": {
-   "on": "2026-11-19",
-   "why": "calls: OI 400 < 500; puts: no strikes"
+   "on": "2026-11-20",
+   "why": "no option chain"
   },
   "PFE": {
-   "on": "2026-11-19",
-   "why": "calls: spread 15.4% > 10.0%; puts: spread 62.1% > 10.0%"
+   "on": "2026-11-20",
+   "why": "no expiry between tomorrow and Wed 11/25"
   },
   "MMM": {
-   "on": "2026-11-19",
-   "why": "calls: spread 74.6% > 10.0%; puts: OI 67 < 500"
+   "on": "2026-11-20",
+   "why": "no expiry between tomorrow and Wed 11/25"
   },
   "HON": {
    "on": "2026-11-19",
    "why": "calls: spread 90.0% > 10.0%; puts: OI 51 < 500"
   },
   "AES": {
-   "on": "2026-11-19",
-   "why": "calls: no bid; puts: no bid"
+   "on": "2026-11-20",
+   "why": "no option chain"
+  },
+  "VIVS": {
+   "on": "2026-11-20",
+   "why": "no option chain"
+  },
+  "FCHL": {
+   "on": "2026-11-20",
+   "why": "no option chain"
+  },
+  "SNDK": {
+   "on": "2026-11-20",
+   "why": "no expiry between tomorrow and Wed 11/25"
   }
  }
 }
