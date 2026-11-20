@@ -1,33 +1,23 @@
 {
- "2026-11-20_rescan_AMZN_PUT_2026-11-20_250": {
-  "last": 1.23,
-  "last_time": "2026-11-20T06:45:00-10:00",
-  "high": 1.23,
-  "low": 0.86,
-  "source": "yahoo 5m",
-  "pnl_pct": 119.6,
-  "as_of": "2026-11-20T07:02:33.602534-10:00"
- },
  "2026-11-20_rescan_INTC_PUT_2026-11-20_52.5": {
   "last": 0.39,
-  "last_time": "2026-11-20T06:46:35-10:00",
-  "high": null,
-  "low": null,
-  "source": "chain quote",
+  "last_time": "2026-11-20T06:55:00-10:00",
+  "high": 0.54,
+  "low": 0.39,
+  "source": "yahoo 5m",
   "pnl_pct": 56.0,
-  "as_of": "2026-11-20T07:02:33.602534-10:00"
+  "as_of": "2026-11-20T07:12:34.478151-10:00"
  },
  "2026-11-20_rescan_BAC_PUT_2026-11-20_47.5": {
-  "last": 0.12,
-  "last_time": "2026-11-20T06:45:36-10:00",
+  "last": 0.1,
+  "last_time": "2026-11-20T06:58:15-10:00",
   "high": null,
   "low": null,
   "source": "chain quote",
-  "pnl_pct": 0.0,
-  "as_of": "2026-11-20T07:02:33.602534-10:00"
+  "pnl_pct": -16.7,
+  "as_of": "2026-11-20T07:12:34.478151-10:00"
  },
  "_errors": {
-  "2026-11-20_rescan_INTC_PUT_2026-11-20_52.5": "bars returned but none after lock (28 rows)",
-  "2026-11-20_rescan_BAC_PUT_2026-11-20_47.5": "bars returned but none after lock (23 rows)"
+  "2026-11-20_rescan_BAC_PUT_2026-11-20_47.5": "bars returned but none after lock (25 rows)"
  }
 }
