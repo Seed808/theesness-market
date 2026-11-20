@@ -1,0 +1,18 @@
+{
+ "pending": null,
+ "history": [
+  {
+   "regime": "BEAR",
+   "clean": true,
+   "why": "ES red (-0.75%), NQ red (-1.47%), YM red (-0.19%); ES+YM red \u2192 broad bear, puts favored",
+   "at": "2026-11-20T04:12:36.196237-10:00",
+   "source": "confirmation read"
+  }
+ ],
+ "last_reading": {
+  "regime": "BEAR",
+  "clean": true,
+  "why": "ES red (-0.75%), NQ red (-1.47%), YM red (-0.19%); ES+YM red \u2192 broad bear, puts favored",
+  "at": "2026-11-20T04:12:36.196237-10:00"
+ }
+}
