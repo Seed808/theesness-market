@@ -1,112 +1,157 @@
 {
  "2026-11-20_confirm_IBIT_PUT_2026-11-20_34": {
-  "last": 0.09,
-  "last_time": "2026-11-20T05:05:00-10:00",
-  "high": 0.09,
+  "last": 0.26,
+  "last_time": "2026-11-20T05:15:00-10:00",
+  "high": 0.26,
   "low": 0.09,
   "source": "yahoo 5m",
-  "pnl_pct": -18.2,
-  "as_of": "2026-11-20T05:22:42.270261-10:00"
+  "pnl_pct": 136.4,
+  "as_of": "2026-11-20T05:32:34.439751-10:00"
  },
  "2026-11-20_confirm_AVGO_PUT_2026-11-20_330": {
-  "last": 5.0,
-  "last_time": "2026-11-20T05:05:00-10:00",
-  "high": 5.7,
-  "low": 4.8,
+  "last": 9.14,
+  "last_time": "2026-11-20T05:15:00-10:00",
+  "high": 9.14,
+  "low": 4.39,
   "source": "yahoo 5m",
-  "pnl_pct": 244.8,
-  "as_of": "2026-11-20T05:22:42.270261-10:00"
+  "pnl_pct": 530.3,
+  "as_of": "2026-11-20T05:32:34.439751-10:00"
  },
  "2026-11-20_rescan_CRWV_PUT_2026-11-20_42": {
-  "last": 0.74,
-  "last_time": "2026-11-20T05:08:16-10:00",
-  "high": null,
-  "low": null,
-  "source": "chain quote",
-  "pnl_pct": 12.1,
-  "as_of": "2026-11-20T05:22:42.270261-10:00"
+  "last": 1.01,
+  "last_time": "2026-11-20T05:15:00-10:00",
+  "high": 1.01,
+  "low": 0.87,
+  "source": "yahoo 5m",
+  "pnl_pct": 53.0,
+  "as_of": "2026-11-20T05:32:34.439751-10:00"
  },
  "2026-11-20_rescan_GLD_PUT_2026-11-20_326": {
-  "last": 0.88,
-  "last_time": "2026-11-20T05:07:20-10:00",
+  "last": 2.13,
+  "last_time": "2026-11-20T05:15:00-10:00",
+  "high": 2.13,
+  "low": 1.44,
+  "source": "yahoo 5m",
+  "pnl_pct": 169.6,
+  "as_of": "2026-11-20T05:32:34.439751-10:00"
+ },
+ "2026-11-20_rescan_IREN_PUT_2026-11-20_13": {
+  "last": 0.25,
+  "last_time": "2026-11-20T05:15:00-10:00",
+  "high": 0.25,
+  "low": 0.21,
+  "source": "yahoo 5m",
+  "pnl_pct": 47.1,
+  "as_of": "2026-11-20T05:32:34.439751-10:00"
+ },
+ "2026-11-20_rescan_MU_PUT_2026-11-20_640": {
+  "last": 14.2,
+  "last_time": "2026-11-20T05:15:00-10:00",
+  "high": 14.2,
+  "low": 9.46,
+  "source": "yahoo 5m",
+  "pnl_pct": 144.8,
+  "as_of": "2026-11-20T05:32:34.439751-10:00"
+ },
+ "2026-11-20_rescan_SOXL_PUT_2026-11-20_39": {
+  "last": 2.23,
+  "last_time": "2026-11-20T05:15:00-10:00",
+  "high": 2.23,
+  "low": 1.53,
+  "source": "yahoo 5m",
+  "pnl_pct": 172.0,
+  "as_of": "2026-11-20T05:32:34.439751-10:00"
+ },
+ "2026-11-20_rescan_NVDA_PUT_2026-11-20_138": {
+  "last": 1.01,
+  "last_time": "2026-11-20T05:19:11-10:00",
   "high": null,
   "low": null,
   "source": "chain quote",
-  "pnl_pct": 11.4,
-  "as_of": "2026-11-20T05:22:42.270261-10:00"
+  "pnl_pct": 106.1,
+  "as_of": "2026-11-20T05:32:34.439751-10:00"
  },
- "2026-11-20_rescan_IREN_PUT_2026-11-20_13": {
-  "last": 0.17,
-  "last_time": "2026-11-20T05:08:03-10:00",
+ "2026-11-20_rescan_AMD_PUT_2026-11-20_450": {
+  "last": 6.08,
+  "last_time": "2026-11-20T05:18:54-10:00",
+  "high": null,
+  "low": null,
+  "source": "chain quote",
+  "pnl_pct": 130.3,
+  "as_of": "2026-11-20T05:32:34.439751-10:00"
+ },
+ "2026-11-20_rescan_QQQ_PUT_2026-11-20_633": {
+  "last": 4.19,
+  "last_time": "2026-11-20T05:19:11-10:00",
+  "high": null,
+  "low": null,
+  "source": "chain quote",
+  "pnl_pct": 111.6,
+  "as_of": "2026-11-20T05:32:34.439751-10:00"
+ },
+ "2026-11-20_rescan_TSLA_PUT_2026-11-20_360": {
+  "last": 1.8,
+  "last_time": "2026-11-20T05:19:04-10:00",
+  "high": null,
+  "low": null,
+  "source": "chain quote",
+  "pnl_pct": 221.4,
+  "as_of": "2026-11-20T05:32:34.439751-10:00"
+ },
+ "2026-11-20_rescan_HOOD_PUT_2026-11-20_65": {
+  "last": 0.33,
+  "last_time": "2026-11-20T05:18:43-10:00",
+  "high": null,
+  "low": null,
+  "source": "chain quote",
+  "pnl_pct": 22.2,
+  "as_of": "2026-11-20T05:32:34.439751-10:00"
+ },
+ "2026-11-20_rescan_META_PUT_2026-11-20_575": {
+  "last": 3.5,
+  "last_time": "2026-11-20T05:18:41-10:00",
+  "high": null,
+  "low": null,
+  "source": "chain quote",
+  "pnl_pct": 9.4,
+  "as_of": "2026-11-20T05:32:34.439751-10:00"
+ },
+ "2026-11-20_rescan_ORCL_PUT_2026-11-20_105": {
+  "last": 0.64,
+  "last_time": "2026-11-20T05:17:38-10:00",
   "high": null,
   "low": null,
   "source": "chain quote",
   "pnl_pct": 0.0,
-  "as_of": "2026-11-20T05:22:42.270261-10:00"
+  "as_of": "2026-11-20T05:32:34.439751-10:00"
  },
- "2026-11-20_rescan_MU_PUT_2026-11-20_640": {
-  "last": 7.33,
-  "last_time": "2026-11-20T05:09:12-10:00",
+ "2026-11-20_rescan_SPCX_PUT_2026-11-20_129": {
+  "last": 0.96,
+  "last_time": "2026-11-20T05:19:07-10:00",
   "high": null,
   "low": null,
   "source": "chain quote",
-  "pnl_pct": 26.4,
-  "as_of": "2026-11-20T05:22:42.270261-10:00"
+  "pnl_pct": 24.7,
+  "as_of": "2026-11-20T05:32:34.439751-10:00"
  },
- "2026-11-20_rescan_SOXL_PUT_2026-11-20_39": {
-  "last": 1.04,
-  "last_time": "2026-11-20T05:09:10-10:00",
+ "2026-11-20_rescan_SPX_PUT_2026-11-20_7135": {
+  "last": 33.7,
+  "last_time": "2026-11-20T05:19:11-10:00",
   "high": null,
   "low": null,
   "source": "chain quote",
-  "pnl_pct": 26.8,
-  "as_of": "2026-11-20T05:22:42.270261-10:00"
- },
- "2026-11-20_rescan_NVDA_PUT_2026-11-20_138": {
-  "last": 0.51,
-  "last_time": "2026-11-20T05:09:21-10:00",
-  "high": null,
-  "low": null,
-  "source": "chain quote",
-  "pnl_pct": 4.1,
-  "as_of": "2026-11-20T05:22:42.270261-10:00"
- },
- "2026-11-20_rescan_AMD_PUT_2026-11-20_450": {
-  "last": 3.4,
-  "last_time": "2026-11-20T05:09:10-10:00",
-  "high": null,
-  "low": null,
-  "source": "chain quote",
-  "pnl_pct": 28.8,
-  "as_of": "2026-11-20T05:22:42.270261-10:00"
- },
- "2026-11-20_rescan_QQQ_PUT_2026-11-20_633": {
-  "last": 2.1,
-  "last_time": "2026-11-20T05:09:28-10:00",
-  "high": null,
-  "low": null,
-  "source": "chain quote",
-  "pnl_pct": 6.1,
-  "as_of": "2026-11-20T05:22:42.270261-10:00"
- },
- "2026-11-20_rescan_TSLA_PUT_2026-11-20_360": {
-  "last": 0.65,
-  "last_time": "2026-11-20T05:09:29-10:00",
-  "high": null,
-  "low": null,
-  "source": "chain quote",
-  "pnl_pct": 16.1,
-  "as_of": "2026-11-20T05:22:42.270261-10:00"
+  "pnl_pct": 11.8,
+  "as_of": "2026-11-20T05:32:34.439751-10:00"
  },
  "_errors": {
-  "2026-11-20_rescan_CRWV_PUT_2026-11-20_42": "bars returned but none after lock (8 rows)",
-  "2026-11-20_rescan_GLD_PUT_2026-11-20_326": "bars returned but none after lock (8 rows)",
-  "2026-11-20_rescan_IREN_PUT_2026-11-20_13": "bars returned but none after lock (8 rows)",
-  "2026-11-20_rescan_MU_PUT_2026-11-20_640": "bars returned but none after lock (8 rows)",
-  "2026-11-20_rescan_SOXL_PUT_2026-11-20_39": "bars returned but none after lock (8 rows)",
-  "2026-11-20_rescan_NVDA_PUT_2026-11-20_138": "bars returned but none after lock (8 rows)",
-  "2026-11-20_rescan_AMD_PUT_2026-11-20_450": "bars returned but none after lock (8 rows)",
-  "2026-11-20_rescan_QQQ_PUT_2026-11-20_633": "bars returned but none after lock (8 rows)",
-  "2026-11-20_rescan_TSLA_PUT_2026-11-20_360": "bars returned but none after lock (8 rows)"
+  "2026-11-20_rescan_NVDA_PUT_2026-11-20_138": "bars returned but none after lock (10 rows)",
+  "2026-11-20_rescan_AMD_PUT_2026-11-20_450": "bars returned but none after lock (10 rows)",
+  "2026-11-20_rescan_QQQ_PUT_2026-11-20_633": "bars returned but none after lock (10 rows)",
+  "2026-11-20_rescan_TSLA_PUT_2026-11-20_360": "bars returned but none after lock (10 rows)",
+  "2026-11-20_rescan_HOOD_PUT_2026-11-20_65": "bars returned but none after lock (10 rows)",
+  "2026-11-20_rescan_META_PUT_2026-11-20_575": "bars returned but none after lock (10 rows)",
+  "2026-11-20_rescan_ORCL_PUT_2026-11-20_105": "bars returned but none after lock (10 rows)",
+  "2026-11-20_rescan_SPCX_PUT_2026-11-20_129": "bars returned but none after lock (10 rows)",
+  "2026-11-20_rescan_SPX_PUT_2026-11-20_7135": "bars returned but none after lock (10 rows)"
  }
 }
