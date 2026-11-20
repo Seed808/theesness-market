@@ -1,0 +1,30 @@
+{
+ "trade_date": "2026-11-20",
+ "ran_at": "2026-11-20T04:32:35.022455-10:00",
+ "cards": {
+  "2026-11-20_premarket_NVDA_PUT_2026-11-20_142": {
+   "price": 1.92,
+   "time": "2026-11-19T10:59:58-10:00",
+   "source": "chain quote",
+   "underlying": null
+  },
+  "2026-11-20_premarket_QQQ_PUT_2026-11-20_637": {
+   "price": 6.21,
+   "time": "2026-11-19T11:14:51-10:00",
+   "source": "chain quote",
+   "underlying": null
+  },
+  "2026-11-20_premarket_SPY_PUT_2026-11-20_711": {
+   "price": 4.16,
+   "time": "2026-11-19T11:14:57-10:00",
+   "source": "chain quote",
+   "underlying": null
+  },
+  "2026-11-20_premarket_TSLA_PUT_2026-11-20_360": {
+   "price": 3.12,
+   "time": "2026-11-19T10:59:55-10:00",
+   "source": "chain quote",
+   "underlying": null
+  }
+ }
+}
