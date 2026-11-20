@@ -1,43 +1,20 @@
 {
  "2026-11-20_confirm_AVGO_PUT_2026-11-20_330": {
-  "last": 14.0,
-  "last_time": "2026-11-20T05:55:00-10:00",
-  "high": 14.8,
+  "last": 15.53,
+  "last_time": "2026-11-20T06:05:00-10:00",
+  "high": 16.73,
   "low": 4.39,
   "source": "yahoo 5m",
-  "pnl_pct": 865.5,
-  "as_of": "2026-11-20T06:12:33.469716-10:00"
- },
- "2026-11-20_rescan_SMCI_PUT_2026-11-20_22": {
-  "last": 0.17,
-  "last_time": "2026-11-20T05:52:05-10:00",
-  "high": null,
-  "low": null,
-  "source": "chain quote",
-  "pnl_pct": -37.0,
-  "as_of": "2026-11-20T06:12:33.469716-10:00"
- },
- "2026-11-20_rescan_SMH_PUT_2026-11-20_415": {
-  "last": 3.5,
-  "last_time": "2026-11-20T05:57:36-10:00",
-  "high": null,
-  "low": null,
-  "source": "chain quote",
-  "pnl_pct": -26.8,
-  "as_of": "2026-11-20T06:12:33.469716-10:00"
+  "pnl_pct": 971.0,
+  "as_of": "2026-11-20T06:22:29.760122-10:00"
  },
  "2026-11-20_rescan_TSM_PUT_2026-11-20_325": {
-  "last": 2.42,
-  "last_time": "2026-11-20T05:58:34-10:00",
-  "high": null,
-  "low": null,
-  "source": "chain quote",
-  "pnl_pct": -21.4,
-  "as_of": "2026-11-20T06:12:33.469716-10:00"
- },
- "_errors": {
-  "2026-11-20_rescan_SMCI_PUT_2026-11-20_22": "bars returned but none after lock (15 rows)",
-  "2026-11-20_rescan_SMH_PUT_2026-11-20_415": "bars returned but none after lock (15 rows)",
-  "2026-11-20_rescan_TSM_PUT_2026-11-20_325": "bars returned but none after lock (17 rows)"
+  "last": 2.49,
+  "last_time": "2026-11-20T06:05:00-10:00",
+  "high": 3.23,
+  "low": 2.49,
+  "source": "yahoo 5m",
+  "pnl_pct": -19.2,
+  "as_of": "2026-11-20T06:22:29.760122-10:00"
  }
 }
