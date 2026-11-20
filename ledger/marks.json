@@ -1,14 +1,1 @@
-{
- "2026-11-19_rescan_SHOP_PUT_2026-11-20_130": {
-  "last": 1.4,
-  "last_time": "2026-11-19T10:58:56-10:00",
-  "high": null,
-  "low": null,
-  "source": "chain quote",
-  "pnl_pct": 7.7,
-  "as_of": "2026-11-20T04:42:37.062174-10:00"
- },
- "_errors": {
-  "2026-11-19_rescan_SHOP_PUT_2026-11-20_130": "no 5m bars"
- }
-}
+{}
