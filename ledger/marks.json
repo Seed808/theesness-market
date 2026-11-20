@@ -1,24 +1,74 @@
 {
  "2026-11-20_confirm_IBIT_PUT_2026-11-20_34": {
   "last": 0.08,
-  "last_time": "2026-11-20T04:48:54-10:00",
+  "last_time": "2026-11-20T04:57:21-10:00",
   "high": null,
   "low": null,
   "source": "chain quote",
   "pnl_pct": -27.3,
-  "as_of": "2026-11-20T05:02:31.885758-10:00"
+  "as_of": "2026-11-20T05:12:35.102242-10:00"
  },
  "2026-11-20_confirm_AVGO_PUT_2026-11-20_330": {
-  "last": 1.5,
-  "last_time": "2026-11-20T04:49:11-10:00",
+  "last": 3.38,
+  "last_time": "2026-11-20T04:59:17-10:00",
   "high": null,
   "low": null,
   "source": "chain quote",
-  "pnl_pct": 3.4,
-  "as_of": "2026-11-20T05:02:31.885758-10:00"
+  "pnl_pct": 133.1,
+  "as_of": "2026-11-20T05:12:35.102242-10:00"
+ },
+ "2026-11-20_rescan_CRWV_PUT_2026-11-20_42": {
+  "last": 0.55,
+  "last_time": "2026-11-20T04:57:59-10:00",
+  "high": null,
+  "low": null,
+  "source": "chain quote",
+  "pnl_pct": -16.7,
+  "as_of": "2026-11-20T05:12:35.102242-10:00"
+ },
+ "2026-11-20_rescan_GLD_PUT_2026-11-20_326": {
+  "last": 0.82,
+  "last_time": "2026-11-20T04:56:45-10:00",
+  "high": null,
+  "low": null,
+  "source": "chain quote",
+  "pnl_pct": 3.8,
+  "as_of": "2026-11-20T05:12:35.102242-10:00"
+ },
+ "2026-11-20_rescan_IREN_PUT_2026-11-20_13": {
+  "last": 0.17,
+  "last_time": "2026-11-20T04:58:26-10:00",
+  "high": null,
+  "low": null,
+  "source": "chain quote",
+  "pnl_pct": 0.0,
+  "as_of": "2026-11-20T05:12:35.102242-10:00"
+ },
+ "2026-11-20_rescan_MU_PUT_2026-11-20_640": {
+  "last": 5.6,
+  "last_time": "2026-11-20T04:59:21-10:00",
+  "high": null,
+  "low": null,
+  "source": "chain quote",
+  "pnl_pct": -3.4,
+  "as_of": "2026-11-20T05:12:35.102242-10:00"
+ },
+ "2026-11-20_rescan_SOXL_PUT_2026-11-20_39": {
+  "last": 0.78,
+  "last_time": "2026-11-20T04:59:13-10:00",
+  "high": null,
+  "low": null,
+  "source": "chain quote",
+  "pnl_pct": -4.9,
+  "as_of": "2026-11-20T05:12:35.102242-10:00"
  },
  "_errors": {
-  "2026-11-20_confirm_IBIT_PUT_2026-11-20_34": "bars returned but none after lock (4 rows)",
-  "2026-11-20_confirm_AVGO_PUT_2026-11-20_330": "bars returned but none after lock (4 rows)"
+  "2026-11-20_confirm_IBIT_PUT_2026-11-20_34": "bars returned but none after lock (6 rows)",
+  "2026-11-20_confirm_AVGO_PUT_2026-11-20_330": "bars returned but none after lock (6 rows)",
+  "2026-11-20_rescan_CRWV_PUT_2026-11-20_42": "bars returned but none after lock (6 rows)",
+  "2026-11-20_rescan_GLD_PUT_2026-11-20_326": "bars returned but none after lock (6 rows)",
+  "2026-11-20_rescan_IREN_PUT_2026-11-20_13": "bars returned but none after lock (6 rows)",
+  "2026-11-20_rescan_MU_PUT_2026-11-20_640": "bars returned but none after lock (6 rows)",
+  "2026-11-20_rescan_SOXL_PUT_2026-11-20_39": "bars returned but none after lock (6 rows)"
  }
 }
