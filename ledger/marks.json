@@ -1,24 +1,24 @@
 {
  "2026-11-20_rescan_AMZN_PUT_2026-11-20_250": {
-  "last": 0.62,
-  "last_time": "2026-11-20T06:19:01-10:00",
+  "last": 0.94,
+  "last_time": "2026-11-20T06:29:02-10:00",
   "high": null,
   "low": null,
   "source": "chain quote",
-  "pnl_pct": 10.7,
-  "as_of": "2026-11-20T06:32:34.251870-10:00"
+  "pnl_pct": 67.9,
+  "as_of": "2026-11-20T06:42:31.771322-10:00"
  },
  "2026-11-20_rescan_AAPL_PUT_2026-11-20_347.5": {
-  "last": 1.46,
-  "last_time": "2026-11-20T06:18:56-10:00",
+  "last": 1.67,
+  "last_time": "2026-11-20T06:29:05-10:00",
   "high": null,
   "low": null,
   "source": "chain quote",
-  "pnl_pct": 13.2,
-  "as_of": "2026-11-20T06:32:34.251870-10:00"
+  "pnl_pct": 29.5,
+  "as_of": "2026-11-20T06:42:31.771322-10:00"
  },
  "_errors": {
-  "2026-11-20_rescan_AMZN_PUT_2026-11-20_250": "bars returned but none after lock (22 rows)",
-  "2026-11-20_rescan_AAPL_PUT_2026-11-20_347.5": "bars returned but none after lock (22 rows)"
+  "2026-11-20_rescan_AMZN_PUT_2026-11-20_250": "bars returned but none after lock (24 rows)",
+  "2026-11-20_rescan_AAPL_PUT_2026-11-20_347.5": "bars returned but none after lock (24 rows)"
  }
 }
