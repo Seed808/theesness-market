@@ -95,6 +95,8 @@ footer{margin-top:44px;padding-top:14px;border-top:1px solid var(--rule);font-si
 .ty.PUT{color:var(--loss)} .ty.CALL{color:var(--win)}
 .conf{font-family:var(--display);font-weight:700;font-size:22px;font-variant-numeric:tabular-nums}
 .why{font-size:13px;color:var(--muted)}
+.tbl.pre{margin:8px 0 4px;background:transparent}.tbl.pre th,.tbl.pre td{padding:4px 4px}.tbl.pre table{font-size:12px}.tbl.pre .eyebrow{letter-spacing:0;font-size:11px}
+.card details{margin-top:6px}.card details summary{cursor:pointer}
 .status{font-family:var(--mono);font-size:11.5px;letter-spacing:.04em}
 .bias{background:var(--panel);border:1px solid var(--rule);padding:12px 14px}
 .bias .reg{font-family:var(--display);font-weight:700;font-size:30px;letter-spacing:.03em}

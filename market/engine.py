@@ -1585,44 +1585,63 @@ def _day(d) -> str:
     return d.strftime("%a %m/%d")
 
 
+# --- Card display trimming (2026-11-20, Kalani: cards too long, info repetitive). Display only:
+# the saved card data (ledger, CSV log) keeps every field and every reason.
+# Flags that are the same for every card that day are said once in the report header.
+DAY_FLAG_PREFIXES = ("0DTE only", "amateur hour", "FOMC:")
+# Reasons that only say something is missing; the score already reflects them.
+EMPTY_REASONS = ("bias clean", "no volume confirmation", "no catalyst found", "catalyst: ETF")
+TRAIL_NOTE = "Stops: −20% until T1, then trail 15% below the high (never below entry, no cap)."
+PRE_NOTE = "Pre-market: premium = last close (options not trading yet). Every card needs the first 5-min candle; entry/target/stop set at the open."
+
+
+def card_flags(flags: str) -> list:
+    """Card-specific flags only (day-level ones dropped); chasing marked ⚠ and put first."""
+    out = [f for f in (flags or "").split("; ") if f and not f.startswith(DAY_FLAG_PREFIXES)]
+    out = [f"⚠ {f}" if f.startswith(("CHASING", "EARNINGS", "WIDE-DTE")) else f for f in out]
+    out = [re.sub(r"^hold OK until (.+) close · close before the weekend$", r"hold OK to \1 close", f) for f in out]
+    return sorted(out, key=lambda f: not f.startswith("⚠"))
+
+
+def card_reasons(reasoning: str, bias: str = "") -> str:
+    """Reasons that are present (not the day's bias, not 'missing X' lines)."""
+    return ", ".join(x for x in (reasoning or "").split(", ")
+                     if x and x != bias and not x.startswith(EMPTY_REASONS))
+
+
 def tg_card(i: "Idea") -> str:
-    """One trade card as a short block. Same fields as the pipe format, one idea per line."""
+    """One trade card, short. Day-level info (bias, day flags, pre-market and stop rules) is in
+    the report header/footer, not repeated on each card."""
     exp = datetime.strptime(i.expiry, "%Y-%m-%d").strftime("%a %-m/%-d")
-    head = f"<b>{_h(i.ticker)} {_h(i.type)} {i.strike:g}</b> · exp {exp} · <b>{i.confidence}/10</b>"
+    head = f"<b>{_h(i.ticker)} {_h(i.type)} {i.strike:g}</b> · {exp} · <b>{i.confidence}/10</b>"
     if i.a_plus:
         head += " · <b>A+</b>"
     if i.mover:
         head += " · <b>MM</b>"
-    reasons = ", ".join(x for x in i.reasoning.split(", ") if x != i.bias)
-    lines = [
-        head,
-        (f"Stock ${i.underlying:,.2f} ({_day(now_hst().date())} {_h(i.underlying_asof)})" if i.underlying is not None
-         else "Stock price n/a"),
-    ]
+    stock = (f"Stock ${i.underlying:,.2f} ({_h(i.underlying_asof)})" if i.underlying is not None
+             else "Stock n/a")
+    lines = [head]
     if i.status.startswith("CONDITIONAL"):
-        # Pre-market: stock options aren't trading yet, so the premium is the prior close's
-        # bid/ask mid. Entry, target, stop and size are set from the live price at the open.
-        lines += [f"Premium ${i.premium:.2f} = last close (options not trading yet)",
-                  "Entry / target / stop / max: set at the open"]
+        lines.append(f"{stock} · prem ${i.premium:.2f} (last close)")
     else:
         st = card_level_stocks({"underlying": i.underlying, "strike": i.strike, "premium": i.premium,
                                 "type": i.type, "locked_at": now_hst().isoformat(), "expiry": i.expiry,
                                 "target1": i.target1, "target": i.target, "stop": i.stop})
 
         def lv(name, px, key):
-            return f"{name} ${px:.2f}" + (f" (stock ≈ ${st[key]:,.2f})" if key in st else "")
+            return f"{name} ${px:.2f}" + (f" (≈${st[key]:,.2f})" if key in st else "")
         t1 = i.target1 or target1_price(i.premium)
-        lines += [
-        f"Entry ${i.entry_floor:.2f}–${i.entry_ceiling:.2f} · Premium ${i.premium:.2f} · Max {_h(i.max_contracts)}",
-        lv("T1", t1, "t1") + " · " + lv("Banger", i.target, "t2"),
-        lv("Stop", i.stop, "stop") + " → after T1: trails 15% below the high, never below entry, no cap",
-        ]
-    lines += [
-        f"Bias {_h(i.bias)} · {_h(reasons)}",
-        f"<i>{_h(i.status)}</i>",
-    ]
-    if i.flags:
-        lines.append(f"<i>{_h(i.flags)}</i>")
+        lines += [stock,
+                  f"Entry ${i.entry_floor:.2f}–${i.entry_ceiling:.2f} · Max {_h(i.max_contracts)}",
+                  lv("T1", t1, "t1") + " · " + lv("Banger", i.target, "t2"),
+                  lv("Stop", i.stop, "stop")]
+        if i.status != "GO":
+            lines.append(f"<b>{_h(i.status)}</b>")
+    reasons = card_reasons(i.reasoning, i.bias)
+    flags = card_flags(i.flags)
+    tail = " · ".join(x for x in [f"<b>{_h(f)}</b>" if f.startswith("⚠") else _h(f) for f in flags] + [_h(reasons)] if x)
+    if tail:
+        lines.append(tail)
     return "\n".join(lines)
 
 
@@ -1638,12 +1657,13 @@ def tg_bias(r: "ScanResult") -> str:
     vix = q.get("VIX")
     vix_px = "n/a" if vix is None or vix.last is None else f"{vix.last:.2f}"
     rule = b.notes[1] if len(b.notes) > 1 else ""
+    # "clean" already means VIX and SPY/QQQ confirm; only say which one fails when it isn't.
+    miss = [x for x, ok in (("VIX does not confirm", b.vix_confirms),
+                            ("SPY/QQQ do not confirm", b.index_confirms)) if not ok]
     return (f"<b>BIAS: {_h(b.regime)}</b> · {fav} · {'clean' if b.clean else 'not clean'}\n"
             f"ES {c('ES')} · NQ {c('NQ')} · YM {c('YM')}\n"
             f"VIX {vix_px} ({c('VIX')}) · SPY {c('SPY')} · QQQ {c('QQQ')}\n"
-            f"{_h(rule)}\n"
-            f"VIX {'confirms' if b.vix_confirms else 'does not confirm'} · "
-            f"SPY/QQQ {'confirm' if b.index_confirms else 'do not confirm'}")
+            f"{_h(rule)}" + (f"\n{' · '.join(miss)}" if miss and not b.clean else ""))
 
 
 def tg_report(r: "ScanResult", cards: Optional[list] = None, prefix: str = "",
@@ -1657,6 +1677,8 @@ def tg_report(r: "ScanResult", cards: Optional[list] = None, prefix: str = "",
              + (" (early close)" if s.early_close else ""),
              tg_bias(r)]
     flags = [f for f in r.flags if not f.startswith(("Amateur hour", "No damaged"))]
+    if r.ran_at < s.at(AMATEUR_HOUR_MIN):
+        flags.append(f"Amateur hour until {s.at(AMATEUR_HOUR_MIN).strftime('%I:%M %p').lstrip('0')}")
     if flags:
         parts.append("<b>FLAGS</b>\n" + "\n".join(f"• {_h(f)}" for f in flags))
     if r.headlines:
@@ -1667,8 +1689,12 @@ def tg_report(r: "ScanResult", cards: Optional[list] = None, prefix: str = "",
     parts += extra or []
     if extra and cards:
         parts.append("<b>NEW CARDS</b>")
+    if cards and all(i.status.startswith("CONDITIONAL") for i in cards):
+        parts.append(f"<i>{PRE_NOTE}</i>")
     parts += [tg_card(i) for i in cards] if cards else ["<b>No quality setups.</b>"]
     foot = f"{len(r.ideas)} passed · {len(r.skipped)} rejected · {data_note()}"
+    if any(not i.status.startswith("CONDITIONAL") for i in cards):
+        foot = TRAIL_NOTE + "\n" + foot
     if "UNSET" in {i.max_contracts for i in cards}:
         foot += "\nMax contracts UNSET — add ACCOUNT_SIZE + RISK_PCT secrets"
     parts.append(f"<i>{foot}</i>")

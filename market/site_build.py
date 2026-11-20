@@ -267,61 +267,60 @@ def _be(c: dict) -> bool:
 
 
 def _stop_line(c: dict, pk: dict, stock) -> str:
+    d = c["trade_date"]
     if not _be(c):
         return f'<dt>Stop</dt><dd>{_money(c["stop"])}{stock("stop")}</dd>'
-    import runner as R
-    pct = int(R.TRAIL_PCT * 100)
     tr = pk.get("trail")
     if tr:
-        return (f'<dt>Stop</dt><dd>{_money(tr["stop"])} <span class="eyebrow">trailing {pct}% below the high '
-                f'{_money(tr["high"])}, never below entry · was {_money(c["stop"])} before T1</span></dd>')
+        return (f'<dt>Stop</dt><dd>{_money(tr["stop"])} <span class="eyebrow">trailing · high '
+                f'{_money(tr["high"])}</span></dd>')
     if pk.get("exit_how", "").startswith("TRAILING"):
-        return (f'<dt>Stop</dt><dd>trailing stop hit {_t(pk["exit_at"])} '
-                f'<span class="eyebrow">{pct}% below the high after T1</span></dd>')
-    return (f'<dt>Stop</dt><dd>{_money(c["stop"])}{stock("stop")} <span class="eyebrow">→ once T1 hits, '
-            f'trails {pct}% below the high (never below entry), no cap</span></dd>')
+        return f'<dt>Stop</dt><dd>trailing stop hit {_hm(pk["exit_at"], d)}</dd>'
+    return f'<dt>Stop</dt><dd>{_money(c["stop"])}{stock("stop")}</dd>'
 
 
 def price_lines(c: dict) -> str:
+    """Official card prices (2026-11-20 trim: premium = entry floor, so one row; rule text and the
+    stock ≈ footnote are in the legend once per page, not on every card)."""
     st = E.card_level_stocks(c)
     pk = PEAKS.get(c["id"], {})
 
     def stock(key):
-        return (f' <span class="eyebrow">(stock ≈ {_money(st[key])})</span>' if key in st else "")
+        return (f' <span class="eyebrow">(≈{_money(st[key])})</span>' if key in st else "")
 
     def hit(at_key):
-        return (f' <span class="res-WIN">✓ {_t(pk[at_key])}</span>' if pk.get(at_key) else "")
-    return (f'<dt>Entry range</dt><dd>{_money(c["entry_floor"])}–{_money(c["entry_ceiling"])}</dd>'
-            f'<dt>Premium</dt><dd>{_money(c["premium"])}</dd>'
-            f'<dt>Max contracts</dt><dd class="eyebrow">Telegram only</dd>'
+        return (f' <span class="res-WIN">✓ {_hm(pk[at_key], c["trade_date"])}</span>' if pk.get(at_key) else "")
+    return (f'<dt>Entry</dt><dd>{_money(c["entry_floor"])}–{_money(c["entry_ceiling"])}</dd>'
             f'<dt>Target 1</dt><dd>{_money(t1_of(c))}{stock("t1")}{hit("t1_at")}</dd>'
-            + (f'<dt>Banger</dt><dd>{_money(c["target"])}{stock("t2")}{hit("t2_at")}'
-               + (' <span class="eyebrow">milestone only · no cap, the trail decides the exit</span>' if _be(c) else "")
-               + '</dd>')
-            + _stop_line(c, pk, stock)
-            + ('<dd class="eyebrow" style="grid-column:1/-1">stock ≈ = estimate if reached the day the '
-               'card was locked; later in the week the stock has to move further</dd>' if st else ""))
+            f'<dt>Banger</dt><dd>{_money(c["target"])}{stock("t2")}{hit("t2_at")}</dd>'
+            + _stop_line(c, pk, stock))
+
+
+OFFICIAL_LEGEND = ('<p class="note"><b>Reading the cards:</b> Entry = signal premium to +15–20%. Stop −20% '
+                   'until T1 (+20%), then trails 15% below the high, never below entry, no cap — the Banger is '
+                   'a milestone only (cards from 11/13; earlier cards exit at the Banger). Stock ≈ = estimated '
+                   'stock price for that level if reached the day the card was locked; later in the week the '
+                   'stock has to move further. <i>Went on to</i> = highest contract price before the stop, best '
+                   'possible exit, not a fill. Max contracts are in Telegram only.</p>')
 
 
 def tracking_lines(c: dict) -> str:
-    """T1 result, how high the contract went, and the break-even side number."""
+    """T1 result (only when it isn't already shown as a ✓), how high the contract went, and the
+    break-even side number."""
+    d = c["trade_date"]
     pk, g1 = PEAKS.get(c["id"], {}), T1.get(c["id"])
     out = ""
-    if g1:
+    if g1 and not (g1["result"] == "WIN" and pk.get("t1_at")):
         r = g1["result"]
         lab = {"WIN": f"✓ hit +{int(E.TARGET1_PCT * 100)}%", "LOSS": "✗ stopped before T1",
                "UNGRADABLE": "no price data"}.get(r, r)
-        when = f' {_t(g1["hit_at"])}' if g1.get("hit_at") and r == "WIN" else ""
+        when = f' {_hm(g1["hit_at"], d)}' if g1.get("hit_at") and r == "WIN" else ""
         out += (f'<dt>Target 1</dt><dd><span class="res-{e(r)}">{e(lab)}</span>{e(when)} '
                 f'<span class="eyebrow">{e(g1["method"])}</span></dd>')
     if pk.get("peak_pct") is not None:
-        end = "frozen at expiry close" if pk.get("final") else "updates until expiry close"
-        if pk.get("stop_at"):
-            end = "before the stop"
-        elif pk.get("exit_how", "").startswith("TRAILING"):
-            end = "before the trailing stop"
-        out += (f'<dt>Went on to</dt><dd>{pk["peak_pct"]:+.1f}% <span class="eyebrow">highest '
-                f'contract price {_t(pk["peak_at"])} · {e(end)} · best possible exit, not a fill</span></dd>')
+        end = "" if pk.get("final") else " · still updating"
+        out += (f'<dt>Went on to</dt><dd>{pk["peak_pct"]:+.1f}% <span class="eyebrow">at '
+                f'{_hm(pk["peak_at"], d)}{end}</span></dd>')
     if pk.get("be") and not _be(c):              # trailing cards don't get the break-even side number
         b = pk["be"]
         out += (f'<dt>BE stop</dt><dd class="eyebrow">if the stop had moved to entry after T1: '
@@ -359,30 +358,121 @@ def price_lines_premarket(c: dict) -> str:
             f'<dt>Entry · target · stop</dt><dd class="eyebrow">set at the confirmation read</dd>')
 
 
+def _hm(iso: str, d: str) -> str:
+    """Short time inside a card ('4:32'); weekday added only if it isn't the card's own day.
+    The card's full date + time stamp is on its 'called' line."""
+    t = datetime.fromisoformat(iso).astimezone(E.HST)
+    hm = t.strftime("%I:%M").lstrip("0")
+    return hm if t.date().isoformat() == d else f'{t.strftime("%a")} {hm}'
+
+
 def pre_header(c: dict) -> str:
-    """Pre-market card header showing its LATEST state (3:22 read -> open -> confirmation read)."""
+    """Pre-market card header showing its LATEST state (pre-market read -> open -> confirmation read)."""
+    d = c["trade_date"]
     w, o = watch_for_pre(c), OPEN_PX.get(c["id"])
-    stock, when = c.get("underlying"), str(c.get("underlying_asof") or "")
+    stock, when = c.get("underlying"), "pre-market"
     if o and o.get("underlying"):
-        stock, when = o["underlying"], f'{_t(o["time"])} (open)'
+        stock, when = o["underlying"], f'open {_hm(o["time"], d)}'
     if w and w.get("underlying") not in ("", None):
-        stock, when = w["underlying"], f'{_t(w["priced_at"])} (confirmation read)'
-    was = (f' · was {_money(c["underlying"])} at {_t(c["locked_at"])}'
+        stock, when = w["underlying"], f'confirmation read {_hm(w["priced_at"], d)}'
+    was = (f' · was {_money(c["underlying"])}'
            if c.get("underlying") not in (None, "") and stock != c.get("underlying") else "")
-    px = (f'<div class="px">Stock {_money(stock)} <span class="eyebrow">as of {e(when)}{e(was)}</span></div>'
+    px = (f'<div class="px">Stock {_money(stock)} <span class="eyebrow">{e(when)}{e(was)}</span></div>'
           if stock not in (None, "") else "")
     if w:
         icon = {"CONFIRMED": "✓", "NOT CONFIRMED": "✗", "PASSED": "•", "NOT SCANNED": "?"}.get(w["status"], "")
-        st = f'{icon} {w["status"]} at {_t(w["priced_at"])} — {w["reason"]}'
+        st = f'{icon} {w["status"].capitalize()} — {w["reason"]}'
     elif o:
-        st = f'Re-priced at the open {_t(o["time"])} · confirmation read at {_t(E.session_for(date.fromisoformat(c["trade_date"])).at(E.AMATEUR_HOUR_MIN).isoformat())}'
+        st = (f'Re-priced at the open · confirmation read at '
+              f'{_hm(E.session_for(date.fromisoformat(d)).at(E.AMATEUR_HOUR_MIN).isoformat(), d)}')
     else:
-        st = f'{c["status"]} · called {_t(c["locked_at"])}'
-    return px + f'<div class="status">{e(st)} · called {_t(c["locked_at"])}</div>' if (w or o) else \
-        px + f'<div class="status">{e(st)}</div>'
+        st = "Waiting for the open"
+    return px + f'<div class="status">{e(st)}</div><div class="eyebrow">called {_t(c["locked_at"])}</div>'
+
+
+PRE_ROWS = (("preopen", "From open"), ("firstcandle", "1st candle"), ("premarket", "5:00 read"))
+PRE_ICON = {"CONFIRMED": "✓", "NOT CONFIRMED": "✗", "PASSED": "•", "NOT SCANNED": "?", "BLOCKED": "✗",
+            "AT THE OPEN": "", "ENTERED": "✓", "SKIPPED": "✗"}
+
+
+def _cell(g: dict | None, tgt: str, pk: dict, d: str, show_last: bool = False) -> str:
+    """One short result cell: ✓/✗ + P/L, or the latest P/L while still open."""
+    if not g or tgt not in g:
+        if show_last and pk.get("last_pct") is not None:
+            return f'<span class="eyebrow">open</span> {pk["last_pct"]:+.0f}%'
+        return '<span class="eyebrow">open</span>'
+    r = g[tgt]
+    mark = {"WIN": "✓", "LOSS": "✗"}.get(r["result"], "")
+    if tgt == "T1":
+        txt = f'{mark} {_hm(r["hit_at"], d)}' if r["result"] == "WIN" and r.get("hit_at") else \
+            {"LOSS": "✗ stop"}.get(r["result"], r["result"].lower())
+    else:
+        txt = (f'{float(r["pnl_pct"]):+.0f}%' if r.get("pnl_pct") not in ("", None) else r["result"].lower())
+    return f'<span class="res-{e(r["result"])}">{e(txt)}</span>'
+
+
+def pre_table(c: dict) -> str:
+    """Pre-market watch card: the three entries it's tracked from, one row each (2026-11-20,
+    replaces three full blocks per card). Full blocks stay behind the details toggle."""
+    import watch as _W
+    rows = ""
+    for kind, label in PRE_ROWS:
+        w = watch_for_pre(c, kind)
+        if not w:
+            continue
+        lab = f'{e(label)} <span class="eyebrow">{_hm(w["priced_at"], c["trade_date"])}</span>'
+        icon = PRE_ICON.get(w["status"], "")
+        if w.get("premium") in ("", None):
+            rows += (f'<tr><td>{lab}</td><td colspan="4" class="why" style="text-align:left;white-space:normal">'
+                     f'{e(icon)} {e(w["status"].title())} — {e(w["reason"])}</td></tr>')
+            continue
+        g, pk = W_GRADES.get(w["id"]), W_PEAKS.get(w["id"], {})
+        ex = "TRAIL" if _W._trail_era(w) else "T2"
+        peak = f'{pk["peak_pct"]:+.0f}%' if pk.get("peak_pct") is not None else "–"
+        rows += (f'<tr><td>{lab}{" " + e(icon) if icon else ""}</td><td>{_money(w["premium"])}</td>'
+                 f'<td>{_cell(g, "T1", pk, c["trade_date"])}</td><td>{_cell(g, ex, pk, c["trade_date"], True)}</td><td>{peak}</td></tr>')
+    if not rows:
+        return ""
+    return ('<div class="tbl pre"><table><tr><th>Entry at</th><th>Prem</th><th>T1</th><th>Exit</th>'
+            f'<th>Peak</th></tr>{rows}</table></div>')
+
+
+PRE_LEGEND = ('<p class="note"><b>How to read these:</b> stock options don\'t trade pre-market, so each card '
+              'is priced at the last close and tracked from three possible entries: the open (price only, '
+              'amateur hour), 5 minutes after the open only if the first 5-minute candle went the card\'s way, '
+              'and the confirmation read. <b>T1</b> = +20% reached (time) or stopped first. <b>Exit</b> = the '
+              'official rule since 11/13: −20% stop until T1, then trail 15% below the high, never below entry, '
+              'no cap (Banger result before 11/13). <b>Peak</b> = highest contract price before the stop — best '
+              'possible exit, not a fill. Tap <i>details</i> for times, stops and stock levels.</p>')
+
+
+def pre_card_html(c: dict) -> str:
+    aplus = c["a_plus"] in (True, "True")
+    tag = (f'<span class="offtag mm" title="Schwab Market Movers: {e(c["mover"])}">MM</span>'
+           if c.get("mover") else "")
+    flags = E.card_flags(c.get("flags", ""))
+    reasons = E.card_reasons(c.get("reasoning", ""), c.get("bias", ""))
+    note = " · ".join([f'<b class="res-LOSS">{e(f)}</b>' if f.startswith("⚠") else e(f) for f in flags]
+                      + ([e(reasons)] if reasons else []))
+    exp = date.fromisoformat(c["expiry"]).strftime("%a %-m/%-d")
+    detail = (price_lines_premarket(c)
+              + ''.join(f'<dt>{e(label)}</dt><dd></dd>' + watch_lines(w)
+                        for kind, label in PRE_ROWS if (w := watch_for_pre(c, kind))))
+    return (f'<div class="card{" aplus" if aplus else ""}">'
+            f'<div class="head"><span><span class="tk">{e(c["ticker"])}</span>{tag} '
+            f'<span class="ty {e(c["type"])}">{e(c["type"])}</span> {float(c["strike"]):g} '
+            f'<span class="eyebrow">{e(exp)}</span>'
+            + (' <span class="badge gap2">A+</span>' if aplus else "") + '</span>'
+            f'<span class="conf">{e(str(c["confidence"]))}/10</span></div>'
+            + pre_header(c)
+            + (f'<div class="why">{note}</div>' if note else "")
+            + pre_table(c)
+            + f'<details><summary class="eyebrow">details</summary><dl class="lines">{detail}</dl></details></div>')
 
 
 def card_html(c: dict, g: dict | None) -> str:
+    if c["mode"] == "premarket":
+        return pre_card_html(c)
     res = ""
     if g:
         pnl = f' ({float(g["pnl_pct"]):+.1f}%)' if g.get("pnl_pct") not in ("", None) else ""
@@ -403,7 +493,8 @@ def card_html(c: dict, g: dict | None) -> str:
                   if _be(c) else f'<dt>Ends</dt><dd class="eyebrow">at the Banger, stop, or {exp_day} close</dd>'))
     aplus = c["a_plus"] in (True, "True")
     badge = '<span class="badge gap2">A+</span>' if aplus else ""
-    flags = f'<dt>Flags</dt><dd>{e(c["flags"])}</dd>' if c.get("flags") else ""
+    cf = E.card_flags(c.get("flags", ""))     # day-level flags are in the bias panel, not on each card
+    flags = f'<dt>Flags</dt><dd>{e(" · ".join(cf))}</dd>' if cf else ""
     official = c["mode"] in ("confirm", "rescan") and c["status"] == "GO"
     cls = "card" + (" official" if official else "") + (" aplus" if aplus else "")
     tag = '<span class="offtag">OFFICIAL</span>' if official else ""
@@ -415,11 +506,10 @@ def card_html(c: dict, g: dict | None) -> str:
             f'<span class="conf">{e(str(c["confidence"]))}/10</span></div>'
             + (pre_header(c) if c["mode"] == "premarket" else
                (f'<div class="px">Stock {_money(c["underlying"])} '
-                f'<span class="eyebrow">as of {e(E._day(c["locked_at"]))} {e(str(c.get("underlying_asof") or ""))}</span></div>'
+                f'<span class="eyebrow">{e(str(c.get("underlying_asof") or "").replace(" HST", ""))}</span></div>'
                 if c.get("underlying") not in (None, "") else "")
                + f'<div class="status">{e(c["status"])} · locked {_t(c["locked_at"])}</div>')
             + f'<dl class="lines">'
-            f'<dt>Bias</dt><dd>{e(c["bias"])}</dd>'
             f'<dt>Expiry</dt><dd>{e(date.fromisoformat(c["expiry"]).strftime("%a %b %-d"))}</dd>'
             f'<dt>Strike</dt><dd>{float(c["strike"]):g}</dd>'
             + ((price_lines_premarket(c)
@@ -433,16 +523,16 @@ def card_html(c: dict, g: dict | None) -> str:
                if c["mode"] == "premarket" else price_lines(c)) +
             f'{flags}{res}'
             + (tracking_lines(c) if c["mode"] in ("confirm", "rescan") else "") + '</dl>'
-            f'<div class="why">{e(c["reasoning"])}</div></div>')
+            f'<div class="why">{e(E.card_reasons(c["reasoning"], c["bias"]))}</div></div>')
 
 
-def run_section(title: str, s: dict | None, grades: dict, empty: str) -> str:
+def run_section(title: str, s: dict | None, grades: dict, empty: str, intro: str = "") -> str:
     if not s:
         return f'<h2>{e(title)}</h2><div class="empty">{e(empty)}</div>'
     cards = "".join(card_html(c, grades.get(c["id"])) for c in s["cards"])
     body = f'<div class="board">{cards}</div>' if cards else \
         '<div class="empty">No quality setups. Every name was rejected by a rule.</div>'
-    return (f'<h2>{e(title)}</h2>{body}<p class="note">{s["passing"]} passed the filters, '
+    return (f'<h2>{e(title)}</h2>{intro if s["cards"] else ""}{body}<p class="note">{s["passing"]} passed the filters, '
             f'{s["rejected"]} rejected. Data: {e(s.get("data_note") or "~15 min delayed (Yahoo)")}.</p>'
             + (f'<details><summary class="eyebrow">Rejections</summary><ul class="note">'
                + "".join(f"<li>{e(x)}</li>" for x in s["rejections"]) + '</ul></details>'
@@ -501,11 +591,12 @@ def day_body(d: str, modes: dict, grades: dict) -> str:
     return (f'<h1>{e(date.fromisoformat(d).strftime("%a %b %-d, %Y"))}</h1>'
             f'<p class="lede">{e(when)}</p>'
             + (bias_panel(lead) if lead else "")
+            + OFFICIAL_LEGEND
             + rescan_section(rescans, grades)
             + run_section("Confirmed — after the first 5-minute candle", modes.get("confirm"), grades,
                           "Confirmation read hasn't run yet (due 30 minutes after the open).")
             + run_section("Pre-market watch — not in the official record", modes.get("premarket"),
-                          grades, "Pre-market read didn't run this day.")
+                          grades, "Pre-market read didn't run this day.", PRE_LEGEND)
             + gapchase_section(d))
 
 

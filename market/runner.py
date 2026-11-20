@@ -733,8 +733,10 @@ def announce(snap: dict, r: E.ScanResult, now: datetime, pre_block: str = "") ->
     ideas = snap["_ideas"]
     if r.mode == "rescan":
         if ideas:
-            E.send_telegram(f"<b>NEW SETUP</b> · {E._dt(now)} HST · bias {E._h(r.bias.regime)}"
-                            + "\n\n" + "\n\n".join(E.tg_card(i) for i in ideas), html=True)
+            day = " · <b>0DTE only, no overnight</b>" if any("0DTE only" in i.flags for i in ideas) else ""
+            E.send_telegram(f"<b>NEW SETUP</b> · {E._dt(now)} HST · bias {E._h(r.bias.regime)}{day}"
+                            + "\n\n" + "\n\n".join(E.tg_card(i) for i in ideas)
+                            + f"\n\n<i>{E.TRAIL_NOTE}</i>", html=True)
     else:
         try:
             update_marks(now)
@@ -745,7 +747,9 @@ def announce(snap: dict, r: E.ScanResult, now: datetime, pre_block: str = "") ->
         E.send_telegram(E.tg_report(r, ideas, extra=extra or None), html=True)
     for i in ideas:
         if i.a_plus:
-            E.send_telegram(f"<b>A+ ALERT</b> · {E._dt(now)} HST\n\n{E.tg_card(i)}", html=True)
+            day = " · <b>0DTE only, no overnight</b>" if "0DTE only" in i.flags else ""
+            E.send_telegram(f"<b>A+ ALERT</b> · {E._dt(now)} HST{day}\n\n{E.tg_card(i)}"
+                            + ("" if i.status.startswith("CONDITIONAL") else f"\n\n<i>{E.TRAIL_NOTE}</i>"), html=True)
 
 
 def main() -> int:
