@@ -1,5 +1,10 @@
 {
- "pending": null,
+ "pending": {
+  "regime": "BULL",
+  "clean": true,
+  "why": "ES green (+4.72%), NQ green (+6.82%), YM green (+3.15%); ES+YM green \u2192 NO put setups",
+  "at": "2026-11-23T08:02:38.680154-10:00"
+ },
  "history": [
   {
    "regime": "BULL",
@@ -17,9 +22,9 @@
   }
  ],
  "last_reading": {
-  "regime": "CHOP",
-  "clean": false,
-  "why": "SPY -0.13% from VWAP, 15m flat; QQQ -0.12% from VWAP, 15m flat",
-  "at": "2026-11-23T07:52:35.305914-10:00"
+  "regime": "BULL",
+  "clean": true,
+  "why": "ES green (+4.72%), NQ green (+6.82%), YM green (+3.15%); ES+YM green \u2192 NO put setups",
+  "at": "2026-11-23T08:02:38.680154-10:00"
  }
 }
