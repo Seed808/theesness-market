@@ -1,8 +1,23 @@
 {
 "SPY": {
-"fetched": "2026-11-23T04:12:35.319031-10:00",
+"fetched": "2026-11-23T05:12:36.497129-10:00",
 "src": "finnhub",
 "items": [
+[
+"2026-11-23T03:47:13-10:00",
+"Is The Fed Fighting The Wrong Inflation?",
+"finnhub/Yahoo"
+],
+[
+"2026-11-23T02:05:47-10:00",
+"SPY And Gold Fell Together. Did Bonds Save 60/40?",
+"finnhub/Yahoo"
+],
+[
+"2026-11-23T02:00:00-10:00",
+"4 ETF Winners of Last Week Amid Wall Street's Plunge",
+"finnhub/Yahoo"
+],
 [
 "2026-11-23T01:04:02-10:00",
 "What SPDR S&P 500 ETF Trust (SPY) Sold: Apple Leads on Nov. 19",
@@ -27,32 +42,32 @@
 "2026-11-23T01:02:44-10:00",
 "ETFs Are Net Sellers of Amazon (AMZN) on Nov. 19",
 "finnhub/Yahoo"
-],
-[
-"2026-11-23T01:02:34-10:00",
-"ETFs Are Net Sellers of Royal Caribbean (RCL) on Nov. 19",
-"finnhub/Yahoo"
-],
-[
-"2026-11-23T01:02:15-10:00",
-"ETFs Are Net Sellers of Microsoft (MSFT) on Thursday",
-"finnhub/Yahoo"
-],
-[
-"2026-11-23T01:00:11-10:00",
-"ETF Activity: SPY Leads $1.53 Billion Outflow on Nov. 19",
-"finnhub/Yahoo"
 ]
 ]
 },
 "QQQ": {
-"fetched": "2026-11-23T04:12:35.319031-10:00",
+"fetched": "2026-11-23T05:12:36.497129-10:00",
 "src": "finnhub",
 "items": [
+[
+"2026-11-22T23:58:51-10:00",
+"NVIDIA Reinstates Jensen Huang As President, CEO And As A Member Of The Board, Effective Immediately",
+"finnhub/Benzinga"
+],
+[
+"2026-11-22T23:48:01-10:00",
+"The Selloff Has Spread Beyond AI. I'm Waiting",
+"finnhub/SeekingAlpha"
+],
 [
 "2026-11-22T23:44:38-10:00",
 "MSTR Stock Jumps In Premarket As Bitcoin Reclaims $61K After Brutal Nasdaq Sell-Off",
 "finnhub/Yahoo"
+],
+[
+"2026-11-22T23:30:50-10:00",
+"The Fourth Correction In Four Years Is A Buying Opportunity",
+"finnhub/SeekingAlpha"
 ],
 [
 "2026-11-22T23:21:05-10:00",
@@ -60,41 +75,41 @@
 "finnhub/Benzinga"
 ],
 [
+"2026-11-22T23:18:45-10:00",
+"Bear Market Ahead? The Coming Week Will Be Critical",
+"finnhub/SeekingAlpha"
+],
+[
+"2026-11-22T23:15:00-10:00",
+"Don't Quit AI, Hedge It: 2 High-Yield Funds For A Volatile Market",
+"finnhub/SeekingAlpha"
+],
+[
 "2026-11-22T22:29:38-10:00",
 "I'm Deploying $28,000 Into Stocks During This Meltdown",
-"finnhub/SeekingAlpha"
-],
-[
-"2026-11-22T22:15:44-10:00",
-"Is The AI Rally Cracking? 2 Investments I'm Buying During The Sell-Off",
-"finnhub/SeekingAlpha"
-],
-[
-"2026-11-22T21:14:00-10:00",
-"Global Wealth Research - October 2026",
-"finnhub/SeekingAlpha"
-],
-[
-"2026-11-22T21:11:04-10:00",
-"Trump Blames Democrats for $6 Trillion Stock Market Rout Since Midterm Elections: \u2018If They Don\u2019t Change, Fast, It Will Only Get Worse\u2019",
-"finnhub/Benzinga"
-],
-[
-"2026-11-22T20:15:00-10:00",
-"Spectacular AI Bubble Implosion Suggests The Bottom May Be Near",
-"finnhub/SeekingAlpha"
-],
-[
-"2026-11-22T18:46:00-10:00",
-"CIO Weekly: Signal From Noise? - Why This AI Sell-Off Feels Worse",
 "finnhub/SeekingAlpha"
 ]
 ]
 },
 "IWM": {
-"fetched": "2026-11-23T04:12:35.319031-10:00",
+"fetched": "2026-11-23T05:12:36.497129-10:00",
 "src": "finnhub",
 "items": [
+[
+"2026-11-22T23:48:01-10:00",
+"The Selloff Has Spread Beyond AI. I'm Waiting",
+"finnhub/SeekingAlpha"
+],
+[
+"2026-11-22T23:30:50-10:00",
+"The Fourth Correction In Four Years Is A Buying Opportunity",
+"finnhub/SeekingAlpha"
+],
+[
+"2026-11-22T23:18:45-10:00",
+"Bear Market Ahead? The Coming Week Will Be Critical",
+"finnhub/SeekingAlpha"
+],
 [
 "2026-11-22T22:29:38-10:00",
 "I'm Deploying $28,000 Into Stocks During This Meltdown",
@@ -119,28 +134,28 @@
 "2026-11-22T17:45:00-10:00",
 "Monthly Macro Monitor: All Clear In The Rear View Mirror",
 "finnhub/SeekingAlpha"
-],
-[
-"2026-11-21T22:20:00-10:00",
-"The 200-Day Average Broke - The Next 4 Weeks Are Critical",
-"finnhub/SeekingAlpha"
-],
-[
-"2026-11-21T21:30:00-10:00",
-"I'm Bracing For A Lost Decade In The S&P 500",
-"finnhub/SeekingAlpha"
-],
-[
-"2026-11-20T23:30:11-10:00",
-"This Market Has Forgotten How To Count",
-"finnhub/SeekingAlpha"
 ]
 ]
 },
 "SPX": {
-"fetched": "2026-11-23T04:12:35.319031-10:00",
+"fetched": "2026-11-23T05:12:36.497129-10:00",
 "src": "finnhub",
 "items": [
+[
+"2026-11-22T23:48:01-10:00",
+"The Selloff Has Spread Beyond AI. I'm Waiting",
+"finnhub/SeekingAlpha"
+],
+[
+"2026-11-22T23:30:50-10:00",
+"The Fourth Correction In Four Years Is A Buying Opportunity",
+"finnhub/SeekingAlpha"
+],
+[
+"2026-11-22T23:18:45-10:00",
+"Bear Market Ahead? The Coming Week Will Be Critical",
+"finnhub/SeekingAlpha"
+],
 [
 "2026-11-22T22:29:38-10:00",
 "I'm Deploying $28,000 Into Stocks During This Meltdown",
@@ -165,31 +180,16 @@
 "2026-11-22T21:45:00-10:00",
 "Equity Market Dramatically Oversold; S&P 500 Earnings And Revenue Growth In 2027",
 "finnhub/SeekingAlpha"
-],
-[
-"2026-11-22T20:15:00-10:00",
-"Spectacular AI Bubble Implosion Suggests The Bottom May Be Near",
-"finnhub/SeekingAlpha"
-],
-[
-"2026-11-22T17:45:00-10:00",
-"Monthly Macro Monitor: All Clear In The Rear View Mirror",
-"finnhub/SeekingAlpha"
-],
-[
-"2026-11-21T21:30:00-10:00",
-"I'm Bracing For A Lost Decade In The S&P 500",
-"finnhub/SeekingAlpha"
 ]
 ]
 },
 "TQQQ": {
-"fetched": "2026-11-23T04:12:35.319031-10:00",
+"fetched": "2026-11-23T05:12:36.497129-10:00",
 "src": "finnhub",
 "items": []
 },
 "SMH": {
-"fetched": "2026-11-23T04:12:35.319031-10:00",
+"fetched": "2026-11-23T05:12:36.497129-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -230,7 +230,7 @@
 ]
 },
 "XLF": {
-"fetched": "2026-11-23T04:12:35.319031-10:00",
+"fetched": "2026-11-23T05:12:36.497129-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -241,7 +241,7 @@
 ]
 },
 "XLE": {
-"fetched": "2026-11-23T04:12:35.319031-10:00",
+"fetched": "2026-11-23T05:12:36.497129-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -252,9 +252,14 @@
 ]
 },
 "GLD": {
-"fetched": "2026-11-23T04:12:35.319031-10:00",
+"fetched": "2026-11-23T05:12:36.497129-10:00",
 "src": "finnhub",
 "items": [
+[
+"2026-11-22T17:41:17-10:00",
+"Peter Schiff Says Gold\u2019s 35% Crash Is a \u2018Fire Sale\u2019 Ahead of a Financial Crisis: \u2018You Got to Buy Now\u2019",
+"finnhub/Benzinga"
+],
 [
 "2026-11-21T05:20:00-10:00",
 "Weekly Commentary: Crisis Dynamics Unleashed",
@@ -273,9 +278,14 @@
 ]
 },
 "SLV": {
-"fetched": "2026-11-23T04:12:35.319031-10:00",
+"fetched": "2026-11-23T05:12:36.497129-10:00",
 "src": "finnhub",
 "items": [
+[
+"2026-11-22T23:27:35-10:00",
+"Silver & Its Miners: The Pullback Is A Buying Opportunity",
+"finnhub/SeekingAlpha"
+],
 [
 "2026-11-21T05:20:00-10:00",
 "Weekly Commentary: Crisis Dynamics Unleashed",
@@ -289,7 +299,7 @@
 ]
 },
 "TLT": {
-"fetched": "2026-11-23T04:12:35.319031-10:00",
+"fetched": "2026-11-23T05:12:36.497129-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -320,7 +330,7 @@
 ]
 },
 "IBIT": {
-"fetched": "2026-11-23T04:12:35.319031-10:00",
+"fetched": "2026-11-23T05:12:36.497129-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -341,7 +351,7 @@
 ]
 },
 "AAPL": {
-"fetched": "2026-11-23T04:12:35.319031-10:00",
+"fetched": "2026-11-23T05:12:36.497129-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -387,7 +397,7 @@
 ]
 },
 "AMD": {
-"fetched": "2026-11-23T04:12:35.319031-10:00",
+"fetched": "2026-11-23T05:12:36.497129-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -433,7 +443,7 @@
 ]
 },
 "AMZN": {
-"fetched": "2026-11-23T04:12:35.319031-10:00",
+"fetched": "2026-11-23T05:12:36.497129-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -479,7 +489,7 @@
 ]
 },
 "AVGO": {
-"fetched": "2026-11-23T04:12:35.319031-10:00",
+"fetched": "2026-11-23T05:12:36.497129-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -525,7 +535,7 @@
 ]
 },
 "GOOGL": {
-"fetched": "2026-11-23T04:12:35.319031-10:00",
+"fetched": "2026-11-23T05:12:36.497129-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -571,7 +581,7 @@
 ]
 },
 "META": {
-"fetched": "2026-11-23T04:12:35.319031-10:00",
+"fetched": "2026-11-23T05:12:36.497129-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -617,7 +627,7 @@
 ]
 },
 "MSFT": {
-"fetched": "2026-11-23T04:12:35.319031-10:00",
+"fetched": "2026-11-23T05:12:36.497129-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -663,7 +673,7 @@
 ]
 },
 "MU": {
-"fetched": "2026-11-23T04:12:35.319031-10:00",
+"fetched": "2026-11-23T05:12:36.497129-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -709,7 +719,7 @@
 ]
 },
 "NVDA": {
-"fetched": "2026-11-23T04:12:35.319031-10:00",
+"fetched": "2026-11-23T05:12:36.497129-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -755,7 +765,7 @@
 ]
 },
 "TSLA": {
-"fetched": "2026-11-23T04:12:35.319031-10:00",
+"fetched": "2026-11-23T05:12:36.497129-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -801,47 +811,47 @@
 ]
 },
 "SPCX": {
-"fetched": "2026-11-23T04:12:35.319031-10:00",
+"fetched": "2026-11-23T05:12:36.497129-10:00",
 "src": "finnhub",
 "items": [
 [
-"2026-11-23T01:41:28-10:00",
-"Trump's Portfolio Discloses Up to $148 Million in September Trading",
+"2026-11-23T03:42:00-10:00",
+"Space Stocks Soar. They Have a Long Way to Go.",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-23T01:23:47-10:00",
-"SpaceX Shares Slip as It Sells $32 Billion of AI Chip Debt",
+"2026-11-23T03:29:02-10:00",
+"Cathie Wood Goes Bargain Hunting: 3 Stocks She Just Bought",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-23T01:05:21-10:00",
-"Alphabet Trades at \u201cJust 18 Times Forward Earnings.\u201d Its SpaceX and Anthropic Stakes Top $200 Billion",
+"2026-11-23T03:28:23-10:00",
+"Jefferies initiates SpaceX at Buy, sees \"rare combination\" to gain AI share",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-23T01:04:38-10:00",
-"What ARK Autonomous Technology & Robotics ETF (ARKQ) Bought: Tesla Leads on Thursday",
+"2026-11-23T03:20:48-10:00",
+"Tesla Bulls Banking on SpaceX \u201cDon\u2019t Get the Dilution Math,\u201d Says Gary Black. Tesla Trades at 3.4x SpaceX\u2019s 2027 Multiple",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-23T01:04:30-10:00",
-"Musk: Starship\u2019s Fuel Bill Will Drop \u201cBelow $500k\u201d a Flight, With Payload Over 200 Tons",
+"2026-11-23T03:20:24-10:00",
+"SpaceX Fell Below Its IPO Price. Gene Munster Says It Trades at \u201c10 Times Revenue\u201d Growing 270%",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-23T00:45:04-10:00",
-"SpaceX Lenders Want to Stop Musk From Launching $40 Billion in Nvidia Chips Into Orbit",
+"2026-11-23T03:08:00-10:00",
+"SpaceX Stock Rebounds as Musk Starlink Talk Fuels Hopes of a Tesla Merger",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-23T00:40:02-10:00",
-"Hundreds of Millions of SpaceX Shares Become Eligible for Sale on Dec. 8. Should You Buy Before Then?",
+"2026-11-23T02:50:02-10:00",
+"Rocket Lab Just Raised Prices on a Rocket It Hasn't Launched Yet. Here's What That Means for SpaceX.",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-23T00:35:02-10:00",
-"Anthropic Is Worth $1.2 Trillion. Is It a Better Buy Than Nvidia?",
+"2026-11-23T02:44:09-10:00",
+"Why Is Goldman Sachs Stock Falling?",
 "finnhub/Yahoo"
 ]
 ]
