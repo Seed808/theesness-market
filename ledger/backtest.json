@@ -1,9 +1,9 @@
 {
- "built_for": "2026-11-20",
- "built_at": "2026-11-20T11:22:42.551261-10:00",
+ "built_for": "2026-11-23",
+ "built_at": "2026-11-23T11:22:37.241372-10:00",
  "range": [
-  "2026-09-14",
-  "2026-11-20"
+  "2026-09-15",
+  "2026-11-23"
  ],
  "params": {
   "move_pct": 0.3,
@@ -55,16 +55,16 @@
    "regime": "ROTATION",
    "clean": true,
    "SPY": {
-    "days": 2,
+    "days": 1,
     "win": 0,
     "loss": 1,
-    "none": 1,
+    "none": 0,
     "win_pct": 0.0
    },
    "QQQ": {
-    "days": 2,
+    "days": 1,
     "win": 0,
-    "loss": 2,
+    "loss": 1,
     "none": 0,
     "win_pct": 0.0
    }
@@ -91,18 +91,18 @@
    "regime": "BULL",
    "clean": true,
    "SPY": {
-    "days": 10,
-    "win": 4,
+    "days": 11,
+    "win": 5,
     "loss": 4,
     "none": 2,
-    "win_pct": 50.0
+    "win_pct": 55.6
    },
    "QQQ": {
-    "days": 10,
-    "win": 5,
+    "days": 11,
+    "win": 6,
     "loss": 3,
     "none": 2,
-    "win_pct": 62.5
+    "win_pct": 66.7
    }
   },
   {
@@ -125,6 +125,32 @@
   }
  ],
  "days": [
+  {
+   "date": "2026-11-23",
+   "regime": "BULL",
+   "favored": "C",
+   "clean": true,
+   "vix_confirms": true,
+   "index_confirms": true,
+   "chg": {
+    "ES": 3.81,
+    "NQ": 6.19,
+    "YM": 2.24,
+    "VIX": -2.26,
+    "SPY": 3.89,
+    "QQQ": 6.39
+   },
+   "premarket_bar": {
+    "ES": true,
+    "NQ": true,
+    "YM": true,
+    "VIX": true,
+    "SPY": true,
+    "QQQ": true
+   },
+   "SPY": "WIN",
+   "QQQ": "WIN"
+  },
   {
    "date": "2026-11-20",
    "regime": "BEAR",
@@ -1397,32 +1423,6 @@
     "QQQ": true
    },
    "SPY": "LOSS",
-   "QQQ": "LOSS"
-  },
-  {
-   "date": "2026-09-14",
-   "regime": "ROTATION",
-   "favored": "P",
-   "clean": true,
-   "vix_confirms": true,
-   "index_confirms": true,
-   "chg": {
-    "ES": -0.69,
-    "NQ": -1.72,
-    "YM": 0.44,
-    "VIX": 11.87,
-    "SPY": -0.69,
-    "QQQ": -1.7
-   },
-   "premarket_bar": {
-    "ES": true,
-    "NQ": true,
-    "YM": true,
-    "VIX": true,
-    "SPY": true,
-    "QQQ": true
-   },
-   "SPY": "NONE",
    "QQQ": "LOSS"
   }
  ]
