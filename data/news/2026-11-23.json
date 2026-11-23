@@ -1,6 +1,6 @@
 {
 "SPY": {
-"fetched": "2026-11-23T08:32:35.111629-10:00",
+"fetched": "2026-11-23T09:32:43.831937-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -39,16 +39,31 @@
 "finnhub/Yahoo"
 ],
 [
-"2026-11-23T03:47:13-10:00",
-"Is The Fed Fighting The Wrong Inflation?",
-"finnhub/Yahoo"
+"2026-11-23T04:05:20-10:00",
+"Anthropic Went Public Into An AI Selloff, And Its Numbers Argue Against It",
+"finnhub/SeekingAlpha"
 ]
 ]
 },
 "QQQ": {
-"fetched": "2026-11-23T08:32:35.111629-10:00",
+"fetched": "2026-11-23T09:32:43.831937-10:00",
 "src": "finnhub",
 "items": [
+[
+"2026-11-23T04:05:20-10:00",
+"Anthropic Went Public Into An AI Selloff, And Its Numbers Argue Against It",
+"finnhub/SeekingAlpha"
+],
+[
+"2026-11-23T03:39:00-10:00",
+"Buy Stock Market Volatility Soon",
+"finnhub/SeekingAlpha"
+],
+[
+"2026-11-23T03:30:13-10:00",
+"Jensen Is Back, But He Can't Fix Everything",
+"finnhub/SeekingAlpha"
+],
 [
 "2026-11-23T02:55:48-10:00",
 "Bull Markets Have Three Waves, Sometimes Four",
@@ -73,28 +88,23 @@
 "2026-11-23T00:16:00-10:00",
 "PCE Week: What To Watch In Stocks, Chips, Gold And Bitcoin",
 "finnhub/SeekingAlpha"
-],
-[
-"2026-11-22T23:58:51-10:00",
-"NVIDIA Reinstates Jensen Huang As President, CEO And As A Member Of The Board, Effective Immediately",
-"finnhub/Benzinga"
-],
-[
-"2026-11-22T23:48:01-10:00",
-"The Selloff Has Spread Beyond AI. I'm Waiting",
-"finnhub/SeekingAlpha"
-],
-[
-"2026-11-22T23:44:38-10:00",
-"MSTR Stock Jumps In Premarket As Bitcoin Reclaims $61K After Brutal Nasdaq Sell-Off",
-"finnhub/Yahoo"
 ]
 ]
 },
 "IWM": {
-"fetched": "2026-11-23T08:32:35.111629-10:00",
+"fetched": "2026-11-23T09:32:43.831937-10:00",
 "src": "finnhub",
 "items": [
+[
+"2026-11-23T03:39:00-10:00",
+"Buy Stock Market Volatility Soon",
+"finnhub/SeekingAlpha"
+],
+[
+"2026-11-23T03:30:13-10:00",
+"Jensen Is Back, But He Can't Fix Everything",
+"finnhub/SeekingAlpha"
+],
 [
 "2026-11-23T02:55:48-10:00",
 "Bull Markets Have Three Waves, Sometimes Four",
@@ -123,24 +133,29 @@
 [
 "2026-11-22T23:48:01-10:00",
 "The Selloff Has Spread Beyond AI. I'm Waiting",
-"finnhub/SeekingAlpha"
-],
-[
-"2026-11-22T23:30:50-10:00",
-"The Fourth Correction In Four Years Is A Buying Opportunity",
-"finnhub/SeekingAlpha"
-],
-[
-"2026-11-22T23:18:45-10:00",
-"Bear Market Ahead? The Coming Week Will Be Critical",
 "finnhub/SeekingAlpha"
 ]
 ]
 },
 "SPX": {
-"fetched": "2026-11-23T08:32:35.111629-10:00",
+"fetched": "2026-11-23T09:32:43.831937-10:00",
 "src": "finnhub",
 "items": [
+[
+"2026-11-23T04:05:20-10:00",
+"Anthropic Went Public Into An AI Selloff, And Its Numbers Argue Against It",
+"finnhub/SeekingAlpha"
+],
+[
+"2026-11-23T03:39:00-10:00",
+"Buy Stock Market Volatility Soon",
+"finnhub/SeekingAlpha"
+],
+[
+"2026-11-23T03:30:13-10:00",
+"Jensen Is Back, But He Can't Fix Everything",
+"finnhub/SeekingAlpha"
+],
 [
 "2026-11-23T02:55:48-10:00",
 "Bull Markets Have Three Waves, Sometimes Four",
@@ -165,33 +180,23 @@
 "2026-11-23T00:04:00-10:00",
 "How Much More Downside Risk Does The S&P 500 Face?",
 "finnhub/SeekingAlpha"
-],
-[
-"2026-11-22T23:48:01-10:00",
-"The Selloff Has Spread Beyond AI. I'm Waiting",
-"finnhub/SeekingAlpha"
-],
-[
-"2026-11-22T23:30:50-10:00",
-"The Fourth Correction In Four Years Is A Buying Opportunity",
-"finnhub/SeekingAlpha"
-],
-[
-"2026-11-22T23:18:45-10:00",
-"Bear Market Ahead? The Coming Week Will Be Critical",
-"finnhub/SeekingAlpha"
 ]
 ]
 },
 "TQQQ": {
-"fetched": "2026-11-23T08:32:35.111629-10:00",
+"fetched": "2026-11-23T09:32:43.831937-10:00",
 "src": "finnhub",
 "items": []
 },
 "SMH": {
-"fetched": "2026-11-23T08:32:35.111629-10:00",
+"fetched": "2026-11-23T09:32:43.831937-10:00",
 "src": "finnhub",
 "items": [
+[
+"2026-11-23T04:05:20-10:00",
+"Anthropic Went Public Into An AI Selloff, And Its Numbers Argue Against It",
+"finnhub/SeekingAlpha"
+],
 [
 "2026-11-23T02:15:00-10:00",
 "Looking Beyond The AI Trade In A Shifting Market Landscape",
@@ -226,16 +231,11 @@
 "2026-11-21T04:44:59-10:00",
 "Michael Burry Says \u2018I Told You So\u2019 as Wall Street Caught Off Guard by AI Selloff",
 "finnhub/Yahoo"
-],
-[
-"2026-11-21T00:30:00-10:00",
-"Why Cybersecurity Dodged The AI Crash",
-"finnhub/SeekingAlpha"
 ]
 ]
 },
 "XLF": {
-"fetched": "2026-11-23T08:32:35.111629-10:00",
+"fetched": "2026-11-23T09:32:43.831937-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -246,7 +246,7 @@
 ]
 },
 "XLE": {
-"fetched": "2026-11-23T08:32:35.111629-10:00",
+"fetched": "2026-11-23T09:32:43.831937-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -257,7 +257,7 @@
 ]
 },
 "GLD": {
-"fetched": "2026-11-23T08:32:35.111629-10:00",
+"fetched": "2026-11-23T09:32:43.831937-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -298,7 +298,7 @@
 ]
 },
 "SLV": {
-"fetched": "2026-11-23T08:32:35.111629-10:00",
+"fetched": "2026-11-23T09:32:43.831937-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -324,9 +324,14 @@
 ]
 },
 "TLT": {
-"fetched": "2026-11-23T08:32:35.111629-10:00",
+"fetched": "2026-11-23T09:32:43.831937-10:00",
 "src": "finnhub",
 "items": [
+[
+"2026-11-23T03:40:00-10:00",
+"Money Matters",
+"finnhub/SeekingAlpha"
+],
 [
 "2026-11-23T02:21:48-10:00",
 "S&P 500: Rule Of 20 Score Can Actually Drop To 20 In 2027",
@@ -365,7 +370,7 @@
 ]
 },
 "IBIT": {
-"fetched": "2026-11-23T08:32:35.111629-10:00",
+"fetched": "2026-11-23T09:32:43.831937-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -386,7 +391,7 @@
 ]
 },
 "AAPL": {
-"fetched": "2026-11-23T08:32:35.111629-10:00",
+"fetched": "2026-11-23T09:32:43.831937-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -432,7 +437,7 @@
 ]
 },
 "AMD": {
-"fetched": "2026-11-23T08:32:35.111629-10:00",
+"fetched": "2026-11-23T09:32:43.831937-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -478,7 +483,7 @@
 ]
 },
 "AMZN": {
-"fetched": "2026-11-23T08:32:35.111629-10:00",
+"fetched": "2026-11-23T09:32:43.831937-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -524,7 +529,7 @@
 ]
 },
 "AVGO": {
-"fetched": "2026-11-23T08:32:35.111629-10:00",
+"fetched": "2026-11-23T09:32:43.831937-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -570,7 +575,7 @@
 ]
 },
 "GOOGL": {
-"fetched": "2026-11-23T08:32:35.111629-10:00",
+"fetched": "2026-11-23T09:32:43.831937-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -616,7 +621,7 @@
 ]
 },
 "META": {
-"fetched": "2026-11-23T08:32:35.111629-10:00",
+"fetched": "2026-11-23T09:32:43.831937-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -662,7 +667,7 @@
 ]
 },
 "MSFT": {
-"fetched": "2026-11-23T08:32:35.111629-10:00",
+"fetched": "2026-11-23T09:32:43.831937-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -708,7 +713,7 @@
 ]
 },
 "MU": {
-"fetched": "2026-11-23T08:32:35.111629-10:00",
+"fetched": "2026-11-23T09:32:43.831937-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -754,7 +759,7 @@
 ]
 },
 "NVDA": {
-"fetched": "2026-11-23T08:32:35.111629-10:00",
+"fetched": "2026-11-23T09:32:43.831937-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -800,7 +805,7 @@
 ]
 },
 "TSLA": {
-"fetched": "2026-11-23T08:32:35.111629-10:00",
+"fetched": "2026-11-23T09:32:43.831937-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -846,7 +851,7 @@
 ]
 },
 "SPCX": {
-"fetched": "2026-11-23T08:32:35.111629-10:00",
+"fetched": "2026-11-23T09:32:43.831937-10:00",
 "src": "finnhub",
 "items": [
 [
