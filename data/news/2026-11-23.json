@@ -1,8 +1,13 @@
 {
 "SPY": {
-"fetched": "2026-11-23T07:22:35.634208-10:00",
+"fetched": "2026-11-23T08:32:35.111629-10:00",
 "src": "finnhub",
 "items": [
+[
+"2026-11-23T07:04:31-10:00",
+"The S&P 500 Just Fell Into a Correction. Your $3 Million Retirement Portfolio May Be Less Diversified Than You Think",
+"finnhub/Yahoo"
+],
 [
 "2026-11-23T05:31:00-10:00",
 "Why stocks are having their wildest Monday morning since 2008",
@@ -37,18 +42,28 @@
 "2026-11-23T03:47:13-10:00",
 "Is The Fed Fighting The Wrong Inflation?",
 "finnhub/Yahoo"
-],
-[
-"2026-11-23T02:05:47-10:00",
-"SPY And Gold Fell Together. Did Bonds Save 60/40?",
-"finnhub/Yahoo"
 ]
 ]
 },
 "QQQ": {
-"fetched": "2026-11-23T07:22:35.634208-10:00",
+"fetched": "2026-11-23T08:32:35.111629-10:00",
 "src": "finnhub",
 "items": [
+[
+"2026-11-23T02:55:48-10:00",
+"Bull Markets Have Three Waves, Sometimes Four",
+"finnhub/SeekingAlpha"
+],
+[
+"2026-11-23T02:21:48-10:00",
+"S&P 500: Rule Of 20 Score Can Actually Drop To 20 In 2027",
+"finnhub/SeekingAlpha"
+],
+[
+"2026-11-23T02:15:00-10:00",
+"How An AI Squeeze Works: Who Wins And Who Loses",
+"finnhub/SeekingAlpha"
+],
 [
 "2026-11-23T01:31:00-10:00",
 "VIX Jumps To 1-Year High, But No Panic As AI Trade Unwinds",
@@ -73,28 +88,28 @@
 "2026-11-22T23:44:38-10:00",
 "MSTR Stock Jumps In Premarket As Bitcoin Reclaims $61K After Brutal Nasdaq Sell-Off",
 "finnhub/Yahoo"
-],
-[
-"2026-11-22T23:30:50-10:00",
-"The Fourth Correction In Four Years Is A Buying Opportunity",
-"finnhub/SeekingAlpha"
-],
-[
-"2026-11-22T23:21:05-10:00",
-"Stock Market Today: Dow Jones, S&P 500, Nasdaq 100 Futures Rise After ANT IPO and Friday\u2019s AI Rout\u2014 ORCL, ZS, ZM in Focus (UPDATED)",
-"finnhub/Benzinga"
-],
-[
-"2026-11-22T23:18:45-10:00",
-"Bear Market Ahead? The Coming Week Will Be Critical",
-"finnhub/SeekingAlpha"
 ]
 ]
 },
 "IWM": {
-"fetched": "2026-11-23T07:22:35.634208-10:00",
+"fetched": "2026-11-23T08:32:35.111629-10:00",
 "src": "finnhub",
 "items": [
+[
+"2026-11-23T02:55:48-10:00",
+"Bull Markets Have Three Waves, Sometimes Four",
+"finnhub/SeekingAlpha"
+],
+[
+"2026-11-23T02:21:48-10:00",
+"S&P 500: Rule Of 20 Score Can Actually Drop To 20 In 2027",
+"finnhub/SeekingAlpha"
+],
+[
+"2026-11-23T02:15:00-10:00",
+"How An AI Squeeze Works: Who Wins And Who Loses",
+"finnhub/SeekingAlpha"
+],
 [
 "2026-11-23T01:31:00-10:00",
 "VIX Jumps To 1-Year High, But No Panic As AI Trade Unwinds",
@@ -119,28 +134,28 @@
 "2026-11-22T23:18:45-10:00",
 "Bear Market Ahead? The Coming Week Will Be Critical",
 "finnhub/SeekingAlpha"
-],
-[
-"2026-11-22T22:29:38-10:00",
-"I'm Deploying $28,000 Into Stocks During This Meltdown",
-"finnhub/SeekingAlpha"
-],
-[
-"2026-11-22T21:14:00-10:00",
-"Global Wealth Research - October 2026",
-"finnhub/SeekingAlpha"
-],
-[
-"2026-11-22T20:15:00-10:00",
-"Spectacular AI Bubble Implosion Suggests The Bottom May Be Near",
-"finnhub/SeekingAlpha"
 ]
 ]
 },
 "SPX": {
-"fetched": "2026-11-23T07:22:35.634208-10:00",
+"fetched": "2026-11-23T08:32:35.111629-10:00",
 "src": "finnhub",
 "items": [
+[
+"2026-11-23T02:55:48-10:00",
+"Bull Markets Have Three Waves, Sometimes Four",
+"finnhub/SeekingAlpha"
+],
+[
+"2026-11-23T02:21:48-10:00",
+"S&P 500: Rule Of 20 Score Can Actually Drop To 20 In 2027",
+"finnhub/SeekingAlpha"
+],
+[
+"2026-11-23T02:15:00-10:00",
+"How An AI Squeeze Works: Who Wins And Who Loses",
+"finnhub/SeekingAlpha"
+],
 [
 "2026-11-23T01:31:00-10:00",
 "VIX Jumps To 1-Year High, But No Panic As AI Trade Unwinds",
@@ -165,33 +180,23 @@
 "2026-11-22T23:18:45-10:00",
 "Bear Market Ahead? The Coming Week Will Be Critical",
 "finnhub/SeekingAlpha"
-],
-[
-"2026-11-22T22:29:38-10:00",
-"I'm Deploying $28,000 Into Stocks During This Meltdown",
-"finnhub/SeekingAlpha"
-],
-[
-"2026-11-22T22:03:00-10:00",
-"Wall Street Breakfast Podcast: Buy-The-Dippers Try To Take Control",
-"finnhub/SeekingAlpha"
-],
-[
-"2026-11-22T21:50:00-10:00",
-"Black Monday Averted By Bargain Hunters",
-"finnhub/SeekingAlpha"
 ]
 ]
 },
 "TQQQ": {
-"fetched": "2026-11-23T07:22:35.634208-10:00",
+"fetched": "2026-11-23T08:32:35.111629-10:00",
 "src": "finnhub",
 "items": []
 },
 "SMH": {
-"fetched": "2026-11-23T07:22:35.634208-10:00",
+"fetched": "2026-11-23T08:32:35.111629-10:00",
 "src": "finnhub",
 "items": [
+[
+"2026-11-23T02:15:00-10:00",
+"Looking Beyond The AI Trade In A Shifting Market Landscape",
+"finnhub/SeekingAlpha"
+],
 [
 "2026-11-23T00:16:00-10:00",
 "PCE Week: What To Watch In Stocks, Chips, Gold And Bitcoin",
@@ -226,16 +231,11 @@
 "2026-11-21T00:30:00-10:00",
 "Why Cybersecurity Dodged The AI Crash",
 "finnhub/SeekingAlpha"
-],
-[
-"2026-11-20T23:30:11-10:00",
-"This Market Has Forgotten How To Count",
-"finnhub/SeekingAlpha"
 ]
 ]
 },
 "XLF": {
-"fetched": "2026-11-23T07:22:35.634208-10:00",
+"fetched": "2026-11-23T08:32:35.111629-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -246,7 +246,7 @@
 ]
 },
 "XLE": {
-"fetched": "2026-11-23T07:22:35.634208-10:00",
+"fetched": "2026-11-23T08:32:35.111629-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -257,9 +257,14 @@
 ]
 },
 "GLD": {
-"fetched": "2026-11-23T07:22:35.634208-10:00",
+"fetched": "2026-11-23T08:32:35.111629-10:00",
 "src": "finnhub",
 "items": [
+[
+"2026-11-23T02:44:14-10:00",
+"Precious Metals Royalty And Streaming Companies - October 2026 Report",
+"finnhub/SeekingAlpha"
+],
 [
 "2026-11-23T01:31:00-10:00",
 "VIX Jumps To 1-Year High, But No Panic As AI Trade Unwinds",
@@ -293,9 +298,14 @@
 ]
 },
 "SLV": {
-"fetched": "2026-11-23T07:22:35.634208-10:00",
+"fetched": "2026-11-23T08:32:35.111629-10:00",
 "src": "finnhub",
 "items": [
+[
+"2026-11-23T02:44:14-10:00",
+"Precious Metals Royalty And Streaming Companies - October 2026 Report",
+"finnhub/SeekingAlpha"
+],
 [
 "2026-11-22T23:27:35-10:00",
 "Silver & Its Miners: The Pullback Is A Buying Opportunity",
@@ -314,9 +324,14 @@
 ]
 },
 "TLT": {
-"fetched": "2026-11-23T07:22:35.634208-10:00",
+"fetched": "2026-11-23T08:32:35.111629-10:00",
 "src": "finnhub",
 "items": [
+[
+"2026-11-23T02:21:48-10:00",
+"S&P 500: Rule Of 20 Score Can Actually Drop To 20 In 2027",
+"finnhub/SeekingAlpha"
+],
 [
 "2026-11-23T01:31:00-10:00",
 "VIX Jumps To 1-Year High, But No Panic As AI Trade Unwinds",
@@ -350,7 +365,7 @@
 ]
 },
 "IBIT": {
-"fetched": "2026-11-23T07:22:35.634208-10:00",
+"fetched": "2026-11-23T08:32:35.111629-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -371,507 +386,507 @@
 ]
 },
 "AAPL": {
-"fetched": "2026-11-23T07:22:35.634208-10:00",
+"fetched": "2026-11-23T08:32:35.111629-10:00",
 "src": "finnhub",
 "items": [
 [
-"2026-11-23T05:46:15-10:00",
+"2026-11-23T07:25:30-10:00",
+"Nvidia Is Now Second To Apple In The World\u2019s Most Valued Companies On Jensen Huang Optimism",
+"finnhub/Yahoo"
+],
+[
+"2026-11-23T07:16:38-10:00",
+"How NVDA Stock Rises To $235?",
+"finnhub/Yahoo"
+],
+[
+"2026-11-23T07:04:31-10:00",
+"The S&P 500 Just Fell Into a Correction. Your $3 Million Retirement Portfolio May Be Less Diversified Than You Think",
+"finnhub/Yahoo"
+],
+[
+"2026-11-23T06:32:02-10:00",
+"Apple Hit an All-Time High While AI Stocks Sold Off. Here\u2019s the Big Tech Stock I\u2019d Buy.",
+"finnhub/Yahoo"
+],
+[
+"2026-11-23T06:13:39-10:00",
 "Jensen Huang back at Nvidia, stock soars; Anthropic slides",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-23T05:19:27-10:00",
-"NYSE Parent's Tokenized Stock Venture Opens With 113 Assets Planned. Apple, Nvidia And Tesla Are Staying Out.",
+"2026-11-23T06:13:02-10:00",
+"Jensen Huang back as Nvidia CEO after 12 days: Shares surge 30%",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-23T05:13:00-10:00",
-"Jensen Huang Just Got His Nvidia Job Back. When Steve Jobs, Howard Schultz and Bob Iger Came Back, the Stock Rose, and a Year Later 4 of 6 Comebacks Trailed the",
+"2026-11-23T05:52:42-10:00",
+"Jensen Huang Returns to NVIDA. Why Apple, Broadcom, and Anthropic Could Be Under Pressure",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-23T05:02:21-10:00",
-"Own Dell Stock? Its Profit Isn't All Cash",
-"finnhub/Yahoo"
-],
-[
-"2026-11-23T04:04:33-10:00",
-"Apple Is Up 29% This Year and Already Above Wall Street\u2019s Target. Our Model Sees $400+",
-"finnhub/Yahoo"
-],
-[
-"2026-11-23T04:00:26-10:00",
-"Trump admin circle the wagons in push for Nvidia to bring  back Jensen Huang",
-"finnhub/Yahoo"
-],
-[
-"2026-11-23T03:35:02-10:00",
-"Apple vs. Microsoft: Here's Where I'd Put $2,000 Right Now",
-"finnhub/Yahoo"
-],
-[
-"2026-11-23T03:34:05-10:00",
-"What Will Move Netflix Stock Over Six Months?",
+"2026-11-23T05:45:39-10:00",
+"Is Microsoft Stock Stronger Than It Looks?",
 "finnhub/Yahoo"
 ]
 ]
 },
 "AMD": {
-"fetched": "2026-11-23T07:22:35.634208-10:00",
+"fetched": "2026-11-23T08:32:35.111629-10:00",
 "src": "finnhub",
 "items": [
 [
-"2026-11-23T05:55:28-10:00",
-"Taiwan Semiconductor Rallies 17% as Jensen Huang\u2019s Return to NVIDIA Lifts Chip Stocks; Intel Surges 15%, AMD Jumps 8%",
+"2026-11-23T07:22:29-10:00",
+"Advanced Micro Devices vs. Dell Technologies: Comparing Revenue Trends Amid the Artificial Intelligence Boom",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-23T05:46:15-10:00",
-"Jensen Huang back at Nvidia, stock soars; Anthropic slides",
+"2026-11-23T07:16:38-10:00",
+"How NVDA Stock Rises To $235?",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-23T05:37:57-10:00",
-"What does Jensen's return mean for AMD?",
+"2026-11-23T07:06:28-10:00",
+"AMD Stocks Rise 3.41% as Nvidia Leadership Reset Narrows the Challenger's Window",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-23T05:34:30-10:00",
-"The Next $1 Trillion Technology Opportunity Could Be Hiding in Plain Sight",
+"2026-11-23T07:03:00-10:00",
+"Nvidia, Dell, Micron, Anthropic, CrowdStrike, UnitedHealth, and More Stocks That Explain Today\u2019s Market",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-23T05:24:55-10:00",
-"Is Broadcom Stock's Drop A Chance To Buy?",
+"2026-11-23T07:02:14-10:00",
+"Marvell Stock Jumps 16.6% as Nvidia Rally Lifts Chip Shares on Nov. 23",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-23T05:21:06-10:00",
-"What Oppenheimer and William Blair See in Advanced Micro Devices (AMD)",
+"2026-11-23T06:38:20-10:00",
+"Does AMD Stock Turn Profit Into Cash Like Nvidia?",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-23T05:11:00-10:00",
-"Nvidia, Arm, Anthropic, CrowdStrike, Zscaler, UnitedHealth, and More Stocks That Explain Today\u2019s Market",
+"2026-11-23T06:32:04-10:00",
+"Bitcoin Rallies, Anthropic Sinks as Nvidia Surges 35% on Jensen Huang\u2019s Return",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-23T05:09:26-10:00",
-"AMD Revenue Jumps 45% to Record $13.4 Billion Despite Chip Stock Selloff",
+"2026-11-23T06:26:54-10:00",
+"SOXX Heads For Biggest Single-Day Gain in Over 18 Months As Semiconductor, AI Stocks Rebound Sharply",
 "finnhub/Yahoo"
 ]
 ]
 },
 "AMZN": {
-"fetched": "2026-11-23T07:22:35.634208-10:00",
+"fetched": "2026-11-23T08:32:35.111629-10:00",
 "src": "finnhub",
 "items": [
 [
-"2026-11-23T05:49:07-10:00",
-"Nvidia's $115B neocloud exposure and what its backstops really cover",
+"2026-11-23T07:31:04-10:00",
+"What Explains The Fall In Meta Stock?",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-23T05:46:15-10:00",
-"Jensen Huang back at Nvidia, stock soars; Anthropic slides",
+"2026-11-23T07:30:00-10:00",
+"NiobiumX Mining Inc. (OTCQB: NIOXF): Niobium Is Behind US Missiles and Next-Generation AI Chips. The US Imports All of It.",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-23T05:19:27-10:00",
-"NYSE Parent's Tokenized Stock Venture Opens With 113 Assets Planned. Apple, Nvidia And Tesla Are Staying Out.",
+"2026-11-23T07:30:00-10:00",
+"GBK Collective Expands Strategic Advisory Bench with Appointments of Adam Cohen and Patrick Moriarty",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-23T05:19:08-10:00",
-"FRMI Stock Jumps After Fermi Secures $200M Prepayment With \u2018Unnamed Hyperscaler\u2019",
+"2026-11-23T07:21:26-10:00",
+"Stanley Druckenmiller and 45 Other Big Funds Bought Amazon Last Quarter. Dan Loeb and 25 Others Sold. Who\u2019s Right?",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-23T05:16:00-10:00",
-"Global Autonomous Last Mile Delivery Market Report 2026 | Capitalize on 25.0% CAGR to $5.1 Billion by 2030 as Amazon, DHL, Starship Technologies, Nuro and Flytr",
+"2026-11-23T07:19:00-10:00",
+"AI Boom at Risk as Trump Threatens \u201cTremendous Tax\u201d on Overseas Data Centers While Restrictions Mount at Home",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-23T05:03:40-10:00",
-"Amazon Reportedly Agrees $7.5 Billion Decart AI Deal to Strengthen Trainium Chip Technology",
+"2026-11-23T07:16:38-10:00",
+"How NVDA Stock Rises To $235?",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-23T05:03:35-10:00",
-"Alphabet\u2019s Spending Could Unlock a Massive Opportunity Investors Aren\u2019t Pricing In",
+"2026-11-23T07:14:23-10:00",
+"Amazon snaps up Decart\u2019s AI optimization tech for $7.5B as it prepares to sell Trainium chips",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-23T05:00:46-10:00",
-"Nvidia Stock: Where's The Floor Now?",
+"2026-11-23T07:08:15-10:00",
+"Is Meta Stock Worth More Than Its Tech Rivals?",
 "finnhub/Yahoo"
 ]
 ]
 },
 "AVGO": {
-"fetched": "2026-11-23T07:22:35.634208-10:00",
+"fetched": "2026-11-23T08:32:35.111629-10:00",
 "src": "finnhub",
 "items": [
 [
-"2026-11-23T05:46:15-10:00",
-"Jensen Huang back at Nvidia, stock soars; Anthropic slides",
+"2026-11-23T07:45:48-10:00",
+"All Broadcom Has to Do is Deliver Modestly to Prove Stanley Druckenmiller Wrong and Hit $500 in 2027",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-23T05:28:00-10:00",
-"Metal-Oxide-Semiconductor (MOS) Microprocessor Market Global Report 2026 | Capitalize on AI, Chiplets and RISC-V as NVIDIA, Intel, Broadcom and Texas Instrument",
+"2026-11-23T07:39:26-10:00",
+"A $6.8 Billion Fund Just Bought These 3 Stocks",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-23T05:24:55-10:00",
-"Is Broadcom Stock's Drop A Chance To Buy?",
+"2026-11-23T07:16:38-10:00",
+"How NVDA Stock Rises To $235?",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-23T04:27:30-10:00",
-"3 Dividend ETFs Retirees Can Buy Before the End of November for Hands-Off Income",
+"2026-11-23T07:16:04-10:00",
+"David Tepper, Cathie Wood and 27 Other Big Funds Bought Nvidia Last Quarter. It\u2019s Down 28% Since. Time to Buy?",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-23T04:26:19-10:00",
-"Can The Fed Rescue Nvidia Stock Before Christmas?",
+"2026-11-23T07:04:31-10:00",
+"The S&P 500 Just Fell Into a Correction. Your $3 Million Retirement Portfolio May Be Less Diversified Than You Think",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-23T03:36:58-10:00",
-"Stocks rebound as Nvidia spikes after Jensen Huang's return",
+"2026-11-23T06:50:47-10:00",
+"A $1.3 Billion Fund Is Betting Big on Alphabet",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-23T03:36:16-10:00",
-"Data-Center Stocks\u2019 Growth-Value Gap Widens as Investors Rethink AI Infrastructure",
-"finnhub/ChartMill"
+"2026-11-23T06:38:20-10:00",
+"Does AMD Stock Turn Profit Into Cash Like Nvidia?",
+"finnhub/Yahoo"
 ],
 [
-"2026-11-23T03:31:09-10:00",
-"Nvidia, Broadcom, and AMD roar higher as chip stocks rebound from worst week since 2001",
+"2026-11-23T06:26:54-10:00",
+"SOXX Heads For Biggest Single-Day Gain in Over 18 Months As Semiconductor, AI Stocks Rebound Sharply",
 "finnhub/Yahoo"
 ]
 ]
 },
 "GOOGL": {
-"fetched": "2026-11-23T07:22:35.634208-10:00",
+"fetched": "2026-11-23T08:32:35.111629-10:00",
 "src": "finnhub",
 "items": [
 [
-"2026-11-23T05:49:07-10:00",
-"Nvidia's $115B neocloud exposure and what its backstops really cover",
+"2026-11-23T07:55:51-10:00",
+"Stock Market Today: Dow Surges As Trump Says This On Huang's Nvidia Return; AI Plays Rocket (Live Coverage)",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-23T05:46:15-10:00",
-"Jensen Huang back at Nvidia, stock soars; Anthropic slides",
+"2026-11-23T07:45:48-10:00",
+"All Broadcom Has to Do is Deliver Modestly to Prove Stanley Druckenmiller Wrong and Hit $500 in 2027",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-23T05:36:02-10:00",
-"Stock Market Today: Dow, Nasdaq Surge As Jensen Huang Returns To Nvidia; Chip Plays Rocket (Live Coverage)",
+"2026-11-23T07:31:04-10:00",
+"What Explains The Fall In Meta Stock?",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-23T05:24:55-10:00",
-"Is Broadcom Stock's Drop A Chance To Buy?",
+"2026-11-23T07:30:38-10:00",
+"A $12 Billion Fund Dumps These 3 Stocks",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-23T05:18:38-10:00",
-"5 Stocks Stanley Druckenmiller Just Dumped\u2014and What His Big Exit Signals Next",
+"2026-11-23T07:30:00-10:00",
+"NiobiumX Mining Inc. (OTCQB: NIOXF): Niobium Is Behind US Missiles and Next-Generation AI Chips. The US Imports All of It.",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-23T05:13:00-10:00",
-"Jensen Huang Just Got His Nvidia Job Back. When Steve Jobs, Howard Schultz and Bob Iger Came Back, the Stock Rose, and a Year Later 4 of 6 Comebacks Trailed the",
+"2026-11-23T07:25:30-10:00",
+"Nvidia Is Now Second To Apple In The World\u2019s Most Valued Companies On Jensen Huang Optimism",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-23T05:10:24-10:00",
-"Morgan Stanley Sees 14% Earnings Growth as Stocks Price In a 6% Decline",
+"2026-11-23T07:19:00-10:00",
+"AI Boom at Risk as Trump Threatens \u201cTremendous Tax\u201d on Overseas Data Centers While Restrictions Mount at Home",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-23T05:03:35-10:00",
-"Alphabet\u2019s Spending Could Unlock a Massive Opportunity Investors Aren\u2019t Pricing In",
+"2026-11-23T07:14:23-10:00",
+"Amazon snaps up Decart\u2019s AI optimization tech for $7.5B as it prepares to sell Trainium chips",
 "finnhub/Yahoo"
 ]
 ]
 },
 "META": {
-"fetched": "2026-11-23T07:22:35.634208-10:00",
+"fetched": "2026-11-23T08:32:35.111629-10:00",
 "src": "finnhub",
 "items": [
 [
-"2026-11-23T05:49:07-10:00",
-"Nvidia's $115B neocloud exposure and what its backstops really cover",
+"2026-11-23T07:45:48-10:00",
+"All Broadcom Has to Do is Deliver Modestly to Prove Stanley Druckenmiller Wrong and Hit $500 in 2027",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-23T05:46:15-10:00",
-"Jensen Huang back at Nvidia, stock soars; Anthropic slides",
+"2026-11-23T07:45:00-10:00",
+"Nebius Keeps Plummeting Amid 50% Drop This Month: This Wall Street Pro Now Predicts 370% Returns After Slight Adjustment",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-23T05:26:11-10:00",
-"Meta AI Chief Issues Stark Warning About Humanity's Future",
+"2026-11-23T07:31:51-10:00",
+"Meta Soars 6%, Cipher Up 17% as AI Stocks Rebound With Jensen Huang Back at Nvidia",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-23T05:20:07-10:00",
-"Meta AI Chief Warns Superintelligence Is Arriving as Anthropic Claims Math Breakthrough",
+"2026-11-23T07:31:04-10:00",
+"What Explains The Fall In Meta Stock?",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-23T05:03:35-10:00",
-"Alphabet\u2019s Spending Could Unlock a Massive Opportunity Investors Aren\u2019t Pricing In",
+"2026-11-23T07:30:00-10:00",
+"NiobiumX Mining Inc. (OTCQB: NIOXF): Niobium Is Behind US Missiles and Next-Generation AI Chips. The US Imports All of It.",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-23T04:56:00-10:00",
-"Holiday Shopping Scams Hiding in Plain Sight: A Cyber Threat Expert's Guide to Spotting Them",
+"2026-11-23T07:22:29-10:00",
+"Advanced Micro Devices vs. Dell Technologies: Comparing Revenue Trends Amid the Artificial Intelligence Boom",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-23T04:34:29-10:00",
-"Verizon Cut Its Buying In 2002. Can Nvidia's Buyers Stop Now?",
+"2026-11-23T07:13:45-10:00",
+"Meta throws out its net-zero goal. Its competitors should be furious",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-23T04:33:23-10:00",
-"Wall Street Is Watching AI Stocks. But This Stock Could Be a Bigger Nuclear Energy Opportunity",
+"2026-11-23T07:08:15-10:00",
+"Is Meta Stock Worth More Than Its Tech Rivals?",
 "finnhub/Yahoo"
 ]
 ]
 },
 "MSFT": {
-"fetched": "2026-11-23T07:22:35.634208-10:00",
+"fetched": "2026-11-23T08:32:35.111629-10:00",
 "src": "finnhub",
 "items": [
 [
-"2026-11-23T05:49:07-10:00",
-"Nvidia's $115B neocloud exposure and what its backstops really cover",
+"2026-11-23T07:45:00-10:00",
+"Nebius Keeps Plummeting Amid 50% Drop This Month: This Wall Street Pro Now Predicts 370% Returns After Slight Adjustment",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-23T05:45:47-10:00",
-"SpaceX Could Hit Microsoft-Scale Revenue in 2027\u2014Then the Math and Mechanics Get Murky",
+"2026-11-23T07:33:54-10:00",
+"Investors Might Be Underestimating Seagate\u2019s Long-Term AI Growth Opportunity",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-23T05:39:57-10:00",
-"CrowdStrike buying Zscaler as cybersecurity consolidates",
+"2026-11-23T07:33:00-10:00",
+"Intel landed Microsoft, but now it needs something it can't make",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-23T05:20:02-10:00",
-"3 Unstoppable AI Stocks to Buy Hand Over Fist Before the End of 2026",
+"2026-11-23T07:31:04-10:00",
+"What Explains The Fall In Meta Stock?",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-23T05:19:27-10:00",
-"NYSE Parent's Tokenized Stock Venture Opens With 113 Assets Planned. Apple, Nvidia And Tesla Are Staying Out.",
+"2026-11-23T07:31:01-10:00",
+"Docusign vs. Figma: Which Technology Stock Is a Better Buy for 2027?",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-23T05:13:36-10:00",
-"Texas Pacific Land to Buy EagleRock, Expanding Permian Land and Water Footprint",
+"2026-11-23T07:30:00-10:00",
+"NiobiumX Mining Inc. (OTCQB: NIOXF): Niobium Is Behind US Missiles and Next-Generation AI Chips. The US Imports All of It.",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-23T05:03:35-10:00",
-"Alphabet\u2019s Spending Could Unlock a Massive Opportunity Investors Aren\u2019t Pricing In",
+"2026-11-23T07:30:00-10:00",
+"GBK Collective Expands Strategic Advisory Bench with Appointments of Adam Cohen and Patrick Moriarty",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-23T05:03:09-10:00",
-"Nvidia Poised For Biggest One Day Gain In History Of Stock Market As Jensen Huang Returns",
+"2026-11-23T07:25:30-10:00",
+"Nvidia Is Now Second To Apple In The World\u2019s Most Valued Companies On Jensen Huang Optimism",
 "finnhub/Yahoo"
 ]
 ]
 },
 "MU": {
-"fetched": "2026-11-23T07:22:35.634208-10:00",
+"fetched": "2026-11-23T08:32:35.111629-10:00",
 "src": "finnhub",
 "items": [
 [
-"2026-11-23T05:47:02-10:00",
-"Why Micron Stock Is Up Today",
+"2026-11-23T07:39:26-10:00",
+"A $6.8 Billion Fund Just Bought These 3 Stocks",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-23T05:46:15-10:00",
-"Jensen Huang back at Nvidia, stock soars; Anthropic slides",
+"2026-11-23T07:30:33-10:00",
+"Why Is Micron (MU) Stock Soaring Today? Nvidia's CEO Return Lifts Chip Stocks",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-23T05:20:00-10:00",
-"Micron Soars 20% as Citi Says Ending Nvidia\u2019s Financing Would Cut DRAM Demand Only 12%",
+"2026-11-23T07:05:00-10:00",
+"Why Anthropic\u2019s Stock Is Sitting Out Nvidia\u2019s Big Rally",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-23T05:04:38-10:00",
-"SanDisk Surges 22% as Jensen Huang\u2019s Return to NVIDIA Sparks AI Chip Rebound; Seagate Jumps 18%, Micron Rallies 16%",
+"2026-11-23T07:04:07-10:00",
+"Qualcomm Jumps 9.8% as Chip Stocks Rally on Nvidia News on Monday",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-23T05:03:00-10:00",
-"Micron Stock Jumps 16%. Why the Rally Has Legs.",
+"2026-11-23T07:03:20-10:00",
+"SiTime Jumps 17.7% as Chip Stocks Rally on Nvidia CEO Return on Monday",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-23T04:33:58-10:00",
-"Can Micron Stock Jump 50%?",
+"2026-11-23T07:02:21-10:00",
+"MACOM Stock Jumps 16.7% as Chip Rally Follows Nvidia's CEO Return on Nov. 23",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-23T04:20:26-10:00",
-"Growth Stocks Are the New Bargains",
+"2026-11-23T07:02:14-10:00",
+"Marvell Stock Jumps 16.6% as Nvidia Rally Lifts Chip Shares on Nov. 23",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-23T04:04:12-10:00",
-"\u201cI Absolutely Do Not Expect\u201d Customers to Break Their Deals, Micron\u2019s CEO Says. Here\u2019s What\u2019s Riding on It",
+"2026-11-23T07:02:08-10:00",
+"Monolithic Power Stock Jumps 14.6% as Chip Rally Follows Nvidia News on Nov. 23",
 "finnhub/Yahoo"
 ]
 ]
 },
 "NVDA": {
-"fetched": "2026-11-23T07:22:35.634208-10:00",
+"fetched": "2026-11-23T08:32:35.111629-10:00",
 "src": "finnhub",
 "items": [
 [
-"2026-11-23T05:55:28-10:00",
-"Taiwan Semiconductor Rallies 17% as Jensen Huang\u2019s Return to NVIDIA Lifts Chip Stocks; Intel Surges 15%, AMD Jumps 8%",
+"2026-11-23T07:55:04-10:00",
+"Trump says he \u2018convinced\u2019 Nvidia board to reinstate Jensen Huang",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-23T05:51:00-10:00",
-"Jensen Huang Just Got His Job Back and Nvidia Soared 30% at the Open. Here\u2019s What It Costs a Retiree to Sell $100,000 of the Stock in a Brokerage Account and in",
+"2026-11-23T07:54:02-10:00",
+"Should You Buy Marvell Technology Stock Before Dec. 1?",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-23T05:49:07-10:00",
-"Nvidia's $115B neocloud exposure and what its backstops really cover",
+"2026-11-23T07:42:54-10:00",
+"AI powered the market boom. Is the bubble about to pop?",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-23T05:48:06-10:00",
-"Trump Gave Nvidia\u2019s Board Assurances That Jensen Huang Was Not A National Security Threat, And Now The Stock Is Soaring",
+"2026-11-23T07:38:03-10:00",
+"Fed Rate-Hike Odds Jump As Nvidia, 'Central Bank Of AI,' Saves The Day",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-23T05:47:02-10:00",
-"Why Micron Stock Is Up Today",
+"2026-11-23T07:36:54-10:00",
+"Why Did Cerebras Stock Soar Today?",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-23T05:46:15-10:00",
-"Jensen Huang back at Nvidia, stock soars; Anthropic slides",
+"2026-11-23T07:35:17-10:00",
+"Nvidia stock soars 30% after brutal selloff",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-23T05:44:27-10:00",
-"Nvidia reinstates Jensen Huang as CEO",
+"2026-11-23T07:35:02-10:00",
+"Peloton Generated $454 Million in Free Cash Flow Over the Past Year. Here's the 1 Thing the Stock Still Needs.",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-23T05:44:15-10:00",
-"Jensen Huang Is Back As Nvidia CEO. Stock Jumps.",
+"2026-11-23T07:32:02-10:00",
+"Stock Market Midday, Nov. 23: Nasdaq Surges Nearly 7% as Jensen Huang's Return Sparks Historic AI Rebound",
 "finnhub/Yahoo"
 ]
 ]
 },
 "TSLA": {
-"fetched": "2026-11-23T07:22:35.634208-10:00",
+"fetched": "2026-11-23T08:32:35.111629-10:00",
 "src": "finnhub",
 "items": [
 [
-"2026-11-23T05:19:27-10:00",
-"NYSE Parent's Tokenized Stock Venture Opens With 113 Assets Planned. Apple, Nvidia And Tesla Are Staying Out.",
+"2026-11-23T07:32:17-10:00",
+"Tesla\u2019s FSD v15 An \u2018Illustration\u2019 Of Head Start In Consumer Autonomy, Says JPMorgan \u2013 TSLA Stock Eyes Best Day In Over 19 Months",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-23T05:15:00-10:00",
-"Tesla\u2019s Big Self-Driving Upgrade Arrives Right on Time for the Stock",
+"2026-11-23T07:15:38-10:00",
+"Jensen Huang Returns to NVIDIA. Which Magnificent 7 Stocks Win and Lose?",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-23T05:12:50-10:00",
-"Tesla Soars 13% as FSD V15 Rolls Out: Musk Calls It a \u201cBanger Release\u201d",
+"2026-11-23T07:03:42-10:00",
+"Tesla Jumps 13% as Jensen Huang\u2019s Return to NVIDIA Sparks Broad Market Rally; Rivian Rallies 9%, Lucid Surges 8%",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-23T05:09:02-10:00",
-"Tesla Stock Soars After Friday's Rout -- Musk Has a New AI Upgrade",
+"2026-11-23T07:02:44-10:00",
+"Tesla Stock Jumps 12.1% as AI Rally Sends Shares Higher on Nov. 23",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-23T05:06:00-10:00",
-"SpaceX Stock Jumps. For Investors, the Good Outweighs the Bad Today.",
+"2026-11-23T06:43:07-10:00",
+"Tesla jumps 50 places on the Roundtable 100 amid FSD v15 rollout",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-23T05:00:00-10:00",
-"WattEV\u2019s Port of Oakland charging depot and new electric trucks bring cost parity with diesel to fleets",
+"2026-11-23T06:32:39-10:00",
+"Tesla FSD senior marketing strategy carries liability risk for autonomy-driven valuation",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-23T04:20:00-10:00",
-"Elon Musk warns AI industry faces a severe cash shortage",
+"2026-11-23T06:30:00-10:00",
+"Nvidia\u2019s Jensen Huang Returns. Tesla, Dell, and Many More Stocks Are Soaring.",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-23T03:20:48-10:00",
-"Tesla Bulls Banking on SpaceX \u201cDon\u2019t Get the Dilution Math,\u201d Says Gary Black. Tesla Trades at 3.4x SpaceX\u2019s 2027 Multiple",
+"2026-11-23T06:29:14-10:00",
+"Tesla Leaps 13%, Retakes Key Levels. New FSD Update Announced.",
 "finnhub/Yahoo"
 ]
 ]
 },
 "SPCX": {
-"fetched": "2026-11-23T07:22:35.634208-10:00",
+"fetched": "2026-11-23T08:32:35.111629-10:00",
 "src": "finnhub",
 "items": [
 [
-"2026-11-23T05:58:23-10:00",
-"Rocket Lab Rallies 11% After Its Worst Week Ever as CFO Eyes Higher Electron Prices; AST SpaceMobile Jumps 14%, SpaceX Surges 9%",
+"2026-11-23T07:55:16-10:00",
+"SpaceX Stocks Climb 8.69% as Jefferies Starts Coverage With Buy and $210 Target",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-23T05:49:29-10:00",
-"Cathie Wood Sells a High-Profile AI Stock to Bet on a New Favorite",
+"2026-11-23T07:53:07-10:00",
+"Tesla Stocks Surge 13.67% as SpaceX Merger Committees and Cybercab Sales Draw Buyers",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-23T05:45:47-10:00",
-"SpaceX Could Hit Microsoft-Scale Revenue in 2027\u2014Then the Math and Mechanics Get Murky",
+"2026-11-23T07:47:08-10:00",
+"The 5 Best Stocks in Dan Loeb\u2019s Portfolio",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-23T05:39:10-10:00",
-"Anthropic's IPO Came With Demands That Caught Wall Street Off Guard",
+"2026-11-23T07:24:25-10:00",
+"SPCX Stock Gets A \u2018Buy\u2019 Rating From Jefferies For Its Engineering Edge, But Musk Reportedly Fears SpaceX\u2019s AI Lag",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-23T05:33:50-10:00",
-"SpaceX Soars 9% as Jefferies Initiates at Buy With $210 Target, Calls Its Engineering \u201cExceptional\u201d",
+"2026-11-23T07:18:56-10:00",
+"Bill Ackman Predicts \u201cThe Fed Will Put the U.S. and World in Recession\u201d if It Hikes Rates after Thanksgiving",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-23T05:32:42-10:00",
-"Cathie Wood Sells $107 Million of Nvidia Stock, Adds $74 Million to SpaceX",
+"2026-11-23T07:15:38-10:00",
+"Jensen Huang Returns to NVIDIA. Which Magnificent 7 Stocks Win and Lose?",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-23T05:30:01-10:00",
-"Why SpaceX Stock Is Gaining Today",
+"2026-11-23T07:11:44-10:00",
+"Wall Street's SpaceX sequel: Anthropic gets leveraged ETFs and options, and the original didn't end well",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-23T05:18:06-10:00",
-"Why One Analyst Upgrade Sent SpaceX Soaring on Monday",
+"2026-11-23T07:01:03-10:00",
+"Musk\u2019s AI push faces a dilemma as rivals become major customers",
 "finnhub/Yahoo"
 ]
 ]
