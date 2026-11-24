@@ -33,7 +33,7 @@
  "last_reading": {
   "regime": "ROTATION",
   "clean": false,
-  "why": "ES red (-0.59%), NQ red (-1.96%), YM green (+0.63%); YM green + NQ/ES red \u2192 rotation; puts may fade midday",
-  "at": "2026-11-24T07:52:36.367251-10:00"
+  "why": "ES red (-0.44%), NQ red (-1.77%), YM green (+0.78%); YM green + NQ/ES red \u2192 rotation; puts may fade midday",
+  "at": "2026-11-24T08:02:37.799611-10:00"
  }
 }
