@@ -1,0 +1,133 @@
+{
+ "trade_date": "2026-11-24",
+ "mode": "rescan",
+ "ran_at": "2026-11-24T09:52:34.967627-10:00",
+ "test": false,
+ "open_hst": "2026-11-24T04:30:00-10:00",
+ "close_hst": "2026-11-24T11:00:00-10:00",
+ "early_close": false,
+ "bias": {
+  "regime": "ROTATION",
+  "favored": "P",
+  "clean": false,
+  "notes": [
+   "ES red (-0.73%), NQ red (-2.13%), YM green (+0.58%)",
+   "YM green + NQ/ES red \u2192 rotation; puts may fade midday",
+   "VIX 27.07 (+1.69%) \u2192 does not confirm",
+   "SPY red (-0.73%), QQQ red (-2.17%) \u2192 confirms"
+  ]
+ },
+ "quotes": {
+  "ES": {
+   "last": 7201.5,
+   "prev_close": 7254.5,
+   "chg_pct": -0.7305810186780619,
+   "source": "schwab"
+  },
+  "NQ": {
+   "last": 26236.75,
+   "prev_close": 26808.0,
+   "chg_pct": -2.1308937630558042,
+   "source": "schwab"
+  },
+  "YM": {
+   "last": 49966.0,
+   "prev_close": 49677.0,
+   "chg_pct": 0.5817581576987338,
+   "source": "schwab"
+  },
+  "VIX": {
+   "last": 27.07,
+   "prev_close": 26.62,
+   "chg_pct": 1.6904583020285473,
+   "source": "schwab"
+  },
+  "SPY": {
+   "last": 717.0,
+   "prev_close": 722.29,
+   "chg_pct": -0.7323928062135657,
+   "source": "schwab"
+  },
+  "QQQ": {
+   "last": 636.93,
+   "prev_close": 651.03,
+   "chg_pct": -2.1657988111146986,
+   "source": "schwab"
+  }
+ },
+ "flags": [
+  "Amateur hour until 05:00 AM; institutional 05:00\u201305:30 AM HST",
+  "No damaged contracts overnight. No earnings holds overnight."
+ ],
+ "headlines": [],
+ "data_note": "live data: Schwab (Yahoo fallback)",
+ "cards": [],
+ "passing": 2,
+ "rejected": 64,
+ "rejections": [
+  "SPY P: trend not aligned (1m down/5m down/15m flat), put into support (VWAP)",
+  "IWM P: first 5-min candle does not confirm, trend not aligned (1m flat/5m flat/15m flat)",
+  "DIA: no expiry between tomorrow and Wed 11/25",
+  "TQQQ P: OI 320 < 500",
+  "SMH P: OI 8 < 500, trend not aligned (1m flat/5m flat/15m down), put into support (VWAP)",
+  "SOXL: no expiry between tomorrow and Wed 11/25",
+  "XLF P: spread 13.3% > 10.0%, first 5-min candle does not confirm, trend not aligned (1m down/5m down/15m flat), put into support (PDH)",
+  "XLE P: mid-range, OI 467 < 500, trend not aligned (1m down/5m flat/15m flat)",
+  "GLD P: first 5-min candle does not confirm, trend not aligned (1m flat/5m flat/15m down)",
+  "SLV P: first 5-min candle does not confirm, trend not aligned (1m flat/5m flat/15m down)",
+  "TLT P: trend not aligned (1m flat/5m down/15m down)",
+  "IBIT P: trend not aligned (1m flat/5m down/15m down)",
+  "TNA: no expiry between tomorrow and Wed 11/25",
+  "UVXY: no expiry between tomorrow and Wed 11/25",
+  "AAPL P: trend not aligned (1m flat/5m up/15m up), put into support (PDH)",
+  "AMAT: no expiry between tomorrow and Wed 11/25",
+  "AMD P: trend not aligned (1m down/5m flat/15m flat)",
+  "AMZN P: first 5-min candle does not confirm, trend not aligned (1m flat/5m down/15m down), put into support (PDL)",
+  "APLD: no expiry between tomorrow and Wed 11/25",
+  "APP: no expiry between tomorrow and Wed 11/25",
+  "ASTS: no expiry between tomorrow and Wed 11/25",
+  "AVGO P: OI 293 < 500, first 5-min candle does not confirm, trend not aligned (1m down/5m flat/15m flat)",
+  "BA: no expiry between tomorrow and Wed 11/25",
+  "BABA: no expiry between tomorrow and Wed 11/25",
+  "BAC: no expiry between tomorrow and Wed 11/25",
+  "BILI: no expiry between tomorrow and Wed 11/25",
+  "CIFR: no expiry between tomorrow and Wed 11/25",
+  "COIN: no expiry between tomorrow and Wed 11/25",
+  "CRM: no expiry between tomorrow and Wed 11/25",
+  "CRWV: no expiry between tomorrow and Wed 11/25",
+  "CVNA: no expiry between tomorrow and Wed 11/25",
+  "DKNG: no expiry between tomorrow and Wed 11/25",
+  "GOOGL P: trend not aligned (1m flat/5m down/15m down)",
+  "HOOD: no expiry between tomorrow and Wed 11/25",
+  "INTC: no expiry between tomorrow and Wed 11/25",
+  "IONQ: no expiry between tomorrow and Wed 11/25",
+  "IREN: no expiry between tomorrow and Wed 11/25",
+  "JPM: no expiry between tomorrow and Wed 11/25",
+  "LRCX: no expiry between tomorrow and Wed 11/25",
+  "MARA: no expiry between tomorrow and Wed 11/25",
+  "META P: OI 286 < 500, first 5-min candle does not confirm, trend not aligned (1m down/5m down/15m flat)",
+  "MSFT P: first 5-min candle does not confirm, trend not aligned (1m flat/5m down/15m flat)",
+  "MSTR: no expiry between tomorrow and Wed 11/25",
+  "MU P: trend not aligned (1m flat/5m down/15m down)",
+  "NFLX: no expiry between tomorrow and Wed 11/25",
+  "NVDA P: trend not aligned (1m up/5m down/15m down)",
+  "OKLO: no expiry between tomorrow and Wed 11/25",
+  "ORCL: no expiry between tomorrow and Wed 11/25",
+  "PLTR: no expiry between tomorrow and Wed 11/25",
+  "PLUG: no expiry between tomorrow and Wed 11/25",
+  "PYPL: no expiry between tomorrow and Wed 11/25",
+  "QCOM: no expiry between tomorrow and Wed 11/25",
+  "RGTI: no expiry between tomorrow and Wed 11/25",
+  "RKLB: no expiry between tomorrow and Wed 11/25",
+  "SHOP: no expiry between tomorrow and Wed 11/25",
+  "SMCI: no expiry between tomorrow and Wed 11/25",
+  "SOFI: no expiry between tomorrow and Wed 11/25",
+  "TSLA P: first 5-min candle does not confirm, trend not aligned (1m down/5m flat/15m flat)",
+  "TSM: no expiry between tomorrow and Wed 11/25",
+  "UBER: no expiry between tomorrow and Wed 11/25",
+  "WMT: no expiry between tomorrow and Wed 11/25",
+  "XOM: no expiry between tomorrow and Wed 11/25",
+  "PG: no expiry between tomorrow and Wed 11/25",
+  "SPCX P: first 5-min candle does not confirm"
+ ]
+}
