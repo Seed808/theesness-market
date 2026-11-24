@@ -138,28 +138,48 @@
 ]
 },
 "SPX": {
-"fetched": "2026-11-24T09:32:39.580287-10:00",
-"src": "yahoo",
+"fetched": "2026-11-24T09:42:35.375463-10:00",
+"src": "finnhub",
 "items": [
 [
-"2026-09-29T10:11:38-10:00",
-"US Equity Markets End Lower After Higher Treasury Yields, Fed Governor's Remarks on Inflation"
+"2026-11-24T03:05:00-10:00",
+"U.S. Confidence Bounces On Fuel Price Drop And Election Clarity",
+"finnhub/SeekingAlpha"
 ],
 [
-"2026-09-29T09:32:54-10:00",
-"Update: US Equity Indexes Fall as Markets Parse Mixed Macroeconomic Data"
+"2026-11-24T02:20:24-10:00",
+"QQQ: Beware Of 2000 Dotcom Market Top Pattern Repetition",
+"finnhub/SeekingAlpha"
 ],
 [
-"2026-09-28T07:38:59-10:00",
-"Update: US Equity Indexes Fall in Midday Trading as Treasury Yields Rise Amid US-Iran Deadlock"
+"2026-11-24T00:20:49-10:00",
+"Beware, The AI Trade May Not Have Bottomed Yet",
+"finnhub/SeekingAlpha"
 ],
 [
-"2026-09-22T10:11:06-10:00",
-"Update: US Equity Indexes Trade Mixed in Final Leg; Nasdaq Makes New Record Intraday"
+"2026-11-23T23:43:24-10:00",
+"The First 6% Up Day Outside A Bear Market (Yet?)",
+"finnhub/SeekingAlpha"
 ],
 [
-"2026-09-15T09:50:00-10:00",
-"The Fed\u2019s expected interest-rate hike on Wednesday could be the start of something more troubling for investors"
+"2026-11-23T23:10:12-10:00",
+"The Trump Put Ends The Correction, Again",
+"finnhub/SeekingAlpha"
+],
+[
+"2026-11-23T23:03:55-10:00",
+"When I See A Stock Market Correction Without A Recession, I See A Buying Opportunity",
+"finnhub/SeekingAlpha"
+],
+[
+"2026-11-23T22:25:13-10:00",
+"The State Of The AI Trade: The Only Way Out Is Growth",
+"finnhub/SeekingAlpha"
+],
+[
+"2026-11-23T22:00:00-10:00",
+"Six Asset Bubbles That Have Already Popped",
+"finnhub/SeekingAlpha"
 ]
 ]
 },
