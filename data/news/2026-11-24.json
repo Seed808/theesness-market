@@ -138,9 +138,14 @@
 ]
 },
 "SPX": {
-"fetched": "2026-11-24T09:42:35.375463-10:00",
+"fetched": "2026-11-24T10:52:38.972689-10:00",
 "src": "finnhub",
 "items": [
+[
+"2026-11-24T04:30:00-10:00",
+"Economic Momentum Remains Firm, Though Signs Of Cooling Are Emerging",
+"finnhub/SeekingAlpha"
+],
 [
 "2026-11-24T03:05:00-10:00",
 "U.S. Confidence Bounces On Fuel Price Drop And Election Clarity",
@@ -174,11 +179,6 @@
 [
 "2026-11-23T22:25:13-10:00",
 "The State Of The AI Trade: The Only Way Out Is Growth",
-"finnhub/SeekingAlpha"
-],
-[
-"2026-11-23T22:00:00-10:00",
-"Six Asset Bubbles That Have Already Popped",
 "finnhub/SeekingAlpha"
 ]
 ]
