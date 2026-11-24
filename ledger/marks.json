@@ -1,1 +1,15 @@
-{}
+{
+ "2026-11-24_rescan_TLT_PUT_2026-11-25_81.5": {
+  "high": null,
+  "low": null,
+  "last": 0.12,
+  "last_time": "2026-11-24T18:15:03.884000+00:00",
+  "source": "schwab quote (mark)",
+  "underlying": 81.695,
+  "pnl_pct": 0.0,
+  "as_of": "2026-11-24T08:12:37.760290-10:00"
+ },
+ "_errors": {
+  "2026-11-24_rescan_TLT_PUT_2026-11-25_81.5": "bars returned but none after lock (99 rows)"
+ }
+}
