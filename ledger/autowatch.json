@@ -3,15 +3,10 @@
   "SPCX": {
    "added": "2026-11-16",
    "why": "Schwab most-active 2 of last 5 days; avg vol 101.3M, options liquid both sides",
-   "liq_fails": 2
-  },
-  "PG": {
-   "added": "2026-11-19",
-   "why": "Schwab most-active 2 of last 5 days; avg vol 9.4M, options liquid both sides",
-   "liq_fails": 2
+   "liq_fails": 0
   }
  },
- "last_run": "2026-11-23",
+ "last_run": "2026-11-24",
  "log": [
   {
    "on": "2026-11-16",
@@ -36,11 +31,17 @@
    "action": "drop",
    "sym": "NKE",
    "why": "options thin 3 checks in a row (calls: OI 74 < 500; puts: spread 18.2% > 10.0%)"
+  },
+  {
+   "on": "2026-11-24",
+   "action": "drop",
+   "sym": "PG",
+   "why": "options thin 3 checks in a row (no 0DTE expiry (Friday/pre-holiday rule))"
   }
  ],
  "passed_over": {
   "AKAN": {
-   "on": "2026-11-20",
+   "on": "2026-11-24",
    "why": "no option chain"
   },
   "SHFS": {
@@ -48,39 +49,39 @@
    "why": "no option chain"
   },
   "YFOR": {
-   "on": "2026-11-23",
-   "why": "avg volume 505,421 < 1,000,000"
+   "on": "2026-11-24",
+   "why": "avg volume 516,535 < 1,000,000"
   },
   "CSCO": {
-   "on": "2026-11-23",
-   "why": "no expiry between tomorrow and Wed 11/25"
+   "on": "2026-11-24",
+   "why": "no 0DTE expiry (Friday/pre-holiday rule)"
   },
   "F": {
-   "on": "2026-11-23",
-   "why": "no expiry between tomorrow and Wed 11/25"
+   "on": "2026-11-24",
+   "why": "no 0DTE expiry (Friday/pre-holiday rule)"
   },
   "PG": {
    "on": "2026-11-18",
    "why": "calls: spread 53.1% > 10.0%; puts: spread 19.4% > 10.0%"
   },
   "KO": {
-   "on": "2026-11-23",
-   "why": "no expiry between tomorrow and Wed 11/25"
+   "on": "2026-11-24",
+   "why": "no 0DTE expiry (Friday/pre-holiday rule)"
   },
   "T": {
-   "on": "2026-11-23",
-   "why": "no expiry between tomorrow and Wed 11/25"
+   "on": "2026-11-24",
+   "why": "no 0DTE expiry (Friday/pre-holiday rule)"
   },
   "DIS": {
-   "on": "2026-11-23",
-   "why": "no expiry between tomorrow and Wed 11/25"
+   "on": "2026-11-24",
+   "why": "no 0DTE expiry (Friday/pre-holiday rule)"
   },
   "POLA": {
    "on": "2026-11-20",
    "why": "no option chain"
   },
   "LICN": {
-   "on": "2026-11-23",
+   "on": "2026-11-24",
    "why": "no option chain"
   },
   "HIHO": {
@@ -88,68 +89,68 @@
    "why": "no option chain"
   },
   "UNH": {
-   "on": "2026-11-23",
-   "why": "no expiry between tomorrow and Wed 11/25"
+   "on": "2026-11-24",
+   "why": "no 0DTE expiry (Friday/pre-holiday rule)"
   },
   "MRVL": {
-   "on": "2026-11-23",
-   "why": "no expiry between tomorrow and Wed 11/25"
+   "on": "2026-11-24",
+   "why": "no 0DTE expiry (Friday/pre-holiday rule)"
   },
   "GRAB": {
-   "on": "2026-11-23",
-   "why": "no expiry between tomorrow and Wed 11/25"
+   "on": "2026-11-24",
+   "why": "no 0DTE expiry (Friday/pre-holiday rule)"
   },
   "NKE": {
-   "on": "2026-11-23",
-   "why": "no expiry between tomorrow and Wed 11/25"
+   "on": "2026-11-24",
+   "why": "no 0DTE expiry (Friday/pre-holiday rule)"
   },
   "GMM": {
    "on": "2026-11-20",
    "why": "no option chain"
   },
   "CHSN": {
-   "on": "2026-11-23",
+   "on": "2026-11-24",
    "why": "no option chain"
   },
   "FNGR": {
-   "on": "2026-11-23",
+   "on": "2026-11-24",
    "why": "no option chain"
   },
   "PFE": {
-   "on": "2026-11-23",
-   "why": "no expiry between tomorrow and Wed 11/25"
+   "on": "2026-11-24",
+   "why": "no 0DTE expiry (Friday/pre-holiday rule)"
   },
   "MMM": {
-   "on": "2026-11-23",
-   "why": "no expiry between tomorrow and Wed 11/25"
+   "on": "2026-11-24",
+   "why": "no 0DTE expiry (Friday/pre-holiday rule)"
   },
   "HON": {
    "on": "2026-11-19",
    "why": "calls: spread 90.0% > 10.0%; puts: OI 51 < 500"
   },
   "AES": {
-   "on": "2026-11-23",
+   "on": "2026-11-24",
    "why": "no option chain"
   },
   "VIVS": {
-   "on": "2026-11-23",
+   "on": "2026-11-24",
    "why": "no option chain"
   },
   "FCHL": {
-   "on": "2026-11-23",
+   "on": "2026-11-24",
    "why": "no option chain"
   },
   "SNDK": {
-   "on": "2026-11-23",
-   "why": "no expiry between tomorrow and Wed 11/25"
+   "on": "2026-11-24",
+   "why": "no 0DTE expiry (Friday/pre-holiday rule)"
   },
   "GMEX": {
-   "on": "2026-11-23",
+   "on": "2026-11-24",
    "why": "no option chain"
   },
   "CVX": {
-   "on": "2026-11-23",
-   "why": "no expiry between tomorrow and Wed 11/25"
+   "on": "2026-11-24",
+   "why": "no 0DTE expiry (Friday/pre-holiday rule)"
   }
  }
 }

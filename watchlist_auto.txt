@@ -1,5 +1,4 @@
 # Managed by the system (market/autowatch.py). Market movers added automatically;
 # dropped when they stop moving or their options thin out. Edit watchlist.txt, not this.
 
-PG     # added 2026-11-19: Schwab most-active 2 of last 5 days; avg vol 9.4M, options liquid both sides
 SPCX   # added 2026-11-16: Schwab most-active 2 of last 5 days; avg vol 101.3M, options liquid both sides
