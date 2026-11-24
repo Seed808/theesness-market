@@ -1,6 +1,6 @@
 {
 "SPY": {
-"fetched": "2026-11-24T05:12:38.339887-10:00",
+"fetched": "2026-11-24T06:12:42.443586-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -46,13 +46,18 @@
 ]
 },
 "QQQ": {
-"fetched": "2026-11-24T05:12:38.339887-10:00",
+"fetched": "2026-11-24T06:12:42.443586-10:00",
 "src": "finnhub",
 "items": [
 [
 "2026-11-24T00:51:44-10:00",
 "Why Is Intel Stock Pulling Back After Monday\u2019s Semiconductor Rally",
 "finnhub/Benzinga"
+],
+[
+"2026-11-24T00:20:49-10:00",
+"Beware, The AI Trade May Not Have Bottomed Yet",
+"finnhub/SeekingAlpha"
 ],
 [
 "2026-11-24T00:13:25-10:00",
@@ -83,18 +88,18 @@
 "2026-11-23T22:25:13-10:00",
 "The State Of The AI Trade: The Only Way Out Is Growth",
 "finnhub/SeekingAlpha"
-],
-[
-"2026-11-23T22:20:00-10:00",
-"When Sequence Risk Kicks The Door In",
-"finnhub/SeekingAlpha"
 ]
 ]
 },
 "IWM": {
-"fetched": "2026-11-24T05:12:38.339887-10:00",
+"fetched": "2026-11-24T06:12:42.443586-10:00",
 "src": "finnhub",
 "items": [
+[
+"2026-11-24T00:20:49-10:00",
+"Beware, The AI Trade May Not Have Bottomed Yet",
+"finnhub/SeekingAlpha"
+],
 [
 "2026-11-23T23:43:24-10:00",
 "The First 6% Up Day Outside A Bear Market (Yet?)",
@@ -129,18 +134,18 @@
 "2026-11-23T18:05:00-10:00",
 "Is It Really All Clear In The Stock Market?",
 "finnhub/SeekingAlpha"
-],
-[
-"2026-11-23T17:39:18-10:00",
-"Jensen Huang Just Moved The Entire QQQ",
-"finnhub/SeekingAlpha"
 ]
 ]
 },
 "SPX": {
-"fetched": "2026-11-24T05:12:38.339887-10:00",
+"fetched": "2026-11-24T06:12:42.443586-10:00",
 "src": "finnhub",
 "items": [
+[
+"2026-11-24T00:20:49-10:00",
+"Beware, The AI Trade May Not Have Bottomed Yet",
+"finnhub/SeekingAlpha"
+],
 [
 "2026-11-23T23:43:24-10:00",
 "The First 6% Up Day Outside A Bear Market (Yet?)",
@@ -175,16 +180,11 @@
 "2026-11-23T21:40:00-10:00",
 "Turnaround Tuesday: USD And Stocks Lower",
 "finnhub/SeekingAlpha"
-],
-[
-"2026-11-23T21:26:33-10:00",
-"The 'Trump Put' Might Not Work - The AI Bubble Burst To Resume",
-"finnhub/SeekingAlpha"
 ]
 ]
 },
 "TQQQ": {
-"fetched": "2026-11-24T05:12:38.339887-10:00",
+"fetched": "2026-11-24T06:12:42.443586-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -200,9 +200,14 @@
 ]
 },
 "SMH": {
-"fetched": "2026-11-24T05:12:38.339887-10:00",
+"fetched": "2026-11-24T06:12:42.443586-10:00",
 "src": "finnhub",
 "items": [
+[
+"2026-11-24T00:20:49-10:00",
+"Beware, The AI Trade May Not Have Bottomed Yet",
+"finnhub/SeekingAlpha"
+],
 [
 "2026-11-23T23:40:25-10:00",
 "Micron Stock Drops After Monday\u2019s Surge as Nvidia Scrutiny Hits Chipmakers",
@@ -237,16 +242,11 @@
 "2026-11-23T16:10:37-10:00",
 "Stock Market: Will S&P 500 Open Up or Down Today?",
 "finnhub/Benzinga"
-],
-[
-"2026-11-23T15:15:34-10:00",
-"Michael Burry Just Made a Big Move in NVDA Before Its 31% Rally \u2014 Fires Fresh Warning at Nvidia Following Jensen Huang\u2019s Return: \u2018Weaker, More Craven\u2019",
-"finnhub/Benzinga"
 ]
 ]
 },
 "XLF": {
-"fetched": "2026-11-24T05:12:38.339887-10:00",
+"fetched": "2026-11-24T06:12:42.443586-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -282,7 +282,7 @@
 ]
 },
 "XLE": {
-"fetched": "2026-11-24T05:12:38.339887-10:00",
+"fetched": "2026-11-24T06:12:42.443586-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -328,7 +328,7 @@
 ]
 },
 "GLD": {
-"fetched": "2026-11-24T05:12:38.339887-10:00",
+"fetched": "2026-11-24T06:12:42.443586-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -374,7 +374,7 @@
 ]
 },
 "SLV": {
-"fetched": "2026-11-24T05:12:38.339887-10:00",
+"fetched": "2026-11-24T06:12:42.443586-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -410,7 +410,7 @@
 ]
 },
 "TLT": {
-"fetched": "2026-11-24T05:12:38.339887-10:00",
+"fetched": "2026-11-24T06:12:42.443586-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -456,7 +456,7 @@
 ]
 },
 "IBIT": {
-"fetched": "2026-11-24T05:12:38.339887-10:00",
+"fetched": "2026-11-24T06:12:42.443586-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -487,191 +487,191 @@
 ]
 },
 "AAPL": {
-"fetched": "2026-11-24T05:12:38.339887-10:00",
+"fetched": "2026-11-24T06:12:42.443586-10:00",
 "src": "finnhub",
 "items": [
 [
-"2026-11-24T02:43:08-10:00",
-"Jensen Huang's return revives an old Wall Street trade: Bet on the comeback CEO",
+"2026-11-24T05:44:08-10:00",
+"Stocks give back gains as Anthropic dips below IPO price",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-24T02:37:30-10:00",
-"Cloud AI Update - Audi Integrates Cutting-Edge AI for In-Car Microsoft Access",
+"2026-11-24T05:42:55-10:00",
+"Who is holding Jensen Huang accountable? It sure looks like nobody",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-24T02:29:00-10:00",
-"Can Wearables & Mac Revenues Add Fresh Momentum to Apple Stock Ahead?",
+"2026-11-24T05:30:00-10:00",
+"Despite Jensen's return, Nvidia still needs to address several management issues",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-24T02:02:07-10:00",
-"Nvidia Regains Nearly $1 Trillion in Value -- Apple Still Holds the Top Spot",
+"2026-11-24T05:13:07-10:00",
+"Nvidia stock in focus: Why CEO comebacks are usually good for shares",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-24T02:02:01-10:00",
-"Not Apple. Not Microsoft. This Is the \"Magnificent Seven\" Stock I\u2019d Buy for a 10-Year Hold.",
+"2026-11-24T04:41:00-10:00",
+"Global Neural Processor Market Report 2026: Size, Share, Trends, and Forecast to 2030 | Capitalize on 22.2% CAGR as NVIDIA, Apple, Alphabet, and Intel Accelerat",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-24T02:00:00-10:00",
-"How to short an AI bubble",
+"2026-11-24T04:36:00-10:00",
+"Embedded Microprocessor Unit (MPU) Global Market Report 2026 | Capitalize on Edge AI and IoT Growth to $59.18 Billion by 2030 with NVIDIA, Intel, Qualcomm, NXP,",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-24T01:39:29-10:00",
-"Nvidia Added $954 Billion In A Day. Is Jensen Huang Too Big To Fire?",
+"2026-11-24T04:29:07-10:00",
+"Target vs. Walmart: Which Consumer Goods Stock Is a Better Buy for 2027?",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-24T01:04:44-10:00",
-"Invesco NASDAQ 100 ETF (QQQM) Adds Apple and Microsoft on Friday",
+"2026-11-24T03:56:14-10:00",
+"America Has Had Indispensable Men Before. Why Is Jensen Huang Different?",
 "finnhub/Yahoo"
 ]
 ]
 },
 "AMD": {
-"fetched": "2026-11-24T05:12:38.339887-10:00",
+"fetched": "2026-11-24T06:12:42.443586-10:00",
 "src": "finnhub",
 "items": [
 [
-"2026-11-24T03:45:30-10:00",
-"Bulls Expect AMD Revenues to Grow 80% Next Year on Hyper-Accelerated Data Center Growth, $725 in Sight",
+"2026-11-24T05:44:08-10:00",
+"Stocks give back gains as Anthropic dips below IPO price",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-24T03:31:00-10:00",
-"AMD Stock Shows the Market Has Stopped Making Sense After Huang\u2019s Dramatic Return",
+"2026-11-24T05:39:08-10:00",
+"Stock Market Today: Dow Up But Nasdaq Skids As Nvidia Dives; Bears Bite Chips (Live Coverage)",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-24T03:07:59-10:00",
-"Stock Market Today: Tech Futures Sell Off After Big Market Surge; AMD, Anthropic, Nvidia Dive (Live Coverage)",
+"2026-11-24T05:32:45-10:00",
+"Texas Instruments (TXN) Stock Is Down 8.1% Today: Chip Sector Sell-Off",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-24T03:00:12-10:00",
-"Jensen Huang is back at Nvidia. Should AMD be worried?",
+"2026-11-24T05:19:57-10:00",
+"AMD Sinks 10%, Nvidia Down 7% as Chip Stocks Give Back Huang Rally, Resale Filing Weighs",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-24T02:26:02-10:00",
-"Billionaire Philippe Laffont of Coatue Management Sent AMD Shares Packing and Loaded Up on This Hot AI IPO Instead",
+"2026-11-24T05:19:07-10:00",
+"Do You Really Understand Intel Stock's Risk?",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-24T02:17:32-10:00",
-"NVIDIA Added About $1 Trillion in Minutes on Huang\u2019s Return. Where Does the Price Target Go Now?",
+"2026-11-24T05:09:18-10:00",
+"Can Nvidia Stock Hold $165 After Huang's Return?",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-24T02:15:01-10:00",
-"Intel Has Plummeted 30% Over 30 Days: This Pro Analyst Reiterated His Buy Status, Predicting 133% Gains",
+"2026-11-24T05:04:00-10:00",
+"Nvidia, Anthropic, Micron, HPE, Analog Devices, Insmed, and More Stocks That Explain Today\u2019s Market",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-24T02:14:56-10:00",
-"U.S. chip stocks fall premarket after Nvidia-led rally on Huang\u2019s return",
+"2026-11-24T05:03:15-10:00",
+"30 Analysts Have Weighed In on Nvidia. Here\u2019s What Their Price Targets Reveal",
 "finnhub/Yahoo"
 ]
 ]
 },
 "AMZN": {
-"fetched": "2026-11-24T05:12:38.339887-10:00",
+"fetched": "2026-11-24T06:12:42.443586-10:00",
 "src": "finnhub",
 "items": [
 [
-"2026-11-24T03:00:00-10:00",
-"Amazon To Pull Unauthorized Victoria's Secret Listings On Thanksgiving",
+"2026-11-24T05:44:08-10:00",
+"Stocks give back gains as Anthropic dips below IPO price",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-24T02:56:06-10:00",
-"Dan Niles: Why Pay \u201c20 Times Trailing Revenues\u201d for Anthropic When SK Hynix Trades at 2x Earnings?",
+"2026-11-24T05:38:09-10:00",
+"What Sent CoreWeave Stock Higher On Monday?",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-24T02:48:00-10:00",
-"Can Alibaba's Cloud Intelligence Momentum Reshape the Stock's Outlook?",
+"2026-11-24T05:33:36-10:00",
+"Microsoft Is Down 7% in a Month, but Not One Analyst Says Sell. Wall Street Sees $630+",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-24T02:20:00-10:00",
-"ZonPrep Announces Las Vegas Facility, Expanding Its Amazon Supply Chain Network West",
+"2026-11-24T05:16:00-10:00",
+"Anthropic Stock Sinks Below IPO Price. What History Says Happens Next.",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-24T02:15:31-10:00",
-"Anthropic\u2019s Frenemy Squeeze: Pledging Up to $49B to Microsoft While Building Its Own Landlord Escape Hatch",
+"2026-11-24T05:11:47-10:00",
+"Amazon.com (AMZN) Agreed To Acquire Decart AI Optimization Technology For $7.5 Billion",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-24T02:13:06-10:00",
-"Amazon Faces FAA Probe After Michigan Drone Crash",
+"2026-11-24T05:09:18-10:00",
+"Can Nvidia Stock Hold $165 After Huang's Return?",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-24T02:06:00-10:00",
-"Jensen Huang\u2019s Return \u201cCould Be Negative for Anthropic,\u201d David Faber Warns. That\u2019s a Risk for Amazon and Alphabet",
+"2026-11-24T05:08:45-10:00",
+"Should One Number Scare You About Amazon Stock?",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-24T02:05:04-10:00",
-"OpenAI\u2019s Greg Brockman: \u201cThe World Is Not Building Enough Compute.\u201d Wall Street Just Stopped Raising Capex Forecasts",
+"2026-11-24T05:08:04-10:00",
+"Amazon Is Reportedly Paying $7.5 Billion for Decart\u2019s AI Chip Software",
 "finnhub/Yahoo"
 ]
 ]
 },
 "AVGO": {
-"fetched": "2026-11-24T05:12:38.339887-10:00",
+"fetched": "2026-11-24T06:12:42.443586-10:00",
 "src": "finnhub",
 "items": [
+[
+"2026-11-24T05:44:08-10:00",
+"Stocks give back gains as Anthropic dips below IPO price",
+"finnhub/Yahoo"
+],
+[
+"2026-11-24T05:03:15-10:00",
+"30 Analysts Have Weighed In on Nvidia. Here\u2019s What Their Price Targets Reveal",
+"finnhub/Yahoo"
+],
+[
+"2026-11-24T04:49:26-10:00",
+"How Did Cathie Wood Play The Market Crash And Snapback?",
+"finnhub/Yahoo"
+],
+[
+"2026-11-24T04:16:35-10:00",
+"Nvidia, AMD, Broadcom lead chip stocks lower as AI trade comes under pressure",
+"finnhub/Yahoo"
+],
+[
+"2026-11-24T03:53:24-10:00",
+"Chip Stocks Just Had Their Fourth-Best Day Since 2000",
+"finnhub/Yahoo"
+],
 [
 "2026-11-24T03:31:00-10:00",
 "AMD Stock Shows the Market Has Stopped Making Sense After Huang\u2019s Dramatic Return",
 "finnhub/Yahoo"
 ],
 [
+"2026-11-24T03:09:45-10:00",
+"Why Is Sandisk Stock Pulling Back Today?",
+"finnhub/Yahoo"
+],
+[
 "2026-11-24T02:17:32-10:00",
 "NVIDIA Added About $1 Trillion in Minutes on Huang\u2019s Return. Where Does the Price Target Go Now?",
-"finnhub/Yahoo"
-],
-[
-"2026-11-24T02:14:56-10:00",
-"U.S. chip stocks fall premarket after Nvidia-led rally on Huang\u2019s return",
-"finnhub/Yahoo"
-],
-[
-"2026-11-24T02:14:00-10:00",
-"MaxLinear Stock Drops 24% in a Month: Should You Buy it on the Dip?",
-"finnhub/Yahoo"
-],
-[
-"2026-11-24T02:11:21-10:00",
-"Oracle Insists It\u2019s \u201cFully Funded\u201d for OpenAI. Its Credit Default Swaps Disagree",
-"finnhub/Yahoo"
-],
-[
-"2026-11-24T02:03:00-10:00",
-"Credo's Optical Expansion: Can It Gain Ground Against Rivals?",
-"finnhub/Yahoo"
-],
-[
-"2026-11-24T01:20:02-10:00",
-"Prediction: This Is What Will Happen to Broadcom\u2019s Stock Price in December",
-"finnhub/Yahoo"
-],
-[
-"2026-11-24T01:18:15-10:00",
-"Most Of Nvidia's Drop Came Before Huang Left",
 "finnhub/Yahoo"
 ]
 ]
 },
 "GOOGL": {
-"fetched": "2026-11-24T05:12:38.339887-10:00",
+"fetched": "2026-11-24T06:12:42.443586-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -717,7 +717,7 @@
 ]
 },
 "META": {
-"fetched": "2026-11-24T05:12:38.339887-10:00",
+"fetched": "2026-11-24T06:12:42.443586-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -763,7 +763,7 @@
 ]
 },
 "MSFT": {
-"fetched": "2026-11-24T05:12:38.339887-10:00",
+"fetched": "2026-11-24T06:12:42.443586-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -809,7 +809,7 @@
 ]
 },
 "MU": {
-"fetched": "2026-11-24T05:12:38.339887-10:00",
+"fetched": "2026-11-24T06:12:42.443586-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -855,7 +855,7 @@
 ]
 },
 "NVDA": {
-"fetched": "2026-11-24T05:12:38.339887-10:00",
+"fetched": "2026-11-24T06:12:42.443586-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -901,7 +901,7 @@
 ]
 },
 "TSLA": {
-"fetched": "2026-11-24T05:12:38.339887-10:00",
+"fetched": "2026-11-24T06:12:42.443586-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -947,7 +947,7 @@
 ]
 },
 "SPCX": {
-"fetched": "2026-11-24T05:12:38.339887-10:00",
+"fetched": "2026-11-24T06:12:42.443586-10:00",
 "src": "finnhub",
 "items": [
 [
