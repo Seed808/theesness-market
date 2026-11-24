@@ -1,5 +1,10 @@
 {
- "pending": null,
+ "pending": {
+  "regime": "MIXED",
+  "clean": false,
+  "why": "ES red (-1.16%), NQ red (-2.78%), YM flat (+0.05%); No ES/YM rule matched \u2192 no favored side, no A+",
+  "at": "2026-11-24T06:42:34.111898-10:00"
+ },
  "history": [
   {
    "regime": "BEAR",
@@ -31,9 +36,9 @@
   }
  ],
  "last_reading": {
-  "regime": "ROTATION",
-  "clean": true,
-  "why": "ES red (-1.08%), NQ red (-2.74%), YM green (+0.11%); YM green + NQ/ES red \u2192 rotation; puts may fade midday",
-  "at": "2026-11-24T06:32:34.019238-10:00"
+  "regime": "MIXED",
+  "clean": false,
+  "why": "ES red (-1.16%), NQ red (-2.78%), YM flat (+0.05%); No ES/YM rule matched \u2192 no favored side, no A+",
+  "at": "2026-11-24T06:42:34.111898-10:00"
  }
 }
