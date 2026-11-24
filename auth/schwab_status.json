@@ -4,9 +4,9 @@
  "expired_notice_at": "2026-11-20T02:02:31.139207-10:00",
  "login_at": "2026-11-20T17:21:49.344933+00:00",
  "expires_at": "2026-11-27T17:21:49.344933+00:00",
- "last_ok": "2026-11-24T13:02:37.071341+00:00",
+ "last_ok": "2026-11-24T13:32:42.146422+00:00",
  "last_error": null,
- "hours_left": 76.3,
+ "hours_left": 75.8,
  "futures_probe": {
   "/ESZ26": {
    "answered": true,
