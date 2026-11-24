@@ -1,8 +1,23 @@
 {
 "SPY": {
-"fetched": "2026-11-24T04:12:37.911836-10:00",
+"fetched": "2026-11-24T05:12:38.339887-10:00",
 "src": "finnhub",
 "items": [
+[
+"2026-11-24T03:58:33-10:00",
+"Is The Market Ignoring Amazon And Peers' Cash Collapse?",
+"finnhub/Yahoo"
+],
+[
+"2026-11-24T03:54:02-10:00",
+"Should You Trim Or Add To Your Tesla Position?",
+"finnhub/Yahoo"
+],
+[
+"2026-11-24T03:03:08-10:00",
+"Own Humana Stock? Its Profit Cushion Is The Thinnest",
+"finnhub/Yahoo"
+],
 [
 "2026-11-24T02:02:15-10:00",
 "The S&P 500 Just Had the Second-Biggest Point Gain in Its History",
@@ -27,28 +42,43 @@
 "2026-11-24T01:02:03-10:00",
 "56 ETFs Add to Intel (INTC) Holdings on Friday",
 "finnhub/Yahoo"
-],
-[
-"2026-11-24T01:01:51-10:00",
-"ETFs Are Buying Walmart (WMT) on Nov. 20",
-"finnhub/Yahoo"
-],
-[
-"2026-11-24T01:01:28-10:00",
-"Meta Platforms (META) Sees $240.4 Million in Net ETF Buying on Friday",
-"finnhub/Yahoo"
-],
-[
-"2026-11-24T01:01:22-10:00",
-"ETFs Bought $276.2 Million of Alphabet (GOOGL) on Friday",
-"finnhub/Yahoo"
 ]
 ]
 },
 "QQQ": {
-"fetched": "2026-11-24T04:12:37.911836-10:00",
+"fetched": "2026-11-24T05:12:38.339887-10:00",
 "src": "finnhub",
 "items": [
+[
+"2026-11-24T00:51:44-10:00",
+"Why Is Intel Stock Pulling Back After Monday\u2019s Semiconductor Rally",
+"finnhub/Benzinga"
+],
+[
+"2026-11-24T00:13:25-10:00",
+"Big Tech Just Became a Value Trade \u2014 Something Wall Street Hasn't Seen in 20 Years",
+"finnhub/Benzinga"
+],
+[
+"2026-11-23T23:43:24-10:00",
+"The First 6% Up Day Outside A Bear Market (Yet?)",
+"finnhub/SeekingAlpha"
+],
+[
+"2026-11-23T23:22:12-10:00",
+"Stock Market Today: Dow Jones, S&P 500, Nasdaq 100 Futures Fall After Scott Bessent Unveils Fresh Iran Sanctions, Hormuz Warnings\u2014 HPE, SMTC, DELL in Focus (UPD",
+"finnhub/Benzinga"
+],
+[
+"2026-11-23T23:10:12-10:00",
+"The Trump Put Ends The Correction, Again",
+"finnhub/SeekingAlpha"
+],
+[
+"2026-11-23T23:03:55-10:00",
+"When I See A Stock Market Correction Without A Recession, I See A Buying Opportunity",
+"finnhub/SeekingAlpha"
+],
 [
 "2026-11-23T22:25:13-10:00",
 "The State Of The AI Trade: The Only Way Out Is Growth",
@@ -57,44 +87,29 @@
 [
 "2026-11-23T22:20:00-10:00",
 "When Sequence Risk Kicks The Door In",
-"finnhub/SeekingAlpha"
-],
-[
-"2026-11-23T22:00:37-10:00",
-"Nvidia: For The First Time, I Don't Know What To Do (Rating Downgrade)",
-"finnhub/SeekingAlpha"
-],
-[
-"2026-11-23T22:00:00-10:00",
-"Six Asset Bubbles That Have Already Popped",
-"finnhub/SeekingAlpha"
-],
-[
-"2026-11-23T18:05:00-10:00",
-"Is It Really All Clear In The Stock Market?",
-"finnhub/SeekingAlpha"
-],
-[
-"2026-11-23T17:39:18-10:00",
-"Jensen Huang Just Moved The Entire QQQ",
-"finnhub/SeekingAlpha"
-],
-[
-"2026-11-23T17:37:12-10:00",
-"Anthropic: My Post-IPO Playbook",
-"finnhub/SeekingAlpha"
-],
-[
-"2026-11-23T17:05:00-10:00",
-"U.S. Flash PMI Indicates Still-Elevated, But Cooling, Business Activity Growth And Price Pressures",
 "finnhub/SeekingAlpha"
 ]
 ]
 },
 "IWM": {
-"fetched": "2026-11-24T04:12:37.911836-10:00",
+"fetched": "2026-11-24T05:12:38.339887-10:00",
 "src": "finnhub",
 "items": [
+[
+"2026-11-23T23:43:24-10:00",
+"The First 6% Up Day Outside A Bear Market (Yet?)",
+"finnhub/SeekingAlpha"
+],
+[
+"2026-11-23T23:10:12-10:00",
+"The Trump Put Ends The Correction, Again",
+"finnhub/SeekingAlpha"
+],
+[
+"2026-11-23T23:03:55-10:00",
+"When I See A Stock Market Correction Without A Recession, I See A Buying Opportunity",
+"finnhub/SeekingAlpha"
+],
 [
 "2026-11-23T22:25:13-10:00",
 "The State Of The AI Trade: The Only Way Out Is Growth",
@@ -119,28 +134,28 @@
 "2026-11-23T17:39:18-10:00",
 "Jensen Huang Just Moved The Entire QQQ",
 "finnhub/SeekingAlpha"
-],
-[
-"2026-11-23T17:05:00-10:00",
-"U.S. Flash PMI Indicates Still-Elevated, But Cooling, Business Activity Growth And Price Pressures",
-"finnhub/SeekingAlpha"
-],
-[
-"2026-11-23T16:45:00-10:00",
-"PCE Week: What To Watch In Stocks, Chips, Gold And Bitcoin",
-"finnhub/SeekingAlpha"
-],
-[
-"2026-11-23T16:30:00-10:00",
-"A More Demanding Market",
-"finnhub/SeekingAlpha"
 ]
 ]
 },
 "SPX": {
-"fetched": "2026-11-24T04:12:37.911836-10:00",
+"fetched": "2026-11-24T05:12:38.339887-10:00",
 "src": "finnhub",
 "items": [
+[
+"2026-11-23T23:43:24-10:00",
+"The First 6% Up Day Outside A Bear Market (Yet?)",
+"finnhub/SeekingAlpha"
+],
+[
+"2026-11-23T23:10:12-10:00",
+"The Trump Put Ends The Correction, Again",
+"finnhub/SeekingAlpha"
+],
+[
+"2026-11-23T23:03:55-10:00",
+"When I See A Stock Market Correction Without A Recession, I See A Buying Opportunity",
+"finnhub/SeekingAlpha"
+],
 [
 "2026-11-23T22:25:13-10:00",
 "The State Of The AI Trade: The Only Way Out Is Growth",
@@ -165,26 +180,11 @@
 "2026-11-23T21:26:33-10:00",
 "The 'Trump Put' Might Not Work - The AI Bubble Burst To Resume",
 "finnhub/SeekingAlpha"
-],
-[
-"2026-11-23T20:00:00-10:00",
-"RSPA: Defensive Income For A Market Ignoring Fundamentals",
-"finnhub/SeekingAlpha"
-],
-[
-"2026-11-23T18:05:00-10:00",
-"Is It Really All Clear In The Stock Market?",
-"finnhub/SeekingAlpha"
-],
-[
-"2026-11-23T17:39:18-10:00",
-"Jensen Huang Just Moved The Entire QQQ",
-"finnhub/SeekingAlpha"
 ]
 ]
 },
 "TQQQ": {
-"fetched": "2026-11-24T04:12:37.911836-10:00",
+"fetched": "2026-11-24T05:12:38.339887-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -200,13 +200,23 @@
 ]
 },
 "SMH": {
-"fetched": "2026-11-24T04:12:37.911836-10:00",
+"fetched": "2026-11-24T05:12:38.339887-10:00",
 "src": "finnhub",
 "items": [
+[
+"2026-11-23T23:40:25-10:00",
+"Micron Stock Drops After Monday\u2019s Surge as Nvidia Scrutiny Hits Chipmakers",
+"finnhub/Benzinga"
+],
 [
 "2026-11-23T21:26:33-10:00",
 "The 'Trump Put' Might Not Work - The AI Bubble Burst To Resume",
 "finnhub/SeekingAlpha"
+],
+[
+"2026-11-23T18:56:06-10:00",
+"\u2018What If He Gets Hit By a Bus?\u2019: Peter Schiff Wants Secret Service Protection for Jensen Huang After $3 Trillion Market Surge",
+"finnhub/Benzinga"
 ],
 [
 "2026-11-23T17:39:18-10:00",
@@ -229,24 +239,14 @@
 "finnhub/Benzinga"
 ],
 [
-"2026-11-23T13:33:25-10:00",
-"S&P 500, Nasdaq End Best Session Since April Last Year On Optimism Led By Jensen Huang\u2019s Reinstatement \u2014 NVDA, NASA, TTWO, AMZN In Focus",
-"finnhub/Yahoo"
-],
-[
-"2026-11-23T12:43:10-10:00",
-"EEM Now Moves Like A Chip Fund",
-"finnhub/Yahoo"
-],
-[
-"2026-11-23T07:16:20-10:00",
-"Indiscriminate Selling On Semiconductors Makes No Sense",
-"finnhub/SeekingAlpha"
+"2026-11-23T15:15:34-10:00",
+"Michael Burry Just Made a Big Move in NVDA Before Its 31% Rally \u2014 Fires Fresh Warning at Nvidia Following Jensen Huang\u2019s Return: \u2018Weaker, More Craven\u2019",
+"finnhub/Benzinga"
 ]
 ]
 },
 "XLF": {
-"fetched": "2026-11-24T04:12:37.911836-10:00",
+"fetched": "2026-11-24T05:12:38.339887-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -282,7 +282,7 @@
 ]
 },
 "XLE": {
-"fetched": "2026-11-24T04:12:37.911836-10:00",
+"fetched": "2026-11-24T05:12:38.339887-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -328,7 +328,7 @@
 ]
 },
 "GLD": {
-"fetched": "2026-11-24T04:12:37.911836-10:00",
+"fetched": "2026-11-24T05:12:38.339887-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -374,7 +374,7 @@
 ]
 },
 "SLV": {
-"fetched": "2026-11-24T04:12:37.911836-10:00",
+"fetched": "2026-11-24T05:12:38.339887-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -410,7 +410,7 @@
 ]
 },
 "TLT": {
-"fetched": "2026-11-24T04:12:37.911836-10:00",
+"fetched": "2026-11-24T05:12:38.339887-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -456,9 +456,14 @@
 ]
 },
 "IBIT": {
-"fetched": "2026-11-24T04:12:37.911836-10:00",
+"fetched": "2026-11-24T05:12:38.339887-10:00",
 "src": "finnhub",
 "items": [
+[
+"2026-11-23T22:55:32-10:00",
+"Arthur Hayes: Nvidia Surge Is the 'Worst Thing' for Bitcoin, ETH, XRP",
+"finnhub/Benzinga"
+],
 [
 "2026-11-23T14:35:00-10:00",
 "ValuEngine Weekly Market Commentary: Bear Market For Nasdaq-100 Headlines Historic Weekly Meltdown",
@@ -482,7 +487,7 @@
 ]
 },
 "AAPL": {
-"fetched": "2026-11-24T04:12:37.911836-10:00",
+"fetched": "2026-11-24T05:12:38.339887-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -528,7 +533,7 @@
 ]
 },
 "AMD": {
-"fetched": "2026-11-24T04:12:37.911836-10:00",
+"fetched": "2026-11-24T05:12:38.339887-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -574,7 +579,7 @@
 ]
 },
 "AMZN": {
-"fetched": "2026-11-24T04:12:37.911836-10:00",
+"fetched": "2026-11-24T05:12:38.339887-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -620,7 +625,7 @@
 ]
 },
 "AVGO": {
-"fetched": "2026-11-24T04:12:37.911836-10:00",
+"fetched": "2026-11-24T05:12:38.339887-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -666,9 +671,39 @@
 ]
 },
 "GOOGL": {
-"fetched": "2026-11-24T04:12:37.911836-10:00",
+"fetched": "2026-11-24T05:12:38.339887-10:00",
 "src": "finnhub",
 "items": [
+[
+"2026-11-24T03:00:00-10:00",
+"Fortune Announces Speakers and Partners for Brainstorm AI 2026 in San Francisco Dec. 7 and 8",
+"finnhub/Yahoo"
+],
+[
+"2026-11-24T02:37:30-10:00",
+"Cloud AI Update - Audi Integrates Cutting-Edge AI for In-Car Microsoft Access",
+"finnhub/Yahoo"
+],
+[
+"2026-11-24T02:22:13-10:00",
+"Elon Musk Reportedly Told Staff SpaceX Is Falling Behind in AI",
+"finnhub/Yahoo"
+],
+[
+"2026-11-24T02:06:00-10:00",
+"Jensen Huang\u2019s Return \u201cCould Be Negative for Anthropic,\u201d David Faber Warns. That\u2019s a Risk for Amazon and Alphabet",
+"finnhub/Yahoo"
+],
+[
+"2026-11-24T02:05:04-10:00",
+"OpenAI\u2019s Greg Brockman: \u201cThe World Is Not Building Enough Compute.\u201d Wall Street Just Stopped Raising Capex Forecasts",
+"finnhub/Yahoo"
+],
+[
+"2026-11-24T02:02:01-10:00",
+"Not Apple. Not Microsoft. This Is the \"Magnificent Seven\" Stock I\u2019d Buy for a 10-Year Hold.",
+"finnhub/Yahoo"
+],
 [
 "2026-11-24T01:37:23-10:00",
 "Who Pays P&G? The American Shopper In Four Lines",
@@ -678,311 +713,281 @@
 "2026-11-24T01:17:04-10:00",
 "Jim Cramer Calls CrowdStrike\u2019s Zscaler Deal the Biggest in Cybersecurity History. What It Means for Both Stocks",
 "finnhub/Yahoo"
-],
-[
-"2026-11-24T01:07:47-10:00",
-"Can Adobe Stock Rise 30% From Here?",
-"finnhub/Yahoo"
-],
-[
-"2026-11-24T01:04:40-10:00",
-"iShares Russell 1000 Growth (IWF) Buys $22.7 Million More Apple on Nov. 20",
-"finnhub/Yahoo"
-],
-[
-"2026-11-24T01:04:36-10:00",
-"JPMorgan U.S. Tech Leaders (JTEK) Sells $27.7 Million of Broadcom on Nov. 20",
-"finnhub/Yahoo"
-],
-[
-"2026-11-24T01:03:30-10:00",
-"First Trust BuyWrite Income (FTHI) Buys $13.1 Million More Fair Isaac on Nov. 20",
-"finnhub/Yahoo"
-],
-[
-"2026-11-24T01:03:08-10:00",
-"ARK Autonomous Tech & Robotics (ARKQ) Buys $214.9 Million More Tesla on Nov. 20",
-"finnhub/Yahoo"
-],
-[
-"2026-11-24T01:02:54-10:00",
-"What SPDR S&P 500 ETF Trust (SPY) Bought: Apple Leads on Friday",
-"finnhub/Yahoo"
 ]
 ]
 },
 "META": {
-"fetched": "2026-11-24T04:12:37.911836-10:00",
+"fetched": "2026-11-24T05:12:38.339887-10:00",
 "src": "finnhub",
 "items": [
 [
-"2026-11-24T01:01:28-10:00",
-"Meta Platforms (META) Sees $240.4 Million in Net ETF Buying on Friday",
+"2026-11-24T03:45:30-10:00",
+"Bulls Expect AMD Revenues to Grow 80% Next Year on Hyper-Accelerated Data Center Growth, $725 in Sight",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-24T01:00:00-10:00",
-"Monroe Capital Supports Waveborn\u2019s Acquisition of Jake Rosen Entertainment",
+"2026-11-24T02:53:31-10:00",
+"ANT Stock Slips Below IPO Price In Premarket \u2014 Canaccord Sees Bigger AI Opportunity, 60% Upside Potential",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-24T00:35:02-10:00",
-"Why 1 Billionaire Investor Just Poured $3 Billion Into Amazon, Meta, and Alphabet",
+"2026-11-24T02:40:00-10:00",
+"Microsoft vs. Meta: Which AI Infrastructure Stock Has An Edge Now?",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-24T00:20:28-10:00",
-"David Tepper, George Soros and 5 Other Famous Investors Own Meta. Here\u2019s Who Bought and Sold Recently",
+"2026-11-24T02:30:00-10:00",
+"Aramark to Participate in Upcoming Rothschild & Co. Investor Conference",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-24T00:20:21-10:00",
-"Trump Threatens a \u201cTremendous Tax\u201d on Overseas Data Centers. That\u2019s a Big Problem for Microsoft, Amazon and Alphabet",
+"2026-11-24T02:10:08-10:00",
+"Meta's $60 Billion AI Funding Plan Faces Delay Amid Shareholder Lawsuit",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-24T00:10:30-10:00",
-"Google and Meta face massive fines for addictive features",
+"2026-11-24T02:08:52-10:00",
+"META Stock Is Down 24% From Peak: JPMorgan Sees \u2018Attractive Buying Opportunity\u2019 \u2014 But 2027 Spending, Capex Remain An Overhang",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-23T22:25:13-10:00",
-"The State Of The AI Trade: The Only Way Out Is Growth",
-"finnhub/SeekingAlpha"
+"2026-11-24T02:08:02-10:00",
+"A 337 Million Reason Why AMD Stock In Focus Today",
+"finnhub/Yahoo"
 ],
 [
-"2026-11-23T22:20:26-10:00",
-"Nvidia Drops 5% After Jensen Huang\u2019s Return Rally Sparks Washington Backlash",
-"finnhub/Benzinga"
+"2026-11-24T02:05:04-10:00",
+"OpenAI\u2019s Greg Brockman: \u201cThe World Is Not Building Enough Compute.\u201d Wall Street Just Stopped Raising Capex Forecasts",
+"finnhub/Yahoo"
 ]
 ]
 },
 "MSFT": {
-"fetched": "2026-11-24T04:12:37.911836-10:00",
+"fetched": "2026-11-24T05:12:38.339887-10:00",
 "src": "finnhub",
 "items": [
 [
-"2026-11-24T01:20:19-10:00",
-"CrowdStrike Poised For \u2018Hyper Growth And Profit,\u2019 Says Guggenheim \u2014 Sees 34% Upside In CRWD Stock",
+"2026-11-24T03:45:30-10:00",
+"Bulls Expect AMD Revenues to Grow 80% Next Year on Hyper-Accelerated Data Center Growth, $725 in Sight",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-24T01:04:44-10:00",
-"Invesco NASDAQ 100 ETF (QQQM) Adds Apple and Microsoft on Friday",
+"2026-11-24T03:45:24-10:00",
+"IREN Fell 42% This Month Even After The Market Jump on NVIDIA News: This Wall Street Pro Maintains That 440% Returns Are Coming After Q3 Earnings Downgrades",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-24T01:04:40-10:00",
-"iShares Russell 1000 Growth (IWF) Buys $22.7 Million More Apple on Nov. 20",
+"2026-11-24T03:01:35-10:00",
+"Microsoft Stock Jumps In Nvidia-Fueled Tech Surge; Is Microsoft A Buy Now?",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-24T01:04:32-10:00",
-"What ProShares Trust (TQQQ) Bought: Apple Leads on Friday",
+"2026-11-24T03:00:00-10:00",
+"RAAPID Recognized in the 2026 Microsoft Partner of the Year Awards for Microsoft for Startups",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-24T01:04:12-10:00",
-"What Capital Group Dividend Value ETF (CGDV) Bought: Amphenol Leads on Nov. 20",
+"2026-11-24T02:48:30-10:00",
+"Investors Might Be Making a Big Mistake by Underestimating Adobe\u2019s AI Opportunity",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-24T01:04:08-10:00",
-"What iShares Expanded Tech-Software (IGV) Sold: Palo Alto Leads on Friday",
+"2026-11-24T02:48:00-10:00",
+"Can Alibaba's Cloud Intelligence Momentum Reshape the Stock's Outlook?",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-24T01:03:48-10:00",
-"First Trust Alerian NextGen Infra (FTQI) Buys $22 Million More Walmart on Nov. 20",
+"2026-11-24T02:40:00-10:00",
+"Microsoft vs. Meta: Which AI Infrastructure Stock Has An Edge Now?",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-24T01:03:44-10:00",
-"State Street Technology SPDR (XLK) Buys $87.3 Million More Apple on Friday",
+"2026-11-24T02:37:30-10:00",
+"Cloud AI Update - Audi Integrates Cutting-Edge AI for In-Car Microsoft Access",
 "finnhub/Yahoo"
 ]
 ]
 },
 "MU": {
-"fetched": "2026-11-24T04:12:37.911836-10:00",
+"fetched": "2026-11-24T05:12:38.339887-10:00",
 "src": "finnhub",
 "items": [
+[
+"2026-11-24T03:43:01-10:00",
+"Micron Stock Soared on Monday. I'd Still Buy It, a Little at a Time.",
+"finnhub/Yahoo"
+],
 [
 "2026-11-24T03:36:33-10:00",
 "Premarket Movers: S&P 500 Gainers and Losers on Nov. 24, 2026",
 "finnhub/ChartMill"
 ],
 [
+"2026-11-24T02:59:44-10:00",
+"Small Models Are \u201cVery Bearish for RAM,\u201d Says Emad Mostaque. Micron\u2019s 2029 Estimates Are What\u2019s at Stake",
+"finnhub/Yahoo"
+],
+[
+"2026-11-24T02:43:00-10:00",
+"Micron Stock Is Counting on a Buyback Bounce. Why It\u2019s No Slam Dunk.",
+"finnhub/Yahoo"
+],
+[
+"2026-11-24T02:15:00-10:00",
+"Sandisk Plunges 44% in a Month: Buy, Sell or Hold the Stock?",
+"finnhub/Yahoo"
+],
+[
+"2026-11-24T02:14:56-10:00",
+"U.S. chip stocks fall premarket after Nvidia-led rally on Huang\u2019s return",
+"finnhub/Yahoo"
+],
+[
+"2026-11-24T02:00:25-10:00",
+"SanDisk Stock At $937 Looked Cheap. Where Is The Floor?",
+"finnhub/Yahoo"
+],
+[
 "2026-11-24T01:04:44-10:00",
 "Invesco NASDAQ 100 ETF (QQQM) Adds Apple and Microsoft on Friday",
-"finnhub/Yahoo"
-],
-[
-"2026-11-24T01:04:36-10:00",
-"JPMorgan U.S. Tech Leaders (JTEK) Sells $27.7 Million of Broadcom on Nov. 20",
-"finnhub/Yahoo"
-],
-[
-"2026-11-24T01:04:32-10:00",
-"What ProShares Trust (TQQQ) Bought: Apple Leads on Friday",
-"finnhub/Yahoo"
-],
-[
-"2026-11-24T01:03:44-10:00",
-"State Street Technology SPDR (XLK) Buys $87.3 Million More Apple on Friday",
-"finnhub/Yahoo"
-],
-[
-"2026-11-24T01:03:30-10:00",
-"First Trust BuyWrite Income (FTHI) Buys $13.1 Million More Fair Isaac on Nov. 20",
-"finnhub/Yahoo"
-],
-[
-"2026-11-24T01:03:17-10:00",
-"What INVESCO QQQ Trust (QQQ) Bought: Apple Leads on Friday",
-"finnhub/Yahoo"
-],
-[
-"2026-11-24T01:03:02-10:00",
-"iShares PHLX SOX Semiconductor (SOXX) Adds AMD and AVGO on Nov. 20",
 "finnhub/Yahoo"
 ]
 ]
 },
 "NVDA": {
-"fetched": "2026-11-24T04:12:37.911836-10:00",
+"fetched": "2026-11-24T05:12:38.339887-10:00",
 "src": "finnhub",
 "items": [
 [
-"2026-11-24T01:49:50-10:00",
-"Nvidia staff chant, holler and hug at Huang's triumphant return",
+"2026-11-24T03:57:48-10:00",
+"Stocks move lower as Nvidia euphoria wears off",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-24T01:46:20-10:00",
-"Tech Shares Give Back Some Gains on European Bourse Midday",
+"2026-11-24T03:55:01-10:00",
+"Jensen 2.0",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-24T01:39:29-10:00",
-"Nvidia Added $954 Billion In A Day. Is Jensen Huang Too Big To Fire?",
+"2026-11-24T03:55:00-10:00",
+"Stifel Highlights 40 Years as Listed Company: NYSE Content Update",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-24T01:37:23-10:00",
-"Who Pays P&G? The American Shopper In Four Lines",
+"2026-11-24T03:47:52-10:00",
+"Trump Is Bringing Tariffs Back, and China Will Likely Get Hit Hardest: WSJ",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-24T01:37:15-10:00",
-"How Jensen Huang's return to Nvidia made the world trillions richer",
+"2026-11-24T03:45:37-10:00",
+"Trump makes $15m from Jensen Huang\u2019s Nvidia return",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-24T01:35:02-10:00",
-"Stock Market Sell-Off: 5 Magnificent Stocks I'd Love to Buy at the Right Price",
+"2026-11-24T03:45:24-10:00",
+"IREN Fell 42% This Month Even After The Market Jump on NVIDIA News: This Wall Street Pro Maintains That 440% Returns Are Coming After Q3 Earnings Downgrades",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-24T01:25:01-10:00",
-"Nike\u2019s 2031 Plan Calls for Earnings to More Than Double. Here\u2019s What That Math Means for the Stock Today.",
+"2026-11-24T03:43:01-10:00",
+"Micron Stock Soared on Monday. I'd Still Buy It, a Little at a Time.",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-24T01:23:03-10:00",
-"Nvidia Shares Fall 5% in Premarket Trading as Goldman Sachs Highlights Lingering Uncertainty Following Huang\u2019s Return",
+"2026-11-24T03:37:31-10:00",
+"QQQ Just Had Its Biggest Opening Jump Since It Launched in 1999",
 "finnhub/Yahoo"
 ]
 ]
 },
 "TSLA": {
-"fetched": "2026-11-24T04:12:37.911836-10:00",
+"fetched": "2026-11-24T05:12:38.339887-10:00",
 "src": "finnhub",
 "items": [
 [
-"2026-11-24T01:37:02-10:00",
-"Energy Transition Today - Renewable Energy Market Grows Amidst Technological Advances",
+"2026-11-24T03:45:09-10:00",
+"Why Tesla-SpaceX Merger Talks Face \u2018More Friction Than People Assume\u2019",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-24T01:19:30-10:00",
-"SpaceX and Tesla Directors Hold Talks Over Potential US$3.5 Trillion Merger",
+"2026-11-24T03:44:14-10:00",
+"Tesla, SpaceX Reportedly Pick Board Members To Negotiate Elon Musk's Mega Merger",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-24T01:04:29-10:00",
-"Tesla Leads Goldman's Hedge Fund Short List With $26.4 Billion in Bearish Bets",
+"2026-11-24T03:20:51-10:00",
+"Musk Says Tesla Is Getting Ready to \u201cReturn to Growth Mode.\u201d Here\u2019s What Analysts Expect",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-24T01:03:08-10:00",
-"ARK Autonomous Tech & Robotics (ARKQ) Buys $214.9 Million More Tesla on Nov. 20",
+"2026-11-24T03:12:42-10:00",
+"What Made Tesla Stock Jump On Monday?",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-24T01:01:02-10:00",
-"47 ETFs Add to Tesla (TSLA) Holdings on Nov. 20",
+"2026-11-24T02:20:33-10:00",
+"Musk Targets Starlink in All Tesla Models \u201cTowards the End of Next Year.\u201d China Is the Catch",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-24T00:46:17-10:00",
-"Jim Chanos: A Tesla Deal Would \u201cCut SpaceX\u2019s Growth Rate by Over 60%.\u201d Bad News for SpaceX Holders",
+"2026-11-24T02:20:00-10:00",
+"Tesla Stock Drops as Mercedes-Benz Enters the Self-Driving Race",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-23T23:47:00-10:00",
-"FalcoTrader Announces Expanded Stock Trading Capabilities Across Its Simulated Trading Challenge Platform",
+"2026-11-24T02:09:18-10:00",
+"Tesla, SpaceX Name Five Directors for Potential $3.5 Trillion Merger",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-23T22:54:02-10:00",
-"Tesla Stock Is on Track for Only Its 3rd Losing Year Since Its 2010 IPO. Here's What Happened After the Other 2.",
+"2026-11-24T01:55:56-10:00",
+"Tesla Jumped 11% on FSD v15. Wall Street Still Sees $418",
 "finnhub/Yahoo"
 ]
 ]
 },
 "SPCX": {
-"fetched": "2026-11-24T04:12:37.911836-10:00",
+"fetched": "2026-11-24T05:12:38.339887-10:00",
 "src": "finnhub",
 "items": [
 [
+"2026-11-24T03:45:09-10:00",
+"Why Tesla-SpaceX Merger Talks Face \u2018More Friction Than People Assume\u2019",
+"finnhub/Yahoo"
+],
+[
+"2026-11-24T03:44:14-10:00",
+"Tesla, SpaceX Reportedly Pick Board Members To Negotiate Elon Musk's Mega Merger",
+"finnhub/Yahoo"
+],
+[
+"2026-11-24T02:53:31-10:00",
+"ANT Stock Slips Below IPO Price In Premarket \u2014 Canaccord Sees Bigger AI Opportunity, 60% Upside Potential",
+"finnhub/Yahoo"
+],
+[
+"2026-11-24T02:22:13-10:00",
+"Elon Musk Reportedly Told Staff SpaceX Is Falling Behind in AI",
+"finnhub/Yahoo"
+],
+[
+"2026-11-24T02:20:33-10:00",
+"Musk Targets Starlink in All Tesla Models \u201cTowards the End of Next Year.\u201d China Is the Catch",
+"finnhub/Yahoo"
+],
+[
+"2026-11-24T02:09:18-10:00",
+"Tesla, SpaceX Name Five Directors for Potential $3.5 Trillion Merger",
+"finnhub/Yahoo"
+],
+[
+"2026-11-24T02:06:05-10:00",
+"Anthropic Backer Dismisses Musk as \u201ca Glorified Compute Reseller.\u201d Here\u2019s What Reselling Earns SpaceX",
+"finnhub/Yahoo"
+],
+[
 "2026-11-24T01:57:06-10:00",
 "Cathie Wood Just Made $74 Million Bet on This Red-Hot Space Stock",
-"finnhub/Yahoo"
-],
-[
-"2026-11-24T01:19:30-10:00",
-"SpaceX and Tesla Directors Hold Talks Over Potential US$3.5 Trillion Merger",
-"finnhub/Yahoo"
-],
-[
-"2026-11-24T01:03:48-10:00",
-"First Trust Alerian NextGen Infra (FTQI) Buys $22 Million More Walmart on Nov. 20",
-"finnhub/Yahoo"
-],
-[
-"2026-11-24T01:03:08-10:00",
-"ARK Autonomous Tech & Robotics (ARKQ) Buys $214.9 Million More Tesla on Nov. 20",
-"finnhub/Yahoo"
-],
-[
-"2026-11-24T01:01:37-10:00",
-"SpaceX (SPCX) Sees $201.9 Million in Net ETF Buying on Friday",
-"finnhub/Yahoo"
-],
-[
-"2026-11-24T00:46:17-10:00",
-"Jim Chanos: A Tesla Deal Would \u201cCut SpaceX\u2019s Growth Rate by Over 60%.\u201d Bad News for SpaceX Holders",
-"finnhub/Yahoo"
-],
-[
-"2026-11-23T22:23:57-10:00",
-"CRWV, NBIS And IREN Rally In A \u2018Good Day\u2019 For Neoclouds \u2014 Databricks Co-Founder Flags Security Gaps At \u2018Top\u2019 Neoclouds",
-"finnhub/Yahoo"
-],
-[
-"2026-11-23T22:08:27-10:00",
-"Brad Gerstner Just Bought $680 Million of Tesla. His Range: \u201c$420 a Share and Let\u2019s Call It $520 or $550\u201d",
 "finnhub/Yahoo"
 ]
 ]
