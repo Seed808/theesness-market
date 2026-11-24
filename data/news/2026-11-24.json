@@ -1,8 +1,23 @@
 {
 "SPY": {
-"fetched": "2026-11-24T08:22:34.403036-10:00",
+"fetched": "2026-11-24T09:32:39.580287-10:00",
 "src": "finnhub",
 "items": [
+[
+"2026-11-24T07:45:59-10:00",
+"Here\u2019s How Quickly NVIDIA Could Reach $200 Following Jensen Huang\u2019s Reinstatement as CEO",
+"finnhub/Yahoo"
+],
+[
+"2026-11-24T07:00:25-10:00",
+"Hashed and Nurihaus Bring U.S. Beauty Investors to Brooklyn for K-Beauty Investor Day",
+"finnhub/Yahoo"
+],
+[
+"2026-11-24T06:50:01-10:00",
+"Stock Market Today: Jensen\u2019s Return to Nvidia Is Causing Index Indigestion",
+"finnhub/Yahoo"
+],
 [
 "2026-11-24T06:07:12-10:00",
 "Bessent Warns the Fed Could Be Making a \u201cPolicy Mistake\u201d if It Over-Tightens",
@@ -27,28 +42,23 @@
 "2026-11-24T04:52:22-10:00",
 "The New York Fed\u2019s John Williams Won\u2019t Rule Out Back-to-Back Rate Hikes",
 "finnhub/Yahoo"
-],
-[
-"2026-11-24T04:26:00-10:00",
-"Pre-Markets Seeking Post-NVIDIA Equilibrium",
-"finnhub/Yahoo"
-],
-[
-"2026-11-24T04:19:22-10:00",
-"Exchange-Traded Funds, Equity Futures Lower Pre-Bell Tuesday as Investors Pull Back From AI-Related Stocks",
-"finnhub/Yahoo"
-],
-[
-"2026-11-24T03:58:33-10:00",
-"Is The Market Ignoring Amazon And Peers' Cash Collapse?",
-"finnhub/Yahoo"
 ]
 ]
 },
 "QQQ": {
-"fetched": "2026-11-24T08:22:34.403036-10:00",
+"fetched": "2026-11-24T09:32:39.580287-10:00",
 "src": "finnhub",
 "items": [
+[
+"2026-11-24T03:45:00-10:00",
+"Market Volatility Is Back - What Investors Need To Know",
+"finnhub/SeekingAlpha"
+],
+[
+"2026-11-24T03:05:00-10:00",
+"U.S. Confidence Bounces On Fuel Price Drop And Election Clarity",
+"finnhub/SeekingAlpha"
+],
 [
 "2026-11-24T02:40:00-10:00",
 "Huang's Return Lifts Stocks, But The Bond Market Echoes The Fed's 2018 Policy Mistake",
@@ -78,23 +88,23 @@
 "2026-11-23T23:43:24-10:00",
 "The First 6% Up Day Outside A Bear Market (Yet?)",
 "finnhub/SeekingAlpha"
-],
-[
-"2026-11-23T23:22:12-10:00",
-"Stock Market Today: Dow Jones, S&P 500, Nasdaq 100 Futures Fall After Scott Bessent Unveils Fresh Iran Sanctions, Hormuz Warnings\u2014 HPE, SMTC, DELL in Focus (UPD",
-"finnhub/Benzinga"
-],
-[
-"2026-11-23T23:10:12-10:00",
-"The Trump Put Ends The Correction, Again",
-"finnhub/SeekingAlpha"
 ]
 ]
 },
 "IWM": {
-"fetched": "2026-11-24T08:22:34.403036-10:00",
+"fetched": "2026-11-24T09:32:39.580287-10:00",
 "src": "finnhub",
 "items": [
+[
+"2026-11-24T03:45:00-10:00",
+"Market Volatility Is Back - What Investors Need To Know",
+"finnhub/SeekingAlpha"
+],
+[
+"2026-11-24T03:05:00-10:00",
+"U.S. Confidence Bounces On Fuel Price Drop And Election Clarity",
+"finnhub/SeekingAlpha"
+],
 [
 "2026-11-24T02:40:00-10:00",
 "Huang's Return Lifts Stocks, But The Bond Market Echoes The Fed's 2018 Policy Mistake",
@@ -124,67 +134,37 @@
 "2026-11-23T23:03:55-10:00",
 "When I See A Stock Market Correction Without A Recession, I See A Buying Opportunity",
 "finnhub/SeekingAlpha"
-],
-[
-"2026-11-23T22:25:13-10:00",
-"The State Of The AI Trade: The Only Way Out Is Growth",
-"finnhub/SeekingAlpha"
-],
-[
-"2026-11-23T22:20:00-10:00",
-"When Sequence Risk Kicks The Door In",
-"finnhub/SeekingAlpha"
 ]
 ]
 },
 "SPX": {
-"fetched": "2026-11-24T08:22:34.403036-10:00",
-"src": "finnhub",
+"fetched": "2026-11-24T09:32:39.580287-10:00",
+"src": "yahoo",
 "items": [
 [
-"2026-11-24T02:20:24-10:00",
-"QQQ: Beware Of 2000 Dotcom Market Top Pattern Repetition",
-"finnhub/SeekingAlpha"
+"2026-09-29T10:11:38-10:00",
+"US Equity Markets End Lower After Higher Treasury Yields, Fed Governor's Remarks on Inflation"
 ],
 [
-"2026-11-24T00:20:49-10:00",
-"Beware, The AI Trade May Not Have Bottomed Yet",
-"finnhub/SeekingAlpha"
+"2026-09-29T09:32:54-10:00",
+"Update: US Equity Indexes Fall as Markets Parse Mixed Macroeconomic Data"
 ],
 [
-"2026-11-23T23:43:24-10:00",
-"The First 6% Up Day Outside A Bear Market (Yet?)",
-"finnhub/SeekingAlpha"
+"2026-09-28T07:38:59-10:00",
+"Update: US Equity Indexes Fall in Midday Trading as Treasury Yields Rise Amid US-Iran Deadlock"
 ],
 [
-"2026-11-23T23:10:12-10:00",
-"The Trump Put Ends The Correction, Again",
-"finnhub/SeekingAlpha"
+"2026-09-22T10:11:06-10:00",
+"Update: US Equity Indexes Trade Mixed in Final Leg; Nasdaq Makes New Record Intraday"
 ],
 [
-"2026-11-23T23:03:55-10:00",
-"When I See A Stock Market Correction Without A Recession, I See A Buying Opportunity",
-"finnhub/SeekingAlpha"
-],
-[
-"2026-11-23T22:25:13-10:00",
-"The State Of The AI Trade: The Only Way Out Is Growth",
-"finnhub/SeekingAlpha"
-],
-[
-"2026-11-23T22:00:00-10:00",
-"Six Asset Bubbles That Have Already Popped",
-"finnhub/SeekingAlpha"
-],
-[
-"2026-11-23T21:48:00-10:00",
-"Wall Street Breakfast Podcast: Is Our AI Doom Already Built?",
-"finnhub/SeekingAlpha"
+"2026-09-15T09:50:00-10:00",
+"The Fed\u2019s expected interest-rate hike on Wednesday could be the start of something more troubling for investors"
 ]
 ]
 },
 "TQQQ": {
-"fetched": "2026-11-24T08:22:34.403036-10:00",
+"fetched": "2026-11-24T09:32:39.580287-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -200,7 +180,7 @@
 ]
 },
 "SMH": {
-"fetched": "2026-11-24T08:22:34.403036-10:00",
+"fetched": "2026-11-24T09:32:39.580287-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -246,7 +226,7 @@
 ]
 },
 "XLF": {
-"fetched": "2026-11-24T08:22:34.403036-10:00",
+"fetched": "2026-11-24T09:32:39.580287-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -282,7 +262,7 @@
 ]
 },
 "XLE": {
-"fetched": "2026-11-24T08:22:34.403036-10:00",
+"fetched": "2026-11-24T09:32:39.580287-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -328,7 +308,7 @@
 ]
 },
 "GLD": {
-"fetched": "2026-11-24T08:22:34.403036-10:00",
+"fetched": "2026-11-24T09:32:39.580287-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -374,7 +354,7 @@
 ]
 },
 "SLV": {
-"fetched": "2026-11-24T08:22:34.403036-10:00",
+"fetched": "2026-11-24T09:32:39.580287-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -410,9 +390,14 @@
 ]
 },
 "TLT": {
-"fetched": "2026-11-24T08:22:34.403036-10:00",
+"fetched": "2026-11-24T09:32:39.580287-10:00",
 "src": "finnhub",
 "items": [
+[
+"2026-11-24T03:45:00-10:00",
+"Market Volatility Is Back - What Investors Need To Know",
+"finnhub/SeekingAlpha"
+],
 [
 "2026-11-24T02:40:00-10:00",
 "Huang's Return Lifts Stocks, But The Bond Market Echoes The Fed's 2018 Policy Mistake",
@@ -447,16 +432,11 @@
 "2026-11-23T06:35:00-10:00",
 "Inflation: Beyond The Mideast Energy Shock",
 "finnhub/SeekingAlpha"
-],
-[
-"2026-11-23T03:40:00-10:00",
-"Money Matters",
-"finnhub/SeekingAlpha"
 ]
 ]
 },
 "IBIT": {
-"fetched": "2026-11-24T08:22:34.403036-10:00",
+"fetched": "2026-11-24T09:32:39.580287-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -487,7 +467,7 @@
 ]
 },
 "AAPL": {
-"fetched": "2026-11-24T08:22:34.403036-10:00",
+"fetched": "2026-11-24T09:32:39.580287-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -533,7 +513,7 @@
 ]
 },
 "AMD": {
-"fetched": "2026-11-24T08:22:34.403036-10:00",
+"fetched": "2026-11-24T09:32:39.580287-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -579,7 +559,7 @@
 ]
 },
 "AMZN": {
-"fetched": "2026-11-24T08:22:34.403036-10:00",
+"fetched": "2026-11-24T09:32:39.580287-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -625,7 +605,7 @@
 ]
 },
 "AVGO": {
-"fetched": "2026-11-24T08:22:34.403036-10:00",
+"fetched": "2026-11-24T09:32:39.580287-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -671,7 +651,7 @@
 ]
 },
 "GOOGL": {
-"fetched": "2026-11-24T08:22:34.403036-10:00",
+"fetched": "2026-11-24T09:32:39.580287-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -717,7 +697,7 @@
 ]
 },
 "META": {
-"fetched": "2026-11-24T08:22:34.403036-10:00",
+"fetched": "2026-11-24T09:32:39.580287-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -763,7 +743,7 @@
 ]
 },
 "MSFT": {
-"fetched": "2026-11-24T08:22:34.403036-10:00",
+"fetched": "2026-11-24T09:32:39.580287-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -809,7 +789,7 @@
 ]
 },
 "MU": {
-"fetched": "2026-11-24T08:22:34.403036-10:00",
+"fetched": "2026-11-24T09:32:39.580287-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -855,7 +835,7 @@
 ]
 },
 "NVDA": {
-"fetched": "2026-11-24T08:22:34.403036-10:00",
+"fetched": "2026-11-24T09:32:39.580287-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -901,7 +881,7 @@
 ]
 },
 "TSLA": {
-"fetched": "2026-11-24T08:22:34.403036-10:00",
+"fetched": "2026-11-24T09:32:39.580287-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -947,47 +927,47 @@
 ]
 },
 "SPCX": {
-"fetched": "2026-11-24T08:22:34.403036-10:00",
+"fetched": "2026-11-24T09:32:39.580287-10:00",
 "src": "finnhub",
 "items": [
 [
-"2026-11-24T05:56:36-10:00",
-"Lucid Rises 4% as Driverless Robotaxi Testing With Nuro and Uber Begins; Tesla Falls 2% Amid SpaceX Merger Talks, Rivian Edges Higher",
+"2026-11-24T07:35:37-10:00",
+"Goldman, Morgan Stanley and Evercore Are Advising on What Could Be the Biggest Deal Ever",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-24T05:51:19-10:00",
-"Musk: Starlink \u201cIs Illegal\u201d in China. A Merger Would Put It Under One Roof With Tesla\u2019s Shanghai Plant",
+"2026-11-24T07:33:00-10:00",
+"States sue SpaceX, calling Grok's weak safeguards 'a feature'",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-24T05:31:40-10:00",
-"Anthropic Falls Below $83 IPO Price as CEO Sells $280 Million in Shares",
+"2026-11-24T07:31:09-10:00",
+"Anthropic Dips Below IPO Price in Sharp Tech Reversal",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-24T05:28:05-10:00",
-"Bill Ackman Says the Fed Is \u201cAbout to Make Another Mistake\u201d on Dec. 9",
+"2026-11-24T07:21:45-10:00",
+"Anthropic tumbles below $83 IPO price as AI concerns mount: \u2018Trying to find its footing\u2019",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-24T05:28:03-10:00",
-"Boeing vs. Space Exploration Technologies: Which Industrials Stock Is a Better Buy for 2027?",
+"2026-11-24T06:56:30-10:00",
+"Top Midday Stories: Anthropic Falls Below $83 IPO Price; Sanofi to Buy Insmed",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-24T05:16:54-10:00",
-"How SpaceX GPU Financing At Goldman Sachs Has Changed Its Investment Story",
+"2026-11-24T06:34:12-10:00",
+"At Today\u2019s Prices, a Tesla Share Is Worth 3 SpaceX Shares. One Tesla Bull Wants 4.2",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-24T05:16:00-10:00",
-"Anthropic Stock Sinks Below IPO Price. What History Says Happens Next.",
+"2026-11-24T06:20:20-10:00",
+"Elon Musk Secretly Knows Grok Is Trash",
 "finnhub/Yahoo"
 ],
 [
-"2026-11-24T05:03:10-10:00",
-"\u201cTell Me Why I am Wrong\u201d: Bill Ackman Lambasts Looming Fed Interest Rate Hike",
+"2026-11-24T06:07:47-10:00",
+"Anthropic stock sinks below IPO price as record debut loses its shine",
 "finnhub/Yahoo"
 ]
 ]
