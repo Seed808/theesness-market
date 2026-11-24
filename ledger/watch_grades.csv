@@ -2349,3 +2349,4 @@ id,target,graded_at,result,exit_premium,pnl_pct,hit_at,method
 2026-11-24_watch-premarket_SPCX_PUT_2026-11-25_131,T2,2026-11-24T05:32:43.069746-10:00,WIN,5.6,55.6,2026-11-24T05:26:00-10:00,TARGET (gapped through) · schwab 1m
 2026-11-24_watch-preopen_IBIT_PUT_2026-11-25_34,TRAIL,2026-11-24T05:32:43.069746-10:00,WIN,0.57,3.6,2026-11-24T05:32:00-10:00,TRAILING STOP (gapped through) · schwab 1m
 2026-11-23_watch-premarket_TLT_CALL_2026-11-25_81.5,T2,2026-11-24T05:52:35.222824-10:00,WIN,0.48,60.0,2026-11-24T05:50:00-10:00,TARGET (gapped through) · schwab 1m
+2026-11-24_watch-premarket_SPCX_PUT_2026-11-25_131,TRAIL,2026-11-24T06:32:34.019238-10:00,WIN,6.0,66.7,2026-11-24T06:26:00-10:00,TRAILING STOP (gapped through) · schwab 1m
