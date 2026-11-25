@@ -1,8 +1,33 @@
 {
 "SPY": {
-"fetched": "2026-11-25T06:32:34.003938-10:00",
+"fetched": "2026-11-25T07:32:40.847632-10:00",
 "src": "finnhub",
 "items": [
+[
+"2026-11-25T05:45:17-10:00",
+"What Happens to a $900,000 401(k) by the End of 2027? $1,062,300 in Wall Street\u2019s Best Case, $824,900 in Its Worst",
+"finnhub/Yahoo"
+],
+[
+"2026-11-25T05:08:40-10:00",
+"Does RSP Hold Up Better Than SPY In Sell-Offs?",
+"finnhub/Yahoo"
+],
+[
+"2026-11-25T05:05:03-10:00",
+"Dow Craters Over 1000 Points, Nasdaq Slips 4% As AI Trade Unravels \u2013 Investors Digest PCE Inflation, Fresh Tariff Proposal",
+"finnhub/Yahoo"
+],
+[
+"2026-11-25T04:52:55-10:00",
+"Ed Yardeni Wants Double the Fed Rate Hike the Market Expects",
+"finnhub/Yahoo"
+],
+[
+"2026-11-25T04:27:00-10:00",
+"Cornucopia of Econ Data Ahead of Thanksgiving",
+"finnhub/Yahoo"
+],
 [
 "2026-11-25T04:04:41-10:00",
 "Exchange-Traded Funds, Equity Futures Lower Pre-Bell Wednesday Amid Inflation Data Release",
@@ -17,38 +42,18 @@
 "2026-11-25T02:22:51-10:00",
 "Jim Cramer Says Tuesday\u2019s Stock Market Pullback Is Actually Good News",
 "finnhub/Yahoo"
-],
-[
-"2026-11-25T02:02:49-10:00",
-"Liberation Day Round 2.0? The Next Wave of Trump Tariffs Is Reportedly Close",
-"finnhub/Yahoo"
-],
-[
-"2026-11-25T01:04:02-10:00",
-"SPDR S&P 500 ETF (SPY) Adds Apple and Nvidia on Monday",
-"finnhub/Yahoo"
-],
-[
-"2026-11-25T01:03:37-10:00",
-"Forget the P/E Ratio. DSTL Picks 100 Large Stocks by the Cash They Generate and the Debt They Don\u2019t Carry",
-"finnhub/Yahoo"
-],
-[
-"2026-11-25T01:02:22-10:00",
-"Is A 4.7% S&P Jump A Good Sign?",
-"finnhub/Yahoo"
-],
-[
-"2026-11-25T01:02:10-10:00",
-"ETFs Are Buying American International Group (AIG) on Monday",
-"finnhub/Yahoo"
 ]
 ]
 },
 "QQQ": {
-"fetched": "2026-11-25T06:32:34.003938-10:00",
+"fetched": "2026-11-25T07:32:40.847632-10:00",
 "src": "finnhub",
 "items": [
+[
+"2026-11-25T01:32:19-10:00",
+"The Nasdaq Is Heading Toward A Bear Market As Growth Fears Mount",
+"finnhub/SeekingAlpha"
+],
 [
 "2026-11-25T01:05:00-10:00",
 "The U.S. Tariff Wall Keeps Changing, But It Isn't Coming Down",
@@ -83,18 +88,18 @@
 "2026-11-24T23:29:22-10:00",
 "Trump Administration Will Propose 20% Tariff On China; China Distorting Global Trade Flows Through Extensive Industrial Policy Plans; Not Proposing Tariffs On M",
 "finnhub/Benzinga"
-],
-[
-"2026-11-24T22:40:03-10:00",
-"November 2026 Portfolio Update: Preparing For A Proper Bear Market?",
-"finnhub/SeekingAlpha"
 ]
 ]
 },
 "IWM": {
-"fetched": "2026-11-25T06:32:34.003938-10:00",
+"fetched": "2026-11-25T07:32:40.847632-10:00",
 "src": "finnhub",
 "items": [
+[
+"2026-11-25T01:32:19-10:00",
+"The Nasdaq Is Heading Toward A Bear Market As Growth Fears Mount",
+"finnhub/SeekingAlpha"
+],
 [
 "2026-11-25T01:05:00-10:00",
 "The U.S. Tariff Wall Keeps Changing, But It Isn't Coming Down",
@@ -129,18 +134,18 @@
 "2026-11-24T19:41:09-10:00",
 "4 Reasons The Market Could Be Underestimating Chances Of A Recovery In Equities Won't Be V-Shaped",
 "finnhub/SeekingAlpha"
-],
-[
-"2026-11-24T18:52:06-10:00",
-"Gold Stopped Protecting Portfolios When Stocks Needed It Most",
-"finnhub/SeekingAlpha"
 ]
 ]
 },
 "SPX": {
-"fetched": "2026-11-25T06:32:34.003938-10:00",
+"fetched": "2026-11-25T07:32:40.847632-10:00",
 "src": "finnhub",
 "items": [
+[
+"2026-11-25T01:32:19-10:00",
+"The Nasdaq Is Heading Toward A Bear Market As Growth Fears Mount",
+"finnhub/SeekingAlpha"
+],
 [
 "2026-11-25T00:59:59-10:00",
 "Looking Past The Correction, Earnings Estimates Are Rising",
@@ -175,16 +180,11 @@
 "2026-11-24T19:41:09-10:00",
 "4 Reasons The Market Could Be Underestimating Chances Of A Recovery In Equities Won't Be V-Shaped",
 "finnhub/SeekingAlpha"
-],
-[
-"2026-11-24T18:52:06-10:00",
-"Gold Stopped Protecting Portfolios When Stocks Needed It Most",
-"finnhub/SeekingAlpha"
 ]
 ]
 },
 "TQQQ": {
-"fetched": "2026-11-25T06:32:34.003938-10:00",
+"fetched": "2026-11-25T07:32:40.847632-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -205,7 +205,7 @@
 ]
 },
 "SMH": {
-"fetched": "2026-11-25T06:32:34.003938-10:00",
+"fetched": "2026-11-25T07:32:40.847632-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -251,7 +251,7 @@
 ]
 },
 "XLF": {
-"fetched": "2026-11-25T06:32:34.003938-10:00",
+"fetched": "2026-11-25T07:32:40.847632-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -297,7 +297,7 @@
 ]
 },
 "XLE": {
-"fetched": "2026-11-25T06:32:34.003938-10:00",
+"fetched": "2026-11-25T07:32:40.847632-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -343,7 +343,7 @@
 ]
 },
 "GLD": {
-"fetched": "2026-11-25T06:32:34.003938-10:00",
+"fetched": "2026-11-25T07:32:40.847632-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -389,7 +389,7 @@
 ]
 },
 "SLV": {
-"fetched": "2026-11-25T06:32:34.003938-10:00",
+"fetched": "2026-11-25T07:32:40.847632-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -435,7 +435,7 @@
 ]
 },
 "TLT": {
-"fetched": "2026-11-25T06:32:34.003938-10:00",
+"fetched": "2026-11-25T07:32:40.847632-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -481,7 +481,7 @@
 ]
 },
 "IBIT": {
-"fetched": "2026-11-25T06:32:34.003938-10:00",
+"fetched": "2026-11-25T07:32:40.847632-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -527,7 +527,7 @@
 ]
 },
 "AAPL": {
-"fetched": "2026-11-25T06:32:34.003938-10:00",
+"fetched": "2026-11-25T07:32:40.847632-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -573,7 +573,7 @@
 ]
 },
 "AMD": {
-"fetched": "2026-11-25T06:32:34.003938-10:00",
+"fetched": "2026-11-25T07:32:40.847632-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -619,7 +619,7 @@
 ]
 },
 "AMZN": {
-"fetched": "2026-11-25T06:32:34.003938-10:00",
+"fetched": "2026-11-25T07:32:40.847632-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -665,7 +665,7 @@
 ]
 },
 "AVGO": {
-"fetched": "2026-11-25T06:32:34.003938-10:00",
+"fetched": "2026-11-25T07:32:40.847632-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -711,7 +711,7 @@
 ]
 },
 "GOOGL": {
-"fetched": "2026-11-25T06:32:34.003938-10:00",
+"fetched": "2026-11-25T07:32:40.847632-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -757,7 +757,7 @@
 ]
 },
 "META": {
-"fetched": "2026-11-25T06:32:34.003938-10:00",
+"fetched": "2026-11-25T07:32:40.847632-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -803,7 +803,7 @@
 ]
 },
 "MSFT": {
-"fetched": "2026-11-25T06:32:34.003938-10:00",
+"fetched": "2026-11-25T07:32:40.847632-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -849,7 +849,7 @@
 ]
 },
 "MU": {
-"fetched": "2026-11-25T06:32:34.003938-10:00",
+"fetched": "2026-11-25T07:32:40.847632-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -895,7 +895,7 @@
 ]
 },
 "NVDA": {
-"fetched": "2026-11-25T06:32:34.003938-10:00",
+"fetched": "2026-11-25T07:32:40.847632-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -941,7 +941,7 @@
 ]
 },
 "TSLA": {
-"fetched": "2026-11-25T06:32:34.003938-10:00",
+"fetched": "2026-11-25T07:32:40.847632-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -987,7 +987,7 @@
 ]
 },
 "SPCX": {
-"fetched": "2026-11-25T06:32:34.003938-10:00",
+"fetched": "2026-11-25T07:32:40.847632-10:00",
 "src": "finnhub",
 "items": [
 [
