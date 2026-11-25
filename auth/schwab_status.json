@@ -4,9 +4,9 @@
  "expired_notice_at": "2026-11-20T02:02:31.139207-10:00",
  "login_at": "2026-11-20T17:21:49.344933+00:00",
  "expires_at": "2026-11-27T17:21:49.344933+00:00",
- "last_ok": "2026-11-25T16:32:34.756059+00:00",
+ "last_ok": "2026-11-25T17:02:45.676983+00:00",
  "last_error": null,
- "hours_left": 48.5,
+ "hours_left": 48.3,
  "futures_probe": {
   "/ESZ26": {
    "answered": true,
@@ -40,16 +40,16 @@
    ],
    "values": {
     "closePrice": 7217.5,
-    "lastPrice": 7018.5,
-    "netChange": -199.0,
-    "futurePercentChange": -2.75718739,
-    "settleTime": 1795621741159,
-    "tradeTime": 1795625555029
+    "lastPrice": 7054.75,
+    "netChange": -162.75,
+    "futurePercentChange": -2.25493592,
+    "settleTime": 1795625904656,
+    "tradeTime": 1795626165652
    },
    "check": {
     "netChange_diff": 0.0,
-    "my_pct": -2.7572,
-    "schwab_pct": -2.75718739,
+    "my_pct": -2.2549,
+    "schwab_pct": -2.25493592,
     "pct_diff": 0.0
    },
    "used": true
@@ -92,16 +92,16 @@
    ],
    "values": {
     "closePrice": 26275.75,
-    "lastPrice": 25151.75,
-    "netChange": -1124.0,
-    "futurePercentChange": -4.27770853,
-    "settleTime": 1795624519670,
-    "tradeTime": 1795625555049
+    "lastPrice": 25322.0,
+    "netChange": -953.75,
+    "futurePercentChange": -3.6297727,
+    "settleTime": 1795625921952,
+    "tradeTime": 1795626165767
    },
    "check": {
     "netChange_diff": 0.0,
-    "my_pct": -4.2777,
-    "schwab_pct": -4.27770853,
+    "my_pct": -3.6298,
+    "schwab_pct": -3.6297727,
     "pct_diff": 0.0
    },
    "used": true
@@ -144,16 +144,16 @@
    ],
    "values": {
     "closePrice": 50061.0,
-    "lastPrice": 49338.0,
-    "netChange": -723.0,
-    "futurePercentChange": -1.44423803,
-    "settleTime": 1795624503239,
-    "tradeTime": 1795625552215
+    "lastPrice": 49562.0,
+    "netChange": -499.0,
+    "futurePercentChange": -0.99678392,
+    "settleTime": 1795625905238,
+    "tradeTime": 1795626165251
    },
    "check": {
     "netChange_diff": 0.0,
-    "my_pct": -1.4442,
-    "schwab_pct": -1.44423803,
+    "my_pct": -0.9968,
+    "schwab_pct": -0.99678392,
     "pct_diff": 0.0
    },
    "used": true
