@@ -1,6 +1,6 @@
 {
 "SPY": {
-"fetched": "2026-11-25T08:42:32.777998-10:00",
+"fetched": "2026-11-25T09:42:34.336721-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -46,9 +46,14 @@
 ]
 },
 "QQQ": {
-"fetched": "2026-11-25T08:42:32.777998-10:00",
+"fetched": "2026-11-25T09:42:34.336721-10:00",
 "src": "finnhub",
 "items": [
+[
+"2026-11-25T03:30:19-10:00",
+"The AI Rescue Is Already Here",
+"finnhub/SeekingAlpha"
+],
 [
 "2026-11-25T01:32:19-10:00",
 "The Nasdaq Is Heading Toward A Bear Market As Growth Fears Mount",
@@ -83,18 +88,18 @@
 "2026-11-24T23:35:00-10:00",
 "Same Nasdaq-100 Companies, Different Weighting: The Case For Equal Weight",
 "finnhub/SeekingAlpha"
-],
-[
-"2026-11-24T23:29:22-10:00",
-"Trump Administration Will Propose 20% Tariff On China; China Distorting Global Trade Flows Through Extensive Industrial Policy Plans; Not Proposing Tariffs On M",
-"finnhub/Benzinga"
 ]
 ]
 },
 "IWM": {
-"fetched": "2026-11-25T08:42:32.777998-10:00",
+"fetched": "2026-11-25T09:42:34.336721-10:00",
 "src": "finnhub",
 "items": [
+[
+"2026-11-25T03:30:19-10:00",
+"The AI Rescue Is Already Here",
+"finnhub/SeekingAlpha"
+],
 [
 "2026-11-25T01:32:19-10:00",
 "The Nasdaq Is Heading Toward A Bear Market As Growth Fears Mount",
@@ -129,18 +134,18 @@
 "2026-11-24T22:30:00-10:00",
 "Credit Markets Deteriorating At Concerning Rate",
 "finnhub/SeekingAlpha"
-],
-[
-"2026-11-24T19:41:09-10:00",
-"4 Reasons The Market Could Be Underestimating Chances Of A Recovery In Equities Won't Be V-Shaped",
-"finnhub/SeekingAlpha"
 ]
 ]
 },
 "SPX": {
-"fetched": "2026-11-25T08:42:32.777998-10:00",
+"fetched": "2026-11-25T09:42:34.336721-10:00",
 "src": "finnhub",
 "items": [
+[
+"2026-11-25T03:30:19-10:00",
+"The AI Rescue Is Already Here",
+"finnhub/SeekingAlpha"
+],
 [
 "2026-11-25T01:32:19-10:00",
 "The Nasdaq Is Heading Toward A Bear Market As Growth Fears Mount",
@@ -175,16 +180,11 @@
 "2026-11-24T20:20:00-10:00",
 "Wall Street Breakfast Podcast: 'Line Up And Wait' Adds To Holiday Travel Frets",
 "finnhub/SeekingAlpha"
-],
-[
-"2026-11-24T19:41:09-10:00",
-"4 Reasons The Market Could Be Underestimating Chances Of A Recovery In Equities Won't Be V-Shaped",
-"finnhub/SeekingAlpha"
 ]
 ]
 },
 "TQQQ": {
-"fetched": "2026-11-25T08:42:32.777998-10:00",
+"fetched": "2026-11-25T09:42:34.336721-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -205,7 +205,7 @@
 ]
 },
 "SMH": {
-"fetched": "2026-11-25T08:42:32.777998-10:00",
+"fetched": "2026-11-25T09:42:34.336721-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -251,7 +251,7 @@
 ]
 },
 "XLF": {
-"fetched": "2026-11-25T08:42:32.777998-10:00",
+"fetched": "2026-11-25T09:42:34.336721-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -297,7 +297,7 @@
 ]
 },
 "XLE": {
-"fetched": "2026-11-25T08:42:32.777998-10:00",
+"fetched": "2026-11-25T09:42:34.336721-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -343,9 +343,14 @@
 ]
 },
 "GLD": {
-"fetched": "2026-11-25T08:42:32.777998-10:00",
+"fetched": "2026-11-25T09:42:34.336721-10:00",
 "src": "finnhub",
 "items": [
+[
+"2026-11-25T03:45:51-10:00",
+"Gold: A November To Remember",
+"finnhub/SeekingAlpha"
+],
 [
 "2026-11-24T23:15:00-10:00",
 "There's Only One Way Social Security Gets Fixed - I'm Positioning For It",
@@ -380,16 +385,11 @@
 "2026-11-23T18:05:00-10:00",
 "Is It Really All Clear In The Stock Market?",
 "finnhub/SeekingAlpha"
-],
-[
-"2026-11-23T16:45:00-10:00",
-"PCE Week: What To Watch In Stocks, Chips, Gold And Bitcoin",
-"finnhub/SeekingAlpha"
 ]
 ]
 },
 "SLV": {
-"fetched": "2026-11-25T08:42:32.777998-10:00",
+"fetched": "2026-11-25T09:42:34.336721-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -435,7 +435,7 @@
 ]
 },
 "TLT": {
-"fetched": "2026-11-25T08:42:32.777998-10:00",
+"fetched": "2026-11-25T09:42:34.336721-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -481,7 +481,7 @@
 ]
 },
 "IBIT": {
-"fetched": "2026-11-25T08:42:32.777998-10:00",
+"fetched": "2026-11-25T09:42:34.336721-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -527,7 +527,7 @@
 ]
 },
 "AAPL": {
-"fetched": "2026-11-25T08:42:32.777998-10:00",
+"fetched": "2026-11-25T09:42:34.336721-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -573,7 +573,7 @@
 ]
 },
 "AMD": {
-"fetched": "2026-11-25T08:42:32.777998-10:00",
+"fetched": "2026-11-25T09:42:34.336721-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -619,7 +619,7 @@
 ]
 },
 "AMZN": {
-"fetched": "2026-11-25T08:42:32.777998-10:00",
+"fetched": "2026-11-25T09:42:34.336721-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -665,7 +665,7 @@
 ]
 },
 "AVGO": {
-"fetched": "2026-11-25T08:42:32.777998-10:00",
+"fetched": "2026-11-25T09:42:34.336721-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -711,7 +711,7 @@
 ]
 },
 "GOOGL": {
-"fetched": "2026-11-25T08:42:32.777998-10:00",
+"fetched": "2026-11-25T09:42:34.336721-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -757,7 +757,7 @@
 ]
 },
 "META": {
-"fetched": "2026-11-25T08:42:32.777998-10:00",
+"fetched": "2026-11-25T09:42:34.336721-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -803,7 +803,7 @@
 ]
 },
 "MSFT": {
-"fetched": "2026-11-25T08:42:32.777998-10:00",
+"fetched": "2026-11-25T09:42:34.336721-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -849,7 +849,7 @@
 ]
 },
 "MU": {
-"fetched": "2026-11-25T08:42:32.777998-10:00",
+"fetched": "2026-11-25T09:42:34.336721-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -895,7 +895,7 @@
 ]
 },
 "NVDA": {
-"fetched": "2026-11-25T08:42:32.777998-10:00",
+"fetched": "2026-11-25T09:42:34.336721-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -941,7 +941,7 @@
 ]
 },
 "TSLA": {
-"fetched": "2026-11-25T08:42:32.777998-10:00",
+"fetched": "2026-11-25T09:42:34.336721-10:00",
 "src": "finnhub",
 "items": [
 [
@@ -987,7 +987,7 @@
 ]
 },
 "SPCX": {
-"fetched": "2026-11-25T08:42:32.777998-10:00",
+"fetched": "2026-11-25T09:42:34.336721-10:00",
 "src": "finnhub",
 "items": [
 [
