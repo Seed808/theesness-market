@@ -1,0 +1,152 @@
+{
+ "trade_date": "2026-11-25",
+ "mode": "rescan",
+ "ran_at": "2026-11-25T06:42:40.467937-10:00",
+ "test": false,
+ "open_hst": "2026-11-25T04:30:00-10:00",
+ "close_hst": "2026-11-25T11:00:00-10:00",
+ "early_close": false,
+ "bias": {
+  "regime": "BEAR",
+  "favored": "P",
+  "clean": true,
+  "notes": [
+   "ES red (-2.82%), NQ red (-4.39%), YM red (-1.48%)",
+   "ES+YM red \u2192 broad bear, puts favored",
+   "VIX 33.59 (+27.43%) \u2192 confirms",
+   "SPY red (-2.80%), QQQ red (-4.40%) \u2192 confirms"
+  ]
+ },
+ "quotes": {
+  "ES": {
+   "last": 7014.25,
+   "prev_close": 7217.5,
+   "chg_pct": -2.8160720471077245,
+   "source": "schwab"
+  },
+  "NQ": {
+   "last": 25122.25,
+   "prev_close": 26275.75,
+   "chg_pct": -4.389979353586481,
+   "source": "schwab"
+  },
+  "YM": {
+   "last": 49319.0,
+   "prev_close": 50061.0,
+   "chg_pct": -1.482191726094165,
+   "source": "schwab"
+  },
+  "VIX": {
+   "last": 33.59,
+   "prev_close": 26.36,
+   "chg_pct": 27.427921092564507,
+   "source": "schwab"
+  },
+  "SPY": {
+   "last": 698.63,
+   "prev_close": 718.78,
+   "chg_pct": -2.8033612510086505,
+   "source": "schwab"
+  },
+  "QQQ": {
+   "last": 610.035,
+   "prev_close": 638.1,
+   "chg_pct": -4.39821344616832,
+   "source": "schwab"
+  }
+ },
+ "flags": [
+  "Friday/pre-holiday rules: 0DTE only, no overnight",
+  "Amateur hour until 05:00 AM; institutional 05:00\u201305:30 AM HST",
+  "No damaged contracts overnight. No earnings holds overnight."
+ ],
+ "headlines": [],
+ "data_note": "live data: Schwab (Yahoo fallback)",
+ "cards": [
+  {
+   "id": "2026-11-25_rescan_TSLA_PUT_2026-11-25_360",
+   "trade_date": "2026-11-25",
+   "mode": "rescan",
+   "locked_at": "2026-11-25T06:42:40.467937-10:00",
+   "ticker": "TSLA",
+   "type": "PUT",
+   "bias": "BEAR",
+   "expiry": "2026-11-25",
+   "strike": 360.0,
+   "entry_floor": 1.77,
+   "entry_ceiling": 2.12,
+   "premium": 1.77,
+   "target": 2.66,
+   "stop": 1.41,
+   "reasoning": "BEAR, bias clean, trend aligned, VWAP resistance, strong liquidity, no volume confirmation (RVOL 0.5), no catalyst found",
+   "confidence": 7,
+   "a_plus": false,
+   "status": "GO",
+   "flags": "0DTE only / no overnight; CHASING -5.8% vs prior close",
+   "data_source": "schwab",
+   "contract": "TSLA261125P00360000",
+   "underlying": 362.25,
+   "underlying_asof": "6:44 AM HST live",
+   "target1": 2.12,
+   "mover": ""
+  }
+ ],
+ "passing": 11,
+ "rejected": 54,
+ "rejections": [
+  "DIA: no 0DTE expiry (Friday/pre-holiday rule)",
+  "SOXL: no 0DTE expiry (Friday/pre-holiday rule)",
+  "XLF P: spread 14.3% > 10.0%, first 5-min candle does not confirm, trend not aligned (1m flat/5m flat/15m down), put into support (PML)",
+  "XLE P: spread 16.7% > 10.0%, first 5-min candle does not confirm, trend not aligned (1m flat/5m down/15m down)",
+  "GLD P: OI 147 < 500, trend not aligned (1m flat/5m flat/15m down), put into support (VWAP)",
+  "SLV P: OI 312 < 500",
+  "TLT P: OI 15 < 500, first 5-min candle does not confirm, trend not aligned (1m flat/5m up/15m up), put into support (VWAP)",
+  "IBIT P: spread 10.5% > 10.0%, trend not aligned (1m down/5m flat/15m down)",
+  "TNA: no 0DTE expiry (Friday/pre-holiday rule)",
+  "UVXY: no 0DTE expiry (Friday/pre-holiday rule)",
+  "AAPL P: trend not aligned (1m up/5m flat/15m down)",
+  "AMAT: no 0DTE expiry (Friday/pre-holiday rule)",
+  "AMZN P: trend not aligned (1m flat/5m down/15m down)",
+  "APLD: no 0DTE expiry (Friday/pre-holiday rule)",
+  "APP: no 0DTE expiry (Friday/pre-holiday rule)",
+  "ASTS: no 0DTE expiry (Friday/pre-holiday rule)",
+  "BA: no 0DTE expiry (Friday/pre-holiday rule)",
+  "BABA: no 0DTE expiry (Friday/pre-holiday rule)",
+  "BAC: no 0DTE expiry (Friday/pre-holiday rule)",
+  "BILI: no 0DTE expiry (Friday/pre-holiday rule)",
+  "CIFR: no 0DTE expiry (Friday/pre-holiday rule)",
+  "COIN: no 0DTE expiry (Friday/pre-holiday rule)",
+  "CRM: no 0DTE expiry (Friday/pre-holiday rule)",
+  "CRWV: no 0DTE expiry (Friday/pre-holiday rule)",
+  "CVNA: no 0DTE expiry (Friday/pre-holiday rule)",
+  "DKNG: no 0DTE expiry (Friday/pre-holiday rule)",
+  "HOOD: no 0DTE expiry (Friday/pre-holiday rule)",
+  "INTC: no 0DTE expiry (Friday/pre-holiday rule)",
+  "IONQ: no 0DTE expiry (Friday/pre-holiday rule)",
+  "IREN: no 0DTE expiry (Friday/pre-holiday rule)",
+  "JPM: no 0DTE expiry (Friday/pre-holiday rule)",
+  "LRCX: no 0DTE expiry (Friday/pre-holiday rule)",
+  "MARA: no 0DTE expiry (Friday/pre-holiday rule)",
+  "META P: trend not aligned (1m flat/5m up/15m flat), put into support (VWAP)",
+  "MSFT P: put into support (PML)",
+  "MSTR: no 0DTE expiry (Friday/pre-holiday rule)",
+  "MU P: OI 82 < 500",
+  "NFLX: no 0DTE expiry (Friday/pre-holiday rule)",
+  "OKLO: no 0DTE expiry (Friday/pre-holiday rule)",
+  "ORCL: no 0DTE expiry (Friday/pre-holiday rule)",
+  "PLTR: no 0DTE expiry (Friday/pre-holiday rule)",
+  "PLUG: no 0DTE expiry (Friday/pre-holiday rule)",
+  "PYPL: no 0DTE expiry (Friday/pre-holiday rule)",
+  "QCOM: no 0DTE expiry (Friday/pre-holiday rule)",
+  "RGTI: no 0DTE expiry (Friday/pre-holiday rule)",
+  "RKLB: no 0DTE expiry (Friday/pre-holiday rule)",
+  "SHOP: no 0DTE expiry (Friday/pre-holiday rule)",
+  "SMCI: no 0DTE expiry (Friday/pre-holiday rule)",
+  "SOFI: no 0DTE expiry (Friday/pre-holiday rule)",
+  "TSM: no 0DTE expiry (Friday/pre-holiday rule)",
+  "UBER: no 0DTE expiry (Friday/pre-holiday rule)",
+  "WMT: no 0DTE expiry (Friday/pre-holiday rule)",
+  "XOM: no 0DTE expiry (Friday/pre-holiday rule)",
+  "SPCX P: trend not aligned (1m down/5m flat/15m down)"
+ ]
+}
