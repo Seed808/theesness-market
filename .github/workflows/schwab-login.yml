@@ -82,7 +82,16 @@ jobs:
           git config user.email "market-bot@users.noreply.github.com"
           git add auth
           git diff --cached --quiet || git commit -m "schwab login: $(date -u +%Y-%m-%dT%H:%MZ)"
-          for i in 1 2 3 4 5; do git pull --rebase --autostash && git push && break; git rebase --abort 2>/dev/null; sleep $((i*5)); done
+          # 11/27 fix: a market read saving auth/schwab_status.json at the same moment made the rebase
+          # conflict, all retries failed, and the step still exited OK — the new login was lost.
+          # Now: on a conflict the fresh login's files win (-X theirs = this commit during a rebase),
+          # and the step fails loudly if it still can't push.
+          ok=""
+          for i in 1 2 3 4 5; do
+            if git pull --rebase --autostash -X theirs && git push; then ok=1; break; fi
+            git rebase --abort 2>/dev/null; sleep $((i*5))
+          done
+          [ -n "$ok" ] || { echo "::error::new login could not be saved (push failed 5 times)"; exit 1; }
       - name: confirm in Telegram
         if: always()
         env:
@@ -105,6 +114,6 @@ jobs:
                               f"{exp.strftime('%a %-m/%-d %I:%M %p')} HST. You'll get a reminder before then.",
                               html=True)
           else:
-              E.send_telegram("<b>SCHWAB LOGIN FAILED</b> — the code was rejected or expired. Get a fresh "
-                              "one (log in again) and run schwab-login right after copying it.", html=True)
+              E.send_telegram("<b>SCHWAB LOGIN FAILED</b> — the code was rejected or expired, or the new login "
+                              "couldn't be saved. Log in again and run schwab-login right after copying it.", html=True)
           PY

@@ -80,7 +80,21 @@ jobs:
           git config user.email "market-bot@users.noreply.github.com"
           git add -A ledger data auth watchlist_auto.txt 2>/dev/null || git add -A ledger data watchlist_auto.txt
           git diff --cached --quiet || git commit -m "ledger: $(date -u +%Y-%m-%dT%H:%MZ)"
-          for i in 1 2 3 4 5; do git pull --rebase --autostash && git push && break; git rebase --abort 2>/dev/null; sleep $((i*7)); done
+          # 11/27 fix: if a Schwab login landed while this run was going, the conflict is in auth/.
+          # The login on main is newer, so take main's auth files and keep this run's ledger.
+          ok=""
+          for i in 1 2 3 4 5; do
+            if ! git pull --rebase --autostash; then
+              if git diff --name-only --diff-filter=U | grep -qv '^auth/'; then
+                git rebase --abort; sleep $((i*7)); continue
+              fi
+              git checkout --ours -- auth && git add auth \
+                && GIT_EDITOR=true git rebase --continue || { git rebase --abort 2>/dev/null; sleep $((i*7)); continue; }
+            fi
+            if git push; then ok=1; break; fi
+            sleep $((i*7))
+          done
+          [ -n "$ok" ] || { echo "::error::ledger could not be pushed (5 tries)"; exit 1; }
       - uses: actions/upload-pages-artifact@v3
         with: { path: _site }
   deploy:
