@@ -2,11 +2,11 @@
  "configured": true,
  "connected": true,
  "expired_notice_at": "2026-11-20T02:02:31.139207-10:00",
- "login_at": "2026-11-20T17:21:49.344933+00:00",
- "expires_at": "2026-11-27T17:21:49.344933+00:00",
- "last_ok": "2026-11-27T15:02:34.315452+00:00",
+ "login_at": "2026-11-27T15:29:45.191640+00:00",
+ "expires_at": "2026-12-04T15:29:45.191640+00:00",
+ "last_ok": "2026-11-27T15:29:45.191640+00:00",
  "last_error": null,
- "hours_left": 2.0,
+ "hours_left": 1.9,
  "futures_probe": {
   "/ESZ26": {
    "answered": true,
